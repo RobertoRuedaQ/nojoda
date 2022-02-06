@@ -1,0 +1,65 @@
+
+<div class="col-md-12 my-2">
+	<div class="card ">
+	  <div class="card-body mx-3">
+      <div class="d-flex justify-content-between">
+        <h5 class="text-primary mx-0"><%= LegalDocument.model_name.human(count: 2) %></h5>
+        <% if target_application.funding_option.size > 0 %>
+          <div class="my-3">
+            <%= button_tag 'Migrar Contrato',class: 'btn btn-primary',data: {toggle: "modal", target: "#contract_migration_modal_#{target_application.id}"} %>
+          </div> 
+        <% end %>     
+      </div>
+        <% @legal_matches.present? ? legal_documents = @legal_matches : legal_documents = target_application.legal_match.includes(:legal_document, :scanned_document_attachment)%>
+	      <%= render '/applicants/partial/legal_document_table', legal_documents: legal_documents, target_application: target_application %>
+	  </div>
+	</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="legal_match_modal_<%= target_application.id %>" tabindex="-1" role="dialog" aria-labelledby="legal_match_modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="legal_match_modalLabel_<%= target_application.id %>"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="legal_match_modal_container_<%= target_application.id %>">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% if target_application.funding_option.size > 0 %>
+  <!-- Modal -->
+  <div class="modal fade" id="contract_migration_modal_<%= target_application.id %>" tabindex="-1" role="dialog" aria-labelledby="contract_migration_modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="contract_migration_modalLabel_<%= target_application.id %>"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="contract_migration_modal_container_<%= target_application.id %>">
+          <% target_contract_id = origination_target_contract_id( target_user) %>
+          <% target_contract = LegalDocument.cached_find(target_contract_id) %>
+          <% target_option = target_application.funding_option.first %>
+          <% if target_contract %>
+            <% target_contract_text = adjust_legal_language( target_user, target_contract.body,application: target_application).to_s %>
+            <%if target_user.current_application.present? || target_user.active_isa.any? %>
+              <% new_contract = LegalMatch.new({user_id: target_user.id, legal_document_id: target_contract.id, validation_method: target_contract.validation_method, validation: target_contract.validation, answer: "true", body: target_contract_text,  resource_type: 'FundingOption', resource_id: target_option.id, status: 'approved', application_id: target_application.id,send_email: false}) %>
+              <%= build_form(new_contract,'create',target_user.template('LegalMatch','legal_matches',target_user),remote: true,controller: 'legal_matches',html: { class: 'form-group'}) %>
+            <%end %>
+          <%end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

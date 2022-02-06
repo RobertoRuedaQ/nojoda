@@ -1,0 +1,28 @@
+/* line 2, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/flot/flot.scss */
+.flot-overlay ~ .legend > * {
+  right: 0 !important;
+}
+/* line 6, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/flot/flot.scss */
+.flot-overlay ~ .legend .legendColorBox {
+  padding-right: 5px;
+}
+
+/* line 14, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/flot/flot.scss */
+.default-style .flotTip {
+  padding: 4px 10px !important;
+  border-color: #46494d !important;
+  border-radius: 0.2rem !important;
+  background-color: #46494d !important;
+  color: #fff !important;
+  font-size: 11px !important;
+}
+
+/* line 27, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/flot/flot.scss */
+.material-style .flotTip {
+  padding: 4px 10px !important;
+  border-color: #46494d !important;
+  border-radius: 0.125rem !important;
+  background-color: #46494d !important;
+  color: #fff !important;
+  font-size: 11px !important;
+}

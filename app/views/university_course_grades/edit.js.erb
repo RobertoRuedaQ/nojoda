@@ -1,0 +1,3 @@
+$('#modal-university-grade-body-<%= @university_course_grade.university_grade_id %>').html("<%= j build_form(@university_course_grade,'update',@target_template,html: { class: 'form-group', method: 'put'}, remote: true,history: false,destroy:false, controller: 'university_course_grades', hidden_fields: {section: @section.id}) %>")
+$('#modal-university-grade-<%= @university_course_grade.university_grade_id %>').modal('show')
+restore_lumni_js()

@@ -1,0 +1,7 @@
+es:
+  notification:
+    new_task: 'Nueva tarea'
+    got_it: '¡Entendido!'
+    check_it_later: 'Revisar luego'
+    mark_as_read: 'Marcar leído'
+    

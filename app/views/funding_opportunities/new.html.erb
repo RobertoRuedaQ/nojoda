@@ -1,0 +1,2 @@
+<%= form_title(@funding_opportunity,I18n.t('mains.new')) %>
+<%= build_form(@funding_opportunity,'create',current_user.template('FundingOpportunity','funding_opportunities',current_user),html: { class: 'form-group'})%>

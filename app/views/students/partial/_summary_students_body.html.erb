@@ -1,0 +1,49 @@
+<div class="card" style="border: none">
+  <div class="card-body">
+    <div class="row">
+
+      <div class="col-md-12 my-2">
+        <div class="card shadow">
+          <div class="card-body">
+
+            <h5 class="text-primary">Application Pipeline</h5>
+
+              <div class="progress">
+              <% application_progress =  ((originationStep(@target_user,isa_creation: @target_user.current_application.isa_creation?).to_f + 1)/origination_elements(@target_user.id, isa_creation: @target_user.current_application.isa_creation?).count * 100).round(1)%>
+              <% application_segment = (1.to_f/origination_elements(@target_user.id, isa_creation: @target_user.current_application.isa_creation?).count * 100) %>
+              <%  origination_elements(@target_user.id, isa_creation: @target_user.current_application.isa_creation?).each_with_index do |element,index|%>
+                <% if originationStep(@target_user,isa_creation: @target_user.current_application.isa_creation?) >= (index - 1) %>
+                
+                  <div class="progress-bar <%= 'bg-success' if originationStep(@target_user,isa_creation: @target_user.current_application.isa_creation?) > (index - 1)  %>" role="progressbar" style="width: <%= application_segment %>%" aria-valuenow="<%= application_segment %>" aria-valuemin="0" aria-valuemax="100"><%= I18n.t('students.' + element) %></div>
+                <% end %>
+              <% end %>
+
+              </div>                  
+
+              <div class="text-right">
+                <strong><%= application_progress%>%</strong>
+              </div>
+              <div class="text-center">
+                <%= link_to(I18n.t('application.review_application'), edit_application_path(@target_user.current_application) , class: 'btn btn-primary', target: '_blank') %>
+              </div>
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-md-12 my-2">
+        <div class="card shadow">
+          <div class="card-body mx-3">
+            <h5 class="text-primary mx-0">Legal Documents</h5>
+            <%= createBasicTable(['Name','Date'],@target_user.legal_match.map{|doc| [link_to(doc.legal_document.name, "/legal_matches/#{doc.id}/legal_document.pdf" , target: '_blank', class: 'text-primary') ,doc.created_at]}, id: "summary-legal-documents-#{@target_user.id}") %>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

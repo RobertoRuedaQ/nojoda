@@ -1,0 +1,17 @@
+$('#university_grade_button_<%= @target_record.id %>').removeClass('btn-secondary').addClass('btn-success')
+$('#university_grade_button_<%= @target_record.id %>').attr('university-grade',false)
+$('#average_grade_<%= @target_record.id %>').html('<%= @target_record.grade %>')
+
+
+
+current_term = parseInt($('#university_grade_button_<%= @target_record.id %>').attr('term'))
+current_id = $('[term=' + current_term + ']')[0].id.split('_').pop()
+
+if($('[term=' + (current_term + 1) + ']').length > 0){
+	next_id = $('[term=' + (current_term + 1) + ']')[0].id.split('_').pop()
+	$('#target_grade_' + next_id).collapse('show')
+}
+
+$('#target_grade_' + current_id).collapse('hide')
+
+check_university_grades_compleation('<%=@application_id%>', '<%= @section_id %>')

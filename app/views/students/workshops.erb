@@ -1,0 +1,33 @@
+<%= render 'students/partial/students_header' %>
+
+
+<div class="nav-tabs-top">
+  <%= render 'students/partial/tabs' %>
+
+  <div class="tab-content bg-light">
+
+    <div class="tab-pane fade  show active" id="complementary-activity-tab" >
+      <div class="card" style="border: none">
+        <div class="card-body">
+
+          <%= build_form(@student.complementary_activity,'update',current_user.template('ComplementaryActivity','complementary_activities',current_user),html: { class: 'form-group', method: 'put'},controller: 'complementary_activities',remote: true, destroy: false) %>
+
+          <div class="my-4">
+
+            <% activity_template = current_user.template('ActivitiesDetail','activities_details',current_user,id: true) %>
+            <% activity_template[:id][:controller] = 'activities_details' %>
+            <% activity_template[:id][:action] = 'edit' %>
+            <% activity_template[:id][:target_id] = 'id' %>
+            <%= createTable(@student.activities_detail,activity_template, id: 'table_history_student_activity',title: false,alternative_new_link: new_activities_detail_path(user_id: @student.id)).html_safe %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+

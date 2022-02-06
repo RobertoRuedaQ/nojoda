@@ -1,0 +1,7 @@
+
+
+<%= form_title(@collection, 'user_name') %> 
+<div class="mb-4">
+	<%= link_to 'Volver al estudiante', edit_student_path(@collection.user_id), class: 'text-primary'%>
+</div>
+<%= build_form(@collection,'update',current_user.template('Collection','collections',current_user),html: { class: 'form-group', method: 'put'}) %>

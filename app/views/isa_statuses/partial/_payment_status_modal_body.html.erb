@@ -1,0 +1,9 @@
+<% if isa.last_created_billing_document.present? %>
+
+	<%= build_form(PaymentAgreement.new(billing_document_id: isa.last_created_billing_document.id,isa_id: isa.id,value: isa.billing_document.first.pending_value),'create',current_user.template('PaymentAgreement','payment_agreements',current_user),html: { class: 'form-group'},header: false, destroy: false, controller: 'payment_agreements') %>
+<% end %>
+<div id="payment-agreement-simulation-container">
+	
+	
+</div>
+

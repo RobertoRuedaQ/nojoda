@@ -1,0 +1,13 @@
+$('#attribute_info_container_<%= params[:id]%>').html('<%= j createFieldAttributeDetail(params[:id]) %>')
+
+$('#active-1').html("<%= j createFieldTemplate(1) %>")
+$('#inactive-0').html("<%= j createFieldTemplate(0) %>")
+setAllSortableTemplate()
+loadingTemplatesLinks()
+
+activateDatepickers()
+validate_numeric_fields();
+setAutosize();
+
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();

@@ -1,0 +1,29 @@
+<% if billing_document.currency != 'COP' %>
+	<% if billing_document.fund.payment_origination.bank_transfer &&  billing_document.currency != 'PEN' %>
+		<%= button_to mercado_pago_transaction_mercado_pago_transactions_path, params: {paymentinfo: {billing_document_id: billing_document.id ,value: billing_document.pending_value,payment_method: 'bank_transfer',ip_address: request.remote_ip}}, class: 'btn btn-primary w-100 mt-2', form_class: 'd-flex flex-column', form: {id: "cash-method-button-bank_transfer"},  data: { disable_with: I18n.t('disbursement.processing') }, remote: true do %>
+			<span class="ion ion-ios-business"></span><span class="ml-3"><%= I18n.t('billing_document.bank_transfer') %></span>
+		<% end %>
+	<% end %>
+
+	<% if billing_document.fund.payment_origination.debit_card %>
+		<%= button_to mercado_pago_transaction_mercado_pago_transactions_path, params: {paymentinfo: {billing_document_id: billing_document.id ,value: billing_document.pending_value,payment_method: 'debit_card',ip_address: request.remote_ip}}, class: 'btn btn-primary w-100 mt-2',form_class: 'd-flex flex-column', form: {id: "cash-method-button-debit_card"},  data: { disable_with: I18n.t('disbursement.processing') }, remote: true do %>
+			<span class="far fa-credit-card"></span><span class="ml-3"><%= I18n.t('billing_document.debit_card') %></span>
+		<% end %>
+	<% end %>
+
+	<% if billing_document.fund.payment_origination.credit_card %>
+		<%= button_to mercado_pago_transaction_mercado_pago_transactions_path, params: {paymentinfo: {billing_document_id: billing_document.id ,value: billing_document.pending_value,payment_method: 'credit_card',ip_address: request.remote_ip}}, class: 'btn btn-primary w-100 mt-2',form_class: 'd-flex flex-column', form: {id: "cash-method-button-credit_card"},  data: { disable_with: I18n.t('disbursement.processing') }, remote: true do %>
+			<span class="fas fa-credit-card"></span><span class="ml-3"><%= I18n.t('billing_document.credit_card') %></span>
+		<% end %>
+	<% end %>
+<% end %>
+
+<% if billing_document.fund.payment_origination.cash %>
+	<%= button_to mercado_pago_transaction_mercado_pago_transactions_path, params: {paymentinfo: {billing_document_id: billing_document.id ,value: billing_document.pending_value,payment_method: cash_by_currency(billing_document),ip_address: request.remote_ip}}, class: 'btn btn-primary btn-lg w-100 mt-2',form_class: 'd-flex flex-column', form: {id: "cash-method-button-mercadopago"},  data: { disable_with: I18n.t('disbursement.processing') }, remote: true do %>
+		<span class="fas fa-money-bill-wave-alt"></span><span class="ml-3"><%= I18n.t('billing_document.payment_in_cash') %></span>
+	<% end %>
+<% end %>
+
+<% if billing_document.fund.payment_origination.manual_payment %>
+	<%= render partial: 'payment_gateways/manual_payment', locals: { billing_document: billing_document }%>
+<% end %>

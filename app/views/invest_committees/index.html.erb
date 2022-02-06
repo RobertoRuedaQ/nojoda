@@ -1,0 +1,4 @@
+
+
+
+<%= createTable(@invest_committee,current_user.template('InvestCommittee','invest_committees',current_user,id: true).except(:notes)).html_safe %>

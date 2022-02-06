@@ -1,0 +1,17 @@
+
+<div class="card" id='investment-application-<%= application.id %>'>
+  <div class="card-body bg-light">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="d-flex justify-content-around py-4">
+          <div class="btn-group ">
+            <%= button_to I18n.t('general.approve'), approve_invest_committee_path(@invest_committee),remote: true,params: {funding_option_id: application.selected_funding_option.id,user_id: current_user.id}, class: 'btn btn-success mx-3', data: { disable_with: I18n.t('form.please_wait')} %>
+            <%= button_to I18n.t('general.reject'), reject_invest_committee_path(@invest_committee),remote: true,params: {funding_option_id: application.selected_funding_option.id,user_id: current_user.id}, class: 'btn btn-danger mx-3', data: { disable_with: I18n.t('form.please_wait')} %>
+          </div>
+        </div>
+      </div>
+      <%= render '/applicants/partial/funding_option_card', funding_option: application.selected_funding_option %>
+    </div>
+
+  </div>
+</div>

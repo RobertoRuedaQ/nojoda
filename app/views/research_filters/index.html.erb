@@ -1,0 +1,8 @@
+
+<% filter_template = {} %>
+<% filter_template[:id] = {} %>
+<% filter_template[:variable_name] = {} %>
+<% filter_template[:filter_name] = {} %>
+<% filter_template = filter_template.merge(current_user.template('ResearchFilter','research_filters',current_user,id: true)) %>
+
+<%= createTable(@research_filter,filter_template).html_safe %>

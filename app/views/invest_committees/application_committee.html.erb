@@ -1,0 +1,26 @@
+<%= render 'invest_committees/partial/tabs' %>
+<br>
+<% @users_to_review.each do |user| %>
+  <div class="card" id="application_card_<%= user.id %>">
+    <div class="card-header py-0" id="application_header_<%= user.id %>">
+      <div class="d-flex align-items-center">
+        <div class="lnr lnr-user display-4 text-success"></div>
+        <div class="flex-grow-1 ml-3">
+          <% current_application_for_committee = user.current_application_for_committee %>
+          <div class="text-primary text-large"><%= current_application_for_committee.funding_opportunity.name %></div>
+          <div class="text-large"><%= user.name %></div>
+          <div class="text-large"><%= user.id %></div>
+        </div>
+        <div class="px-4">
+            <!-- incluir validacion que no se ha resuelto aun -->
+            <% user_questionnaire = user.user_questionnaire_committee_pending %>
+            <% if user_questionnaire.present? && user_questionnaire.questionnaire_exception.nil? %>
+              <%= link_to I18n.t('application.evaluate'), start_test_user_questionnaire_path(user_questionnaire), class: 'btn btn-md btn-primary', target: '_blank'%>
+            <% else %>
+              <%= user_questionnaire.final_result %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

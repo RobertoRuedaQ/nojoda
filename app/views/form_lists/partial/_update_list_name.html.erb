@@ -1,0 +1,3 @@
+<% if !@form_list.nil? && !@form_list.translation_instance(language).nil? %>
+	<%= build_form(@form_list.translation_instance(language),'update',current_user.template('FormLabel','form_labels',current_user),html: { class: 'form-group', method: 'put'},controller: 'form_labels' ,remote: true, destroy: false, header: false) %>
+<% end %>

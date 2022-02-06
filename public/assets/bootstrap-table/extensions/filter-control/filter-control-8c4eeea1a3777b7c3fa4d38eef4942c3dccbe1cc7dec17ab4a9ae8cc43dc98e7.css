@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/**
+ * @author: Dennis Hernández
+ * @webSite: http://djhvscf.github.io/Blog
+ * @version: v2.1.1
+ */
+/* line 7, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/bootstrap-table/src/extensions/filter-control/bootstrap-table-filter-control.css */
+.no-filter-control {
+  height: 34px;
+}
+
+/* line 11, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/bootstrap-table/src/extensions/filter-control/bootstrap-table-filter-control.css */
+.filter-control {
+  margin: 0 2px 2px 2px;
+}

@@ -1,0 +1,7 @@
+
+$('#edit_debt_modal').remove()
+$('#debt-container').append("<%= j render '/student_debts/params/edit_modal', debt: @student_debt, application: @application, section: @section, hidden_fields: @hidden_fields %>")
+
+restore_lumni_js()
+
+$('#edit_debt_modal').modal('show')

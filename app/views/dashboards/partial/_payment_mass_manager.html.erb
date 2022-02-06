@@ -1,0 +1,37 @@
+
+<%= form_tag edit_dashboard_path(params[:id]),method: :get do %>
+
+
+<div class="row">
+	<div class="col-md-3 my-2">
+		<label class="form-label">Fecha Desde</label>
+		<%= lumni_text_field('payment_mass_detail','start_date',{type: 'text',class: 'lumni_date',value: @start_date}) %>
+	</div>
+	<div class="col-md-3 my-2">
+		<label class="form-label">Fecha Hasta</label>
+		<%= lumni_text_field('payment_mass_detail','end_date',{type: 'text',class: 'lumni_date',value: @end_date}) %>
+	</div>
+	<div class="col-md-3 my-2">
+		<label class="form-label">Estado Registro</label>
+		<%= lumni_dropdown_field( 'payment_mass_detail','status',{type: 'multiple_dropdown',list: FormList.find(393).get_list( current_user, current_company),value: @status}) %>
+	</div>
+	<div class="col-md-3 my-2 d-flex">
+		<%= button_tag 'Buscar', class: 'btn btn-primary align-self-end' %>
+	</div>
+</div>
+<% end %>
+
+
+
+<% payment_mass_template = current_user.template('PaymentMassDetail','payment_mass_details',current_user,id: true) %>
+<% payment_mass_template[:id][:controller] = 'payment_mass_details' %>
+<% payment_mass_template[:id][:action] = 'edit' %>
+<% payment_mass_template[:id][:target_id] = 'id' %>
+<% payment_mass_template[:names_matches] = {} %>
+<% payment_mass_template[:funds_matches] = {} %>
+
+<% payment_mass_template = payment_mass_template.except(:payment_support) %>
+
+<% payment_mass_template = payment_mass_template.except(:payment_mass_id,:payment_id,:billing_document_id) %>
+
+<%= createTable(@payment_mass_detail,payment_mass_template, title: false, new: false).html_safe %>

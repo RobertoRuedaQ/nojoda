@@ -1,0 +1,70 @@
+<% form_key = SecureRandom.hex %>
+<%cached_form_template = section.cached_form_template%>
+<% if defined?(target_template).nil? %>
+	<% target_template = [cached_form_template.template_hash( current_user, current_company)] %>
+	<% if  !cached_form_template.child_id.nil? && !cached_form_template.child_foreign_key.nil? && cached_form_template.child_foreign_key != '' %>
+		<% temp_template = cached_form_template.child.template_hash( current_user, current_company) %>
+		<% child = eval("target_info.#{cached_form_template.child.object.underscore}") %>
+		<% temp_template.keys.each do |k| %>
+			<% if !child.nil? %>
+				<% temp_template[k][:value] = child[k] %>
+			<% else %>
+				<% temp_template[k][:value] = nil %>
+			<% end %>
+		<% end %>
+		<% target_template += [temp_template] %>
+	<% end %>
+<% end %>
+
+
+<% save_validation = true %>
+<% if !defined?(save).nil? %>
+	<% save_validation = save %>
+<% end %>
+
+<% target_action = 'storing_application_info' %>
+<% if !defined?(action).nil? %>
+	<% target_action = action %>
+<% end %>
+
+<% target_remote = true %>
+<% if !defined?(remote).nil? %>
+	<% target_remote = remote %>
+<% end %>
+
+<% t_controller = 'applications' %>
+<% if !defined?(target_controller).nil? %>
+	<% t_controller = target_controller %>
+<% end %>
+
+
+<% if defined?(additional_form_title).nil? && defined?(additional_form_render).nil? && defined?(additional_form_info).nil?%>
+	<%  additional_form_title = nil %>
+	<% additional_form_render = nil %>
+	<% additional_form_info = nil %>
+<% end %>
+
+<% action_method = nil unless defined?(action_method) %>
+
+<!-- Define locked -->
+<% locked_validation = (application.status != 'active' || params[:controller] == 'user_questionnaires') %>
+<% if target_info.class.name == 'IncomeInformation' %>
+	<div class="container" style="font-size: smaller; margin:10 0">
+		<p style=style="font-wight:200;">Si tienes dudas sobre las opciones consulta con tu Student Manager</p>
+	</div>
+	<% target_template = income_information_template(target_template, target_info) %>
+<% end %>
+
+<% if student_academic_information_case(cached_form_template,application) %>
+	<%= build_form(target_info,target_action,student_academic_information_template(target_template, target_info),controller: t_controller,html: { class: 'form-group', method: (action_method.nil? ? 'post' : action_method),id: "application_section-#{form_key}"}, header: false, destroy: false, remote: target_remote, hidden_fields: hidden_fields, htmlCard: 'shadow',locked: locked_validation, save: application.status == 'active', save: save_validation,  additional_form_render: additional_form_render, additional_form_info: additional_form_info, custom_id: application.id)%>
+<%elsif student_academic_information_origination_case(cached_form_template,application)%>
+	<%= build_form(target_info,target_action,origination_academic_information_template(target_template, target_info),controller: t_controller,html: { class: 'form-group', method: (action_method.nil? ? 'post' : action_method),id: "application_section-#{form_key}"}, header: false, destroy: false, remote: target_remote, hidden_fields: hidden_fields, htmlCard: 'shadow',locked: locked_validation, save: application.status == 'active', save: save_validation,  additional_form_render: additional_form_render, additional_form_info: additional_form_info, custom_id: application.id)%>
+<% elsif disbursement_request_case(cached_form_template)%>
+	<%= build_form(target_info,target_action,disbursement_request_template(target_template, target_info),controller: t_controller,html: { class: 'form-group', method: (action_method.nil? ? 'post' : action_method),id: "application_section-#{form_key}"}, header: false, destroy: false, remote: target_remote, hidden_fields: hidden_fields, htmlCard: 'shadow',locked: locked_validation, save: application.status == 'active', save: save_validation,  additional_form_render: additional_form_render, additional_form_info: additional_form_info, custom_id: application.id)%>
+<% elsif chilenian_income_information?(cached_form_template) %>
+	<%= build_form(target_info,target_action,chile_income_template(target_template),controller: t_controller,html: { class: 'form-group', method: (action_method.nil? ? 'post' : action_method),id: "application_section-#{form_key}"}, header: false, destroy: false, remote: target_remote, hidden_fields: hidden_fields, htmlCard: 'shadow',locked: locked_validation, save: application.status == 'active', save: save_validation,  additional_form_render: additional_form_render, additional_form_info: additional_form_info, custom_id: application.id)%>
+<% elsif university_grades_form?(cached_form_template) %>
+	<%= build_form(target_info,target_action,university_grades_template(target_template, target_info),controller: t_controller,html: { class: 'form-group', method: (action_method.nil? ? 'post' : action_method),id: "application_section-#{form_key}"}, header: false, destroy: false, remote: target_remote, hidden_fields: hidden_fields, htmlCard: 'shadow',locked: locked_validation, save: application.status == 'active', save: save_validation,  additional_form_render: additional_form_render, additional_form_info: additional_form_info, custom_id: application.id)%>
+<% else %>
+  <%= build_form(target_info,target_action,target_template,controller: t_controller,html: { class: 'form-group', method: (action_method.nil? ? 'post' : action_method),id: "application_section-#{form_key}"}, header: false, destroy: false, remote: target_remote, hidden_fields: hidden_fields, htmlCard: 'shadow',locked: locked_validation, save: application.status == 'active', save: save_validation,  additional_form_render: additional_form_render, additional_form_info: additional_form_info, custom_id: application.id)%>
+<% end %>

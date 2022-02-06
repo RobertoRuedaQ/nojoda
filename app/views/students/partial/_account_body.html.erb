@@ -1,0 +1,26 @@
+<div class="nav-tabs-left px-2 pt-4 mb-4">
+
+  <ul class="nav nav-tabs ">
+    <% labels.each_with_index do |label,index| %>
+      <li class="nav-item" style="min-width: 12rem">
+        <a class="nav-link <%= 'active' if index == 0 %> p-0" data-toggle="tab" href="#<%= related_models [index]%>-tab" parent-tab="<%= options[:parent_tab_id] %>">
+          <div class="text-info p-2 m-0"><span class="<%= icon_array[index]%> mr-2"></span><%= label %></div>
+          </a>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="tab-content">
+    <% objects.each_with_index do |object, index| %>
+      <% if !object.nil? %>
+        <div class="tab-pane fade show <%= 'active' if index == 0 %>" id="<%= related_models [index]%>-tab">
+          <div class="card-body p-0">
+            <% current_hash[:object] = object %>
+            <% current_hash[:index] = index %>
+            <%= render target_render[index],current_hash %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

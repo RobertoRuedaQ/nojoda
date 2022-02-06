@@ -1,0 +1,54 @@
+
+
+<%= form_title(@migration, 'name') %> 
+
+
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#migration_tab"><%= Migration.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#backup_tab"><%= MigrationsBackup.model_name.human(count: 1) %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="migration_tab">
+
+		<%= build_form(@migration,'update',current_user.template('Migration','migrations',current_user),html: { class: 'form-group', method: 'put'}) %>
+		<div class="accordion" id="fields-accourdion">
+			<% @migration.migration_field.to_a.each do |field| %>
+			  <div class="card">
+			    <div class="card-header" id="model-field-<%= field.id %>" data-toggle="collapse" data-target="#collapse-<%= field.id %>" aria-expanded="true" aria-controls="collapse-<%= field.id %>">
+			    	<h5><span class="text-primary"><%= field.id %>. <%= field.model_field %></span>  = {type_of_field: <span class="text-success"> <%= field.type_of_field %></span>, sf_field: <span class="text-success"><%= field.sf_field %></span>, object_reference: <span class="text-success"><%= field.object_reference %></span>, function_text: <span class="text-success"><%= field.function_text %></span>, fixed_value: <span class="text-success"><%= field.fixed_value %></span>}</h5>
+			    </div>
+			    <div id="collapse-<%= field.id %>" class="collapse" aria-labelledby="model-field-<%= field.id %>" data-parent="#fields-accourdion">
+			      <div class="card-body">
+							<%= build_form(field,'update',migration_field_fields( @migration.sf_object),html: { class: 'form-group', method: 'put'}, remote: true, controller: 'migration_fields',destroy: false) %>
+			      </div>
+			    </div>
+			  </div>
+			<% end %>
+		</div>
+
+    </div>
+    <div class="tab-pane fade " id="backup_tab">
+		<div class="card">
+			<dir class="card-body">
+				<%= createBasicTable(['Created At', 'Created By'],migration_backup_rows(@migration.id)) %>
+			</dir>
+		</div>    	
+    </div>
+
+    <div id="backup-container" class="lumni-scroll"></div>
+
+
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+
+
+<%= form_title(@check_object,I18n.t('mains.new')) %>
+<%= build_form(@check_object,'create',current_user.template('CheckObject','check_objects',current_user),html: { class: 'form-group'}) %>

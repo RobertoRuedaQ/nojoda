@@ -1,0 +1,117 @@
+<% text_adjusted = adjust_legal_language( current_user, legal_document.body, application: current_user.ongoing_application ).to_s %>
+<% if promissory_note_legal_document.present? %>
+	<% text_adjusted_promissory_note = adjust_legal_language( current_user, promissory_note_legal_document.body, application: current_user.ongoing_application ).to_s %>
+<% end %>
+
+<%= form_for legal_match do |f|%>
+	<% if text_adjusted_promissory_note.nil? %>
+		<div class="d-flex">
+			<h4><%= legal_document.name %></h4>
+		</div>
+		<div class="text-right pr-2"><%= link_to(I18n.t('general.pdf_version'), preview_legal_match_path(legal_document) , class: 'btn btn-outline-primary btn-sm', target: :blank) %></div>
+		<div class="lumni-scroll my-4 card" style="height: 20rem" id="legal-document-<%= legal_document.id %>">
+			<div class="card-body">
+				<%= text_adjusted.html_safe %>	
+			</div>
+			
+		</div>
+	<% else %>
+		<div id='acordion'>
+			<div class="card">
+				<div class="d-flex flex-column" id="contract-tab">
+					<%= button_tag 'Revisar contrato', class: 'btn btn-primary', type: 'button', data: {toggle: 'collapse',target: "#contract-information"},aria: {expanded: true, controls: 'request-diploma-delivery'}%>
+				</div>
+
+				<div id="contract-information" class="collapse" data-parent="#acordion-decision-quesitonnaire">
+				<br>
+					<div class="text-right pr-2"><%= link_to(I18n.t('general.pdf_version'), preview_legal_match_path(legal_document) , class: 'btn btn-outline-primary btn-sm', target: :blank) %></div>
+					<div class="card-body">				
+						<%= text_adjusted.html_safe %>
+					</div>
+				</div>
+			</div>
+
+			<br>
+			<div class="card">
+				<div class="d-flex flex-column" id="promissory-tab">
+					<%= button_tag 'Revisar pagaré', class: 'btn btn-primary', type: 'button', data: {toggle: 'collapse',target: "#promissory-information"},aria: {expanded: true, controls: 'request-diploma-delivery'}%>
+				</div>
+				<div id="promissory-information" class="collapse" data-parent="#acordion-decision-quesitonnaire">
+					<br>
+					<div class="text-right pr-2"><%= link_to(I18n.t('general.pdf_version'), preview_legal_match_path(promissory_note_legal_document) , class: 'btn btn-outline-primary btn-sm', target: :blank) %></div>
+					<div class="card-body">				
+						<%= text_adjusted_promissory_note.html_safe %>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% end %>
+	<br>
+	<div class="form-group" >
+		<% if @options[:validation] != false %>
+		<%= lumni_boolean_field 'legalmatch','answer',{boolean_text: legal_document.validation, required: @options[:required], disabled: options[:disabled], value: options[:value]}%>
+		<% else %>
+			<% hidden_field 'legalmatch','answer',value: false %>
+		<% end %>
+
+		<% if @options[:required] %>
+			<span><small class="text-danger">*</small></span>
+		<% end %>
+		<% if !options[:hidden_fields].nil? %>
+			<% options[:hidden_fields].each do |key,field| %>
+				<%= hidden_field field[:model],field[:field],value: field[:value] %>
+			<% end %>
+		<% end %>
+		<%= hidden_field 'legalmatch','user_id', value: current_user.id %>
+		<%= hidden_field 'legalmatch','validation_method', value: legal_document.validation_method%>
+		<%= hidden_field 'legalmatch','validation', value: legal_document.validation %>
+		<%= hidden_field 'legalmatch','body', value: text_adjusted %>
+		<%= hidden_field 'legalmatch','legal_document_id', value: legal_document.id %>
+		<%= hidden_field 'legalmatch','signer_ip', value: request.remote_ip %>
+		<%= hidden_field 'legalmatch','promissory_note_body', value: text_adjusted_promissory_note %>
+		<% if promissory_note_legal_document.present? %>
+			<%= hidden_field 'legalmatch','promissory_note_legal_document_id', value: promissory_note_legal_document.id %>
+		<% end %>
+		<% case  legal_document.validation_method %>
+		<% when 'signature','optional_agree', 'mandatory_agree','identity_number'%>
+			<%= hidden_field 'legalmatch','status', value: 'active' %>
+		<% when 'physical_support','scanned_support' %>
+			<%= hidden_field 'legalmatch','status', value: 'downloaded' %>
+		<% end %>
+
+		<% if ['identity_number','signature'].include?(legal_document.validation_method) %>
+			<% case  legal_document.validation_method %>
+			<% when 'identity_number' %>
+				<% lumni_validation = current_user.personal_information.identification_number %>
+			<% when  'signature' %>
+				<% lumni_validation = current_user.name %>
+			<% end %>
+			<div class="my-4">
+				<label class="form-label">Escribe tu nombre para firmar digitalmente el documento</label>
+				<%= (lumni_text_field 'legalmatch','identity_check_text',lumni_validation: lumni_validation) %>
+			</div>
+		<% end %>
+
+	</div>
+	<% if !options[:disabled] %>
+		<div class="text-center button-group">
+			<% case legal_document.validation_method %>
+			<% when 'physical_support','scanned_support' %>
+				<button type="submit" class="btn btn-primary" legal-document-download="<%= 	preview_legal_match_path(@legal_document)%>" ><%= I18n.t('general.send_and_continue')%></button>
+			<% else %>
+				<button type="submit" class="btn btn-primary" ><%=@options[:validation] != false ? I18n.t('general.save') : I18n.t('general.continue')%></button>
+			<% end %>
+
+
+		</div>
+	<% else %>
+		<% case legal_document.validation_method %>
+		<% when 'physical_support','scanned_support' %>
+			<div class="text-center button-group">
+				<%= link_to I18n.t('general.download'), preview_legal_match_path(@legal_document), class: 'btn btn-primary', target: :blank %>
+			</div>
+		<% end %>
+	<% end %>
+
+
+<% end %>

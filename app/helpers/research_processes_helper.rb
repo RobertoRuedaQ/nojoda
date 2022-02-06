@@ -1,0 +1,2 @@
+module ResearchProcessesHelper
+end

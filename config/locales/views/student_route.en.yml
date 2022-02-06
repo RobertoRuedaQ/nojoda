@@ -1,0 +1,9 @@
+en:
+  student_route:
+    create_account: 'After Create Account'
+    confirm_email: 'After Confirm Email'
+    apply: 'After Apply'
+    contract_activation: 'After Activates The First Contract'
+    student_activation: 'After Receives The First Disbursement'
+    start_payments: 'When Repayment Period Starts'
+    end_payments: 'At The End Of All Payments'

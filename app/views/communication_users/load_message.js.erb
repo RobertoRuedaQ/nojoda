@@ -1,0 +1,3 @@
+$('#message-loader').attr('hidden',true)
+$('#message-modal-header').html("<%= j loadUserMessageHeader params[:id] %>")
+$('#message-modal-body').html("<%= j loadUserMessageBody params[:id] %>")

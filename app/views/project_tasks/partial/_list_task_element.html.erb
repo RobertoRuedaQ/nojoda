@@ -1,0 +1,6 @@
+<tr id="project-list-element-<%= task.id %>" class="bg-<%= task.project_card.title %>">
+	<td class="bg-light lumni-handle text-white text-center p-2" style="width: 15px">::</td>
+	<% columns_at_project_list.each do |column| %>
+		<td class="p-0" ><%= create_project_list_element_view task, column %></td>
+	<% end %>
+</tr>

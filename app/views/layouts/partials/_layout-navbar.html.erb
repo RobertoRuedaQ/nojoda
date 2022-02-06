@@ -1,0 +1,161 @@
+<!-- Layout navbar -->
+<nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-white container-p-x" id="layout-navbar">
+
+  <a class="logo pull-left py-0 mr-4" href="<%= root_path %>">
+    <div class="py-3">
+      <img src="<%= asset_path("lumni_logo.png") %>" alt="" height="20"/>
+      <% if current_company.id == 18 %>
+        <img src="https://lumni-public.s3-us-west-2.amazonaws.com/images_for_platform/terpel/logo_1.png" alt="" height="28" style="margin-left: 20px;"/>
+      <% end %>
+      <% if current_company.id == 56 %>
+        <img src="https://lumni-public.s3-us-west-2.amazonaws.com/images_for_platform/siestudio/logo.png" alt="" height="26" style="margin-left: 20px;"/>
+      <% end %>
+    </div>
+  </a>
+
+  <% if local_assigns[:hide_toggle] != true%>
+    <div class="layout-sidenav-toggle navbar-nav d-lg-none align-items-lg-center mr-auto">
+      <a class="nav-item nav-link px-0 mr-lg-4" href="javascript:void(0)">
+        <i class="ion ion-md-menu text-large align-middle"></i>
+      </a>
+    </div>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#layout-navbar-collapse">
+
+    <span class="navbar-toggler-icon"></span>
+
+
+
+  </button>
+
+
+  <% if user_signed_in? %>
+
+
+    <div class="navbar-collapse collapse" id="layout-navbar-collapse">
+      <!-- Divider -->
+      <hr class="d-lg-none w-100 my-2">
+      <% if !current_user.student? %>
+        <div class="navbar-nav align-items-lg-center">
+          <!-- Search -->
+          <label class="nav-item navbar-text navbar-search-box p-0 active">
+            <i class="ion ion-ios-search navbar-icon align-middle"></i>
+            <span class="navbar-search-input pl-2">
+
+              <%= form_for searchers_path, url: searchers_path, method: 'GET', target: :blank do %>
+                <%= text_field 'q', 'full_text_search', class: "form-control navbar-text mx-2", placeholder: t('general.search'), style: "width:200px", value: (params[:q] ? params[:q][:full_text_search] : '' ) %>
+              <% end %>
+
+            </span>
+          </label>
+        </div>
+      <% end %>
+
+      <div class="navbar-nav align-items-lg-center">
+
+
+      </div>
+
+      <div class="navbar-nav align-items-lg-center ml-auto">
+
+
+      <div class="lumni-navbar-notifications nav-item dropdown mr-lg-3">
+
+        <a class="nav-link dropdown-toggle hide-arrow" href="#" data-toggle="dropdown">
+          <span class="text-warning" style="font-size: 15px"><i class="ion ion-md-notifications navbar-icon align-middle"></i></span>
+            <%= render 'notification_cases/partial/badge_count' %>
+          <span class="d-lg-none align-middle">&nbsp; <%= I18n.t('mains.notifications') %></span>
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-right">
+
+          <%= render 'notification_cases/partial/notification_count' %>
+          <% current_user.cached_pending_notifications.each do |notification|%>
+            <div class="list-group list-group-flush" id='notification-<%= notification.id %>'>
+                <%= eval("#{NotificationCase.cached_find(notification.notification_case_id).functionality}(notification)") %>
+            </div>
+          <% end %>
+
+          <%= link_to I18n.t('mains.notifications_show_all'), notifications_path,class: 'text-primary d-block text-center text-light small p-2 my-1' %>
+        </div>
+      </div>
+
+
+
+        <!-- Divider -->
+        <div class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1">|</div>
+
+        <div class="lumni-navbar-user nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+
+
+
+            <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
+              <div id="avatar">
+                <%= loadingAvatar(30,id: current_user.id) %>
+              </div>
+
+              <span class="px-1 mr-lg-2 ml-2 ml-lg-0"><%= user_name %></span>
+
+            </span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <%= link_to ('<i class="ion ion-ios-person text-lightest"></i> &nbsp;' + I18n.t('mains.my_profile') ).html_safe, edit_profile_path(current_user), :class => "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to ('<i class="ion ion-ios-log-out text-danger"></i> &nbsp;' + I18n.t('mains.sign_out')).html_safe, destroy_user_session_path, :method => :delete , :class => "dropdown-item" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="navbar-collapse collapse" id="layout-navbar-collapse">
+      <div class="navbar-nav align-items-lg-center ml-auto">
+        <div class="nav-item py-2 py-lg-0 ml-lg-2 dropdown" style="font-size: 1.5rem">
+
+
+
+
+
+
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+            <i class="ion ion-ios-globe"></i>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right text-secondary">
+            <%= link_to ('<i class="ion ion-md-arrow-dropright"></i> &nbsp; ' + I18n.t('list.en')).html_safe, home_path(id: 'en', path: request.url),'data-turbolinks'.to_sym => 'false', :method => :put , :class => "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to ('<i class="ion ion-md-arrow-dropright"></i> &nbsp; ' + I18n.t('list.es')).html_safe, home_path(id: 'es', path: request.url), 'data-turbolinks'.to_sym => 'false', :method => :put , :class => "dropdown-item" %>
+          </div>
+
+
+
+
+
+
+        </div>
+          <% if current_subdomain != 'www.lumniportal.net' %>
+           
+            <div class="nav-item py-2 py-lg-0 ml-lg-4">
+              <%= link_to I18n.t('devise.shared.links.sign_in'), new_user_session_path , :class => "btn btn-default btn-round" %>
+            </div>
+             <% if current_company.id == 56 %>
+              <div class="nav-item py-2 py-lg-0 ml-lg-2">
+                <%= link_to I18n.t('home.apply_now'), new_user_registration_path , :class => "btn btn-primary btn-round" %>
+              </div>
+            <% else %>
+              <div class="nav-item py-2 py-lg-0 ml-lg-2">
+                <%= link_to I18n.t('devise.shared.links.sign_up'), new_user_registration_path , :class => "btn btn-primary btn-round" unless current_company.restricted? %>
+              </div>
+            <% end %>
+          <% end %>
+
+
+      </div>
+    </div>
+
+  <% end %>
+</nav>
+<!-- / Layout navbar -->
+
+

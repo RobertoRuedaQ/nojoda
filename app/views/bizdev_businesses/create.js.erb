@@ -1,0 +1,8 @@
+$('#business-container').append('<%= j create_business_editor @bizdev_business.id %>')
+$('#new_business_collapsed').collapse('hide')
+
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+setGlobalSwitches()
+validate_numeric_fields()
+activateDatepickers()

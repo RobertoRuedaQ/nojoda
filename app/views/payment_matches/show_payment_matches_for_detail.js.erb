@@ -1,0 +1,3 @@
+$('#payment_match_detail_modal_container').html("<%= j render partial: 'isas/partial/payment_match_detail', locals: { payment_matches: @payment_matches, detail: @detail}%>")
+$('#payment_match_detail_modal').modal('show')
+restore_lumni_js()

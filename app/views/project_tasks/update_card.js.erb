@@ -1,0 +1,8 @@
+<% if @task.done %>
+$('#project-list-element-<%= @task.id %>').replaceWith("")
+<% else %>
+$('#project-list-element-<%= @task.id %>').replaceWith("<%= j render 'project_tasks/partial/list_task_element', task: @task %>")
+<% end %>
+restore_lumni_js()
+setProjectListBehavior()
+

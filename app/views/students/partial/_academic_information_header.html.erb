@@ -1,0 +1,10 @@
+<div class="d-inline-flex">
+
+	<h5 class="text-primary mx-2 my-0">
+		<%= academic.institution.nil? ? I18n.t("academic.#{academic.information_case}") : academic.institution.name %>
+	</h5>
+	<h5 class="text-secondary mx-1 my-0">
+		<%= academic.major.nil? ? '' : "(#{academic.major.name})" %>
+	</h5>
+
+</div>

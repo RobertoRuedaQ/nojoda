@@ -1,0 +1,12 @@
+
+<% @form_template.fields_by_row(@row).each_with_index do |field,index| %>
+	<div class="col-md-<%=@row == 0 ? '12' : field.grid %>" data-id="field-container-<%= field.id %>" id="field-container-<%= field.id %>" restore-class="col-md-<%= field.grid %>">
+		<div class="card">
+			<div class="card-body pt-1 pb-0">
+				<% @field_attributes.values.map{|v| v[:grid] = 12}%>
+				<%= fieldGroup(eval(@form_template.object).new(),[field.name.to_sym],@field_attributes, template_field: field.id) %>
+			</div>
+		</div>
+	</div>
+
+<% end %>

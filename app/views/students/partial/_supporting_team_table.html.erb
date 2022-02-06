@@ -1,0 +1,12 @@
+<div class="row mb-5">
+  <div class="col">
+    <div class="pull-right">
+      <%= link_to_new_team_supervisor %>
+    </div>
+  </div>
+</div>
+
+
+<%= createBasicTable @header,@rows, id: 'supporting-team-table' %>
+
+<%= render partial: 'team_supervisors/partials/new_modal'%>

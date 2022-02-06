@@ -1,0 +1,56 @@
+
+<div class="d-flex justify-content-between">
+	<%= form_title(@user,'name') %>
+
+
+	<div class=" text-center mb-3">
+		<%= loadingAvatar(70) %>
+    <% if current_user.super_user? %>
+      <%= button_to I18n.t('general.simulate'),simulate_team_path(@user,simulate: 'simulate'),class: 'btn btn-primary btn-sm mt-2' %>
+    <% end %>
+	</div>
+</div>
+
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#user-edit-account"><%= I18n.t('form.account') %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#user-edit-info"><%= ContactInfo.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#user-team"><%= TeamSupervisor.model_name.human(count: 1) %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="user-edit-account">
+      <%= build_form(@user,'update',teams_fields,html: { class: 'form-group', method: 'put'},htmlCard: 'border-off',columns: 4, header_title: false)%>
+    </div>
+    <div class="tab-pane fade " id="user-edit-info">
+      <%= build_form(@user.contact_info,'update',current_user.template('ContactInfo','contact_infos',current_user),html:{ class: 'form-group ', method: 'put'},htmlCard: 'border-off',columns: 3, header_title: false)%>
+    </div>
+
+    <div class="tab-pane fade " id="user-team">
+
+      <div class="card">
+        <div class="card-body">
+
+
+
+          <%= lumni_dropdown_field( 'teams','supervisors',{type: 'multiple_dropdown', list: teamMembersList(current_company),html_class: ' team-supervisor-dropdown',value: @user.supervising.map{|s| s.team_member_id}}) %>
+          <%= lumni_text_field( 'hidden_teams','previous',{hidden: true}) %>
+
+
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+</div>
+

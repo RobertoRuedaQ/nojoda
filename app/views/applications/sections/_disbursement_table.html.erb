@@ -1,0 +1,24 @@
+<% if defined?(funding_option_application_case).nil? %>
+  <% funding_option_application_case = false %>
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <% target_columns =  disbursement_target_columns(disbursement_hash, current_user, disbursement_case, funding_option_application_case, funding_option) %>
+      <% target_columns.each do |key| %>
+        <th><%= I18n.t("general.#{key}") %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% disbursement_hash.each_with_index do |disbursement,index| %>
+      <tr class="<%= 'text-danger' if disbursement[:status] == 'canceled'%>">
+        <% target_columns.each do |key| %>
+          <td><%= lumni_disbursement_table_translator disbursement, key %></td>
+          <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

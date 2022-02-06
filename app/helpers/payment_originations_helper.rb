@@ -1,0 +1,2 @@
+module PaymentOriginationsHelper
+end

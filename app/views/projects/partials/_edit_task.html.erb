@@ -1,0 +1,15 @@
+<h4 class="media  font-weight-bold py-3 mb-1">
+  <div class="media-body ml-3">
+  	<span class="text-muted font-weight-light">(<%= @task.project_card.id %>) <%= @task.project_card.title %> /</span> <%= @task.target_title current_user.language %>
+  </div>
+
+</h4>
+
+<h4>
+	<div class="text-muted text-tiny mt-0 ml-3 mb-4"><small class="font-weight-normal"><%= @task.class.human_attribute_name('created_at') %> <%= lumni_date(@task.created_at) %></small><br><small class="font-weight-normal"><%= @task.class.human_attribute_name('updated_at') %> <%= lumni_date(@task.updated_at) %></small><br><small class="font-weight-normal"><%= @task.class.human_attribute_name('created_by_id') %> <%= @task.created_by.name %></small>
+	</div>
+</h4>
+
+
+<%= build_form(@task,'update',current_user.template('ProjectTask','project_tasks',current_user), html: { class: 'form-group'}, controller: 'project_tasks', button: false,destroy: false, remote: true, header:true, title: false,locked: @task.locked)%>
+</div>

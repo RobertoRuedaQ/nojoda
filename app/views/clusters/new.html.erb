@@ -1,0 +1,7 @@
+<%= form_title(@cluster,I18n.t('mains.new')) %>
+
+
+<% target_template = current_user.template('Cluster','clusters',current_user)%>
+<% target_template[:major_id] = {value: params[:major_id], label:params[:major_id]} %>
+
+<%= build_form(@cluster,'create',target_template,html: { class: 'form-group'})%>

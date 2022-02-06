@@ -1,0 +1,16 @@
+<% if current_company.id == 21 %>
+	<%= render "peru_annoucement" %>
+<%else %>
+	<div class="row">
+		<div class="col-md-12 mb-4">
+			<!-- New Agreements Section -->
+			<% if current_user.new_agreement? && current_user.new_agreement.show_financial_proposals%>
+				<%= render '/students/partial/new_agreement'%>
+			<%end %>
+
+
+			<%= render '/students/partial/funded_major', target_student: target_student%>
+		</div>
+	</div>
+<%end %>
+

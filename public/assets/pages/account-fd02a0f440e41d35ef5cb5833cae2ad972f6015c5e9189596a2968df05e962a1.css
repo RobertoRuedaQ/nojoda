@@ -1,0 +1,39 @@
+/* line 1, /Users/user/Documents/platform-4.0/vendor/assets/stylesheets/pages/account.scss */
+.account-settings-fileinput {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* line 9, /Users/user/Documents/platform-4.0/vendor/assets/stylesheets/pages/account.scss */
+.account-settings-links .list-group-item.active {
+  background: transparent !important;
+  font-weight: bold !important;
+}
+
+/* line 14, /Users/user/Documents/platform-4.0/vendor/assets/stylesheets/pages/account.scss */
+.account-settings-multiselect ~ .select2-container {
+  width: 100% !important;
+}
+
+/* line 21, /Users/user/Documents/platform-4.0/vendor/assets/stylesheets/pages/account.scss */
+.default-style .account-settings-links .list-group-item {
+  padding: 0.85rem 1.2rem;
+  border-color: rgba(24, 28, 33, 0.03) !important;
+}
+/* line 25, /Users/user/Documents/platform-4.0/vendor/assets/stylesheets/pages/account.scss */
+.default-style .account-settings-links .list-group-item.active {
+  color: #4E5155 !important;
+}
+
+/* line 34, /Users/user/Documents/platform-4.0/vendor/assets/stylesheets/pages/account.scss */
+.material-style .account-settings-links .list-group-item {
+  padding: 0.85rem 1.5rem;
+  border-color: rgba(24, 28, 33, 0.03) !important;
+}
+/* line 38, /Users/user/Documents/platform-4.0/vendor/assets/stylesheets/pages/account.scss */
+.material-style .account-settings-links .list-group-item.active {
+  color: #4E5155 !important;
+}

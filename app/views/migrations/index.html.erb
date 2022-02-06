@@ -1,0 +1,13 @@
+<%= createTable(@migration,migration_fields,rows_by_table: 100).html_safe %>
+
+<div class="text-center">
+	<%= button_to 'General Migration', general_migrations_migrations_path, class: 'btn btn-primary' %>
+</div>
+
+<div class="text-center my-4">
+	<%= process_migration_tracking_migration_path(1) %>
+</div>
+
+<div class="text-center my-4">
+	<%= button_to 'reset_job', reset_job_migrations_path, class: 'btn btn-primary' %>
+</div>

@@ -1,0 +1,9 @@
+/* line 1, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-table/src/extensions/group-by-v2/bootstrap-table-group-by.css */
+.bootstrap-table .table > tbody > tr.groupBy {
+  cursor: pointer;
+}
+
+/* line 9, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-table/src/extensions/group-by-v2/bootstrap-table-group-by.css */
+.bootstrap-table .table > tbody > tr.hidden + tr.detail-view {
+  display: none;
+}

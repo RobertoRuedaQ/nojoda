@@ -1,0 +1,5 @@
+    <% new_payment_info = PaymentInfo.new %>
+    <% new_payment_info.set_default_payer_info(current_user) %>
+
+
+    <%= build_form(new_payment_info,'create',payment_info_fields,html: { class: 'form-group'},destroy: false) %>

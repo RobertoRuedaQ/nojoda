@@ -1,0 +1,4 @@
+$('#disbrusement-payment-modal-body').html("<%= j render '/disbursement_payments/partial/update_body', disbursement_payment: @disbursement_payment,bank_account_type: params[:bank_account_type], target_user: @disbursement_payment.disbursement.approved_application.user %>")
+$('#edit-disbursement-payment-modal').modal('show')
+restore_lumni_js()
+$('[id^=disbursementpayment_payment_case_]').on('change',disbursement_payment_type_to_account(this))

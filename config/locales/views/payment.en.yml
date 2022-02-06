@@ -1,0 +1,10 @@
+en:
+  payment:
+    attributes:
+      payment_value: Payment value
+      applied_value: Applied value
+      date: Date
+      method: Payment method
+      resource_type: Resource type
+    ui_options:
+      see_payment: See payments

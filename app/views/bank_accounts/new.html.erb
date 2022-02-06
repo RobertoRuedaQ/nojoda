@@ -1,0 +1,5 @@
+
+
+<%= form_title(@bank_account,I18n.t('mains.new')) %>
+<% target_template = current_user.template('BankAccount','bank_accounts',current_user) %>
+<%= build_form(@bank_account,'create',target_template,html: { class: 'form-group'}) %>

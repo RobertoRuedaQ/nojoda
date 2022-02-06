@@ -1,0 +1,28 @@
+/* line 6, /Users/user/Documents/platform-4.0/vendor/assets/libs/flow-js/flow.scss */
+.flow-error {
+  display: none;
+}
+
+/* line 10, /Users/user/Documents/platform-4.0/vendor/assets/libs/flow-js/flow.scss */
+.flow-drop {
+  position: relative;
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 17, /Users/user/Documents/platform-4.0/vendor/assets/libs/flow-js/flow.scss */
+.flow-progress .progress-resume-link,
+.flow-progress .progress-pause-link {
+  display: none;
+}
+
+/* line 25, /Users/user/Documents/platform-4.0/vendor/assets/libs/flow-js/flow.scss */
+.default-style .flow-drop {
+  border: 3px dashed rgba(24, 28, 33, 0.06);
+}
+
+/* line 33, /Users/user/Documents/platform-4.0/vendor/assets/libs/flow-js/flow.scss */
+.material-style .flow-drop {
+  border: 3px dashed rgba(24, 28, 33, 0.06);
+}

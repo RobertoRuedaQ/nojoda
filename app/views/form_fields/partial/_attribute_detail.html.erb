@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-body my-0">
+    <div id="attribute_info_container_<%= @attribute.id %>">
+      
+			<p><strong><%= @attribute.name %>: </strong> <%= @attribute.value %> <span class="ml-3"><%= link_to(I18n.t('general.edit'), edit_form_attribute_path(@attribute) , remote: true, class: 'text-primary') %></span><span class="ml-3"><%= link_to(I18n.t('general.destroy'), form_attribute_path(@attribute.id) , remote: true,method: :delete, class: 'text-danger') %></span></p>
+			<div id="edit_form_attribute_<%= @attribute.id%>"></div>
+
+      
+    </div>
+  </div>
+</div>
+
+

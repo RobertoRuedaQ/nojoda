@@ -1,0 +1,17 @@
+
+
+<!-- Modal -->
+<div class="modal fade" id="edit_income_information" tabindex="-1" role="dialog" aria-labelledby="new_income_informationLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+	      <%= render '/applications/partial/general_form', target_info: income, section: section, application: application, hidden_fields: hidden_fields, action: 'update', action_method: 'put', remote: true, target_template: section.cached_form_template.template_hash( current_user, current_company),target_controller: 'income_informations' %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+
+
+<div id='file_field_container-<%= "#{config[:object].model_name.to_s.downcase}_#{target_field}_#{config[:object].id}" %>' >
+	<% if !config[:object].send(target_field).nil? && config[:object].send(target_field).attached? %>
+		<%= render '/forms/file_field/preview_file_field',target_model: target_model, target_field: target_field, options: options,config: config %>
+	<% else %>
+		<%= render '/forms/file_field/general_field',target_model: target_model, target_field: target_field, options: options, config: config %>
+	<% end %>
+</div>
+

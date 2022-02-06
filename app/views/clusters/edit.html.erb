@@ -1,0 +1,11 @@
+<%= form_title(@cluster, 'id') %>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Institución", edit_institution_path(id: @cluster.major.institution_id) %></li>
+    <li class="breadcrumb-item"><%= link_to "Programa", edit_major_path(id: @cluster.major_id) %></li>
+    <li class="breadcrumb-item active" aria-current="page">Cluster</li>
+  </ol>
+</nav>
+
+<%= build_form(@cluster,'update',current_user.template('Cluster','clusters',current_user),html: { class: 'form-group', method: 'put'})%>

@@ -1,0 +1,88 @@
+es:
+  students:
+    communications: 'Comunicaciones'
+    account_creation: 'Crear cuenta'
+    verification_process: 'Verificación'
+    eligibility_criteria: 'Elegibilidad'
+    apply: 'Postulación'
+    credit_check: 'Credito'
+    contract: 'Contrato'
+    finish: 'Finalizar'
+    additional_information: 'Información adicional'
+    information_review: 'Revisión información'
+    proposal_selection: 'Propuesta'
+    no_application: 'El estudiante no ha comenzado o completado su postulación.'
+    rate_cap: 'Tasa máxima'
+    grace_period: 'Periodo de gracia'
+    unemployment_months: 'Meses de desempleo permitido'
+    threshold: 'Salario mínimo para pago'
+    threshold_exception: 'Excepción de salario mínimo para pago'
+    nominal_payment: 'Cultura De pago'
+    salary_cap: 'Salario máximo de pago'
+    nominal_cap: 'Pago total máximo'
+    future_income: 'De tu ingreso futuro'
+    future_income_uwc: De tu ingreso futuro cuando este sea mayor a 2 salarios mínimos del país donde laboras.
+    months: 'Meses de pago del porcentaje de tu ingreso futuro'
+    no_funding_options: 'No hay opciones de financiamiento para ver en esta sección.'
+    funding_process: 'Proceso De financiación'
+    review_disbursement_request: 'Revisar solicitud De financiamiento.'
+    review_income_request: 'Revisar nuevo registro información laboral.'
+    support_team: 'Equipo de apoyo'
+    review_covid_request: 'Revisar solicitud de ajuste por Covid'
+    review_payment_request: 'Revisar solicitud de pago manual'
+    view_flows: 'Ver Flujos'
+    new_agreement: 'Otro sí'
+    academic_information: 'Información académica'
+    social_work: 'Servicio social'
+    experiences: 'Experiencias'
+    references: 'Referencias' 
+    general_review: "Pendiente revisión de %{name_of_record}"
+    application_sent: 'Tu información fue enviada exitosamente.'
+    conciliation: 'Conciliación'
+    payment: 'Cuota De repago'
+    credit: 'Saldo A favor'
+    payment_generated_number: 'Cuotas repagos generadas'
+    payment_matched_number: 'Cuotas repago aplicadas'
+    payment_pending_number: 'Cuotas repagos restantes'
+    total_cancellation: 'Total condonaciones'
+    application: 'Gestion aplicaciones'
+    legal_documents: 'Documentos legales'
+    grades: 'Registro de notas'
+    grade_term: 'Periodo académico'
+    financial_information: 'Información financiera'
+    black_rock_notification: 'Solicita aquí tu manutención de emergencia'
+    continue_blackrock: 'Continuar con la solicitud de manutención de emergencia'
+    request: 'Solicitar'
+    dynamic_rate_cap: 'Tasa a máxima dinámica'
+    country: 'País'
+    xirr: 'Tasa interna de retorno'
+    no_disbursement_associated: 'no tiene ningún desembolso asociado'
+    attributes:
+      id: Id
+      full_name: Nombre Completo
+      time_zone: Zona horaria
+      language: Idioma
+      status: Estado
+      email: Correo electronico
+      identification_number: Numero de identificación
+      mobile_number: Numero de celular
+      phone_number: Numero de telefono
+    status:
+      inactive: Inactivo
+      active: Activo
+    flash:
+      create:
+        success: "El registro fue creado exitosamente."
+        fail: 'Hubo un error al intentar crear el registro.'
+        success_status: "El estado fue creado exitosamente."
+        fail_status: 'Hubo un error al intentar crear el estado.'
+      update:
+        success: "El registros fue actualizado exitosamente."
+        fail: 'Hubo un error al intentar actualizar el registro.'
+        success_status: "El estado fue creado exitosamente."
+        fail_status: 'Hubo un error al intentar crear el estado.'
+      application:
+        reactivated: "La aplicacación %{application_id} ha sido reactivada."
+        not_possible_disbursement: "No es posible reactivar la aplicación %{application_id} porque el desembolso %{disbursement_id} ya ha sido pagado."
+
+

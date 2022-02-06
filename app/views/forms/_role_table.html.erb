@@ -1,0 +1,63 @@
+
+      <div id="role_id" role-id='<%= params[:id] %>'></div>
+      <div class="table-responsive my-3">
+        <table class="datatables-list table card-table table-bordered table-striped m-0" id="roles_table" data-order='[[ 0, "asc" ]]' >
+          <thead>
+            <tr>
+              <% @allActions.each do |action| %>
+                <th><%= I18n.t('roles.' + action) %></th>
+              <% end %>
+            </tr>
+            
+          </thead>
+          <tbody>
+            
+            <% @models.each_with_index do |model,index| %>
+              <tr>
+              <%begin%>
+                <%if @role_names[index].present?%>
+                <td><%= eval(model).model_name.human(count: 1)%></td>
+                  <% @role_names[index].each_with_index do |name,nindex| %>
+                    <% if name.match('approver').nil? %>
+                      <td><%= lumni_boolean_field( 'brole',name,value: @currentRoles.include?(name),disabled: @disabled) %></td>
+                    <% else %>
+                      <td style="min-width:250px"><%= lumni_dropdown_field('roles',name,list: teamProfileList_roles,disabled: (!@currentRoles.include?(@role_names[index][nindex - 1]) || @disabled), type: 'list',value: @hash_approver[name.to_sym]) %> </td>
+                    <% end %>
+                  <% end %>
+                <%end%>
+              </tr>
+              <%rescue StandardError => e%>
+               <% puts e%>
+              <%end%>
+            <% end %>
+
+          </tbody>
+        </table>
+      </div>
+
+
+
+
+    <!-- Modal template -->
+    <div class="modal modal-fill-in fade" id="approver-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">×</button>
+          <div class="modal-body">
+            <p class="text-white text-large font-weight-light mb-3"><%= I18n.t('roles.select_approver', model: 'algo!!') %></p>
+            <div class="input-group input-group-lg mb-3">
+              <%= lumni_dropdown_field('roles','modal',list: teamProfileList_roles, type: 'list',value: '',html_class: ' bg-white border-0',required: true) %>
+            </div>
+              <div class="row">
+                <div class="offset-md-4 col-md-2">
+                  <button class="btn btn-primary" type="button" id='save-approver'><%= I18n.t('general.save') %></button>
+                </div>
+                <div class=" col-md-2">
+                  <button class="btn btn-secondary" type="button" id='cancel-approver'><%= I18n.t('general.cancel') %></button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+

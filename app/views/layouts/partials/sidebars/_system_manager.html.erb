@@ -1,0 +1,47 @@
+<li class="sidenav-item"> 
+  <a href="#" data-toggle="collapse" data-target="#system_manager" class="sidenav-link sidenav-toggle" > 
+    <i class="sidenav-icon ion ion-md-cog"></i> <%= I18n.t('mains.system_manager')%>
+  </a>
+
+  <ul class="sub-menu collapse" id="system_manager">
+    <li class="sidenav-item">
+      <a href="<%= teams_path %>" class="sidenav-link "><%= Team.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= team_profiles_path %>" class="sidenav-link "><%= TeamProfile.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= companies_path %>" class="sidenav-link "><%= Company.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= teams_path %>" class="sidenav-link "><%= Team.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= countries_path %>" class="sidenav-link "><%= Country.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= form_templates_path %>" class="sidenav-link "><%= FormTemplate.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= docs_generals_path %>" class="sidenav-link "><%= DocsGeneral.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= form_lists_path %>" class="sidenav-link "><%= FormList.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= support_roles_path %>" class="sidenav-link "><%= SupportRole.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= team_supervisor_batches_path %>" class="sidenav-link ">AO y SM por lote</a>  		
+    </li>
+  </ul>
+</li>

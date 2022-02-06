@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/* line 1, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container .buttons {
+  width: 100%;
+  margin-bottom: -1px;
+}
+
+/* line 6, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container label {
+  display: block;
+}
+
+/* line 10, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container .info {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 11px;
+}
+
+/* line 16, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container .clear1,
+.bootstrap-duallistbox-container .clear2 {
+  display: none;
+  font-size: 10px;
+}
+
+/* line 22, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container .box1.filtered .clear1,
+.bootstrap-duallistbox-container .box2.filtered .clear2 {
+  display: inline-block;
+}
+
+/* line 27, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container .move,
+.bootstrap-duallistbox-container .remove {
+  width: 60%;
+}
+
+/* line 32, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container .btn-group .btn {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container select {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* line 41, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container .moveall,
+.bootstrap-duallistbox-container .removeall {
+  width: 40%;
+}
+
+/* line 46, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container.bs2compatible .btn-group > .btn + .btn {
+  margin-left: 0;
+}
+
+/* line 50, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container select {
+  width: 100%;
+  height: 300px;
+  padding: 0;
+}
+
+/* line 56, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container .filter {
+  display: inline-block;
+  width: 100%;
+  height: 31px;
+  margin: 0 0 5px 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 66, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container .filter.placeholder {
+  color: #aaa;
+}
+
+/* line 70, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container.moveonselect .move,
+.bootstrap-duallistbox-container.moveonselect .remove {
+  display: none;
+}
+
+/* line 75, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-duallistbox/src/bootstrap-duallistbox.css */
+.bootstrap-duallistbox-container.moveonselect .moveall,
+.bootstrap-duallistbox-container.moveonselect .removeall {
+  width: 100%;
+}
+
+/* line 3, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-duallistbox/bootstrap-duallistbox.scss */
+.bootstrap-duallistbox-container .glyphicon-arrow-left, .bootstrap-duallistbox-container .glyphicon-arrow-right {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* line 14, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-duallistbox/bootstrap-duallistbox.scss */
+[dir=rtl] .bootstrap-duallistbox-container .glyphicon-arrow-left,
+[dir=rtl] .bootstrap-duallistbox-container .glyphicon-arrow-right {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+/* line 19, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-duallistbox/bootstrap-duallistbox.scss */
+.bootstrap-duallistbox-container .glyphicon-arrow-left:before {
+  content: "←";
+}
+
+/* line 23, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-duallistbox/bootstrap-duallistbox.scss */
+.bootstrap-duallistbox-container .glyphicon-arrow-right:before {
+  content: "→";
+}
+
+/* line 27, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-duallistbox/bootstrap-duallistbox.scss */
+.bootstrap-duallistbox-container select {
+  padding: .3125rem 0;
+}
+/* line 30, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-duallistbox/bootstrap-duallistbox.scss */
+.bootstrap-duallistbox-container select option {
+  padding: .1875rem .625rem;
+  line-height: 1;
+}
+
+/* line 37, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-duallistbox/bootstrap-duallistbox.scss */
+.material-style .bootstrap-duallistbox-container select {
+  padding: .625rem 0;
+}

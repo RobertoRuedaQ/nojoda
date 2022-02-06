@@ -1,0 +1,145 @@
+<%= form_title(@approval, 'approval_action') %>
+<% @customList = (@approval.items.last.resource_type == 'User') ? (@approval.items.last.resource.student_account ? teams_fields : students_fields) : eval(@approval.items.last.resource_type.downcase.pluralize + '_fields') %>
+
+
+
+
+<div class="row">
+	<div class="col">
+		<div class="offset-md-8 col-md-4 text-right">
+
+			<%= form_for(@approval, url: {action: 'reasign'}, html: {class: 'py-4'}) do |f| %>
+				<div class="row">
+					<div class="col-md-8 text-right">
+						<%= lumni_dropdown_field('approval','approver',{list:selfSupervisorsList, value: @approval.supervisor_id}) %>
+					</div>
+					<div class="col-md-4">
+						<%= button_tag(I18n.t('form.reasign'),class: 'btn btn-primary btn-block') %>
+					</div>
+				</div>
+
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col">
+		<div class="card">
+			<h5 class="card-header">
+				Original Value
+			</h5>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table card-table table-bordered table-striped m-0">
+					  <tbody>
+
+					  	<% @approval.items.last.params.keys.each do |key| %>
+					  		<% @listValues = @customList[key.to_sym][:list].nil? ? nil : @customList[key.to_sym][:list].keys.map{|k| @customList[key.to_sym][:list][k][:values]}.flatten%>
+					  		<% @listLabels = @customList[key.to_sym][:list].nil? ? nil : @customList[key.to_sym][:list].keys.map{|k| @customList[key.to_sym][:list][k][:labels]}.flatten%>
+					  		<%  @listTarget = (@customList[key.to_sym][:list].nil? || @approval.items.last.resource[key.to_s].nil?) ? nil : @listLabels[@listValues.index(@approval.items.last.resource[key.to_s])]%>
+					  		<tr>
+					  		<td><strong><%= eval(@approval.items.last.resource_type).human_attribute_name(key) %></strong></td>
+					  		<td><%=  @listTarget.nil? ? @approval.items.last.resource[key.to_s] : @listTarget %></td>
+					  		</tr>
+					  		<%=  %>
+					  	<% end %>
+
+					  </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="col">
+		<div class="card">
+			<h5 class="card-header">
+				New Value
+			</h5>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table card-table table-bordered table-striped m-0">
+					  <tbody>
+
+					  	<% @approval.items.last.params.keys.each do |key| %>
+					  		<% @listValues = @customList[key.to_sym][:list].nil? ? nil : @customList[key.to_sym][:list].keys.map{|k| @customList[key.to_sym][:list][k][:values]}.flatten%>
+					  		<% @listLabels = @customList[key.to_sym][:list].nil? ? nil : @customList[key.to_sym][:list].keys.map{|k| @customList[key.to_sym][:list][k][:labels]}.flatten%>
+					  		<%  @listTarget = (@customList[key.to_sym][:list].nil?  || @approval.items.last.params[key.to_s].nil?) ? nil : @listLabels[@listValues.index(@approval.items.last.params[key.to_s])]%>
+					  		<tr>
+					  		<td><strong><%= eval(@approval.items.last.resource_type).human_attribute_name(key) %></strong></td>
+					  		<td><%= @listTarget.nil? ? @approval.items.last.params[key.to_s] : @listTarget %></td>
+					  		</tr>
+					  		<%=  %>
+					  	<% end %>
+
+					  </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+				  <div class="actions text-center offset-md-4 col-md-4 mt-4">
+				  	<div class="row">
+				  		<% if current_user.id != @approval.request_user_id %>
+					  	<div class="col">
+					  		<%= button_to I18n.t('form.approve'),approve_approval_manager_path(@approval),type: 'button',target: params[:action] + '_' + @targetRecord.class.name.downcase + '_' + params[:id],class: 'btn btn-success btn-block ',data: { disable_with: I18n.t('form.please_wait')}  %>
+					    </div>
+
+					  	<div class="col">
+					  		<%= button_to I18n.t('form.reject'),reject_approval_manager_path(@approval),type: 'button',target: params[:action] + '_' + @targetRecord.class.name.downcase + '_' + params[:id],class: 'btn btn-danger btn-block ',data: { disable_with: I18n.t('form.please_wait')}  %>
+					    </div>
+					    <% else %>
+
+					  	<div class="col">
+					  		<%= button_to I18n.t('form.cancel'),cancel_approval_manager_path(@approval),type: 'button',target: params[:action] + '_' + @targetRecord.class.name.downcase + '_' + params[:id],class: 'btn btn-primary btn-block ',data: { disable_with: I18n.t('form.please_wait')}  %>
+					    </div>
+					    <% end %>
+
+
+				    </div>
+				  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+</div>
+
+<h4 class="media align-items-center font-weight-bold py-2 mb-2 pt-4">
+  <div class="media-body ml-3">
+  	<span class=" ">
+  		<%= I18n.t('approver.original_record') %>
+  	</span>
+  </div>
+</h4>
+
+
+<%= build_form(@approval.items.last.resource,'update',@customList ,html: { class: 'form-group', method: 'put'},locked: true)%>
+

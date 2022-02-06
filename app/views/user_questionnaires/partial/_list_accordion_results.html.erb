@@ -1,0 +1,65 @@
+<div class="accordion" id="accordion<%= @questionnaire.id%>">
+  <div class="card my-2 shadow">
+    <div class="card-header" id="heading<%= @questionnaire.id%>" data-toggle="collapse" data-target="#collapseSection<%= @questionnaire.id%>" aria-expanded="true" aria-controls="collapseSection<%= @questionnaire.id%>">
+    	<div class="d-flex justify-content-between">
+
+    		<h5 class="text-secondary"><%= @questionnaire.name%> (<%= @questionnaire.weight%>%)</h5>
+
+    	</div>
+		<div class="d-flex justify-content-between">
+			<strong class="mb-1"><%= I18n.t('questionnaire.completion_percentage')%></strong>
+			<div >
+				<span class="text-light"><%= I18n.t('questionnaire.completition_text',answers: @questionnaire.total_answers(@user_questionnaire.id),questions: @questionnaire.total_questions)%> </span><strong> <%= @questionnaire.completion_percentage(@user_questionnaire.id) %>%</strong>
+
+			</div>
+		</div>
+		<div class="progress mt-0 mb-2" style="height: 4px;">
+		  <div class="progress-bar bg-primary" role="progressbar" style="width: <%= @questionnaire.completion_percentage(@user_questionnaire.id) %>%" aria-valuenow="<%= @questionnaire.completion_percentage(@user_questionnaire.id) %>" aria-valuemin="0" aria-valuemax="100">
+		  </div>
+		</div>
+
+		<div class="d-flex justify-content-between mt-2">
+			<strong class="mb-0"><%= I18n.t('questionnaire.score')%></strong>
+			<div>
+				<strong class="text-<%= define_score_color( @questionnaire.id, @user_questionnaire.id) %>"> <%= @questionnaire.total_score(@user_questionnaire.id).to_i  %> / <%= @questionnaire.max_score.to_i %> </strong>
+			</div>
+		</div>
+		<div class="progress mt-0" style="height: 4px;">
+		  <div class="progress-bar bg-<%= define_score_color( @questionnaire.id, @user_questionnaire.id) %>" role="progressbar" style="width: <%= @questionnaire.total_score(@user_questionnaire.id)  %>%" aria-valuenow="<%= @questionnaire.total_score(@user_questionnaire.id)  %>" aria-valuemin="0" aria-valuemax="100"></div>
+		</div>
+    </div>
+
+    <% if @questionnaire.childs.count > 0 %>
+	    <div id="collapseSection<%= @questionnaire.id%>" class="collapse" aria-labelledby="heading<%= @questionnaire.id%>" data-parent="#accordion<%= @questionnaire.id%>">
+	      <div class="card-body">
+	      	<% @questionnaire.childs.each do |section| %>
+	      		<%= create_accordion_result @user_questionnaire.id, section.id %>
+						<% if @user_questionnaire.user_questionnaire_answer.any? %>
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th><%= I18n.t('general.question') %></th>
+										<th><%= I18n.t('general.answer') %></th>
+										<th><%= I18n.t('general.notes') %></th>
+									</tr>
+								</thead>
+								<tbody>
+									<% @user_questionnaire.user_questionnaire_answer.each do |questionnaire_answer|%>
+										<%if questionnaire_answer.answer.question.questionnaire_id == section.id %>
+										<tr>
+											<td><%= questionnaire_answer.answer.question.question %></td>
+											<td><%= questionnaire_answer.answer.answer %></td>
+											<td><%= questionnaire_answer.notes %></td>
+										</tr>
+										<% end %>
+									<% end %>
+								</tbody>
+							</table>
+						<% end%>
+	      	<% end %>
+	      </div>
+	    </div>
+    <% end %>
+
+  </div>
+</div>

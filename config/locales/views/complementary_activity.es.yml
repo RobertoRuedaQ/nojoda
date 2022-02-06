@@ -1,0 +1,9 @@
+es:
+  complementary_activity:
+    workshop: 'Talleres'
+    workshop_button: 'Ir a los talleres'
+    workshop_text: 'El siguiente botón te redirigirá al sitio de talleres.'
+    mentorship: 'Mentorías'
+    mentorship_button: 'Ir a las mentorías'
+    mentorship_text: 'El siguiente botón te redirigirá al sitio de mentorías.'
+    workshop_and_mentorship: 'Talleres y mentorías'

@@ -1,0 +1,34 @@
+<%= form_title(@questionnaire, 'name') %>
+<%= build_form(@questionnaire,'update',current_user.template('Questionnaire','questionnaires',current_user),html: { class: 'form-group', method: 'put'}, columns: 4)%>
+<div id="sections_location_<%= @questionnaire.id %>" class="sortable_container">
+	<% @questionnaire.cached_childs.each do |section| %>
+		<%= createQuestionnaireSection(section.id) %>
+	<% end %>
+</div>
+
+
+<div class="row">
+	<div class="col-md-12 text-right">
+		<%= button_to({action: 'new_section', controller: params[:controller],id: @questionnaire.id}, class: 'btn btn-xs btn-outline-primary my-4 questionnairebutton',targetQuestionnaire: @questionnaire.id,remote: true, data: { disable_with: I18n.t('form.please_wait')}) do %>
+			<span><i class="ion ion-md-add-circle"></i></span> <%= I18n.t('questionnaire.new_section') %>
+		<% end %>
+	</div>
+</div>
+
+
+<!-- Modal Section -->
+<div class="modal fade" id="questionnaire_modal" tabindex="-1" role="dialog" aria-labelledby="sectionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<div id="questionnaire_modal_body"></div>
+    	</div>
+	  </div>
+	</div>
+</div>
+

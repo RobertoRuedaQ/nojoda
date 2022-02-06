@@ -1,0 +1,64 @@
+<div class="card">
+  <h4 class="m-4"><%= IncomeInformation.model_name.human(count: 1) %></h4>
+  <p class="m-4">Para actualizar tu información laboral en la empresa actual, como cambio en salario, cambio de cargo, finalización de contrato, subir un soporte o certificado con fecha reciente, haz click en Editar.</p>
+  
+      <div class="card-body">
+
+        <div class="mt-2">
+          <% target_fields = []%>
+            <table class="table table-striped mx-2 mt-4">
+              <thead>
+                <% income_information_student_header_table.each do |field| %>
+                  <th><%= field %></th>
+                <% end %>
+              </thead>
+              <tbody>
+                <% income_information_student_rows_table(@student.income_information.includes([:application])).each do |row| %>
+                  <tr>
+                    <% row.each do |field| %>
+                      <td><%= field %></td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          
+        </div>
+        <% if @student.income_under_review.count > 0 %>
+          <% @student.income_under_review.each do | income | %>
+            <div class="card m-0">
+              <div class="card-body m-0 py-4 bg-info text-white">
+                <h5 class="my-2"><%= I18n.t('income_information.reviewing_income_creation') %></h5>
+              </div>
+            </div>
+          <% end %>
+        <% elsif @student.income_active_application.count > 0 %>
+          <% @student.income_active_application.each do |income| %>
+            <div class="card">
+              <div class="card-body m-0 py-4 bg-info text-white">
+                <div class="d-flex justify-content-between">
+                  <h5 class="my-2"><%= I18n.t('income_information.continue_income_creation') %></h5>
+                  <div class="py-2">
+                    <%= link_to I18n.t('general.continue'), edit_application_path(income.application), class: 'btn btn-white text-info' %>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+        <% else %>
+
+          <p class="m-2">Para crear información laboral en una nueva empresa, haz click en Nueva Información Laboral</p>
+          <div class="text-center py-4">
+            <%= button_to I18n.t('income_information.new_income'), create_application_income_informations_path, class: 'btn btn-primary', data: { disable_with: I18n.t('form.please_wait')} %>
+          </div>
+        <% end %>
+
+
+
+      </div>
+
+
+  
+</div>

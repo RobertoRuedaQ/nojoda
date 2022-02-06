@@ -1,0 +1,22 @@
+<li class="sidenav-item">
+  <a href="#" data-toggle="collapse" data-target="#funds" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-ios-bonfire"></i><%= I18n.t('mains.funds')%>
+  </a>
+  <ul class="sub-menu collapse" id="funds">
+    <li class="sidenav-item">
+      <a href="<%= funds_path %>" class="sidenav-link "><%= Fund.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= funding_opportunities_path %>" class="sidenav-link "><%= FundingOpportunity.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%=legal_documents_path %>" class="sidenav-link "><%= LegalDocument.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%=originations_path %>" class="sidenav-link "><%= Origination.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

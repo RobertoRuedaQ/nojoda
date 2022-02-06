@@ -1,0 +1,41 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+
+
+doc/api
+doc/app
+/.idea/*
+*.swp
+*˜
+.DS_Store
+public/uploads/*
+.project
+bundler_stubs/
+config/database.yml
+config/storage.yml
+
+/temp_files/*
+
+
+.env*
+.byebug_history
+
+
+#Added to the default configuration
+*.log
+tmp/**/*
+tmp/*
+
+
+config/database.yml
+config/storage.yml

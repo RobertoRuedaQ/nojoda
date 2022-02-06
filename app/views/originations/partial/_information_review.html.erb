@@ -1,0 +1,25 @@
+<% if current_step <= this_step %>
+<div class="card">
+	<div class="card-body" style="min-height: 12rem">
+    <div class="text-center my-3"><h4 class="my-4 text-warning"><%= I18n.t('origination.information_review_title') %></h4></div>
+    <p class="mx-5 text-center"><%= I18n.t('origination.information_review_text') %></p>
+    <div class="row">
+      <div class="col text-center" style="padding: 1rem;font-size: 40px">
+        <i class="fas fa-clock text-warning"></i>
+      </div>
+    </div>
+	</div>
+</div>
+<% else %>
+	<div class="card">
+		<div class="card-body" style="min-height: 12rem">
+	    <div class="text-center my-3"><h4 class="my-4 text-success"><%= I18n.t('origination.information_review_title') %></h4></div>
+	    <p class="mx-5 text-center"><%= I18n.t('origination.information_review_done') %></p>
+	    <div class="row">
+	      <div class="col text-center" style="padding: 1rem;font-size: 40px">
+	        <i class="fas fa-check-circle text-success"></i>
+	      </div>
+	    </div>
+		</div>
+	</div>
+<% end %>

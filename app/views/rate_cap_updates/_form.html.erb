@@ -1,0 +1,27 @@
+<%= form_with(model: rate_cap_update, local: true) do |form| %>
+  <% if rate_cap_update.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rate_cap_update.errors.count, "error") %> prohibited this rate_cap_update from being saved:</h2>
+
+      <ul>
+      <% rate_cap_update.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :rate_cap_value %>
+    <%= form.text_field :rate_cap_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :responsible_id %>
+    <%= form.number_field :responsible_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

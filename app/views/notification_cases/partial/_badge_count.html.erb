@@ -1,0 +1,3 @@
+<% if current_user.notifications_count > 0 %>
+	<span class="badge badge-primary indicator" id="notification-badge-count"><%= current_user.notifications_count %></span>
+<% end %>

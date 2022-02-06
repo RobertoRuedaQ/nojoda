@@ -1,0 +1,1 @@
+$('#disbursement_detail_container<%= params[:target_id] %>').html("<%= j render '/applications/sections/disbursement', funding_disbursement: @funding_disbursement,disbursements_hash: @disbursements_hash, show_disbursement_anyway: true %>")

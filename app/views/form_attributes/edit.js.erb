@@ -1,0 +1,10 @@
+$('#edit_form_attribute_<%= params[:id]%>').html('<%= j build_form(@form_attribute,'update',form_attributes_fields,html: { class: 'form-group', method: 'put'},columns: 1,buttonOffset: 1, destroy: false, remote: true,controller: 'form_attributes', header_title: false) %>')
+
+activateDatepickers()
+validate_numeric_fields();
+setAutosize();
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+
+
+

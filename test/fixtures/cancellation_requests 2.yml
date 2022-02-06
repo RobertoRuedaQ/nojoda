@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  term_gpa: 1.5
+  disbursement: one
+  final_gpa: 1.5
+  term: MyString
+  status: MyString
+  application: one
+
+two:
+  term_gpa: 1.5
+  disbursement: two
+  final_gpa: 1.5
+  term: MyString
+  status: MyString
+  application: two

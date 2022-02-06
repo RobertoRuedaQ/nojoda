@@ -1,0 +1,29 @@
+<% if current_step == 3 && !current_application.nil?%>
+	<div class="card mb-3  " style="min-height: 12rem">
+	  <div class="card-body">
+      <div class="text-center my-3">
+      	<h4 class="my-4 text-warning"><%= I18n.t('origination.continue_application') %></h4>
+      </div>
+	    <div class="text-center my-5">
+	    	<%= link_to I18n.t('origination.continue_application'), edit_application_path(current_application), class: 'btn btn-primary my-3', onclick: "show_full_page_lumni_spinner()"%>
+	    </div>
+	  </div>
+	</div>
+<% else %>
+	<div class="card">
+		<div class="card-body" style="min-height: 12rem">
+        <div class="text-center my-3"><h4 class="my-4 text-success"><%= I18n.t('origination.apply_description') %></h4></div>
+        <p class="mx-5 text-center"><%= I18n.t('origination.success_apply') %></p>
+        <div class="row">
+          <div class="col text-center" style="padding: 1rem;font-size: 40px">
+            <i class="fas fa-check-circle text-success"></i>
+          </div>
+        </div>
+        <% if !current_application.nil? %>
+					<div class="text-center">
+			    	<%= link_to I18n.t('origination.view_submitted_application'), edit_application_path(current_application), class: 'btn btn-success my-3',data: { disable_with: I18n.t('form.please_wait')}%>
+					</div>
+				<% end %>
+		</div>
+	</div>
+<% end %>

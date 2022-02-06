@@ -1,0 +1,4 @@
+
+
+<%= form_title(@migration_job,I18n.t('mains.new')) %>
+<%= build_form(@migration_job,'create',current_user.template('MigrationJob','migration_jobs',current_user),html: { class: 'form-group'}) %>

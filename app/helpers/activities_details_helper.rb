@@ -1,0 +1,2 @@
+module ActivitiesDetailsHelper
+end

@@ -1,0 +1,21 @@
+<div class="card my-1" id='card-course-<%= course.id %>'>
+  <div class="card-body py-2">
+  	<div class="d-flex justify-content-between">
+      <div class="d-flex align-items-center">
+      	<% if course.name.nil? %>
+        	<div class="lnr lnr-warning display-4 text-warning" course='incomplete'></div>
+        <% else %>
+        	<div class="lnr lnr-graduation-hat display-4 text-info"></div>
+        <% end %>
+        <div class="ml-3">
+          <div class="text-muted"><%= course.name.nil? ? I18n.t('general.compleate') : course.name %></div>
+          <div class="text-large"><%= I18n.t('general.final_score') %>: <%= course.final_score.nil? ? I18n.t('general.compleate') : course.final_score %></div>
+          <div class="small"><%= course.status.nil? ? I18n.t('general.compleate') : I18n.t('list.' + course.status) %></div>
+        </div>
+      </div>
+  		<div class="d-flex align-items-center">
+    		<%= link_to course.name.nil? ? I18n.t('general.compleate') : I18n.t('general.edit'),edit_university_course_grade_path(course, section_id: section.id), remote: true, class: 'btn btn-primary'%>
+  		</div>
+  	</div>
+  </div>
+</div>

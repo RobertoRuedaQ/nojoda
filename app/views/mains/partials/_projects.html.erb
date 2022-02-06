@@ -1,0 +1,64 @@
+
+			<div class="row">
+				<div class=" offset-md-8 col-md-4 my-2">
+					<%= form_for(User.new(), url: url_for(controller: 'mains', action: 'set_projects_summary'), remote: true) do |f| %>	
+						<div class="row">
+							<div class="col-md-8">
+								<%= lumni_dropdown_field 'project_user', 'target_user', list: fullTeam(current_user.id),value: @project_user_id.to_i%>
+							</div>
+							<div class="col-md-4">
+						  		<%= button_tag I18n.t('form.submit'),type: 'submit',target: 'new_user',class: 'btn btn-success btn-block ',data: { disable_with: I18n.t('form.please_wait')}  %>
+							</div>
+						</div>
+
+					<% end %>
+				</div>
+				
+			</div>
+
+
+			<div class="row">
+			  <div class="col-md-12">
+
+			    <div class="nav-tabs-top mb-4">
+			      <ul class="nav nav-tabs">
+			        <li class="nav-item">
+			          <a class="nav-link active" data-toggle="tab" href="#project-nav-expired">Expired Tasks <span class="badge badge-pill badge-danger"><%= @n_expired %></span></a>
+			        </li>
+			        <li class="nav-item">
+			          <a class="nav-link" data-toggle="tab" href="#project-nav-upcoming">Upcoming Deadlines <span class="badge badge-pill badge-warning"><%= @n_upcoming %></span></a>
+			        </li>
+			        <li class="nav-item">
+			          <a class="nav-link" data-toggle="tab" href="#project-nav-regular">Regular Deadline <span class="badge badge-pill badge-primary"><%= @n_regular %></span></a>
+			        </li>
+			        <li class="nav-item">
+			          <a class="nav-link" data-toggle="tab" href="#project-nav-without-deadline">Without Deadline <span class="badge badge-pill badge-default"><%= @n_notDeadline %></span></a>
+			        </li>
+			      </ul>
+			      <div class="tab-content">
+			        <div class="tab-pane fade show active" id="project-nav-expired">
+			          <div class="card-body">
+									<%= createTable(@expired,main_tasks_index,new: false,title: false,id: 'expired').html_safe %>
+			          </div>
+			        </div>
+			        <div class="tab-pane fade" id="project-nav-upcoming">
+			          <div class="card-body">
+									<%= createTable(@upcoming,main_tasks_index,new: false,title: false,id: 'upcoming').html_safe %>
+			          </div>
+			        </div>
+			        <div class="tab-pane fade" id="project-nav-regular">
+			          <div class="card-body">
+									<%= createTable(@regular,main_tasks_index,new: false,title: false,id: 'regular').html_safe %>
+			          </div>
+			        </div>
+			        <div class="tab-pane fade" id="project-nav-without-deadline">
+			          <div class="card-body">
+									<%= createTable(@notDeadline,main_tasks_index,new: false,title: false, id: 'without-deadline').html_safe %>
+			          </div>
+			        </div>        
+			      </div>
+			    </div>
+
+			  </div>
+			 
+			</div>

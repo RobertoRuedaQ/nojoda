@@ -1,0 +1,22 @@
+
+
+
+    <div class="modal fade bd-history-modal-lg <%= form_key %>" id="<%= form_key %>">
+      <div class="modal-dialog modal-lg">
+        <form class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+            	<%= I18n.t('audits.activity_history') %>
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+          </div>
+          <div class="modal-body" style="font-size: 10px;" id="historyModalBody-<%= form_key %>">
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal"><%= I18n.t('general.close') %></button>
+          </div>
+        </form>
+      </div>
+    </div>

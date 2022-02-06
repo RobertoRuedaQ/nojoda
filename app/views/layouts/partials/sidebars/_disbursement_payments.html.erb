@@ -1,0 +1,10 @@
+<li class="sidenav-item">
+  <a href="#" data-toggle="collapse" data-target="#disbursement_payments" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-ios-cash"></i><%= I18n.t('mains.disbursement_payments')%>
+  </a>
+  <ul class="sub-menu collapse" id="disbursement_payments">
+    <li class="sidenav-item">
+      <a href="<%= disbursement_payments_path %>" class="sidenav-link "><%= DisbursementPayment.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

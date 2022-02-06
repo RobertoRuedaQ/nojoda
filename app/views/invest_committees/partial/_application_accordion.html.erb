@@ -1,0 +1,36 @@
+<% if !application.selected_funding_option.nil?  %>
+  <div class="accordion" id="investment_accordion">
+    <div class="card" id="application_card_<%= application.id %>">
+      <div class="card-header py-0" id="application_header_<%= application.id %>">
+
+
+
+        <div class="d-flex align-items-center">
+          <div class="lnr lnr-user display-4 text-success"></div>
+          <div class="flex-grow-1 ml-3">
+            <div class="text-primary text-large"><%= link_to "#{application.user.name}", edit_applicant_path(application.user) %></div>
+            <div class="text-large"><%= lumni_currency(application.total_funded,application.disbursement_currency) %></div>
+            <div class="text-muted small"><%= application.funding_opportunity.name %></div>
+          </div>
+
+          <div class="px-4">
+            <button class="btn btn-ms btn-primary my-4" type="button" data-toggle="collapse" data-target="#application_tab_<%= application.id %>" aria-expanded="true" aria-controls="application_tab_<%= application.id %>">
+              <%= I18n.t('application.disbursement_details') %>
+            </button>
+          </div>
+        </div>
+
+          
+
+      </div>
+
+      <div id="application_tab_<%= application.id %>" class="collapse" aria-labelledby="application_header_<%= application.id %>" data-parent="#investment_accordion">
+        <div class="card-body">
+          <%= render '/invest_committees/partial/application_info_body',application: application %>
+          <%= render '/invest_committees/partial/user_questionnaires_commette',user_questionnaires: application.user_questionnaire %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<% end %>

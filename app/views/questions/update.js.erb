@@ -1,0 +1,4 @@
+toastr["success"]("<%= I18n.t('flash.record_updated') %>");
+$('#questionnaire_modal').modal('hide');
+$('#header-question-<%= params[:id] %>').html('<%=j createQuestionHeaderQuestionnaire(@question) %>')
+setDeleteAlert()

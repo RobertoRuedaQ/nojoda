@@ -1,0 +1,4 @@
+<div class="form-label">
+	<label><%= FundingOpportunity.model_name.human(count: 2) %></label>
+</div>
+<%= lumni_dropdown_field( 'lumni_filter','funding_opportunities',{type: 'multiple_dropdown',value: funding_opportunity_ids,list: list_form_collection(funding_opportunities, 'name'),placeholder: 'Filtro de convocatorias'}) %>

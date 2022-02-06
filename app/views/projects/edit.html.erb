@@ -1,0 +1,10 @@
+<div class="d-flex flex-row">
+	<div>
+		<%= button_tag(class: 'btn icon-btn btn-xl btn-outline-primary borderless py-3',remote: true,data: {toggle: 'modal', target: '#edit-project_modal'}) do %>
+			<span><h5><i class="fas fa-edit"></i></h3></span>
+		<% end %>
+	</div>
+	<%= form_title(@project, 'title') %>
+</div>
+<%= render 'projects/partials/project_body', project: @project %>
+<%= render 'projects/partials/edit_project_modal', project: @project %>

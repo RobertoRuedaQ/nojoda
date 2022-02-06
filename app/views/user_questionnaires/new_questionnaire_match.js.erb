@@ -1,0 +1,6 @@
+$('#questionnaireListModal').modal('show')
+$('#questionnaire-main-container').html('<%= j build_form(@user_questionnaire,'create',current_user.template('UserQuestionnaire','user_questionnaires',current_user,current_company: current_company),html: { class: 'form-group'}, header: false, destroy: false, remote: true) %>')
+$('#questionnaire-modal-loader').attr('hidden',true)
+
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker()

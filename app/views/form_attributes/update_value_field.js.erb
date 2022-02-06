@@ -1,0 +1,5 @@
+$('#field-attribute-value-container').html("<%= j changeFormAttributeValueField( params[:format],attribute_id: params[:attribute_id]) %>")
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+
+setGlobalSwitches()

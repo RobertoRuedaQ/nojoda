@@ -1,0 +1,46 @@
+<!-- Layout footer -->
+    <nav class="footer <%= user_signed_in? && current_user.student? ?  'student_sidebar' : 'bg-sidenav-theme' %> pt-2 ">
+      <div class="container text-left ">
+        <hr class="mb-4">
+        <div class="row">
+          <div class="col-sm pb-4">
+            <div class="footer-text small font-weight-bold mb-3"><%= I18n.t('home.lumni_portal') %></div>
+            	<div class="display-5 text-white mx-auto footer-link d-block pb-2">
+            		<span class="lnr lnr-graduation-hat"></span> <%= current_company.name %>
+          		</div>
+            	<div class="display-5 text-white mx-auto footer-link d-block pb-2">
+            		<span class="lnr lnr-phone"></span> <%= current_company.contact_info.phone %>
+          		</div>
+            	<div class="display-5 text-white mx-auto footer-link d-block pb-2">
+            		<span class="lnr lnr-screen"></span> <%= current_company.contact_info.contact_email %>
+          		</div>
+          </div>
+          <div class="col-sm pb-4">
+            <div class="footer-text small font-weight-bold mb-3"><%= I18n.t('home.related_sites') %></div>
+            	<div class="display-5 text-white mx-auto footer-link d-block pb-2">
+            		<span class="lnr lnr-chevron-right"></span> <%= I18n.t('home.main_site') %>
+          		</div>
+            	<div class="display-5 text-white mx-auto footer-link d-block pb-2">
+            		<span class="lnr lnr-chevron-right"></span> <%= I18n.t('home.contact_us') %>
+          		</div>
+          </div>
+          <div class="col-sm pb-4">
+            <div class="footer-text small font-weight-bold mb-3"><%= I18n.t('home.general_disclosures') %></div>
+            	<div class="display-5 text-white mx-auto footer-link d-block pb-2">
+            		<span class="lnr lnr-chevron-right"></span> <%= I18n.t('home.terms_of_use') %>
+          		</div>
+            	<div class="display-5 text-white mx-auto footer-link d-block pb-2">
+            		<span class="lnr lnr-chevron-right"></span> <%= I18n.t('home.privacy_policy') %>
+          		</div>
+          </div>
+          <div class="col-sm pb-4">
+            <div class="footer-text small font-weight-bold mb-3"><%= I18n.t('home.keep_in_touch') %></div>
+            	<div class="display-5 text-white mx-auto footer-link d-block pb-2">
+            		<span class="lnr lnr-chevron-right"></span> <%= I18n.t('home.other_networks') %>
+          		</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<!-- / Layout footer -->

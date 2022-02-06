@@ -1,0 +1,21 @@
+<% isa = @student.active_isa.first%>
+<% if isa %>
+	<% graduate_cancellatiion = isa.show_after_graduation_cancellation_option %>
+
+	<div class="row">
+		<div class="col-md-<%= graduate_cancellatiion ? 10 : 12 %>">
+			<%= render '/applications/sections/disbursement', disbursements_hash: lumni_disbursement_hash(isa.funding_option.disbursement,['id','forcasted_date','student_value','disbursement_case','requested','approved','disbursement_process','disbursed','canceled','stored_general_status','request','status', 'payment_dates'], validate_funding_opportunity_decision: true) ,funding_detail: true,disbuserment_text: true, show: true %>
+		</div>
+
+		<% if graduate_cancellatiion %>
+			<div class="col-md-2 mt-md-5">
+				<div class="card">
+					<div class="card-body text-center">
+						<h5>Solicitar Condonacion Por Graduación</h5>
+						<%= link_to 'Solicitar',activate_disbursement_cancellation_application_isa_path(isa), class: 'btn btn-primary my-4' %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+<% end %>

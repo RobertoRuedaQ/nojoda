@@ -1,0 +1,5 @@
+$('#status-body-<%=@isa_status.status_case%>-<%= @isa_status.isa_id %>').replaceWith("<%= j render '/isa_statuses/partial/status_body', isa: @isa_status.isa, status_case: @isa_status.status_case %>")
+$('#<%=@isa_status.status_case%>_modal_container').html("<%= j render '/isa_statuses/partial/income_status_modal_body', isa: @isa_status.isa %>")
+
+set_isa_status_alert()
+restore_lumni_js()

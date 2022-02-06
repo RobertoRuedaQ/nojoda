@@ -1,0 +1,61 @@
+es:
+  income_information:
+    new_income: 'Nuevo registro laboral'
+    total_income: 'Total ingresos'
+    continue_income_creation: 'Continua creación nuevo ingreso.'
+    reviewing_income_creation: 'Estamos revisando tu solicitud.'
+    active: 'Activo'
+    finished: 'Finalizado'
+    undefined_term: 'Término indefinido' 
+    Término fijo: 'Término fijo'
+    Trabajo Informal: 'Trabajo informal'
+    Prestacion de Servicios: 'Prestación de servicios'
+    Salaried employee: 'Empleado asalariado'
+    independent: 'Independiente'
+    informal_employment: 'Empleado informal'
+    Independiente: 'Independendiente'
+    internship_or_practice: 'Practicante'
+    Término Indefinido: 'Término indefinido'
+    Obra o Labor: 'Obra o labor'
+    fixed_term: 'Término fijo'
+    Contractor: 'Contratista'
+    Pasantia: 'Pasantía'
+    Prestación de servicios: 'Prestación de servicios' 
+    service_provision: 'Prestación de servicios'
+    Voluntariado: 'Voluntariado'
+    voluntary: 'Voluntariado'
+    Hourly employee: 'Empleado por horas'
+    job_or_ labour: 'Obra o labor'
+    Pasantía: 'Pasantía'
+    dividends: 'Dividendos'
+    benefits_by_pension_lan: 'Beneficios por plan de pensión'
+    capital_gain_or_loss:  'Ganancias por capital'
+    income_from_own_employment: 'Ingresos como empleado autónomo'
+    business_income: 'Ingresos por negocio'
+    self_employment: 'Empleado autónomo'
+    benefits_by_pension_plan: 'Beneficios por plan de pensión'
+    employment: 'Empleado'
+    business_income: 'Ingresos por negocio'
+    tax_interest: 'Interés fiscal'
+    projected_income: 'Ingreso proyectado'
+    edit_variable_income: Editar pago variable
+    attributes:
+      id: Id
+      student: Estudiante
+      company: Nombre de la empresa
+      position: Cargo
+      contract_case: Tipo de contrato laboral
+      fix_income: Ingreso fijo
+      variable_income: Ingreso variable
+      currency: Divisa
+      start_date: Fecha de inicio
+      end_date: Fecha de terminación
+      status: Estado
+      income_case: Tipo de información laboral
+      total_income: Total ingreso
+      income_in_local_currency: Ingreso en moneda local
+      exchange_rate: Tasa de cambio
+      updated_at: Actualizado el
+      support_file: Certificado/Soporte
+      presumptive_income: Renta presuntiva
+    see_file: Ver soporte

@@ -1,0 +1,30 @@
+es:
+  disbursement:
+    request_disbursement: 'Solicitar desembolso'
+    view_request: 'Ver Solicitud'
+    forcasted_disbursements: 'Desembolsos proyectados' 
+    new_disbursement_payment: 'Nuevo pago de desembolso'
+    university_course_grades: 'Reporte de notas por materia'
+    payed: 'Desembolsado'
+    partially_payed: 'Parcialmente desembolsado'
+    in_payment_process: 'Procesando'
+    approved: 'Aprobado'
+    requested: 'Requerido'
+    active: 'Activo'
+    canceled: 'Cancelado'
+    inactive: 'Inactivo'
+    number: 'Número'
+    requesting: Solicitando
+    date: 'Fecha'
+    value: 'Valor'
+    disbursement_case: 'Tipo de desembolso'
+    request_cancellation: "Solicitar condonación"
+    student_payment_to_disbursement: 'Aporte de matrícula'
+    tuition: Matrícula
+    living_expenses: Manutención
+    processing: 'Procesando...'
+    student_payment: 'Aporte matrícula (estudiante)'
+    tuition: 'Matrícula'
+    living_expenses: 'Manutención'
+    emergency_living_expenses: 'Manutención de emergencia'
+    last_disbursement: 'Último reporte (no se requieren más desembolsos)'

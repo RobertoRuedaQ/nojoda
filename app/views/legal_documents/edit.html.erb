@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-between">
+	<%= form_title(@legal_document, 'name') %>
+	<div class="button-group">
+		<%= link_to 'pdf',preview_legal_document_path(@legal_document),class: 'btn btn-primary',target: :blank %>
+		<%= button_tag 'email',class: 'btn btn-primary', data: {toggle: 'modal', target: '#legalDocumentModal' }%>
+		
+	</div>
+</div>
+<%= build_form(@legal_document,'update', current_user.template('LegalDocument','legal_documents',current_user,current_company: current_company),html: { class: 'form-group', method: 'put'})%>
+
+
+<!-- Modal -->
+<div class="modal fade" id="legalDocumentModal" tabindex="-1" role="dialog" aria-labelledby="legalDocumentModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="legalDocumentModalLabel">Email</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      	<%= form_tag send_preview_legal_document_path(@legal_document), remote: true do %>
+      		<strong><span class="label">Email</span><span class="text-danger"><small>*</small></span></strong>
+      		<%= lumni_text_field 'temp','email',{required: true, value: current_user.email} %>
+      		<div class="text-center">
+	      		<%= button_tag I18n.t('general.send'), class: 'btn btn-primary my-4',data: { disable_with: I18n.t('form.please_wait')}%>
+      		</div>
+      	<% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

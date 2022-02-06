@@ -1,0 +1,10 @@
+<div class="m-4">
+	<%= form_title(@payment_batch) %>
+	<div class="mx-4">
+		<div class="text-right my-4">
+			<%= link_to I18n.t('general.new'), new_payment_batch_path, class: 'btn btn-primary' %>
+		</div>
+		<%= createBasicTable(payment_batch_index_table_header,payment_batch_index_table_rows(@payment_batch),id: 'payment_batch_index_table') %>
+		
+	</div>
+</div>

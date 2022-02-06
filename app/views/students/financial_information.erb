@@ -1,0 +1,43 @@
+<%= render 'students/partial/students_header' %>
+
+
+<div class="nav-tabs-top">
+  <%= render 'students/partial/tabs' %>
+
+  <div class="tab-content bg-light">
+
+    <div class="tab-pane fade show active" id="academic-info-tab" >
+      <div class="card" style="border: none">
+        <div class="card-body">
+              <%= build_form(@student.student_financial_information,'update',financial_template,html: { class: 'form-group', method: 'put'},controller: 'complementary_activities',remote: true, destroy: false,locked: true) %>
+        </div>
+        <div class="card-body">
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th><%= I18n.t('general.bank_name') %></th>
+                  <th><%= I18n.t('general.account_number') %></th>
+                  <th><%= I18n.t('general.bank_account_name') %></th>
+                  <th><%= I18n.t('general.account_case') %></th>
+                  <th><%= I18n.t('general.active') %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @student.bank_account.each do |bank_account|%>
+                  <tr>
+                    <td><%= bank_account.bank_name %></td>
+                    <td><%= bank_account.account_number %></td>
+                    <td><%= bank_account.name %></td>
+                    <td><%= I18n.t("general.#{bank_account.account_case}") %></td>
+                    <td><%= I18n.t("general.#{bank_account.active}") %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

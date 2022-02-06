@@ -1,0 +1,300 @@
+/* line 18, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/* line 23, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-actions > * {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/* line 29, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+/* line 34, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-item {
+  position: relative;
+  z-index: 1;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+/* line 41, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-item:hover, .file-item.focused {
+  border-color: rgba(0, 0, 0, 0.05);
+}
+/* line 46, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-item.focused {
+  z-index: 2;
+}
+/* line 50, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-item * {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+/* line 55, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-item-checkbox {
+  margin: 0 !important;
+}
+
+/* line 59, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-item-select-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* line 69, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-item-img {
+  background-color: transparent;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* line 75, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-item-name {
+  display: block;
+  overflow: hidden;
+}
+
+/* line 81, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-col-view .file-item {
+  margin: 0 0.25rem 0.25rem 0;
+  padding: 1.25rem 0 1rem 0;
+  width: 9rem;
+  text-align: center;
+}
+/* line 87, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+[dir=rtl] .file-manager-col-view .file-item {
+  margin-right: 0;
+  margin-left: 0.25rem;
+}
+/* line 93, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-col-view .file-item-img,
+.file-manager-col-view .file-item-icon {
+  display: block;
+  margin: 0 auto 0.75rem auto;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2.5rem;
+  line-height: 4rem;
+}
+/* line 103, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-col-view .file-item-level-up {
+  font-size: 1.5rem;
+}
+/* line 107, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-col-view .file-item-checkbox,
+.file-manager-col-view .file-item-actions {
+  position: absolute;
+  top: 6px;
+}
+/* line 113, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-col-view .file-item-checkbox {
+  left: 6px;
+}
+/* line 116, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+[dir=rtl] .file-manager-col-view .file-item-checkbox {
+  right: 6px;
+  left: auto;
+}
+/* line 122, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-col-view .file-item-actions {
+  right: 6px;
+}
+/* line 125, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+[dir=rtl] .file-manager-col-view .file-item-actions {
+  right: auto;
+  left: 6px;
+}
+/* line 131, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-col-view .file-item-name {
+  width: 100%;
+}
+/* line 135, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-col-view .file-manager-row-header,
+.file-manager-col-view .file-item-changed {
+  display: none;
+}
+
+/* line 142, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-row-view .file-manager-row-header, .file-manager-row-view .file-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0 0.125rem 0;
+  padding: 0.25rem 3rem 0.25rem 2.25em;
+  width: 100%;
+}
+/* line 150, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+[dir=rtl] .file-manager-row-view .file-manager-row-header,
+[dir=rtl] .file-manager-row-view .file-item {
+  padding-right: 2.25em;
+  padding-left: 3rem;
+}
+/* line 156, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-row-view .file-item-img,
+.file-manager-row-view .file-item-icon {
+  display: block;
+  margin: 0 1rem;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+/* line 167, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-row-view .file-item-level-up {
+  font-size: 1rem;
+}
+/* line 171, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-row-view .file-item-checkbox,
+.file-manager-row-view .file-item-actions {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+/* line 178, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-row-view .file-item-checkbox {
+  left: 10px;
+}
+/* line 181, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+[dir=rtl] .file-manager-row-view .file-item-checkbox {
+  right: 10px;
+  left: auto;
+}
+/* line 187, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-row-view .file-item-actions {
+  right: 10px;
+}
+/* line 190, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+[dir=rtl] .file-manager-row-view .file-item-actions {
+  right: auto;
+  left: 10px;
+}
+/* line 196, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-row-view .file-item-changed {
+  display: none;
+  margin-left: auto;
+  width: 10rem;
+}
+/* line 201, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+[dir=rtl] .file-manager-row-view .file-item-changed {
+  margin-right: auto;
+  margin-left: 0;
+}
+/* line 207, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-row-view .file-item-name {
+  width: calc(100% - 4rem);
+}
+/* line 211, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-row-view .file-manager-row-header {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+}
+/* line 216, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.file-manager-row-view .file-manager-row-header .file-item-name {
+  margin-left: 4rem;
+}
+/* line 219, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+[dir=rtl] .file-manager-row-view .file-manager-row-header .file-item-name {
+  margin-right: 4rem;
+  margin-left: 0;
+}
+
+/* line 229, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.default-style .file-item-name {
+  color: #4E5155 !important;
+}
+/* line 233, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.default-style .file-item.selected .file-item-select-bg {
+  opacity: .15;
+}
+@media (min-width: 768px) {
+  /* line 239, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+  .default-style .file-manager-row-view .file-item-changed {
+    display: block;
+  }
+  /* line 242, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+  .default-style .file-manager-row-view .file-item-name {
+    width: calc(100% - 15rem);
+  }
+}
+@media (min-width: 992px) {
+  /* line 250, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+  .default-style .file-manager-col-view .file-item-checkbox,
+  .default-style .file-manager-col-view .file-item-actions {
+    opacity: 0;
+  }
+  /* line 255, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+  .default-style .file-manager-col-view .file-item:hover .file-item-checkbox,
+  .default-style .file-manager-col-view .file-item.focused .file-item-checkbox,
+  .default-style .file-manager-col-view .file-item.selected .file-item-checkbox,
+  .default-style .file-manager-col-view .file-item:hover .file-item-actions,
+  .default-style .file-manager-col-view .file-item.focused .file-item-actions,
+  .default-style .file-manager-col-view .file-item.selected .file-item-actions {
+    opacity: 1;
+  }
+}
+
+/* line 270, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.material-style .file-item-name {
+  color: #4E5155 !important;
+}
+/* line 274, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+.material-style .file-item.selected .file-item-select-bg {
+  opacity: .15;
+}
+@media (min-width: 768px) {
+  /* line 280, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+  .material-style .file-manager-row-view .file-item-changed {
+    display: block;
+  }
+  /* line 283, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+  .material-style .file-manager-row-view .file-item-name {
+    width: calc(100% - 15rem);
+  }
+}
+@media (min-width: 992px) {
+  /* line 291, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+  .material-style .file-manager-col-view .file-item-checkbox,
+  .material-style .file-manager-col-view .file-item-actions {
+    opacity: 0;
+  }
+  /* line 296, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/file-manager.scss */
+  .material-style .file-manager-col-view .file-item:hover .file-item-checkbox,
+  .material-style .file-manager-col-view .file-item.focused .file-item-checkbox,
+  .material-style .file-manager-col-view .file-item.selected .file-item-checkbox,
+  .material-style .file-manager-col-view .file-item:hover .file-item-actions,
+  .material-style .file-manager-col-view .file-item.focused .file-item-actions,
+  .material-style .file-manager-col-view .file-item.selected .file-item-actions {
+    opacity: 1;
+  }
+}

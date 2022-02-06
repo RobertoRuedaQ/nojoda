@@ -1,0 +1,24 @@
+.bg-on-hold{
+	background-color: rgba(241,208,245,1);
+}
+.bg-in-progress{
+	background-color: rgba(245,224,208,1);
+}
+.bg-under-review{
+	background-color: rgba(210,231,242,1);
+}
+.bg-done{
+	background-color: rgba(234,245,208,1);
+}
+
+.new-comment {
+  background-color: white;
+  animation-name: commentBanish;
+  animation-duration: 1s;
+}
+
+@keyframes commentBanish {
+  
+      from {background-color: white;}
+      to {background-color: rgba(234,245,208,1);}
+}

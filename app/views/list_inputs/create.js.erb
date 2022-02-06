@@ -1,0 +1,4 @@
+$('[id^=listinput_input_]').val('');
+
+$('#current-input-list').append("<%= j render '/list_inputs/partial/input_body', input: @list_input %>")
+$('#current_inputs').collapse('show')

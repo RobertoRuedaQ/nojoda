@@ -1,0 +1,4 @@
+<% if current_user.avatar.attached? %>
+	<%= image_tag(current_user.avatar, class: 'd-block ui-w-100 rounded-circle')%>
+<% end %>
+toastr["success"]("<%= I18n.t('flash.record_updated') %>");

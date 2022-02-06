@@ -1,0 +1,4 @@
+en:
+  payment_mass:
+    invalid_payment: 'Invalid Payment'
+    invalid_file: 'Invalid File.'

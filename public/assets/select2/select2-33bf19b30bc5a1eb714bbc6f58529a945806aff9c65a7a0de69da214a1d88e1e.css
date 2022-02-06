@@ -1,0 +1,881 @@
+/* line 7, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container {
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  vertical-align: middle;
+  width: 100% !important;
+}
+/* line 1, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_single.scss */
+.select2-container .select2-selection--single {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  height: 28px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+/* line 12, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_single.scss */
+.select2-container .select2-selection--single .select2-selection__rendered {
+  display: block;
+  padding-left: 8px;
+  padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 22, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_single.scss */
+.select2-container .select2-selection--single .select2-selection__clear {
+  position: relative;
+}
+/* line 29, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_single.scss */
+.select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered {
+  padding-right: 8px;
+  padding-left: 20px;
+}
+/* line 1, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_multiple.scss */
+.select2-container .select2-selection--multiple {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  min-height: 32px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+/* line 12, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_multiple.scss */
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+  display: inline-block;
+  overflow: hidden;
+  padding-left: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 21, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_multiple.scss */
+.select2-container .select2-search--inline {
+  float: left;
+}
+/* line 24, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_multiple.scss */
+.select2-container .select2-search--inline .select2-search__field {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  font-size: 100%;
+  margin-top: 5px;
+  padding: 0;
+}
+/* line 31, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_multiple.scss */
+.select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+/* line 1, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-dropdown {
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  left: -100000px;
+  width: 100%;
+  z-index: 1051;
+}
+
+/* line 19, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-results {
+  display: block;
+}
+
+/* line 23, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-results__options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 29, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-results__option {
+  padding: 6px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+/* line 35, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-results__option[aria-selected] {
+  cursor: pointer;
+}
+
+/* line 40, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-container--open .select2-dropdown {
+  left: 0;
+}
+
+/* line 44, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-container--open .select2-dropdown--above {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 50, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-container--open .select2-dropdown--below {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* line 56, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-search--dropdown {
+  display: block;
+  padding: 4px;
+}
+/* line 60, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-search--dropdown .select2-search__field {
+  padding: 4px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/* line 65, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-search--dropdown .select2-search__field::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+/* line 70, /Users/jaimecastilloleon/Desktop/platform-4.0/node_modules/select2/src/scss/_dropdown.scss */
+.select2-search--dropdown.select2-search--hide {
+  display: none;
+}
+
+/* line 21, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-close-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: block;
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  border: 0;
+  opacity: 0;
+}
+
+/* line 37, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-hidden-accessible {
+  position: absolute !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  border: 0 !important;
+}
+
+/* line 53, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding-right: 2.25rem;
+}
+/* line 57, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--single .select2-selection__clear {
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 63, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 2.25rem;
+}
+/* line 69, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -.125rem;
+  margin-left: -.25rem;
+  width: 0;
+  height: 0;
+  border-width: .3125rem .25rem 0 .25rem;
+  border-style: solid;
+}
+/* line 84, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default[dir=rtl] .select2-selection--single .select2-selection__clear {
+  float: left;
+}
+/* line 88, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default[dir=rtl] .select2-selection--single .select2-selection__arrow {
+  right: auto;
+  left: 1px;
+}
+/* line 94, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default.select2-container--disabled .select2-selection--single {
+  cursor: not-allowed;
+}
+/* line 97, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear {
+  display: none;
+}
+/* line 102, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-width: 0 .25rem .3125rem .25rem;
+  border-color: transparent transparent #888 transparent;
+}
+/* line 111, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  list-style: none;
+}
+/* line 118, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+  list-style: none;
+}
+/* line 123, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--multiple .select2-search--inline {
+  line-height: 1.5rem;
+}
+/* line 127, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--multiple .select2-selection__placeholder {
+  float: left;
+}
+/* line 131, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--multiple .select2-selection__clear {
+  float: right;
+  margin-right: .625rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* line 138, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  float: left;
+  padding: 0 .5rem;
+  border-radius: .125rem;
+  line-height: 1.5rem;
+  cursor: default;
+}
+/* line 146, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  display: inline-block;
+  margin-right: .25rem;
+  color: inherit;
+  font-weight: bold;
+  opacity: .5;
+  cursor: pointer;
+}
+/* line 154, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+  color: inherit;
+  opacity: .8;
+}
+/* line 162, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default[dir=rtl] .select2-selection--multiple .select2-selection__choice,
+.select2-container--default[dir=rtl] .select2-selection--multiple .select2-selection__placeholder,
+.select2-container--default[dir=rtl] .select2-selection--multiple .select2-search--inline {
+  float: right;
+}
+/* line 168, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default[dir=rtl] .select2-selection--multiple .select2-selection__choice__remove {
+  float: left;
+  margin-right: .25rem;
+  margin-left: 0;
+}
+/* line 174, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default[dir=rtl] .select2-selection--multiple .select2-selection__clear {
+  float: left;
+  margin-left: .625rem;
+}
+/* line 180, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default.select2-container--disabled .select2-selection--multiple {
+  cursor: not-allowed;
+}
+/* line 184, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default.select2-container--disabled .select2-selection__choice__remove {
+  display: none;
+}
+/* line 192, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default,
+.select2-container--default * {
+  outline: 0 !important;
+}
+/* line 201, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-search__field::-moz-placeholder {
+  opacity: 1;
+}
+/* line 205, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-search--inline .select2-search__field {
+  outline: 0;
+  border: none;
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-appearance: textfield;
+}
+/* line 217, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default.select2-container--open.select2-container--above .select2-selection {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/* line 222, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default.select2-container--open.select2-container--below .select2-selection {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* line 228, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-results > .select2-results__options {
+  overflow-y: auto;
+  max-height: 12.5rem;
+}
+/* line 234, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-results__option[role=group] {
+  padding: 0;
+}
+/* line 238, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-results__option[aria-disabled=true] {
+  color: #999;
+}
+/* line 242, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-results__option .select2-results__option .select2-results__group {
+  padding-left: 0;
+}
+/* line 247, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.select2-container--default .select2-results__group {
+  display: block;
+  cursor: default;
+}
+
+/* line 253, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+[dir=rtl] .select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding-left: 2.25rem !important;
+}
+
+/* line 263, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-selection--multiple .select2-selection__rendered {
+  padding: 0 0.0625rem 0.0625rem 0.0625rem;
+}
+/* line 267, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-selection--multiple .select2-selection__placeholder {
+  margin-top: 0.0625rem;
+}
+/* line 271, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-selection--multiple .select2-selection__clear {
+  margin-top: 0.0625rem;
+}
+/* line 275, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-selection--multiple .select2-selection__choice {
+  margin-top: 0.0625rem;
+  margin-right: 0.0625rem;
+}
+/* line 281, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default[dir=rtl] .select2-selection--multiple .select2-selection__choice {
+  margin-right: 0;
+  margin-left: 0.0625rem;
+}
+/* line 286, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-dropdown {
+  z-index: 1000;
+  border-color: rgba(24, 28, 33, 0.05);
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.09);
+          box-shadow: 0 1px 6px rgba(0, 0, 0, 0.09);
+}
+/* line 293, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-search__field {
+  color: #4E5155;
+}
+/* line 298, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-selection {
+  border: 1px solid rgba(24, 28, 33, 0.1);
+  background-color: #fff;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  border-radius: 0.2rem;
+}
+/* line 306, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-selection__placeholder {
+  color: #babbbc;
+}
+/* line 313, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-selection--single {
+  height: calc(1.6875rem + 2px);
+}
+/* line 316, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding-left: 0.7rem;
+  color: #4E5155;
+  line-height: 1.6875rem;
+}
+/* line 322, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-selection--single .select2-selection__clear {
+  color: #a3a4a6;
+}
+/* line 326, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-selection--single .select2-selection__arrow {
+  position: absolute;
+  height: 1.6875rem;
+}
+/* line 330, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: #babbbc transparent transparent transparent;
+}
+/* line 337, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default[dir=rtl] .select2-selection--single .select2-selection__rendered {
+  padding-right: 0.7rem;
+}
+/* line 342, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent #babbbc transparent;
+}
+/* line 346, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default.select2-container--disabled .select2-selection--single {
+  border-color: rgba(24, 28, 33, 0.1) !important;
+  background-color: #f1f1f2;
+}
+/* line 354, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-selection--multiple {
+  min-height: 1.6875rem;
+}
+/* line 357, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: rgba(24, 28, 33, 0.1);
+  color: #4E5155;
+}
+/* line 363, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default.select2-container--disabled .select2-selection--multiple {
+  border-color: rgba(24, 28, 33, 0.1) !important;
+  background-color: #f1f1f2;
+}
+/* line 373, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-search__field::-moz-placeholder {
+  color: #babbbc;
+}
+/* line 377, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-search__field:-ms-input-placeholder {
+  color: #babbbc;
+}
+/* line 381, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-search__field::-webkit-input-placeholder {
+  color: #babbbc;
+}
+/* line 386, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-search--dropdown .select2-search__field {
+  border: 1px solid rgba(24, 28, 33, 0.1);
+}
+/* line 393, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-results__option {
+  padding-right: 0.7rem;
+  padding-left: 0.7rem;
+}
+/* line 397, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: rgba(24, 28, 33, 0.06);
+}
+/* line 401, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-results__option .select2-results__option {
+  margin-left: -0.7rem;
+  padding-left: 0.7rem;
+  width: calc(100% + 1.4rem);
+}
+/* line 406, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -0.7rem;
+  padding-left: 1.4rem;
+}
+/* line 410, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -1.4rem;
+  padding-left: 2.1rem;
+}
+/* line 414, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -2.1rem;
+  padding-left: 2.8rem;
+}
+/* line 418, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -2.8rem;
+  padding-left: 3.5rem;
+}
+/* line 422, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -3.5rem;
+  padding-left: 0.7rem;
+}
+/* line 433, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-results__group {
+  padding: 0.5rem 0.35rem;
+}
+/* line 437, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style .select2-container--default .select2-results__option .select2-results__group {
+  margin-left: -0.7rem;
+}
+/* line 443, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option {
+  margin-right: -0.7rem;
+  margin-left: 0 !important;
+  padding-right: 0.7rem;
+  padding-left: 0 !important;
+}
+/* line 449, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option .select2-results__option {
+  margin-right: -0.7rem;
+  padding-right: 1.4rem;
+}
+/* line 453, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-right: -1.4rem;
+  padding-right: 2.1rem;
+}
+/* line 457, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-right: -2.1rem;
+  padding-right: 2.8rem;
+}
+/* line 461, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-right: -2.8rem;
+  padding-right: 3.5rem;
+}
+/* line 465, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-right: -3.5rem;
+  padding-right: 0.7rem;
+}
+/* line 475, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.default-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__group {
+  margin-right: -0.7rem;
+  margin-left: 0;
+}
+/* line 13, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.default-style .is-valid .select2-container--default .select2-selection,
+.default-style .is-valid.select2-container--default .select2-selection {
+  border-color: #02BC77;
+}
+/* line 13, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.default-style .is-invalid .select2-container--default .select2-selection,
+.default-style .is-invalid.select2-container--default .select2-selection {
+  border-color: #d9534f;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.default-style .select2-secondary .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: #8897AA;
+  color: #fff;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.default-style .select2-success .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: #02BC77;
+  color: #fff;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.default-style .select2-info .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: #28c3d7;
+  color: #fff;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.default-style .select2-warning .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: #FFD950;
+  color: #665720;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.default-style .select2-danger .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: #d9534f;
+  color: #fff;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.default-style .select2-light .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: rgba(24, 28, 33, 0.06);
+  color: #0a0b0d;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.default-style .select2-dark .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: rgba(24, 28, 33, 0.9);
+  color: #fff;
+}
+
+/* line 499, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-selection--multiple .select2-selection__rendered {
+  padding: 0 0.3125rem 0.3125rem 0.3125rem;
+}
+/* line 503, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-selection--multiple .select2-selection__placeholder {
+  margin-top: 0.3125rem;
+}
+/* line 507, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-selection--multiple .select2-selection__clear {
+  margin-top: 0.3125rem;
+}
+/* line 511, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-selection--multiple .select2-selection__choice {
+  margin-top: 0.3125rem;
+  margin-right: 0.3125rem;
+}
+/* line 517, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default[dir=rtl] .select2-selection--multiple .select2-selection__choice {
+  margin-right: 0;
+  margin-left: 0.3125rem;
+}
+/* line 522, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-dropdown {
+  border: 0px solid rgba(24, 28, 33, 0.15);
+  border-radius: 0.125rem !important;
+  z-index: 1000;
+  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.07), 0px 4px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 10px 0px rgba(0, 0, 0, 0.03);
+          box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.07), 0px 4px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 10px 0px rgba(0, 0, 0, 0.03);
+  background-clip: padding-box;
+}
+/* line 530, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-dropdown--below {
+  margin-top: 0.125rem;
+}
+/* line 534, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-dropdown--above {
+  margin-top: -0.125rem;
+}
+/* line 538, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-search__field {
+  color: #4E5155;
+}
+/* line 543, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-selection {
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  border-bottom: 1px solid rgba(24, 28, 33, 0.1);
+  background-color: transparent;
+}
+/* line 549, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-selection__placeholder {
+  color: #babbbc;
+}
+/* line 556, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-selection--single {
+  height: 2.1875rem;
+}
+/* line 559, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding-left: 0;
+  padding-right: 1.5rem;
+  color: #4E5155;
+  line-height: 2.1875rem;
+}
+/* line 566, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-selection--single .select2-selection__clear {
+  color: #a3a4a6;
+}
+/* line 570, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-selection--single .select2-selection__arrow {
+  position: absolute;
+  height: 2.1875rem;
+  width: 1.5rem;
+}
+/* line 575, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-selection--single .select2-selection__arrow b {
+  border-color: #babbbc transparent transparent transparent;
+  left: auto;
+  margin-left: 0;
+  right: 0;
+}
+/* line 585, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default[dir=rtl] .select2-selection--single .select2-selection__rendered {
+  padding-right: 0;
+  padding-left: 1.5rem !important;
+}
+/* line 590, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default[dir=rtl] .select2-selection--single .select2-selection__arrow b {
+  right: auto;
+  left: 0;
+}
+/* line 596, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+  border-color: transparent transparent #babbbc transparent;
+}
+/* line 600, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default.select2-container--disabled .select2-selection--single {
+  background-color: transparent;
+  border-color: rgba(24, 28, 33, 0.1) !important;
+}
+/* line 608, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-selection--multiple {
+  min-height: 2.1875rem;
+}
+/* line 611, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  color: #4E5155;
+  background-color: rgba(24, 28, 33, 0.1);
+}
+/* line 616, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 622, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default.select2-container--disabled .select2-selection--multiple {
+  background-color: transparent;
+  border-color: rgba(24, 28, 33, 0.1) !important;
+}
+/* line 632, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-search__field::-moz-placeholder {
+  color: #babbbc;
+}
+/* line 636, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-search__field:-ms-input-placeholder {
+  color: #babbbc;
+}
+/* line 638, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-search__field::-webkit-input-placeholder {
+  color: #babbbc;
+}
+/* line 641, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-search--dropdown .select2-search__field {
+  border: 1px solid rgba(24, 28, 33, 0.1);
+}
+/* line 648, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-results__option {
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
+}
+/* line 652, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: rgba(24, 28, 33, 0.06);
+}
+/* line 656, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-results__option .select2-results__option {
+  padding-left: 0.875rem;
+  margin-left: -0.875rem;
+  width: calc(100% + 1.75rem);
+}
+/* line 661, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -0.875rem;
+  padding-left: 1.75rem;
+}
+/* line 665, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -1.75rem;
+  padding-left: 2.625rem;
+}
+/* line 669, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -2.625rem;
+  padding-left: 3.5rem;
+}
+/* line 673, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -3.5rem;
+  padding-left: 4.375rem;
+}
+/* line 677, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-left: -4.375rem;
+  padding-left: 0.875rem;
+}
+/* line 688, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-results__group {
+  padding: 0.5rem 0.4375rem;
+}
+/* line 692, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style .select2-container--default .select2-results__option .select2-results__group {
+  margin-left: -0.875rem;
+}
+/* line 698, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  padding-right: 0.875rem;
+  margin-right: -0.875rem;
+}
+/* line 704, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option .select2-results__option {
+  margin-right: -0.875rem;
+  padding-right: 1.75rem;
+}
+/* line 708, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-right: -1.75rem;
+  padding-right: 2.625rem;
+}
+/* line 712, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-right: -2.625rem;
+  padding-right: 3.5rem;
+}
+/* line 716, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-right: -3.5rem;
+  padding-right: 4.375rem;
+}
+/* line 720, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option {
+  margin-right: -4.375rem;
+  padding-right: 0.875rem;
+}
+/* line 730, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/select2.scss */
+.material-style[dir=rtl] .select2-container--default .select2-results__option .select2-results__group {
+  margin-left: 0;
+  margin-right: -0.875rem;
+}
+/* line 13, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.material-style .is-valid .select2-container--default .select2-selection,
+.material-style .is-valid.select2-container--default .select2-selection {
+  border-color: #02BC77;
+}
+/* line 13, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.material-style .is-invalid .select2-container--default .select2-selection,
+.material-style .is-invalid.select2-container--default .select2-selection {
+  border-color: #d9534f;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.material-style .select2-secondary .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: #8897AA;
+  color: #fff;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.material-style .select2-success .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: #02BC77;
+  color: #fff;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.material-style .select2-info .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: #28c3d7;
+  color: #fff;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.material-style .select2-warning .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: #FFD950;
+  color: #665720;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.material-style .select2-danger .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: #d9534f;
+  color: #fff;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.material-style .select2-light .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: rgba(24, 28, 33, 0.06);
+  color: #0a0b0d;
+}
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/select2/_mixins.scss */
+.material-style .select2-dark .select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background: rgba(24, 28, 33, 0.9);
+  color: #fff;
+}

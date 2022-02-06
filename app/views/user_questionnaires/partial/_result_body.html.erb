@@ -1,0 +1,15 @@
+
+<div class="row">
+	<div class="col">
+		<h4 class="text-primary mb-2"><%= I18n.t('questionnaire.test_information') %></h4>
+		<% if  @target_user_questionnaire.approved? %>
+			<h5 class="text-success mb-4"><%= I18n.t('questionnaire.approved') %></h5>
+		<% else %>
+			<h5 class="text-danger mb-4"><%= I18n.t('questionnaire.fail') %></h5>
+		<% end %>
+
+		<%= create_accordion_result @target_user_questionnaire.id, @target_user_questionnaire.questionnaire_id %>
+
+
+	</div>
+</div>

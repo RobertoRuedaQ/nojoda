@@ -1,0 +1,25 @@
+<%= form_title(@country, 'name') %>
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#fund_information_tab"><%= Fund.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#default_matrix_tab"><%= DefaultMatrix.model_name.human(count: 1) %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="fund_information_tab">
+		<%= build_form(@country,'update', current_user.template('Country','countries',current_user),html: { class: 'form-group', method: 'put'})%>
+    </div>
+    <div class="tab-pane fade p-2" id="default_matrix_tab">
+    	<% default_matrix_template = current_user.template('DefaultMatrix','default_matrices',current_user,id: true) %>
+    	<% default_matrix_template[:id][:controller] = 'default_matrices'%>
+    	<% default_matrix_template[:id][:action] = 'edit'%>
+    	<% default_matrix_template[:id][:target_id] = 'id'%>
+		<%= createTable(@country.default_matrix,default_matrix_template,title: false, alternative_new_link: new_country_default_matrix_path(country_id: @country)).html_safe %>
+    </div>
+
+  </div>
+</div>

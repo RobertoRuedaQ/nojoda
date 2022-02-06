@@ -1,0 +1,6 @@
+<div class="p-2" id="input-element-<%= input.id %>">
+	<div class="d-flex justify-content-between">
+		<%= input.input %>
+		<%= link_to I18n.t('general.destroy'), form_input_path(input),method: :delete, class: 'text-danger', remote: true%>
+	</div>
+</div>

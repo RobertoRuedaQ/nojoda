@@ -1,0 +1,27 @@
+<div class="accordion" id="disbursement_acordion_main">
+  <div class="card">
+    <div class="card-header py-0 px-2" id="accordion-reference">
+
+      <div class="d-flex align-items-center">
+        <div class="lnr lnr-mustache display-4 text-success"></div>
+        <div class="ml-3 flex-grow-1">
+          <div class="text-muted small"><%= @student.reference.count %> </div>
+          <div class="text-large"><%= I18n.t('students.references') %></div>
+        </div>
+
+        <div class="px-4">
+          <button class="btn btn-ms btn-outline-primary my-4" type="button" data-toggle="collapse" data-target="#disbursement_reference" aria-expanded="true" aria-controls="disbursement_reference">
+            <%= I18n.t('application.disbursement_details') %>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="disbursement_reference" class="collapse" aria-labelledby="accordion-reference" data-parent="#disbursement_acordion_main">
+      <div class="card-body p-0">
+        <%= createTable(@student.reference, reference_template(@student.reference), new: false, title: false).html_safe %>
+
+      </div>
+    </div>
+  </div>
+</div>

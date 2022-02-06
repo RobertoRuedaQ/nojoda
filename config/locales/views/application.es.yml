@@ -1,0 +1,143 @@
+es:
+  application:
+    search_button: Filtrar
+    attributes:
+      id: ID
+      request_type: Tipo de solicitud
+      user_name: Nombre de usuario
+      user_identification_number: Numero de identificación
+      fund: Fondo
+      funding_opportunity: Convocatoria
+      supervisor: Supervisor encargado
+      created_at: Creado el
+      updated_at: Actualizado el
+      institution: Institución
+      disbursement_type: Tipo de desembolso
+      disbursement_request_type: Tipo de solicitud de desembolso
+    living_expenses: Manutención
+    living_expenses_payment: Manutención
+    emergency_living_expenses_payment: Manuntención de emergencia
+    tuition: Matrícula
+    previous_tuition: Matrícula anterior
+    reimbursement_of_money: Reintegro de dinero
+    tution: Matrícula
+    n_a: Sin especificar
+    'Pago matrícula a la universidad': Pago matrícula a la universidad
+    college_tuition_payment: Pago matrícula a la universidad
+    'Reintegro de dinero': Reintegro de dinero
+    migrated: Migrado
+    request_general_info: 'Envía la información'
+    form: 'INFORMACIÓN'
+    legal_document: 'DOCUMENTOS LEGALES'
+    questionnaire: 'ENVIAR SOLICITUD'
+    submit_application: 'ENVIAR POSTULACIÓN'
+    submit_your_application: 'Envía Tu postulación'
+    submit_application_test: 'Haz clic en el siguiente botón para enviar tu postulación. Una vez enviada no podrás modificar la información. Por favor revisa que tu información es correcta antes en enviar la postulación.'
+    submit_academic_info: 'Enviar información académica'
+    add_new_academic: 'Crear nuevo registro académico'
+    school_explanation: 'Necesitas crear por lo menos un registro para tu historia académica en el colegio para continuar.'
+    university_explanation: 'Necesitas crear por lo menos un registro para tu historia académica de educación superior para ser financiado para continuar.'
+    academic_institution_name: 'Nombre institución'
+    level: 'Nivel'
+    major: 'Programa'
+    status: 'Estado'
+    submit_information: 'Confirmar información y continuar'
+    do_you_have_children: '¿Tienes hijos?'
+    school_continue: 'Si ya incluiste todos los registros necesarios, haz clic en el siguiente botón.'
+    university_continue: 'Si ya incluiste todos los registros necesarios, haz clic en el siguiente botón.'
+    funding_request: 'Solicitud De Financiamiento'
+    add_new_child: 'Añadir información de hijo(a)'
+    add_new_debt: 'Crear registro De deuda'
+    add_new_reference: 'Crear registro de persona que es apoyo económico'
+    last_change_by: 'Modificado por'
+    last_change_at: 'Modificado el'
+    children_information: 'Información hijos'
+    references_information: 'Información de los responsable económico'
+    reference_notification: 'Si respondes económicamente por ti por favor ingresa tus datos, de no ser así, debes ingresa los datos de la o las persona que responde económicamente por ti.'
+    review_application: 'Revisar postulación'
+    application_history: 'Histórico De postulaciones'
+    disbursement_details: 'Detalles'
+    tuition: 'Matrícula'
+    living_expenses: 'Manutención'
+    add_new_income_information: 'Añadir nuevo registro información laboral'
+    request_disbursement: 'Enviar solicitud de desembolso'
+    request_disbursement_text: 'Al hacer clic en el botón azul de enviar, Lumni procesará tu solicitud de desembolso.'
+    request_disbursement_submitted: 'Tu solicitud de desembolso está siendo evaluada.'
+    under_review: 'En Revisión'
+    under_review_emergency: 'Solicitud de desembolso de emergencia en revisión'
+    request_funding_opportunity: 'Envía tu postulación'
+    request_funding_opportunity_text: 'Haz clic en el siguiente botón para enviar tu postulación.'
+    request_funding_opportunity_submitted: 'Tu información ha sido enviada exitosamente.'
+    request_income_information: 'Envía la información de tu nuevo ingreso'
+    request_income_information_text: 'Haz clic en el siguiente botón para enviar tu información.'
+    request_income_information_submitted: 'Tu información ha sido enviada exitosamente.'
+    token_description_text: 'Esta convocatoria está restringida sólo para aquellos estudiantes preselecionados. Si recibiste un token, escríbelo a continuación para verificar tu identidad.'
+    changes_request: 'Solicitud De cambios'
+    request_payment: 'Solicitar revisión para activación de pago'
+    request_payment_text: 'Haz clic en el siguiente botón para enviar tu información de pago'
+    request_payment_submitted: 'Estamos revisando tu solicitud de activación de pago.'
+    other_disbursements: 'Otros'
+    academic_bonus: 'Bono Académico'
+    request_grades: 'Reporte de notas'
+    request_academic_request: 'Reporte de asignaturas'
+    request_academic_request_submitted: 'Has enviado exitosamente la información'
+    request_academic_request_text: 'Es importante que antes de darle "Envía la información" verifiques que sean las notas definitivas, solo podrás enviar a revisar cuando finalices el periodo académico. Si no has terminado quédate ahí y actualízalo mas adelante, cuando tengas las notas Finales, selecciona "Envía la información".'
+    request_cancellation_request: 'Envia la información para condonaciones'
+    request_cancellation_request_text: 'Clic para enviar la información'
+    request_cancellation_request_submitted: 'Has enviado exitosamente la información'
+    request_conciliation_information: 'Envía la información para conciliaciones'
+    request_conciliation_information_text: 'Clic para enviar la información'
+    request_conciliation_information_submitted: 'Has enviado exitosamente la información'
+    request_student_financial_information: 'Enviar la solicitud de cambios de tu información financiera'
+    request_student_financial_information_text: 'Haz clic en el siguiente botón para enviar tu información.'
+    request_personal_information: 'Enviar la solicitud de cambios de tu información personal'
+    request_personal_information_text: 'Haz clic en el siguiente botón para enviar tu información.'
+    request_location: 'Enviar la solicitud de cambios de tu ubicación'
+    request_location_text: 'Haz clic en el siguiente botón para enviar tu información.'
+    request_contact_info: 'Enviar la solicitud de cambios de tu información de contacto'
+    request_contact_info_text: 'Haz clic en el siguiente botón para enviar tu información.'
+    request_academic_stop: 'Enviar la solicitud de cambios de tu aplazamiento académico'
+    request_academic_stop_text: 'Haz clic en el siguiente botón para enviar tu información.'
+    request_student: 'Enviar la solicitud de cambios de tu información'
+    request_student_text: 'Haz clic en el siguiente botón para enviar tu información.'
+    request_fund_withdrawal: 'Enviar la solicitud de retiro del fondo'
+    request_fund_withdrawal_text: 'Haz clic en el siguiente botón para enviar tu información.'
+    request_bank_account: 'Enviar la solicitud de registro de nueva cuenta bancaria'
+    request_bank_account_text: 'Haz clic en el siguiente botón para enviar tu información.'
+    request_black_rock_data: 'Enviar la solicitud de registro para el apoyo del desembolso de manutención de emergencia'
+    request_black_rock_data_text: 'Haz clic en el siguiente botón para enviar tu información.'
+    request_mentory_empleability_invitation: 'Enviar tu respuesta a la inivitación de particular del programa de empleabilidad y mentorías'
+    request_mentory_empleability_invitation_text: 'Haz clic en el siguiente botón para enviar tu información.'
+    origination: Originación
+    disbursement_request: Solicitud de desembolso
+    courses: Cursos
+    partial_scores: Puntajes partiales
+    final_scores: Puntajes finales
+    cancellation_request: Solicitud de condonación
+    add_disbursement_modeling: Otrosí
+    diploma_delivery: Entrega de diploma
+    funded_major: Programa
+    covid: Covid
+    manual_payment: Pago manual
+    income_information: Información laboral
+    conciliation: Conciliación
+    withdrawn_application: 'Retirar Aplicación'
+    evaluate: 'Evaluar'
+    students_data: Datos del estudiante
+    student_financial_information: Información financiera del estudiante
+    personal_information: Información personal
+    contact_info: Información de contacto
+    student_location: Ubicación del estudiante
+    academic_stop: Pausa academica
+    fund_withdrawals: Retiros de fondo
+    no_request_needed: 'No se requiere realizar solicitud desembolso de manutención, esta será tramitada automáticamente con la solicitud de desembolso matrícula realizada por el estudiante.'
+    bank_account: 'Cambios cuenta bancaria'
+    emergency_living_expenses: 'Manutención de emergencia'
+    black_rock_data: 'Desembolso Emergencia - Black Rock'
+    mentory_empleability_invitation: 'Programa de mentorías y empleabilidad'
+    empleability: 'Empleabilidad'
+    mentory: 'Mentoría'
+
+
+
+

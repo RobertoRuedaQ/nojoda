@@ -1,0 +1,140 @@
+!!!
+%html.default-style.layout-navbar-fixed{lang: "en"}
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    / Start google analytics
+    / Global site tag (gtag.js) - Google Analytics
+    %script{async: "", src: "https://www.googletagmanager.com/gtag/js?id=UA-149872250-1"}
+    :javascript
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149872250-1');
+    / end google analytics
+    %meta{charset: "utf-8"}/
+    %meta{content: "IE=edge,chrome=1", "http-equiv" => "x-ua-compatible"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0", name: "viewport"}/
+    %link{href: "#{asset_path("favicon.ico")}", rel: "shortcut icon"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    %title
+      = @object_title ? @object_title.to_s + " - " : ""
+      Lumni Portal
+    / Main font
+    %link{href: "https://fonts.googleapis.com/css2?family=Lato&display=swap", rel: "stylesheet"}/
+    = javascript_include_tag 'layout-helpers.js', 'data-turbolinks-track': 'reload'
+    / jQuery
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"}
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/jquery-ujs/1.2.2/rails.min.js"}
+    = yield :head
+  %body.bg-light.error-page
+    :css
+      body {
+        font-family: 'Lato', sans-serif;
+        margin: 0;
+      }
+      .error-page {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .message {
+        width: 100%;
+        text-align: center;
+        font-size: 3rem;
+        margin-top: 30px;
+      }
+      .error {
+        font-size: 20rem;
+        text-align: center;
+        color: #135a80ff;
+        text-shadow: 6px -6px 0px #00000021;
+      }
+      .error span  {
+        color: #000;
+      }
+      .button a{
+        text-decoration: none;
+        background-color: #1c5a80;
+        padding: 17px;
+        color: #fff;
+        font-size: 1.2rem;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+
+      .button {
+        margin-top: 80px;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;  
+      }
+
+      .image {
+        width: 30%;
+      }
+
+      .description {
+        font-size: 1.9rem;
+        margin-top: 20px;
+        color: #5d5959;
+      }
+
+      .text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100%;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .title {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        font-size: 2.5rem;
+      }
+
+      .card {
+        background-color: #fff;
+        width: 50%;
+        border: 1px solid #ccc;
+        padding: 30px;
+        min-height: 300px;
+        margin: auto;
+        padding-bottom: 50px;
+      }
+
+      .card .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card .body {
+        margin-top: 50px;
+        font-size: 1.4rem;
+      }
+      
+      @media (max-width: 980px) {
+        .card {
+          width: 80%;
+        }
+      }
+    .container
+      = yield

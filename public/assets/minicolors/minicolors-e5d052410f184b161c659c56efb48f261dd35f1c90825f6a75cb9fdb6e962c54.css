@@ -1,0 +1,514 @@
+/* line 1, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors {
+  position: relative;
+}
+
+/* line 5, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-sprite {
+  background-image: url(jquery.minicolors.png);
+}
+
+/* line 9, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-swatch {
+  position: absolute;
+  vertical-align: middle;
+  background-position: -80px 0;
+  border: solid 1px #ccc;
+  cursor: text;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+/* line 20, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-swatch-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* line 28, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors input[type=hidden] + .minicolors-swatch {
+  width: 28px;
+  position: static;
+  cursor: pointer;
+}
+
+/* line 34, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors input[type=hidden][disabled] + .minicolors-swatch {
+  cursor: default;
+}
+
+/* Panel */
+/* line 39, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-panel {
+  position: absolute;
+  width: 173px;
+  background: white;
+  border: solid 1px #CCC;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 99999;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: none;
+}
+
+/* line 50, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-panel.minicolors-visible {
+  display: block;
+}
+
+/* Panel positioning */
+/* line 55, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-position-top .minicolors-panel {
+  top: -154px;
+}
+
+/* line 59, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-position-right .minicolors-panel {
+  right: 0;
+}
+
+/* line 63, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-position-bottom .minicolors-panel {
+  top: auto;
+}
+
+/* line 67, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-position-left .minicolors-panel {
+  left: 0;
+}
+
+/* line 71, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-with-opacity .minicolors-panel {
+  width: 194px;
+}
+
+/* line 75, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors .minicolors-grid {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  width: 150px;
+  height: 150px;
+  background-position: -120px 0;
+  cursor: crosshair;
+}
+
+/* line 85, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors .minicolors-grid-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+}
+
+/* line 93, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-slider-saturation .minicolors-grid {
+  background-position: -420px 0;
+}
+
+/* line 97, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-slider-saturation .minicolors-grid-inner {
+  background-position: -270px 0;
+  background-image: inherit;
+}
+
+/* line 102, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-slider-brightness .minicolors-grid {
+  background-position: -570px 0;
+}
+
+/* line 106, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-slider-brightness .minicolors-grid-inner {
+  background-color: black;
+}
+
+/* line 110, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-slider-wheel .minicolors-grid {
+  background-position: -720px 0;
+}
+
+/* line 114, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-slider,
+.minicolors-opacity-slider {
+  position: absolute;
+  top: 1px;
+  left: 152px;
+  width: 20px;
+  height: 150px;
+  background-color: white;
+  background-position: 0 0;
+  cursor: row-resize;
+}
+
+/* line 126, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-slider-saturation .minicolors-slider {
+  background-position: -60px 0;
+}
+
+/* line 130, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-slider-brightness .minicolors-slider {
+  background-position: -20px 0;
+}
+
+/* line 134, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-slider-wheel .minicolors-slider {
+  background-position: -20px 0;
+}
+
+/* line 138, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-opacity-slider {
+  left: 173px;
+  background-position: -40px 0;
+  display: none;
+}
+
+/* line 144, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-with-opacity .minicolors-opacity-slider {
+  display: block;
+}
+
+/* Pickers */
+/* line 149, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-grid .minicolors-picker {
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  width: 12px;
+  height: 12px;
+  border: solid 1px black;
+  border-radius: 10px;
+  margin-top: -6px;
+  margin-left: -6px;
+  background: none;
+}
+
+/* line 162, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-grid .minicolors-picker > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  border: solid 2px white;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+/* line 173, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-picker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: white;
+  border: solid 1px black;
+  margin-top: -2px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+/* Swatches */
+/* line 186, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-swatches,
+.minicolors-swatches li {
+  margin: 5px 0 3px 5px;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+/* line 194, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-swatches .minicolors-swatch {
+  position: relative;
+  float: left;
+  cursor: pointer;
+  margin: 0 4px 0 0;
+}
+
+/* line 201, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-with-opacity .minicolors-swatches .minicolors-swatch {
+  margin-right: 7px;
+}
+
+/* line 205, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-swatch.selected {
+  border-color: #000;
+}
+
+/* Inline controls */
+/* line 210, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-inline {
+  display: inline-block;
+}
+
+/* line 214, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-inline .minicolors-input {
+  display: none !important;
+}
+
+/* line 218, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-inline .minicolors-panel {
+  position: relative;
+  top: auto;
+  left: auto;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  z-index: auto;
+  display: inline-block;
+}
+
+/* Default theme */
+/* line 228, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-default .minicolors-swatch {
+  top: 5px;
+  left: 5px;
+  width: 18px;
+  height: 18px;
+}
+
+/* line 234, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-default .minicolors-swatches .minicolors-swatch {
+  margin-bottom: 2px;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+}
+
+/* line 241, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-default.minicolors-position-right .minicolors-swatch {
+  left: auto;
+  right: 5px;
+}
+
+/* line 245, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-default.minicolors {
+  width: auto;
+  display: inline-block;
+}
+
+/* line 249, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-default .minicolors-input {
+  height: 20px;
+  width: auto;
+  display: inline-block;
+  padding-left: 26px;
+}
+
+/* line 255, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-default.minicolors-position-right .minicolors-input {
+  padding-right: 26px;
+  padding-left: inherit;
+}
+
+/* Bootstrap theme */
+/* line 261, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-bootstrap .minicolors-swatch {
+  z-index: 2;
+  top: 3px;
+  left: 3px;
+  width: 28px;
+  height: 28px;
+  border-radius: 3px;
+}
+
+/* line 269, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-bootstrap .minicolors-swatches .minicolors-swatch {
+  margin-bottom: 2px;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+}
+
+/* line 276, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-bootstrap .minicolors-swatch-color {
+  border-radius: inherit;
+}
+
+/* line 279, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-bootstrap.minicolors-position-right > .minicolors-swatch {
+  left: auto;
+  right: 3px;
+}
+
+/* line 283, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-bootstrap .minicolors-input {
+  float: none;
+  padding-left: 44px;
+}
+
+/* line 287, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-bootstrap.minicolors-position-right .minicolors-input {
+  padding-right: 44px;
+  padding-left: 12px;
+}
+
+/* line 291, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-bootstrap .minicolors-input.input-lg + .minicolors-swatch {
+  top: 4px;
+  left: 4px;
+  width: 37px;
+  height: 37px;
+  border-radius: 5px;
+}
+
+/* line 298, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-bootstrap .minicolors-input.input-sm + .minicolors-swatch {
+  width: 24px;
+  height: 24px;
+}
+
+/* line 302, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-bootstrap .minicolors-input.input-xs + .minicolors-swatch {
+  width: 18px;
+  height: 18px;
+}
+
+/* line 306, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.input-group .minicolors-theme-bootstrap:not(:first-child) .minicolors-input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Semantic Ui theme */
+/* line 312, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-semanticui .minicolors-swatch {
+  top: 0;
+  left: 0;
+  padding: 18px;
+}
+
+/* line 317, /home/roberto/Documentos/lumni/platform-4.0/node_modules/@claviska/jquery-minicolors/jquery.minicolors.css */
+.minicolors-theme-semanticui input {
+  text-indent: 30px;
+}
+
+/* line 6, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.minicolors-panel {
+  padding: 0.25rem;
+}
+/* line 9, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.minicolors-position-top .minicolors-panel {
+  -webkit-transform: translate(0, -0.625rem);
+          transform: translate(0, -0.625rem);
+}
+
+/* line 14, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.minicolors-slider, .minicolors-opacity-slider {
+  -webkit-transform: translate(0.25rem, 0.25rem);
+          transform: translate(0.25rem, 0.25rem);
+}
+/* line 18, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+[dir=rtl] .minicolors-slider,
+[dir=rtl] .minicolors-opacity-slider {
+  right: 152px;
+  left: auto;
+  -webkit-transform: translate(-0.25rem, 0.25rem);
+          transform: translate(-0.25rem, 0.25rem);
+}
+
+/* line 25, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+[dir=rtl] .minicolors-opacity-slider {
+  right: 173px;
+  left: auto;
+}
+
+/* line 30, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.minicolors-grid {
+  left: 0 !important;
+}
+
+/* line 34, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.minicolors-grid,
+.minicolors-slider,
+.minicolors-opacity-slider {
+  top: 0 !important;
+}
+
+/* line 40, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.minicolors-sprite {
+  background-image: url("/assets/minicolors/jquery.minicolors-a70bb7e086d845e9fa52b74ad102c26e1c879d425c997eda656039ca4a95496c.png");
+}
+
+/* line 44, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.minicolors-theme-default.minicolors,
+.minicolors-theme-default .minicolors-input {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 57, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.default-style .minicolors-theme-default .minicolors-panel {
+  z-index: 1000;
+  margin: .125rem 0;
+  border: 1px solid rgba(24, 28, 33, 0.05);
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.09);
+          box-shadow: 0 1px 6px rgba(0, 0, 0, 0.09);
+  border-radius: 0.2rem;
+}
+/* line 67, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.default-style .minicolors-theme-default .minicolors-swatch {
+  top: 0.34375rem;
+  left: 0.34375rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 0;
+}
+/* line 75, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.default-style .minicolors-theme-default.minicolors-position-right .minicolors-swatch {
+  right: 0.34375rem;
+  left: auto;
+}
+/* line 80, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.default-style .minicolors-theme-default .minicolors-input {
+  padding-left: 1.8125rem;
+}
+/* line 84, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.default-style .minicolors-theme-default.minicolors-position-right .minicolors-input {
+  padding-right: 1.8125rem;
+  padding-left: 0.7rem;
+}
+
+/* line 96, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.material-style .minicolors-theme-default .minicolors-panel {
+  z-index: 1000;
+  margin: .125rem 0;
+  border: 0px solid rgba(24, 28, 33, 0.15);
+  background-clip: padding-box;
+  -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.07), 0px 4px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 10px 0px rgba(0, 0, 0, 0.03);
+          box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.07), 0px 4px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 10px 0px rgba(0, 0, 0, 0.03);
+  border-radius: 0.125rem;
+}
+/* line 106, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.material-style .minicolors-theme-default .minicolors-swatch {
+  top: 0.53125rem;
+  left: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 0;
+}
+/* line 114, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.material-style .minicolors-theme-default.minicolors-position-right .minicolors-swatch {
+  right: 0;
+  left: auto;
+}
+/* line 119, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.material-style .minicolors-theme-default .minicolors-input {
+  padding-left: 1.65625rem !important;
+}
+/* line 123, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/minicolors/minicolors.scss.erb */
+.material-style .minicolors-theme-default.minicolors-position-right .minicolors-input {
+  padding-right: 1.65625rem !important;
+  padding-left: 0 !important;
+}

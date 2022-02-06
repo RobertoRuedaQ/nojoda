@@ -1,0 +1,2 @@
+module FundingTokensHelper
+end

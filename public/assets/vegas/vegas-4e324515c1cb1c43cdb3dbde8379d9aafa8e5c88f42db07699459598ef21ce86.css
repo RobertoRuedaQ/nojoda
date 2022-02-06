@@ -1,0 +1,694 @@
+/* line 1, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-wrapper,
+.vegas-overlay,
+.vegas-timer,
+.vegas-slide,
+.vegas-slide-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 17, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-overlay {
+  opacity: .5;
+  background: transparent url("overlays/02.png") center center repeat;
+}
+
+/* line 22, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-timer {
+  top: auto;
+  bottom: 0;
+  height: 2px;
+}
+
+/* line 28, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-timer-progress {
+  width: 0%;
+  height: 100%;
+  background: white;
+  -webkit-transition: width ease-out;
+  transition: width ease-out;
+}
+
+/* line 35, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-timer-running .vegas-timer-progress {
+  width: 100%;
+}
+
+/* line 39, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-slide,
+.vegas-slide-inner {
+  margin: 0;
+  padding: 0;
+  background: transparent center center no-repeat;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+/* line 49, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+body .vegas-container {
+  overflow: hidden !important;
+  position: relative;
+}
+
+/* line 54, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* line 61, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+body.vegas-container {
+  overflow: auto;
+  position: static;
+  z-index: -2;
+}
+
+/* line 67, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+body.vegas-container > .vegas-timer,
+body.vegas-container > .vegas-overlay,
+body.vegas-container > .vegas-slide {
+  position: fixed;
+  z-index: -1;
+}
+
+/* Target Safari IOS7+ in order to add 76px */
+/*******************************************/
+/* blur transition */
+/*******************************************/
+/* line 78, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-blur,
+.vegas-transition-blur2 {
+  opacity: 0;
+  -webkit-filter: blur(32px) brightness(1.01);
+  filter: blur(32px) brightness(1.01);
+}
+
+/* line 85, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-blur-in,
+.vegas-transition-blur2-in {
+  opacity: 1;
+  -webkit-filter: blur(0px) brightness(1.01);
+  filter: blur(0px) brightness(1.01);
+}
+
+/* line 92, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-blur2-out {
+  opacity: 0;
+}
+
+/*******************************************/
+/* burn transition */
+/*******************************************/
+/* line 99, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-burn,
+.vegas-transition-burn2 {
+  opacity: 0;
+  -webkit-filter: contrast(1000%) saturate(1000%);
+  filter: contrast(1000%) saturate(1000%);
+}
+
+/* line 106, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-burn-in,
+.vegas-transition-burn2-in {
+  opacity: 1;
+  -webkit-filter: contrast(100%) saturate(100%);
+  filter: contrast(100%) saturate(100%);
+}
+
+/* line 113, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-burn2-out {
+  opacity: 0;
+  -webkit-filter: contrast(1000%) saturate(1000%);
+  filter: contrast(1000%) saturate(1000%);
+}
+
+/*******************************************/
+/* fade transition */
+/*******************************************/
+/* line 122, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-fade,
+.vegas-transition-fade2 {
+  opacity: 0;
+}
+
+/* line 127, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-fade-in,
+.vegas-transition-fade2-in {
+  opacity: 1;
+}
+
+/* line 132, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-fade2-out {
+  opacity: 0;
+}
+
+/*******************************************/
+/* flash transition */
+/*******************************************/
+/* line 139, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-flash,
+.vegas-transition-flash2 {
+  opacity: 0;
+  -webkit-filter: brightness(25);
+  filter: brightness(25);
+}
+
+/* line 146, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-flash-in,
+.vegas-transition-flash2-in {
+  opacity: 1;
+  -webkit-filter: brightness(1);
+  filter: brightness(1);
+}
+
+/* line 153, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-flash2-out {
+  opacity: 0;
+  -webkit-filter: brightness(25);
+  filter: brightness(25);
+}
+
+/*******************************************/
+/* negative transition */
+/*******************************************/
+/* line 162, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-negative,
+.vegas-transition-negative2 {
+  opacity: 0;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+/* line 169, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-negative-in,
+.vegas-transition-negative2-in {
+  opacity: 1;
+  -webkit-filter: invert(0);
+  filter: invert(0);
+}
+
+/* line 176, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-negative2-out {
+  opacity: 0;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+/*******************************************/
+/* slideDown transition */
+/*******************************************/
+/* line 185, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideDown,
+.vegas-transition-slideDown2 {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/* line 191, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideDown-in,
+.vegas-transition-slideDown2-in {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+/* line 197, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideDown2-out {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+/*******************************************/
+/* slideLeft transition */
+/*******************************************/
+/* line 205, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideLeft,
+.vegas-transition-slideLeft2 {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+/* line 211, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideLeft-in,
+.vegas-transition-slideLeft2-in {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+/* line 217, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideLeft2-out {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+/*******************************************/
+/* slideRight transition */
+/*******************************************/
+/* line 225, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideRight,
+.vegas-transition-slideRight2 {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+/* line 231, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideRight-in,
+.vegas-transition-slideRight2-in {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+/* line 237, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideRight2-out {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+/*******************************************/
+/* slideUp transition */
+/*******************************************/
+/* line 245, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideUp,
+.vegas-transition-slideUp2 {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+/* line 251, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideUp-in,
+.vegas-transition-slideUp2-in {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+/* line 257, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-slideUp2-out {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/*******************************************/
+/* swirlLeft transition */
+/*******************************************/
+/* line 265, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-swirlLeft,
+.vegas-transition-swirlLeft2 {
+  -webkit-transform: scale(2) rotate(35deg);
+  transform: scale(2) rotate(35deg);
+  opacity: 0;
+}
+
+/* line 272, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-swirlLeft-in,
+.vegas-transition-swirlLeft2-in {
+  -webkit-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+/* line 279, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-swirlLeft2-out {
+  -webkit-transform: scale(2) rotate(-35deg);
+  transform: scale(2) rotate(-35deg);
+  opacity: 0;
+}
+
+/*******************************************/
+/* swirlRight transition */
+/*******************************************/
+/* line 288, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-swirlRight,
+.vegas-transition-swirlRight2 {
+  -webkit-transform: scale(2) rotate(-35deg);
+  transform: scale(2) rotate(-35deg);
+  opacity: 0;
+}
+
+/* line 295, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-swirlRight-in,
+.vegas-transition-swirlRight2-in {
+  -webkit-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+/* line 302, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-swirlRight2-out {
+  -webkit-transform: scale(2) rotate(35deg);
+  transform: scale(2) rotate(35deg);
+  opacity: 0;
+}
+
+/*******************************************/
+/* zoomIn transition */
+/*******************************************/
+/* line 311, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-zoomIn,
+.vegas-transition-zoomIn2 {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* line 318, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-zoomIn-in,
+.vegas-transition-zoomIn2-in {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* line 325, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-zoomIn2-out {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+  opacity: 0;
+}
+
+/*******************************************/
+/* zoomOut transition */
+/*******************************************/
+/* line 334, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-zoomOut,
+.vegas-transition-zoomOut2 {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+  opacity: 0;
+}
+
+/* line 341, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-zoomOut-in,
+.vegas-transition-zoomOut2-in {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* line 348, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-transition-zoomOut2-out {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  opacity: 0;
+}
+
+/*******************************************/
+/* kenburns animation */
+/*******************************************/
+/* line 357, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-animation-kenburns {
+  -webkit-animation: kenburns ease-out;
+  animation: kenburns ease-out;
+}
+
+@-webkit-keyframes kenburns {
+  0% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes kenburns {
+  0% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/*******************************************/
+/* kenburnsDownLeft animation */
+/*******************************************/
+/* line 387, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-animation-kenburnsDownLeft {
+  -webkit-animation: kenburnsDownLeft ease-out;
+  animation: kenburnsDownLeft ease-out;
+}
+
+@-webkit-keyframes kenburnsDownLeft {
+  0% {
+    -webkit-transform: scale(1.5) translate(10%, -10%);
+    transform: scale(1.5) translate(10%, -10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+@keyframes kenburnsDownLeft {
+  0% {
+    -webkit-transform: scale(1.5) translate(10%, -10%);
+    transform: scale(1.5) translate(10%, -10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+/*******************************************/
+/* kenburnsDownRight animation */
+/*******************************************/
+/* line 417, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-animation-kenburnsDownRight {
+  -webkit-animation: kenburnsDownRight ease-out;
+  animation: kenburnsDownRight ease-out;
+}
+
+@-webkit-keyframes kenburnsDownRight {
+  0% {
+    -webkit-transform: scale(1.5) translate(-10%, -10%);
+    transform: scale(1.5) translate(-10%, -10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+@keyframes kenburnsDownRight {
+  0% {
+    -webkit-transform: scale(1.5) translate(-10%, -10%);
+    transform: scale(1.5) translate(-10%, -10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+/*******************************************/
+/* kenburnsDown animation */
+/*******************************************/
+/* line 447, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-animation-kenburnsDown {
+  -webkit-animation: kenburnsDown ease-out;
+  animation: kenburnsDown ease-out;
+}
+
+@-webkit-keyframes kenburnsDown {
+  0% {
+    -webkit-transform: scale(1.5) translate(0, -10%);
+    transform: scale(1.5) translate(0, -10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+@keyframes kenburnsDown {
+  0% {
+    -webkit-transform: scale(1.5) translate(0, -10%);
+    transform: scale(1.5) translate(0, -10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+/*******************************************/
+/* kenburnsLeft animation */
+/*******************************************/
+/* line 477, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-animation-kenburnsLeft {
+  -webkit-animation: kenburnsLeft ease-out;
+  animation: kenburnsLeft ease-out;
+}
+
+@-webkit-keyframes kenburnsLeft {
+  0% {
+    -webkit-transform: scale(1.5) translate(10%, 0);
+    transform: scale(1.5) translate(10%, 0);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+@keyframes kenburnsLeft {
+  0% {
+    -webkit-transform: scale(1.5) translate(10%, 0);
+    transform: scale(1.5) translate(10%, 0);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+/*******************************************/
+/* kenburnsRight animation */
+/*******************************************/
+/* line 507, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-animation-kenburnsRight {
+  -webkit-animation: kenburnsRight ease-out;
+  animation: kenburnsRight ease-out;
+}
+
+@-webkit-keyframes kenburnsRight {
+  0% {
+    -webkit-transform: scale(1.5) translate(-10%, 0);
+    transform: scale(1.5) translate(-10%, 0);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+@keyframes kenburnsRight {
+  0% {
+    -webkit-transform: scale(1.5) translate(-10%, 0);
+    transform: scale(1.5) translate(-10%, 0);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+/*******************************************/
+/* kenburnsUpLeft animation */
+/*******************************************/
+/* line 537, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-animation-kenburnsUpLeft {
+  -webkit-animation: kenburnsUpLeft ease-out;
+  animation: kenburnsUpLeft ease-out;
+}
+
+@-webkit-keyframes kenburnsUpLeft {
+  0% {
+    -webkit-transform: scale(1.5) translate(10%, 10%);
+    transform: scale(1.5) translate(10%, 10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+@keyframes kenburnsUpLeft {
+  0% {
+    -webkit-transform: scale(1.5) translate(10%, 10%);
+    transform: scale(1.5) translate(10%, 10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+/*******************************************/
+/* kenburnsUpRight animation */
+/*******************************************/
+/* line 567, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-animation-kenburnsUpRight {
+  -webkit-animation: kenburnsUpRight ease-out;
+  animation: kenburnsUpRight ease-out;
+}
+
+@-webkit-keyframes kenburnsUpRight {
+  0% {
+    -webkit-transform: scale(1.5) translate(-10%, 10%);
+    transform: scale(1.5) translate(-10%, 10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+@keyframes kenburnsUpRight {
+  0% {
+    -webkit-transform: scale(1.5) translate(-10%, 10%);
+    transform: scale(1.5) translate(-10%, 10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+/*******************************************/
+/* kenburnsUp animation */
+/*******************************************/
+/* line 597, /Users/user/Documents/platform-4.0/node_modules/vegas/dist/vegas.css */
+.vegas-animation-kenburnsUp {
+  -webkit-animation: kenburnsUp ease-out;
+  animation: kenburnsUp ease-out;
+}
+
+@-webkit-keyframes kenburnsUp {
+  0% {
+    -webkit-transform: scale(1.5) translate(0, 10%);
+    transform: scale(1.5) translate(0, 10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+@keyframes kenburnsUp {
+  0% {
+    -webkit-transform: scale(1.5) translate(0, 10%);
+    transform: scale(1.5) translate(0, 10%);
+  }
+  100% {
+    -webkit-transform: scale(1) translate(0, 0);
+    transform: scale(1) translate(0, 0);
+  }
+}
+/* line 3, /Users/user/Documents/platform-4.0/vendor/assets/libs/vegas/vegas.scss */
+.vegas-wrapper {
+  position: relative;
+  bottom: auto;
+  width: 100%;
+}
+
+/* line 9, /Users/user/Documents/platform-4.0/vendor/assets/libs/vegas/vegas.scss */
+.card.vegas-container {
+  position: relative !important;
+  border: 0 !important;
+  -webkit-mask-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC");
+}
+
+/* line 17, /Users/user/Documents/platform-4.0/vendor/assets/libs/vegas/vegas.scss */
+.vegas-overlay-black .vegas-overlay {
+  background: rgba(0, 0, 0, 0.4) !important;
+  opacity: 1 !important;
+}
+
+/* line 22, /Users/user/Documents/platform-4.0/vendor/assets/libs/vegas/vegas.scss */
+.vegas-overlay-white .vegas-overlay {
+  background: rgba(255, 255, 255, 0.8) !important;
+  opacity: 1 !important;
+}
+
+/* line 27, /Users/user/Documents/platform-4.0/vendor/assets/libs/vegas/vegas.scss */
+.vegas-fixed-background .vegas-slide-inner {
+  background-attachment: fixed !important;
+}

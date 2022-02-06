@@ -1,0 +1,98 @@
+<% if !current_user.student? %>
+  <h3><%= @application.user.name %></h3>
+<% end %>
+
+<% if current_company.id == 21%>
+  <%= render "/mains/partials/_peru_annoucement" %>
+<%else %>
+  <h4 class="mb-5">
+    <% case @application.resource_type %>
+    <% when 'FundingOpportunity' %>
+      <%= I18n.t('origination.application_process') %>
+    <% when 'Disbursement' %>
+      <%= I18n.t('origination.disbursement_request_process') %>
+    <% when 'Isa' %>
+      <%= I18n.t('origination.new_agreement_process') %>
+    <% end %>
+  </h4>
+
+
+  <div class="d-block d-md-none">
+    <button class = "btn btn-outline-primary mb-3" type = "button" data-target = "#applicaiton-wizard" data-toggle = "collapse">
+      <% case @application.resource_type %>
+      <% when 'FundingOpportunity' %>
+        <%= I18n.t('origination.funding_pipeline') %>
+      <% when 'Disbursement' %>
+        <%= I18n.t('origination.disbursement_request_pipeline') %>
+      <% when 'Isa' %>
+        <%= I18n.t('origination.new_agreement_pipeline') %>
+      <% end %>
+    </button>
+  </div>
+
+  <% case @application.resource_type %>
+  <% when 'Isa' %>
+    <%= render '/originations/partial/origination_wizard', application: @application %>
+  <% else %>
+
+
+  <% finalize_with_questionnaire =  (@modules.last.option == "questionnaire" && !@modules.last.origination_section.last.nil? && @modules.last.origination_section.last.resource.category == 'review')%>
+
+  <% current_module_number = params[:step].nil? ? @application.current_module_number : [@application.current_module_number, params[:step].to_i.abs].min %>
+    <div id="application" class="smartwizard-vertical-left" wizard-selected="<%= @application.current_module_number %>">
+      <ul class="collapse d-md-block" id="applicaiton-wizard">
+        <% @modules.each_with_index do |m,index| %>
+          <li><a href="#application-step-<%= index + 1 %>" class="text-nowrap mb-3">
+            <span class="sw-done-icon ion ion-md-checkmark"></span>
+            <span class="sw-icon <%= target_application_icon m.option %>"></span>
+            <div class="text-muted small"><%= I18n.t("application.#{m.option}") %></div>
+            <%= m.name %>
+          </a></li>
+        <% end %>
+
+        <% if @application.resource_type == 'FundingOpportunity' && !finalize_with_questionnaire %>
+          <li><a href="#application-step-<%= @modules.count + 1 %>" class="text-nowrap mb-3">
+            <span class="sw-done-icon ion ion-md-checkmark"></span>
+            <span class="sw-icon <%= target_application_icon 'submit' %>"></span>
+            <div class="text-muted small"><%= I18n.t("application.submit_application") %></div>
+            <%= I18n.t("application.submit_your_application") %>
+          </a></li>
+        <% end %>
+
+      </ul>
+
+
+        <div class="mb-3">
+
+          <% pending_modules = [] %>
+          <% @modules.each_with_index do |m,index| %>
+            <div id="application-step-<%= index + 1 %>" class=" animated fadeIn mb-3">
+              <div class="card">
+                <div class="card-body p-0">
+                  <% if current_module_number == index%>
+
+                    <!-- description -->
+                    <% if !m.introduction.nil? && m.introduction != '' %>
+                      <div class="m-4">
+                        <%= m.introduction.to_s.html_safe %> 
+                      </div>
+                    <% end %>
+
+
+                    <%= generate_application_sections m, @application %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <% if @application.resource_type == 'FundingOpportunity' && current_module_number == @modules.count && !finalize_with_questionnaire %>
+            <div id="application-step-<%= @modules.count + 1 %>" class=" animated fadeIn mb-3">
+              <% if current_module_number == @modules.count %>
+                <%= render "/applications/final_section/#{@application.resource_type.underscore}", application: @application%>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  <%end %>
+<%end %>

@@ -1,0 +1,50 @@
+/* line 2, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h1, .h1 {
+  font-size: 6rem;
+}
+
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h2, .h2 {
+  font-size: 4rem;
+}
+
+/* line 10, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h3, .h3 {
+  font-size: 3.75rem;
+}
+
+/* line 14, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h4, .h4 {
+  font-size: 3.5rem;
+}
+
+/* line 18, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h5, .h5 {
+  font-size: 3.25rem;
+}
+
+/* line 22, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h6, .h6 {
+  font-size: 3rem;
+}
+
+/* line 26, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+body {
+  font-size: 2.5rem;
+  background-color: white;
+}
+
+/* line 30, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+div.alwaysbreak {
+  page-break-before: always;
+}
+
+/* line 31, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+div.nobreak:before {
+  clear: both;
+}
+
+/* line 32, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+div.nobreak {
+  page-break-inside: avoid;
+}

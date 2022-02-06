@@ -1,0 +1,113 @@
+<div class="row">
+  <div class="col-md-8">
+    <%= form_title(@funding_opportunity, 'name') %>
+  </div>
+  <% if can_clone_funding_opportunity? %>
+    <div class="col-md-4 text-right">
+      <%= link_to 'Clone',clone_funding_opportunity_funding_opportunity_path(@funding_opportunity),class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#funding-opportunity-information"><%= FundingOpportunity.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#user-team"><%= TeamSupervisor.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#disbursement-tab"><%= FundingDisbursement.model_name.human(count: 2) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#payment-config-tab"><%= PaymentConfig.model_name.human(count: 2) %></a>
+    </li>
+    <% if  @funding_opportunity.opportunity_type == 'closed' %>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#funding-token-tab"><%= FundingToken.model_name.human(count: 2) %></a>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#invitations-tab"><%= FundingOpportunityInvitation.model_name.human(count: 2) %></a>
+      </li>
+    <% end %>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#dashboard"><%= I18n.t('general.dashboard') %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#disbursement_origination_tab"><%= DisbursementOrigination.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#academic_originations_tab"><%= AcademiOrigination.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#process_origination_tab"><%= ProcessOrigination.model_name.human(count: 1) %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="funding-opportunity-information">
+      <%= build_form(@funding_opportunity,'update',current_user.template('FundingOpportunity','funding_opportunities',current_user),html: { class: 'form-group', method: 'put'}, header_title: false)%>
+    </div>
+    <div class="tab-pane fade " id="user-team">
+      <div class="card">
+        <div class="card-body">
+          <%= lumni_dropdown_field( 'funding_opportunity_teams','user',{type: 'multiple_dropdown', list: teamMembersList(current_company),html_class: ' team-funding_opportunity-dropdown',value: @funding_opportunity.funding_opportunity_team.map{|s| s.user_id}}) %>
+          <%= lumni_text_field( 'hidden_teams','previous',{hidden: true}) %>
+
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="disbursement-tab">
+      <%= build_form(@funding_opportunity.funding_disbursement,'update',current_user.template('FundingDisbursement','funding_disbursements',current_user),html: { class: 'form-group', method: 'put'},remote: true, controller: 'funding_disbursements', header_title: false)%>      
+    </div>
+    <div class="tab-pane fade" id="payment-config-tab">
+      <% template = current_user.template('PaymentConfig','payment_configs',current_user) %>
+      <% template[:arrears_rate][:step] = 0.001 unless template[:arrears_rate].nil?%>
+      <%= build_form(@funding_opportunity.payment_config,'update',template,html: { class: 'form-group', method: 'put'},remote: true, controller: 'payment_configs', header_title: false)%>      
+    </div>
+    <div class="tab-pane fade " id="disbursement_origination_tab">
+      <%= build_form(@funding_opportunity.disbursement_origination,'update',current_user.template('DisbursementOrigination','disbursement_originations',current_user),controller: 'disbursement_originations',remote: true,html: { class: 'form-group', method: 'put'}, header_title: false)%>
+    </div>
+    
+    <% if  @funding_opportunity.opportunity_type == 'closed' %>
+      <div class="tab-pane fade" id="funding-token-tab">
+        <%= create_funding_token_table @funding_opportunity.funding_token %>
+      </div>
+    <% else %>
+      <div class="tab-pane fade" id="invitations-tab">
+        <%= create_funding_invitation_table @funding_opportunity.funding_opportunity_invitation %>
+      </div>
+    <% end %>
+    <div class="tab-pane fade" id="dashboard">
+      <%= render '/funding_opportunities/partial/dashboard' %>
+      <%= render '/funding_opportunities/partial/students_with_contract' %>
+    </div>
+    <div class="tab-pane fade " id="academic_originations_tab">
+      <%= build_form(@funding_opportunity.academi_origination,'update',current_user.template('AcademiOrigination','academi_originations',current_user),controller: 'academi_originations',remote: true,html: { class: 'form-group', method: 'put'}, header_title: false)%>
+    </div>
+
+    <div class="tab-pane fade " id="process_origination_tab">
+      <%= build_form(@funding_opportunity.process_origination,'update',current_user.template('ProcessOrigination','process_originations',current_user),controller: 'process_originations',remote: true,html: { class: 'form-group', method: 'put'}, header_title: false)%>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="token_modal" tabindex="-1" role="dialog" aria-labelledby="token_modalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="token_modalLabel"><%= I18n.t('mains.new') %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="token_modal_body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+

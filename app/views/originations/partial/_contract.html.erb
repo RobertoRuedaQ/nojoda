@@ -1,0 +1,9 @@
+<% unless !current_user.current_application.nil? &&  current_application.modeling_match.nil? %>
+	<% target_contract = origination_target_contract_id( current_user) %>
+	<% target_promissory_note = origination_promissory_note_id(current_user)%>
+	<% if current_user.current_application.present? %>
+  	<div class="card-body">
+			<%= create_legal_document_form( target_contract, promissory_note_id: target_promissory_note, hidden_fields: create_hidden_values_application( current_application.id),disabled: current_application.document_signed?(target_contract),value: (current_application.document_signed?(target_contract) ? current_application.signed_document( target_contract).answer : nil) ) %>
+  	</div>
+	<% end %>
+<% end %>

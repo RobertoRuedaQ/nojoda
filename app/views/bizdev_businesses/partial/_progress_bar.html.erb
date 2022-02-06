@@ -1,0 +1,22 @@
+<% phases_array = bizDev_phases.values.first.values %>
+<% current_phase = phases_array[0].index(@target_business.phase).to_i %>
+<% segment = 100.to_f/phases_array[0].count %>
+<div class="text-right"><strong><%= ((current_phase + 1) * segment).round(1) %>%</strong></div>
+<div class="progress" style="height: 20px;">
+  <% phases_array.last.each_with_index do |phase,index| %>
+
+  	<% if @target_business.general_status == 'won' %>
+  		<% bg_color = 'bg-success' %>
+  	<% elsif @target_business.general_status == 'lost' %>
+  		<% bg_color = 'bg-danger' %>
+  	<% elsif current_phase == index %>
+  		<% bg_color = 'bg-warning' %>
+  	<% elsif current_phase < index %>
+  		<% bg_color = 'bg-secondary' %>
+  	<% else %>
+  		<% bg_color = 'bg-primary' %>
+  	<% end %>
+
+	  <div class="progress-bar <%= bg_color %>" role="progressbar" style="width: <%= segment %>%" aria-valuenow="<%= segment %>" aria-valuemin="0" aria-valuemax="100"><strong><%= phases_array.last[index] %></strong></div>
+  <% end %>
+</div>

@@ -1,0 +1,4 @@
+toastr["success"]("<%= I18n.t('flash.record_discarded') %>");
+$('#questionnaire_modal').modal('hide');
+var removedQuestion = $('#fullQuestion_' +<%=@question.id%>)[0]
+removedQuestion.parentNode.removeChild(removedQuestion);

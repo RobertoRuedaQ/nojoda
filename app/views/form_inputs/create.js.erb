@@ -1,0 +1,4 @@
+$('[id^=forminput_input_]').val('');
+
+$('#inputs-container').append("<%= j render '/form_inputs/partial/input_body', input: @form_input %>")
+$('#current_inputs').collapse('show')

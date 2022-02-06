@@ -1,0 +1,20 @@
+<div class="card">
+	<div class="card-body" style="min-height: 12rem">
+			<div class="text-center my-3"><h4 class="my-4 text-success"><%= I18n.t('origination.contract_review') %></h4></div>
+			<% if current_company.custom_origination_end %>
+				<p class="mx-5 text-center"><%= current_company.final_origination_text.html_safe %></p>
+			<%else%>
+				<p class="mx-5 text-center"><%= I18n.t('origination.review_your_contract') %></p>
+			<% end %>
+			<div class="row">
+				<div class="col text-center" style="padding: 1rem;font-size: 40px">
+					<i class="fas fa-check-circle text-success"></i>
+				</div>
+			</div>
+	</div>
+	<% if controller_name == 'applications' %>
+		<div class="text-center p-4">
+			<%= link_to I18n.t('general.back_home'), root_path, class: 'btn btn-primary'%>
+		</div>
+	<% end %>
+</div>

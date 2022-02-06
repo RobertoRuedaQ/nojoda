@@ -1,0 +1,32 @@
+<div class="d-flex justify-content-between">
+	<h4>Lista de feedback sobre la sección <%= feedback.controller %></h4>
+	<div class="d-flex">
+		<div class="mx-2"><span class="badge badge-pill badge-success"><%= I18n.t('general.idea')%></span></div>
+		<div class="mx-2"><span class="badge badge-pill badge-secondary"><%= I18n.t('general.requirement')%></span></div>
+		<div class="mx-2"><span class="badge badge-pill badge-info"><%= I18n.t('general.suggestion')%></span></div>
+	</div>
+</div>
+<div class="row">
+	<% values =  priority_list.first.second[:values] %>
+	<% labels =  priority_list.first.second[:labels] %>
+	<% values.each_with_index do |impact, impact_index| %>
+		<% values.reverse.each_with_index do |dificulty, dificulty_index| %>
+			<div class="col-md-3">
+				<div class="card mb-2">
+					<div class="card-header">
+						<h5>Impact: <span class="text-primary"><%= I18n.t("general.#{impact}") %></span>  / Dificulty: <span class="text-primary"><%= I18n.t("general.#{dificulty}") %></span></h5>
+					</div>
+					<div class="card-body p-1 m-1">
+						<% Feedback.select(:id,:title,:category).where(controller: feedback.controller,expected_impact: impact,dificulty: dificulty).each do |f| %>
+							<div class="card bg-<%= feedback_category_color f.category %> text-white">
+								<div class="card-body p-1">
+									<%= link_to f.title, edit_feedback_path(f),  class: 'text-white' %>
+								</div>
+							</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>

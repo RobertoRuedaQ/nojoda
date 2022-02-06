@@ -1,0 +1,36 @@
+
+<% if payment_matches.size > 0 %>
+  <div class="card">
+    <div class="card-body py-3">
+      <h5 class="text-primary">Este pago fue aplicado a los siguientes detalles</h5>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id del detalle</th>
+            <th>Valor del detalle</th>
+            <th><%= I18n.t('payment.attributes.applied_value') %></th>
+            <th>Fecha del detalle</th>
+            <th>Tipo de detalle</th>
+            <th>Estado del detalle</th>
+            <th>Total pagado al detalle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% payment_matches.each do |pm|%>
+          <tr>
+            <% detail = pm.billing_document_detail %>
+            <td><%= link_to detail.id, edit_billing_document_detail_path(detail), target: :_blank %></td>
+             <th><%= lumni_currency detail.value %></th>
+            <td><%= lumni_currency pm.value %></td>
+            <th><%= lumni_short_date detail.reference_date %></th>
+            <td><%= I18n.t('list.' + detail.detail_case) if !detail.detail_case.nil? %></td>
+            <td><%= I18n.t('list.' + detail.status) if !detail.status.nil? %></td>
+            <th><%= lumni_currency detail.applied_value %></th>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en" class="default-style <%= sidebar_behavior %>">
+<head>
+
+  <!-- Start google analytics -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149872250-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149872250-1');
+    </script>
+
+
+
+  <!-- end google analytics -->
+
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <link rel="shortcut icon" href="<%= asset_path("favicon.ico") %>" >
+
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <title><%= @object_title ? @object_title.to_s + " - " : "" %>Lumni Portal</title>
+
+  <!-- Main font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+
+  <!-- Icons. Uncomment required icon fonts -->
+  <%= stylesheet_link_tag 'fontawesome.css', media: 'all', 'data-turbolinks-track': 'reload' %> 
+  <%= stylesheet_link_tag 'ionicons.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'linearicons.css', media: 'all', 'data-turbolinks-track': 'reload' %> 
+  <%= stylesheet_link_tag 'open-iconic.css', media: 'all', 'data-turbolinks-track': 'reload' %> 
+  <%= stylesheet_link_tag 'pe-icon-7-stroke.css', media: 'all', 'data-turbolinks-track': 'reload' %> 
+
+  <!-- Core stylesheets -->
+  <%= stylesheet_link_tag 'bootstrap.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'appwork.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'theme-corporate', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'colors.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'uikit.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <!-- Additional stylesheets -->
+  <%= stylesheet_link_tag 'datatables/datatables.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'bootstrap-daterangepicker/bootstrap-daterangepicker.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'bootstrap-datepicker/css/bootstrap-datepicker.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'select2/select2.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'bootstrap-tagsinput/bootstrap-tagsinput.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'pages/users.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'cropper/cropper.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'toastr/toastr.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'bootstrap-duallistbox/bootstrap-duallistbox.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'bootstrap-select/bootstrap-select.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'quill/typography.css', media: 'all', 'data-turbolinks-track': 'reload'%>
+  <%= stylesheet_link_tag 'quill/editor.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'dropzone/dropzone.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'jodit-3.2.27/build/jodit.min.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'smartwizard/smartwizard.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'dragula/dragula.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'bootstrap-sweetalert/bootstrap-sweetalert.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'pages/messages.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <!-- Layout helpers -->
+  <%= javascript_include_tag 'layout-helpers.js', 'data-turbolinks-track': 'reload' %>
+
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <!-- MercadoPago SDK -->
+  <script src="https://sdk.mercadopago.com/js/v2"></script>
+  <script> 
+    let mercadoPago = '';
+    let mercadoPagoCheckout = '';
+  </script>
+
+  <!-- Libs -->
+
+  <!-- `perfect-scrollbar` library required by SideNav plugin -->
+  <%= stylesheet_link_tag 'perfect-scrollbar/perfect-scrollbar.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'perfect-scrollbar/perfect-scrollbar.js', 'data-turbolinks-track': 'reload' %>
+
+  <!-- Core scripts -->
+  <%= javascript_include_tag 'popper/popper.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'bootstrap.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'sidenav.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+
+  <!-- Additional javascripts -->
+  <%= javascript_include_tag 'datatables/datatables.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'moment/moment.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'bootstrap-daterangepicker/bootstrap-daterangepicker.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'bootstrap-datepicker/js/bootstrap-datepicker.js' %>
+      <!-- This are the datepicker translation files -->
+  <%= javascript_include_tag 'bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js' %>
+  <%= javascript_include_tag 'bootstrap-datepicker/locales/bootstrap-datepicker.fr.min.js' %>
+  <%= javascript_include_tag 'bootstrap-datepicker/locales/bootstrap-datepicker.pt.min.js' %>
+      <!-- This are the datepicker translation files -->
+  <%= javascript_include_tag 'select2/select2.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'bootstrap-tagsinput/bootstrap-tagsinput.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'cropper/cropper.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'toastr/toastr.js' %>
+  <%= javascript_include_tag 'bootstrap-duallistbox/bootstrap-duallistbox.js' %>
+  <%= javascript_include_tag 'bootstrap-select/bootstrap-select.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'quill/quill.js', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'dropzone/dropzone.js' %>
+  <%= javascript_include_tag 'autosize/autosize.js' %>
+  <%= javascript_include_tag 'jodit-3.2.27/build/jodit.min.js' %>
+  <%= javascript_include_tag 'smartwizard/smartwizard.js' %>
+  <%= javascript_include_tag 'dragula/dragula.js' %>
+  <%= javascript_include_tag 'sortablejs/sortable.js' %>
+  <%= javascript_include_tag 'bootbox/bootbox.js' %>
+  <%= javascript_include_tag 'bootstrap-sweetalert/bootstrap-sweetalert.js' %>
+  <%= javascript_include_tag 'knob/knob.js' %>
+  <%= javascript_include_tag 'list.js/dist/list.js' %>
+  <%= javascript_include_tag 'chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js' %>
+  <%= javascript_include_tag 'node-vibrant/dist/vibrant.js' %>
+
+
+
+
+  <%= yield :head %>
+</head>
+<body class="bg-light">
+
+  <!-- General spinner loading -->
+  <div id="js-lumni-language", locale="<%= I18n.locale %>"></div>
+  <dir class="spinner spinnerback" style="display: none;">
+    <div class="row ">
+      <div class="col text-center m-0" style="padding-top: 20%">
+          <%= image_tag( asset_path("default/lumniLoad.gif"), id: "lumniSpinner", alt: I18n.t('general.loading'), class: "spinnerimg",style: "width: 300px;") %>
+      </div>
+    </div>
+  </dir>  
+
+  <!-- PACE.js loader -->
+  <div class="page-loader"><div class="bg-primary"></div></div>
+  <% if params[:action] != 'test_taker' %>
+    <%= content_for?(:content) ? yield(:content) : yield %>
+  <% else %>
+    <%= yield %>
+  <% end %>
+</body>
+</html>

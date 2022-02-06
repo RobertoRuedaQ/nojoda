@@ -1,0 +1,12 @@
+
+
+
+<%= createTable(@backup_object,current_user.template('BackupObject','backup_objects',current_user,id: true)).html_safe %>
+<div class="row">
+	<div class="text-right col">
+		<%= link_to("Create SF Structure", create_sf_structure_backup_objects_path , class: 'btn btn-primary',remote: true) %>	
+	</div>
+	<div class="text-left col">
+		<%= link_to("Create Backup", create_backup_backup_objects_path , class: 'btn btn-primary',remote: true) %>	
+	</div>
+</div>

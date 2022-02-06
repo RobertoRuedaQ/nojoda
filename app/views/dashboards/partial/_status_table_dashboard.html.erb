@@ -1,0 +1,23 @@
+
+<% isa_template = {} %>
+<% isa_template[:id] = {} %>
+<% isa_template[:identification_number] = {} %>
+<% isa_template[:id][:controller] = 'students' %>
+<% isa_template[:id][:action] = 'edit' %>
+<% isa_template[:id][:target_id] = 'user_id' %>
+<% isa_template[:user_name] = {} %>
+<% isa_template[:fund_name] = {} %>
+<% isa_template[:stored_academic_status] = {} %>
+<% isa_template[:stored_income_status] = {} %>
+<% isa_template[:stored_payment_status] = {} %>
+<% isa_template[:stored_general_status] = {} %>
+<% isa_template[:legacy_academic_status] = {} %>
+<% isa_template[:legacy_payment_status] = {} %>
+<% isa_template[:legacy_work_status] = {} %>
+<% isa_template[:legacy_general_status] = {} %>
+
+<h4 class="my-4 pt-3 ml-3">3.0: <%= LegacyStatus.human_attribute_name(params[:legacy_value])%>/ 4.0: <%= I18n.t("isa.#{params[:isa_value]}")%></h4>
+
+<%= createTable(@isas,isa_template, title: false, new: false).html_safe %>
+
+

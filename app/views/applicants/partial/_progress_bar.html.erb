@@ -1,0 +1,71 @@
+      
+<div class="col-md-<%= target_application.has_funding_options? ? '10' : '12' %>">
+  <div class="card ">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <h5 class="text-primary"><%= I18n.t('students.funding_process') %> 
+          <span class="text-light"> (<%= target_application.funding_opportunity_name %>)</span>
+        </h5>
+
+
+        <% if target_application.status = 'submitted' %>
+          <%= button_to 'Refrescar Modelaje', refresh_modeling_applicant_path(target_application.user_id), class: 'btn btn-primary btn-sm' %>
+        <% end %>
+
+        <% if target_application.status != 'active' %>
+          <%= button_to 'Reactivar Aplicación',reactivate_application_application_path(target_application), class: 'btn btn-sm btn-success my-2' %>
+        <% end %>
+
+        <% if target_application.status != 'withdrawn' %>
+          <%= button_tag I18n.t('application.withdrawn_application'),type: 'button', class: 'btn btn-danger btn-sm my-2', data: {toggle: 'modal', target: "#exampleModal"} %>
+        <% end %>
+
+
+
+        <!-- modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><%= I18n.t('application.withdrawn_application')  %></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <% follow_up_template = current_user.template('ApplicationFollowUp','application_follow_ups',current_user) %>
+                  <% follow_up_template[:application_id] = {value:target_application.id } %>
+
+                  <%= build_form(@application_withdrawn,'withdrawn_application',follow_up_template,html: { class: 'form-group', method: 'post'}, custom_id: target_application.user.id ) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress">
+        <% isa_creation = target_application.isa_creation?  %>
+        <% origination_step = originationStep(target_application.user,isa_creation: isa_creation) %>
+        <% origination_element = origination_elements(target_application.user_id, isa_creation: isa_creation) %>
+        <% origination_element_size = origination_element.size %>
+
+        <% application_progress =  ((origination_step.to_f + 1)/origination_element_size * 100).round(1) %>
+        <% application_segment = (1.to_f/origination_element_size * 100) %>
+        <%  origination_element.each_with_index do |element,index|%>
+          <% if origination_step >= (index) %>
+            <div class="progress-bar <%= 'bg-success' if origination_step > (index )  %>" role="progressbar" style="width: <%= application_segment %>%" aria-valuenow="<%= application_segment %>" aria-valuemin="0" aria-valuemax="100"><%= I18n.t('students.' + element) %></div>
+          <% end %>
+        <% end %>
+      </div>                  
+        
+      <div class="text-right">
+        <strong><%= application_progress%>%</strong>
+      </div>
+      <% if !target_application.nil? %>
+        <div class="text-center">
+          <%= link_to(I18n.t('application.review_application'), edit_application_path(target_application) , class: 'btn btn-primary', target: '_blank') %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

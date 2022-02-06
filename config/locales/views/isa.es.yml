@@ -1,0 +1,163 @@
+es:
+  isa:
+    manual_activation: 'Activación Manual'
+    manual_activation_text: '¿Quieres activar manualmente a este estudiante? Para continuar con la activación manual oprime el botón "Continuar".'
+    manual_activation_success: 'Activado'
+    manual_activation_success_text: 'El estudiante ha sido activado exitosamente.'
+    manual_activation_disable: 'Desactivar activación manual'
+    active: 'Activo'
+    deactivate: 'Desactivar'
+    inactive: 'Inactivo'
+    manual_deactivation: 'Deshabilitar activación manual'
+    manual_deactivation_text: '¿Quieres desactivar el estado de activación manual? Para continuar con la activación manual oprime el botón "Continuar".'
+    manual_deactivation_success: 'Desactivado'
+    manual_deactivation_success_text: 'El estado de activación manual ha sido deshabilitado.'
+
+    final_conciliation: 'Conciliación final'
+    final_conciliation_text: '¿Quieres desactivar el estado de conciliación final? Para continuar con la conciliación final oprime el botón "Continuar".'
+    final_conciliation_success: 'Desactivado'
+    final_conciliation_success_text: 'El estado de conciliación final ha sido deshabilitado.'
+
+    finalized_payments: 'Fin de Pagos'
+    finalized_payments_text: '¿Quieres finalizar los pagos para este estudiante? Para continuar con la finalización de pagos oprime el botón "Continuar".'
+    finalized_payments_success: 'Pagos finalizados'
+    finalized_payments_success_text: 'Los pagos para este estudiante han sido exitosamente terminados.'
+
+    out_of_the_fund: 'Fuera del fondo'
+    out_of_the_fund_text: '¿Quieres sacar al estudiante del fondo? Para continuar oprime el botón "Continuar".'
+    out_of_the_fund_success: 'Fuera del fondo'
+    out_of_the_fund_success_text: 'El estudiante ha salido exitosamente del fondo.'
+
+    permanent_default: 'Default permanente'
+    permanent_default_text: '¿Quieres declarar al estudiante en default permanente? Para continuar oprime el botón "Continuar".'
+    permanent_default_success: 'Default permanente'
+    permanent_default_success_text: 'El estudiante sido señalado como default permanente.'
+
+
+    termination_agreement: 'En acuerdo De terminación'
+    termination_agreement_text: '¿Quieres declarar al estudiante en acuerdo de terminación? Para continuar oprime el botón "Continuar".'
+    termination_agreement_success: 'Acuerdo de terminación'
+    termination_agreement_success_text: 'El estudiante sido señalado como acuerdo de terminación.'
+
+
+
+
+    covid_agreement: 'Acuerdo de terminación'
+    covid_agreement_text: '¿Quieres declarar al estudiante en acuerdo de terminación? Para continuar oprime el botón "Continuar".'
+    covid_agreement_success: 'Acuerdo de terminación'
+    covid_agreement_success_text: 'El estudiante sido señalado como acuerdo de terminación.'
+
+
+    covid_agreement: 'Covid: acuerdo de pago'
+    covid_agreement_text: '¿Quieres declarar al estudiante en Covid: acuerdo de pago? Para continuar oprime el botón "Continuar".'
+    covid_agreement_success: 'Covid: acuerdo de pago'
+    covid_agreement_success_text: 'El estudiante sido señalado como Covid: acuerdo de pago.'
+
+    covid_payment_end_month: 'Covid: pago al fin del mes'
+    covid_payment_end_month_text: '¿Quieres declarar al estudiante en Covid: pago al fin del mes? para continuar oprime el botón "Continuar".'
+    covid_payment_end_month_success: 'Covid: pago al fin del mes'
+    covid_payment_end_month_success_text: 'El estudiante sido señalado como Covid: pago al fin del mes.'
+
+
+
+    default: 'Default'
+    default_text: '¿Quieres declarar al estudiante en default? Para continuar oprime el botón "Continuar".'
+    default_success: 'Default'
+    default_success_text: 'El estudiante sido señalado como default.'
+
+    recovered_from_default: 'Recuperación de default'
+    recovered_from_default_text: '¿Quieres recuperar a este estudiante de default? Para continuar oprime el botón "Continuar".'
+    recovered_from_default_success: 'Recuperado de default'
+    recovered_from_default_success_text: 'El estudiante ha sido recuperado exitosamente desde default.'
+
+    expelled: 'Expulsado'
+    expelled_text: '¿Quieres expulsar a este estudiante del fondo? Para continuar oprime el botón "Continuar".'
+    expelled_success: 'Estudiante expulsado'
+    expelled_success_text: 'El estudiante ha sido expulsado exitosamente del fondo.'
+
+    retired: 'Retirado'
+    retired_text: '¿Quieres retirar a este estudiante del fondo? Para continuar oprime el botón "Continuar".'
+    retired_success: 'Estudiante retirado'
+    retired_success_text: 'El estudiante ha sido retirado exitosamente del fondo.'
+
+    ceded: 'Cedido'
+    ceded_text: '¿Quieres ceder a este estudiante? Para continuar oprime el botón "Continuar".'
+    ceded_success: 'Estudiante cedido'
+    ceded_success_text: 'El estudiante ha sido cedido exitosamente.'
+
+    studing: ' Estudiando'
+    academic_stop: 'Aplazamiento académico'
+    drop_out: 'Retiro del fondo'
+    graduation_process: 'Proceso de graduación'
+    graduated: 'Graduado'
+
+    new_academic_stop: 'Nuevo aplazamiento'
+    active_academic_stops: 'Aplazamientos activos'
+    academic_dates: 'Fechas académicas'
+
+    academic_status: 'Estado académico'
+
+    income_status: 'Estado de ingreso'
+    student_forbearance: 'Estudiante sin cuota'
+    grace_period: 'Periodo de gracia'
+    discretionary_forbearance: 'Sin cuota discrecional'
+    forcasted_income: 'Ingreso proyectado'
+    breach_of_contract: 'Incumplimiento de contrato'
+    forbearance: 'Sin Cuota'
+    isa_income: 'Ingreso Válido'
+
+    new_grace_period: 'Nuevo periodo de gracia'
+    active_grace_period: 'Periodo de gracia activo'
+
+    new_discretionary_forbearance: 'Nuevo sin cuota discrecional'
+    active_discretionary_forbearance: 'Sin cuota discrecional activo'
+
+    up_to_date: 'Al Día'
+    arrears_30: 'Mora de 30'
+    arrears_60: 'Mora de 60'
+    arrears_90: 'Mora de 90'
+    arrears_120: 'Mora de 120'
+    arrears_150: 'Mora de 150'
+    arrears_180: 'Mora de 180'
+    arrears_210: 'Mora de 210'
+    arrears_240: 'Mora de 240'
+    arrears_270: 'Mora de 270'
+    arrears_300: 'Mora de 300'
+    arrears_330: 'Mora de 330'
+    arrears_360: 'Mora de 360'
+    arrears_390: 'Mora de 390'
+    arrears_420: 'Mora de 420'
+    arrears_450: 'Mora de 450'
+    arrears_450: 'Mora de 480'
+    arrears_570: 'Mora de 570'
+    arrears_1200: 'Mora de 1200'
+    just_agreement: 'Sólo acuerdos'
+    new_just_agreement: 'Nuevo periodo de sólo acuerdos'
+    active_just_agreement: 'Pagando sólo acuerdos'
+    no_payment: 'Sin pagos'
+    new_no_payment: 'Nuevo periodo sin pagos'
+    active_no_payment: 'Sin pagos'
+    inflation_adjustment_date: 'Fecha de inflación'
+    new_agreement_text: 'Acuerdo para generar un otro sí.' 
+    new_amendment: 'Nuevo Otro sí'
+    collection_information: 'Información de cobranza'
+    cap_calculation_fail: 'Cálculo fallido'
+    remaining_months: 'Cuotas repago pendientes'
+    payed_months: 'Número de cuotas pagas'
+    nominal_payment: 'Cultura de pago'
+    repayment_fee: 'Cuota de repago'
+    payment_not_applied_yet: 'Pago sin Aplicar'
+    value_to_top: 'Valor para el techo'
+    employed: 'Empleado'
+    unemployed: 'Desempleado'
+    employed_without_certificate: Empleado sin certificado
+    employed_without_valid_income: Empleado sin ingreso valido
+    employed_with_presumptive_income: Empleado con renta presuntiva
+    stored_employment_status: 'Estado de empleabilidad'
+    value_to_cap_with_excess: 'Valor al techo incluyendo saldo a favor'
+    no_information: 'Sin información'
+    no_information: 'Sin información'
+    total_income: 'Total de Ingresos'
+    mentory_employability_inivation: 'Te invitamos a participar del programa de empleabilidad y mentorías'
+
+    financial_adjustment: 'Ajuste de financiación'

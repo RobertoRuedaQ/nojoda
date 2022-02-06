@@ -1,0 +1,13 @@
+
+  <%= build_form(current_user,'update',current_user.template('Profile','profiles',current_user),html: { class: 'form-group'}, header_title: false,htmlCard: 'border-off', controller: 'profiles',destroy: false,history: false,locked: true)%>
+  <div style="margin: 1em;"> 
+    <% if @student_application.present? && @student_application.status == 'active' %>
+        <%= link_to I18n.t('general.edit'),edit_application_path(@student_application), class: 'btn btn-primary' %>
+    <% elsif @student_application.present? && @student_application.status == 'submitted' %>
+      <div class="card-body bg-info text-white text-center">
+        <%= I18n.t('application.under_review') %>
+      </div>
+    <% else %>
+      <%= button_to I18n.t('general.new_request'),create_application_students_path, class: 'btn btn-primary' %>
+    <% end %>
+  </div>

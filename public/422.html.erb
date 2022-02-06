@@ -1,0 +1,38 @@
+
+
+
+<%= render template: 'layouts/application' %>
+<%= render 'layouts/partials/layout-navbar' %>
+
+
+
+<div class="jumbotron ui-hero ui-mh-100vh ui-bg-cover" style="background-image: url(<%= asset_path("landing/landing.jpg") %>);">
+  <div class="container-fluid pr-lg-5 pl-xl-5">
+    <div class="row no-gutters justify-content-center w-100 pt-3">
+
+      <div class="col-lg-7 col-xl-6 text-lg-left text-center my-5 mr-xl-5">
+        <h1 class="display-3 font-secondary font-weight-semibold mb-4">
+          Whoops... (422)
+        </h1>
+        <p class="lead  pb-3 font-weight-semibold">
+          The change you wanted was rejected. Please double-check you have access to this section.
+        </p>
+        <form action="<%= root_path %>">
+          <button type="submit" class="landing-btn btn btn-lg btn-round btn-primary mt-2">
+          ← Go Back
+          </button>
+        </form>
+      </div>
+      <div class="offset-lg-5"></div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+  <%= render 'layouts/partials/layout-footer' %>
+
+
+

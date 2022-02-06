@@ -1,0 +1,34 @@
+<% @origination.origination_module.kept.each do |o_module|%>
+
+	  <div class="card shadow my-2" data-id='OriginationModule-<%= o_module.id %>'>
+	    <div class="card-header d-flex justify-content-between" id="origination_module_<%= o_module.id %>" >
+	      <h5 class="mb-0 text-primary" data-toggle="collapse" data-target="#o_module_<%= o_module.id %>" aria-expanded="true" aria-controls="o_module_<%= o_module.id %>">
+	          <%= o_module.name %>
+	      </h5>
+	      <div>
+	      	<%= I18n.t('origination.' + o_module.option) %>
+	      	<%= link_to(I18n.t('general.edit'), edit_origination_module_path(o_module), class: 'text-primary mx-2', remote: true, data: { disable_with: I18n.t('form.please_wait') } ) %>
+	      	<%= link_to(I18n.t('general.destroy'), origination_module_path(o_module), class: 'text-danger mx-2', remote: true, method: 'delete', data: { disable_with: I18n.t('form.please_wait') } ) %>
+	      </div>
+	    </div>
+
+	    <div id="o_module_<%= o_module.id %>" class="collapse" aria-labelledby="origination_module_<%= o_module.id %>" data-parent="#origination_accordion">
+	      <div class="card-body" id="origination-section-<%= o_module.id %> ">
+	        <div class="sortable_origination" id="section-container-<%= o_module.id %>">
+		      	<%= createOriginationSections( o_module.id) %>
+	        </div>
+
+	        <div id="new-origination-section-<%= o_module.id%>">
+	        	
+	        </div>
+
+	        <div class="text-center">
+				<%= link_to(('<i class="ion ion-ios-add-circle mr-2"></i>' + I18n.t('origination.add_section')).html_safe, new_origination_section_path(id: o_module.id, order: (o_module.origination_section.maximum(:order).to_i + 1)), class: 'btn btn-sm btn-outline-primary borderless my-4', remote: true, data: { disable_with: I18n.t('form.please_wait')}) %>
+	        </div>
+
+
+	      </div>
+	    </div>
+	  </div>
+
+<% end %>

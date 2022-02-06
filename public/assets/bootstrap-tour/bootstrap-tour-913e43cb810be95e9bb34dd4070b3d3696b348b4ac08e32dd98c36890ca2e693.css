@@ -1,0 +1,131 @@
+/* ========================================================================
+ * bootstrap-tour - v0.12.0
+ * http://bootstraptour.com
+ * ========================================================================
+ * Copyright 2012-2017 Ulrich Sossou
+ *
+ * ========================================================================
+ * Licensed under the MIT License (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://opensource.org/licenses/MIT
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================================
+ */
+/* line 22, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-tour/build/css/bootstrap-tour.css */
+.tour-backdrop {
+  background-color: #000;
+  filter: alpha(opacity=80);
+  opacity: .8;
+  position: absolute;
+  z-index: 1100;
+}
+
+/* line 29, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-tour/build/css/bootstrap-tour.css */
+.popover[class*="tour-"] {
+  z-index: 1102;
+}
+
+/* line 31, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-tour/build/css/bootstrap-tour.css */
+.popover[class*="tour-"] .popover-navigation {
+  overflow: hidden;
+  padding: 9px 14px;
+}
+
+/* line 34, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-tour/build/css/bootstrap-tour.css */
+.popover[class*="tour-"] .popover-navigation *[data-role="end"] {
+  float: right;
+}
+
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-tour/build/css/bootstrap-tour.css */
+.popover[class*="tour-"] .popover-navigation *[data-role="prev"],
+.popover[class*="tour-"] .popover-navigation *[data-role="next"],
+.popover[class*="tour-"] .popover-navigation *[data-role="end"] {
+  cursor: pointer;
+}
+
+/* line 40, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-tour/build/css/bootstrap-tour.css */
+.popover[class*="tour-"] .popover-navigation *[data-role="prev"].disabled,
+.popover[class*="tour-"] .popover-navigation *[data-role="next"].disabled,
+.popover[class*="tour-"] .popover-navigation *[data-role="end"].disabled {
+  cursor: default;
+}
+
+/* line 44, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-tour/build/css/bootstrap-tour.css */
+.popover[class*="tour-"].orphan {
+  left: 50%;
+  margin-top: 0;
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* line 50, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-tour/build/css/bootstrap-tour.css */
+.popover[class*="tour-"].orphan .arrow {
+  display: none;
+}
+
+/* line 3, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-tour/bootstrap-tour.scss */
+.popover[class*="tour-"] .popover-navigation > .btn-group {
+  margin-right: .5rem;
+}
+
+/* line 7, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-tour/bootstrap-tour.scss */
+[dir=rtl] .popover[class*="tour-"] .popover-navigation > * {
+  float: right;
+}
+
+/* line 11, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-tour/bootstrap-tour.scss */
+[dir=rtl] .popover[class*="tour-"] .popover-navigation > .btn-group {
+  margin-right: 0;
+  margin-left: .5rem;
+}
+
+/* line 19, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-tour/bootstrap-tour.scss */
+.default-style .popover[class*="tour-"] .popover-header {
+  padding: 0.7rem 0.8rem;
+  font-size: 0.68rem;
+}
+/* line 24, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-tour/bootstrap-tour.scss */
+.default-style .popover[class*="tour-"] .popover-body {
+  padding: 0.8rem 0.8rem;
+  font-size: 0.68rem;
+}
+/* line 29, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-tour/bootstrap-tour.scss */
+.default-style .popover[class*="tour-"] .popover-navigation {
+  padding: 0 1.2rem 0.8rem 0.8rem;
+}
+/* line 33, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-tour/bootstrap-tour.scss */
+.default-style .tour-backdrop {
+  background: #181C21;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+/* line 43, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-tour/bootstrap-tour.scss */
+.material-style .popover[class*="tour-"] .popover-header {
+  padding: 0.875rem 1rem;
+  font-size: 0.894rem;
+}
+/* line 48, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-tour/bootstrap-tour.scss */
+.material-style .popover[class*="tour-"] .popover-body {
+  padding: 1rem 1rem;
+  font-size: 0.894rem;
+}
+/* line 53, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-tour/bootstrap-tour.scss */
+.material-style .popover[class*="tour-"] .popover-navigation {
+  padding: 0 1.5rem 1rem 1rem;
+}
+/* line 57, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/bootstrap-tour/bootstrap-tour.scss */
+.material-style .tour-backdrop {
+  background: #181C21;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}

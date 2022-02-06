@@ -1,0 +1,347 @@
+/*-- Chart --*/
+/* line 4, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3 {
+  direction: ltr !important;
+}
+/* line 7, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3 svg {
+  -webkit-tap-highlight-color: transparent;
+}
+/* line 11, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3 path,
+.c3 line {
+  fill: none;
+}
+/* line 16, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3 text {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+/* line 23, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-legend-item-tile,
+.c3-xgrid-focus,
+.c3-ygrid,
+.c3-event-rect,
+.c3-bars path {
+  shape-rendering: crispEdges;
+}
+
+/*-- Axis --*/
+/*-- Grid --*/
+/* line 35, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-xgrid,
+.c3-ygrid {
+  stroke-dasharray: 3 3;
+}
+
+/*-- Text on Chart --*/
+/* line 42, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-text.c3-empty {
+  font-size: 2em;
+}
+
+/*-- Line --*/
+/* line 48, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-line {
+  stroke-width: 1px;
+}
+
+/*-- Point --*/
+/* line 54, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-circle._expanded_ {
+  stroke: white;
+  stroke-width: 1px;
+}
+
+/* line 59, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-selected-circle {
+  fill: white;
+  stroke-width: 2px;
+}
+
+/*-- Bar --*/
+/* line 66, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-bar {
+  stroke-width: 0;
+}
+/* line 69, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-bar._expanded_ {
+  fill-opacity: 1;
+  fill-opacity: .75;
+}
+
+/*-- Focus --*/
+/* line 78, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-target.c3-focused {
+  opacity: 1;
+}
+/* line 81, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-target.c3-focused path.c3-line,
+.c3-target.c3-focused path.c3-step {
+  stroke-width: 2px;
+}
+/* line 87, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-target.c3-defocused {
+  opacity: .3 !important;
+}
+
+/*-- Region --*/
+/* line 94, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-region {
+  fill: steelblue;
+  fill-opacity: .1;
+}
+
+/*-- Brush --*/
+/* line 101, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-brush .extent {
+  fill-opacity: .1;
+}
+
+/*-- Select - Drag --*/
+/*-- Legend --*/
+/* line 108, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-legend-item-hidden {
+  opacity: .15;
+}
+
+/* line 112, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-legend-background {
+  opacity: .75;
+  fill: white;
+  stroke: lightgray;
+  stroke-width: 1;
+}
+
+/*-- Area --*/
+/* line 121, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-area {
+  opacity: .2;
+  stroke-width: 0;
+}
+
+/*-- Arc --*/
+/* line 128, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-chart-arcs-title {
+  font-size: 1.3em;
+  dominant-baseline: middle;
+}
+
+/* line 133, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.c3-chart-arc.c3-target g path,
+.c3-chart-arc.c3-target.c3-focused g path {
+  opacity: 1;
+}
+
+/* line 149, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3 svg {
+  font: 11px "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+/* line 153, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3 path,
+.default-style .c3 line {
+  fill: none;
+  stroke: rgba(24, 28, 33, 0.1);
+}
+/* line 159, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3 text {
+  fill: #4E5155;
+}
+/* line 165, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-chart-arc path {
+  stroke: #fff;
+}
+/* line 169, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-chart-arc text {
+  font-size: 0.75rem;
+  fill: #fff;
+}
+/* line 176, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-grid line {
+  stroke: rgba(24, 28, 33, 0.1);
+}
+/* line 180, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-grid text {
+  fill: rgba(24, 28, 33, 0.1);
+}
+/* line 185, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-text.c3-empty {
+  fill: #a3a4a6;
+}
+/* line 189, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-legend-item {
+  font-size: 0.75rem;
+}
+/* line 193, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-title {
+  font: 0.894rem "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+/* line 197, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-chart-arcs .c3-chart-arcs-background {
+  fill: rgba(24, 28, 33, 0.06);
+  stroke: none;
+}
+/* line 202, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-chart-arcs .c3-chart-arcs-gauge-unit {
+  font-size: 1rem;
+  fill: #4E5155;
+}
+/* line 207, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-chart-arcs .c3-chart-arcs-gauge-max,
+.default-style .c3-chart-arcs .c3-chart-arcs-gauge-min {
+  fill: #4E5155;
+}
+/* line 212, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-chart-arc .c3-gauge-value {
+  fill: #4E5155;
+}
+/* line 216, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-tooltip-container {
+  z-index: 10;
+  padding: 6px;
+  background-color: #46494d;
+  border-radius: 0.25rem;
+}
+/* line 224, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-tooltip {
+  border-spacing: 0;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+/* line 230, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-tooltip,
+.default-style .c3-tooltip tr,
+.default-style .c3-tooltip th,
+.default-style .c3-tooltip td {
+  border: none;
+  background: none !important;
+  color: #fff;
+  font-size: 0.75rem;
+}
+/* line 240, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-tooltip th {
+  padding: 0 6px;
+}
+/* line 244, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-tooltip td {
+  padding: 0 6px;
+}
+/* line 247, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-tooltip td.value {
+  text-align: right;
+}
+/* line 251, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.default-style .c3-tooltip td > span {
+  display: inline-block;
+  margin-right: 6px;
+  width: 10px;
+  height: 10px;
+}
+
+/* line 271, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3 svg {
+  font: 11px "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+/* line 275, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3 path,
+.material-style .c3 line {
+  fill: none;
+  stroke: rgba(24, 28, 33, 0.1);
+}
+/* line 281, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3 text {
+  fill: #4E5155;
+}
+/* line 287, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-chart-arc path {
+  stroke: #fff;
+}
+/* line 291, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-chart-arc text {
+  font-size: 0.75rem;
+  fill: #fff;
+}
+/* line 298, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-grid line {
+  stroke: rgba(24, 28, 33, 0.1);
+}
+/* line 302, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-grid text {
+  fill: rgba(24, 28, 33, 0.1);
+}
+/* line 307, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-text.c3-empty {
+  fill: #a3a4a6;
+}
+/* line 311, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-legend-item {
+  font-size: 0.75rem;
+}
+/* line 315, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-title {
+  font: 0.894rem "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+/* line 319, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-chart-arcs .c3-chart-arcs-background {
+  fill: rgba(24, 28, 33, 0.06);
+  stroke: none;
+}
+/* line 324, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-chart-arcs .c3-chart-arcs-gauge-unit {
+  font-size: 1rem;
+  fill: #4E5155;
+}
+/* line 329, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-chart-arcs .c3-chart-arcs-gauge-max,
+.material-style .c3-chart-arcs .c3-chart-arcs-gauge-min {
+  fill: #4E5155;
+}
+/* line 334, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-chart-arc .c3-gauge-value {
+  fill: #4E5155;
+}
+/* line 338, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-tooltip-container {
+  z-index: 10;
+  padding: 6px;
+  background-color: #46494d;
+  border-radius: 0.125rem;
+}
+/* line 346, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-tooltip {
+  border-spacing: 0;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+/* line 352, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-tooltip,
+.material-style .c3-tooltip tr,
+.material-style .c3-tooltip th,
+.material-style .c3-tooltip td {
+  border: none;
+  background: none !important;
+  color: #fff;
+  font-size: 0.75rem;
+}
+/* line 362, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-tooltip th {
+  padding: 0 6px;
+}
+/* line 366, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-tooltip td {
+  padding: 0 6px;
+}
+/* line 369, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-tooltip td.value {
+  text-align: right;
+}
+/* line 373, /Users/jaime/Desktop/platform-4.0/vendor/assets/libs/c3/c3.scss */
+.material-style .c3-tooltip td > span {
+  display: inline-block;
+  margin-right: 6px;
+  width: 10px;
+  height: 10px;
+}

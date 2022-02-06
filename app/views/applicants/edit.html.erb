@@ -1,0 +1,31 @@
+<%= render 'applicants/partial/applicant_personal_information' %>
+
+<div class="nav-tabs-top">
+  <%= render 'applicants/partial/tabs' %>
+  <div class="tab-content bg-light">
+    <div class="tab-pane fade show active " id="summary-tab">
+      <% if @application.present? %>
+        <% if @application.submitted? && @application.to_review? %>
+          <div class="card">
+            <div class="card-body bg-warning py-1">
+              <div class="d-flex flex-row">
+                <div class="py-2">
+                  <%= I18n.t('students.review_disbursement_request') %>
+                </div>
+                  <% if @application.questionnaire_review.present? %>
+                    <%= link_to I18n.t('general.review'),start_test_user_questionnaire_path(@application.questionnaire_review), class: 'btn btn-md btn-primary mx-3'%>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+          <%= render 'applicants/partial/summary_applicant_body', target_application: @application, target_user: @applicant %>
+      <% end %>
+      
+      <%= render '/applicants/partial/application_table' %>
+
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,30 @@
+
+
+<% @status_hash.keys.each do |target_status| %>
+	<% keys_3 = @status_hash[target_status].keys.map{|i| i.nil? ? 'blank' : i}.sort.map{|i| i =='blank' ? nil : i} %>
+	<% keys_4 = @status_hash[target_status].values.map(&:keys).flatten.uniq.map{|i| i.nil? ? 'blank' : i}.sort.map{|i| i =='blank' ? nil : i}%>
+	<div class="card my-3">
+		<div class="card-body">
+			<h3><%= LegacyStatus.human_attribute_name(target_status)  %></h3>
+
+			<table class="table table-striped">
+				<tr class="font-weight-bold">
+					<td></td>
+					<% keys_4.each do |key_4| %>
+						<td><%= I18n.t("isa.#{key_4}") %></td>
+					<% end %>
+				</tr>
+				<% keys_3.each do |key_3| %>
+					<tr>
+						<td class="font-weight-bold"><%= key_3 %></td>
+						<% keys_4.each do |key_4| %>
+							<td><%= link_to @status_hash[target_status][key_3][key_4].to_i, edit_dashboard_path(5, legacy_field: target_status,  isa_field: @fields[target_status], legacy_value: key_3,  isa_value: key_4) %></td>
+						<% end %>
+					</tr>
+				<% end %>
+			</table>
+			
+		</div>
+	</div>
+<% end %>
+

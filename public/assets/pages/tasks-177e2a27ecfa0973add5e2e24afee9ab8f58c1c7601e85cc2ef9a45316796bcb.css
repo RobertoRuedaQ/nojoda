@@ -1,0 +1,35 @@
+/* line 5, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/tasks.scss */
+.task-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.625rem 0;
+}
+/* line 11, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/tasks.scss */
+.task-list-item .ui-todo-item {
+  margin: 0;
+}
+
+/* line 19, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/tasks.scss */
+.default-style .task-list-item {
+  background: #fff;
+}
+/* line 22, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/tasks.scss */
+.default-style .task-list-item + .task-list-item {
+  border-top: 1px solid rgba(24, 28, 33, 0.06);
+}
+
+/* line 31, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/tasks.scss */
+.material-style .task-list-item {
+  background: #fff;
+}
+/* line 34, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/tasks.scss */
+.material-style .task-list-item + .task-list-item {
+  border-top: 1px solid rgba(24, 28, 33, 0.06);
+}

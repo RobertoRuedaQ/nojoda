@@ -1,0 +1,3 @@
+<% target_body = adjust_legal_language(current_user, @legal_document.body, application: current_user.ongoing_application )%>
+<% target_body.gsub! '##jump_page', " <div class='alwaysbreak'> </div>" %>
+<%= target_body.html_safe %>

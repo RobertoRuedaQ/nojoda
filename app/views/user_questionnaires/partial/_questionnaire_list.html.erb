@@ -1,0 +1,12 @@
+<div class="card">
+	<div class="card-body py-3">
+		<h5 class="text-primary"><%= Questionnaire.model_name.human(count: 2) %></h5>
+		<div class="mx-3">
+			<%= createBasicTable(@headers,@rows_info,id: "questionnaire_list_#{SecureRandom.hex}") %>
+		</div>
+
+		<%= render '/user_questionnaires/partial/questionnaire_result_modal' %>
+		<%= render '/user_questionnaires/partial/questionnaire_special_activation' %>
+
+	</div>
+</div>

@@ -1,0 +1,4 @@
+es:
+  ransack:
+    fields:
+      institution_name_cont: 'Nombre de la universidad contiene:'

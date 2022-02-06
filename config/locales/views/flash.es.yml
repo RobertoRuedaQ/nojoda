@@ -1,0 +1,17 @@
+es:
+  flash:
+    record_updated: '¡Hemos actualizado tu registro!'
+    record_created: '¡Hemos creado tu registro!'
+    record_failed: 'No hemos logrado completar tu solicitud'
+    record_discarded: 'Acabamos de borrar'    
+    record_unauthorized: 'No tiene permisos para acceder a esta área.'    
+    record_approval_request: 'Tu solicitud por aprobación fue guardada.'    
+    record_approved: 'Registro aprobado'
+    record_rejected: 'Registro rechazado'
+    record_canceled: 'Registro cancelado'  
+    record_reasigned: 'Registro reasignado'  
+    email_sent: 'Correo electrónico enviado'  
+    diploma_requested: 'Se envió el correo y se creó el caso de seguimiento exitosamente'
+    no_available_for_disbursement: 'En este momento te encuentras en mora, ponte al día en tus cuotas o contacta a tu Student Manager' 
+    disbursement_request_updated: 'La solicitud de desembolso ha sido actualizada'
+    academic_stop_updated: 'El aplazamiento académico ha sido actualizado'

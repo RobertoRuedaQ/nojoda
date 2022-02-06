@@ -1,0 +1,83 @@
+<% content_for :content do %>
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-1">
+    <div class="layout-inner">
+
+      <!-- Layout navbar -->
+      <%= render "layouts/partials/layout-navbar" %>
+
+      <!-- Layout container -->
+      <div class="layout-container">
+        <!-- Layout sidenav -->
+        <% if user_signed_in? && (!current_user.student? || current_user.active_isa.any?)  %>
+          <%= render "layouts/partials/layout-sidenav" %>
+        <% end %>
+
+        <!-- Layout content -->
+        <div class="layout-content">
+
+
+          <!-- Return to the original account after simulate another one -->
+          <% if simulating? %>
+            <div class="card bg-warning">
+              <div class="card-body p-1 flex-row-reverse d-flex">
+                <div class="my-1 ml-3">
+                  <%= button_to I18n.t('mains.simulation_return_button'),simulate_team_path(session[:original_account]),class: 'btn btn-primary btn-sm' %>
+                </div>
+                <div class="my-1"><%= I18n.t('mains.simulation_info',name: original_account.name) %></div>
+              </div>
+            </div>
+          <% end %>
+
+
+
+
+
+
+          <!-- Content -->
+          <div class="container-fluid flex-grow-1 container-p-y">
+
+          
+
+
+
+            <%= render('layouts/messages.html.erb') %>
+<!--             
+            <% if params[:controller] == 'feedbacks' && params[:action] == 'edit' %>
+              <div class="text-center">
+                <%= link_to( new_feedback_path(target_controller: @feedback.controller, target_action: @feedback.action),target: '_blank', class: "btn btn-sm btn-default borderless", id:"feedback-button") do%>
+                <span class="ion ion-md-checkbox-outline"></span><span class="ml-2">'Feedback'</span>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="text-center">
+                <%= link_to( new_feedback_path(target_controller: params[:controller], target_action: params[:action]),target: '_blank', class: "btn btn-sm btn-default borderless", id:"feedback-button") do%>
+                <span class="ion ion-md-checkbox-outline"></span><span class="ml-2">'Feedback'</span>
+                <% end %>
+              </div>
+            <% end %>
+ -->
+
+            <%= yield %>
+          </div>
+          <!-- / Content -->
+
+          <!-- Layout footer -->
+          <%= render "layouts/partials/layout-footer" %>
+        </div>
+        <!-- Layout content -->
+
+      </div>
+      <!-- / Layout container -->
+
+    </div>
+    <% if !current_user.student? %>
+    <!-- Overlay -->
+    <div class="layout-overlay layout-sidenav-toggle"></div>
+    <% end %>
+  </div>
+  <!-- / Layout wrapper -->
+<% end %>
+<%= render template: "layouts/application" %>
+
+

@@ -1,0 +1,14 @@
+
+<%= build_form(current_user.contact_info,'update',current_user.template('ContactInfo','contact_infos',current_user),html: { class: 'form-group'}, header_title: false,htmlCard: 'border-off', remote: true, controller: 'contact_infos',destroy: false,history: false,locked: true)%>
+
+<div style="margin: 1em;">
+  <% if @contact_info_application.present? && @contact_info_application.status == 'active' %>
+    <%= link_to I18n.t('general.edit'),edit_application_path(@contact_info_application), class: 'btn btn-primary' %>
+  <% elsif @contact_info_application.present? && @contact_info_application.status == 'submitted' %>
+    <div class="card-body bg-info text-white text-center">
+    <%= I18n.t('application.under_review') %>
+    </div>
+  <% else %>
+    <%= button_to I18n.t('general.new_request'),create_application_contact_infos_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>

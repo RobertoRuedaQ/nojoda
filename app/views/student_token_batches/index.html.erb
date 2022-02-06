@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-body py-3">
+    <div class="d-flex justify-content-between align-items-center">
+      <h4 class="mt-4 mb-5"><%= StudentTokenBatch.model_name.human(count: 2) %></h4>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= I18n.t('student_token_batch.attributes.id') %></th>
+          <th><%= I18n.t('student_token_batch.attributes.status') %></th>
+          <th><%= I18n.t('student_token_batch.attributes.token_file') %></th>
+          <th><%= I18n.t('student_token_batch.attributes.description') %></th>
+					<th><%= I18n.t('student_token_batch.attributes.created_at') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @student_token_batches.each do |batch|%>
+        <tr>
+          <td><%= link_to batch.id, edit_student_token_batch_path(batch.id), target: :_blank %></td>
+          <td><%= batch.status.to_s.titleize %></td>
+          <td>
+            <% if batch.tokens_list.attached? %>
+              <% file_url = url_for(batch.tokens_list) %>
+              <%= link_to file_url.split('/').last, file_url, class: 'text-primary', target: '_blank' %>
+            <% else %>
+              ''
+            <% end %>
+          </td>
+          <td><%= batch.description %></td>
+          <td><%= lumni_date batch.created_at %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+
+
+<% variable_tamplate = current_user.template('ResearchVariable','research_variables',current_user,id: true) %>
+<% variable_tamplate[:external_id] = {} %>
+<%= createTable(@research_variable,variable_tamplate).html_safe %>

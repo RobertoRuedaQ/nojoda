@@ -1,0 +1,63 @@
+<% if params[:action] != 'test_taker' %>
+  <% @target_module.origination_section.kept.each do | section| %>
+
+
+  	<% target_test = section.user_questionnaire_by_appplication @application %>
+  	<% case target_test.status %>
+  	<% when 'active' %>
+  		<% case target_test.questionnaire.category %>
+  		<% when 'interview' %>
+  			<%= target_test.questionnaire.instructions.html_safe %>
+      <% when 'review' %>
+        <% target_test.update(status: 'pending') %>
+        <%= render '/applications/questionnaire_views/review',application: @application,section: section %>
+  		<% else %>
+  			<%= create_partial_questionnaire_view target_test.id %>	
+  		<% end %>
+  	<% when 'ongoing' %>
+  		<% case target_test.questionnaire.category %>
+      <% when 'interview','review' %>
+        <% if target_test.questionnaire.instructions.size > 50 %>
+  			  <%= target_test.questionnaire.instructions.html_safe %>
+        <% else %>
+          <%= render '/applications/questionnaire_views/general_ongoing_view'%>
+        <% end %>
+      <% else %>
+        <%= create_partial_questionnaire_view target_test.id %> 
+  		<% end %>
+    <% when 'pending' %>
+    
+        <%= render "/applications/questionnaire_views/#{target_test.questionnaire.category}",application: @application,section: section %>
+  	<% when'finished' %>
+
+  		<% if target_test.approved? %>
+  	  	<div class="text-center my-3"><h4 class="my-4 text-success"><%= I18n.t('questionnaire.approved') %></h4></div>
+        <p class="mx-5 text-center"><%= I18n.t('questionnaire.you_have_approved',test_name: target_test.questionnaire.name) %></p>
+        <div class="row">
+          <div class="col text-center" style="padding: 1rem;font-size: 40px">
+            <i class="fas fa-check-circle text-success"></i>
+          </div>
+        </div>
+      <% else %>
+  	  	<div class="text-center my-3"><h4 class="my-4 text-danger"><%= I18n.t('questionnaire.fail') %></h4></div>
+        <p class="mx-5 text-center"><%= I18n.t('questionnaire.you_fail',test_name: target_test.questionnaire.name) %></p>
+        <div class="row">
+          <div class="col text-center" style="padding: 1rem;font-size: 40px">
+            <i class="ion ion-md-close-circle text-danger"></i>
+          </div>
+        </div>
+      <% end %>
+    <% when 'canceled' %>
+  	  	<div class="text-center my-3"><h4 class="my-4 text-warning"><%= I18n.t('questionnaire.canceled') %></h4></div>
+        <p class="mx-5 text-center"><%= I18n.t('questionnaire.you_canceled',test_name: target_test.questionnaire.name) %></p>
+        <div class="row">
+          <div class="col text-center" style="padding: 1rem;font-size: 40px">
+            <i class="ion ion-md-eye-off text-warning"></i>
+          </div>
+        </div>
+
+  	<% end %>
+
+
+  <% end %>
+<% end %>

@@ -1,0 +1,2 @@
+module ModelingFlowSummariesHelper
+end

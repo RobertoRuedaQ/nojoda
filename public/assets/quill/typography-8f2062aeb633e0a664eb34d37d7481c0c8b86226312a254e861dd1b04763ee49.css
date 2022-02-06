@@ -1,0 +1,799 @@
+/* line 7, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor p,
+.ql-editor ol,
+.ql-editor ul,
+.ql-editor pre,
+.ql-editor blockquote,
+.ql-editor h1,
+.ql-editor h2,
+.ql-editor h3,
+.ql-editor h4,
+.ql-editor h5,
+.ql-editor h6,
+.ql-content p,
+.ql-content ol,
+.ql-content ul,
+.ql-content pre,
+.ql-content blockquote,
+.ql-content h1,
+.ql-content h2,
+.ql-content h3,
+.ql-content h4,
+.ql-content h5,
+.ql-content h6 {
+  counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+}
+/* line 21, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ol,
+.ql-editor ul,
+.ql-content ol,
+.ql-content ul {
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+/* line 29, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ol > li,
+.ql-editor ul > li,
+.ql-content ol > li,
+.ql-content ul > li {
+  list-style-type: none;
+}
+/* line 33, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ol > li:not(.ql-direction-rtl), .ql-editor ul > li:not(.ql-direction-rtl), .ql-content ol > li:not(.ql-direction-rtl),
+.ql-content ul > li:not(.ql-direction-rtl) {
+  padding-left: 2rem;
+}
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+[dir=rtl] .ql-editor ol > li:not(.ql-direction-rtl),
+[dir=rtl] .ql-editor ul > li:not(.ql-direction-rtl),
+[dir=rtl] .ql-content ol > li:not(.ql-direction-rtl),
+[dir=rtl]
+.ql-content ul > li:not(.ql-direction-rtl) {
+  padding-right: 2rem;
+  padding-left: 0;
+}
+/* line 42, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ol > li.ql-direction-rtl, .ql-editor ul > li.ql-direction-rtl, .ql-content ol > li.ql-direction-rtl,
+.ql-content ul > li.ql-direction-rtl {
+  padding-right: 2rem;
+}
+/* line 45, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+[dir=rtl] .ql-editor ol > li.ql-direction-rtl,
+[dir=rtl] .ql-editor ul > li.ql-direction-rtl,
+[dir=rtl] .ql-content ol > li.ql-direction-rtl,
+[dir=rtl]
+.ql-content ul > li.ql-direction-rtl {
+  padding-right: 0;
+  padding-left: 2rem;
+}
+/* line 52, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ul > li::before,
+.ql-content ul > li::before {
+  content: '\2022';
+}
+/* line 56, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ul[data-checked=true],
+.ql-editor ul[data-checked=false],
+.ql-content ul[data-checked=true],
+.ql-content ul[data-checked=false] {
+  pointer-events: none;
+}
+/* line 60, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ul[data-checked=true] > li *,
+.ql-editor ul[data-checked=false] > li *,
+.ql-content ul[data-checked=true] > li *,
+.ql-content ul[data-checked=false] > li * {
+  pointer-events: all;
+}
+/* line 63, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ul[data-checked=true] > li *::before,
+.ql-editor ul[data-checked=false] > li *::before,
+.ql-content ul[data-checked=true] > li *::before,
+.ql-content ul[data-checked=false] > li *::before {
+  color: #777;
+  cursor: pointer;
+  pointer-events: all;
+}
+/* line 71, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ul[data-checked=true] > li::before,
+.ql-content ul[data-checked=true] > li::before {
+  content: '\2611';
+}
+/* line 75, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ul[data-checked=false] > li::before,
+.ql-content ul[data-checked=false] > li::before {
+  content: '\2610';
+}
+/* line 79, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor li::before,
+.ql-content li::before {
+  display: inline-block;
+  width: calc(2rem - .3em);
+  white-space: nowrap;
+}
+/* line 85, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor li:not(.ql-direction-rtl)::before, .ql-content li:not(.ql-direction-rtl)::before {
+  margin-right: .3em;
+  margin-left: -2rem;
+  text-align: right;
+}
+/* line 90, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+[dir=rtl] .ql-editor li:not(.ql-direction-rtl)::before,
+[dir=rtl] .ql-content li:not(.ql-direction-rtl)::before {
+  margin-right: -2rem;
+  margin-left: .3em;
+  text-align: left;
+}
+/* line 97, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor li.ql-direction-rtl::before, .ql-content li.ql-direction-rtl::before {
+  margin-right: -2rem;
+  margin-left: .3em;
+  text-align: left;
+}
+/* line 102, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+[dir=rtl] .ql-editor li.ql-direction-rtl::before,
+[dir=rtl] .ql-content li.ql-direction-rtl::before {
+  margin-right: .3em;
+  margin-left: -2rem;
+  text-align: right;
+}
+/* line 109, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ol li,
+.ql-content ol li {
+  counter-increment: list-0;
+  counter-reset: list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+}
+/* line 113, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor ol li::before,
+.ql-content ol li::before {
+  content: counter(list-0,decimal) ". ";
+}
+/* line 15, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-1,
+.ql-content ol li.ql-indent-1 {
+  counter-increment: list-1;
+  counter-reset:  list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+}
+/* line 28, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-1::before,
+.ql-content ol li.ql-indent-1::before {
+  content: counter(list-1,lower-alpha) ". ";
+}
+/* line 33, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-1:not(.ql-direction-rtl), .ql-content .ql-indent-1:not(.ql-direction-rtl) {
+  padding-left: 2rem;
+}
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-1:not(.ql-direction-rtl),
+[dir=rtl] .ql-content .ql-indent-1:not(.ql-direction-rtl) {
+  padding-right: 2rem;
+  padding-left: 0;
+}
+/* line 41, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-1:not(.ql-direction-rtl), .ql-content li.ql-indent-1:not(.ql-direction-rtl) {
+  padding-left: 4rem;
+}
+/* line 44, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-1:not(.ql-direction-rtl),
+[dir=rtl] .ql-content li.ql-indent-1:not(.ql-direction-rtl) {
+  padding-right: 4rem;
+  padding-left: 0;
+}
+/* line 49, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-1.ql-direction-rtl.ql-align-right, .ql-content .ql-indent-1.ql-direction-rtl.ql-align-right {
+  padding-right: 2rem;
+}
+/* line 52, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-1.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content .ql-indent-1.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 2rem;
+}
+/* line 57, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-1.ql-direction-rtl.ql-align-right, .ql-content li.ql-indent-1.ql-direction-rtl.ql-align-right {
+  padding-right: 4rem;
+}
+/* line 60, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-1.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content li.ql-indent-1.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 4rem;
+}
+/* line 15, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-2,
+.ql-content ol li.ql-indent-2 {
+  counter-increment: list-2;
+  counter-reset:  list-3 list-4 list-5 list-6 list-7 list-8 list-9;
+}
+/* line 28, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-2::before,
+.ql-content ol li.ql-indent-2::before {
+  content: counter(list-2,lower-roman) ". ";
+}
+/* line 33, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-2:not(.ql-direction-rtl), .ql-content .ql-indent-2:not(.ql-direction-rtl) {
+  padding-left: 4rem;
+}
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-2:not(.ql-direction-rtl),
+[dir=rtl] .ql-content .ql-indent-2:not(.ql-direction-rtl) {
+  padding-right: 4rem;
+  padding-left: 0;
+}
+/* line 41, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-2:not(.ql-direction-rtl), .ql-content li.ql-indent-2:not(.ql-direction-rtl) {
+  padding-left: 6rem;
+}
+/* line 44, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-2:not(.ql-direction-rtl),
+[dir=rtl] .ql-content li.ql-indent-2:not(.ql-direction-rtl) {
+  padding-right: 6rem;
+  padding-left: 0;
+}
+/* line 49, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-2.ql-direction-rtl.ql-align-right, .ql-content .ql-indent-2.ql-direction-rtl.ql-align-right {
+  padding-right: 4rem;
+}
+/* line 52, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-2.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content .ql-indent-2.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 4rem;
+}
+/* line 57, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-2.ql-direction-rtl.ql-align-right, .ql-content li.ql-indent-2.ql-direction-rtl.ql-align-right {
+  padding-right: 6rem;
+}
+/* line 60, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-2.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content li.ql-indent-2.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 6rem;
+}
+/* line 15, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-3,
+.ql-content ol li.ql-indent-3 {
+  counter-increment: list-3;
+  counter-reset:  list-4 list-5 list-6 list-7 list-8 list-9;
+}
+/* line 28, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-3::before,
+.ql-content ol li.ql-indent-3::before {
+  content: counter(list-3,decimal) ". ";
+}
+/* line 33, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-3:not(.ql-direction-rtl), .ql-content .ql-indent-3:not(.ql-direction-rtl) {
+  padding-left: 6rem;
+}
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-3:not(.ql-direction-rtl),
+[dir=rtl] .ql-content .ql-indent-3:not(.ql-direction-rtl) {
+  padding-right: 6rem;
+  padding-left: 0;
+}
+/* line 41, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-3:not(.ql-direction-rtl), .ql-content li.ql-indent-3:not(.ql-direction-rtl) {
+  padding-left: 8rem;
+}
+/* line 44, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-3:not(.ql-direction-rtl),
+[dir=rtl] .ql-content li.ql-indent-3:not(.ql-direction-rtl) {
+  padding-right: 8rem;
+  padding-left: 0;
+}
+/* line 49, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-3.ql-direction-rtl.ql-align-right, .ql-content .ql-indent-3.ql-direction-rtl.ql-align-right {
+  padding-right: 6rem;
+}
+/* line 52, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-3.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content .ql-indent-3.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 6rem;
+}
+/* line 57, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-3.ql-direction-rtl.ql-align-right, .ql-content li.ql-indent-3.ql-direction-rtl.ql-align-right {
+  padding-right: 8rem;
+}
+/* line 60, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-3.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content li.ql-indent-3.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 8rem;
+}
+/* line 15, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-4,
+.ql-content ol li.ql-indent-4 {
+  counter-increment: list-4;
+  counter-reset:  list-5 list-6 list-7 list-8 list-9;
+}
+/* line 28, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-4::before,
+.ql-content ol li.ql-indent-4::before {
+  content: counter(list-4,lower-alpha) ". ";
+}
+/* line 33, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-4:not(.ql-direction-rtl), .ql-content .ql-indent-4:not(.ql-direction-rtl) {
+  padding-left: 8rem;
+}
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-4:not(.ql-direction-rtl),
+[dir=rtl] .ql-content .ql-indent-4:not(.ql-direction-rtl) {
+  padding-right: 8rem;
+  padding-left: 0;
+}
+/* line 41, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-4:not(.ql-direction-rtl), .ql-content li.ql-indent-4:not(.ql-direction-rtl) {
+  padding-left: 10rem;
+}
+/* line 44, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-4:not(.ql-direction-rtl),
+[dir=rtl] .ql-content li.ql-indent-4:not(.ql-direction-rtl) {
+  padding-right: 10rem;
+  padding-left: 0;
+}
+/* line 49, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-4.ql-direction-rtl.ql-align-right, .ql-content .ql-indent-4.ql-direction-rtl.ql-align-right {
+  padding-right: 8rem;
+}
+/* line 52, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-4.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content .ql-indent-4.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 8rem;
+}
+/* line 57, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-4.ql-direction-rtl.ql-align-right, .ql-content li.ql-indent-4.ql-direction-rtl.ql-align-right {
+  padding-right: 10rem;
+}
+/* line 60, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-4.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content li.ql-indent-4.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 10rem;
+}
+/* line 15, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-5,
+.ql-content ol li.ql-indent-5 {
+  counter-increment: list-5;
+  counter-reset:  list-6 list-7 list-8 list-9;
+}
+/* line 28, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-5::before,
+.ql-content ol li.ql-indent-5::before {
+  content: counter(list-5,lower-roman) ". ";
+}
+/* line 33, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-5:not(.ql-direction-rtl), .ql-content .ql-indent-5:not(.ql-direction-rtl) {
+  padding-left: 10rem;
+}
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-5:not(.ql-direction-rtl),
+[dir=rtl] .ql-content .ql-indent-5:not(.ql-direction-rtl) {
+  padding-right: 10rem;
+  padding-left: 0;
+}
+/* line 41, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-5:not(.ql-direction-rtl), .ql-content li.ql-indent-5:not(.ql-direction-rtl) {
+  padding-left: 12rem;
+}
+/* line 44, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-5:not(.ql-direction-rtl),
+[dir=rtl] .ql-content li.ql-indent-5:not(.ql-direction-rtl) {
+  padding-right: 12rem;
+  padding-left: 0;
+}
+/* line 49, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-5.ql-direction-rtl.ql-align-right, .ql-content .ql-indent-5.ql-direction-rtl.ql-align-right {
+  padding-right: 10rem;
+}
+/* line 52, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-5.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content .ql-indent-5.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 10rem;
+}
+/* line 57, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-5.ql-direction-rtl.ql-align-right, .ql-content li.ql-indent-5.ql-direction-rtl.ql-align-right {
+  padding-right: 12rem;
+}
+/* line 60, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-5.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content li.ql-indent-5.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 12rem;
+}
+/* line 15, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-6,
+.ql-content ol li.ql-indent-6 {
+  counter-increment: list-6;
+  counter-reset:  list-7 list-8 list-9;
+}
+/* line 28, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-6::before,
+.ql-content ol li.ql-indent-6::before {
+  content: counter(list-6,decimal) ". ";
+}
+/* line 33, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-6:not(.ql-direction-rtl), .ql-content .ql-indent-6:not(.ql-direction-rtl) {
+  padding-left: 12rem;
+}
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-6:not(.ql-direction-rtl),
+[dir=rtl] .ql-content .ql-indent-6:not(.ql-direction-rtl) {
+  padding-right: 12rem;
+  padding-left: 0;
+}
+/* line 41, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-6:not(.ql-direction-rtl), .ql-content li.ql-indent-6:not(.ql-direction-rtl) {
+  padding-left: 14rem;
+}
+/* line 44, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-6:not(.ql-direction-rtl),
+[dir=rtl] .ql-content li.ql-indent-6:not(.ql-direction-rtl) {
+  padding-right: 14rem;
+  padding-left: 0;
+}
+/* line 49, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-6.ql-direction-rtl.ql-align-right, .ql-content .ql-indent-6.ql-direction-rtl.ql-align-right {
+  padding-right: 12rem;
+}
+/* line 52, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-6.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content .ql-indent-6.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 12rem;
+}
+/* line 57, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-6.ql-direction-rtl.ql-align-right, .ql-content li.ql-indent-6.ql-direction-rtl.ql-align-right {
+  padding-right: 14rem;
+}
+/* line 60, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-6.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content li.ql-indent-6.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 14rem;
+}
+/* line 15, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-7,
+.ql-content ol li.ql-indent-7 {
+  counter-increment: list-7;
+  counter-reset:  list-8 list-9;
+}
+/* line 28, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-7::before,
+.ql-content ol li.ql-indent-7::before {
+  content: counter(list-7,lower-alpha) ". ";
+}
+/* line 33, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-7:not(.ql-direction-rtl), .ql-content .ql-indent-7:not(.ql-direction-rtl) {
+  padding-left: 14rem;
+}
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-7:not(.ql-direction-rtl),
+[dir=rtl] .ql-content .ql-indent-7:not(.ql-direction-rtl) {
+  padding-right: 14rem;
+  padding-left: 0;
+}
+/* line 41, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-7:not(.ql-direction-rtl), .ql-content li.ql-indent-7:not(.ql-direction-rtl) {
+  padding-left: 16rem;
+}
+/* line 44, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-7:not(.ql-direction-rtl),
+[dir=rtl] .ql-content li.ql-indent-7:not(.ql-direction-rtl) {
+  padding-right: 16rem;
+  padding-left: 0;
+}
+/* line 49, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-7.ql-direction-rtl.ql-align-right, .ql-content .ql-indent-7.ql-direction-rtl.ql-align-right {
+  padding-right: 14rem;
+}
+/* line 52, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-7.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content .ql-indent-7.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 14rem;
+}
+/* line 57, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-7.ql-direction-rtl.ql-align-right, .ql-content li.ql-indent-7.ql-direction-rtl.ql-align-right {
+  padding-right: 16rem;
+}
+/* line 60, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-7.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content li.ql-indent-7.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 16rem;
+}
+/* line 15, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-8,
+.ql-content ol li.ql-indent-8 {
+  counter-increment: list-8;
+  counter-reset:  list-9;
+}
+/* line 28, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-8::before,
+.ql-content ol li.ql-indent-8::before {
+  content: counter(list-8,lower-roman) ". ";
+}
+/* line 33, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-8:not(.ql-direction-rtl), .ql-content .ql-indent-8:not(.ql-direction-rtl) {
+  padding-left: 16rem;
+}
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-8:not(.ql-direction-rtl),
+[dir=rtl] .ql-content .ql-indent-8:not(.ql-direction-rtl) {
+  padding-right: 16rem;
+  padding-left: 0;
+}
+/* line 41, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-8:not(.ql-direction-rtl), .ql-content li.ql-indent-8:not(.ql-direction-rtl) {
+  padding-left: 18rem;
+}
+/* line 44, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-8:not(.ql-direction-rtl),
+[dir=rtl] .ql-content li.ql-indent-8:not(.ql-direction-rtl) {
+  padding-right: 18rem;
+  padding-left: 0;
+}
+/* line 49, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-8.ql-direction-rtl.ql-align-right, .ql-content .ql-indent-8.ql-direction-rtl.ql-align-right {
+  padding-right: 16rem;
+}
+/* line 52, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-8.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content .ql-indent-8.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 16rem;
+}
+/* line 57, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-8.ql-direction-rtl.ql-align-right, .ql-content li.ql-indent-8.ql-direction-rtl.ql-align-right {
+  padding-right: 18rem;
+}
+/* line 60, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-8.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content li.ql-indent-8.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 18rem;
+}
+/* line 15, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-9,
+.ql-content ol li.ql-indent-9 {
+  counter-increment: list-9;
+}
+/* line 28, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor ol li.ql-indent-9::before,
+.ql-content ol li.ql-indent-9::before {
+  content: counter(list-9,decimal) ". ";
+}
+/* line 33, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-9:not(.ql-direction-rtl), .ql-content .ql-indent-9:not(.ql-direction-rtl) {
+  padding-left: 18rem;
+}
+/* line 36, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-9:not(.ql-direction-rtl),
+[dir=rtl] .ql-content .ql-indent-9:not(.ql-direction-rtl) {
+  padding-right: 18rem;
+  padding-left: 0;
+}
+/* line 41, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-9:not(.ql-direction-rtl), .ql-content li.ql-indent-9:not(.ql-direction-rtl) {
+  padding-left: 20rem;
+}
+/* line 44, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-9:not(.ql-direction-rtl),
+[dir=rtl] .ql-content li.ql-indent-9:not(.ql-direction-rtl) {
+  padding-right: 20rem;
+  padding-left: 0;
+}
+/* line 49, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor .ql-indent-9.ql-direction-rtl.ql-align-right, .ql-content .ql-indent-9.ql-direction-rtl.ql-align-right {
+  padding-right: 18rem;
+}
+/* line 52, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor .ql-indent-9.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content .ql-indent-9.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 18rem;
+}
+/* line 57, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+.ql-editor li.ql-indent-9.ql-direction-rtl.ql-align-right, .ql-content li.ql-indent-9.ql-direction-rtl.ql-align-right {
+  padding-right: 20rem;
+}
+/* line 60, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/_mixins.scss */
+[dir=rtl] .ql-editor li.ql-indent-9.ql-direction-rtl.ql-align-right,
+[dir=rtl] .ql-content li.ql-indent-9.ql-direction-rtl.ql-align-right {
+  padding-right: 0;
+  padding-left: 20rem;
+}
+/* line 120, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-video,
+.ql-content .ql-video {
+  display: block;
+  max-width: 100%;
+}
+/* line 124, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-video.ql-align-center,
+.ql-content .ql-video.ql-align-center {
+  margin: 0 auto;
+}
+/* line 128, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-video.ql-align-right, .ql-content .ql-video.ql-align-right {
+  margin: 0 0 0 auto;
+}
+/* line 131, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+[dir=rtl] .ql-editor .ql-video.ql-align-right,
+[dir=rtl] .ql-content .ql-video.ql-align-right {
+  margin: 0 auto 0 0;
+}
+/* line 137, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-bg-black,
+.ql-content .ql-bg-black {
+  background-color: #000;
+}
+/* line 141, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-bg-red,
+.ql-content .ql-bg-red {
+  background-color: #e60000;
+}
+/* line 145, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-bg-orange,
+.ql-content .ql-bg-orange {
+  background-color: #f90;
+}
+/* line 149, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-bg-yellow,
+.ql-content .ql-bg-yellow {
+  background-color: #ff0;
+}
+/* line 153, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-bg-green,
+.ql-content .ql-bg-green {
+  background-color: #008a00;
+}
+/* line 157, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-bg-blue,
+.ql-content .ql-bg-blue {
+  background-color: #06c;
+}
+/* line 161, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-bg-purple,
+.ql-content .ql-bg-purple {
+  background-color: #93f;
+}
+/* line 165, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-color-white,
+.ql-content .ql-color-white {
+  color: #fff;
+}
+/* line 169, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-color-red,
+.ql-content .ql-color-red {
+  color: #e60000;
+}
+/* line 173, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-color-orange,
+.ql-content .ql-color-orange {
+  color: #f90;
+}
+/* line 177, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-color-yellow,
+.ql-content .ql-color-yellow {
+  color: #ff0;
+}
+/* line 181, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-color-green,
+.ql-content .ql-color-green {
+  color: #008a00;
+}
+/* line 185, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-color-blue,
+.ql-content .ql-color-blue {
+  color: #06c;
+}
+/* line 189, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-color-purple,
+.ql-content .ql-color-purple {
+  color: #93f;
+}
+/* line 193, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-direction-rtl, .ql-content .ql-direction-rtl {
+  text-align: inherit;
+  direction: rtl;
+}
+/* line 197, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+[dir=rtl] .ql-editor .ql-direction-rtl,
+[dir=rtl] .ql-content .ql-direction-rtl {
+  text-align: inherit;
+  direction: ltr;
+}
+/* line 203, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-align-center,
+.ql-content .ql-align-center {
+  text-align: center;
+}
+/* line 207, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-align-justify,
+.ql-content .ql-align-justify {
+  text-align: justify;
+}
+/* line 211, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor .ql-align-right, .ql-content .ql-align-right {
+  text-align: right;
+}
+/* line 214, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+[dir=rtl] .ql-editor .ql-align-right,
+[dir=rtl] .ql-content .ql-align-right {
+  text-align: left;
+}
+/* line 219, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.ql-editor img,
+.ql-content img {
+  max-width: 100%;
+}
+
+/* line 229, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.default-style .ql-editor blockquote,
+.default-style .ql-content blockquote {
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+/* line 234, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.default-style .ql-editor .ql-font-serif,
+.default-style .ql-content .ql-font-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+/* line 238, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.default-style .ql-editor .ql-font-monospace,
+.default-style .ql-content .ql-font-monospace {
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+/* line 242, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.default-style .ql-editor .ql-size-small,
+.default-style .ql-content .ql-size-small {
+  font-size: 0.6rem;
+}
+/* line 246, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.default-style .ql-editor .ql-size-large,
+.default-style .ql-content .ql-size-large {
+  font-size: 0.8rem;
+}
+/* line 250, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.default-style .ql-editor .ql-size-huge,
+.default-style .ql-content .ql-size-huge {
+  font-size: 1rem;
+}
+
+/* line 261, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.material-style .ql-editor blockquote,
+.material-style .ql-content blockquote {
+  margin-bottom: 1rem;
+  font-size: 1.1175rem;
+}
+/* line 266, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.material-style .ql-editor .ql-font-serif,
+.material-style .ql-content .ql-font-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
+/* line 270, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.material-style .ql-editor .ql-font-monospace,
+.material-style .ql-content .ql-font-monospace {
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+/* line 274, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.material-style .ql-editor .ql-size-small,
+.material-style .ql-content .ql-size-small {
+  font-size: 0.75rem;
+}
+/* line 278, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.material-style .ql-editor .ql-size-large,
+.material-style .ql-content .ql-size-large {
+  font-size: 1rem;
+}
+/* line 282, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/libs/quill/typography.scss */
+.material-style .ql-editor .ql-size-huge,
+.material-style .ql-content .ql-size-huge {
+  font-size: 1.25rem;
+}

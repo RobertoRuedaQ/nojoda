@@ -1,0 +1,79 @@
+<h4 class="text-center"><%= eval(@form_field.form_template.object).human_attribute_name(@form_field.name)  %></h4>
+<div id="accordion">
+  <div class="card mb-2">
+    <div class="card-header" data-toggle="collapse" href="#field-accordion">
+      <h5 class="my-1"><%= I18n.t('form.edit_field_info') %></h5>
+    </div>
+
+    <div id="field-accordion" class="collapse show" data-parent="#accordion">
+      <div class="card-body px-0 py-0">
+		<%= build_form(@form_field,'update',form_fields_fields,html: { class: 'form-group', method: 'put'},columns: 1,buttonOffset: 1, destroy: false, remote: true,controller: 'form_fields', header_title: false) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-2">
+    <div class="card-header" data-toggle="collapse" href="#new-attribute-accordion">
+      <h5 class="my-1"><%= I18n.t('form.create_new_attribute') %></h5>
+    </div>
+    <div id="new-attribute-accordion" class="collapse" data-parent="#accordion">
+      <div class="card-body px-0 py-0">
+		<%= build_form(FormAttribute.new({form_field_id: @form_field.id}),'create',form_attributes_fields,html: { class: 'form-group', method: 'post'},columns: 1,buttonOffset: 1, destroy: false, remote: true,controller: 'form_attributes', header_title: false) %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-2">
+    <div class="card-header" data-toggle="collapse" href="#current-attributes-accordion">
+      <h5 class="my-1"><%= I18n.t('form.current_attributes') %></h5>
+    </div>
+    <div id="current-attributes-accordion" class="collapse" data-parent="#accordion">
+      <div class="card-body px-0 py-0" id="modal-attrribute_detail_container">
+
+        <% @form_field.form_attribute.to_a.each do |attribute|%>
+          <%= createFieldAttributeDetail(attribute.id) %>
+        <% end %>
+		
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card mb-2">
+    <div class="card-header" data-toggle="collapse" href="#new_input">
+      <h5 class="my-1"><%= I18n.t('form.new_input') %></h5>
+    </div>
+    <div id="new_input" class="collapse" data-parent="#accordion">
+      <div class="card-body px-0 py-0" id="modal-attrribute_detail_container">
+
+        <%= build_form(FormInput.new({form_field_id: @form_field.id}),'create',current_user.template('FormInput','form_inputs',current_user),html: { class: 'form-group', method: 'post'},controller: 'form_inputs', buttonOffset: 1, destroy: false, remote: true, header_title: false) %>
+    
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="card mb-2">
+    <div class="card-header" data-toggle="collapse" href="#current_inputs">
+      <h5 class="my-1"><%= I18n.t('form.current_inputs') %></h5>
+    </div>
+    <div id="current_inputs" class="collapse" data-parent="#accordion">
+      <div class="card-body px-0 py-0" id="inputs-container">
+
+        <% @form_field.form_input.each do |input|%>
+          <%= render '/form_inputs/partial/input_body', input: input %>
+        <% end %>
+    
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+

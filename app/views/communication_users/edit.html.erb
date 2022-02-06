@@ -1,0 +1,4 @@
+
+
+<%= form_title(@communication_user, 'user') %> 
+<%= build_form(@communication_user,'update',current_user.template('CommunicationUser','communication_users',current_user),html: { class: 'form-group', method: 'put'}) %>

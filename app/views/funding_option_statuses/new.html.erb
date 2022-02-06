@@ -1,0 +1,4 @@
+
+
+<%= form_title(@funding_option_status,I18n.t('mains.new')) %>
+<%= build_form(@funding_option_status,'create',current_user.template('FundingOptionStatus','funding_option_statuses',current_user),html: { class: 'form-group'}) %>

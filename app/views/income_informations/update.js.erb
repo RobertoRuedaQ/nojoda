@@ -1,0 +1,12 @@
+$("#income-element-<%= @income_information.id %>").remove();
+
+$('#income-main-container').append("<%= j render '/income_informations/partial/income_body', income: @income_information,delete: true, edit: true, show: false, hidden_fields: @hidden_fields %>")
+
+clear_form('incomeinformation',['user_id'])
+
+
+$('#edit_income_information').modal('hide')
+
+toastr["success"]("<%= I18n.t('flash.record_updated') %>");
+
+

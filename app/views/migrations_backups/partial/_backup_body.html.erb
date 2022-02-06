@@ -1,0 +1,5 @@
+<div class="container-fluid my-3">
+	<h5 class="mb-5"><%= lumni_date( @target_backup.created_at) %> </h4>	
+	<%=  createBasicTable(@header,@rows, id: "backup-table-#{@target_backup.id}")%>
+
+</div>

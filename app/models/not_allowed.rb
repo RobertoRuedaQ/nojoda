@@ -1,0 +1,2 @@
+class NotAllowed < ApplicationRecord
+end

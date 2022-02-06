@@ -1,0 +1,20 @@
+        <table class="datatables-list table card-table table-bordered table-striped m-0" id="<%= @options[:id].nil? ? 'roles_table' : @options[:id]%>" data-order='[[ 0, "asc" ]]' data-page-length='25'>
+          <thead>
+            <tr>
+              <% @headers.each do |header| %>
+                <th><%= header %></th>
+              <% end %>
+            </tr>
+            
+          </thead>
+          <tbody>
+            <% @rows_info.each do |row| %>
+
+        			<tr>
+                <% row.each do |data| %>
+        				<td><%= data %></td>
+                <% end %>
+        			</tr>
+            <% end %>
+          </tbody>
+        </table>

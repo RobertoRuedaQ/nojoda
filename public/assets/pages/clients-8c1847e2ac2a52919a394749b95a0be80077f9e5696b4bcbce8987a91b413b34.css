@@ -1,0 +1,133 @@
+/* line 9, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+.clients-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  width: 100%;
+}
+
+/* line 17, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+.clients-sidebox,
+.clients-content {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/* line 22, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+.clients-content {
+  background: transparent;
+}
+
+/* line 26, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+.clients-sidebox {
+  position: fixed;
+  top: 0;
+  right: -20rem;
+  height: 100%;
+  width: 20rem;
+  background: #f3f3f3;
+}
+/* line 34, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+[dir=rtl] .clients-sidebox {
+  right: auto;
+  left: -20rem;
+}
+
+/* line 40, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+.layout-sidenav-100vh .clients-sidebox {
+  height: 100vh;
+}
+
+/* line 44, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+.clients-sidebox-open .clients-sidebox {
+  right: 0;
+}
+/* line 47, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+[dir=rtl] .clients-sidebox-open .clients-sidebox {
+  right: auto;
+  left: 0;
+}
+
+/* line 53, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+.clients-sidebox-close {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  display: block;
+  line-height: 1;
+}
+/* line 61, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+[dir=rtl] .clients-sidebox-close {
+  right: 1rem;
+  left: auto;
+}
+
+/* line 67, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+.clients-table tr,
+.clients-table tr > * {
+  cursor: pointer;
+}
+
+/* line 72, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+.clients-scroll {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+}
+
+/* line 84, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+.default-style .clients-sidebox {
+  z-index: 1081;
+}
+@media (min-width: 992px) {
+  /* line 89, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+  .default-style .clients-sidebox {
+    position: absolute;
+    z-index: 1;
+  }
+  /* line 94, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+  .default-style .clients-sidebox-open .clients-content {
+    right: 20rem;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 100, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+  .default-style[dir=rtl] .clients-sidebox-open .clients-content {
+    right: 0;
+    left: 20rem;
+  }
+}
+
+/* line 112, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+.material-style .clients-sidebox {
+  z-index: 1081;
+}
+@media (min-width: 992px) {
+  /* line 117, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+  .material-style .clients-sidebox {
+    position: absolute;
+    z-index: 1;
+  }
+  /* line 122, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+  .material-style .clients-sidebox-open .clients-content {
+    right: 20rem;
+  }
+}
+
+@media (min-width: 992px) {
+  /* line 128, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/clients.scss */
+  .material-style[dir=rtl] .clients-sidebox-open .clients-content {
+    right: 0;
+    left: 20rem;
+  }
+}

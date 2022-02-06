@@ -1,0 +1,4 @@
+
+
+<%= form_title(@legacy_status, 'academic_status') %> 
+<%= build_form(@legacy_status,'update',current_user.template('LegacyStatus','legacy_statuses',current_user),html: { class: 'form-group', method: 'put'}) %>

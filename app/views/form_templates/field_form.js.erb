@@ -1,0 +1,12 @@
+$('#modal-field-info').html("<%= j render 'form_fields/partial/edit_field' %>")
+
+$('#template-loader-image').attr('hidden',true)
+activateDatepickers()
+validate_numeric_fields();
+setAutosize();
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+
+attributeTypeFieldChange()
+
+$('[id^=formattribute_value_]').replaceWith('<div id="field-attribute-value-container"></div>')

@@ -1,0 +1,12 @@
+toastr["success"]("<%= I18n.t('flash.record_created') %>");
+$('#chat-box').append("<%= j createComment(@task_comment) %>")
+$('[data-toggle="popover"]').popover();
+$('#projectcomment_comment_').val('')
+var comment = document.getElementById('comment_body_<%=@task_comment.id %>').offsetTop;
+document.getElementById('chat-box').scrollTop = comment-10;
+
+$('#comment_body_<%=@task_comment.id %>').addClass('new-comment')
+
+<% if @task_comment.project_task.parent_id.nil? %>
+	$('#task-container-<%= @task_comment.project_task.id %>').html('<%=j createProjectTask(@task_comment.project_task) %>')
+<% end %>

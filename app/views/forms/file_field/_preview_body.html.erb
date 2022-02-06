@@ -1,0 +1,33 @@
+
+<div class="card">
+	<div class="card-body py-2">
+		<div class="row">
+			<div class="col-11">
+				<%= link_to file_url.split('/').last, file_url, class: 'text-primary', target: '_blank' %>
+			</div>
+			<div class="col-1">
+				<div  class="text-center">
+
+					<div class="task-list-actions btn-group show">
+          <button type="button" class="btn btn-default btn-xs rounded-pill icon-btn borderless md-btn-flat hide-arrow dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="ion ion-ios-more"></i></button>
+          <div class="dropdown-menu dropdown-menu-right" x-placement="top-end" style="position: absolute; will-change: top, left; top: -88px; left: -140px;">
+
+          	<% unless options[:disabled] %>
+              	<%= link_to edit_file_field_form_fields_path(target_model: config[:object].model_name.to_s, target_field: target_field, options: options,config: config,object_id: config[:object].id), remote: true, class: 'dropdown-item' do %>
+              		<i class="fas fa-edit"></i> <%= I18n.t('general.edit') %>
+              	<% end %>
+                <% if !options[:required] %>
+	              	<%= link_to "javascript:void(0)", class: 'dropdown-item text-danger lumni-danger-alert', data: {path: remove_attachment_trash_path(config[:object], target_model: config[:object].model_name.to_s,target_field:target_field, specific_field: specific_field),title: I18n.t('form.remove_attachment'), text: I18n.t('form.remove_attachment_confirmation'),confirbuttontext: I18n.t('general.delete'),cancelbuttontext: I18n.t('general.cancel'),destroyed:  I18n.t('form.attachment_removed'),destroyedconfirmation: I18n.t('form.attachment_removed_conformation'),finaljs: 'location.reload()'} do %>
+	              		 <i class="fas fa-trash-alt"></i> <%= I18n.t('general.delete') %>
+	              	<% end %>
+                <% end %>
+            <% end %>
+
+        	</div>
+      	</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>

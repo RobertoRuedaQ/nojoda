@@ -1,0 +1,3 @@
+$('#notification-<%= @notification.id %>').remove()
+$('#notification-count-bell').replaceWith("<%= j render 'notification_cases/partial/notification_count' %>")
+$('#notification-badge-count').replaceWith("<%= j render 'notification_cases/partial/badge_count' %>")

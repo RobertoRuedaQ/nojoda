@@ -1,0 +1,82 @@
+<div class="d-flex justify-content-between">
+	<%= form_title(@bizdev_operation, 'name') %> 
+	<div>
+
+		
+	</div>	
+</div>
+
+
+
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link " data-toggle="tab" href="#bizdev-tab-<%= @bizdev_operation.id %>"><%= BizdevOperation.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#project-tab-<%= @bizdev_operation.id %>"><%= Project.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#team-tab-<%= @bizdev_operation.id %>"><%= I18n.t('biz_dev.biz_team')%></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade" id="bizdev-tab-<%= @bizdev_operation.id %>">
+    <%= build_form(@bizdev_operation,'update',current_user.template('BizdevOperation','bizdev_operations',current_user),html: { class: 'form-group', method: 'put'},header_title: false, ) %>
+    </div>
+    <div class="tab-pane fade show active" id="project-tab-<%= @bizdev_operation.id %>">
+      <div class="card">
+        <div class="card-body">
+          <div class="row" id='project-edit'>
+            <% @bizdev_operation.project.project_card.each do |card| %>
+              <%= createProjectCard(card) %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Section -->
+      <div class="modal fade" id="task_modal" tabindex="-1" role="dialog" aria-labelledby="sectionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div id="task_modal_body"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= I18n.t('general.close')%></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      
+    </div>
+    <div class="tab-pane fade" id="team-tab-<%= @bizdev_operation.id %>">
+
+      <div class="card">
+        <div class="card-body">
+
+
+
+          <%= lumni_dropdown_field( 'teams',"supervisors",{type: 'multiple_dropdown', list: teamMembersList(current_company),html_class: ' bizdev-team-dropdown', id: "team_business_dropdown-#{@bizdev_operation.id}",value: @bizdev_operation.project.project_team.map{|s| s.user_id}}) %>
+          <%= lumni_text_field( 'hidden_teams','previous',{hidden: true}) %>
+          <div target="<%= @bizdev_operation.project.id %>" id="project_div"></div>
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

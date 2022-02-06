@@ -1,0 +1,36 @@
+class <%= file_name.pluralize.camelize%>Controller < ApplicationController
+	def index
+		@<%= file_name.singularize%> = <%= file_name.singularize.camelize%>.lumniStart(params,current_company, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		contact<%=file_name.singularize.camelize%> = @<%= file_name.singularize%>.lumniSave(params,current_user, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		lumniClose(@<%= file_name.singularize%>,contact<%=file_name.singularize.camelize%>)
+	end
+
+	def new
+		@<%= file_name.singularize%> = <%= file_name.singularize.camelize%>.lumniStart(params,current_company, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		contact<%=file_name.singularize.camelize%> = @<%= file_name.singularize%>.lumniSave(params,current_user, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		lumniClose(@<%= file_name.singularize%>,contact<%=file_name.singularize.camelize%>)
+	end
+
+	def create
+		@<%= file_name.singularize%> = <%= file_name.singularize.camelize%>.lumniStart(params,current_company, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		contact<%=file_name.singularize.camelize%> = @<%= file_name.singularize%>.lumniSave(params,current_user, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		lumniClose(@<%= file_name.singularize%>,contact<%=file_name.singularize.camelize%>)
+	end
+
+	def edit
+		@<%= file_name.singularize%> = <%= file_name.singularize.camelize%>.lumniStart(params,current_company, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		contact<%=file_name.singularize.camelize%> = @<%= file_name.singularize%>.lumniSave(params,current_user, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		lumniClose(@<%= file_name.singularize%>,contact<%=file_name.singularize.camelize%>)
+	end
+
+	def update
+		@<%= file_name.singularize%> = <%= file_name.singularize.camelize%>.lumniStart(params,current_company, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		contact<%=file_name.singularize.camelize%> = @<%= file_name.singularize%>.lumniSave(params,current_user, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		lumniClose(@<%= file_name.singularize%>,contact<%=file_name.singularize.camelize%>)
+	end
+	def destroy
+		@<%= file_name.singularize%> = <%= file_name.singularize.camelize%>.lumniStart(params,current_company, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		contact<%=file_name.singularize.camelize%> = @<%= file_name.singularize%>.lumniSave(params,current_user, list: current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user))
+		lumniClose(@cluster,contact<%=file_name.singularize.camelize%>)
+	end
+end

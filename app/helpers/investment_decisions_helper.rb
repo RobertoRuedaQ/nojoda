@@ -1,0 +1,2 @@
+module InvestmentDecisionsHelper
+end

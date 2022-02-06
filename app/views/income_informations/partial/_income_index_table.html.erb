@@ -1,0 +1,65 @@
+<%= render partial: 'forms/filters/full_text_search' %>
+<% if @income_information.size > 0 %>
+  <div class="card">
+    <div class="card-body py-3">
+      <h5 class="text-primary"><%= IncomeInformation.model_name.human(count: 2) %></h5>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th><%= I18n.t('income_information.attributes.id') %></th>
+            <th><%= I18n.t('income_information.attributes.student') %></th>
+            <th><%= I18n.t('income_information.attributes.company') %></th>
+            <th><%= I18n.t('income_information.attributes.position') %></th>
+            <th><%= I18n.t('income_information.attributes.income_case') %></th>
+            <th><%= I18n.t('income_information.attributes.contract_case') %></th>
+            <th><%= I18n.t('income_information.attributes.total_income') %></th>
+            <th><%= I18n.t('income_information.attributes.currency') %></th>
+            <th><%= I18n.t('income_information.attributes.income_in_local_currency') %></th>
+            <th><%= I18n.t('income_information.attributes.exchange_rate') %></th>
+            <th><%= I18n.t('income_information.attributes.fix_income') %></th>
+            <th><%= I18n.t('income_information.attributes.variable_income') %></th>
+            <th><%= I18n.t('income_information.attributes.status') %></th>
+            <th><%= I18n.t('income_information.attributes.start_date') %></th>
+            <th><%= I18n.t('income_information.attributes.end_date') %></th>
+            <th><%= I18n.t('income_information.attributes.updated_at') %></th>
+            <th><%= I18n.t('income_information.attributes.support_file') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @income_information.each do |income|%>
+          <tr>
+            <% currency = income.currency %>
+            <% if income.income_certificate.attached? %>
+              <% file_url = url_for(income.income_certificate.first) %>
+              <% support_file_link = link_to I18n.t('income_information.see_file'), file_url, class: 'text-primary', target: '_blank' %>
+            <% else %>
+              <% support_file_link = '' %>
+            <% end %>
+            <td><%= link_to income.id, edit_income_information_path(income), target: :_blank %></td>
+            <td><%= link_to income.user.full_name, edit_student_path(income.user), target: :_blank %></td>
+            <td><%= income.company_name.blank? ? '' : income.company_name.capitalize%></td>
+            <td><%= income.position.blank? ? '' : income.position.capitalize %></td>
+            <td><%= income.income_case.blank? ? '' : I18n.t('income_information.' + income.income_case ) %></td>
+            <td><%= income.contract_case.blank? ? '' : I18n.t('income_information.' + income.contract_case) %></td>
+            <td><%= lumni_currency income.total_income, currency %></td>
+            <td><%= currency %></td>
+            <td><%= lumni_currency (income.income_in_local_currency || 0), currency %></td>
+            <td><%= income.exchange_rates %></td>
+            <td><%= lumni_currency (income.fix_income || 0), currency %></td>
+            <td><%= lumni_currency (income.variable_income || 0), currency %></td>
+            <td><%= income.operations_status.blank? ? '' : I18n.t('income_information.' + income.operations_status) %></td>
+            <td><%= lumni_date income.start_date %></td>
+            <td><%= lumni_date income.end_date %></td>
+            <td><%= lumni_date income.updated_at %></td>
+            <td><%= support_file_link %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    
+      <%= render partial: 'layouts/partials/pagination', locals: {resource: @income_information} %>
+    </div>
+  </div>
+<% else %>
+   <%= render partial: 'layouts/partials/not_result' %>
+<% end %>

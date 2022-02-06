@@ -1,0 +1,98 @@
+<div class="lumni-scroll" id="top-scroll-container">
+  <div class="project-body"></div>
+  <div class="nav-tabs-left m-0">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link p-0 active" data-toggle="tab" href="#project-tab-kanvas-<%= project.id %>" id="project-link-kanvas-<%= project.id %>">
+          <button type="button" class="btn icon-btn btn-outline-secondary borderless" id="project-tab-button-kanvas-<%= project.id %>">
+            <span class="lnr lnr-map"></span>
+          </button>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link p-0" data-toggle="tab" href="#project-tab-list-<%= project.id %>" id="project-link-list-<%= project.id %>">
+          <button type="button" class="btn icon-btn btn-outline-secondary borderless" id="project-tab-button-list-<%= project.id %>">
+            <span class="lnr lnr-list"></span>
+          </button>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link p-0" data-toggle="tab" href="#project-tab-stats-<%= project.id %>" id="project-link-stats-<%= project.id %>">
+          <button type="button" class="btn icon-btn btn-outline-secondary borderless" id="project-tab-button-stats-<%= project.id %>">
+            <span class="lnr lnr-chart-bars"></span>
+          </button>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link p-0" data-toggle="tab" href="#project-tab-config-<%= project.id %>" id="project-link-config-<%= project.id %>">
+          <button type="button" class="btn icon-btn btn-outline-secondary borderless" id="project-tab-button-config-<%= project.id %>">
+            <span class="lnr lnr-cog"></span>
+          </button>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link p-0" >
+          <button type="button" id="select-favorite" class="btn icon-btn btn-outline-warning borderless" data-toggle="tooltip" data-placement="bottom" title="<%= I18n.t('project.deselect_favorite') %>" onclick="deselectFavoriteProject()" <%= 'hidden="hidden"' unless project.cached_favorite(current_user.id) %>>
+            <span class="ion ion-ios-star"></span>
+          </button>
+          <button type="button" id="deselect-favorite" class="btn icon-btn btn-outline-warning borderless" data-toggle="tooltip" data-placement="bottom" title="<%= I18n.t('project.select_favorite') %>" onclick="selectFavoriteProject()" <%= 'hidden="hidden"' if project.cached_favorite(current_user.id) %>>
+            <span class="ion ion-ios-star-outline"></span>
+          </button>
+        </a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="project-tab-kanvas-<%= project.id %>">
+        <div class="card">
+          <div class="card-body p-1">
+            <div id="project-container-kanvas-<%= project.id %>" class="project-container">
+              <%= render 'projects/partials/kanvas_body',project: project %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade lumni-scroll" id="project-tab-list-<%= project.id %>">
+        <div class="card">
+          <div class="card-body" >
+            <div id="project-container-list-<%= project.id %>" class="project-container">
+
+              <%= create_project_list_view project.cached_all_tasks(current_user.id) %>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade " id="project-tab-stats-<%= project.id %>">
+
+        <div class="card">
+          <div class="card-body">
+
+            <div class="col" id="progress-total-container">
+              <%= createProjectProgressPie project.id, 'total_progress' %>
+            </div>
+
+            <div class="col" id="progress-main-container">
+              <%= createProjectProgressPie project.id, 'main_progress' %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade " id="project-tab-config-<%= project.id %>">
+        <div class="card">
+          <div class="card-body">
+
+            <%= lumni_dropdown_field( 'teams',"supervisors",{type: 'multiple_dropdown', list: teamMembersList(current_company),html_class: ' bizdev-team-dropdown', id: "team_business_dropdown-#{project.id}",value: project.project_team.map{|s| s.user_id}}) %>
+            <%= lumni_text_field( 'hidden_teams','previous',{hidden: true}) %>
+            <div target="<%= project.id %>" id="project_div"></div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <%= render 'projects/partials/project_modal' %>
+</div>

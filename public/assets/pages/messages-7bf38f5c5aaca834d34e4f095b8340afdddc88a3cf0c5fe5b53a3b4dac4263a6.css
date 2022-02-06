@@ -1,0 +1,395 @@
+/* line 14, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  width: 100%;
+  min-height: 30rem;
+}
+
+/* line 23, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-card {
+  overflow: hidden;
+}
+
+/* line 27, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-wrapper,
+.messages-sidebox {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/* line 32, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-sidebox {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+/* line 37, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-wrapper .messages-sidebox, .messages-card .messages-sidebox {
+  position: fixed;
+  left: calc(-14rem - 1px);
+  z-index: 10;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 14rem;
+}
+/* line 46, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+[dir=rtl] .messages-wrapper .messages-sidebox,
+[dir=rtl] .messages-card .messages-sidebox {
+  right: calc(-14rem - 1px);
+  left: auto;
+}
+
+/* line 52, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.layout-sidenav-100vh .messages-wrapper .messages-sidebox {
+  height: 100vh;
+}
+
+/* line 56, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-wrapper .messages-sidebox {
+  background: #f3f3f3;
+}
+
+/* line 60, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-card .messages-sidebox {
+  position: absolute;
+  bottom: 0;
+}
+
+/* line 65, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-scroll {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+}
+/* line 71, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-scroll.messages-content {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* line 81, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-list .list-group-item {
+  z-index: auto !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  width: 100%;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+/* line 93, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-list .list-group-item:first-child {
+  border-top: 0;
+}
+/* line 97, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-list .list-group-item:last-child {
+  border-bottom: 0;
+}
+/* line 101, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.messages-list .list-group-item > * {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+/* line 107, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.message-checkbox .custom-control {
+  display: block !important;
+  margin: 0;
+  margin-top: -1px;
+}
+
+/* line 113, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.message-sender {
+  min-width: 10rem;
+}
+
+/* line 117, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.message-subject {
+  width: 100%;
+}
+
+/* line 121, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.message-date {
+  white-space: nowrap;
+}
+
+/* line 127, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.message-attachment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+/* line 132, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.message-attachment > .media-body {
+  min-width: 0;
+}
+
+/* line 137, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.message-attachment-file,
+.message-attachment-img {
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+}
+
+/* line 146, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.message-attachment-file {
+  display: inline-block;
+  text-align: center;
+  line-height: 4rem;
+}
+
+/* line 152, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.message-attachment-img {
+  background-color: transparent;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* line 158, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.message-attachment-filename {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* line 170, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.default-style .messages-wrapper .messages-sidebox {
+  z-index: 1081;
+}
+/* line 174, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.default-style .messages-sidebox-open .messages-sidebox {
+  left: 0;
+}
+/* line 178, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.default-style .messages-card .messages-sidebox {
+  background: #fff;
+  -webkit-box-shadow: 0 0 0 1px rgba(24, 28, 33, 0.06);
+          box-shadow: 0 0 0 1px rgba(24, 28, 33, 0.06);
+}
+@media (min-width: 576px) {
+  /* line 184, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style .messages-list .list-group-item {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  /* line 188, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style .message-subject {
+    width: auto;
+  }
+  /* line 192, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style .message-date {
+    margin-left: auto;
+  }
+}
+@media (min-width: 768px) {
+  /* line 198, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style .messages-sidebox {
+    -ms-flex-preferred-size: 14rem;
+        flex-basis: 14rem;
+  }
+  /* line 202, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style .messages-wrapper .messages-sidebox {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+@media (min-width: 992px) {
+  /* line 208, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style .messages-wrapper,
+  .default-style .messages-sidebox {
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+  /* line 213, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style .messages-wrapper {
+    padding-left: 14rem;
+  }
+  /* line 217, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style .messages-sidebox {
+    z-index: auto !important;
+  }
+  /* line 221, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style .messages-wrapper .messages-sidebox {
+    position: absolute;
+    left: 0;
+    z-index: auto;
+  }
+  /* line 227, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style .messages-wrapper .messages-sidebox {
+    height: 100% !important;
+  }
+  /* line 231, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style .messages-card .messages-sidebox {
+    position: static;
+    right: auto;
+    left: auto;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    height: auto;
+  }
+}
+
+/* line 244, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.default-style[dir=rtl] .messages-sidebox-open .messages-sidebox {
+  right: 0;
+  left: auto;
+}
+@media (min-width: 576px) {
+  /* line 250, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style[dir=rtl] .message-date {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+@media (min-width: 992px) {
+  /* line 257, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style[dir=rtl] .messages-wrapper {
+    padding-right: 14rem;
+    padding-left: 0;
+  }
+  /* line 262, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .default-style[dir=rtl] .messages-wrapper .messages-sidebox {
+    right: 0;
+    left: auto;
+  }
+}
+
+/* line 272, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.material-style .messages-wrapper .messages-sidebox {
+  z-index: 1081;
+}
+/* line 276, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.material-style .messages-sidebox-open .messages-sidebox {
+  left: 0;
+}
+/* line 280, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.material-style .messages-card .messages-sidebox {
+  background: #fff;
+  -webkit-box-shadow: 0 0 0 1px rgba(24, 28, 33, 0.06);
+          box-shadow: 0 0 0 1px rgba(24, 28, 33, 0.06);
+}
+@media (min-width: 576px) {
+  /* line 286, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style .messages-list .list-group-item {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  /* line 290, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style .message-subject {
+    width: auto;
+  }
+  /* line 294, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style .message-date {
+    margin-left: auto;
+  }
+}
+@media (min-width: 768px) {
+  /* line 300, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style .messages-sidebox {
+    -ms-flex-preferred-size: 14rem;
+        flex-basis: 14rem;
+  }
+  /* line 304, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style .messages-wrapper .messages-sidebox {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+@media (min-width: 992px) {
+  /* line 310, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style .messages-wrapper,
+  .material-style .messages-sidebox {
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+  /* line 315, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style .messages-wrapper {
+    padding-left: 14rem;
+  }
+  /* line 319, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style .messages-sidebox {
+    z-index: auto !important;
+  }
+  /* line 323, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style .messages-wrapper .messages-sidebox {
+    position: absolute;
+    left: 0;
+    z-index: auto;
+  }
+  /* line 329, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style .messages-wrapper .messages-sidebox {
+    height: 100% !important;
+  }
+  /* line 333, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style .messages-card .messages-sidebox {
+    position: static;
+    right: auto;
+    left: auto;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+    height: auto;
+  }
+}
+
+/* line 346, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+.material-style[dir=rtl] .messages-sidebox-open .messages-sidebox {
+  right: 0;
+  left: auto;
+}
+@media (min-width: 576px) {
+  /* line 352, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style[dir=rtl] .message-date {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+@media (min-width: 992px) {
+  /* line 359, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style[dir=rtl] .messages-wrapper {
+    padding-right: 14rem;
+    padding-left: 0;
+  }
+  /* line 364, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/messages.scss */
+  .material-style[dir=rtl] .messages-wrapper .messages-sidebox {
+    right: 0;
+    left: auto;
+  }
+}

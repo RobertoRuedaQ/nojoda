@@ -1,0 +1,43 @@
+
+<% acceptance_token = gateway.create_acceptance_token %>
+
+<div class="card mt-4" id="cash-method-button-wompi">
+	<div class="card-header d-flex flex-column p-0" >
+		<%= button_tag class: 'btn btn-lg btn-primary', data: {target: '#cash-wompi-payment', toggle: 'collapse'}, aria: {expanded: 'true', controls: 'cash-wompi-payment'} do %>
+			<span class="fas fa-money-bill-wave-alt"></span><span class="ml-3">Pago En Efectivo</span>
+		<% end %>
+	</div>
+	<div id="cash-wompi-payment" class="collapse" aria-labelledby="heading-payment" data-parent="#accordion-payment">
+		<div class="card-body p-0">
+			<div class="">
+				<div class="text-center mt-4 mb-2" style="max-width: 100%;">
+					<%= image_tag 'payment/Bancolombia.png', style: "width: 30%;"%>
+        </div>
+				<div class="text-center mb-4 mt-2" style="padding-left: 10%; padding-right: 10%; font-size: 0.8rem;">Acércate a un <strong>Corresponsal Bancario Bancolombia</strong> o un <strong>Cajero Automático Bancolombia</strong> y realiza tu pago en <strong>efectivo</strong> con las instrucciones que se te brindarán en el siguiente paso.</div>
+			</div>
+			<%= build_form(PaymentInfo.new,'wompi_transaction',payment_info_cash_fields_for_wompi(billing_document, acceptance_token),html: { class: 'form-group', method: 'post'}, controller: 'wompi_transactions',html: {id: 'pse_form'},destroy: false, history: false, header:false, pay: true) %>
+		</div>
+	</div>
+</div>
+
+
+<div class="card mt-4">
+	<div class="card-header d-flex flex-column p-0" id="heading-payment">
+			<%= button_tag class: 'btn btn-lg btn-primary', data: {target: '#bank_transfer_card', toggle: 'collapse'}, aria: {expanded: 'true', controls: 'bank_transfer_card'} do %>
+				<span class="ion ion-ios-business"></span><span class="ml-3"><%= I18n.t('billing_document.bank_transfer') %></span>
+			<% end %>
+	</div>
+	<div id="bank_transfer_card" class="collapse" aria-labelledby="heading-payment" data-parent="#accordion-payment">
+		<div class="card-body p-0">
+			<div class="d-flex">
+				<div class="align-self-center mx-4"><h4>Cuentas de ahorro o corriente</h4></div>
+				<%= image_tag(asset_path('payment/logo-pse.png'), class: "rounded-circle", height: 100,width: 100)%>
+			</div>
+			<%= build_form(PaymentInfo.new,'wompi_transaction',payment_info_pse_fields_for_wompi(billing_document, acceptance_token),html: { class: 'form-group', method: 'post'}, controller: 'wompi_transactions',html: {id: 'pse_form'},destroy: false, history: false, header:false, pay: true) %>
+		</div>
+	</div>
+</div>
+
+<% if billing_document.fund.payment_origination.manual_payment %>
+	<%= render partial: 'payment_gateways/manual_payment', locals: { billing_document: billing_document }%>
+<% end %>

@@ -1,0 +1,24 @@
+<div class="accordion" id="<%= title %>">
+
+  <% headers.each_with_index do |header, index| %>
+    <div class="card">
+      <div class="card-header d-flex" id="heading-<%= title %>-<%= index %>" data-toggle="collapse" data-target="#auto-collapse-<%= title %>-<%= index %>" aria-expanded="true" aria-controls="auto-collapse-<%= title %>-<%= index %>">
+        <h5 class="m-0 text-primary d-inline-flex">
+            <i class="fas fa-plus mr-2" id="open-icon-<%= title %>-<%= index %>"></i>
+            <i class="fas fa-minus mr-2" id="close-icon-<%= title %>-<%= index %>" hidden='hidden'></i>
+        </h5>
+        <div class="flex-fill">
+          <%= header %>
+        </div>
+      </div>
+
+      <div id="auto-collapse-<%= title %>-<%= index %>" class="collapse" aria-labelledby="heading-<%= title %>-<%= index %>" data-parent="#<%= title %>">
+        <div class="card-body p-0">
+          <%= bodies[index].html_safe %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
+</div>

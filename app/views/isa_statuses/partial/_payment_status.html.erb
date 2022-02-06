@@ -1,0 +1,37 @@
+
+<%= render '/isa_statuses/partial/status_body', isa: isa, status_case: 'payment_status' %>
+
+
+<!-- Modal template -->
+<div class="modal fade" id="payment_status_modal">
+
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="payment_agreement_label"><%= PaymentAgreement.model_name.human(count:1) %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+	      <div class="py-4 px-2" id='payment_status_modal_container'>
+
+
+	        <%= render '/isa_statuses/partial/payment_status_modal_body', isa: isa %>
+
+
+
+	      </div>
+
+	      <div class="payment_agreeement_container">
+	      	
+	      </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</div>

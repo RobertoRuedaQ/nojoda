@@ -1,0 +1,14 @@
+
+<%= form_tag edit_dashboard_path(params[:id]),method: :get do %>
+<div class="row">
+	<div class="col-md-3 my-2">
+		<label class="form-label">Convocatorias</label>
+		<%= lumni_dropdown_field( 'general_information','funding_opportunity',{type: 'multiple_dropdown',list: @funding_opportunity_list,value: @funding_opportunities}) %>
+	</div>
+	<div class="col-md-3 my-2 d-flex">
+		<%= button_tag 'Buscar', class: 'btn btn-primary align-self-end' %>
+	</div>
+</div>
+<% end %>
+
+<%= createTable(@students_general_information,general_information_template, title: false, new: false, current_value: true).html_safe %>

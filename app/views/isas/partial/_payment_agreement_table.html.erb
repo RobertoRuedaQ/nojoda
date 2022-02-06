@@ -1,0 +1,38 @@
+<h4 class="mt-4">Acuerdos De Pago</h4>
+
+
+<div class="accordion" id="payment_agreement_acordion_main">
+
+
+    <div class="card">
+      <div class="card-header py-0 px-2" id="accordion-agreements">
+
+        <div class="d-flex align-items-center">
+          <div class="lnr lnr-license display-4 text-success"></div>
+          <div class="ml-3 flex-grow-1">
+            <div class="text-muted small"><%= payment_agreements.count %> <%= PaymentAgreement.model_name.human(count:  payment_agreements.count) %></div>
+            <div class="text-large"><%= lumni_currency payment_agreements.where(status: 'valid').sum(:value) %></div>
+          </div>
+          <div class="px-4">
+            <button class="btn btn-ms btn-outline-primary my-4" type="button" data-toggle="collapse" data-target="#payment_agreement_agreements" aria-expanded="true" aria-controls="payment_agreement_agreements">
+              <%= I18n.t('application.disbursement_details') %>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="payment_agreement_agreements" class="collapse" aria-labelledby="accordion-agreements" data-parent="#payment_agreement_acordion_main">
+        <div class="card-body p-0">
+
+          <% agreement_template = current_user.template('PaymentAgreement','payment_agreements',current_user,id: true) %>
+          <% agreement_template[:id] = {controller: 'payment_agreements',action: 'edit',target_id: 'id'} %>
+
+    			<%= createTable(payment_agreements,agreement_template,new:false, title: false, id: 'payment_agreement_table').html_safe %>
+
+
+        </div>
+      </div>
+    </div>
+
+
+</div>

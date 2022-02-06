@@ -1,0 +1,30 @@
+<div id='question_section' class="my-4" data-update-url="<%= sort_questionnaires_url %>">
+	<% if @questionnaire.question.count > 0 %>
+		<%  @questionnaire.question.order(:position).each do | question| %>
+			<div class="row" id="question_<%=question.id%>" data-id="question_<%=question.id%>">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-5">
+									<strong><%= question.question %></strong>
+									
+								</div>
+								<div class="col-md-5">
+									<%if question.answer.count > 0 %>
+										hay preguntas!
+									<% end %>
+
+								</div>
+								<div class="col-md-2 text-center">
+								<button type="button" class="btn btn-xs btn-outline-primary answerbutton" data-toggle="modal" data-target="#answerModal" targetQuestion="<%= question.id%>"><span class="ion ion-ios-add-circle"></span>&nbsp;&nbsp; Add an answer</button>							
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		<% end %>
+	<% end %>
+</div>
+

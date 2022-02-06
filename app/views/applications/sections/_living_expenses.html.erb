@@ -1,0 +1,16 @@
+<div class="my-3">
+	<h4 class="mb-3">
+		<%= I18n.t('disbursement.forcasted_disbursements') %>
+	</h4>
+	<div class="mt-3" id='requested_disbursement_<%= additional_form_info[:target_info].id %>'>
+		<% disbursement = additional_form_info[:target_info].application.resource %>
+		<% previous_disbursement = previous_disbursement(disbursement) %>
+		<%= render '/applications/sections/disbursement',funding_detail: false, disbursements_hash: lumni_disbursement_hash([additional_form_info[:target_info].application.resource],['forcasted_date','student_value','disbursement_case','status', 'disbursed', 'available', 'payment_dates']), immediately_previous_disbursement: previous_disbursement %>
+	</div>
+
+	<div id='associated_living_expenses_<%= additional_form_info[:target_info].id %>'>
+		<%= render '/applications/sections/disbursement',funding_detail: false, disbursements_hash: lumni_disbursement_hash(additional_form_info[:target_info].application.resource.associated_living_expenses,['forcasted_date','student_value','disbursement_case','status']) %>
+	</div>
+	
+</div>
+

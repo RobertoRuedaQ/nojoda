@@ -1,0 +1,52 @@
+<li class="sidenav-item">
+	<a href="<%= disbursement_mains_path %>" class="sidenav-link "><i class="sidenav-icon ion ion-md-cash"></i><%= Disbursement.model_name.human(count: 2) %></a>  		
+</li>
+<!-- 
+<li class="sidenav-item">
+	<a href="<%= billing_document_mains_path %>" class="sidenav-link "><i class="sidenav-icon ion ion-md-podium"></i><%= BillingDocument.model_name.human(count: 2) %></a>  		
+</li>
+ -->
+<% if staging? %>
+	<li class="sidenav-item">
+		<a href="<%= payment_mains_path %>" class="sidenav-link "><i class="sidenav-icon ion ion-md-card"></i><%= Payment.model_name.human(count: 2) %></a>  		
+	</li>
+<% end %>
+<li class="sidenav-item">
+	<a href="<%= academic_information_mains_path %>" class="sidenav-link "><i class="sidenav-icon ion ion-md-school"></i><%= StudentAcademicInformation.model_name.human(count: 2) %></a>  		
+</li>
+<li class="sidenav-item">
+	<a href="<%= income_information_mains_path %>" class="sidenav-link "><i class="sidenav-icon ion ion-md-tv"></i><%= IncomeInformation.model_name.human(count: 2) %></a>  		
+</li>
+<li class="sidenav-item">
+	<a href="<%= complementary_activity_mains_path %>" class="sidenav-link "><i class="sidenav-icon ion ion-md-ribbon"></i><%= ComplementaryActivity.model_name.human(count: 2) %></a>  		
+</li>
+<li class="sidenav-item">
+	<a href="<%= social_work_mains_path %>" class="sidenav-link "><i class="sidenav-icon ion ion-md-star"></i><%= SocialWork.model_name.human(count: 2) %></a>  		
+</li>
+<li class="sidenav-item">
+	<a href="<%= student_financial_information_mains_path %>" class="sidenav-link "><i class="sidenav-icon fas fa-hand-holding-usd"></i><%= I18n.t('mains.billing_owner_information') %></a>  		
+</li>
+<li class="sidenav-item">
+	<a href="<%= student_legal_documents_mains_path %>" class="sidenav-link "><i class="sidenav-icon fas fa-gavel"></i><%= I18n.t('mains.legal_documents') %></a>  		
+</li>
+<% if staging? %>
+	<% if current_user.active_isa.first.fund.conciliation %>
+		<li class="sidenav-item">
+			<a href="<%= conciliation_mains_path %>" class="sidenav-link "><i class="sidenav-icon ion ion-md-finger-print"></i><%= ConciliationInformation.model_name.human(count: 2) %></a>  		
+		</li>
+	<% end %>
+<% end %>
+<li class="sidenav-item">
+	<a href="<%= novelty_mains_path %>" class="sidenav-link "><i class="sidenav-icon ion ion-md-paper"></i><%= I18n.t('mains.novelty') %></a>  		
+</li>
+
+
+<li class="sidenav-item">
+	<a href="<%= notifications_path %>" class="sidenav-link "><i class="sidenav-icon ion ion-md-clipboard"></i><%= Notification.model_name.human(count: 2) %></a>  		
+</li>
+<!-- 
+<li class="sidenav-item">
+	<a href="<%= contact_mains_path %>" class="sidenav-link "><i class="sidenav-icon ion ion-md-people"></i><%= I18n.t('general.communications') %></a>  		
+</li>
+ -->
+

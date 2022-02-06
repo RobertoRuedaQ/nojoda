@@ -1,0 +1,53 @@
+
+<% if target_info.count > 0 %>
+
+  <% target_template = [section.cached_form_template.template_hash( current_user, current_company)] %>
+  <% locked_validation = (application.status != 'active' || params[:controller] == 'user_questionnaires') %>
+  <% show_accordion = 0 %>
+
+  <div id="university-grade-container">
+
+    <div class="accordion" id="university_grade_accordion">
+      <% target_info.each do |grade|%>
+        <% hidden_fields[:target_id] = grade.id %>
+
+        <% pending_to_update = grade.revisions.count == 1 %>
+        <% form_key = SecureRandom.hex %>
+        <%show_accordion = 1 if pending_to_update && show_accordion == 0 %>
+        <div class="card">
+          <div class="card-header py-2 d-flex justify-content-between" id="university_grade_element_<%= grade.id %>">
+            <h5 class="my-1" id="average_grade_<%= grade.id %>"><%= grade.grade%></h5>
+            <div>
+              <button type="button" class="btn btn-sm btn-<%= pending_to_update ? 'secondary' : 'success' %>" university-grade="<%= pending_to_update %>" data-toggle="collapse" data-target="#target_grade_<%= grade.id %>" aria-expanded="true" aria-controls="target_grade_<%= grade.id %>" id="university_grade_button_<%= grade.id %>" term="<%= grade.term %>">
+                <span class="ion ion-ios-list-box mr-2"></span><%= "#{I18n.t('general.term')} #{grade.term}" %>
+              </button>
+            </div>
+          </div>
+
+          <div id="target_grade_<%= grade.id %>" class="collapse <%= 'show' if show_accordion == 1%>" aria-labelledby="university_grade_element_<%= grade.id %>" data-parent="#university_grade_accordion">
+            <div class="card-body p-0">
+
+
+
+              <%= build_form(grade,'storing_university_grades',target_template,controller: 'university_grades',html: { class: 'form-group', method: 'post',id: "application_section-#{form_key}"}, header: false, destroy: false, remote: true, hidden_fields: hidden_fields, htmlCard: 'shadow',locked: locked_validation, save: application.status == 'active')%>
+
+
+            </div>
+          </div>
+        </div>
+        <%show_accordion = 2 if show_accordion == 1 %>
+
+      <% end %>
+
+    </div>
+    
+  </div>
+
+
+<% else %>
+
+
+<% end %>
+
+
+

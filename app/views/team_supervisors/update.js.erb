@@ -1,0 +1,6 @@
+//$("#team_supervisor_element_<%= @team_supervisor.id %>").remove();
+$('#support-team-tab .card .card-body').html("<%= j create_team_support_table(@team_supervisor.team_member) %>")
+$('#edit_team_supervisor').modal('hide')
+
+toastr["success"]("<%= I18n.t('flash.record_updated') %>");
+

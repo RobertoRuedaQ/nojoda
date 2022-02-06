@@ -1,0 +1,2 @@
+<% target_template = current_user.template('ApiHistory','api_histories',current_user,id: true).except(:params, :response) %>
+<%= createTable(@api_history,target_template).html_safe %>

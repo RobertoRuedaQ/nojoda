@@ -1,0 +1,22 @@
+<li class="sidenav-item">
+  <a href="#" data-toggle="collapse" data-target="#migrations" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon fas fa-exchange-alt"></i><%= I18n.t('mains.migrations')%>
+  </a>
+  <ul class="sub-menu collapse" id="migrations">
+    <li class="sidenav-item">
+      <a href="<%= migrations_path %>" class="sidenav-link "><%= Migration.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= model_and_fields_path %>" class="sidenav-link "><%= ModelAndField.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= check_objects_path %>" class="sidenav-link "><%= CheckObject.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= backup_objects_path %>" class="sidenav-link "><%= BackupObject.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  isa: one
+  status: MyString
+  user: one
+  amendment_case: MyString
+  notes: MyText
+
+two:
+  isa: two
+  status: MyString
+  user: two
+  amendment_case: MyString
+  notes: MyText

@@ -1,0 +1,5 @@
+<div class="row" id='project-edit-<%= project.id %>'>
+  <% project.project_card.includes([:main_tasks, :project]).each do |card| %>
+    <%= createProjectCard(card) %>
+  <% end %>
+</div>

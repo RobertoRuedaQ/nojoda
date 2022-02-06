@@ -1,0 +1,13 @@
+$('#active-1').html("<%= j createFieldTemplate(1) %>")
+$('#inactive-0').html("<%= j createFieldTemplate(0) %>")
+setAllSortableTemplate()
+loadingTemplatesLinks()
+
+activateDatepickers()
+validate_numeric_fields();
+setAutosize();
+
+$('#field-config').modal('hide')
+
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();

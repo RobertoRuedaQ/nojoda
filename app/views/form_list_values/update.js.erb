@@ -1,0 +1,7 @@
+<% createBodyTableFormLabel(@form_list_value.form_list_id) %>
+$('#form-list-traduction-table').html('<%= j  createBasicTable(@header,@table_body) %>')
+$('#formlistvalue_value_').val('')
+
+setFormListValuesLinks()
+
+$('#formFieldValueLabelModal').modal('hide')

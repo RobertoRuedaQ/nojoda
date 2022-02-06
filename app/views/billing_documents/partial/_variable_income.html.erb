@@ -1,0 +1,39 @@
+<% income_records = @billing_document.income_variable_income %>
+
+
+
+<% if income_records.count > 0 %>
+		<div class="card mb-4">
+			<div class="card-body">
+				<h4 class="text-primary"><%= IncomeInformation.model_name.human(count: 1) %></h4>
+				<table class="table table-striped">
+					<tr>
+						<td class="font-weight-bold"><%= IncomeInformation.human_attribute_name('company_name') %></td>
+						<td class="font-weight-bold"><%= company_chile? ? IncomeInformation.human_attribute_name('fix_income_chile') : IncomeInformation.human_attribute_name('fix_income') %></td>
+						<td class="font-weight-bold"><%= company_chile? ? IncomeInformation.human_attribute_name('variable_income_chile') : IncomeInformation.human_attribute_name('variable_income') %></td>
+						<td class="font-weight-bold"><%= I18n.t('general.edit') %></td>
+					</tr>
+					<% income_records.each do |income| %>
+						<tr>
+							<td><%= income.income_information.company_name %></td>
+							<td><%= lumni_currency income.income_information.fix_income, @billing_document.currency %></td>
+							<td><%= lumni_currency income.value, @billing_document.currency %></td>
+							<% if income.status == 'under_review' %>
+								<td>Estamos revisando tu solicitud.</td>
+							<% else %>
+								<td><%= link_to I18n.t('general.edit'),edit_income_variable_income_path(income), class: 'btn btn-primary btn-sm', remote: true%></td>
+							<% end %>
+						</tr>
+					<% end %>
+
+				</table>
+			</div>
+		</div>
+<% end %>
+
+
+
+
+
+
+<%= render 'income_variable_incomes/partial/modal_body' %>

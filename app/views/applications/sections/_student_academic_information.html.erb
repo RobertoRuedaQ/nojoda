@@ -1,0 +1,77 @@
+<% info_count = target_info.count %>
+
+<%case section.resource.object %>
+<% when 'StudentAcademicInformation' %>
+
+	<div class="card mt-4">
+		<% target_info.each do |record| %>
+			<div class="card">
+				<div class="card-body py-1">
+					<div class="row">
+						<div class="col-md-5 mb-2 mt-1">
+							<div class="d-flex mr-2"><h4 class="text-secondary mr-3"><i class="fas fa-graduation-cap"></i></h4><h5 class="p-0 m-0"><%= record.final_institution %></h5></div>
+						</div>
+						<div class="col-md-5 mb-2 mt-1">
+							<h5 class="p-0 m-0"><%= record.final_major %></h5>
+						</div>
+						<div class="col-md-2 text-center">
+							<%= button_to( I18n.t('general.edit'), edit_record_application_path(record),params: @hidden_fields,class: 'btn btn-outline-primary btn-sm my-2',data: {toggle: 'collapse',target: "#edit-academic-container-#{record.id}"}, aria: {expanded: 'false', controls: "edit-academic-container-#{record.id}"},remote: true, id: "academic-edit-button-#{record.id}") %>
+						</div>
+						<div id="edit-academic-container-<%= record.id %>" class="col collapse p-0">
+			          <div id="loader-academic-<%= record.id %>" class=" m-4 text-center">
+			            <%= image_tag( asset_path("default/lumniLoad.gif"), alt: I18n.t('general.loading'), class: "spinnerimg",style: "width: 200px;") %>
+			          </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+
+	<div class="collapse" id="new_academic-<%= section.id %>">
+
+
+	  <div class="card">
+	  	<div class="card-header">
+	  		<%= button_tag  '<span aria-hidden="true">&times;</span>'.html_safe ,type: 'button', class: 'close', data: {toggle: 'collapse',target: "#new_academic-#{section.id}"}, aria: {expanded: 'false', controls: "new_academic-#{section.id}", label: 'Close'} %>
+	  	</div>
+	  	<div class="card-body p-0">
+	      <%= render '/applications/partial/general_form', target_info: new_record, section: section, application: @application, hidden_fields: @hidden_fields, action: 'creating_record',remote: false, additional_form_render: '/applications/sections/funding_form', additional_form_info: (@application if eval(section.options)[:case]== 'university') %>
+	  	</div>
+	  </div>
+	</div>	
+
+
+
+	<div class="text-right mx-2">
+		<%= button_tag I18n.t('application.add_new_academic'),class: 'btn btn-primary my-4', data: {toggle: 'collapse',target: "#new_academic-#{section.id}"}, aria: {expanded: 'false', controls: "new_academic-#{section.id}"} %>
+	</div>
+
+
+
+	<!-- Blue part allowint users to move forward -->
+	<% case eval(section.options)[:case] %>
+	<% when 'university' %>
+		<div class="card my-4">
+			<% if info_count < eval(section.options)[:min_records] %>
+				<div class="card-header bg-warning">
+					<strong><%= I18n.t('application.university_explanation') %></strong>
+				</div>
+			<% elsif !section.cached_done?(@application, section)%>
+				<div class="card-header bg-info text-white d-flex py-1 px-2">
+					<% submit_params = hidden_fields %>
+					<% submit_params[:save] = false %>
+					<strong  class="my-2 mr-4"><%= I18n.t('application.university_continue') %></strong>
+
+					<%= button_to I18n.t('application.submit_information'), storing_application_info_application_path(@application),params: submit_params, class: 'btn rounded-pill btn-white' ,remote: true, data: { disable_with: I18n.t('form.please_wait')}%>
+				</div>
+			<% end %>
+		</div>
+		<% new_record = StudentAcademicInformation.new({user_id: current_user.id, information_case: 'university'}) %>
+	<% end %>
+
+
+
+<% end %>
+

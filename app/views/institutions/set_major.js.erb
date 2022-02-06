@@ -1,0 +1,12 @@
+$('[id=general_container-<%= @major %>][form_key=<%= @form_key %>]').each(function(){
+	$(this).html('<%= j lumni_dropdown_field @model,@field,@options,@config %>')
+})
+
+$('[id=form_group-<%= @major %>][form_key=<%= @form_key %>]').show()
+
+
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+$('.spinner').hide();
+
+$('[id=form_group-<%= @major %>][form_key=<%= @form_key %>]').addClass('new-comment')

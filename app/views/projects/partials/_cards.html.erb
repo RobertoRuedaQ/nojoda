@@ -1,0 +1,29 @@
+<div class="col-md-3">
+	<div class="card">
+		<div class="card-header p-1" id="project-card-header-<%= card.title %>">
+
+			<h5 class="m-2"><%= I18n.t('project.' + card.title) %> (<%= card.project_task.count %>)</h5>
+			<div class="card-footer footer-<%= card.title %> bg-<%= card.title %>  text-center">
+				<%= button_to(new_task_project_tasks_path,remote: true, method: 'post', class: 'btn btn-xs btn-default borderless', params: {'project_task[project_card_id]' => card.id}, data:{disable_with: I18n.t('general.loading')}) do %>
+					<span class="ion ion-ios-add-circle mr-2"></span> <%= I18n.t('project.create_new_task') %>
+				<% end %>
+			</div>
+		</div>
+		<div class="card-body sortable_container bg-<%= card.title %> p-1" id="project-<%= card.title %>-body-<%= card.id %>">
+			<% tasks.each do |task| %>
+				<%= createProjectTask(task) %>
+			<% end %>
+			
+		</div>
+		<% if show_see_more %>
+			<div class="text-center py-2">
+				<%= link_to 'Ver más', edit_project_card_path(card), target: :_blank %>
+			</div>
+		<% end %>
+		<div class="card-footer footer-<%= card.title %> bg-<%= card.title %>  text-center">
+			<%= button_to(new_task_project_tasks_path,remote: true, method: 'post', class: 'btn btn-xs btn-default borderless', params: {'project_task[project_card_id]' => card.id}, data:{disable_with: I18n.t('general.loading')}) do %>
+				<span class="ion ion-ios-add-circle mr-2"></span> <%= I18n.t('project.create_new_task') %>
+			<% end %>
+		</div>		
+	</div>
+</div>

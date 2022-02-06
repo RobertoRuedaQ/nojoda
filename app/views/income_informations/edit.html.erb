@@ -1,0 +1,4 @@
+
+
+<%= form_title(@income_information, 'company_name') %> 
+<%= build_form(@income_information,'update',current_user.template('IncomeInformation','income_informations',current_user),html: { class: 'form-group', method: 'put'}) %>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <link rel="shortcut icon" href="<%= asset_path("favicon.ico") %>" >
+
+
+  <title><%= @title ? @title + " - " : "" %>Lumni Portal</title>
+
+  <!-- Main font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900" rel="stylesheet">
+
+  <!-- Icons. Uncomment required icon fonts -->
+  <%= wicked_pdf_stylesheet_link_tag 'fontawesome.css'%> 
+  <%= wicked_pdf_stylesheet_link_tag 'ionicons.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'linearicons.css'%> 
+  <%= wicked_pdf_stylesheet_link_tag 'open-iconic.css'%> 
+  <%= wicked_pdf_stylesheet_link_tag 'pe-icon-7-stroke.css'%> 
+
+  <!-- Core stylesheets -->
+  <%= wicked_pdf_stylesheet_link_tag 'bootstrap.css' %>
+  <%= wicked_pdf_stylesheet_link_tag 'appwork.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'theme-corporate'%>
+  <%= wicked_pdf_stylesheet_link_tag 'colors.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'uikit.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'application'%>
+
+  <!-- Additional stylesheets -->
+  <%= wicked_pdf_stylesheet_link_tag 'datatables/datatables.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'bootstrap-daterangepicker/bootstrap-daterangepicker.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'bootstrap-datepicker/css/bootstrap-datepicker.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'select2/select2.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'bootstrap-tagsinput/bootstrap-tagsinput.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'pages/users.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'cropper/cropper.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'toastr/toastr.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'bootstrap-duallistbox/bootstrap-duallistbox.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'bootstrap-select/bootstrap-select.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'quill/typography.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'quill/editor.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'dropzone/dropzone.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'jodit-3.2.27/build/jodit.min.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'smartwizard/smartwizard.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'dragula/dragula.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'bootstrap-sweetalert/bootstrap-sweetalert.css'%>
+  <%= wicked_pdf_stylesheet_link_tag 'pages/messages.css'%>
+  <% if Rails.env == 'production' %>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf/pdf_production.css'%>
+  <% else %>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf/pdf.css'%>
+  <% end %>
+
+  <!-- Layout helpers -->
+  <%= wicked_pdf_javascript_include_tag 'layout-helpers.js' %>
+
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+  <%= yield :head %>
+</head>
+<body>
+    <%= yield %>
+</body>
+</html>

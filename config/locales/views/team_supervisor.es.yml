@@ -1,0 +1,41 @@
+es:
+  team_supervisor_batch:
+    relationship:
+      team_member: Estudiante
+      supervisor: Supervisor
+      support_role: Tipo de apoyo
+    attributes:
+      id: Id
+      description: Descripción
+      relationships_file: Archivo
+      created_at: Fecha de creación
+    actions:
+      new: Nuevo
+    flash:
+      create:
+        success: "La asignación por lotes fue guardada exitosamente."
+        danger: 'Hubo un error al intentar crear la asignación por lotes.'
+        invalid_file: 'El archivo es invalio, por favor revise la estructura del mismo.'
+        invalid_support_role: "El role %{support_role} no puede ser asignado al estudiante con id %{team_member_id}, por favor revisar su estado y corregir el error."
+        support_role_doesnot_exist: "El role %{support_role} no existe, por favor revisar el archivo y corregir el error."
+        invalid_student: "No se encontró ningún estudiante con id %{student_id}, por favor revisar el archivo y corregir el error."
+        invalid_supervisor: "No se encontró ningún supervisor o student manager con email %{supervisor_email}, por favor revisar el archivo y corregir el error."
+      update:
+        success: "La asignación por lotes fue actualizada exitosamente."
+        danger: 'Hubo un error al intentar actualizar la asignación por lotes.'
+  team_supervisor:
+    actions:
+      remove: Remover
+      asign: Asignar Nuevo
+      edit: Editar
+    confirm_dialog:
+      question: ¿Esta seguro que desea remover este supervisor al estudiante?
+      commit: 'Si, remover'
+    flash:
+      create: 
+        success: 'El supervisor fue creado exitosamente para este estudiante.'
+        danger: 'Hubo un error al intentar crear el supervisor.'
+      remove:
+        success: 'El supervisor fue removido exitosamente de este estudiante.'
+        danger: 'Hubo un error al intentar remover al supervisor de este estudiante.'
+        not_found: 'No se encontró el registro que queria eliminarse.'

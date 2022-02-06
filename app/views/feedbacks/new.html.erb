@@ -1,0 +1,7 @@
+
+
+<%= form_title(@feedback,"Sección: #{@feedback.controller} / Acción: #{@feedback.action}") %>
+<%= build_form(@feedback,'create',current_user.template('Feedback','feedbacks',current_user),html: { class: 'form-group'}) %>
+
+<%= render '/feedbacks/partial/priorization_tab', feedback: @feedback %>
+

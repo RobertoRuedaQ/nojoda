@@ -1,0 +1,21 @@
+<div class="col-md-6" id='child-element-<%= child.id%>'>
+
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <div class="lnr lnr-users display-4 text-success"></div>
+        <div class="col-md-8">
+	        <div class="ml-3">
+	          <div class="text-muted small"><%= lumni_date child.birthday %></div>
+	          <div class="text-large"><%= child.name %></div>
+	        </div>
+        </div>
+        <% if visible %>
+          <div class="col-md-4 text-center">
+          	<%= link_to I18n.t('general.edit'), edit_application_child_child_path(child, template_id: template_id,modal_id: modal_id, section_id: section.id, application_id: application.id), class: 'btn btn-sm btn-outline-primary', remote: true%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

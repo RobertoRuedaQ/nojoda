@@ -1,0 +1,9 @@
+<label class="form-label">Create New Value</label>
+	<%= form_for(FormListValue.new({form_list_id: @form_list.id}), url: url_for(controller: 'form_list_values', action: 'create'), html: {class: 'form-inline mt-0'}, remote: true) do |f| %>
+
+	<div class="form-group">
+		<%= lumni_text_field( 'formlistvalue','form_list_id', hidden: true, value: @form_list.id) %>
+		<%= lumni_text_field( 'formlistvalue','value',{required: true}) %>
+		<button class="btn btn-primary ml-2" type="submit"><%= I18n.t('general.save')%></button>
+	</div>
+<% end %>

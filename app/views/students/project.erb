@@ -1,0 +1,20 @@
+<%= render 'students/partial/students_header' %>
+
+
+<div class="nav-tabs-top">
+  <%= render 'students/partial/tabs' %>
+
+  <div class="tab-content bg-light">
+
+    <div class="tab-pane fade show active" id="user-project">
+      <div class="card">
+        <div class="card-body">
+          <%= render 'projects/partials/project_body', project: @student.projects.first %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

@@ -1,0 +1,14 @@
+.row
+  .image
+    = image_tag('pages/404-image.svg')
+  .text
+    .text-container
+      .title
+        = t('general.errors.not_found.title')
+      .subtitle
+        = t('general.errors.not_found.subtitle')
+      .button
+        %a{href: '/'}
+          = t('general.errors.go_back')
+  
+  

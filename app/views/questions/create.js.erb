@@ -1,0 +1,26 @@
+toastr["success"]("<%= I18n.t('flash.record_created') %>");
+$('#questionnaire_modal').modal('hide');
+
+var removedButton = $('#button-newsection-' +<%=@question.questionnaire.id%>)
+if(removedButton.length > 0){
+	removedButton = removedButton[0]
+	removedButton.parentNode.removeChild(removedButton);
+}
+
+
+if($('#section-body-<%= @question.questionnaire_id%>').attr('loaded') =='false'){
+	$('#section-body-<%= @question.questionnaire_id%>').html('<%= j createSectionBodyQuestionnaire(@question.questionnaire_id) %>')
+	$('#section-body-<%= @question.questionnaire_id%>').attr('loaded','true')
+	validate_numeric_fields();
+	setDeleteAlert();
+	setAllSortable();
+	setArrowCollapse()
+}else{
+	$('#question_container_<%=@question.questionnaire.id %>').append('<%= j questionsSectionQuestionnaire(@question) %>')
+}
+
+$('#section-body-<%= @question.questionnaire.id%>').collapse('show')
+
+
+setDeleteAlert()
+setAllSortable()

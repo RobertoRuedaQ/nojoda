@@ -1,0 +1,37 @@
+toastr["success"]("<%= I18n.t('flash.record_discarded') %>");
+
+<% @project = @task.project_card.project %>
+$('#progress-total-container').html('<%= j createProjectProgressPie @project.id, 'total_progress' %>')
+$('#progress-main-container').html('<%= j createProjectProgressPie @project.id, 'main_progress' %>')
+
+<% @project.project_card.each do |card| %>
+	<% @targetCard = card %>
+	$('#project-card-header-<%= card.title %>').html('<%= j render 'project_tasks/partial/card_header' %>')
+<% end %>
+
+<% if @task.parent.nil? %>
+	// Destroying main task
+	$('#task_modal').modal('hide');
+	var removedAnswer = $('#task-container-<%= params[:id] %>')[0]
+<% else %>
+	// Destroying checklists
+	var removedAnswer = $('#checklist-element-<%= params[:id] %>')[0]
+	$('#task-container-<%= @task.parent_id %>').html('<%=j createProjectTask(@task.parent) %>')
+	setSwitchBehavior()
+
+	sortable_container = 'checklist-body-' + <%= @task.parent_id %>
+	setSortableProject(sortable_container)
+
+<% end %>
+
+removedAnswer.parentNode.removeChild(removedAnswer);
+
+$('[data-toggle="popover"]').popover();
+$('.knob-progress input').knob();
+setGlobalSwitches()
+
+// Set double click edit
+$('[id^=edit_task]').on( "click", function(){
+	path = "/project_tasks/" + this.id.split('-').pop() + "/edit_task"
+	lumniGet(path,'')
+})

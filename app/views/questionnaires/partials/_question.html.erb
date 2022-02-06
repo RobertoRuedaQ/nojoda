@@ -1,0 +1,33 @@
+<div class="row questionSection my-2" id="fullQuestion_<%= @targetQuestion.id %>" data-id="Question_<%= @targetQuestion.id %>">
+	<div class="col-md-12">
+		<div class="card shadow">
+
+			<div id="header-question-<%= @targetQuestion.id %>">
+				<%= createQuestionHeaderQuestionnaire(@targetQuestion) %>
+			</div>
+						
+			<div class="card-body">
+				<% if @targetQuestion.illustration.attached? %>
+					<div class="text-center">
+						<%= image_tag(@targetQuestion.illustration.variant(resize: 'x200').processed.image) %>
+					</div>
+				<% end %>
+
+
+				<ul id="answers_section_<%=@targetQuestion.id %>" class="sortable_container" style="list-style: none;">
+					<% @targetQuestion.cached_answer.each do |answer| %>
+						<%= createAnswerQuestionnaire(answer.id) %>
+					<% end %>
+					
+				</ul >
+				<%= button_to({action: 'new_answer', controller: 'answers',id: @targetQuestion.id}, class: 'btn btn-xs btn-outline-primary my-4 questionnairebutton',targetQuestionnaire: @targetQuestion.id,remote: true, data: { disable_with: I18n.t('form.please_wait')}) do %>
+					<span><i class="ion ion-md-add-circle"></i></span> <%= I18n.t('questionnaire.new_answer') %>
+				<% end %>
+
+
+				
+			</div>
+		</div>
+
+	</div>
+</div>

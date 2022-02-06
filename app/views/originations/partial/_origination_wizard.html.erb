@@ -1,0 +1,33 @@
+<div class="d-block d-md-none">
+	<button class = "btn btn-outline-primary mb-3" type = "button" data-target = "#main-wizard" data-toggle = "collapse">
+	  <%= I18n.t('origination.funding_pipeline') %>
+	</button>
+</div>
+
+<% current_application = current_user.current_application %>
+<% isa_creation = current_application.present? ? current_application.isa_creation? : true %>
+
+<% current_step = originationStep(current_user, isa_creation: isa_creation) %>
+
+<div id="application" class="smartwizard-vertical-left collapse" wizard-selected="<%= current_step %>">
+	<ul class="collapse d-md-block" id="main-wizard">
+		<% origination_elements(current_user.id, isa_creation: isa_creation).each_with_index do |element,index| %>
+			<li><a href="#application-step-<%= index+1 %>" class="text-nowrap mb-3">
+				<span class="sw-done-icon ion ion-md-checkmark"></span>
+				<span class="sw-icon <%= create_origination_icon(element) %>"></span>
+				<div class="text-muted small"><%= I18n.t('origination.' + element) %></div>
+				<%= I18n.t('origination.' + element + '_description') %>
+			</a></li>
+		<% end %>
+	</ul>
+
+	<div class="mb-3">
+		<% origination_elements(current_user.id, isa_creation: isa_creation).each_with_index do |element,index| %>
+			<% if current_step.to_i >= index %>
+				<div id="application-step-<%= index + 1 %>" class=" animated fadeIn mb-3">
+					<%= render 'originations/partial/' + element, current_step: current_step, current_application: current_application,this_step: index %>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>

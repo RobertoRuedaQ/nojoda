@@ -1,0 +1,12 @@
+<div class="card m-1" id="comment_body_<%= @comment.id %>">
+  <div class="card-body py-1">
+    <div class="d-flex align-items-center">
+      <div class="display-4 text-success" data-toggle="popover" data-placement="top"  data-content="<%= @comment.user.name%>" data-trigger="hover">
+      	<%= loadingAvatar(50,id: @comment.user_id)%></div>
+      <div class="ml-3">
+        <div class="text-muted small"><%= lumni_date(@comment.created_at) %></div>
+        <div ><%= @comment.comment %></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<%= form_title(@batch) %>
+<div class="card  mb-3">
+    <h5 class="card-header ">
+      <div class="d-flex justify-content-between">
+        Asignación de AO y SM a estudiantes por lote
+      </div>
+    </h5>
+  <div class="card-body">
+    <%= form_for @batch, :url => { :action => "update" } do |f| %>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label 'Descripción' %>
+            <%= f.text_field :description, class: 'form-control disabled', disabled: 'disabled' %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label 'Archivo de lote a relacionar' %>
+            <% if @batch.relationships_file.attached? %>
+              <% file_url = url_for(@batch.relationships_file) %>
+              <div class="card">
+	              <div class="card-body py-2">
+                  <%= link_to file_url.split('/').last, file_url, class: 'text-primary', target: '_blank' %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+      </div>
+    <%end%>
+  </div>
+</div>
+
+<div class="card  mb-3">
+    <h5 class="card-header ">
+      <div class="d-flex justify-content-between">
+        <%= @file_records.size %> AO y SM procesados
+      </div>
+    </h5>
+  <div class="card-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= I18n.t('team_supervisor_batch.relationship.team_member') %></th>
+          <th><%= I18n.t('team_supervisor_batch.relationship.supervisor') %></th>
+          <th><%= I18n.t('team_supervisor_batch.relationship.support_role') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @file_records.each do |record|%>
+          <% supervisor =  @supervisors.where(email:record['support_email']).first %>
+          <% student =  @students.where(id: record['student_id'].to_i).first %>
+          <% to_find = { 
+            team_member_id: student ? student.id : 0, 
+            supervisor_id: supervisor ? supervisor.id : 0, 
+            support_role_id: TeamSupervisorBatch.translate_supervisor_role(record['support_type'])
+          } %>
+          <% team_supervisor = find_in_collection(@applied_records, to_find).first %>
+          
+          <% if team_supervisor.instance_of? TeamSupervisor %>
+            <tr>
+              <td class="table-success"><%= team_supervisor.team_member.full_name %></td>
+              <td class="table-success"><%= team_supervisor.supervisor.full_name %></td>
+              <td class="table-success"><%= I18n.t("support_roles.#{team_supervisor.support_role.role_case}") %></td>
+            </tr>
+          <% else %>
+            <tr>
+              <td class="table-warning"><%= student ? student.full_name : record['student_id'] %></td>
+              <td class="table-warning"><%= supervisor ? supervisor.full_name : record['support_email'] %></td>
+              <td class="table-warning"><%= I18n.t("support_roles.#{record['support_type']}") %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

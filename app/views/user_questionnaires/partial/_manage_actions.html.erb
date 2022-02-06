@@ -1,0 +1,12 @@
+
+<div class="btn-group text-center">
+  <button type="button" class="btn icon-btn btn-outline-primary borderless dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i></button>
+  <div class="dropdown-menu dropdown-menu-right">
+
+  	<%= button_to I18n.t('list.detail'), display_result_user_questionnaire_path(questionnaire), class: 'dropdown-item',data: { disable_with: I18n.t('form.please_wait')}, remote: true %>
+  	<% if !questionnaire.approved? %>
+  		<%= link_to I18n.t('list.special_approve'), new_questionnaire_exception_path(questionnaire: questionnaire.id), class: 'dropdown-item',data: { disable_with: I18n.t('form.please_wait')}, remote: true%>
+  	<% end %>
+
+  </div>
+</div>

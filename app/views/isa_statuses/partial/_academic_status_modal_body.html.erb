@@ -1,0 +1,134 @@
+<h4 class="text-primary"><%= I18n.t('isa.academic_status') %></h4>
+
+<div id="accordion">
+  <div class="card mx-0 mb-4">
+    <div class="card-header d-flex flex-column p-0" id="academic_stop_header">
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#academic_stop_accordion" aria-expanded="true" aria-controls="academic_stop_accordion">
+          <%= I18n.t('isa.academic_stop') %>
+        </button>
+    </div>
+
+    <div id="academic_stop_accordion" class="collapse" aria-labelledby="academic_stop_header" data-parent="#accordion">
+      <div class="card-body p-0">
+
+        <h5 class="text-secondary mt-3 ml-2"><%= I18n.t('isa.new_academic_stop') %></h5>
+
+        <% new_academic_stop = AcademicStop.new %>
+        <% hidden_fields = {isa_id: isa.id}%>
+        <%= form_for new_academic_stop do |f| %>
+          <%= f.hidden_field :student_academic_information_id, value: isa.funded_major.id  %>
+          <%= f.hidden_field :status, value: 'active'  %>
+          <%= f.label :start_date,class: 'form-label' %>
+          <%= f.text_field :start_date, class: 'form-control scroll-top lumni_date' %>
+          
+          <%= f.label :end_date,class: 'form-label' %>
+          <%= f.text_field :end_date, class: 'form-control scroll-top lumni_date' %>
+
+          <%= f.label :explanation,class: 'form-label' %>
+          <%= f.text_field :explanation, class: 'form-control scroll-top' %>
+
+          <%= f.submit class:'btn btn-success lumnisubmit' %>
+        <%end %>
+
+        <% if isa.funded_major.all_academic_stop.count > 0 %>
+          <h5 class="text-secondary mt-3 ml-2"><%= I18n.t('isa.active_academic_stops') %></h5>
+
+
+          <% isa.funded_major.all_academic_stop.each do |academic_stop| %>
+
+            <div id="accordion-active">
+              <div class="card">
+                <div class="card-header d-flex flex-column p-0" id="active-academic-stops">
+                  <button class="btn btn-warning" data-toggle="collapse" data-target="#container-stop-<%= academic_stop.id %>" aria-expanded="true" aria-controls="container-stop-<%= academic_stop.id %>">
+                    <%= "#{academic_stop.start_date} - #{academic_stop.end_date}" %>
+                  </button>
+                </div>
+
+                <div id="container-stop-<%= academic_stop.id %>" class="collapse" aria-labelledby="active-academic-stops" data-parent="#accordion-active">
+                  <div class="card-body p-0">
+                  <%= form_for academic_stop do |f| %>
+                    <%= f.hidden_field :student_academic_information_id, value: isa.funded_major.id  %>
+                    <%= f.hidden_field :status, value: 'active'  %>
+                    <%= f.label :start_date,class: 'form-label' %>
+                    <%= f.text_field :start_date, class: 'form-control scroll-top lumni_date' %>
+                    
+                    <%= f.label :end_date,class: 'form-label' %>
+                    <%= f.text_field :end_date, class: 'form-control scroll-top lumni_date' %>
+
+                    <%= f.label :explanation,class: 'form-label' %>
+                    <%= f.text_field :explanation, class: 'form-control scroll-top' %>
+
+                    <%= f.submit class:'btn btn-success lumnisubmit' %>
+                  <%end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div id="acordion">
+    <div class="card m-0">
+      <div class="card-header d-flex flex-column p-0" id="academic_dates_header">
+          <button class="btn btn-primary" data-toggle="collapse" data-target="#academic_dates_accordion" aria-expanded="true" aria-controls="academic_dates_accordion">
+            <%= I18n.t('isa.academic_dates') %>
+          </button>
+      </div>
+  
+      <div id="academic_dates_accordion" class="collapse" aria-labelledby="academic_dates_header" data-parent="#accordion">
+        <div class="card-body p-0">
+        <% funded_major = isa.funded_major%>
+        <%= form_for funded_major do |f| %>
+          <%= f.hidden_field :isa_id, value: isa.id %>
+
+          <%= f.label :expected_egress_date,class: 'form-label' %>
+          <%= f.text_field :expected_egress_date, class: 'form-control scroll-top lumni_date' %>
+          
+          <%= f.label :egress_date,class: 'form-label' %>
+          <%= f.text_field :egress_date, class: 'form-control scroll-top lumni_date' %>
+
+          <%= f.label :expected_graduation_date,class: 'form-label' %>
+          <%= f.text_field :expected_graduation_date, class: 'form-control scroll-top lumni_date' %>
+
+          <%= f.label :graduation_date,class: 'form-label' %>
+          <%= f.text_field :graduation_date, class: 'form-control scroll-top lumni_date' %>
+
+          <%= f.label :expected_diploma_delivery_date,class: 'form-label' %>
+          <%= f.text_field :expected_diploma_delivery_date, class: 'form-control scroll-top lumni_date' %>
+
+          <%= f.label :diploma_delivery_date,class: 'form-label' %>
+          <%= f.text_field :diploma_delivery_date, class: 'form-control scroll-top lumni_date' %>
+
+          <%= f.label :drop_out_date,class: 'form-label' %>
+          <%= f.text_field :drop_out_date, class: 'form-control scroll-top lumni_date' %>
+
+          <%= f.submit class:'btn btn-success lumnisubmit'%>
+        <%end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="acordion">
+    <div class="card m-0">
+      <div class="card-header p-0 d-flex flex-column" id="request-corrections-tab">
+          <%= button_tag 'Solicitar Diploma', class: 'btn btn-primary', type: 'button', data: {toggle: 'collapse',target: "#request-diploma-delivery"},aria: {expanded: true, controls: 'request-diploma-delivery'}%>
+      </div>
+  
+      <div id="request-diploma-delivery" class="collapse" aria-labelledby="request-corrections-tab" data-parent="#acordion-decision-quesitonnaire">
+        <div class="card-body">
+          <p class="my-3">Se le enviará un correo al estudiante recordándole subir el diploma. Además se creará una nueva tarea para realizar el seguimiento.</p>
+  
+          <%= form_tag request_diploma_delivery_student_academic_information_path(@student.funded_programs.first),id: 'request-correction-form' do %>
+            <div class="text-center my-3">
+              <%= button_tag I18n.t('general.send'), class: 'btn btn-primary' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

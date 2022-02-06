@@ -1,0 +1,5 @@
+
+
+$('#new-origination-section-<%= params[:id] %>').html("<%= j build_form(OriginationSection.new({origination_module_id: params[:id],order: params[:order],resource_type: @resource_type}),'create',@target_template,html: { class: 'form-group', method: 'post'},destroy: false,dismiss: ('#new-origination-section-' + params[:id]),remote: true, buttonOffset: 1, columns:1) %>")
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();

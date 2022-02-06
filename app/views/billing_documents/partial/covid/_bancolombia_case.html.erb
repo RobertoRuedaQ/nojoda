@@ -1,0 +1,46 @@
+<div class="offset-md-3 col-md-6">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="mb-4">Facilidades de pago en Lumni frente al COVID-19</h2>
+      <p>Buscando tu bienestar hemos puesto a tu disposición las siguientes alternativas para poder ajustar los pagos a tus posibilidades. Con la información que nos proporciones, trabajaremos por otorgarte el mejor beneficio para que el cumplimiento de tus pagos dejen de ser una preocupación.</p>
+
+      <ul class="my-4">
+        <li class="my-2">Los beneficios de pago presentados son medidas extraordinarias como consecuencia de la emergencia sanitaria decretada tras el brote de COVID-19 en el país. Lumni y sus fondos determinarán su temporalidad.</li>
+        <li class="my-2">Los beneficios de pago no están sujetos a comisión o interés alguno.</li>
+      </ul>
+
+      <%= form_tag set_covid_option_covid_emergencies_path do %>
+        <div class="form-check my-3">
+            <div class="align-self-center">
+                      <%= radio_button("covidemergency", 'option','normal',checked: true, class: 'form-check-input',required: true, id: "covid_normal") %>
+            </div>
+                      <%= label_tag "covid_normal_label", 'Continuaré normalmente con mis pagos.', class: 'form-check-label my-1 ml-2' %>
+        </div>
+        <div class="form-check my-3">
+          <div class="align-self-center">
+                  <%= radio_button("covidemergency", 'option','no_payment',class: 'form-check-input',required: true, id: "covid_no_payment") %>
+          </div>
+                  <%= label_tag "covid_no_payment_label", 'Revisión del caso por dificultad económica comprobada, para dar un periodo de gracia-suspensión del pago de la cuota durante (3) meses, retomando pagos en el mes de octubre de 2020.*', class: 'form-check-label my-1 ml-2' %>
+                  <%= label_tag "* IMPORTANTE: Para aceptar esta medida debes soportarlo con justificación." %>
+                  <div class="my-2" id="">
+                    <div class="my-2">
+                      <h5 class="my-4">Escribe los detalles que deseas que sean evaluados y adjunta en un archivo los documentos que deseas que revisemos.</h5>
+                      <%= lumni_textarea_field 'covidemergency','details',{} %>
+                    </div>
+                    <div class="my-2">
+                      <%= lumni_file_field 'covidemergency','support',{},{object: CovidEmergency.new} %>
+                    </div>
+                  </div>
+        </div>
+        <%= hidden_field('covidemergency','start_date',value: '2020-07-01') %>
+        <%= hidden_field('covidemergency','end_date',value: '2020-09-30') %>
+        <%= hidden_field('covidemergency','billing_document_id',value: params[:id]) %>
+        <%= hidden_field('covidemergency','status',value: 'active') %>
+        <div class="text-center my-4">
+          <%= button_tag 'Elegir Alternativa', class: 'btn btn-primary' %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

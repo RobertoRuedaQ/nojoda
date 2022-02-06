@@ -1,0 +1,19 @@
+
+<%= render '/isa_statuses/partial/status_body', isa: isa, status_case: 'general_status' %>
+
+
+<!-- Modal template -->
+<div class="modal modal-slide fade" id="general_status_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+      <div class="p-4" id='general_status_modal_container'>
+
+
+        <%= render '/isa_statuses/partial/general_status_modal_body', isa: isa %>
+
+
+      </div>
+    </div>
+  </div>
+</div>

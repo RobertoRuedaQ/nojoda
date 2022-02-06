@@ -1,0 +1,86 @@
+/* line 9, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.project-attachment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+/* line 14, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.project-attachment > .media-body {
+  min-width: 0;
+}
+
+/* line 19, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.project-attachment-file,
+.project-attachment-img {
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;
+}
+
+/* line 28, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.project-attachment-file {
+  display: inline-block;
+  text-align: center;
+  line-height: 4rem;
+}
+
+/* line 34, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.project-attachment-img {
+  background-color: transparent;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* line 40, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.project-attachment-filename {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* line 50, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.project-task-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.625rem 0;
+}
+/* line 56, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.project-task-item .ui-todo-item {
+  margin: 0;
+}
+
+/* line 64, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.default-style .project-task-item {
+  background: #fff;
+}
+/* line 67, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.default-style .project-task-item + .project-task-item {
+  border-top: 1px solid rgba(24, 28, 33, 0.06);
+}
+
+/* line 76, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.material-style .project-task-item {
+  background: #fff;
+}
+/* line 79, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/pages/projects.scss */
+.material-style .project-task-item + .project-task-item {
+  border-top: 1px solid rgba(24, 28, 33, 0.06);
+}

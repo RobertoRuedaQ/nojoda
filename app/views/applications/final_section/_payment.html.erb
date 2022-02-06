@@ -1,0 +1,41 @@
+<div class="card">
+  <div class="card-body p-0">
+  	<% case application.status %>
+    <% when 'active' %>
+      <div class="text-center my-3"><h4 class="my-4 text-primary"><%= I18n.t('application.request_disbursement') %></h4></div>
+      <p class="mx-5 text-center"><%= I18n.t('application.request_disbursement_text') %></p>
+
+      <div class="text-center my-5">
+        <%= button_to I18n.t('application.request_disbursement'),send_disbursement_request_disbursement_request_path(application), class: 'btn btn-primary' %>
+      </div>
+    <% when 'submitted' %>
+      <div class="text-center my-3">
+        <h4 class="my-4 text-warning"><%= I18n.t('application.request_disbursement') %></h4>
+      </div>
+      <p class="mx-5 text-center"><%= I18n.t('application.request_disbursement_submitted') %></p>
+      <div class="row">
+        <div class="col text-center" style="padding: 1rem;font-size: 40px">
+          <i class="fas fa-check-circle text-warning"></i>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= link_to(I18n.t('general.back_home'), root_path, class: 'btn btn-success my-3') %>
+      </div>
+    <% when 'approved' %>
+      <div class="text-center my-3">
+        <h4 class="my-4 text-success"><%= I18n.t('application.request_disbursement') %></h4>
+      </div>
+      <p class="mx-5 text-center"><%= I18n.t('origination.success_apply') %></p>
+      <div class="row">
+        <div class="col text-center" style="padding: 1rem;font-size: 40px">
+          <i class="fas fa-check-circle text-success"></i>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= link_to(I18n.t('general.back_home'), root_path, class: 'btn btn-success my-3') %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+

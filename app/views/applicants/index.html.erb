@@ -1,0 +1,16 @@
+
+<%= form_tag search_applicants_applicants_path do %>
+	<label class="form-label">
+		Selecciona una convocatoria
+	</label>
+	<%= lumni_dropdown_field( 'funding_opportunity','name',{type: 'multiple_dropdown', field_type: 'multiple_dropdown',list: @funding_opportunity_list,value: params[:funding_opportunity_id]},{})%>
+	<div class="my-3 text-center">
+		<%= submit_tag 'Buscar', class: 'btn btn-primary' %>
+	</div>
+<% end %>
+
+<% if @applicant.present? %>
+	<% target_hash = current_user.template('Applicant','applicants',current_user,id: true) %>
+	<% target_hash[:application_funding_opportunity] = {} %>
+	<%= createTable(@applicant,target_hash).html_safe %>
+<% end %>

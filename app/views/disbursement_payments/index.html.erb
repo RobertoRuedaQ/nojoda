@@ -1,0 +1,30 @@
+<% original_template = current_user.template('DisbursementPayment','disbursement_payments',current_user,id: true)  %>
+
+<% target_template = {} %>
+<% target_template[:id] = original_template[:id] %>
+<% target_template[:id][:controller] = 'disbursement_payments' %>
+<% target_template[:id][:action] = 'edit' %>
+
+<% target_template[:disbursement_id] = {} %>
+<% target_template[:disbursement_id][:controller] = 'disbursements' %>
+<% target_template[:disbursement_id][:action] = 'edit' %>
+<% target_template[:disbursement_id][:target_id] = 'disbursement_id' %>
+
+<% target_template[:id] = original_template[:id] %>
+<% target_template[:id] = original_template[:id] %>
+
+<% target_template[:user_name] = {} %>
+<% target_template[:user_identification_number] = {} %>
+<% target_template[:fund_name] = {} %>
+<% target_template[:value] = original_template[:value] %>
+<% target_template[:status] = original_template[:status] %>
+<% target_template[:payment_case] = original_template[:payment_case] %>
+<% target_template[:value_payed_by_student] = {} %>
+<% target_template[:bank_account_name] = {} %>
+
+
+<%= createTable(@disbursement_payment,target_template).html_safe %>
+
+
+<!-- [:id, :, :, :, :bank_account_id, :notes, :request_support, :payment_support, :disbursement_id, :disbursement_request_id]
+ -->

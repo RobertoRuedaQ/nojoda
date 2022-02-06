@@ -1,0 +1,50 @@
+/* line 2, /home/lumni/Documentos/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h1, .h1 {
+  font-size: 28px;
+}
+
+/* line 6, /home/lumni/Documentos/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h2, .h2 {
+  font-size: 25px;
+}
+
+/* line 10, /home/lumni/Documentos/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h3, .h3 {
+  font-size: 22px;
+}
+
+/* line 14, /home/lumni/Documentos/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h4, .h4 {
+  font-size: 19px;
+}
+
+/* line 18, /home/lumni/Documentos/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h5, .h5 {
+  font-size: 15px;
+}
+
+/* line 22, /home/lumni/Documentos/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+h6, .h6 {
+  font-size: 13px;
+}
+
+/* line 26, /home/lumni/Documentos/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+body {
+  font-size: 12px;
+  background-color: white;
+}
+
+/* line 31, /home/lumni/Documentos/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+div.alwaysbreak {
+  page-break-before: always;
+}
+
+/* line 32, /home/lumni/Documentos/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+div.nobreak:before {
+  clear: both;
+}
+
+/* line 33, /home/lumni/Documentos/platform-4.0/app/assets/stylesheets/pdf/pdf.css.scss */
+div.nobreak {
+  page-break-inside: avoid;
+}

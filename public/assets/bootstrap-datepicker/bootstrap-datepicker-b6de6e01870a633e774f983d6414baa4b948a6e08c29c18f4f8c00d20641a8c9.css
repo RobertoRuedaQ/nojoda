@@ -1,0 +1,398 @@
+/* line 7, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker {
+  direction: ltr;
+}
+/* line 10, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker.datepicker-rtl {
+  direction: rtl;
+}
+/* line 13, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker.datepicker-rtl table tr td span {
+  float: right;
+}
+/* line 18, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+[dir=rtl] .datepicker {
+  direction: rtl;
+}
+/* line 22, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker .next,
+.datepicker .prev {
+  position: relative;
+  color: transparent !important;
+}
+/* line 28, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker .next::after,
+.datepicker .prev::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-style: solid;
+  border-radius: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+/* line 43, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker .next::after {
+  border-width: 0 1px 1px 0;
+  margin-left: -0.25rem;
+}
+/* line 47, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+[dir=rtl] .datepicker .next::after {
+  margin-left: 0;
+  border-width: 1px 0 0 1px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+/* line 54, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker .prev::after {
+  border-width: 1px 0 0 1px;
+}
+/* line 57, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+[dir=rtl] .datepicker .prev::after {
+  margin-left: -0.25rem;
+  border-width: 0 1px 1px 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+/* line 65, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker-dropdown {
+  top: 0;
+  left: 0;
+  padding: .25rem;
+}
+
+/* line 71, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table {
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/* line 76, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td,
+.datepicker table tr th {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  text-align: center;
+  line-height: calc(2rem - 2px);
+}
+
+/* line 86, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.day:hover, .datepicker table tr td.focused {
+  cursor: pointer;
+}
+/* line 91, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
+  background: none;
+  cursor: default;
+}
+/* line 97, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.highlighted {
+  border-radius: 0 !important;
+  background: #eff8fc;
+}
+/* line 101, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.highlighted.focused {
+  background: #d5edf7;
+}
+/* line 106, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.today {
+  background: #fff4df !important;
+}
+/* line 109, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.today.focused {
+  background: #ffe9c0 !important;
+}
+/* line 113, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.today.disabled, .datepicker table tr td.today.disabled:active {
+  background: #fff4df !important;
+}
+/* line 119, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.range {
+  border-radius: 0 !important;
+}
+/* line 123, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.range.highlighted {
+  background: #e2f2fa;
+}
+/* line 128, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.range.highlighted.focused {
+  background: #c8e7f5;
+}
+/* line 133, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.range.today {
+  background: #ffefd0 !important !important;
+}
+/* line 138, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.range.today.disabled, .datepicker table tr td.range.today.disabled:active {
+  background: #ffefd0 !important !important;
+}
+/* line 145, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+html:not([dir=rtl]) .datepicker table tr td.range-start:not(.range-end) {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+/* line 149, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+[dir=rtl] .datepicker table tr td.range-start:not(.range-end) {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+/* line 156, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+html:not([dir=rtl]) .datepicker table tr td.range-end:not(.range-start) {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+/* line 160, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+[dir=rtl] .datepicker table tr td.range-end:not(.range-start) {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+/* line 166, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td.selected, .datepicker table tr td.selected:hover, .datepicker table tr td.selected.highlighted {
+  color: #fff;
+}
+
+/* line 173, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td span {
+  display: block;
+  float: left;
+  width: 3.375rem;
+  height: 3.375rem;
+  line-height: 3.375rem;
+  cursor: pointer;
+}
+/* line 181, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker table tr td span.disabled, .datepicker table tr td span.disabled:hover {
+  background: none;
+  cursor: default;
+}
+/* line 187, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+[dir=rtl] .datepicker table tr td span {
+  float: right;
+}
+
+/* line 192, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.table-striped .datepicker table tr td,
+.table-striped .datepicker table tr th {
+  background-color: transparent;
+}
+
+/* line 197, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker .datepicker-switch,
+.datepicker .prev,
+.datepicker .next,
+.datepicker tfoot tr th {
+  cursor: pointer;
+}
+
+/* line 205, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker .cw {
+  padding: 0 .125rem;
+  width: .75rem;
+  vertical-align: middle;
+  font-size: .625rem;
+}
+
+/* line 212, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker-months table,
+.datepicker-years table,
+.datepicker-decades table,
+.datepicker-centuries table {
+  width: 12.75rem;
+}
+/* line 218, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.datepicker-months table td, .datepicker-years table td, .datepicker-decades table td, .datepicker-centuries table td {
+  padding: 0 0 1.25rem 1.25rem;
+}
+/* line 221, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+[dir=rtl] .datepicker-months table td,
+[dir=rtl] .datepicker-years table td,
+[dir=rtl] .datepicker-decades table td,
+[dir=rtl] .datepicker-centuries table td {
+  padding: 0 1.25rem 1.25rem 0;
+}
+
+/* line 227, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.input-group.date .input-group-addon {
+  cursor: pointer;
+}
+
+/* line 231, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.input-daterange input {
+  text-align: center;
+}
+
+/* line 241, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker-dropdown {
+  z-index: 1060 !important;
+}
+/* line 245, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker {
+  border-radius: 0.2rem;
+}
+/* line 249, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker table tr td,
+.default-style .datepicker table tr th {
+  border-radius: 0.2rem;
+}
+/* line 255, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker table tr td.old, .default-style .datepicker table tr td.new {
+  color: #babbbc;
+}
+/* line 260, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker table tr td.day:hover, .default-style .datepicker table tr td.focused {
+  background: rgba(24, 28, 33, 0.03);
+}
+/* line 265, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker table tr td.disabled, .default-style .datepicker table tr td.disabled:hover {
+  background: none;
+  color: #babbbc;
+}
+/* line 271, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker table tr td.highlighted.disabled, .default-style .datepicker table tr td.highlighted.disabled:active {
+  color: #babbbc;
+}
+/* line 276, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker table tr td.today.disabled, .default-style .datepicker table tr td.today.disabled:active {
+  color: #babbbc;
+}
+/* line 282, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker table tr td span {
+  border-radius: 0.2rem;
+}
+/* line 285, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker table tr td span:hover, .default-style .datepicker table tr td span.focused {
+  background: rgba(24, 28, 33, 0.03);
+}
+/* line 290, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker table tr td span.disabled, .default-style .datepicker table tr td span.disabled:hover {
+  color: #babbbc;
+}
+/* line 295, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker table tr td span.old, .default-style .datepicker table tr td span.new {
+  color: #babbbc;
+}
+/* line 303, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker .next::after,
+.default-style .datepicker .prev::after {
+  color: #babbbc;
+}
+/* line 307, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker .next:hover::after,
+.default-style .datepicker .prev:hover::after {
+  color: #4E5155;
+}
+/* line 312, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker .datepicker-switch:hover,
+.default-style .datepicker tfoot tr th:hover {
+  background: rgba(24, 28, 33, 0.03);
+}
+/* line 317, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker tfoot tr th,
+.default-style .datepicker .datepicker-switch {
+  font-weight: 500;
+}
+/* line 322, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.default-style .datepicker .cw,
+.default-style .datepicker .dow {
+  color: #babbbc;
+  font-size: 0.6rem;
+  font-weight: 500;
+  background: rgba(24, 28, 33, 0.03);
+  border-radius: 0 !important;
+}
+
+/* line 338, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker-dropdown {
+  z-index: 1060 !important;
+  -webkit-animation: none !important;
+          animation: none !important;
+}
+/* line 343, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker {
+  border-radius: 0.125rem;
+}
+/* line 347, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker table tr td,
+.material-style .datepicker table tr th,
+.material-style .datepicker table tr td span {
+  border-radius: 99rem;
+}
+/* line 353, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker table tr td.day,
+.material-style .datepicker tfoot tr th {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+/* line 360, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker table tr td.old, .material-style .datepicker table tr td.new {
+  color: #babbbc;
+}
+/* line 365, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker table tr td.day:hover, .material-style .datepicker table tr td.focused {
+  background: rgba(24, 28, 33, 0.03);
+}
+/* line 370, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker table tr td.disabled, .material-style .datepicker table tr td.disabled:hover {
+  background: none;
+  color: #babbbc;
+}
+/* line 376, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker table tr td.highlighted.disabled, .material-style .datepicker table tr td.highlighted.disabled:active {
+  color: #babbbc;
+}
+/* line 381, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker table tr td.today.disabled, .material-style .datepicker table tr td.today.disabled:active {
+  color: #babbbc;
+}
+/* line 388, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker table tr td span:hover, .material-style .datepicker table tr td span.focused {
+  background: rgba(24, 28, 33, 0.03);
+}
+/* line 393, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker table tr td span.disabled, .material-style .datepicker table tr td span.disabled:hover {
+  color: #babbbc;
+}
+/* line 398, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker table tr td span.old, .material-style .datepicker table tr td span.new {
+  color: #babbbc;
+}
+/* line 406, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker .next::after,
+.material-style .datepicker .prev::after {
+  color: #babbbc;
+}
+/* line 410, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker .next:hover::after,
+.material-style .datepicker .prev:hover::after {
+  color: #4E5155;
+}
+/* line 415, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker .datepicker-switch:hover,
+.material-style .datepicker tfoot tr th:hover {
+  background: rgba(24, 28, 33, 0.03);
+}
+/* line 420, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker tfoot tr th,
+.material-style .datepicker .datepicker-switch {
+  font-weight: 500;
+}
+/* line 425, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/bootstrap-datepicker/bootstrap-datepicker.scss */
+.material-style .datepicker .cw,
+.material-style .datepicker .dow {
+  color: #babbbc;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(24, 28, 33, 0.03);
+  border-radius: 0 !important;
+}

@@ -1,0 +1,67 @@
+
+
+<%= form_title(@modeling, 'name') %> 
+
+
+
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#modeling-tab"><%= Modeling.model_name.human(count: 1) %></a>
+    </li>
+    <% if ["fixed_conditions","modeling_with_r"].include?(@modeling.modeling_case) %>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#fixed-conditions-tab"><%= ModelingFixedCondition.model_name.human(count: 1) %></a>
+    </li>
+    <% end %>
+
+
+    <% if @modeling.modeling_case == "modeling_with_r" %>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#modeling-fees-tab"><%= ModelingFee.model_name.human(count: 1) %></a>
+    </li>
+    <% end %>
+
+
+    <% if @modeling.custom_disbursements %>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#custom-disbursement-tab"><%= CustomDisbursement.model_name.human(count: 1) %></a>
+      </li>
+    <% end %>
+
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="modeling-tab">
+		<%= build_form(@modeling,'update',current_user.template('Modeling','modelings',current_user),html: { class: 'form-group', method: 'put'},header_title: false) %>
+    </div>
+    <% if ["fixed_conditions","modeling_with_r"].include?(@modeling.modeling_case) %>
+	    <div class="tab-pane fade p-2" id="fixed-conditions-tab">
+	    	<%= createTable(@modeling.modeling_fixed_condition,current_user.template('ModelingFixedCondition','modeling_fixed_conditions',current_user,id: true),title: false, alternative_new_link: new_modeling_fixed_condition_path(modeling: @modeling.id),custom_controller: 'modeling_fixed_conditions').html_safe %>
+	    </div>
+    <% end %>
+
+
+    <% if @modeling.modeling_case == "modeling_with_r" %>
+      <div class="tab-pane fade p-2" id="modeling-fees-tab">
+        <%= createTable(@modeling.modeling_fee,current_user.template('ModelingFee','modeling_fees',current_user,id: true),title: false, alternative_new_link: new_modeling_fee_path(modeling: @modeling.id),custom_controller: 'modeling_fees',id: 'custom_modeling_fees_table').html_safe %>
+      </div>
+    <% end %>
+
+
+
+    <% if @modeling.custom_disbursements %>
+      <div class="tab-pane fade p-2" id="custom-disbursement-tab">
+        <%= createTable(@modeling.custom_disbursement,current_user.template('CustomDisbursement','custom_disbursements',current_user,id: true),title: false, alternative_new_link: new_custom_disbursement_path(modeling: @modeling.id),custom_controller: 'custom_disbursements',id: 'custom_disbursements_table').html_safe %>
+      </div>
+    <% end %>
+
+
+  </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+<%= form_title(@student_token_batch, 'id') %> 
+<%= build_form(@student_token_batch,'update',current_user.template('StudentTokenBatch','StudentTokenBatches',current_user),html: { class: 'form-group', method: 'put'}, locked: true) %>
+

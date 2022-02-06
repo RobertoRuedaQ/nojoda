@@ -1,0 +1,11 @@
+$('#income-main-container').append("<%= j render '/income_informations/partial/income_body', income: @income_information,delete: true, edit: true, show: false, hidden_fields: @hidden_fields %>")
+
+clear_form('incomeinformation',['user_id'])
+
+$('.direct-upload--complete').remove();
+
+$('#new_income_information').modal('hide')
+
+toastr["success"]("<%= I18n.t('flash.record_created') %>");
+
+

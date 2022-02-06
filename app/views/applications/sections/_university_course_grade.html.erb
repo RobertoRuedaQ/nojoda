@@ -1,0 +1,6 @@
+<% section = additional_form_info[:section] %>
+<% university_course_grade = targetRecord.university_course_grade %>
+<div id="university_grade_container_<%= targetRecord.id %>" class="mb-4">
+	<%= render '/applications/sections/university_course_body', university_course_grade: targetRecord.university_course_grade, section: section %>
+</div>
+

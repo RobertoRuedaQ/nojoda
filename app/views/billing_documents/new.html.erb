@@ -1,0 +1,4 @@
+
+
+<%= form_title(@billing_document,I18n.t('mains.new')) %>
+<%= build_form(@billing_document,'create',current_user.template('BillingDocument','billing_documents',current_user),html: { class: 'form-group'}) %>

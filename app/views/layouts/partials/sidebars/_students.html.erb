@@ -1,0 +1,18 @@
+<li class="sidenav-item"> 
+  <a href="#" data-toggle="collapse" data-target="#students" class="sidenav-link sidenav-toggle" > 
+    <i class="sidenav-icon ion ion-ios-contacts"></i><%= I18n.t('mains.students')%>
+  </a>
+  <ul class="sub-menu collapse" id="students">
+    <li class="sidenav-item">
+      <a href="<%= applicants_path %>" class="sidenav-link "><%= Applicant.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= students_path %>" class="sidenav-link "><%= Student.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%=collections_path %>" class="sidenav-link "><%= Collection.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

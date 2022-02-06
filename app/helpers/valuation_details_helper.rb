@@ -1,0 +1,2 @@
+module ValuationDetailsHelper
+end

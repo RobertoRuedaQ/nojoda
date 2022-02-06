@@ -1,0 +1,24 @@
+<div class="card-header d-flex justify-content-between">
+	<div class=" my-1">
+
+		<h5 class="media align-items-center font-weight-bold py-0 mb-0">
+		  <button type="button" class="btn icon-btn btn-sm btn-primary mr-4 handle">
+		    <span class="ion ion-md-move"></span>
+		  </button>
+		  <div class="media-body ">
+			<%= @targetQuestion.question%><br>
+
+			<small><%= link_to I18n.t('general.edit'),edit_question_question_path(@targetQuestion),method: 'post', remote: true, data: { disable_with: I18n.t('form.please_wait')}%></small>  - <small><%= content_tag :a, I18n.t('general.destroy'),class: 'text-danger destroy',  data: { title: I18n.t('general.delete_title'), text: I18n.t('general.delete_body'),confirbuttontext: I18n.t('general.destroy'),destroyed: I18n.t('general.destroyed'),destroyconfirmation: I18n.t('general.destroy_confirmation'),cancelbuttontext: I18n.t('general.cancel'),url: url_for(controller: 'questions', action:'destroy',id: @targetQuestion.id) }%></small>
+		  </div>
+		</h5>
+		<% if !@targetQuestion.notes.nil? && @targetQuestion.notes != ''%>
+			<div class="my-2">
+				<%= @targetQuestion.notes.to_s.html_safe%>
+			</div>
+		<% end %>
+	</div>
+	<div>
+		<small>Max Score<%= @targetQuestion.max_score%></small><br>
+		<small>Weight<%= @targetQuestion.weight%></small>
+	</div>
+</div>

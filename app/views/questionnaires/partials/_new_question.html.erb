@@ -1,0 +1,12 @@
+<h4 class="media align-items-center font-weight-bold py-3 mb-4">
+  <div class="media-body ml-3">
+  	<span class="text-muted font-weight-light"><%= @section.name %> /</span> <%= I18n.t('questionnaire.new_question') %>
+  </div>
+</h4>
+<% if @question.questionnaire.main_questionnaire.category == "scoring" %>
+	<% target_template = FormTemplate.cached_find(765).template_hash(current_user,current_company) %>
+<% else %>
+	<% target_template = current_user.template('Question','questions',current_user) %>
+<% end %>
+<%= build_form(@question,'create',target_template, html: { class: 'form-group'}, controller: 'questions', button: false,destroy: false, remote: true, history: false, header:false)%>
+</div>

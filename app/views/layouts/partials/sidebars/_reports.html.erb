@@ -1,0 +1,10 @@
+<li class="sidenav-item"> 
+  <a href="#" data-toggle="collapse" data-target="#reports" class="sidenav-link sidenav-toggle" >
+  <i class="sidenav-icon ion ion-md-speedometer"></i><%= I18n.t('mains.reports')%>
+  </a>
+  <ul class="sub-menu collapse" id="reports">
+    <li class="sidenav-item">
+      <a href="<%= dashboards_path %>" class="sidenav-link "><%= Dashboard.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

@@ -1,0 +1,4 @@
+
+
+<%= form_title(@batch_detail,I18n.t('mains.new')) %>
+<%= build_form(@batch_detail,'create',current_user.template('BatchDetail','batch_details',current_user),html: { class: 'form-group'}) %>

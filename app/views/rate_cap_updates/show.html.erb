@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rate cap value:</strong>
+  <%= @rate_cap_update.rate_cap_value %>
+</p>
+
+<p>
+  <strong>Responsible:</strong>
+  <%= @rate_cap_update.responsible_id %>
+</p>
+
+<%= link_to 'Edit', edit_rate_cap_update_path(@rate_cap_update) %> |
+<%= link_to 'Back', rate_cap_updates_path %>

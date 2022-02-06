@@ -1,0 +1,8 @@
+<% if @verified %>
+	$('#elegibility_container_<%= params[:temp][:funding_opportunity_id]%>').show()
+	$('#verification_box_<%= params[:temp][:funding_opportunity_id]%>').hide()
+	toastr["success"]("El token ha sido verificado exitosamente");
+
+<% else %>
+	toastr["error"]("El token seleccionado no es válido");
+<% end %>

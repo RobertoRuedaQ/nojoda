@@ -1,0 +1,8 @@
+<div class="card">
+	<div class="card-body">
+		<div class="text-right">
+			<%= link_to(I18n.t('general.new'), new_funding_opportunity_invitation_path(id: params[:id]),class: 'btn btn-primary my-3',remote: true, data: { disable_with: I18n.t('form.please_wait')}) %> 
+		</div>
+		<%= createBasicTable(header,rows,id: "token_table_#{params[:id]}") %>
+	</div>
+</div>

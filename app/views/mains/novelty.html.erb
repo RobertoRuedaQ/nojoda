@@ -1,0 +1,25 @@
+
+  <h5><%= I18n.t("isa.academic_stop") %></h5>
+  <% if @academic_stop_application.present? && @academic_stop_application.status == 'active' %>
+      <%= link_to I18n.t('general.edit'),edit_application_path(@academic_stop_application), class: 'btn btn-primary' %>
+  <% elsif @academic_stop_application.present? && @academic_stop_application.status == 'submitted' %>
+    <div class="card-body bg-info text-white text-center">
+      <%= I18n.t('application.under_review') %>
+    </div>
+  <% else %>
+    <%= button_to I18n.t('general.new_request'),create_application_academic_stops_path, class: 'btn btn-primary' %>
+  <% end %>
+  <br>
+
+
+  <h5><%= I18n.t("isa.drop_out") %></h5>
+  <% if @fund_withdrawal_application.present? && @fund_withdrawal_application.status == 'active' %>
+      <%= link_to I18n.t('general.edit'),edit_application_path(@fund_withdrawal_application), class: 'btn btn-primary' %>
+  <% elsif @fund_withdrawal_application.present? && @fund_withdrawal_application.status == 'submitted' %>
+    <div class="card-body bg-info text-white text-center">
+      <%= I18n.t('application.under_review') %>
+    </div>
+  <% else %>
+    <%= button_to I18n.t('general.new_request'),create_application_fund_withdrawals_path, class: 'btn btn-primary' %>
+  <% end %>
+  <br>

@@ -1,0 +1,19 @@
+<%= render 'students/partial/students_header' %>
+
+
+<div class="nav-tabs-top">
+  <%= render 'students/partial/tabs' %>
+
+  <div class="tab-content bg-light">
+
+    <div class="tab-pane fade show active" id="academic-info-tab" >
+      <div class="card" style="border: none">
+        <div class="card-body">
+            <%= render '/applicants/partial/legal_document_match', target_application: @target_application, target_user: @student %>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

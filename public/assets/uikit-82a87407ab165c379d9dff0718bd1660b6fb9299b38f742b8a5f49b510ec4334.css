@@ -1,0 +1,883 @@
+@charset "UTF-8";
+/* line 15, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-img-grayscale {
+  opacity: .4;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+/* line 19, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-img-grayscale.hoverable {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+/* line 22, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-img-grayscale.hoverable:hover, .ui-img-grayscale.hoverable:focus {
+  opacity: 1;
+  -webkit-filter: none;
+          filter: none;
+}
+
+/* line 33, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-w-140 {
+  width: 140px !important;
+  height: auto;
+}
+
+/* line 38, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-w-120 {
+  width: 120px !important;
+  height: auto;
+}
+
+/* line 43, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-w-100 {
+  width: 100px !important;
+  height: auto;
+}
+
+/* line 48, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-w-80 {
+  width: 80px !important;
+  height: auto;
+}
+
+/* line 53, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-w-60 {
+  width: 60px !important;
+  height: auto;
+}
+
+/* line 58, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-w-50 {
+  width: 50px !important;
+  height: auto;
+}
+
+/* line 63, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-w-40 {
+  width: 40px !important;
+  height: auto;
+}
+
+/* line 68, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-w-30 {
+  width: 30px !important;
+  height: auto;
+}
+
+/* line 73, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-w-20 {
+  width: 20px !important;
+  height: auto;
+}
+
+/* line 78, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-mh-100vh {
+  min-height: 100vh;
+}
+
+/* line 82, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-square,
+.ui-rect,
+.ui-rect-30,
+.ui-rect-60,
+.ui-rect-67,
+.ui-rect-75 {
+  position: relative !important;
+  display: block !important;
+  padding-top: 100% !important;
+  width: 100% !important;
+}
+
+/* line 94, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-square {
+  padding-top: 100% !important;
+}
+
+/* line 98, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-rect {
+  padding-top: 50% !important;
+}
+
+/* line 102, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-rect-30 {
+  padding-top: 30% !important;
+}
+
+/* line 106, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-rect-60 {
+  padding-top: 60% !important;
+}
+
+/* line 110, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-rect-67 {
+  padding-top: 67% !important;
+}
+
+/* line 114, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-rect-75 {
+  padding-top: 75% !important;
+}
+
+/* line 118, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-square-content,
+.ui-rect-content {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}
+
+/* line 130, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-icon {
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  border: 2px solid;
+  border-radius: 50%;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 18px;
+  line-height: calc(46px - 4px);
+}
+/* line 141, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-icon.border-0 {
+  line-height: 46px;
+}
+
+/* line 146, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-icon-sm {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  line-height: calc(30px - 4px);
+}
+/* line 152, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-icon-sm.border-0 {
+  line-height: 30px;
+}
+
+/* line 160, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-stars,
+.ui-star,
+.ui-star > * {
+  height: 1.1em;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* line 173, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-stars {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* line 179, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-star {
+  position: relative;
+  display: block;
+  float: left;
+  width: 1.1em;
+  height: 1.1em;
+  text-decoration: none !important;
+  font-size: 1.1em;
+  line-height: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/* line 190, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+[dir=rtl] .ui-star {
+  float: right;
+}
+/* line 194, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-star + .ui-star {
+  margin-left: -0.1em;
+}
+/* line 197, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+[dir=rtl] .ui-star + .ui-star {
+  margin-right: -0.1em;
+  margin-left: 0;
+}
+/* line 203, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-star > *, .ui-star > *::before, .ui-star > *::after {
+  position: absolute;
+  left: 0.55em;
+  height: 100%;
+  font-size: 1em;
+  line-height: 1;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+/* line 213, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+[dir=rtl] .ui-star > *,
+[dir=rtl] .ui-star > *::before,
+[dir=rtl] .ui-star > *::after {
+  right: 0.55em;
+  left: auto;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+/* line 220, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-star > * {
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+/* line 226, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-star > *:first-child {
+  z-index: 10;
+  display: none;
+  overflow: hidden;
+  color: #FFE924;
+}
+/* line 234, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-star > *:last-child {
+  z-index: 5;
+  display: block;
+}
+/* line 239, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-star.half-filled > *:first-child {
+  width: 50%;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+/* line 243, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+[dir=rtl] .ui-star.half-filled > *:first-child {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+/* line 248, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-star.filled > *:first-child, .ui-star.half-filled > *:first-child {
+  display: block;
+}
+/* line 253, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-star.filled > *:last-child {
+  display: none;
+}
+
+/* line 260, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-stars.hoverable .ui-star > *:first-child {
+  display: block;
+}
+
+/* line 267, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-stars.hoverable .ui-star:first-child:not(.filled) > *:first-child,
+.ui-stars.hoverable .ui-star:first-child:not(.filled) ~ .ui-star > *:first-child,
+.ui-stars.hoverable .ui-star:first-child:not(.half-filled) > *:first-child,
+.ui-stars.hoverable .ui-star:first-child:not(.half-filled) ~ .ui-star > *:first-child {
+  display: none;
+}
+
+/* line 273, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-stars.hoverable .ui-star.filled > *:first-child,
+.ui-stars.hoverable .ui-star.half-filled > *:first-child {
+  display: block !important;
+}
+
+/* line 278, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-stars.hoverable:hover .ui-star > *:first-child {
+  display: block !important;
+  width: 100% !important;
+  -webkit-transform: translateX(-50%) !important;
+          transform: translateX(-50%) !important;
+}
+/* line 283, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+[dir=rtl] .ui-stars.hoverable:hover .ui-star > *:first-child {
+  -webkit-transform: translateX(50%) !important;
+          transform: translateX(50%) !important;
+}
+
+/* line 289, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-stars.hoverable .ui-star:hover ~ .ui-star > *:first-child {
+  display: none !important;
+}
+/* line 293, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-stars.hoverable .ui-star:hover ~ .ui-star > *:last-child {
+  display: block !important;
+}
+
+/* line 301, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-list {
+  padding: 0;
+}
+/* line 304, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-list > li {
+  margin-bottom: 8px;
+  list-style: none;
+}
+/* line 309, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-list > li::before {
+  content: "•";
+  display: inline-block;
+  margin-right: 12px;
+  font-weight: 700;
+}
+/* line 315, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+[dir=rtl] .ui-list > li::before {
+  margin-right: 0;
+  margin-left: 12px;
+}
+
+/* line 325, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-bg-cover {
+  background-color: rgba(0, 0, 0, 0);
+  background-position: center center;
+  background-size: cover;
+}
+
+/* line 331, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-bg-fixed {
+  background-attachment: fixed;
+}
+
+/* line 335, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-bg-overlay-container,
+.ui-bg-video-container {
+  position: relative;
+}
+/* line 339, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-bg-overlay-container > *,
+.ui-bg-video-container > * {
+  position: relative;
+}
+
+/* line 344, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-bg-overlay-container .ui-bg-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+}
+
+/* line 353, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-bg-video-container .ui-bg-video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  overflow: hidden;
+}
+/* line 362, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-bg-video-container .ui-bg-video video {
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+
+/* line 376, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-text-block {
+  line-height: 1.8;
+}
+/* line 379, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.ui-text-block > p:last-child {
+  margin-bottom: 0;
+}
+
+/* line 393, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.default-style .ui-icon {
+  border-color: rgba(24, 28, 33, 0.06);
+}
+/* line 397, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.default-style .ui-bordered {
+  border: 1px solid rgba(24, 28, 33, 0.06);
+}
+/* line 401, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.default-style .ui-star > *:last-child {
+  color: rgba(24, 28, 33, 0.1);
+}
+/* line 405, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.default-style .ui-list > li::before {
+  color: rgba(24, 28, 33, 0.2);
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* line 414, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+  .default-style .ui-mh-100vh::after {
+    content: '';
+    display: block;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 0%;
+            flex: 0 0 0%;
+    min-height: 100vh;
+    width: 0;
+    font-size: 0;
+  }
+  /* line 423, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+  .default-style .ui-mh-100vh.jumbotron::after {
+    min-height: calc(100vh - 4.8rem);
+  }
+  /* line 427, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+  .default-style .ui-mh-100vh.flex-column::after {
+    display: none;
+  }
+}
+@media all and (min-width: 576px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* line 434, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+  .default-style .ui-mh-100vh.jumbotron::after {
+    min-height: calc(100vh - 9.6rem);
+  }
+}
+
+/* line 446, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.material-style .ui-icon {
+  border-color: rgba(24, 28, 33, 0.06);
+}
+/* line 450, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.material-style .ui-bordered {
+  border: 1px solid rgba(24, 28, 33, 0.06);
+}
+/* line 454, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.material-style .ui-star > *:last-child {
+  color: rgba(24, 28, 33, 0.1);
+}
+/* line 458, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+.material-style .ui-list > li::before {
+  color: rgba(24, 28, 33, 0.2);
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* line 467, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+  .material-style .ui-mh-100vh::after {
+    content: '';
+    display: block;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 0%;
+            flex: 0 0 0%;
+    min-height: 100vh;
+    width: 0;
+    font-size: 0;
+  }
+  /* line 476, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+  .material-style .ui-mh-100vh.jumbotron::after {
+    min-height: calc(100vh - 6rem);
+  }
+  /* line 480, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+  .material-style .ui-mh-100vh.flex-column::after {
+    display: none;
+  }
+}
+@media all and (min-width: 576px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* line 487, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_common.scss */
+  .material-style .ui-mh-100vh.jumbotron::after {
+    min-height: calc(100vh - 12rem);
+  }
+}
+
+/* line 14, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_ecommerce.scss */
+.badge.ui-product-badge {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 0.1875rem 0.375rem;
+  font-size: 0.625rem;
+}
+
+/* line 23, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_ecommerce.scss */
+.ui-product-color {
+  display: inline-block;
+  overflow: hidden;
+  margin: .144em;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 10rem;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
+  vertical-align: middle;
+}
+
+/* line 34, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_ecommerce.scss */
+.ui-product-color-lg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* line 39, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_ecommerce.scss */
+.ui-product-color-sm {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* line 47, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_ecommerce.scss */
+.ui-payment {
+  height: 40px;
+}
+
+/* line 51, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_ecommerce.scss */
+.ui-payment-small {
+  height: 30px;
+}
+
+/* line 13, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_dashboard.scss */
+.ui-statistics-icon {
+  width: 2.875rem;
+  height: 2.875rem;
+  font-size: 1.125rem;
+  line-height: calc(2.875rem - 4px);
+}
+/* line 19, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_dashboard.scss */
+.ui-statistics-icon.border-0 {
+  line-height: 2.875rem;
+}
+
+/* line 27, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_dashboard.scss */
+.ui-feed-icon-container {
+  position: relative;
+}
+
+/* line 31, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_dashboard.scss */
+.ui-feed-icon {
+  position: absolute;
+  top: 0;
+  right: -0.625rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+/* line 41, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_dashboard.scss */
+[dir=rtl] .ui-feed-icon {
+  right: auto;
+  left: -0.625rem;
+}
+
+/* line 51, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_dashboard.scss */
+.ui-todo-item .custom-control-input:checked ~ .custom-control-label {
+  text-decoration: line-through;
+}
+/* line 55, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_dashboard.scss */
+.ui-todo-item .custom-control-input:checked ~ .ui-todo-badge,
+.ui-todo-item .custom-control-input:checked ~ .custom-control-label .ui-todo-badge {
+  display: none;
+}
+
+/* line 64, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_dashboard.scss */
+.ui-activity-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 0.875rem;
+  line-height: calc(2.5rem - 4px);
+}
+/* line 70, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_dashboard.scss */
+.ui-activity-icon.border-0 {
+  line-height: 2.5rem;
+}
+
+/* line 78, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_dashboard.scss */
+.default-style .ui-todo-item .custom-control-input:checked ~ .custom-control-label {
+  color: #a3a4a6;
+}
+
+/* line 86, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_dashboard.scss */
+.material-style .ui-todo-item .custom-control-input:checked ~ .custom-control-label {
+  color: #a3a4a6;
+}
+
+/* line 13, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-company-text {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* line 21, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device {
+  position: relative;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
+}
+/* line 25, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+/* line 31, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device .device-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+/* line 39, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device .device-content {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+/* line 45, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device .device-content:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+/* line 51, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device .device-content img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+/* line 60, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device.macbook {
+  width: 1227px;
+}
+/* line 63, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device.macbook:before {
+  padding-top: 57.86471067644662%;
+}
+/* line 67, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device.macbook .device-content {
+  margin-top: 4.31947840260799%;
+  margin-left: 12.46943765281174%;
+  width: 75.15262428687857%;
+}
+/* line 72, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+[dir=rtl] .ui-device.macbook .device-content {
+  margin-right: 12.46943765281174%;
+  margin-left: 0;
+}
+/* line 77, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device.macbook .device-content:before {
+  padding-top: 62.47288503253796%;
+}
+
+/* line 83, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device.iphone {
+  width: 302px;
+}
+/* line 86, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device.iphone:before {
+  padding-top: 209.154929577464789%;
+}
+/* line 90, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device.iphone .device-content {
+  z-index: 1;
+  margin-top: 19.58041958041958%;
+  margin-left: 4.580152671755725%;
+  width: 91.608391608391608%;
+  border-radius: 0 0 12% 12% / 0 0 4% 4%;
+}
+/* line 97, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+[dir=rtl] .ui-device.iphone .device-content {
+  margin-right: 4.580152671755725%;
+  margin-left: 0;
+}
+/* line 102, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device.iphone .device-content:before {
+  padding-top: 200.763358778625954%;
+}
+/* line 107, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-device.iphone .device-img {
+  z-index: 2;
+}
+
+/* line 112, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-window {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-top: 23px;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/* line 120, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-window:before {
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  height: 23px;
+  background: #e5e5e5;
+}
+/* line 129, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-window .window-content {
+  width: 100%;
+}
+/* line 132, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-window .window-content img {
+  display: block;
+  width: 100%;
+}
+
+/* line 141, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-window:before, .ui-window:after,
+.ui-window .window-content:before,
+.ui-window .window-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+/* line 150, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-window:after,
+.ui-window .window-content:before,
+.ui-window .window-content:after {
+  top: 6px;
+  z-index: 4;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+/* line 159, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-window:after {
+  left: 10px;
+  background: #ccc;
+}
+
+/* line 163, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-window .window-content:before {
+  left: 26px;
+  background: #ccc;
+}
+
+/* line 167, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-window .window-content:after {
+  left: 43px;
+  background: #ccc;
+}
+
+/* line 175, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.jumbotron.ui-hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+}
+/* line 182, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.jumbotron.ui-hero > .container,
+.jumbotron.ui-hero > .container-fluid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* line 186, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.jumbotron.ui-hero > .container > .row,
+.jumbotron.ui-hero > .container-fluid > .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 197, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-presentation-left, .ui-presentation-left.ui-device,
+.ui-presentation-right,
+.ui-presentation-right.ui-device {
+  width: 100%;
+}
+
+/* line 206, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-customer-review {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+/* line 210, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-customer-review::before, .ui-customer-review::after {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.5em;
+  line-height: 1.125rem;
+  opacity: .15;
+}
+/* line 219, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-customer-review:before {
+  content: '“';
+}
+/* line 222, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.ui-customer-review:after {
+  content: '”';
+}
+
+/* line 230, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.default-style .ui-hero > .container > .row {
+  width: calc(100% + 1.2rem);
+}
+/* line 234, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.default-style .ui-customer-review {
+  font-weight: 300;
+}
+/* line 237, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.default-style .ui-customer-review::before, .default-style .ui-customer-review::after {
+  font-weight: 900;
+}
+@media (min-width: 992px) {
+  /* line 246, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+  .default-style .ui-presentation-left, .default-style .ui-presentation-left.ui-device,
+  .default-style .ui-presentation-right,
+  .default-style .ui-presentation-right.ui-device {
+    width: 150%;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 256, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+  .default-style .ui-presentation-left, .default-style .ui-presentation-left.ui-device,
+  .default-style .ui-presentation-right,
+  .default-style .ui-presentation-right.ui-device {
+    width: 160%;
+  }
+}
+
+/* line 267, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.material-style .ui-hero > .container > .row {
+  width: calc(100% + 1.5rem);
+}
+/* line 271, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.material-style .ui-customer-review {
+  font-weight: 300;
+}
+/* line 274, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+.material-style .ui-customer-review::before, .material-style .ui-customer-review::after {
+  font-weight: 700;
+}
+@media (min-width: 992px) {
+  /* line 283, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+  .material-style .ui-presentation-left, .material-style .ui-presentation-left.ui-device,
+  .material-style .ui-presentation-right,
+  .material-style .ui-presentation-right.ui-device {
+    width: 150%;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 293, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_company.scss */
+  .material-style .ui-presentation-left, .material-style .ui-presentation-left.ui-device,
+  .material-style .ui-presentation-right,
+  .material-style .ui-presentation-right.ui-device {
+    width: 160%;
+  }
+}
+
+/* line 1, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_social.scss */
+.ui-play-icon {
+  margin-right: -.25em;
+}
+
+/* line 5, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/stylesheets/_uikit/_social.scss */
+[dir=rtl] .ui-play-icon {
+  margin-right: 0;
+  margin-left: -.25em;
+}

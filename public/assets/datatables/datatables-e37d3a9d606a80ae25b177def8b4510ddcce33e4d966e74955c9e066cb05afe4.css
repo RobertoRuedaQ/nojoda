@@ -1,0 +1,635 @@
+/* line 1, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable {
+  clear: both;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+  max-width: none !important;
+  border-collapse: separate !important;
+  border-spacing: 0;
+}
+
+/* line 9, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable td,
+table.dataTable th {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 14, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable td.dataTables_empty,
+table.dataTable th.dataTables_empty {
+  text-align: center;
+}
+
+/* line 18, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable.nowrap th,
+table.dataTable.nowrap td {
+  white-space: nowrap;
+}
+
+/* line 23, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_wrapper div.dataTables_length label {
+  font-weight: normal;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* line 28, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_wrapper div.dataTables_length select {
+  width: auto;
+  display: inline-block;
+}
+
+/* line 32, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_wrapper div.dataTables_filter {
+  text-align: right;
+}
+
+/* line 35, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_wrapper div.dataTables_filter label {
+  font-weight: normal;
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* line 40, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_wrapper div.dataTables_filter input {
+  margin-left: 0.5em;
+  display: inline-block;
+  width: auto;
+}
+
+/* line 45, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_wrapper div.dataTables_info {
+  padding-top: 0.85em;
+  white-space: nowrap;
+}
+
+/* line 49, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_wrapper div.dataTables_paginate {
+  margin: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* line 54, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  margin: 2px 0;
+  white-space: nowrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* line 59, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_wrapper div.dataTables_processing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  margin-top: -26px;
+  text-align: center;
+  padding: 1em 0;
+}
+
+/* line 70, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting,
+table.dataTable thead > tr > td.sorting_asc,
+table.dataTable thead > tr > td.sorting_desc,
+table.dataTable thead > tr > td.sorting {
+  padding-right: 30px;
+}
+
+/* line 76, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable thead > tr > th:active,
+table.dataTable thead > tr > td:active {
+  outline: none;
+}
+
+/* line 80, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+  cursor: pointer;
+  position: relative;
+}
+
+/* line 88, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable thead .sorting:before, table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+  position: absolute;
+  bottom: 0.9em;
+  display: block;
+  opacity: 0.3;
+}
+
+/* line 102, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:before {
+  right: 1em;
+  content: "\2191";
+}
+
+/* line 110, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+  right: 0.5em;
+  content: "\2193";
+}
+
+/* line 118, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:after {
+  opacity: 1;
+}
+
+/* line 122, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+  opacity: 0;
+}
+
+/* line 127, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_scrollHead table.dataTable {
+  margin-bottom: 0 !important;
+}
+
+/* line 131, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_scrollBody table {
+  border-top: none;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* line 136, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_scrollBody table thead .sorting:before,
+div.dataTables_scrollBody table thead .sorting_asc:before,
+div.dataTables_scrollBody table thead .sorting_desc:before,
+div.dataTables_scrollBody table thead .sorting:after,
+div.dataTables_scrollBody table thead .sorting_asc:after,
+div.dataTables_scrollBody table thead .sorting_desc:after {
+  display: none;
+}
+
+/* line 144, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_scrollBody table tbody tr:first-child th,
+div.dataTables_scrollBody table tbody tr:first-child td {
+  border-top: none;
+}
+
+/* line 149, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_scrollFoot > .dataTables_scrollFootInner {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+/* line 152, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_scrollFoot > .dataTables_scrollFootInner > table {
+  margin-top: 0 !important;
+  border-top: none;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 158, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+  div.dataTables_wrapper div.dataTables_length,
+  div.dataTables_wrapper div.dataTables_filter,
+  div.dataTables_wrapper div.dataTables_info,
+  div.dataTables_wrapper div.dataTables_paginate {
+    text-align: center;
+  }
+}
+/* line 165, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable.table-sm > thead > tr > th {
+  padding-right: 20px;
+}
+
+/* line 168, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable.table-sm .sorting:before,
+table.dataTable.table-sm .sorting_asc:before,
+table.dataTable.table-sm .sorting_desc:before {
+  top: 5px;
+  right: 0.85em;
+}
+
+/* line 174, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.dataTable.table-sm .sorting:after,
+table.dataTable.table-sm .sorting_asc:after,
+table.dataTable.table-sm .sorting_desc:after {
+  top: 5px;
+}
+
+/* line 180, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+  border-left-width: 0;
+}
+
+/* line 184, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child,
+table.table-bordered.dataTable td:last-child,
+table.table-bordered.dataTable td:last-child {
+  border-right-width: 0;
+}
+
+/* line 189, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+table.table-bordered.dataTable tbody th,
+table.table-bordered.dataTable tbody td {
+  border-bottom-width: 0;
+}
+
+/* line 194, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.dataTables_scrollHead table.table-bordered {
+  border-bottom-width: 0;
+}
+
+/* line 198, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.table-responsive > div.dataTables_wrapper > div.row {
+  margin: 0;
+}
+
+/* line 201, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:first-child {
+  padding-left: 0;
+}
+
+/* line 204, /Users/user/Documents/platform-4.0/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css */
+div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:last-child {
+  padding-right: 0;
+}
+
+/* line 3, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+div.dataTables_wrapper {
+  padding: 0;
+}
+
+/* line 7, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+div.dataTables_wrapper div.dataTables_length label,
+div.dataTables_wrapper div.dataTables_filter label,
+div.dataTables_wrapper div.dataTables_info,
+div.dataTables_wrapper div.dataTables_paginate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+/* line 16, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+div.dataTables_wrapper div.dataTables_length label,
+div.dataTables_wrapper div.dataTables_info {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+/* line 21, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+div.dataTables_wrapper div.dataTables_filter label,
+div.dataTables_wrapper div.dataTables_paginate,
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* line 28, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+div.dataTables_wrapper div.dataTables_length .form-control {
+  margin: 0 .5rem;
+}
+/* line 32, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] div.dataTables_wrapper div.dataTables_length label {
+  text-align: right;
+}
+
+/* line 37, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] div.dataTables_filter {
+  text-align: left;
+}
+/* line 40, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] div.dataTables_filter label {
+  text-align: right;
+}
+/* line 44, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] div.dataTables_filter input {
+  margin-right: .5em;
+  margin-left: 0;
+}
+
+/* line 50, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+div.dataTables_wrapper div.dataTables_info {
+  padding-top: .25rem;
+  white-space: normal;
+}
+
+/* line 55, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] div.dataTables_wrapper div.dataTables_paginate {
+  text-align: right;
+}
+
+/* line 59, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  white-space: normal;
+}
+/* line 64, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-link {
+  outline: 0;
+}
+
+/* line 69, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+div.dataTables_wrapper [class*="col-md-"] {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* line 74, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+table.dataTable {
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+/* line 78, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] table.dataTable.table-sm > thead > tr > th {
+  padding-left: 1.25rem;
+}
+/* line 82, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] table.dataTable.table-sm .sorting:before, [dir=rtl] table.dataTable.table-sm .sorting_asc:before, [dir=rtl] table.dataTable.table-sm .sorting_desc:before {
+  right: auto;
+  left: .85em;
+}
+
+/* line 92, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] table.dataTable thead > tr > th.sorting_asc, [dir=rtl] table.dataTable thead > tr > th.sorting_desc, [dir=rtl] table.dataTable thead > tr > th.sorting,
+[dir=rtl] table.dataTable thead > tr > td.sorting_asc,
+[dir=rtl] table.dataTable thead > tr > td.sorting_desc,
+[dir=rtl] table.dataTable thead > tr > td.sorting {
+  padding-left: 1.875rem;
+}
+
+/* line 99, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+table.dataTable thead th {
+  vertical-align: middle;
+}
+
+/* line 108, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+table.dataTable thead .sorting::before, table.dataTable thead .sorting::after,
+table.dataTable thead .sorting_asc::before,
+table.dataTable thead .sorting_asc::after,
+table.dataTable thead .sorting_desc::before,
+table.dataTable thead .sorting_desc::after,
+table.dataTable thead .sorting_asc_disabled::before,
+table.dataTable thead .sorting_asc_disabled::after,
+table.dataTable thead .sorting_desc_disabled::before,
+table.dataTable thead .sorting_desc_disabled::after {
+  top: 50%;
+  margin-top: -.625rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+}
+/* line 116, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] table.dataTable thead .sorting::before,
+[dir=rtl] table.dataTable thead .sorting_asc::before,
+[dir=rtl] table.dataTable thead .sorting_desc::before,
+[dir=rtl] table.dataTable thead .sorting_asc_disabled::before,
+[dir=rtl] table.dataTable thead .sorting_desc_disabled::before {
+  right: auto;
+  left: 1em;
+}
+/* line 121, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] table.dataTable thead .sorting::after,
+[dir=rtl] table.dataTable thead .sorting_asc::after,
+[dir=rtl] table.dataTable thead .sorting_desc::after,
+[dir=rtl] table.dataTable thead .sorting_asc_disabled::after,
+[dir=rtl] table.dataTable thead .sorting_desc_disabled::after {
+  right: auto;
+  left: .5em;
+}
+
+/* line 127, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] table.table-bordered.dataTable th,
+[dir=rtl] table.table-bordered.dataTable td {
+  border-right-width: 0;
+  border-left-width: 1px;
+}
+/* line 132, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+[dir=rtl] table.table-bordered.dataTable th:last-child,
+[dir=rtl] table.table-bordered.dataTable td:last-child {
+  border-left-width: 0;
+}
+
+/* line 138, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+div.card-datatable.dataTable,
+div.card-datatable .dataTable {
+  border-right: 0;
+  border-left: 0;
+}
+
+/* line 147, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style div.dataTables_wrapper div.dataTables_length label,
+.default-style div.dataTables_wrapper div.dataTables_filter label {
+  margin-bottom: 0.5rem;
+}
+/* line 152, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style div.dataTables_wrapper div.dataTables_info {
+  color: #a3a4a6;
+}
+/* line 156, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-link {
+  padding: 0.3rem 0.2rem;
+  min-width: calc(1.2rem + 2px);
+  font-size: 0.6rem;
+  line-height: 1;
+}
+@media (max-width: 767px) {
+  /* line 164, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+  .default-style div.dataTables_wrapper div.dataTables_length label,
+  .default-style div.dataTables_wrapper div.dataTables_filter label,
+  .default-style div.dataTables_wrapper div.dataTables_info,
+  .default-style div.dataTables_wrapper div.dataTables_paginate {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+/* line 173, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style div.card-datatable {
+  padding: 1.2rem 0;
+}
+/* line 176, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style div.card-datatable [class*="col-md-"] {
+  padding-right: 1.2rem !important;
+  padding-left: 1.2rem !important;
+}
+@media (min-width: 768px) {
+  /* line 185, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+  .default-style:not([dir=rtl]) div.dataTables_wrapper .row [class*="col-sm-"]:first-child {
+    padding-right: 0 !important;
+  }
+  /* line 189, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+  .default-style:not([dir=rtl]) div.dataTables_wrapper .row [class*="col-sm-"]:last-child {
+    padding-left: 0 !important;
+  }
+}
+/* line 198, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style:not([dir=rtl]) div.card-datatable table.dataTable thead th:first-child,
+.default-style:not([dir=rtl]) div.card-datatable table.dataTable tbody td:first-child,
+.default-style:not([dir=rtl]) div.card-datatable table.dataTable tfoot th:first-child {
+  padding-left: 1.2rem;
+}
+/* line 202, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style:not([dir=rtl]) div.card-datatable table.dataTable thead th:last-child,
+.default-style:not([dir=rtl]) div.card-datatable table.dataTable tbody td:last-child,
+.default-style:not([dir=rtl]) div.card-datatable table.dataTable tfoot th:last-child {
+  padding-right: 1.2rem;
+}
+/* line 209, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style[dir=rtl] table.dataTable.table-sm > thead > tr > th {
+  padding-right: 0.25rem;
+}
+@media (min-width: 768px) {
+  /* line 215, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+  .default-style[dir=rtl] div.dataTables_wrapper .row [class*="col-sm-"]:first-child {
+    padding-left: 0 !important;
+  }
+  /* line 219, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+  .default-style[dir=rtl] div.dataTables_wrapper .row [class*="col-sm-"]:last-child {
+    padding-right: 0 !important;
+  }
+}
+/* line 226, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style[dir=rtl] table.dataTable thead th,
+.default-style[dir=rtl] table.dataTable tbody td,
+.default-style[dir=rtl] table.dataTable tfoot th {
+  padding-right: 0.5rem;
+}
+/* line 232, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style[dir=rtl] table.dataTable.table-sm thead th, .default-style[dir=rtl] table.dataTable.table-sm tbody td, .default-style[dir=rtl] table.dataTable.table-sm tfoot th {
+  padding-right: 0.25rem;
+}
+/* line 243, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style[dir=rtl] div.card-datatable table.dataTable thead th:first-child,
+.default-style[dir=rtl] div.card-datatable table.dataTable tbody td:first-child,
+.default-style[dir=rtl] div.card-datatable table.dataTable tfoot th:first-child {
+  padding-right: 1.2rem;
+}
+/* line 247, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.default-style[dir=rtl] div.card-datatable table.dataTable thead th:last-child,
+.default-style[dir=rtl] div.card-datatable table.dataTable tbody td:last-child,
+.default-style[dir=rtl] div.card-datatable table.dataTable tfoot th:last-child {
+  padding-left: 1.2rem;
+}
+
+/* line 258, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style div.dataTables_wrapper div.dataTables_length label,
+.material-style div.dataTables_wrapper div.dataTables_filter label {
+  margin-bottom: 0.5rem;
+}
+/* line 263, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style div.dataTables_wrapper div.dataTables_info {
+  color: #a3a4a6;
+}
+/* line 267, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-link {
+  padding: 0.375rem 0.25rem;
+  min-width: calc(1.5rem + 0px);
+  font-size: 0.75rem;
+  line-height: 1;
+}
+@media (max-width: 767px) {
+  /* line 275, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+  .material-style div.dataTables_wrapper div.dataTables_length label,
+  .material-style div.dataTables_wrapper div.dataTables_filter label,
+  .material-style div.dataTables_wrapper div.dataTables_info,
+  .material-style div.dataTables_wrapper div.dataTables_paginate {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+/* line 284, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style div.card-datatable {
+  padding: 1.5rem 0;
+}
+/* line 287, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style div.card-datatable [class*="col-md-"] {
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+@media (min-width: 768px) {
+  /* line 296, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+  .material-style:not([dir=rtl]) div.dataTables_wrapper .row [class*="col-sm-"]:first-child {
+    padding-right: 0 !important;
+  }
+  /* line 300, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+  .material-style:not([dir=rtl]) div.dataTables_wrapper .row [class*="col-sm-"]:last-child {
+    padding-left: 0 !important;
+  }
+}
+/* line 309, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style:not([dir=rtl]) div.card-datatable table.dataTable thead th:first-child,
+.material-style:not([dir=rtl]) div.card-datatable table.dataTable tbody td:first-child,
+.material-style:not([dir=rtl]) div.card-datatable table.dataTable tfoot th:first-child {
+  padding-left: 1.5rem;
+}
+/* line 313, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style:not([dir=rtl]) div.card-datatable table.dataTable thead th:last-child,
+.material-style:not([dir=rtl]) div.card-datatable table.dataTable tbody td:last-child,
+.material-style:not([dir=rtl]) div.card-datatable table.dataTable tfoot th:last-child {
+  padding-right: 1.5rem;
+}
+/* line 320, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style[dir=rtl] table.dataTable.table-sm > thead > tr > th {
+  padding-right: 0.3125rem;
+}
+@media (min-width: 768px) {
+  /* line 326, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+  .material-style[dir=rtl] div.dataTables_wrapper .row [class*="col-sm-"]:first-child {
+    padding-left: 0 !important;
+  }
+  /* line 330, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+  .material-style[dir=rtl] div.dataTables_wrapper .row [class*="col-sm-"]:last-child {
+    padding-right: 0 !important;
+  }
+}
+/* line 337, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style[dir=rtl] table.dataTable thead th,
+.material-style[dir=rtl] table.dataTable tbody td,
+.material-style[dir=rtl] table.dataTable tfoot th {
+  padding-right: 0.625rem;
+}
+/* line 343, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style[dir=rtl] table.dataTable.table-sm thead th, .material-style[dir=rtl] table.dataTable.table-sm tbody td, .material-style[dir=rtl] table.dataTable.table-sm tfoot th {
+  padding-right: 0.3125rem;
+}
+/* line 354, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style[dir=rtl] div.card-datatable table.dataTable thead th:first-child,
+.material-style[dir=rtl] div.card-datatable table.dataTable tbody td:first-child,
+.material-style[dir=rtl] div.card-datatable table.dataTable tfoot th:first-child {
+  padding-right: 1.5rem;
+}
+/* line 358, /Users/user/Documents/platform-4.0/vendor/assets/libs/datatables/datatables.scss */
+.material-style[dir=rtl] div.card-datatable table.dataTable thead th:last-child,
+.material-style[dir=rtl] div.card-datatable table.dataTable tbody td:last-child,
+.material-style[dir=rtl] div.card-datatable table.dataTable tfoot th:last-child {
+  padding-left: 1.5rem;
+}

@@ -1,0 +1,37 @@
+
+<%= form_title(@major, 'name') %>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">  <%= link_to "Institución", edit_institution_path(id: @major.institution_id) %></li>
+    <li class="breadcrumb-item active" aria-current="page">Programa</li>
+  </ol>
+</nav>
+
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#major-tab"><%= Major.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#cluster-tab"><%= Cluster.model_name.human(count: 1) %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="major-tab">
+			<%= build_form(@major,'update',current_user.template('Major','majors',current_user),html: { class: 'form-group', method: 'put'})%>
+    </div>
+    <div class="tab-pane fade " id="cluster-tab">
+			<div class="card">
+				<div class="card-body">
+          <% cluster_template = current_user.template('Cluster','clusters',current_user) %>
+          <% cluster_template[:id][:controller] = 'clusters' %>
+          <% cluster_template[:id][:action] = 'edit' %>
+          <% cluster_template[:id][:target_id] = 'id' %>
+          <%= createTable(@major.cluster, cluster_template, {title: false, alternative_new_link: new_major_cluster_path(@major)}).html_safe %>
+				</div>
+			</div>
+    </div>
+  </div>
+</div>

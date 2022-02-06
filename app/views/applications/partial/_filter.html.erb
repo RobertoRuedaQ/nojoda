@@ -1,0 +1,40 @@
+<%= search_form_for @application_ransack do |f| %>
+  <div class="row mt-3">
+    <div class="col-md-3 application-case-eq">
+      <%= f.label :application_case_eq %>
+      <%= f.select :application_case_eq, ransack_collection_for_select(@application_cases, nil, nil, :application_case_eq, true), {},  { class: "form-control input-sm selectpicker", 'data-live-search'.to_sym => true, 'data-style'.to_sym => 'btn-default', :include_blank => true} %>
+    </div>
+    <div class="col-md-3 dependent-of-disbursement-request">
+      <%= f.label  I18n.t('ransack.fields.disbursement_case_eq') %>
+      <%= f.select :disbursement_case_eq, ransack_collection_for_select(Disbursement.group(:disbursement_case).size.keys.compact, nil, nil, :disbursement_case_eq, true), {},  { class: "form-control input-sm selectpicker", 'data-live-search'.to_sym => true, 'data-style'.to_sym => 'btn-default', :include_blank => true, 'data-none-selected-text'.to_sym => I18n.t('none')} %>
+    </div>
+    <div class="col-md-3 dependent-of-disbursement-request">
+      <%= f.label  I18n.t('ransack.fields.disbursement_request_case_eq') %>
+      <%= f.select :disbursement_request_eq, ransack_collection_for_select(DisbursementRequest.group(:disbursement_case).size.keys.compact.reject(&:empty?), nil, nil, :disbursement_request_eq, true), {},  { class: "form-control input-sm selectpicker", 'data-live-search'.to_sym => true, 'data-style'.to_sym => 'btn-default', :include_blank => true, 'data-none-selected-text'.to_sym => I18n.t('none')} %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label I18n.t('ransack.fields.supervisor_eq') %>
+      <%= f.select :supervisor_eq, ransack_collection_for_select(User.where(type_of_account: 'staff', status: 'active'), :full_name, :id, :supervisor_eq), {},  { class: "form-control input-sm selectpicker", 'data-live-search'.to_sym => true, 'data-style'.to_sym => 'btn-default', :include_blank => true} %>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <%= f.label I18n.t('ransack.fields.institution_name_cont') %>
+      <%= f.search_field :institution_name_cont, class: 'form-control input-sm' %>
+    </div>
+    <div class="col-md-4">
+      <%= f.label  I18n.t('ransack.fields.fund_cont') %>
+      <%= f.search_field :fund_cont, class: 'form-control input-sm' %>
+    </div>
+    <div class="col-md-4">
+      <%= f.label  I18n.t('ransack.fields.funding_opportunity_cont') %>
+      <%= f.search_field :funding_opportunity_cont, class: 'form-control input-sm' %>
+      <%# f.select :funding_opportunity_cont, ransack_collection_for_select(FundingOpportunity.all, :name, :id, :funding_opportunity_eq), {},  { class: "form-control input-sm selectpicker", 'data-live-search'.to_sym => true, 'data-style'.to_sym => 'btn-default', :include_blank => true} %>
+    </div>
+  </div>
+  <div class="row justify-content-end mb-1 mt-3">
+    <div class="col-md-3">
+      <%= f.submit I18n.t('application.search_button'), class: 'btn btn-primary float-right' %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<% @university_grades.each do |university_grade| %>
+  <div class="accordion" id="grade_term_acordion_main">
+    <div class="card">
+      <div class="card-header py-0 px-2" id="accordion-grade-term">
+
+        <div class="d-flex align-items-center">
+          <div class="lnr lnr-pointer-right display-4 text-success"></div>
+          <div class="ml-3 flex-grow-1">
+            <div class="text-large"> <%= I18n.t('students.grade_term') %> <%= university_grade.term %> (<%= university_grade.period %>)</div>
+            <div class="text-muted py-0 my-0">
+              <% if university_grade.disbursement_id.nil?%>
+                <%= I18n.t('students.no_disbursement_associated') %>
+              <% else %>
+                <%= link_to "asociado al desembolso #{university_grade.disbursement_id}", edit_disbursement_path(university_grade.disbursement_id), target: :_blank%>
+              <% end%>
+            </div>
+          </div>
+
+          <div class="px-4">
+            <button class="btn btn-ms btn-outline-primary my-4" type="button" data-toggle="collapse" data-target="#grade_term_reference_<%="#{university_grade.id}"%>" aria-expanded="true" aria-controls="grade_term_reference_<%="#{university_grade.id}"%>">
+              <%= I18n.t('application.disbursement_details') %>
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="grade_term_reference_<%="#{university_grade.id}"%>" class="collapse" aria-labelledby="accordion-reference" data-parent="#grade_term_acordion_main">
+        <div class="card-body p-0">
+          <%= createTable(university_grade.university_course_grade,course_template, new: false, title: false, id: university_grade.id ).html_safe %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

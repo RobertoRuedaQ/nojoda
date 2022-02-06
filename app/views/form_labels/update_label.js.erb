@@ -1,0 +1,4 @@
+$('#loaderFormValue').attr('hidden',true)
+
+$('#manageFormValueLabelModal').html("<%= j build_form(@form_label,'update',form_labels_fields,html: { class: 'form-group', method: 'put'},buttonOffset: 1,header: false,remote: true,destroy: false, columns:1)%>")
+$('#formFieldValueModalHeader').html("<%= j @form_label.resource.value%> (<%= @form_label.language %>)")

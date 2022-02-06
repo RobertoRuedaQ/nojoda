@@ -1,0 +1,12 @@
+<% conciliation_template = current_user.template('ConciliationInformation','conciliation_informations',current_user,id: true) %>
+<% conciliation_template[:id][:controller] = 'applications' %>
+<% conciliation_template[:id][:action] = 'edit' %>
+<% conciliation_template[:id][:target_id] = 'application_id' %>
+<% conciliation_template[:expected_months]={} %>
+<% conciliation_template[:expected_payment_value]={} %>
+<% conciliation_template[:total_payment_value]={} %>
+<% conciliation_template[:difference_value]={} %>
+<% conciliation_template[:income_full_name]={} %>
+
+
+<%= createTable(@student.conciliation_information,conciliation_template, title: false,alternative_new_link: new_isa_conciliation_information_path(isa_id: @student.active_isa.first) ).html_safe %>

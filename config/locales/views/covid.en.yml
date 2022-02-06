@@ -1,0 +1,10 @@
+en:
+  covid:
+    normal: 'You have chosen to keep your normal payment behavior.'
+    due_date: 'You have chosen to extend your due date until the end of the month.'
+    payment_agreement: "You have chosen to split April's payment obligation into three payments (April, May, and June)."
+    custom_adjustment: 'You have chosen to ask for reviewing your particular case.'
+    normal: 'We are reviewing your request to keep your normal payment behavior.'
+    due_date: 'We are reviewing your request to extend your due date until the end of the month.'
+    payment_agreement: "We are reviewing your request to split April's payment obligation into three payments (April, May, and June)."
+    custom_adjustment: 'We are reviewing your request to ask for reviewing your particular case.'

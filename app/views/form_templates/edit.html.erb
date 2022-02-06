@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-between">
+	<%= form_title(@form_template,'name') %>
+	<div>
+		<%= link_to I18n.t('general.clone'), clone_template_form_template_path(params[:id]), class: 'btn btn-primary' %>
+	</div>
+</div>
+<%= build_form(@form_template,'update',current_user.template('FormTemplate','form_templates',current_user),html: { class: 'form-group', method: 'put'},columns: 2) %>
+
+<% Rails.cache.clear %>
+
+<div class="row" id="form-template-container">
+	<div class="col-md-9">
+		<div class="card">
+			<div class="card-header ">
+				<div class="d-flex justify-content-between">
+					<h5 class="my-1"> <%= FormField.model_name.human(count: 2) %> </h5>
+					<div class="col-3">
+					<%= form_tag do %>
+						<%= lumni_dropdown_field 'template','grid',list: grid_list %>
+					<% end %>
+					</div>
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="row sortable_container" data-id="active-1" id="active-1" style="min-height: 20px;">
+					<%= createFieldTemplate(1) %>
+				</div>
+
+			</div>
+
+		</div>
+		
+	</div>
+	<div class="col-md-3">
+		<div class="card mb-5">
+			<div class="card-header my-0 py-2">
+				<h5 class="text-muted my-0"><%= I18n.t('profile.fields_not_included') %></h5>
+			</div>
+			<div class="card-body">
+
+				<div class="row sortable_container" data-id="inactive-0" id="inactive-0" style="min-height: 20px;">
+					<%= createFieldTemplate(0) %>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+</div>
+
+    <!-- Modal template -->
+    <div class="modal fade" id="field-config">
+      <div class="modal-dialog modal-lg modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title"></h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+        <div class="modal-body" >
+
+        	<div id="modal-field-info">
+        		
+        	</div>
+        	<div id="template-loader-image">
+        		<%= putLoader(200) %>
+        	</div>
+        	
+        </div>
+      </div>
+    </div>
+
+
+

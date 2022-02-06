@@ -1,0 +1,18 @@
+<% if @tasks_parents.length == 0 %>
+	<% @project = @card.project %>
+	$('#progress-total-container').html('<%= j createProjectProgressPie @project.id, 'total_progress' %>')
+	$('#progress-main-container').html('<%= j createProjectProgressPie @project.id, 'main_progress' %>')
+
+	<% @project.project_card.each do |card| %>
+		<% @targetCard = card %>
+		$('#project-card-header-<%= card.title %>').html('<%= j render 'project_tasks/partial/card_header' %>')
+	<% end %>
+
+<% end %>
+<% unless @card.nil? %>
+	<% @card.project_task.visible(current_user.id).each do |task| %>
+		$('#task-container-<%= task.id %>').html('<%=j createProjectTask(task) %>')
+	<% end %>
+<% end %>
+$('[data-toggle="popover"]').popover();
+$('.knob-progress input').knob();

@@ -1,0 +1,12 @@
+es:
+  payment:
+    attributes:
+      payment_value: Valor del pago
+      applied_value: Valor aplicado
+      date: Fecha del pago
+      method: Metodo de pago
+      resource_type: Tipo de recurso
+      id: ID
+      total_payed: Total pagado
+    ui_options:
+      see_payment: Ver pagos

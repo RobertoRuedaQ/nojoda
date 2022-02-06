@@ -1,0 +1,13 @@
+en:
+  biz_dev:
+    target: 'Target'
+    pitch_done: 'Pitch Done'
+    in_negociation: 'In Negotiation'
+    documentation: 'Documentation'
+    contract_made: 'Contract Made'
+    contract_signed: 'Contract Signed'
+    stand_by: 'Stand By'
+    closed_lost: 'Closed Lost'
+    closed_won: 'Closed Won'
+    biz_team: 'Biz Team'
+    closed: 'Closed'

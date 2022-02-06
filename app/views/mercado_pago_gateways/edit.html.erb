@@ -1,0 +1,4 @@
+
+
+<%= form_title(@mercado_pago_gateway, 'name') %> 
+<%= build_form(@mercado_pago_gateway,'update',current_user.template('MercadoPagoGateway','mercado_pago_gateways',current_user),html: { class: 'form-group', method: 'put'}) %>

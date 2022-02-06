@@ -1,0 +1,30 @@
+
+<div class="col-md-6" id='income-element-<%= income.id%>'>
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <div class="lnr lnr-apartment display-4 text-success"></div>
+        <div class="col-md-8">
+	        <div class="ml-3">
+            <div class="d-flex">
+              <div class="text-muted small"><%= lumni_date income.start_date %></div> 
+              <div class="mx-2 text-muted small"><%= I18n.t('general.to') %></div> 
+              <div class="text-muted small"><%= lumni_date(income.end_date) if !income.end_date.nil?%></div>
+            </div>
+	          <div class="text-large mb-1"><%= lumni_currency income.total_income %></div>
+            <div class="text-secondary"><%= income.company_name %></div>
+	        </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <%= link_to I18n.t('general.edit'), edit_income_information_path(income, temp: hidden_fields), class: 'btn btn-sm btn-outline-primary',data: { disable_with: I18n.t('form.please_wait')}, remote: true%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+

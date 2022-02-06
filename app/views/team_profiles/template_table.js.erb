@@ -1,0 +1,5 @@
+$('#profile-template-table-container').html('<%= j createProfileTemplateTable(params[:id]) %>')
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+
+createDataTables()

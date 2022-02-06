@@ -1,0 +1,67 @@
+<%= form_title(@company, 'name') %>
+
+
+
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#funding-opportunity-information"><%= Company.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#company-contact"><%= ContactInfo.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#company-location"><%= Location.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#user-team"><%= StudentRoute.model_name.human(count: 1) %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="funding-opportunity-information">
+      <%= build_form(@company,'update',companies_fields(current_company),html: { class: 'form-group', method: 'put'}, header_title: false)%>
+    </div>
+    <div class="tab-pane fade " id="company-contact">
+      <%= build_form(@company.contact_info,'update',current_user.template('ContactInfo','contact_infos',current_user),controller: 'contact_infos',remote: true,html: { class: 'form-group', method: 'put'}, header_title: false)%>
+    </div>
+    <div class="tab-pane fade " id="company-location">
+      <%= build_form(@company.location,'update',current_user.template('Location','locations',current_user),controller: 'locations',remote: true,html: { class: 'form-group', method: 'put'}, header_title: false)%>
+    </div>
+
+
+    <div class="tab-pane fade " id="user-team">
+
+
+      <div class="card">
+        <div class="card-body py-4">
+
+          <% @company.student_route.each do |student_route| %>
+            <div class="card my-2 shadow">
+              <div class="card-body">
+
+                <div class="form-group row">
+                  <label class="col-form-label col-sm-2 text-sm-right"><%= I18n.t('student_route.' + student_route.scenario) %></label>
+                  <div class="col-sm-10">
+                    <%= lumni_dropdown_field('student_routes','team_profile_id',{list: student_route_by_action_list(student_route.scenario), value: student_route.team_profile_id, id: student_route.id}) %>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            
+          <% end %>
+
+
+        </div>
+      </div>
+
+
+ 
+    </div>
+
+
+  </div>
+</div>
+
+

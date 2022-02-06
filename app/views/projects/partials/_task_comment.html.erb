@@ -1,0 +1,30 @@
+<h4 class="media align-items-center font-weight-bold py-3 mb-4">
+  <div class="media-body ml-3">
+  	<span class="text-muted font-weight-light"><%= @targetTask.title %>
+      <% unless @targetTask.deadline.nil? %>
+        <div id="deadline-<%= @targetTask.id %>" class="ml-5 badge badge-pill badge-<%= projectDateCase(@targetTask.start_date,@targetTask.deadline,@targetTask.done) %>">
+          <small ><%= lumni_date(@targetTask.deadline)%> </small>
+        </div>
+      <% end %>
+
+  	
+  </div>
+</h4>
+
+<% if !@targetTask.parent_id.nil? %>
+	<div class="mb-4">
+		<%= link_to( '<< Go back to the checklist', show_checklist_project_task_path(@targetTask.parent),  class: 'text-primary' , remote: true, data: {disable_with: I18n.t('general.loading')}) %>
+	</div>	
+<% end %>
+
+<div id="chat-box" style="max-height: 400px;border: solid;border-width: 0.5px;border-color: grey;border-radius: 10px;border-color: #ccc">
+	<% @targetComments.each do |comment| %>
+		<%= createComment(comment) %>
+	<% end %>
+</div>
+
+
+
+<div class="mt-4">
+<%= build_form(ProjectComment.new({project_task_id: @targetTaskId, user_id: current_user.id}),'create',project_comment_fields_remote, html: { class: 'form-group'}, controller: 'project_comments', button: false,destroy: false, remote: true, history: false, header:false, columns: 1)%>
+</div>

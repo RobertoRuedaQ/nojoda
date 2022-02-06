@@ -1,0 +1,32 @@
+/* line 1, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/users.scss */
+.user-view-table {
+  table-layout: fixed;
+}
+/* line 4, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/users.scss */
+.user-view-table td {
+  padding-right: 0;
+  padding-left: 0;
+  border: 0;
+}
+/* line 10, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/users.scss */
+.user-view-table td:first-child {
+  width: 9rem;
+}
+/* line 14, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/users.scss */
+.user-view-table td:not(:first-child) {
+  min-width: 12rem;
+}
+
+/* line 19, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/users.scss */
+.user-edit-fileinput {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* line 27, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/users.scss */
+.user-edit-multiselect ~ .select2-container {
+  width: 100% !important;
+}

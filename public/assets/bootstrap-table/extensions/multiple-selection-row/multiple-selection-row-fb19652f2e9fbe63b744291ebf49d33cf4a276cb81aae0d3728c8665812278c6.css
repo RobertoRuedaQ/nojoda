@@ -1,0 +1,20 @@
+/* line 1, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-table/src/extensions/multiple-selection-row/bootstrap-table-multiple-selection-row.css */
+.multiple-select-row-selected {
+  background: lightBlue;
+}
+
+/* line 5, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-table/src/extensions/multiple-selection-row/bootstrap-table-multiple-selection-row.css */
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+  background-color: transparent;
+}
+
+/* line 11, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-table/src/extensions/multiple-selection-row/bootstrap-table-multiple-selection-row.css */
+.table-striped tbody tr:nth-child(odd):hover td {
+  background-color: #F9F9F9;
+}
+
+/* line 15, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-table/src/extensions/multiple-selection-row/bootstrap-table-multiple-selection-row.css */
+.fixed-table-container tbody .selected td {
+  background: lightBlue;
+}

@@ -1,0 +1,55 @@
+:concurrency: <%= ENV['DB_POOL'] || ENV['RAILS_MAX_THREADS'] || 5 %>
+
+:queues:
+  - heavy_work
+  - default
+  - fast_track
+
+:dynamic: true
+:enabled: true
+:schedule:
+  contract_status_check:
+    cron: '0 0 0 * * *'   
+    class: ContractStatusCheckJob
+    :enabled: true
+    queue: default
+  update_income_information_status:
+    cron: '0 0 0 * * *'   
+    class: UpdateIncomeInformationStatusJob    
+    :enabled: true
+    queue: default
+  updated_currency_info_job:
+    cron: '0 0 0 1 * *'
+    class: UpdatedCurrencyInfoJob
+    :enabled: true
+    queue: default
+  update_payu_response_job:
+    cron: '0 0 * * * *'
+    class: UpdatePayuResponseJob
+    :enabled: true
+    queue: default
+  update_mercado_pago_response_job:
+    cron: '0 0 * * * *'
+    class: UpdateMercadoPagoResponseJob
+    :enabled: true
+    queue: default
+  update_wompi_response_job:
+    cron: '0 0 * * * *'
+    class: UpdateWompiResponseJob
+    :enabled: true
+    queue: default
+  scale_heroku_dynos_job:
+    cron: '0 7,20 * * *'
+    class: ScaleHerokuDynosJob
+    :enabled: true
+    queue: default
+  send_complete_application_reminder_job:
+    cron: '30 8 * * *'
+    class: SendCompleteApplicationReminderJob
+    :enabled: true
+    queue: default
+  update_students_xirr_job:
+    cron: '30 2 1 * *'
+    class: UpdateStudentsXirrJob
+    :enabled: true
+    queue: default

@@ -1,0 +1,184 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="mb-4 text-primary"><%= I18n.t('billing_document.value_to_be_payed') %></h4>
+
+
+    <div class="text-center" id="main-value-to-pay">
+      <h2><%= lumni_currency billing_document.pending_value %></h2>
+    </div>
+    <%= hidden_field 'original','value',value: billing_document.pending_value %>
+
+    <%= form_tag set_payment_billing_documents_path, {id: 'payment_option_value'} do %>
+      <div id="custom-value-to-pay" class="mb-3" style="display: none;">
+        <p><%= I18n.t('billing_document.select_value') %></p>
+        <%= lumni_text_field 'target','value',{required: true,field_type: 'currency',value: billing_document.pending_value,max: billing_document.pending_value} %>
+      </div>
+
+      <%= lumni_boolean_field 'custom_value','display',{} %>
+      <span><%= I18n.t('general.other_value') %></span>
+
+
+      <%= hidden_field :billing_document, :id, value: billing_document.id %>
+    <% end %>
+  </div>
+</div>
+
+<% gateway_object =  billing_document.gateway %>
+
+<% if gateway_object.instance_of? MercadoPagoGateway %>
+  <%= render partial: 'payment_gateways/mercado_pago', locals: { billing_document: billing_document } %>
+  <% if billing_document.isa.funding_opportunity.fund.wompi_gateway.present? %>
+    <%= render partial: 'payment_gateways/wompi', locals: { billing_document: billing_document, gateway: billing_document.isa.funding_opportunity.fund.wompi_gateway } %>
+  <% end %>
+<% else %>
+
+  <% if billing_document.gateway.url.include?('checkout') %>
+    <% target_transaction = billing_document.new_transaction(billing_document.pending_value,request.remote_ip) %>
+    <% confirmation_url = "#{request.original_url.split('/')[0]}//#{request.original_url.split('/')[2]}/payu_confirmations/#{target_transaction.external_id}/payu_confirmation" %>
+    <% response_url = "#{request.original_url.split('/')[0]}//#{request.original_url.split('/')[2]}/payu_responses/#{target_transaction.external_id}/transaction_external" %>
+
+    <form method="post" action="<%= gateway.url %>" id="payment_webcheckout">
+      <input name="merchantId" type="hidden" value="<%= gateway.merchant_id %>">
+      <input name="accountId" type="hidden" value="<%= gateway.account_id %>">
+      <input name="description" type="hidden" value="<%= billing_document.description %>">
+      <input name="referenceCode" type="hidden" value="<%= target_transaction.external_id %>">
+      <input name="amount" type="hidden" value="<%= billing_document.pending_value.floor(2) %>">
+      <input name="tax" type="hidden" value="<%= 0 %>">
+      <input name="taxReturnBase" type="hidden" value="<%= billing_document.pending_value %>">
+      <input name="currency" type="hidden" value="<%= billing_document.currency %>">
+      <input name="signature" type="hidden" value="<%= gateway.signature( target_transaction.external_id, target_transaction.value,billing_document.currency)%>">
+      <input name="buyerEmail" type="hidden" value="<%= current_user.email %>">
+      <input name="responseUrl" type="hidden" value="<%= response_url %>">
+      <input name="confirmationUrl" type="hidden" value="<%= confirmation_url %>">
+      <% if billing_document.gateway.url.include?('sandbox') %>
+        Pruebas
+        <input name="test" type="hidden" value="1">
+      <% end %>
+      <input type="hidden" name="backup_signature" value="<%= gateway.signature( target_transaction.external_id, target_transaction.value,billing_document.currency)%>">
+
+
+
+      <div class="text-center">
+        <div class="d-flex flex-column">
+          <button type="submit" class="btn btn-primary mt-5 mb-4 btn-lg" id="button-webchecout-payment"> <%= I18n.t('general.pay') %></button>
+        </div>
+      </div>
+    </form>
+
+
+
+
+    <div class="p-0 my-0">
+      <% if billing_document.fund.payment_origination.manual_payment %>
+        <%= render partial: 'payment_gateways/manual_payment', locals: { billing_document: billing_document }%>
+      <% end %>
+    </div>
+
+
+
+
+  <% else %>
+    <div class="accordion" id="accordion-payment">
+
+      <% if billing_document.fund.payment_origination.bank_transfer %>
+        <div class="card">
+          <div class="card-header d-flex flex-column p-0" id="heading-payment">
+              <%= button_tag class: 'btn btn-lg btn-primary', data: {target: '#bank_transfer_card', toggle: 'collapse'}, aria: {expanded: 'true', controls: 'bank_transfer_card'} do %>
+                <span class="ion ion-ios-business"></span><span class="ml-3"><%= I18n.t('billing_document.bank_transfer') %></span>
+              <% end %>
+          </div>
+
+          <div id="bank_transfer_card" class="collapse" aria-labelledby="heading-payment" data-parent="#accordion-payment">
+            <div class="card-body p-0">
+              
+              <% if  gateway.cached_payment_methods.include?('PSE') %>
+                <div class="d-flex">
+                  <div class="align-self-center mx-4"><h4>Cuentas de ahorro o corriente</h4></div>
+                  <%= image_tag(asset_path('payment/logo-pse.png'), class: "rounded-circle", height: 100,width: 100)%>
+                </div>
+                <%= build_form(PaymentInfo.new,'payu_transaction',payment_info_pse_fields( billing_document),html: { class: 'form-group', method: 'post'}, controller: 'payu_transactions',html: {id: 'pse_form'},destroy: false, history: false, header:false, pay: true) %>
+              <% end %>
+              <% if gateway.cached_payment_methods.include?('SPEI')  %>
+                <div class="my-5">
+                  <%= button_to I18n.t("payu.payment_method.SPEI") ,payu_transaction_payu_transactions_path,params: {paymentinfo: {billing_document_id: billing_document.id ,value: billing_document.pending_value,payment_method: 'SPEI',ip_address: request.remote_ip}}, class: 'btn btn-outline-primary m-2',form_class: 'd-flex flex-column' %>
+                  
+                </div>
+              <% end %>
+              <% if gateway.cached_payment_methods.include?('TRANSBANK_DEBIT')  %>
+                <div class="my-5">
+                  <%= button_to I18n.t("payu.payment_method.TRANSBANK_DEBIT") ,payu_transaction_payu_transactions_path,params: {paymentinfo: {billing_document_id: billing_document.id ,value: billing_document.pending_value,payment_method: 'TRANSBANK_DEBIT',ip_address: request.remote_ip}}, class: 'btn btn-outline-primary m-2',form_class: 'd-flex flex-column' %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <% if billing_document.fund.payment_origination.debit_card %>
+        <div class="card">
+          <div class="card-header d-flex flex-column p-0" id="heading-payment">
+              <%= button_tag class: 'btn btn-lg btn-primary', data: {target: '#debit_payment_card', toggle: 'collapse'}, aria: {expanded: 'true', controls: 'debit_payment_card'} do %>
+                <span class="far fa-credit-card"></span><span class="ml-3"><%= I18n.t('billing_document.debit_card') %></span>
+              <% end %>
+          </div>
+
+          <div id="debit_payment_card" class="collapse" aria-labelledby="heading-payment" data-parent="#accordion-payment">
+            <div class="card-body p-0">
+              <%= build_form(PaymentInfo.new,'payu_transaction',payment_info_debit_fields( billing_document),html: { class: 'form-group', method: 'post'}, controller: 'payu_transactions',html: {id: 'debit_form'},destroy: false, history: false, header:false, pay: true) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <% if billing_document.fund.payment_origination.cash %>
+        <div class="card">
+          <div class="card-header d-flex flex-column p-0" id="heading-payment">
+              <%= button_tag class: 'btn btn-lg btn-primary', data: {target: '#cash_payment_card', toggle: 'collapse'}, aria: {expanded: 'true', controls: 'cash_payment_card'} do %>
+                <span class="fas fa-money-bill-wave-alt"></span><span class="ml-3"><%= I18n.t('billing_document.payment_in_cash') %></span>
+              <% end %>
+          </div>
+
+          <div id="cash_payment_card" class="collapse" aria-labelledby="heading-payment" data-parent="#accordion-payment">
+            <div class="card-body">
+              <h5><%= I18n.t('billing_document.pay_with') %>:</h5>
+
+              <div class="row">
+                <% gateway.supported_cash.each do |payment_method| %>
+                  
+                  <div class="col-md-6 text-center">
+                    <%= button_to I18n.t("payu.payment_method.#{payment_method}") ,payu_transaction_payu_transactions_path,params: {paymentinfo: {billing_document_id: billing_document.id ,value: billing_document.pending_value,payment_method: payment_method,ip_address: request.remote_ip}}, class: 'btn btn-outline-primary m-2',form_class: 'd-flex flex-column', form: {id: "cash-method-button-#{payment_method}"} %>
+                  </div>
+                <% end %>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <% if billing_document.fund.payment_origination.credit_card %>
+        <div class="card">
+          <div class="card-header d-flex flex-column p-0" id="heading-payment">
+              <%= button_tag class: 'btn btn-lg btn-primary', data: {target: '#credit_payment_card', toggle: 'collapse'}, aria: {expanded: 'true', controls: 'credit_payment_card'} do %>
+                <span class="fas fa-credit-card"></span><span class="ml-3"><%= I18n.t('billing_document.credit_card') %></span>
+              <% end %>
+          </div>
+
+          <div id="credit_payment_card" class="collapse" aria-labelledby="heading-payment" data-parent="#accordion-payment">
+            <div class="card-body">
+              <%= build_form(PaymentInfo.new,'payu_transaction',payment_info_debit_fields( billing_document),html: { class: 'form-group', method: 'post'}, controller: 'payu_transactions',html: {id: 'credit_form'},destroy: false, history: false, header:false, pay: true) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+
+
+
+      <% if billing_document.fund.payment_origination.manual_payment %>
+        <%= render partial: 'payment_gateways/manual_payment', locals: { billing_document: billing_document }%>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

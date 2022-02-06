@@ -1,0 +1,68 @@
+coviden:
+  students:
+    communications: 'Communications'
+    account_creation: 'Create Account'
+    verification_process: 'Verification'
+    eligibility_criteria: 'Eligibility'
+    apply: 'Apply'
+    credit_check: 'Credit'
+    contract: 'Contract'
+    finish: 'Finish'
+    additional_information: 'Additional Information'
+    information_review: 'Info Review'
+    proposal_selection: 'Proposal'
+    no_application: 'Student has not open or submitted application'
+    rate_cap: 'Rate Cap'
+    grace_period: 'Grace Period'
+    unemployment_months: 'Unemployment Months Allowed'
+    threshold: 'Threshold'
+    nominal_payment: 'Nominal Payment'
+    salary_cap: 'Salary Cap'
+    nominal_cap: 'Nominal Cap'
+    future_income: 'Of Your Future Income'
+    future_income_uwc: 'Of Your Future Income'
+    months: 'Repayment Months Of Your Future Income'
+    no_funding_options: 'There are not funding options to be displayed.'
+    funding_process: 'Funding Process'
+    review_disbursement_request: 'Review Disbursement Request.'
+    review_income_request: 'Review New Income Record.'
+    support_team: 'Support Team'
+    review_covid_request: 'Review Covid Request'
+    review_payment_request: 'Review Payment Request'
+    view_flows: 'View Flows'
+    new_agreement: 'Amendment'
+    academic_information: 'Academic Information'
+    social_work: 'Social Work'
+    experiences: "Experiences"
+    references: 'References' 
+    general_review: "Pending review of %{name_of_record}"
+    application_sent: 'Your application was succesfully sent'
+    conciliation: 'Conciliation'
+    payment: 'Payment'
+    credit: 'Credit'
+    payment_generated_number: 'Payment Generated Number'
+    payment_matched_number: 'Payment Matched Number'
+    payment_pending_number: 'Pending Payment Number'
+    total_cancellation: 'Total Cancellation'
+    application: 'Application'
+    grades: 'Grades Record'
+    grade_term: 'Term'
+    attributes:
+      id: Id
+      full_name: Full name
+      time_zone: Time zone
+      language: Language
+      status: Status
+      email: Email
+      identification_number: Identification number
+      mobile_number: Cellphone number
+      phone_number: Phone number
+    status:
+      inactive: Inactive
+      active: Active
+
+
+
+
+
+

@@ -1,0 +1,306 @@
+en:
+  form:
+    accept: 'Accept'
+    accept_formats: 'Your files must be some of the following formats: %{formats}'
+    create_from_file: 'Create From File'
+    pay: 'Pay'
+    active: 'Active'
+    inactive: 'Inactive'
+    canceled: 'Canceled'
+    required: 'Required'
+    hidden: 'Hidden'
+    legal_language: 'Legal Language'
+    disabled: 'Disabled'
+    custom_label: 'Custom Label'
+    multiple_dropdown: 'Multiple Dropdown'
+    step: 'Step'
+    default_value: 'Default Value'
+    min: 'Minimum'
+    max: 'Maximum'
+    list: 'List'
+    submit: 'Submit'
+    boolean:
+        yes: 'Yes'
+        no: 'No'
+        agree: 'Agree'
+        disagree: 'Disagree'
+    details: 'Details'
+    update: 'Update'
+    actions: 'Actions'
+    please_wait: 'Please wait ...'
+    save: 'Save'
+    destroy: 'Delete'   
+    change: 'Change'
+    account: 'Account'
+    insert_text: "Insert some text in here!"
+    select_option: 'Nothing selected'
+    no_results: 'No results matched {0}'
+    cancel: 'Cancel'
+    approve: 'Approve'
+    reject: 'Reject'
+    reasign: 'Reasign'
+    error:
+      boolean:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not true or false.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You must select this field to proceed.'
+      file:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not true or false.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You must select a file to proceed.'
+      string:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not a valid text.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'
+      text:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not a valid text.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'
+      integer:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not a valid number.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'
+      number:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not a valid number.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'
+      float:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not a valid number.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'
+      decimal:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not a valid number.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'
+      inet:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not a valid number.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'
+      currency:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not a valid number.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'
+      date:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not a valid date.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'
+      datetime:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not a valid date.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'
+      list:     
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not on the list.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'Pick a value on the list.'
+      reference:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not on the list.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'Pick a value on the list.'
+      email:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer does not have an email format.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'
+      legal_language:
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not on the list.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'Pick a value on the list.'
+      countries:     
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not on the list.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'Pick a value on the list.'
+      regions:     
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not on the list.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'Pick a value on the list.'
+      cities:     
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not on the list.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'Pick a value on the list.'
+      institution:     
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not on the list.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'Pick a value on the list.'
+      majors:     
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not on the list.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'Pick a value on the list.'
+      plain_number:     
+        badInput: 'Your answer is not a valid option.'
+        customError: 'Review your answer.'
+        patternMismatch: 'Your answer does not match the expected format.'
+        rangeOverflow: 'The maximum allowed value is '
+        rangeUnderflow: 'The minimum allowed value is '
+        stepMismatch: 'Your option is not valid.'
+        tooLong: "Your answer should not have more than %{maxlength} characters."
+        tooShort: "Your answer should not have less than %{minlength} characters."
+        typeMismatch: 'Your answer is not a valid number.'
+        valid: 'Your answer is not valid.'
+        valueMissing: 'You can not let this field empty.'

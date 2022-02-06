@@ -1,0 +1,59 @@
+<% target_billing_document = isa.active_billing_document %>
+
+<% if action_name != 'billing_document' %>
+  <h4><%= BillingDocument.model_name.human(count: 1) %></h4>
+<% end %>
+
+  <div class="card">
+    <div class="card-body">
+      <% if !target_billing_document.nil?%>
+        <div class="row">
+          <div class="col-md-8">
+            <table>
+              <tr>
+                <td class="h6"><%= BillingDocument.human_attribute_name(:due_to_date) %></td>
+                <td><div class="my-1 mx-3"><%= lumni_date target_billing_document.due_to_date %></div></td>
+              </tr>
+              <tr>
+                <td class="h6"><%= BillingDocument.human_attribute_name(:charged_value) %></td>
+                <td><div class="my-1 mx-3"><%= lumni_currency target_billing_document.charged_value_with_penalties %></div></td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-md-4">
+            <h4 class="<%= target_billing_document.status == 'payed' ? 'text-success' : 'text-primary' %>"><%= I18n.t("list.#{target_billing_document.status}") %> </h4>
+          </div>
+        </div>
+
+
+        <%= render '/isas/partial/billing_table_body', target_billing_document: target_billing_document %>
+
+
+        <div class="text-center">
+          <div class="btn-group">
+            <% if uwc_to_payment(target_billing_document) %>
+              <%= link_to I18n.t('general.pay'), uwc_to_payment(target_billing_document), target: '_blank', class: 'btn btn-primary'%>
+            <% else %>
+              <%= link_to I18n.t('general.pay'), target_billing_document, class: 'btn btn-primary'%>
+            <% end %>
+          </div>
+        </div>
+
+
+      <% else %>
+        <div class="text-center">
+          <h4><%= I18n.t('billing_document.up_to_date') %></h4>
+       </div>
+        <div class="row">
+          <div class="col text-center" style="padding: 1rem;font-size: 40px">
+            <i class="fas fa-check-circle text-success"></i>
+          </div>
+        </div>
+       
+      <% end %>
+    </div>
+  </div>
+
+
+
+

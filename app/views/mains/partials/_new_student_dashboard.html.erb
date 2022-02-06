@@ -1,0 +1,152 @@
+<!-- New Agreements Section -->
+<% if current_user.new_agreement? && current_user.new_agreement.show_financial_proposals%>
+	<%= render '/students/partial/new_agreement'%>
+<%end %>
+
+<% if current_user.mentory_employability_invitation? %>
+	<%= render '/students/partial/mentory_employability_inivitation'%>
+<%end %>
+
+<% if current_user.funding_opportunities.last.can_request_emergency_black_rock? && has_not_request_emergency_before?(current_user) && has_a_valid_general_status?(current_user)%>
+	<% if @black_rock_application.nil? %>
+		<div class="card">
+			<div class="card-body bg-warning py-1">
+				<div class="d-flex flex-row">
+					<div class="py-2">
+						<%= I18n.t('students.black_rock_notification') %>
+						<%= link_to I18n.t('general.request'), create_application_black_rock_datas_path, class: 'btn btn-md btn-primary mx-3', method: :post%>
+					</div>
+				</div>
+			</div>
+		</div>
+	<%elsif @black_rock_application.present? && @black_rock_application.status == 'active'%>
+		<div class="card">
+			<div class="card-body bg-warning py-1">
+				<div class="d-flex flex-row">
+					<div class="py-2">
+						<%= I18n.t('students.continue_blackrock') %>
+						<%= link_to I18n.t('general.continue'), edit_application_path(@black_rock_application), class: 'btn btn-md btn-primary mx-3'%>
+					</div>
+				</div>
+			</div>
+		</div>
+	<%elsif @black_rock_application.present? && @black_rock_application.status == 'submitted'%>
+	<div class='contanier'>
+	<br>
+	  <div class="card-body bg-info text-white text-center">
+      <%= I18n.t('application.under_review_emergency') %>
+    </div>
+	<br>
+	</div>
+	<% end %>
+<% end %>
+
+<div class="row">
+	<div class="col-md-8">
+		<%= render '/students/partial/billing_document_card', isa: @student.active_isa.first %>		
+
+		<h4 class="mt-4"><%= Notification.model_name.human(count:2) %></h4>
+
+		<div class="card mb-4">
+			<div class="card-body">
+				<%= render 'notification_cases/partial/notification_count' %>
+
+	          <% current_user.pending_notifications.each do |notification|%>
+							<div class="list-group list-group-flush" id='notification-<%= notification.id %>'>
+	                <%= eval("#{NotificationCase.cached_find(notification.notification_case_id).functionality}(notification)") %>
+	            </div>
+	          <% end %>
+                <%= link_to I18n.t('mains.notifications_show_all'), notifications_path,class: 'text-primary d-block text-center text-light small p-2 my-1' %>
+
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="col-md-4">
+
+		<h4><%= I18n.t('general.general_information') %></h4>
+
+		<div class="card mb-2">
+	    <div class="card-body">
+	      <div class="d-flex align-items-center">
+	        <div class="lnr lnr-thumbs-up display-4 text-success"></div>
+	        <div class="ml-3">
+	          <div class="text-muted small"><%= I18n.t('isa.payed_months') %></div>
+	          <div class="text-large"><%= @active_isa.repayment_payed_number %> / <%= @student.active_isa.first.funding_option.isa_term %></div>
+	        </div>
+	        <div class="ml-auto ">
+	        	<%= link_to 'Detalles', root_path, class: 'btn btn-sm btn-primary' %>
+	        </div>
+	      </div>
+	    </div>
+		</div>
+
+		<div class="card mb-2">
+	    <div class="card-body">
+	      <div class="d-flex align-items-center">
+	        <div class="lnr lnr-graduation-hat display-4 text-success"></div>
+	        <div class="ml-3">
+	          <div class="text-muted small"><%= Isa.human_attribute_name('stored_academic_status') %></div>
+	          <div class="text-large"><%= I18n.t("isa.#{@active_isa.stored_academic_status}") %></div>
+	        </div>
+	        <div class="ml-auto ">
+	        	<%= link_to 'Detalles', academic_information_mains_path, class: 'btn btn-sm btn-primary' %>
+	        </div>
+	      </div>
+	    </div>
+		</div>
+
+		<div class="card mb-2">
+	    <div class="card-body">
+	      <div class="d-flex align-items-center">
+	        <div class="lnr lnr-license display-4 text-success"></div>
+	        <div class="ml-3">
+	          <div class="text-muted small"><%= I18n.t('general.reported_income') %></div>
+	          <div class="text-large"><%= lumni_currency @student.total_income %></div>
+	        </div>
+	        <div class="ml-auto ">
+	        	<%= link_to 'Detalles', income_information_mains_path, class: 'btn btn-sm btn-primary' %>
+	        </div>
+	      </div>
+	    </div>
+		</div>
+
+		<div class="card mb-2">
+	    <div class="card-body">
+	      <div class="d-flex align-items-center">
+	        <div class="lnr lnr-bookmark display-4 text-success"></div>
+	        <div class="ml-3">
+	          <div class="text-muted small"><%= Isa.human_attribute_name('stored_payment_status') %></div>
+	          <div class="text-large"><%= I18n.t("isa.#{@active_isa.stored_payment_status}") %></div>
+	        </div>
+	        <div class="ml-auto ">
+	        	<%= link_to 'Detalles', payment_mains_path, class: 'btn btn-sm btn-primary' %>
+	        </div>
+	      </div>
+	    </div>
+		</div>
+
+
+		<div class="card mb-4">
+	    <div class="card-body">
+	      <div class="d-flex align-items-center">
+	        <div class="lnr lnr-user display-4 text-success"></div>
+	        <div class="ml-3">
+	          <div class="text-muted small"><%= Isa.human_attribute_name('stored_general_status') %></div>
+	          <div class="text-large"><%= I18n.t("isa.#{@active_isa.stored_general_status}") %></div>
+	        </div>
+	        <div class="ml-auto ">
+	        	<%= link_to 'Detalles', root_path, class: 'btn btn-sm btn-primary' %>
+	        </div>
+	      </div>
+	    </div>
+		</div>
+
+
+	</div>
+
+
+
+</div>

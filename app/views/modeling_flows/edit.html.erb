@@ -1,0 +1,65 @@
+
+
+<%= form_title(@modeling_flow, 'flow_case') %> 
+<%= build_form(@modeling_flow,'update',current_user.template('ModelingFlow','modeling_flows',current_user),html: { class: 'form-group', method: 'put'}) %>
+
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#flow-detail-tab">
+        <%= ModelingFlowDetail.model_name.human(count: 2) %>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#flow-summary-tab"><%= ModelingFlowSummary.model_name.human(count: 2) %></a>
+    </li>
+  </ul>
+  <div class="tab-content bg-light">
+    <div class="tab-pane fade show active p-0" id="flow-detail-tab">
+
+    	<div class="card">
+    		<div class="card-body">
+		    	<% modeling_flow_detail_template = current_user.template('ModelingFlowDetail','modeling_flow_details',current_user,id: true) %>
+				<% modeling_flow_detail_template[:id][:controller] = 'modeling_flow_details' %>
+				<% modeling_flow_detail_template[:id][:action] = 'edit' %>
+				<% modeling_flow_detail_template[:id][:target_id] = 'id' %>
+        <% modeling_flow_detail_template[:fee] = {}%>
+
+				<%= createTable(@modeling_flow.modeling_flow_detail,modeling_flow_detail_template, id: 'table_history_student_activity',title: false,new: false,rows_by_table: 1000, id: 'flow-table').html_safe %>
+    			
+    		</div>
+    	</div>
+    </div>
+    <div class="tab-pane fade " id="flow-summary-tab">
+      <div class="card">
+        <div class="card-body">
+
+			<% modeling_flow_summary_template = current_user.template('ModelingFlowSummary','modeling_flow_summaries',current_user,id: true) %>
+			<% modeling_flow_summary_template[:id][:controller] = 'modeling_flow_summaries' %>
+			<% modeling_flow_summary_template[:id][:action] = 'edit' %>
+			<% modeling_flow_summary_template[:id][:target_id] = 'id' %>
+			<%= createTable(@modeling_flow.modeling_flow_summary,modeling_flow_summary_template, id: 'table_history_student_activity',title: false,new: false,rows_by_table: 1000, id: 'summary-table').html_safe %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

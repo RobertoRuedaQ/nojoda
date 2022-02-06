@@ -1,0 +1,5 @@
+
+
+<%= form_title(@income_information,I18n.t('mains.new')) %>
+<%= build_form(@income_information,'create',current_user.template('IncomeInformation','income_informations',current_user),html: { class: 'form-group'}) %>
+

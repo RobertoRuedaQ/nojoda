@@ -1,0 +1,18 @@
+<li class="sidenav-item"> 
+  <a href="#" data-toggle="collapse" data-target="#payments" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-md-speedometer"></i><%= I18n.t('mains.payments')%>
+  </a>
+  <ul class="sub-menu collapse" id="payments">
+    <li class="sidenav-item">
+      <a href="<%= payment_batches_path %>" class="sidenav-link "><%= PaymentBatch.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= payu_responses_path %>" class="sidenav-link "><%= PayuResponse.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= payment_masses_path %>" class="sidenav-link "><%= PaymentMass.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

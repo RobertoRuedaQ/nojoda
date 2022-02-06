@@ -1,0 +1,13 @@
+
+<% if config[:object].send(target_field).is_a?(ActiveStorage::Attached::Many) && config[:object].send(target_field).attached?  %>
+
+	<% config[:object].send(target_field).each do |target_file| %>
+		<% file_url = url_for(target_file) %>
+		<%= render '/forms/file_field/preview_body', target_model: target_model, target_field: target_field,options: options, config: config, specific_field: target_file.id, file_url: file_url %>
+	<% end %>
+
+<% elsif config[:object].send(target_field).attached? %>
+	<% file_url = url_for(config[:object].send(target_field)) %>
+	<%= render '/forms/file_field/preview_body', target_model: target_model, target_field: target_field,options: options, config: config, specific_field: nil, file_url: file_url %>
+<% end %>
+

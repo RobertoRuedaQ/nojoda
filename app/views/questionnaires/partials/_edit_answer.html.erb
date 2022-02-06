@@ -1,0 +1,7 @@
+<h4 class="media align-items-center font-weight-bold py-3 mb-4">
+  <div class="media-body ml-3">
+  	<span class="text-muted font-weight-light"><%= @answer.question.question %> /</span> <%= @answer.answer %>
+  </div>
+</h4>
+<%= build_form(@answer,'update',current_user.template('Answer','answers',current_user), html: { class: 'form-group'}, controller: 'answers', button: false,destroy: false, remote: true, history: false, header:false)%>
+</div>

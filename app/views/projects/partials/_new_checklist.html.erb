@@ -1,0 +1,7 @@
+<h4 class="media align-items-center font-weight-bold py-3 mb-4">
+  <div class="media-body ml-3">
+  	<span class="text-muted font-weight-light"><%= @main_task.title %> /</span> <%= I18n.t('project.new_checklist') %>
+  </div>
+</h4>
+<%= build_form(@task,'create',project_tasks_fields_remote(current_company), html: { class: 'form-group'}, controller: 'project_tasks', button: false,destroy: false, remote: true, history: false, header:false)%>
+</div>

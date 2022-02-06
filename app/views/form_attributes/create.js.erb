@@ -1,0 +1,20 @@
+$('[id^=formattribute_name_]').val('');
+$('[id^=formattribute_value_]').val('')
+$('[id^=formattribute_name_]').selectpicker('refresh');
+
+
+$('#modal-attrribute_detail_container').append('<%= j createFieldAttributeDetail(@form_attribute.id) %>')
+$('#current-attributes-accordion').collapse('show')
+
+
+$('#active-1').html("<%= j createFieldTemplate(1) %>")
+$('#inactive-0').html("<%= j createFieldTemplate(0) %>")
+setAllSortableTemplate()
+loadingTemplatesLinks()
+
+activateDatepickers()
+validate_numeric_fields();
+setAutosize();
+
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();

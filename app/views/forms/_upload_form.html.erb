@@ -1,0 +1,4 @@
+<%= form_for(current_user, url: profile_path(current_user),  html: { method: :put ,id: 'uploadImage', hidden: true}) do |f| %>
+	<%= f.file_field :avatar , id: 'directAvatar'%>
+	<%= f.submit 'hagale' %>
+<% end %>

@@ -1,0 +1,2 @@
+<%= createTable(@payment,current_user.template('Payment','payments',current_user,id: true)).html_safe %>
+<%= render partial: 'layouts/partials/pagination', locals: {resource: @payment} %>

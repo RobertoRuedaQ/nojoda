@@ -1,0 +1,2 @@
+module BatchDetailsHelper
+end

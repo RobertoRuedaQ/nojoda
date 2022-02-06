@@ -1,0 +1,4 @@
+<div class="d-flex justify-content-between my-3" id="input-body-<%= input.id %>">
+	<%= input.input %>
+	<%= link_to I18n.t('general.destroy'), list_input_path(input),class: 'text-danger',remote: true,method: :delete %>
+</div>

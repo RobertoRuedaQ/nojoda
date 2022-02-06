@@ -1,0 +1,20 @@
+<%= render 'students/partial/students_header' %>
+
+
+<div class="nav-tabs-top">
+  <%= render 'students/partial/tabs' %>
+
+  <div class="tab-content bg-light">
+
+    <div class="tab-pane fade show active" id="academic-info-tab" >
+      <div class="card" style="border: none">
+        <div class="card-body">
+              <%= build_form(@student.funded_programs.last,'update',academic_template,html: { class: 'form-group', method: 'put'},controller: 'complementary_activities',remote: true, destroy: false,locked: true) %>
+        </div>
+      </div>
+      <%= render 'students/partial/grades_accordion'  %>
+    </div>
+  </div>
+</div>
+
+

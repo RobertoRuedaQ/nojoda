@@ -1,0 +1,44 @@
+<td style="width: 10%">
+	<% if @targetTask.locked %>
+		<i class="ion ion-ios-lock"></i> 
+	<% else %>
+		<%= lumni_boolean_field( 'checklists','done',value: @targetTask.done , id: @targetTask.id, switcher_class: 'switcher-dark',disabled: @targetTask.locked,switcher_input_class: 'project-done-switch')%> 
+	<% end %>
+</td>
+<td id="edit_task-<%= @targetTask.id %>"><%= link_to( (@targetTask.target_title current_user.language) , edit_task_project_task_path(@targetTask), class: 'dropdown-item', remote: true,data: {disable_with: I18n.t('general.loading')}) %>
+</td>
+<td style="width: 10%">
+	<% if !@targetTask.deadline.nil? %>
+	    <div class="col text-center">
+	      <div id="deadline-<%= @targetTask.id %>" class="badge badge-pill badge-<%= projectDateCase(@targetTask.start_date,@targetTask.deadline,@targetTask.done) %>">
+	              <%= link_to( ('<small>' + lumni_date(@targetTask.deadline) + '</small>').html_safe , edit_task_project_task_path(@targetTask), class: 'text-white', remote: true) %>
+	      </div>
+	    </div>
+    <% end %>
+</td>
+<td class="text-center" style="width: 5%">
+	<%= @targetTask.progress %>%
+</td>
+
+<td style="width: 5%">
+	<%= button_to(show_chat_project_comment_path(@targetTask),method: 'get', class: "btn btn-xs btn-outline-secondary borderless #{'text-white' if @targetTask.done}" ,tabindex: @targetTask.id+1, remote: true, data: {disable_with: I18n.t('general.loading')} ,id: ('comments-checklist-' + @targetTask.id.to_s)) do %>
+	<i class="ion ion-ios-chatboxes"></i> <%= @targetTask.project_comment.count %>
+	<% end %>
+</td>
+<td class="text-center" style="width: 5%">
+	<% unless @targetTask.locked %>
+	  <div class="kanban-board-actions btn-group ">
+	    <button type="button" class="btn btn-default btn-xs btn-round icon-btn borderless md-btn-flat hide-arrow dropdown-toggle <%= 'text-white' if @targetTask.done %>" id="settings-<%= @targetTask.id%>" data-toggle="dropdown"><i class="ion ion-md-settings"></i></button>
+	    <div class="dropdown-menu dropdown-menu-right">
+	      <%= link_to( ('<i class="ion ion-ios-settings mr-1"></i>' + I18n.t('general.edit')).html_safe , edit_task_project_task_path(@targetTask), class: 'dropdown-item', remote: true,data: {disable_with: I18n.t('general.loading')}) %>
+	      <hr class="my-1">
+	      <%= link_to( ('<i class="ion ion-ios-trash mr-1"></i> ' + I18n.t('general.destroy')).html_safe, project_task_path(@targetTask),  class: 'dropdown-item text-danger' , remote: true, method: 'delete',data: {disable_with: I18n.t('general.loading')}) %>
+		  </div>
+		</div>
+	<% end %>
+</td>
+<td class="text-center" style="width: 5%">
+	<div class=" mr-1" data-toggle="popover" data-placement="top"  data-content="<%= User.cached_find(@targetTask.responsable_id).name %>" data-trigger="hover">
+		<%= loadingAvatar(20,id: @targetTask.responsable_id) %>	
+	</div>
+</td>

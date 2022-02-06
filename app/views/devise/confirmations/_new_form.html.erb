@@ -1,0 +1,28 @@
+    <!-- Form -->
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post , class: "card"}) do |f| %>
+
+      <div class="p-6 p-sm-5">
+
+		<%= devise_error_messages! %>
+
+        <h5 class="text-center text-muted font-weight-normal mb-4"><%= I18n.t('devise.additional.resend_instructions') %></h5>
+
+        <hr class="mt-0 mb-4">
+        <div class="form-group">
+		    <%= f.label :email %><br />
+		    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control", placeholder: "Enter your email address" %>
+        </div>
+
+
+      <div class="actions">
+		<%= f.submit I18n.t('devise.confirmations.new.resend_confirmation_instructions'), class: 'btn btn-primary btn-block' %>
+  	  </div>
+
+  	  <div class="py-5">
+		<%= render "devise/shared/links" %>
+  	  </div>
+
+
+      </div>
+    <% end %>
+    <!-- / Form -->

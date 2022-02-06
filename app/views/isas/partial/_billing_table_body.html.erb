@@ -1,0 +1,42 @@
+
+
+<table class="my-4 table table-striped">
+  <thead>
+    <tr>
+      <% if !current_user.student? %>
+        <th><%= BillingDocumentDetail.human_attribute_name(:id) %></th>
+      <% end %>
+      <th><%= BillingDocumentDetail.human_attribute_name(:reference_date) %></th>
+      <th><%= BillingDocumentDetail.human_attribute_name(:detail_case) %></th>
+      <% if !current_user.student? %>
+        <th><%= BillingDocumentDetail.human_attribute_name(:status) %></th>
+        <th><%= BillingDocumentDetail.human_attribute_name(:payment_equivalency) %></th>
+      <% end %>
+      <th><%= BillingDocumentDetail.human_attribute_name(:value) %></th>
+      <th><%= BillingDocumentDetail.human_attribute_name(:penalty)%></th>
+      <th><%= BillingDocumentDetail.human_attribute_name(:applied_value)%></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% target_billing_document.billing_document_detail.each do |detail| %>
+      <tr>
+        <% if !current_user.student? %>
+          <th><%= link_to detail.id, edit_billing_document_detail_path(detail), target: :_blank %></th>
+        <% end %>
+        <th><%= lumni_short_date detail.reference_date %></th>
+        <td><%= I18n.t('list.' + detail.detail_case) if !detail.detail_case.nil? %></td>
+        <% if !current_user.student? %>
+          <td><%= I18n.t('list.' + detail.status) if !detail.status.nil? %></td>
+          <td><%= detail.payment_equivalency %></td>
+        <% end %>
+        <th><%= lumni_currency detail.value %></th>
+        <th><%= lumni_currency detail.penalty(target_billing_document.reference_date)%></th>
+        <th><%= lumni_currency detail.applied_value_with_penalties_by_document(target_billing_document) %></th>
+        <% unless current_user.student? %>
+          <td><%=  link_to I18n.t('payment.ui_options.see_payment'), payment_matches_path(billing_document_detail_id: detail.id), remote: true %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

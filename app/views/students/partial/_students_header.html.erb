@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-between">
+  <%= form_title(@student,'name') %>
+  <div class="d-flex">
+    <div class="mr-3 py-3">
+      <h5 class="my-1 text-muted text-right"><%= @student.contact_info.phone %></h5>
+      <h5 class="my-1 text-muted text-right"><%= @student.contact_info.mobile %></h5>
+      <h5 class="my-1 text-muted text-right"><%= @student.email %></h5>
+      <h5 class="my-1 text-muted text-right"><%= @student.identification_number %></h5>
+      <h5 class="my-1 text-muted text-right"><%= age(@student) %></h5>
+    </div>
+   <%= loadingAvatar(70) %>
+  </div>
+</div>

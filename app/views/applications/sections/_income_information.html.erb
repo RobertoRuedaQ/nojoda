@@ -1,0 +1,31 @@
+
+
+
+<div id="income-application-container" class="mt-4 p-2">
+	<div id="created-income-container">
+		<div class="row" id="income-main-container">
+			<% target_info.each do |income| %>
+				<%= render '/income_informations/partial/income_body', income: income, delete: @application.status == 'active', edit: (@application.status == 'active' && current_user.id == @application.user_id), show: current_user.staff?, section: section, application: application, hidden_fields: hidden_fields %>
+			<% end %>
+		</div>
+	</div>
+	<div class="text-right mb-4">
+		<%= button_tag I18n.t('application.add_new_income_information'),type: 'button', class: 'btn btn-primary ml-3', data: {toggle: 'modal', target: "#new_income_information"} %>
+	</div>
+</div>
+
+
+<% new_record = IncomeInformation.new(user_id: @application.user_id) %>
+
+<%= render '/applications/sections/income_modal',new_record: new_record, section: section, application: application, hidden_fields: hidden_fields %>
+
+
+<% if !section.cached_done?(@application, section) && current_user.id == @application.user_id %>
+	<div class="card-header bg-info text-white d-flex py-1 px-2">
+		<% submit_params = hidden_fields %>
+		<% submit_params[:save] = false %>
+		<strong  class="my-2 mr-4"><%= I18n.t('application.university_continue') %></strong>
+
+		<%= button_to I18n.t('application.submit_information'), storing_application_info_application_path(@application),params: submit_params, class: 'btn rounded-pill btn-white' ,remote: true, data: { disable_with: I18n.t('form.please_wait')}%>
+	</div>
+<% end %>

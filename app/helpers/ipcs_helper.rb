@@ -1,0 +1,2 @@
+module IpcsHelper
+end

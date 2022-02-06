@@ -1,0 +1,23 @@
+<% section = additional_form_info[:section] %>
+<% application = additional_form_info[:application] %>
+<% full_student = additional_form_info[:full_student] %>
+<% target_info = additional_form_info[:target_info] %>
+
+<% children = full_student.child %>
+<% hidden_fields = additional_form_info[:hidden_fields] %>
+
+<div id="children-application-container-<%=target_info.id %>" class="mt-4">
+	<div class="d-flex mb-4">
+		<h4 class="my-2"><%= I18n.t('application.children_information') %></h4>
+		<%= button_tag I18n.t('application.add_new_child'),type: 'button', class: 'btn btn-primary ml-3', data: {toggle: 'modal', target: "#new_child_record_#{target_info.id}"} %>
+	</div>
+
+	<div id="created-child-container-<%=target_info.id %>">
+		<div class="row" id="children-main-container">
+			<% children.each do |child| %>
+				<%= render '/children/partial/child_body', child: child,visible: application.active?, template_id: section.cached_form_template.child_id, modal_id: target_info.id, section: section, application: application%>
+			<% end %>
+		</div>
+	</div>
+</div>
+

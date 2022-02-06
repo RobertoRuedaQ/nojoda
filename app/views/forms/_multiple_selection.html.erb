@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    <h5><%= @options[:title] if !@options[:title].nil? %></h5>
+  </div>
+  <div class="card-body">
+
+
+    <%= form_for(@object, remote: true, url: {action: @options[:action],controller: @options[:controller], id: @options[:id]}) do |f| %>
+
+      <select multiple="multiple" size="10" class="lumni-multiple-selection" name=<%= @formName %>[]>
+        <% @list.keys.each do |k| %>
+          <% @list[k][:values].each_with_index do |v,index| %>
+            <option value="<%= v  %>" <%= @selected.include?(v) ? 'selected' : nil %>> <%= @list[k][:labels][index] %></option>
+          <% end %>
+        <% end %>
+      </select>
+
+      <div class="row">
+        <div class="actions text-center offset-md-4 col-md-4 my-4">
+          <%= f.submit 'Submit', class: 'btn btn-primary btn-block' ,data: { disable_with: "Please Wait..." }%>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+

@@ -1,0 +1,42 @@
+<h5 class="media align-items-center font-weight-bold py-0 mb-0">
+  <button type="button" class="btn icon-btn btn-primary mr-4 handle">
+    <span class="ion ion-md-reorder"></span>
+  </button>
+  <div class="media-body ">
+	<%= @targetSection.name %>           
+	<br>
+	<small><%= link_to 'Edit',edit_section_questionnaire_path(@targetSection),method: 'post', remote: true, data: { disable_with: I18n.t('form.please_wait')}%></small>  - <small><%= content_tag :a, I18n.t('general.destroy'),class: 'text-danger destroy',  data: { title: I18n.t('general.delete_title'), text: I18n.t('general.delete_body'),confirbuttontext: I18n.t('general.destroy'),destroyed: I18n.t('general.destroyed'),destroyconfirmation: I18n.t('general.destroy_confirmation'),cancelbuttontext: I18n.t('general.cancel'),url: url_for(controller: 'questionnaires', action:'destroy',id: @targetSection.id) }%></small>
+  </div>
+
+
+  <%= link_to('<span class="ion ion-ios-arrow-down"></span>'.html_safe, url_for(controller: 'questionnaires', action: 'body_section', id: @targetSection.id) , class: "btn icon-btn btn-outline-primary borderless mx-2 lumni-collapser", 'data-toggle' => "collapse", 'data-target' => "#section-body-#{@targetSection.id}", 'aria-expanded'=>"false", 'aria-controls' => "section-body-#{@targetSection.id}",remote: true, id: ('collapse-button-' + @targetSection.id.to_s)) %>
+
+
+
+</h5>
+				<div class="row">
+					<% unless  @targetSection.cached_question_count > 0%>
+						<div class=" col text-right" id="button-newsection-<%=@targetSection.id %>">
+							<%= button_to({action: 'new_section', controller: 'questionnaires',id: @targetSection.id}, class: 'btn btn-xs btn-outline-primary borderless my-4 questionnairebutton',targetQuestionnaire: @targetSection.id,remote: true, data: { disable_with: I18n.t('form.please_wait')}) do %>
+								<span style="font-size: 20px"><i class="ion ion-md-add-circle"></i></span><br> <%= I18n.t('questionnaire.new_subsection') %>
+							<% end %>
+						</div>
+					<% end %>
+					<% unless  @targetSection.cached_childs_count > 0%>
+						<div class="col text-center" id="button-newquestion-<%=@targetSection.id %>">
+							<%= button_to({action: 'new_question', controller: 'questions',id: @targetSection.id}, class: 'btn btn-xs btn-outline-primary borderless my-4 questionnairebutton',targetQuestionnaire: @targetSection.id,remote: true, data: { disable_with: I18n.t('form.please_wait')}) do %>
+								<span style="font-size: 20px"><i class="ion ion-md-add-circle"></i></span><br> <%= I18n.t('questionnaire.new_question') %>
+							<% end %>
+						</div>
+					<% end %>
+
+				</div>
+
+<span>
+	<small>
+		<%= @targetSection.class.human_attribute_name('max_score') %>: <%= @targetSection.max_score%><br>
+		<%= @targetSection.class.human_attribute_name('min_approval_score') %>: <%= @targetSection.min_approval_score%><br>
+		<%= @targetSection.class.human_attribute_name('time_limit') %>: <%= @targetSection.time_limit%><br>
+		<%= @targetSection.class.human_attribute_name('weight') %>: <%= @targetSection.weight%>
+	</small>
+</span>

@@ -1,0 +1,27 @@
+en:
+  income_information:
+    new_income: 'New Income'
+    total_income: 'Total Income'
+    continue_income_creation: 'Continue new income creation.'
+    reviewing_income_creation: 'We are reviewing your request.'
+    projected_income: 'Projected Income'
+    edit_variable_income: Edit variable income
+    attributes:
+      id: Id
+      student: Student
+      company: Company
+      position: Position
+      contract_case: Contract case
+      fix_income: Fix income
+      variable_income: Variable income
+      currency: Currency
+      start_date: Start date
+      end_date: End date
+      status: Status
+      income_case: Income case
+      total_income: Total income
+      income_in_local_currency: Income in local currency
+      exchange_rate: Exchange rate
+      updated_at: Updated at
+      support_file: Support file
+    see_file: See file

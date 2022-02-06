@@ -1,0 +1,4 @@
+
+
+<%= form_title(@payu_response,I18n.t('mains.new')) %>
+<%= build_form(@payu_response,'create',current_user.template('PayuResponse','payu_responses',current_user),html: { class: 'form-group'}) %>

@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body my-0 py-1">
+        <small><strong>From: </strong> <%= @message.from_field %></small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body my-0 py-1">
+        <small><strong>To: </strong> <%= eval(@message.to_field).map(&:inspect).join(', ') %></small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body my-0 py-1">
+        <small><strong>Date: </strong> <%= @message.created_at %></small>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body my-0 py-1">
+        <small><strong>Subject: </strong> <%= @message.subject %></small>
+      </div>
+    </div>
+  </div>
+</div>

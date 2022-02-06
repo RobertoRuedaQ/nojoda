@@ -1,0 +1,76 @@
+<% buttonOffset = "offset-md-#{@options[:buttonOffset].nil? ? '4' : @options[:buttonOffset].to_s}" %>
+<% if !@targetRecord.nil? %>
+	<div class="card <%= @options[:htmlCard] %> mb-3">
+		<% if @options[:header].nil? || @options[:header] == true %>
+			<h5 class="card-header <%= @options[:card_header_class] %>" >
+				<div class="d-flex justify-content-between">
+					<% if @options[:header_title].nil? ||  @options[:header_title] == true%>
+						<%= @targetRecord.model_name.human(count: 1)%>
+					<% else %>
+						<!-- empty div to keep the history link to the right -->
+						<div></div>
+					<% end %>
+					<% if params[:action] != 'new' && (@options[:history].nil? || @options[:history] == true)%>
+						<div id="historyModal-<%= @targetRecord.id%>" History="<%= @targetRecord.class.to_s + '.find(' + @targetRecord.id.to_s + ')' %>">
+
+						<%= link_to(('<i class="ion ion-md-barcode "></i> &nbsp; ' + I18n.t('audits.activity_history')).html_safe, history_index_path(object: @targetRecord.class.to_s, target_id:@targetRecord.id, form_key: @options[:form_key]) , style: 'font-size: 10px;', remote: true, 'data-toggle'.to_sym => "modal", 'data-target'.to_sym => "##{@options[:form_key]}", class: 'historyModalLink text-primary') %>
+						</div>
+					<% end %>
+					<% unless @options[:dismiss].nil?%>
+						<div>
+							<span>
+								<a href="javascript:void(0)" class="text-primary" onclick="cleanTargetContainer('<%=@options[:dismiss]%>')">X</a>
+							</span>
+						</div>
+					<% end %>
+				</div>
+			</h5>
+		<% end %>
+	  <div class="card-body">
+			<%= form_for( @targetRecord, url: url_for(controller: @controller, action: @action, id: @targetRecord.id.nil? ? @options[:custom_id] : @targetRecord.id), html: @htmlContent, remote: @options[:remote], form_method: @options[:form_method]) do |f| %>
+				<%= fieldGroup(@targetRecord,[@fields].flatten.map{|f| f.keys}.flatten,@fields,form_key: @options[:form_key]) %>
+
+
+				<% if !@options[:additional_form_render].nil? && !@options[:additional_form_info].nil?%>
+					<%= render @options[:additional_form_render],targetRecord: @targetRecord, additional_form_info: @options[:additional_form_info],form_key: @options[:form_key] %>
+				<% end %>
+
+
+
+				<% if !@options[:hidden_fields].nil? %>
+					<%  @options[:hidden_fields].each do |key,value|%>
+					<%= hidden_field 'temp', key, value: value %>
+					<% end %>
+				<% end %>
+
+					<div class="row text-center">
+
+						<% if !current_user.allowed_just_view?(params) && @options[:save] != false %>
+							<% save_text = I18n.t('form.save') %>
+							<% if @options[:pay] %>
+								<% save_text = I18n.t('form.pay') %>
+							<% end %>
+							<div class="<%= buttonOffset %> col">
+					  		<%= button_tag save_text,type: 'submit',target: (@targetRecord.id.nil? ? 'new' : 'edit') + '_' + underscore(@targetRecord.class.name) + ( @targetRecord.id.nil? ? '' : ('_' + @targetRecord.id.to_s)) ,original_text: save_text,class: 'btn btn-success lumnisubmit',data: { disable_with: I18n.t('form.please_wait')}  %>
+							</div>
+						<% end %>
+						<div class="<%= buttonOffset %>"></div>
+					</div>
+					<% if current_user.allowed_destroy?(params) && @options[:destroy] != false %>
+						<div class="row">
+							<div class="col text-right">
+						  		<%= link_to I18n.t('form.destroy'),('/' + @controller + '/' + @targetRecord.id.to_s) ,remote: @options[:remote],class: 'btn  btn-xs btn-outline-danger borderless',:method => :delete ,data: { disable_with: I18n.t('form.please_wait') }  %>
+							</div>
+						</div>
+					<% end %>
+			<% end %>
+
+	  </div>
+	</div>
+
+	<% unless params[:action] == 'new' %>
+		<%= render 'history/history_modal',form_key: @options[:form_key] %>
+	<% end %>
+<% else %>
+
+<% end %>

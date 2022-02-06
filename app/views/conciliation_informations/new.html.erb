@@ -1,0 +1,13 @@
+
+
+<%= form_title(@conciliation_information,@conciliation_information.isa.user.name) %>
+<div class="card">
+	<div class="card-body text-center">
+		<%= form_tag activate_conciliation_application_isa_path(params[:isa_id]), class: 'my-4' do %>
+			<%= lumni_dropdown_field( 'conciliation','year',@target_options,{}) %>
+
+		  <%= button_tag 'Presentar Conciliación',type: 'submit', class: 'btn btn-primary my-4'%>
+		<% end %>
+		
+	</div>
+</div>

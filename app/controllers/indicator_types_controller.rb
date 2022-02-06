@@ -1,0 +1,2 @@
+class IndicatorTypesController < ApplicationController
+end

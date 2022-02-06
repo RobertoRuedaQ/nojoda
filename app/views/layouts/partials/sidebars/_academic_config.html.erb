@@ -1,0 +1,10 @@
+<li class="sidenav-item">
+  <a href="#" data-toggle="collapse" data-target="#academic_config" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-md-business"></i><%= I18n.t('mains.academic_config')%>
+  </a>
+  <ul class="sidenav-menu" id="academic_config">
+    <li class="sidenav-item">
+      <a href="<%= institutions_path %>" class="sidenav-link "><%= Institution.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

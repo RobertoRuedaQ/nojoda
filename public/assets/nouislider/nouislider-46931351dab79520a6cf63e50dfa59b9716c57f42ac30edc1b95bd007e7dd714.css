@@ -1,0 +1,477 @@
+/* line 12, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-target,
+.noUi-target * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
+/* line 19, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-target {
+  position: relative;
+  direction: ltr !important;
+}
+
+/* line 24, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-base,
+.noUi-connects {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 32, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-connects {
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* line 37, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-connect,
+.noUi-origin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  will-change: transform;
+}
+
+/* line 49, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-vertical .noUi-origin {
+  width: 0;
+}
+
+/* line 53, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-horizontal .noUi-origin {
+  height: 0;
+}
+/* line 56, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+html:not([dir=rtl]) .noUi-horizontal .noUi-origin {
+  right: 0;
+  left: auto;
+}
+
+/* line 62, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-handle {
+  position: absolute;
+  outline: none !important;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+/* line 67, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-handle::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -1rem;
+  right: -1rem;
+  bottom: -1rem;
+  left: -1rem;
+  z-index: -1;
+}
+/* line 78, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-handle.noUi-active {
+  -webkit-transform: scale(1.4, 1.4);
+          transform: scale(1.4, 1.4);
+}
+
+/* line 83, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-horizontal .noUi-handle.noUi-active .noUi-tooltip {
+  -webkit-transform: translate(-50%, 10%) scale(0.8, 0.8);
+          transform: translate(-50%, 10%) scale(0.8, 0.8);
+}
+
+/* line 87, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-vertical .noUi-handle.noUi-active .noUi-tooltip {
+  -webkit-transform: translate(10%, -50%) scale(0.8, 0.8);
+          transform: translate(10%, -50%) scale(0.8, 0.8);
+}
+
+/* line 91, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-state-tap .noUi-connect,
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: top .3s, right .3s, bottom .3s, left .3s;
+  transition: top .3s, right .3s, bottom .3s, left .3s;
+}
+
+/* line 96, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+
+/* line 103, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-horizontal {
+  height: 0.125rem;
+}
+
+/* line 107, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-horizontal .noUi-handle {
+  top: -0.3125rem;
+  left: -0.375rem;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+/* line 113, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
+  right: -0.375rem;
+  left: auto;
+}
+
+/* line 119, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-vertical {
+  width: 0.125rem;
+}
+
+/* line 123, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-vertical .noUi-handle {
+  top: -0.375rem;
+  left: -0.3125rem;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* line 133, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-target {
+  border-radius: 10rem;
+}
+
+/* line 140, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-draggable {
+  cursor: ew-resize;
+}
+
+/* line 144, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-vertical .noUi-draggable {
+  cursor: ns-resize;
+}
+
+/* line 148, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-handle {
+  border-radius: 10rem;
+  background: #fff;
+  cursor: default;
+}
+
+/* line 157, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+[disabled] .noUi-connect {
+  opacity: .3;
+}
+
+/* line 161, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+[disabled] .noUi-handle {
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+/* line 165, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+[disabled].noUi-target,
+[disabled].noUi-handle,
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+
+/* line 175, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-pips,
+.noUi-pips * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* line 180, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-pips {
+  position: absolute;
+  color: #999;
+}
+
+/* line 189, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-value {
+  position: absolute;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0.625rem;
+}
+
+/* line 200, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-marker {
+  position: absolute;
+}
+
+/* line 208, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-pips-horizontal {
+  top: 100%;
+  left: 0;
+  padding: 0.6875rem 0 0 0;
+  width: 100%;
+  height: 5rem;
+}
+
+/* line 216, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-value-horizontal {
+  padding-top: .125rem;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+}
+/* line 220, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+[dir=rtl] .noUi-value-horizontal {
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+}
+
+/* line 225, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-marker-horizontal.noUi-marker {
+  width: 1px;
+  height: 0.5rem;
+}
+
+/* line 234, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-pips-vertical {
+  top: 0;
+  left: 100%;
+  padding: 0 0 0 0.6875rem;
+  height: 100%;
+}
+/* line 240, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+[dir=rtl] .noUi-pips-vertical {
+  right: 100%;
+  left: auto;
+}
+
+/* line 246, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-value-vertical {
+  padding-left: 0.875rem;
+  -webkit-transform: translate(0, 50%);
+          transform: translate(0, 50%);
+}
+/* line 250, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+[dir=rtl] .noUi-value-vertical {
+  right: 100%;
+  padding-right: 0.875rem;
+  padding-left: 0;
+}
+
+/* line 257, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+[dir=rtl] .noUi-marker-vertical {
+  right: 100%;
+}
+
+/* line 261, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-marker-vertical.noUi-marker {
+  width: 0.5rem;
+  height: 1px;
+}
+
+/* line 270, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-tooltip {
+  position: absolute;
+  display: block;
+  padding: .1875rem .25rem;
+  border-radius: .25rem;
+  background: #fff;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  line-height: 1;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+/* line 282, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-horizontal .noUi-tooltip {
+  bottom: 125%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+/* line 288, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.noUi-vertical .noUi-tooltip {
+  top: 50%;
+  right: 125%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+/* line 293, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+[dir=rtl] .noUi-vertical .noUi-tooltip {
+  right: auto;
+  left: 125%;
+}
+
+/* line 299, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+[dir=rtl] .noUi-vertical .noUi-handle.noUi-active .noUi-tooltip {
+  -webkit-transform: translate(-10%, -50%) scale(0.8, 0.8);
+          transform: translate(-10%, -50%) scale(0.8, 0.8);
+}
+
+/* line 311, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.default-style .noUi-target {
+  background: rgba(24, 28, 33, 0.1);
+}
+/* line 315, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.default-style .noUi-handle {
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.09);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 1px 6px rgba(0, 0, 0, 0.09);
+}
+/* line 319, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.default-style .noUi-target[disabled] {
+  background: rgba(24, 28, 33, 0.06);
+}
+/* line 323, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.default-style .noUi-value {
+  color: #babbbc;
+}
+/* line 327, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.default-style .noUi-marker {
+  background: #e1e1e2;
+}
+/* line 331, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.default-style .noUi-tooltip {
+  color: #4E5155;
+  font-size: 85%;
+}
+/* line 2, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.default-style .noUi-connect {
+  background: rgba(24, 28, 33, 0.3);
+}
+/* line 2, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.default-style .noUi-secondary .noUi-connect {
+  background: #8897AA;
+}
+/* line 2, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.default-style .noUi-success .noUi-connect {
+  background: #02BC77;
+}
+/* line 2, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.default-style .noUi-info .noUi-connect {
+  background: #28c3d7;
+}
+/* line 2, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.default-style .noUi-warning .noUi-connect {
+  background: #FFD950;
+}
+/* line 2, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.default-style .noUi-danger .noUi-connect {
+  background: #d9534f;
+}
+/* line 2, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.default-style .noUi-light .noUi-connect {
+  background: rgba(24, 28, 33, 0.06);
+}
+/* line 2, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.default-style .noUi-dark .noUi-connect {
+  background: rgba(24, 28, 33, 0.9);
+}
+
+/* line 355, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-target {
+  background: rgba(24, 28, 33, 0.1);
+}
+/* line 359, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-handle {
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.07), 0px 4px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 10px 0px rgba(0, 0, 0, 0.03);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.07), 0px 4px 5px 0px rgba(0, 0, 0, 0.05), 0px 1px 10px 0px rgba(0, 0, 0, 0.03);
+}
+/* line 363, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-target[disabled] {
+  background: rgba(24, 28, 33, 0.06);
+}
+/* line 367, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-value {
+  color: #babbbc;
+}
+/* line 371, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-marker {
+  background: #e1e1e2;
+}
+/* line 375, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-tooltip {
+  color: #4E5155;
+  font-size: 85%;
+}
+/* line 6, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.material-style .noUi-connect {
+  background: rgba(24, 28, 33, 0.3);
+}
+/* line 385, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-secondary .noUi-handle {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #8897AA;
+}
+/* line 6, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.material-style .noUi-secondary .noUi-connect {
+  background: #8897AA;
+}
+/* line 385, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-success .noUi-handle {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #02BC77;
+}
+/* line 6, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.material-style .noUi-success .noUi-connect {
+  background: #02BC77;
+}
+/* line 385, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-info .noUi-handle {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #28c3d7;
+}
+/* line 6, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.material-style .noUi-info .noUi-connect {
+  background: #28c3d7;
+}
+/* line 385, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-warning .noUi-handle {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #FFD950;
+}
+/* line 6, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.material-style .noUi-warning .noUi-connect {
+  background: #FFD950;
+}
+/* line 385, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-danger .noUi-handle {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #d9534f;
+}
+/* line 6, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.material-style .noUi-danger .noUi-connect {
+  background: #d9534f;
+}
+/* line 385, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-light .noUi-handle {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: rgba(24, 28, 33, 0.06);
+}
+/* line 6, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.material-style .noUi-light .noUi-connect {
+  background: rgba(24, 28, 33, 0.06);
+}
+/* line 385, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/nouislider.scss */
+.material-style .noUi-dark .noUi-handle {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: rgba(24, 28, 33, 0.9);
+}
+/* line 6, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nouislider/_mixins.scss */
+.material-style .noUi-dark .noUi-connect {
+  background: rgba(24, 28, 33, 0.9);
+}

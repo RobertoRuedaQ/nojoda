@@ -1,0 +1,383 @@
+/* line 13, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-browser-not-supported .dz-message {
+  display: none !important;
+}
+/* line 17, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-browser-not-supported.dropzone-box {
+  padding: 0 !important;
+  min-height: auto !important;
+  width: auto !important;
+  border: none !important;
+  border-radius: 0 !important;
+  cursor: default !important;
+  -webkit-transition: none;
+  transition: none;
+}
+
+/* line 28, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dropzone {
+  position: relative;
+  padding: 0 1.5rem 1.5rem 0;
+  width: 100%;
+  cursor: pointer;
+}
+/* line 34, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dropzone.dz-drag-hover {
+  border-style: solid;
+}
+/* line 37, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dropzone.dz-drag-hover .dz-message {
+  opacity: .5;
+}
+/* line 43, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dropzone:not(.dz-clickable) {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* line 49, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+[dir=rtl] .dz-hidden-input {
+  right: 0 !important;
+  left: auto !important;
+}
+
+/* line 57, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-message {
+  margin: 5rem 0;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+/* line 63, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-message .note {
+  display: block;
+  margin-top: .625rem;
+  font-weight: 400;
+}
+
+/* line 70, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-started .dz-message {
+  display: none;
+}
+
+/* line 77, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-preview {
+  position: relative;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  margin: 1.5rem 0 0 1.5rem;
+  background: #fff;
+  vertical-align: top;
+  font-size: .8125rem;
+  cursor: default;
+}
+
+/* line 90, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-filename {
+  position: absolute;
+  overflow: hidden;
+  padding: 0.625rem 0.625rem 0 0.625rem;
+  width: 100%;
+  background: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 99, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-filename:hover {
+  text-overflow: inherit;
+  white-space: normal;
+}
+
+/* line 105, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-size {
+  padding: 1.875rem 0.625rem 0.625rem 0.625rem;
+  font-style: italic;
+  font-size: .6875rem;
+}
+
+/* line 114, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-thumbnail {
+  position: relative;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 0.625rem;
+  height: 7.5rem;
+  text-align: center;
+}
+/* line 121, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-thumbnail > img,
+.dz-thumbnail .dz-nopreview {
+  position: relative;
+  top: 50%;
+  display: block;
+  margin: 0 auto;
+  -webkit-transform: translateY(-50%) scale(1);
+          transform: translateY(-50%) scale(1);
+}
+/* line 130, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-thumbnail > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* line 136, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-nopreview {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: .6875rem;
+}
+
+/* line 142, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-thumbnail img[src] ~ .dz-nopreview {
+  display: none;
+}
+
+/* line 149, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-preview .progress,
+.dz-preview .progess-bar {
+  height: 0.5rem;
+}
+
+/* line 154, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-preview .progress {
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  left: 1.25rem;
+  z-index: 30;
+  margin-top: -0.25rem;
+}
+
+/* line 163, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-complete .progress {
+  display: none;
+}
+
+/* line 170, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-remove {
+  display: block;
+  padding: .375rem 0;
+  text-align: center;
+  font-size: .75rem;
+}
+/* line 176, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-remove:hover, .dz-remove:focus {
+  border-top-color: transparent;
+  text-decoration: none;
+}
+
+/* line 186, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-error-mark, .dz-success-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  margin-top: -1.875rem;
+  margin-left: -1.875rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  background-position: center center;
+  background-size: 1.875rem 1.875rem;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.06);
+          box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.06);
+}
+/* line 202, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+[dir=rtl] .dz-error-mark,
+[dir=rtl] .dz-success-mark {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+/* line 207, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-error-mark {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23d9534f' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23d9534f' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E");
+}
+
+/* line 211, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-success-mark {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%235cb85c' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3E%3C/svg%3E");
+}
+
+/* line 215, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-error-message {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  z-index: 40;
+  display: none;
+  overflow: auto;
+  padding: .75rem;
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+}
+/* line 229, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+[dir=rtl] .dz-error-message {
+  text-align: right;
+}
+
+/* line 236, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-error .dz-error-mark {
+  display: block;
+}
+/* line 240, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-error .dz-error-message {
+  display: none;
+}
+/* line 245, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-error:hover .dz-error-mark {
+  display: none;
+}
+/* line 249, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-error:hover .dz-error-message {
+  display: block;
+}
+
+/* line 256, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.dz-success .dz-success-mark {
+  display: block;
+}
+
+/* line 267, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.default-style .dropzone {
+  border: 3px dashed rgba(24, 28, 33, 0.06);
+}
+/* line 271, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.default-style .dz-message {
+  font-size: 1.0504rem;
+}
+/* line 274, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.default-style .dz-message .note {
+  color: #a3a4a6;
+  font-size: 0.68rem;
+}
+/* line 280, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.default-style .dz-preview {
+  border: 1px solid rgba(24, 28, 33, 0.06);
+  border-radius: 0.2rem;
+  -webkit-box-shadow: 0 1px 4px rgba(24, 28, 33, 0.009);
+          box-shadow: 0 1px 4px rgba(24, 28, 33, 0.009);
+}
+/* line 286, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.default-style .dz-size {
+  color: #a3a4a6;
+}
+/* line 290, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.default-style .dz-thumbnail {
+  border-bottom: 1px solid #f1f1f2;
+  background: rgba(24, 28, 33, 0.015);
+  border-top-left-radius: calc(if($border-radius, 0.2rem - 1px, 0));
+  border-top-right-radius: calc(if($border-radius, 0.2rem - 1px, 0));
+}
+/* line 297, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.default-style .dz-nopreview {
+  color: #a3a4a6;
+}
+/* line 301, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.default-style .dz-remove {
+  border-top: 1px solid #f1f1f2;
+  color: #4E5155;
+  border-bottom-right-radius: calc(if($border-radius, 0.2rem - 1px, 0));
+  border-bottom-left-radius: calc(if($border-radius, 0.2rem - 1px, 0));
+}
+/* line 307, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.default-style .dz-remove:hover, .default-style .dz-remove:focus {
+  background: rgba(24, 28, 33, 0.06);
+  color: #4E5155;
+}
+/* line 314, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.default-style .dz-error-mark,
+.default-style .dz-success-mark {
+  background-color: rgba(24, 28, 33, 0.1);
+}
+/* line 319, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.default-style .dz-error-message {
+  background: rgba(217, 83, 79, 0.8);
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+}
+@media (min-width: 576px) {
+  /* line 326, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+  .default-style .dz-preview {
+    display: inline-block;
+    width: 11.25rem;
+  }
+  /* line 331, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+  .default-style .dz-thumbnail {
+    width: 10rem;
+  }
+}
+
+/* line 344, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.material-style .dropzone {
+  border: 3px dashed rgba(24, 28, 33, 0.06);
+}
+/* line 348, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.material-style .dz-message {
+  font-size: 1.313rem;
+}
+/* line 351, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.material-style .dz-message .note {
+  color: #a3a4a6;
+  font-size: 0.894rem;
+}
+/* line 357, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.material-style .dz-preview {
+  border: 0px solid rgba(24, 28, 33, 0.06);
+  border-radius: 0.125rem;
+  -webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.03), 0 1px 4px 0 rgba(0, 0, 0, 0.04), 0 3px 1px -2px rgba(0, 0, 0, 0.04);
+}
+/* line 363, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.material-style .dz-size {
+  color: #a3a4a6;
+}
+/* line 367, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.material-style .dz-thumbnail {
+  border-bottom: 1px solid #f1f1f2;
+  background: #fff;
+  border-top-left-radius: calc(0.125rem - 1px);
+  border-top-right-radius: calc(0.125rem - 1px);
+}
+/* line 374, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.material-style .dz-nopreview {
+  color: #a3a4a6;
+}
+/* line 378, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.material-style .dz-remove {
+  border-top: 1px solid #f1f1f2;
+  color: #4E5155;
+  border-bottom-right-radius: calc(0.125rem - 1px);
+  border-bottom-left-radius: calc(0.125rem - 1px);
+}
+/* line 384, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.material-style .dz-remove:hover, .material-style .dz-remove:focus {
+  background: rgba(24, 28, 33, 0.06);
+  color: #4E5155;
+}
+/* line 391, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.material-style .dz-error-mark,
+.material-style .dz-success-mark {
+  background-color: rgba(24, 28, 33, 0.1);
+}
+/* line 396, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+.material-style .dz-error-message {
+  background: rgba(217, 83, 79, 0.8);
+  border-top-left-radius: 0.125rem;
+  border-top-right-radius: 0.125rem;
+}
+@media (min-width: 576px) {
+  /* line 403, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+  .material-style .dz-preview {
+    display: inline-block;
+    width: 11.25rem;
+  }
+  /* line 408, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/dropzone/dropzone.scss */
+  .material-style .dz-thumbnail {
+    width: 10rem;
+  }
+}

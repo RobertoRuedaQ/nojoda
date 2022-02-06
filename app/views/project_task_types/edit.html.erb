@@ -1,0 +1,47 @@
+<%= form_title(@task_type, 'title') %>
+
+
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#task-type-tab"><%= ProjectTaskType.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#task-translate-tab"><%= ProjectTaskTranslate.model_name.human(count: 1) %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="task-type-tab">
+      <%= build_form(@task_type,'update',project_task_types_fields,html: { class: 'form-group', method: 'put'}, header_title: false)%>
+
+    </div>
+    <div class="tab-pane fade " id="task-translate-tab">
+
+<div id="translation-accordion">
+	<% languageList[:language][:values].each_with_index do |language,index| %>
+
+
+	  <div class="card">
+	    <div class="card-header" id="heading-<% language %>" data-toggle="collapse" data-target="#collapse-language-<%= language %>" aria-expanded="true" aria-controls="collapse-language-<%= language %>">
+	      <h5 class="mb-0 text-primary">
+	          <%= languageList[:language][:labels][index] %>
+	      </h5>
+	    </div>
+
+	    <div id="collapse-language-<%= language %>" class="collapse" aria-labelledby="heading-<% language %>" data-parent="#translation-accordion">
+	      <div class="card-body" id="card-body-translation-<%= language %>">
+	      	<% translation = @task_type.translation(language) %>
+	      	<%= build_form(translation,(translation.id.nil? ? 'create' : 'update'),current_user.template('ProjectTaskTranslate','project_task_translates',current_user),html: { class: 'form-group', method: (translation.id.nil? ? 'post' : 'put')}, header_title: false, controller: 'project_task_translates',id: translation.id, remote: true)%>
+	      </div>
+	    </div>
+	  </div>
+	<% end %>
+
+</div>
+    	
+    </div>
+
+
+  </div>
+</div>

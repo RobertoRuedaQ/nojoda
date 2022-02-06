@@ -1,0 +1,3 @@
+es:
+  payment_batches:
+    isas_not_found: No se encontraron contratos activos para este fondo.

@@ -1,0 +1,4 @@
+
+
+<%= form_title(@student_academic_information, 'institution') %> 
+<%= build_form(@student_academic_information,'update',current_user.template('StudentAcademicInformation','student_academic_informations',current_user),html: { class: 'form-group', method: 'put'}) %>

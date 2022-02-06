@@ -1,0 +1,16 @@
+$('#loader-academic-<%= @target_record.id %>').replaceWith("<%= j render '/applications/partial/general_form', target_info: @target_record, section: @section, application: @application, hidden_fields: @hidden_fields, action: 'update_record',remote: false, additional_form_render: '/applications/sections/funding_form', additional_form_info: (@application if @target_record.information_case == 'university')  %>")
+
+$('#academic-edit-button-<%= @target_record.id %>').parent().replaceWith('<%= j button_tag( I18n.t('general.edit'),class: 'btn btn-outline-primary btn-sm my-2',data: {toggle: 'collapse',target: "#edit-academic-container-#{@target_record.id}"}, aria: {expanded: 'false', controls: "edit-academic-container-#{@target_record.id}"},remote: true, id: "academic-edit-button-#{@target_record.id}") %>')
+
+
+restore_lumni_js()
+
+setAllDependentFields()
+
+$('[id^='+'studentacademicinformation_funding_need_').not('.switcher-input').each(function(){
+	funding_options_container_behavior(this)
+})
+
+
+
+set_disbursements_application_behavior($('#studentacademicinformation_first_disbursement_date_<%= @target_record.id %>')[0])

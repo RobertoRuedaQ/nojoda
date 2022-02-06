@@ -1,0 +1,31 @@
+<!-- Modal -->
+<div class="modal fade" id="new_child_record_<%= target_info.id %>" tabindex="-1" role="dialog" aria-labelledby="new_child_record_<%= target_info.id %>Label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+        <% hidden_fields[:modal_id] = target_info.id%>
+	      <%= render '/applications/partial/general_form', target_info: new_record, section: section, application: application, hidden_fields: hidden_fields, action: 'create_application_child',remote: true, target_template: section.cached_form_template.child.template_hash( current_user, current_company),target_controller: 'children' %>		
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="edit_child_record_<%= target_info.id %>" tabindex="-1" role="dialog" aria-labelledby="edit_child_record_<%= target_info.id %>Label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0" id="edit-child-container-<%= target_info.id %>">
+      </div>
+    </div>
+  </div>
+</div>

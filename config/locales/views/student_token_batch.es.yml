@@ -1,0 +1,20 @@
+es:
+  student_token_batch:
+    attributes:
+      id: ID
+      status: Estado
+      description: Descripción
+      token_file: Archivo de correos
+      created_at: Fecha de Creación
+    actions:
+      new: Crear un Nuevo lote
+      save: Almacenar el registro del lote
+    flash:
+      create:
+        success: "El lote de correos fue creado exitosamente."
+        danger: 'Hubo un error al intentar crear el lote de correos.'
+        invalid_file: 'El archivo es invalido, por favor revise la estructura del mismo.'
+        invalid_email: "el correo %{invalid_email} no es correo electrónico válido, por favor revisar el archivo y corregir el error."
+      update:
+        success: "El lote de tokens fue actualizado exitosamente."
+        danger: 'Hubo un error al intentar actualizar el lote de correos.'

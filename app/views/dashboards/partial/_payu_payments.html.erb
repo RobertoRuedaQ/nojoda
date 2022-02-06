@@ -1,0 +1,15 @@
+<%= form_tag edit_dashboard_path(params[:id]),method: :get do %>
+	<div class="row">
+		<div class="col-md-10 my-10">
+			<label class="form-label">Identificadores</label>
+			<%= lumni_textarea_field( 'payu_response','target_ids',{type: 'text'}) %>
+		</div>
+		<div class="col-md-2 my-2 d-flex text-center">
+			<%= button_tag 'Buscar', class: 'btn btn-primary align-self-end' %>
+		</div>
+	</div>
+<% end %>
+
+<% if @payu_responses.present? %>
+	<%= createTable(@payu_responses,@responses_template, new: false, title: false,rows_by_table: 1000).html_safe %>
+<% end %>

@@ -1,0 +1,14 @@
+<% table_template = {} %>
+<% table_template[:id] = {} %>
+<% table_template[:id][:controller] = 'social_works' %>
+<% table_template[:id][:action] = 'edit' %>
+<% table_template[:id][:target_id] = 'id' %>
+<% table_template[:term] = {} %>
+<% table_template[:country_name] = {} %>
+<% table_template[:state_name] = {} %>
+<% table_template[:city_name] = {} %>
+<% table_template[:number_of_hours] = {} %>
+<% table_template[:institution_name] = {} %>
+<% table_template[:social_work_certificate] = {} %>
+
+<%= createTable(student.social_work,table_template, id: 'table_history_social_work_track',title: false,alternative_new_link: new_social_work_path(user_id: student.id)).html_safe %>

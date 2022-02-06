@@ -1,0 +1,70 @@
+<%= form_title(@fund, 'name') %>
+
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#fund_information_tab"><%= Fund.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#payment_origination_tab"><%= PaymentOrigination.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#bank_accounts_tab"><%= BankAccount.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#cancellation_config_tab"><%= CancellationConfig.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#valuation_tab"><%= Modeling.model_name.human(count: 1) %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="fund_information_tab">
+		<%= build_form(@fund,'update',current_user.template('Fund','funds',current_user),html: { class: 'form-group'},columns: 3)%>
+    </div>
+
+ 
+    <div class="tab-pane fade " id="payment_origination_tab">
+      <%= build_form(@fund.payment_origination,'update',current_user.template('PaymentOrigination','payment_originations',current_user),controller: 'payment_originations',remote: true,html: { class: 'form-group', method: 'put'}, header_title: false)%>
+    </div>
+
+
+    <div class="tab-pane fade p-4" id="bank_accounts_tab">
+
+            <% bank_account_template = current_user.template('BankAccount','bank_accounts',current_user,id: true) %>
+            <% bank_account_template[:id][:controller] = 'bank_accounts' %>
+            <% bank_account_template[:id][:action] = 'edit' %>
+            <% bank_account_template[:id][:target_id] = 'id' %>
+            <%= createTable(@fund.bank_account,bank_account_template, id: 'table_fund_bank_accounts',title: false,alternative_new_link: new_bank_account_path(resource_id: @fund.id,resource_type: 'Fund')).html_safe %>
+    </div>
+
+    <div class="tab-pane fade p-4" id="cancellation_config_tab">
+
+            <% cancellation_config_template = current_user.template('CancellationConfig', 'cancellation_configs', current_user, id: true) %>
+            <% cancellation_config_template[:id][:controller] = 'cancellation_configs' %>
+            <% cancellation_config_template[:id][:action] = 'edit' %>
+            <% cancellation_config_template[:id][:target_id] = 'id' %>
+            <%= createTable(@fund.cancellation_config,cancellation_config_template, id: 'table_fund_cancellation_configs', title: false,alternative_new_link: new_fund_cancellation_config_path(@fund)).html_safe %>
+    </div>
+
+    <div class="tab-pane fade p-4" id="valuation_tab">
+
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center my-5">
+            <p class="my-3">Oprime este botón cuanto estés seguro de querer correr la valoración para este  <%= @fund.name %>.</p>
+            <%= button_to "Valorar Fondo", valuation_fund_path(@fund), class: 'btn btn-primary' %>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+  </div>
+</div>
+

@@ -1,0 +1,4 @@
+$('#child-element-<%= params[:id]%>').remove()
+$('[id^=sociodemographic_children_number_]').trigger('change')
+
+toastr["success"]("<%= I18n.t('flash.record_discarded') %>");

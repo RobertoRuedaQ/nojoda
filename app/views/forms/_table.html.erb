@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-between">
+  <% if table_options[:title].nil? || table_options[:title] == true %>
+    <%= form_title(@object) %> 
+  <% else %>
+  <div></div>
+  <% end %>
+
+  <div>
+    <% if table_options[:new].nil? || table_options[:new] == true %>
+
+      <%= link_to(I18n.t('general.new'), (table_options[:alternative_new_link].nil? ? "/#{(table_options[:custom_controller].nil? ? params[:controller] : table_options[:custom_controller])}/new" : table_options[:alternative_new_link]) , class: 'btn btn-primary') %>
+    <% end %>
+
+  </div>
+</div>
+
+<!-- Filter sections -->
+<% case params[:controller]  %>
+<% when 'students' %>
+  <% if params[:action] == 'index' %>
+    <%= render '/forms/filters/user_filters' %>
+  <% end %>
+<% when 'institutions'%>
+  <% if params[:action] == 'index' %>
+    <%= render partial: 'forms/filters/full_text_search' %>
+  <% end %>
+<% end %>
+
+
+
+
+<div class="card-datatable table-responsive">
+  <table id="<%= table_options[:id].nil? ? 'standard_id' : table_options[:id] %>" class="datatables-list table table-striped table-bordered" data-page-length='<%= table_options[:rows_by_table].nil? ? 25 : table_options[:rows_by_table] %>' data-order='[[ <%= table_options[:dataOrder].nil? ? 0 :  table_options[:dataOrder][0] %>, "<%= table_options[:dataOrder].nil? ? 'asc' :  table_options[:dataOrder][1] %>" ]]' >
+    <thead>
+      <tr>
+        <%= @headerText.html_safe %>
+      </tr>
+    </thead>
+    <%= @tableText.html_safe %>
+  </table>
+</div>

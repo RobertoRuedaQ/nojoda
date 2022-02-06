@@ -1,0 +1,13 @@
+<li class="sidenav-item">   <a href="#" data-toggle="collapse" data-target="#bizdev" class="sidenav-link sidenav-toggle" >
+  <i class="sidenav-icon ion ion-md-battery-charging"></i><%= I18n.t('mains.bizdev')%>
+</a>
+  <ul class="sub-menu collapse" id="bizdev">
+    <li class="sidenav-item">
+      <a href="<%= bizdev_businesses_path %>" class="sidenav-link "><%= BizdevBusiness.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= bizdev_operations_path %>" class="sidenav-link "><%= BizdevOperation.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

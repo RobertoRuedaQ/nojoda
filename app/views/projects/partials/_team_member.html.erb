@@ -1,0 +1,1 @@
+<%= createMultipleSelection ProjectTeam.new(), holdingMembers, @project.project_team.map{|t| t.user_id} ,'team',title: 'Team',controller: 'project_teams', action: 'update_teams', id: @project.id %>

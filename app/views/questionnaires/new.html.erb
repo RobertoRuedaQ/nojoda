@@ -1,0 +1,2 @@
+<%= form_title(@questionnaire,I18n.t('mains.new')) %>
+<%= build_form(@questionnaire,'create',current_user.template('Questionnaire','questionnaires',current_user),html: { class: 'form-group'},columns: 4)%>

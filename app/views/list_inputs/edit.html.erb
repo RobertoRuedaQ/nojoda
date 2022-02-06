@@ -1,0 +1,4 @@
+
+
+<%= form_title(@list_input, 'form_list') %> 
+<%= build_form(@list_input,'update',current_user.template('ListInput','list_inputs',current_user),html: { class: 'form-group', method: 'put'}) %>

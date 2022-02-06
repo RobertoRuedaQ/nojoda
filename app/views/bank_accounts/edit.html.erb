@@ -1,0 +1,5 @@
+
+
+<%= form_title(@bank_account, 'account_case') %> 
+
+<%= build_form(@bank_account,'update',current_user.template('BankAccount','bank_accounts',current_user),html: { class: 'form-group', method: 'put'}) %>

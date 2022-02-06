@@ -1,0 +1,10 @@
+$('#task_modal').modal('show');
+$('#task_modal_body').html('<%= j render("projects/partials/edit_task")  %>');
+activateDatepickers()
+validate_numeric_fields();
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+setAutosize();
+$('[data-toggle="popover"]').popover();
+$('.knob-progress input').knob();
+setGlobalSwitches()

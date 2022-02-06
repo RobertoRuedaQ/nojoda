@@ -1,0 +1,4 @@
+
+
+<%= form_title(@disbursement_cancellation,I18n.t('mains.new')) %>
+<%= build_form(@disbursement_cancellation,'create',current_user.template('DisbursementCancellation','disbursement_cancellations',current_user),html: { class: 'form-group'}) %>

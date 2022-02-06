@@ -1,0 +1,18 @@
+<div class="card" style="border: none">
+	<div class="card-body">
+		<div class="row">
+			<div class="col-md-12 text-right">
+				<h4 ><span class="text-primary">Total Debt:</span> <span><%= object.sum(:amount) %></span></h4>
+			</div>
+		</div>
+			<% bodies = [] %>
+			<% headers = [] %>
+			<% object.to_a.each do |debt| %>
+	      <% current_hash[:object] = debt %>
+	      <% current_hash[:index] = index %>
+	      <% headers += [render('/students/partial/debt_header',debt: debt)] %>
+	      <% bodies += [render('/students/partial/general_form',current_hash)] %>
+			<% end %>
+			<%= build_accordion headers,bodies %>
+	</div>
+</div>

@@ -1,0 +1,8 @@
+<%= form_title(@invest_committee, 'name') %> 
+
+<%= render 'invest_committees/partial/tabs' %>
+<%= build_form(@invest_committee,'update',current_user.template('InvestCommittee','invest_committees',current_user),html: { class: 'form-group', method: 'put'}) %>
+
+
+
+

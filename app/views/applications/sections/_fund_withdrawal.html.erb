@@ -1,0 +1,2 @@
+
+<%= render '/applications/partial/general_form', target_info: application.resource, section: section, application: application, hidden_fields: hidden_fields, action: 'storing_application_info',remote: true, target_template: section.cached_form_template.template_hash( current_user, current_company), target_controller: 'applications' %>		

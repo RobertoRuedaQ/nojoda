@@ -1,0 +1,31 @@
+<div class="d-flex flex-row">
+  <h4><%=  IsaStatus.model_name.human(count: 2) %></h4>  
+</div>
+
+<div class="row">
+
+	<div class="col-sm-6 col-xl-6" id="general_status_container">
+    <%= render '/isa_statuses/partial/general_status', isa: isa %>
+  </div>
+
+	<div class="col-sm-6 col-xl-6" id="academic_status_container">
+    <%= render '/isa_statuses/partial/academic_status', isa: isa %>
+  </div>
+
+  <div class="col-sm-6 col-xl-4" id="employment_status_container">
+    <%= render '/isa_statuses/partial/employment_status', isa: isa %>
+  </div>
+
+	<div class="col-sm-6 col-xl-4" id="income_status_container">
+    <%= render '/isa_statuses/partial/income_status', isa: isa %>
+  </div>
+
+  <div class="col-sm-6 col-xl-4" id="payment_status_container">
+    <%= render '/isa_statuses/partial/payment_status', isa: isa %>
+  </div>
+
+</div>
+
+
+
+

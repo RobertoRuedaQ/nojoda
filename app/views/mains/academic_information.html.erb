@@ -1,0 +1,34 @@
+  <div class="card-body">
+    <div class="row">
+      <% academic_origination = @student.funding_opportunities.first.academi_origination %>
+      <% submitted_applications = @student.funded_academic_information.academic_request.joins(:application).where(applications: { status: 'submitted'}).pluck(:request_case) %>
+      <% @academic_cases.each do |academic_case| %>
+        <% if !academic_origination.send(academic_case).nil? %>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5><%= I18n.t("academic.edit_#{academic_case}") %></h5>
+                <p><%= I18n.t("academic.edit_#{academic_case}_text") %></p>
+                <div class="text-center my-4">
+                  <% if !submitted_applications.include?(academic_case) %>
+                    <%= button_to I18n.t('general.edit'),start_origination_academic_request_path(@student.funded_academic_information,params: {request_case: academic_case}), class: 'btn btn-primary'%>
+                  <% else %>
+                    <div class="card">
+                      <div class="card-body bg-info text-white text-center">
+                        <%= I18n.t('application.under_review') %>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'students/partial/grades_accordion' %>
+      </div>
+    </div>
+  </div>

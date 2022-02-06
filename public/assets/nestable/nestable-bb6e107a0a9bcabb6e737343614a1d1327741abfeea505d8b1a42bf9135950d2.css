@@ -1,0 +1,144 @@
+/* line 8, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* line 16, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-list {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 23, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-collapsed .dd-list {
+  display: none;
+}
+/* line 27, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+html:not([dir=rtl]) .dd-list .dd-list {
+  padding-left: 2rem;
+}
+/* line 31, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+[dir=rtl] .dd-list .dd-list {
+  padding-right: 2rem;
+}
+
+/* line 36, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-item,
+.dd-empty,
+.dd-placeholder {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 45, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-handle,
+.dd-content {
+  display: block;
+  margin: 0.3125rem 0;
+  padding: 0.3125rem 0.75rem;
+  text-decoration: none;
+  cursor: move;
+}
+
+/* line 54, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-handle + .dd-content {
+  cursor: auto;
+}
+
+/* line 58, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-item > button {
+  position: absolute;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: 0.3125rem 0 0.3125rem 1px;
+  padding: 0;
+  width: 2rem;
+  border: 0;
+  background: transparent;
+  text-align: center;
+  text-indent: 100%;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+/* line 75, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-item > button:before {
+  content: '+';
+  position: absolute;
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-indent: 0;
+}
+/* line 84, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-item > button[data-action="collapse"]:before {
+  content: '-';
+}
+/* line 88, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+html:not([dir=rtl]) .dd-item > button ~ .dd-handle {
+  padding-left: 2rem;
+}
+/* line 92, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+[dir=rtl] .dd-item > button ~ .dd-handle {
+  padding-right: 2rem;
+}
+
+/* line 97, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-placeholder,
+.dd-empty {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0.3125rem 0;
+  padding: 0;
+  border: 1px dashed #b6bcbf;
+  background: #f2fbff;
+}
+
+/* line 106, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-empty {
+  min-height: 6.25rem;
+  border: 1px dashed #bbb;
+}
+
+/* line 111, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-dragel {
+  position: absolute;
+  z-index: 9999;
+  pointer-events: none;
+}
+/* line 116, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.dd-dragel > .dd-item .dd-handle {
+  margin-top: 0;
+}
+
+/* line 124, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.default-style .dd-handle,
+.default-style .dd-content {
+  border: 1px solid rgba(24, 28, 33, 0.1);
+  border-radius: 0.2rem;
+}
+/* line 130, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.default-style .dd-empty {
+  background: rgba(24, 28, 33, 0.06);
+}
+
+/* line 138, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.material-style .dd-handle,
+.material-style .dd-content {
+  border: 1px solid rgba(24, 28, 33, 0.1);
+  border-radius: 0.125rem;
+}
+/* line 144, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/nestable/nestable.scss */
+.material-style .dd-empty {
+  background: rgba(24, 28, 33, 0.06);
+}

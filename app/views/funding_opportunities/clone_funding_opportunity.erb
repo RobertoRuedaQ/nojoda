@@ -1,0 +1,2 @@
+<%= form_title(@funding_opportunity, 'name') %>
+<%= build_form(@funding_opportunity,'create_clone_funding_opportunity',current_user.template('FundingOpportunity','funding_opportunities',current_user),html: { class: 'form-group'}, custom_id: params[:id],destroy: false, history: false)%>

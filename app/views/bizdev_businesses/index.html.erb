@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-between">
+	<%= form_title(@bizdev_business) %> 
+	<div>
+		<%= link_to(I18n.t('general.new'), new_bizdev_business_path , class: 'btn btn-primary') %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col">
+		<%= createBasicTable(@header,create_business_index_rows) %>
+	</div>
+</div>
+

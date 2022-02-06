@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col">
+		<div class="card">
+      <div class="card-body">
+        <h4> Crear excepción de salario minimo para pago </h4>
+        <hr/>
+
+        <%= form_for(FundingOptionConfig.new, url: {controller: 'threshold_exceptions', action: 'create' }, html: {class: 'py-4'}) do |f| %>
+          <div class="row">
+           
+            <%= f.hidden_field 'isa_id', value: params['isa_id'] %>
+            <div class="col-md-6">
+               <label for="">Ingresa el valor del salario minimo para pago</label>
+              <%= lumni_text_field 'threshold_exception','value',{ required: true, field_type: 'currency'} %>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="offset-md-4 col-md-2">
+              <%= button_tag('Crear',class: 'btn btn-primary btn-block') %>
+            </div>
+          </div>
+
+        <% end %>
+    	</div>
+		</div>
+	</div>
+</div>

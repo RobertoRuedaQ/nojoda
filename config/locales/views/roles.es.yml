@@ -1,0 +1,31 @@
+es:
+  roles:
+    module_permission: 'Permisos Por Módulo'
+    view: 'Ver'
+    create: 'Crear'
+    create_with_approval: 'Crear Con Aprobación'
+    update: 'Actualizar'
+    update_with_approval: 'Actualizar Con Aprobación'
+    destroy: 'Destruir'
+    destroy_with_approval: 'Destruir Con Aprobación'
+    regular: 'Regular'
+    with_approval: 'Aprobación'
+    approver: 'Aprobador'
+    supervisor: 'Nombre Supervisor'
+    create_regular: 'Crear'
+    create_with_approval: 'Crear Con Aprobación'
+    create_supervisor: 'Supervisor Creación'
+    update_regular: 'Actualizar'
+    update_with_approval: 'Actualizar Con Aprobación'
+    update_supervisor: 'Supervisor Actualizacion'
+    destroy_regular: 'Destruir'
+    destroy_with_approval: 'Destruir Con Aprobación'
+    destroy_supervisor: 'Supervisor Destrucción'
+    select_approver: 'Selecciona el perfil de quien aprueba para %{model}'
+  support_roles:
+    academic: Etapa académica
+    disbursement: Desembolso
+    collection: Cobranza
+    general: General
+    work: Etapa productiva
+

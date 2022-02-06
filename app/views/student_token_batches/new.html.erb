@@ -1,0 +1,32 @@
+<%= form_title(@student_token_batch, I18n.t('mains.new')) %>
+<div class="card  mb-3">
+    <h5 class="card-header ">
+      <div class="d-flex justify-content-between">
+          <%= StudentTokenBatch.model_name.human(count: 1) %>
+      </div>
+    </h5>
+  <div class="card-body">
+    <%= form_for @student_token_batch do |f| %>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+           <%= f.hidden_field(:funding_opportunity_id, value: params[:funding_opportunity_id]) %>
+          <%= f.label I18n.t('student_token_batch.attributes.token_file') %>
+          <%= f.file_field :tokens_list, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label I18n.t('student_token_batch.attributes.description') %>
+          <%= f.text_area(:description) %>
+        </div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class="col-md-12">
+        <div class="form-group">
+          <%= f.submit I18n.t('student_token_batch.actions.save'), class: 'btn btn-success lumnisubmit pull-right' %>
+        </div>
+      </div>
+    </div>
+    <%end%>
+  </div>
+</div>

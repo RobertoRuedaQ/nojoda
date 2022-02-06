@@ -1,0 +1,25 @@
+
+<% pending_interview = target_application.user.pending_interviews %>
+<% if pending_interview.any? %>
+
+  <% pending_interview.each do |interview| %>
+    <div class="card col-md-12 m-2">
+      <div class="card-body">
+        <div class="text-center">
+          <h5><%= interview.questionnaire.name %></h5>
+          <div class="btn-group">
+            <% case interview.status %>
+            <% when 'active' %>
+            <%= link_to I18n.t('questionnaire.start'),start_test_user_questionnaire_path(interview), class: 'btn btn-primary my-5 mx-2' %>
+            <% when 'ongoing' %>
+              <%= link_to I18n.t('general.continue'),test_taker_user_questionnaire_path(interview), class: 'btn btn-primary my-5 mx-2' %>
+            <% end %>
+            <%= link_to I18n.t('general.cancel'), root_path, class: 'btn btn-secondary my-5 mx-2' %>
+
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,22 @@
+<div class="card">
+	<div class="card-body py-3">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= I18n.t('general.id') %></th>
+          <th><%= I18n.t('general.name') %></th>
+          <th><%= I18n.t('general.scanned_document')%></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @legal_matches.each do |legal_match|%>
+        <tr>
+          <td><%=  legal_match.id %></td>
+          <td><%=  legal_match.legal_document.name %></td>
+          <td><%=  scanned_document(legal_match) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+	</div>
+</div>

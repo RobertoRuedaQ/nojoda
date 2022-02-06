@@ -1,0 +1,12 @@
+<% if target_application.has_funding_options? %>
+  <div class="col-md-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="text-primary"><%= Application.human_attribute_name(:show_financial_proposals) %></h5>
+        <div class="my-3">
+          <%= lumni_boolean_field('application','automatic_show_financial_proposals', {id: target_application.id, value: target_application.show_financial_proposals, disabled: target_application.funding_option.selected?}) %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,57 @@
+<div class="offset-md-3 col-md-6">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="mb-4">Facilidades de pago en Lumni frente al COVID-19</h2>
+      <p>Buscando tu bienestar hemos puesto a tu disposición las siguientes alternativas para poder ajustar los pagos a tus posibilidades. Con la información que nos proporciones, trabajaremos por otorgarte el mejor beneficio para que el cumplimiento de tus pagos dejen de ser una preocupación.</p>
+
+      <ul class="my-4">
+        <li class="my-2">Los beneficios de pago presentados son medidas extraordinarias como consecuencia de la emergencia sanitaria decretada tras el brote de COVID-19 en el país. Lumni y sus fondos determinarán su temporalidad.</li>
+        <li class="my-2">Los beneficios de pago no están sujetos a comisión o interés alguno.</li>
+      </ul>
+
+      <%= form_tag set_covid_option_covid_emergencies_path do %>
+        <div class="form-check my-3">
+            <div class="align-self-center">
+                      <%= radio_button("covidemergency", 'option','normal',checked: true, class: 'form-check-input',required: true, id: "covid_normal") %>
+            </div>
+                      <%= label_tag "covid_normal_label", 'Continuaré normalmente con mis pagos.', class: 'form-check-label my-1 ml-2' %>
+        </div>
+
+        <div class="form-check my-3">
+          <div class="align-self-center">
+            <%= radio_button("covidemergency", 'option','due_date',checked: true, class: 'form-check-input',required: true, id: "covid_normal") %>
+          </div>
+            <%= label_tag "covid_due_date_label", 'Deseo reprogramar mi pago para el fin de mes.', class: 'form-check-label my-1 ml-2' %>
+        </div>
+
+        <div class="form-check my-3">
+          <div class="align-self-center">
+            <%= radio_button("covidemergency", 'option','payment_agreement',checked: true, class: 'form-check-input',required: true, id: "covid_normal") %>
+          </div>
+          <%= label_tag "covid_payment_agreement_label", 'Debido a la situación actual del país, solicito fraccionar mi cuota actual en "3" meses, dividiendo mi cuota de Agosto en 3 y pagando en los siguientes 2 meses solo esta fracción de cuota, por lo que postergamos las cuotas de Septiembre y Octubre 2020 al final. (1/3 en Agosto - 1/3 Septiembre - 1/3 Octubre).', class: 'form-check-label my-1 ml-2' %>
+          <%= label_tag "* IMPORTANTE: Por favor justifique el por qué su situación financiera le lleva a elegir esta opción." %>
+
+            <div class="my-2" id="">
+                    <div class="my-2">
+                      <h5 class="my-4">Escribe los detalles que deseas que sean evaluados y adjunta en un archivo los documentos que deseas que revisemos.</h5>
+                      <%= lumni_textarea_field 'covidemergency','details',{} %>
+                    </div>
+                    <div class="my-2">
+                      <%= lumni_file_field 'covidemergency','support',{},{object: CovidEmergency.new} %>
+                    </div>
+                  </div>
+
+        </div>
+
+        <%= hidden_field('covidemergency','start_date',value: '2020-07-01') %>
+        <%= hidden_field('covidemergency','end_date',value: '2020-09-30') %>
+        <%= hidden_field('covidemergency','billing_document_id',value: params[:id]) %>
+        <%= hidden_field('covidemergency','status',value: 'active') %>
+        <div class="text-center my-4">
+          <%= button_tag 'Elegir Alternativa', class: 'btn btn-primary' %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

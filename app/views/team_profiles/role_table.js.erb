@@ -1,0 +1,7 @@
+$('#team-profile-role-table-container').html("<%= j createRoleTable(@profile,'roles','update',@profile.id) %> ")
+
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+setGlobalSwitches()
+iniciateRoleTableFuncionality()
+createDataTables()

@@ -1,0 +1,32 @@
+
+<% if payment_matches.size > 0 %>
+  <div class="card">
+    <div class="card-body py-3">
+      <h5 class="text-primary"><%= Payment.model_name.human(count: 2) %> aplicados al detalle: <%= detail.id %></h5>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th><%= I18n.t('payment.attributes.payment_value') %></th>
+            <th><%= I18n.t('payment.attributes.applied_value') %></th>
+            <th><%= I18n.t('payment.attributes.date') %></th>
+            <th><%= I18n.t('payment.attributes.method') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% payment_matches.each do |pm|%>
+          <tr>
+            <% payment = pm.payment %>
+            <td><%= link_to payment.id, edit_payment_path(payment), target: :_blank %></td>
+            <td><%= lumni_currency payment.value %></td>
+            <td><%= lumni_currency pm.value %></td>
+            <td><%= lumni_date payment.payment_date %></td>
+            <td><%= payment.payment_method %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    
+    </div>
+  </div>
+<% end %>

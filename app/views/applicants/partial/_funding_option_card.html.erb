@@ -1,0 +1,285 @@
+<% if defined?(grid_main).nil? %>
+  <% grid_main = 6 %>
+<% end %>
+
+<% if defined?(disbursement_grid).nil? %>
+  <% disbursement_grid = 6 %>
+<% end %>
+
+<% if defined?(isa_check).nil? %>
+  <% isa_check = false %>
+<% end %>
+
+<% if isa_check %>
+  <% isa =  funding_option.isa%>
+<% end %>
+
+<%if isa.present? && ['retired', 'expelled'].include?(isa.stored_general_status) %>
+  <%disbursements = funding_option.disbursement %>
+<%else%>
+  <%disbursements = funding_option.disbursement_not_canceled_nor_academic_bonus %>
+<% end %>
+
+<% if defined?(disbursements_hash).nil? %>
+    <% disbursements_hash = lumni_disbursement_hash(disbursements,['forcasted_date','student_value','disbursement_case', 'status']) %>
+<% end %>
+
+<% if defined?(funding_detail).nil? %>
+  <% funding_detail = true %>
+<% end %>
+
+<% if defined?(disbuserment_text).nil? %>
+  <% disbuserment_text = false %>
+<% end %>
+
+<% if defined?(general_card).nil? %>
+  <% general_card = funding_detail %>
+<% end %>
+
+<% if defined?(billing_document_card).nil? %>
+  <% billing_document_card = false %>
+<% end %>
+
+<% if disbursements.size > 0 %>
+<% currency = disbursements.first.currency %>
+<% target_application = funding_option.right_application %>
+  <% selected = funding_option.selected? %>
+  <% if funding_detail && general_card %>
+    <div class="col-md-<%=billing_document_card ? 3 : grid_main %> p-0">
+      <div class="card">
+        <div class="card-header text-primary">
+          <% if isa.nil? %>
+            <div class="d-flex">
+              <div class="flex-fill">
+                <h5><%= properName FundingOption.model_name.human(count: 1) %> (<%= funding_option.id %>)
+                  <% if selected %> 
+                    <span class="text-success mx-3"><i class="fas fa-check-circle text-success"></i></span>
+                  <% end %>
+                </h5>
+              </div>
+            </div>
+          <% else %>
+            <div class="d-flex">
+              <div class="flex-fill">
+                <h5><%= properName Isa.model_name.human(count: 1) %> (<%= isa.id %>)
+                  <% if selected %> 
+                    <span class="text-success mx-3"><i class="fas fa-check-circle text-success"></i></span>
+                  <% end %>
+                </h5>
+              </div>
+              <div class="flex-fill text-right">
+                <span class="text-primary py-0 my-0"><%=isa.fund_name %></span><br>
+                <span class="text-muted py-0 my-0"><%= isa.funding_opportunity_name %></span><br>
+              </div>
+            </div>
+          <% end %>          
+    </div>
+<% end %>
+
+      <div class="card-body row">
+
+
+
+        <% if funding_detail || general_card%>
+
+
+          <% if funding_option.model_status == "failed"%>
+            <div class="col-md-12 bg-danger text-white p-2 my-2">
+              <h5><%= I18n.t('modeling.modeling_rejected') %></h5>
+            </div>
+          <% end %>
+       
+
+          <div class="col-md-<%= billing_document_card ? 3 : [12 - disbursement_grid,0].max %>">
+            <h4><%= FundingOption.model_name.human(count: 1) %></h4>
+            <table class="table table-striped">
+              
+              <% funding_options_variables.each do |f| %>
+
+                <% unless funding_option.send(f).nil? || (['visible_to_student','target'].include?(f) && target_application.funding_option.selected?)%>
+                  <tr>
+                    <td><%= FundingOption.human_attribute_name(f)%></td>
+                    <td><%= contract_variable_format funding_option.send(f), f,currency, funding_option.id, target_application.funding_option.selected? %></td>
+                  </tr>
+                <% end %>
+              <% end %>
+              
+              <%if current_user.staff? %>
+                <% funding_option.funding_option_config.where.not(name: 'threshold_exception').each do |target_config| %>
+                  <tr>
+                    <td><%= I18n.t('students.' + target_config.name) %></td>
+
+                    <% if target_config.max_months.present? %>
+                      <% config_value = target_config.max_months%>
+                    <% elsif target_config.other_value.present? && target_config.value.nil? %>
+                      <% config_value = target_config.other_value %>
+                    <%else %>
+                      <% config_value = target_config.value %>
+                    <% end %>
+
+                    <td><%= contract_variable_format config_value, target_config.name,currency,target_config.id, target_application.funding_option.selected?  %></td>
+                  </tr>
+                <% end %>
+                <%if isa.present? %>
+                  <% threshold_exception = funding_option.funding_option_config.find_by_name('threshold_exception') %>
+                  <tr>
+                    <td><%= I18n.t('students.threshold_exception') %></td>
+                    <% if threshold_exception %>
+                      <% config_value = threshold_exception.max_months.present? ? threshold_exception.max_months : threshold_exception.value %>
+                      <td class="d-flex justify-content-between">
+                        <%= lumni_currency contract_variable_format(config_value, threshold_exception.name,currency,threshold_exception.id, target_application.funding_option.selected?)  %> 
+                        <%= link_to 'Editar', edit_isa_threshold_exception_path(isa, threshold_exception), target: '_blank' %>
+                      </td>
+                    <% else %>
+                      <td><%= link_to 'Agregar', new_isa_threshold_exception_path(isa), target: '_blank' %></td>
+                    <% end %>
+                  </tr>
+                <%end %>
+              <%end %>
+              
+              <% if  current_user.staff? && funding_option.modeling_flow.size > 0 %>
+                <tr>
+                  <td><%= ModelingFlow.model_name.human(count: funding_option.modeling_flow.size) %></td>
+                  <td><%= link_to I18n.t('students.view_flows'), funding_option_modeling_flows_path(funding_option), target: :bank %></td>
+                </tr>
+
+              <% end %>
+
+
+              
+              
+            </table>  
+            
+
+            <% if !isa.nil? && !current_user.student? %> 
+
+              <h4><%= I18n.t('isa.collection_information') %></h4>
+
+              <table class="table table-striped">
+                <tr>
+                  <td><%= I18n.t('isa.inflation_adjustment_date') %></td>
+                  <td><%= lumni_date(isa.inflation_adjustment_date) %></td>
+                </tr>
+                <tr>
+                  <td><%= I18n.t('students.nominal_payment') %></td>
+                  <td><%= lumni_currency isa.nominal_payment %></td>
+                </tr>
+                <tr>
+                  <td><%= I18n.t('students.payment') %></td>
+                  <td><%= lumni_currency isa.payment_value %></td>
+                </tr>
+                <tr>
+                  <td><%= I18n.t('students.credit') %></td>
+                  <td><%= lumni_currency isa.user.payment_excess.sum(:value) %></td>
+                </tr>
+                <tr>
+                  <td><%= I18n.t('students.payment_generated_number') %></td>
+                  <td><%=  isa.repayment_total_number %></td>
+                </tr>
+                <tr>
+                  <td><%= I18n.t('students.payment_matched_number') %></td>
+                  <td><%=  isa.repayment_payed_number %></td>
+                </tr>
+                <tr>
+                  <td><%= I18n.t('students.payment_pending_number') %></td>
+                  <td><%=  isa.payment_to_finalize_isa %></td>
+                </tr>
+                <tr>
+                  <td><%= I18n.t('students.total_cancellation') %></td>
+                  <td><%=  lumni_currency isa.total_cancellation, isa.currency %></td>
+                </tr>
+                <tr>
+                  <td><%= I18n.t('students.xirr') %></td>
+                  <td><%= isa.funding_option.xirr.to_f.round(2) %> %</td>
+                </tr>
+
+                <% if isa.funding_option.decimal_rate_cap.present? || isa.funding_option.nominal_cap.present?%>
+                  <% cap_value = isa.funding_option.value_to_cap.to_f%>
+                  <tr>
+                    <td><%= I18n.t('isa.value_to_top') %></td>
+                    <% if cap_value.is_a? String %>
+                      <td class="text-danger">
+                        <%= cap_value  %>
+                        <%= link_to I18n.t('list.refresh'), update_cap_value_funding_option_path(funding_option), class: 'ml-4', method: :post %>
+                      </td>
+                    <% else %>
+                      <td class="<%= 'text-danger' if cap_value < 0 %>">
+                        <%= lumni_currency cap_value.to_f  %>
+                        <%= link_to I18n.t('list.refresh'), update_cap_value_funding_option_path(funding_option), class: 'ml-4', method: :post %>
+                      </td>
+                    <% end %>
+                  </tr>
+                  <tr>
+
+                    <td><%= I18n.t('isa.value_to_cap_with_excess') %></td>
+                    <% if cap_value.is_a? String %>
+                      <td class="text-danger"><%= cap_value  %></td>
+                    <% else %>
+                      <td class="<%= 'text-danger' if cap_value < 0 %>"><%= lumni_currency isa.funding_option.value_to_cap_with_excess.to_f  %></td>
+                    <% end %>
+                    
+                  </tr>
+
+                <% end %>
+
+                <tr>
+                </tr>
+                
+              </table>
+
+            <% end %>                   
+            
+          </div>
+        <% end %>
+
+        <div class="col-md-<%=billing_document_card ? 3 : [disbursement_grid,12].min %>">
+
+          <% if !isa.nil? && current_user.staff? %>
+            <%= render '/students/partial/isa_statuses', isa: isa %>
+          <% end %>
+          <%= render '/applications/sections/disbursement', disbursements_hash: disbursements_hash ,funding_detail: funding_detail,disbuserment_text: disbuserment_text, funding_option_application_case: funding_option.application.application_case, funding_option: funding_option%>
+
+          <% if !current_user.student? && !isa.nil?%>
+            <%= render '/isas/partial/payment_agreement_table',payment_agreements: isa.payment_agreement %>
+
+          <% end %>
+
+
+        </div>
+
+        <% if isa.present? && current_user.staff? %>
+          <div class="col-md-12">
+              <div class="mt-4">
+                <%= render '/income_informations/partial/income_table', target_user: isa.user %>
+              </div>
+          </div>
+        <% end %>
+
+        <% if billing_document_card  && isa.present?%>
+          <div class="col-md-6">
+            <%= render '/students/partial/billing_document_card', isa: isa %>
+          </div>
+        <% end %>
+
+
+        <% if isa.present? && current_user.staff? %>
+          <div class="col-md-12 mt-4">
+            <%= render '/isas/partial/billing_document_table', isa: isa %>
+          </div>
+
+          <%= render partial: '/isas/partial/payments_table_modal'%>
+        <% end %>
+
+      </div>
+
+
+  <% if funding_detail && general_card %>  
+      </div>
+    </div>
+  <% end %>
+
+
+<% end %>
+
+
+

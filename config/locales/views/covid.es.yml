@@ -1,0 +1,12 @@
+es:
+  covid:
+    normal: 'Has elegido continuar normalmente con tus pagos.'
+    due_date: 'Has elegido extender el tiempo para pagar el documento de cobro hasta el fin de mes.'
+    payment_agreement: 'Has elegido dividir tu obligación de Abril en tres meses (Abril, Mayo y Junio).'
+    custom_adjustment: 'Has solicitado la revisión de tu caso particular.'
+    no_payment: 'Has solicitado la excepción de pago según el acuerdo. '
+    normal_review: 'Estamos revisando tu solicitud para continuar normalmente con tus pagos.'
+    due_date_review: 'Estamos revisando tu solicitud para extender el tiempo para pagar el documento de cobro hasta el fin de mes.'
+    payment_agreement_review: 'Estamos revisando tu solicitud para dividir tu obligación de Abril en tres meses (Abril, Mayo y Junio).'
+    custom_adjustment_review: 'Estamos revisando tu solicitud para evaluar tu caso particular.'
+    no_payment_review: 'Estamos revisando tu solicitud para evaluar tu caso particular.'

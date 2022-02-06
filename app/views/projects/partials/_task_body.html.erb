@@ -1,0 +1,77 @@
+  <div class="ui-bordered p-1 mb-1 <%= task.private ? 'bg-secondary text-white' : 'bg-white' %> <%= 'locked' if task.locked %>" >
+    <% unless task.locked %>
+      <div class="kanban-board-actions btn-group float-right ml-2">
+        <button type="button" class="btn btn-default btn-xs btn-round icon-btn borderless md-btn-flat hide-arrow dropdown-toggle" data-toggle="dropdown"><i class="ion ion-ios-more"></i></button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to( ('<i class="ion ion-ios-settings mr-2"></i> ' + I18n.t('general.edit')).html_safe , edit_task_project_task_path(task), class: 'dropdown-item', remote: true) %>
+          <% if  task.cached_checklist_count == 0 %>
+            <%= link_to( ('<i class="ion ion-md-checkbox-outline mr-2"></i> ' + I18n.t('general.add_checklist')).html_safe, new_checklist_project_task_path(task), class: 'dropdown-item', remote: true) %>
+          <% else %>
+            <%= link_to( ('<i class="ion ion-md-checkbox-outline mr-2"></i> ' + I18n.t('general.show_checklist')).html_safe, show_checklist_project_task_path(task), class: 'dropdown-item', remote: true) %>
+          <% end %>
+
+          <hr class="my-1">
+          <%= link_to( ('<i class="ion ion-ios-trash mr-2"></i> ' + I18n.t('general.destroy')).html_safe, project_task_path(task),  class: 'dropdown-item text-danger' , remote: true, method: 'delete') %>
+        </div>
+      </div>
+    <% end %>
+
+  <div class="d-inline-flex">
+    <div class=" mr-2" data-toggle="popover" data-placement="top"  data-content="<%= User.cached_find(task.responsable_id).name %>" data-trigger="hover">
+      <% if task.locked %>
+        <%= loadingAvatar(20,id: task.responsable_id) %>
+      <% else %>
+        <%= link_to(  edit_task_project_task_path(task), class: 'text-primary', remote: true) do %>
+            <%= loadingAvatar(20,id: task.responsable_id) %>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="edit_task-<%= task.id %>">
+      <% if task.locked %>
+        <i class="ion ion-ios-lock mx-1"></i>
+      <% end %>
+      <%= link_to( ("<small class='text-muted'>#{task.id} </small> #{task.target_title current_user.language}").html_safe , edit_task_project_task_path(task), class: 'text-body', remote: true, data: {disable_with: I18n.t('general.loading')}) %>
+    </div>
+  </div>
+    
+
+    <dir id="task-details-<%= task.id %>" class="m-0 p-0">
+
+
+      <div class="progress my-1" style="height: 2px;">
+        <div class="progress-bar bg-success" style="width: <%= task.progress %>%;"></div>
+      </div>
+
+
+
+      <div class="row">
+        <!-- Deadline badge -->
+        <div class="col-xl-4 col-md-12 col text-center mb-0">
+          <% if !task.deadline.nil? %>
+              <div id="deadline-<%= task.id %>" class="badge badge-pill badge-<%= projectDateCase(task.start_date,task.deadline,task.done) %>">
+                <%= link_to( ('<small>' + lumni_date(task.deadline) + '</small>').html_safe , edit_task_project_task_path(task), class: 'text-white', remote: true,data: {disable_with: I18n.t('general.loading')}) %>
+                
+              </div>
+          <% end %>
+        </div>
+
+        <div class="col-xl-3 col-md-5 col text-center mb-0">
+          <div class="badge badge-pill badge-<%= projectDateCase(task.checklist.undone.kept.minimum(:start_date),task.checklist.undone.kept.minimum(:deadline),task.done) %>">
+            <%= link_to( ('<i class="ion ion-md-list-box mr-2"></i>' + task.checklist.kept.done.count.to_s + ' / ' + task.cached_checklist_count.to_s).html_safe, show_checklist_project_task_path(task),  class: 'text-white' , remote: true, data: {disable_with: I18n.t('general.loading')}) %>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-5 col text-center mb-0">
+          <%= button_to(show_chat_project_comment_path(task),method: 'get', class: 'btn btn-xs btn-outline-secondary borderless' ,tabindex: task.id+1, remote: true, data: {disable_with: I18n.t('general.loading')} ) do %>
+          <i class="ion ion-ios-chatboxes"></i> <%= task.project_comment.count %>
+          <% end %>
+        </div>
+
+        <div class="col-xl-2 col-md-2 col text-center mb-0">
+          <i class="<%=task_type_icon task.task_case %> <%=task_priority_color task.priority %>"></i>
+        </div>
+
+
+      </div>
+    </dir>
+  </div>
+

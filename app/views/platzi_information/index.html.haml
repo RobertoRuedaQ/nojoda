@@ -1,0 +1,10 @@
+.card
+  .logo
+    = image_tag('1x/Asset 16.png')
+  .title
+    Notificación
+  .body
+    A partir del 1ero de Noviembre, todos los pagos relacionados al programa Platzi Master deberán realizarse directamente a Platzi. En caso de cualquier pregunta, por favor contactar al equipo de Platzi Master a través de Discord o correo electrónico.
+  .text-center
+    .button
+      = link_to ('<i class="ion ion-ios-log-out text-danger"></i> &nbsp;' + I18n.t('mains.sign_out')).html_safe, destroy_user_session_path, :method => :delete 

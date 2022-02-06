@@ -1,0 +1,14 @@
+<% if @save_check != 'stop' %>
+	$('#status-indicator-<%= @section.id %>').html('<div class="text-success m-1"><i class="fas fa-check"></i></div>')
+	$('#collapse<%= @section.id %>').collapse('toggle')
+	<% if !@application.current_section.nil? %>
+		$('#collapse<%= @application.current_section_id %>').collapse('show')
+	<% end %>
+
+	<% if @module_next %>
+		$("#application").smartWizard("next");
+	<% end %>
+<% end %>
+
+
+              

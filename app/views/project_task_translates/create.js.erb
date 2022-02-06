@@ -1,0 +1,1 @@
+$('#card-body-translation-<%= @project_task_translate.language %>').html("<%= j build_form(@project_task_translate,'update',current_user.template('ProjectTaskTranslate','project_task_translates',current_user),html: { class: 'form-group', method:  'put'}, header_title: false, controller: 'project_task_translates',id: @project_task_translate.id, remote: true)%>")

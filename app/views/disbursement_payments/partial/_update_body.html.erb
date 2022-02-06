@@ -1,0 +1,26 @@
+
+<% disbursement = disbursement_payment.disbursement %>
+<% user = disbursement.user %>
+<div class="m-3">
+	<h4 class="mb-0 pb-1"><%= user.name %> - <%= disbursement.fund.name %></h4>
+	<span class="text-muted"><%= User.human_attribute_name('identification_number') %>: <%= user.identification_number %></span><br>
+	<span class="text-primary"><%= user.funded_academic_information.major.name %> - <%= user.funded_academic_information.institution.name %></span>
+</div>
+
+<% target_application =  disbursement.approved_application %>
+<% if target_application.nil? %>
+	<% target_application = disbursement.application_from_match %>
+<% end %>
+<% disbursement_request = target_application.disbursement_request %>
+<% request_template =  disbursement.origination_template_by_target_model('DisbursementRequest',user,user.company)%>
+<%= build_form(disbursement_request,'update',request_template,html: { class: 'form-group', method: 'put'},controller: 'disbursement_requests',locked: true,destroy: false, history: false) %>
+
+
+<% target_template = target_user.template('DisbursementPayment','disbursement_payments',target_user) %>
+<% target_template[:value][:max] = disbursement_payment.value.to_f + disbursement_payment.disbursement.approved.to_f - disbursement_payment.disbursement.disbursed.to_f  %>
+<% target_template[:value][:disabled] = 'true' %>
+<% [nil, 0].include?(disbursement_request.reimbursement_value) &&  disbursement.disbursement_case == "tuition" ? list = institution_bank_account_list( target_user) : list = user_bank_account_list( target_user)%>
+<% target_template[:bank_account_id] = target_template[:bank_account_id].merge({list: list}) %>
+<% target_template[:payment_case] = target_template[:payment_case].merge({list: disbursement_payment_type_list(disbursement)}) %>
+
+<%= build_form(disbursement_payment,'update',target_template,html: { class: 'form-group', method: 'put'},controller: 'disbursement_payments',destroy: false, history: false, locked: (disbursement_payment.status == 'payed')) %>

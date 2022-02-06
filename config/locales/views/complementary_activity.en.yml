@@ -1,0 +1,9 @@
+en:
+  complementary_activity:
+    workshop: 'Workshop'
+    workshop_button: 'Go to the workshop site'
+    workshop_text: 'The following link will guide you to the current workshop side.'
+    mentorship: 'Mentorship'
+    mentorship_button: 'Go to the mentorship site'
+    mentorship_text: 'The following link will guide you to the current mentorship side.'
+    workshop_and_mentorship: 'Workshops And Mentorships'

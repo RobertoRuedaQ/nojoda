@@ -1,0 +1,14 @@
+<li class="sidenav-item"> 
+  <a href="#" data-toggle="collapse" data-target="#projects" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-md-barcode"></i><%= I18n.t('mains.projects')%>
+  </a>
+  <ul class="sidenav-menu" id="projects">
+    <li class="sidenav-item">
+      <a href="<%= projects_path %>" class="sidenav-link "><%= Project.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= project_task_types_path %>" class="sidenav-link "><%= ProjectTaskType.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

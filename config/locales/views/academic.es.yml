@@ -1,0 +1,16 @@
+es:
+  academic:
+    school: 'Colegio'
+    university: 'Universidad'
+    funded_major: 'Programa financiado'    
+    edit_academic_information: 'Editar información académica'
+    edit_academic_information_text: 'En esta sección podrás actualizar tu fecha de terminación de materias, fecha de graduación y subir tu certificado de grado.'
+    # edit_courses: 'Editar Información Registro de Materias'
+    # edit_courses_text: 'En esta sección podrás registra las materias que vas a cursar en tu periodo Académico.'
+    edit_diploma_delivery: 'Entrega de diploma'
+    edit_diploma_delivery_text: 'Aquí podrás reportar la información del proceso de graduación, fecha terminación de materias, fecha de graduación, fecha entega de diploma y subir tu certificado de grado.'
+    # edit_partial_scores: 'Editar Información Reporte Notas Intermedias'
+    # edit_partial_scores_text: 'En esta sección podrás reportar el avance de tu periodo Académico, las notas que llevas a la fecha.'
+    edit_final_scores: 'Reportar notas'
+    edit_final_scores_text: 'Aquí podrás reportar los cursos y las notas de tu periodo académico.'
+    # edit_final_scores_text: 'En esta sección podrás reportar las notas definitivas de tu periodo Académico.'

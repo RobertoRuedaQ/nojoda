@@ -1,0 +1,45 @@
+<%= form_title(@profile, 'name') %>
+
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#user-edit-account"><%= TeamProfile.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link form-template-role-tab" data-toggle="tab" href="#user-edit-info" id="form-role-tab-<%= params[:id] %>"><%= Role.model_name.human(count: 2) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link form-template-tab" data-toggle="tab" href="#user-templates-info" id="form-template-tab-<%= params[:id] %>"><%= FormTemplate.model_name.human(count: 1) %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="user-edit-account">
+		<%= build_form(@profile,'update',team_profiles_fields,html: { class: 'form-group', method: 'put'},columns: 1,buttonOffset: 1,header_title: false)%>
+    </div>
+    <div class="tab-pane fade " id="user-edit-info">
+    	<div class="card">
+    		<div class="card-body" id="team-profile-role-table-container">
+
+          <div class="text-center" id="loader-team-profile-role-table">
+            <%= image_tag( asset_path("default/lumniLoad.gif"), alt: I18n.t('general.loading'), class: "spinnerimg",style: "width: 200px;") %>
+          </div>
+
+				   			
+    		</div>
+    	</div>
+    </div>
+    <div class="tab-pane fade " id="user-templates-info">
+      <div class="card">
+        <div class="card-body">
+          <div class="my-3 mx-3" id="profile-template-table-container">
+            <div class="text-center" id='loader-team-profile-template'>
+              <%= image_tag( asset_path("default/lumniLoad.gif"), alt: I18n.t('general.loading'), class: "spinnerimg",style: "width: 200px;") %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

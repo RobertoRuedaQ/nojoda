@@ -1,0 +1,13 @@
+<% grade_id = nil %>
+<% if university_course_grade.count > 0 %>
+	<h5 class="my-4"><%= I18n.t('disbursement.university_course_grades') %></h5>
+	<% grade_id = university_course_grade.first.id %>
+<% end %>
+
+
+
+<% university_course_grade.each do |course| %>
+	<%= render '/university_course_grades/partial/course_card', course: course, section: section%>
+<% end %>
+
+

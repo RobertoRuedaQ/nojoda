@@ -1,0 +1,16 @@
+en:
+  devise:
+    additional:
+      sign_in_your_account: 'Sign In Your Account'
+      forgot_your_password: 'Forgot your password?'
+      not_account: "Don't have an account yet?"
+      brighter_future: "INVESTING IN A BRIGHTER FUTURE"
+      brighter_future_p1: "Lumni provides opportunities for individuals and institutions to invest in the future of our youth."
+      create_account: 'Create an Account'
+      agree_p1: 'By clicking "%{button}", you agree to our '
+      agree_p2: 'Terms of Use and Privacy Policy. '
+      agree_p3: 'We’ll occasionally send you account related emails.'
+      have_account: 'Already have an account?'
+      resend_instructions: 'Resend Confirmation Instructions'
+      recover_it: 'Recover it!'
+

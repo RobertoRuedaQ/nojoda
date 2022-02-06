@@ -1,0 +1,2 @@
+module ListInputsHelper
+end

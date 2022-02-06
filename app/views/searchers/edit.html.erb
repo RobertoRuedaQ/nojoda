@@ -1,0 +1,7 @@
+
+
+<% searcher_table = current_user.template('Student','students',current_user,id: true) %>
+<% searcher_table[:id][:controller] = 'students' %>
+<% searcher_table[:id][:action] = 'edit' %>
+<% searcher_table[:id][:target_id] = 'id' %>
+<%= createTable(@users,searcher_table).html_safe %>

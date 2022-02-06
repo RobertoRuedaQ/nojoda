@@ -1,0 +1,11 @@
+<div class="card">
+	<div class="card-body">
+		<div class="text-right">
+			<div class="btn-group">
+			<%= link_to(I18n.t('general.new'), new_funding_token_path(id: params[:id]),class: 'btn btn-primary my-3',remote: true, data: { disable_with: I18n.t('form.please_wait')}) %> 
+			<%= link_to(I18n.t('form.create_from_file'), new_student_token_batch_path(funding_opportunity_id: params[:id]),class: 'btn btn-primary my-3', data: { disable_with: I18n.t('form.please_wait')}) %> 
+			</div>
+		</div>
+		<%= createBasicTable(header,rows,id: "token_table_#{params[:id]}") %>
+	</div>
+</div>

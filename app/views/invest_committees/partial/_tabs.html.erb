@@ -1,0 +1,13 @@
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link direct_link <%= 'active' if action_name == 'edit' %>" data-toggle="tab" href="<%= edit_invest_committee_path(@invest_committee)%>"><%= InvestCommittee.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link direct_link <%= 'active' if action_name == 'application_committee' %>" data-toggle="tab" href="<%= application_committee_invest_committee_path(@invest_committee)%>"><%= ApplicationCommittee.model_name.human(count: 2) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link direct_link <%= 'active' if action_name == 'invest_decision' %>" data-toggle="tab" href="<%= invest_decision_invest_committee_path(@invest_committee)%>"><%= InvestmentDecision.model_name.human(count: 2)  %></a>
+    </li>
+  </ul>
+</div>

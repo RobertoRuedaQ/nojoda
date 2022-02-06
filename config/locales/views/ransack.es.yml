@@ -1,0 +1,10 @@
+es:
+  ransack:
+    fields:
+      institution_name_cont: 'Nombre de la institución contiene'
+      supervisor_eq: Supervisor encargado es igual a 
+      funding_opportunity_eq: Convocatoria es igual a
+      funding_opportunity_cont: Convocatoria contiene
+      disbursement_case_eq: Tipo de desembolso es igual a 
+      disbursement_request_case_eq: Tipo de solicitud de desembolso es igual a
+      fund_cont: Fondo contiene

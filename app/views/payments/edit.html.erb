@@ -1,0 +1,6 @@
+
+
+<%= form_title(@payment, 'id') %> 
+<%= build_form(@payment,'update',current_user.template('Payment','payments',current_user),html: { class: 'form-group', method: 'put'}) %>
+
+<%= render partial: 'isas/partial/detail_payment_match', locals: { payment_matches: @payment.payment_match.includes([:billing_document_detail]), payment: @payment}%>

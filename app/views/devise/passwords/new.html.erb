@@ -1,0 +1,61 @@
+  <!-- Page -->
+  <%= stylesheet_link_tag 'pages/authentication.css', media: 'all' %>
+
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<div class="authentication-wrapper authentication-2 px-4">
+  <div class="authentication-inner py-4">
+
+    <!-- Form -->
+	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post , class: "card" }) do |f| %>
+
+      <div class="p-4">
+
+    <%= devise_error_messages! %>
+
+        <h5 class="text-center text-muted font-weight-normal mb-4"><%= I18n.t('devise.additional.forgot_your_password') %></h5>
+
+        <hr class="mt-0 mb-4">
+        <div class="form-group">
+
+
+
+		    <%= f.label :email %><br />
+		    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"  %>
+
+        <% if Rails.env == 'production' %>
+          <div class="text-center my-3 d-flex">
+            <%= recaptcha_tags( callback: 'enable_submit') %>
+          </div>
+        <% end %>
+
+
+        </div>
+
+
+      <div class="actions">
+    <%= f.submit t('.send_me_reset_password_instructions'), class: 'btn btn-primary btn-block' %>
+      </div>
+
+      <div class="py-5">
+    <%= render "devise/shared/links" %>
+      </div>
+
+
+      </div>
+    <% end %>
+    <!-- / Form -->
+
+  </div>
+</div>
+
+
+
+
+
+
+
+

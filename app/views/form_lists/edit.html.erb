@@ -1,0 +1,121 @@
+<div class="d-flex justify-content-between">
+	<%= form_title(@form_list, 'case') %> 
+	<div><%= link_to I18n.t('general.clone'),new_clone_form_list_path(@form_list), class: 'btn btn-primary' %>
+</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4">
+		<div id="accordion">
+
+		  <div class="card mb-2">
+		    <div class="card-header" data-toggle="collapse" href="#form-list-accordion">
+		      <h5 class="my-1"><%= FormList.model_name.human(count: 1) %></h5>
+		    </div>
+
+		    <div id="form-list-accordion" class="collapse show" data-parent="#accordion">
+		      <div class="card-body">
+				<%= build_form(@form_list,'update',current_user.template('FormList','form_lists',current_user),html: { class: 'form-group', method: 'put'},buttonOffset: 1, header_title: false) %>
+		      </div>
+		    </div>
+		  </div>
+		<% @form_list_labels.each_with_index do |language, index| %>
+
+		  <div class="card mb-2">
+		    <div class="card-header" data-toggle="collapse" href="#form-translation-name-<%= @form_list_values[index] %>">
+		        <h5 class="my-1"><%= language %></h5>
+		    </div>
+		    <div id="form-translation-name-<%= @form_list_values[index] %>" class="collapse" data-parent="#accordion">
+		      <div class="card-body" id="container-traduction-<%= @form_list_values[index] %> ">
+		      	<%= render "form_lists/partial/#{@form_list.traduction?(@form_list_values[index]) ? 'update' : 'create'}_list_name.html.erb" , language: @form_list_values[index] %>
+		      </div>
+		    </div>
+		  </div>
+
+		<% end %>
+
+		  <div class="card mb-2">
+		    <div class="card-header" data-toggle="collapse" href="#form-input">
+		      <h5 class="my-1"><%= ListInput.model_name.human(count: 1) %></h5>
+		    </div>
+
+		    <div id="form-input" class="collapse" data-parent="#accordion">
+		      <div class="card-body">
+				<%= build_form(ListInput.new(form_list_id: @form_list.id),'create',current_user.template('ListInput','list_inputs',current_user),html: { class: 'form-group'},buttonOffset: 1, header_title: false,remote: true,controller: 'list_inputs') %>
+
+				<div id="current-input-list" class="my-3">
+					<% @form_list.list_input.each do |input| %>
+						<%= render '/list_inputs/partial/input_body',input: input %>
+					<% end %>
+				</div>
+
+		      </div>
+		    </div>
+		  </div>
+
+
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="card">
+			<h5 class="card-header" >List values</h5>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-6 mt-3 mb-5">
+						<label><strong>List Type</strong></label>
+
+						<%= lumni_dropdown_field( 'list_type','dropdown', list: list_type_list, value: @mainDropDownValue, disabled: !(@mainDropDownValue == '')) %>
+					</div>
+					<div class="col-md-6 mt-3 mb-5" id="list-selected-option">
+						<% if @mainDropDownValue == 'functionality' %>
+							<%= render 'form_lists/partial/form_functionality' %>
+						<% elsif  @mainDropDownValue == 'values'%>
+							<%= render 'form_lists/partial/form_values' %>
+						<% end %>
+						
+					</div>
+
+				</div>
+
+				<div id="form-list-traduction-table">
+
+					<% if @mainDropDownValue == 'functionality' %>
+						<%= createBasicTable(@header,@table_body) %>
+					<% end %>
+
+					<% if @mainDropDownValue == 'values' %>
+						<% createBodyTableFormLabel(@form_list.id) %>
+						<%= createBasicTable(@header,@table_body) %>
+					<% end %>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="formFieldValueLabelModal" tabindex="-1" role="dialog" aria-labelledby="formFieldValueModalHeader" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formFieldValueModalHeader">Create Label</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+      	<div id="manageFormValueLabelModal"></div>
+      	<div id="loaderFormValue">
+	        <%= putLoader(200) %>
+      	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+
+mercadoPago = new MercadoPago('<%= @gateway.public_key %>', {
+  locale: 'es-CO'
+});
+
+
+mercadoPagoCheckout = mercadoPago.checkout({
+  preference: {
+    id: '<%= @preference_id %>'
+  },
+  autoOpen: true
+});

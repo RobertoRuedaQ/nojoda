@@ -1,0 +1,10 @@
+<h5 class="text-primary"><%= @model.model_name.human(count: 1) %></h5>
+<table class="table table-bordered table-striped ">
+
+  <% @template.keys.each do |key| %>
+    <tr>
+      <td class="py-2 px-1"><strong class="text-secondary"><%= @model.human_attribute_name(key) %></strong> </td>
+      <td class="py-2 px-1"> <%= @target_record[key] %></td>
+    </tr>
+  <% end %>
+</table>

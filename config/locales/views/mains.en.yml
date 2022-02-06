@@ -1,0 +1,88 @@
+en:
+  mains:
+    welcome: "Welcome back, %{name}!"
+    confirm: "Confirm Email"
+    confirm_text: "Before proceeding with the application, you must confirm your email. If you did not received the confirmation email you can ask for a new confirmation email by clicking the following button."
+    action_required: 'Action Required'
+    resend_confirmation: 'Resend Confirmation Email'
+    today_is: 'Today is %{date}'
+    system_manager: 'System Manager'
+    funds: 'Funds'
+    applications: 'Applications'
+    disbursements: 'Disbursements'
+    payments: 'Payments'
+    contact: 'Contact'
+    users: 'Users'
+    roles: 'Roles'
+    funding_opportunities: 'Funding Opportunities'
+    disclosures_and_contracts: 'Disclosures and Contracts'
+    teams: 'Users'
+    profiles: 'Profile'
+    home: 'Home'
+    new: 'New'
+    legal_documents: 'Legal Document Templates'
+    reports: 'Reports'
+    companies: 'Companies'
+    countries: 'Countries'
+    students: 'Students'
+    migrations: 'Migrations'
+    approvals: 'Approvals'
+    approval_managers: 'Approval Manager'
+    approval_archive: 'Processed Aprovals'
+    academic_config: 'Academic Config'
+    pricing: 'Pricing'
+    institutions: 'Institutions'
+    majors: 'Majors'
+    pricing_tables: 'Pricing Tables'
+    pricing_details: 'Pricing Details'
+    pricing_vectors: 'Pricing Series'
+    start_application: "Let's Get Started"
+    new_application: 'Start A New Application'
+    questionnaires: 'Questionnaires'
+    projects: 'Projects'
+    project_task_types: 'Task Types'
+    communication: 'Communication'
+    communication_templates: 'Communication Templates'
+    communication_headers: 'Communication Headers'
+    communication_cases: 'Communication Cases'
+    communication_footers: 'Communication Footers'
+    team_profiles: 'Profiles'
+    application_config: 'Application Config'
+    bizdev: 'New Business'
+    financial_model: 'Financial Model'
+    notifications: 'Notifications'
+    notification_count: 'You have %{notification_count} pending notifications.'
+    notification_task: 'You have %{unread_task_count} unread tasks.'
+    notification_new_task: 'You have %{unread_task_count} new task.'
+    got_it: 'Got it!'
+    mark_as_read: 'Mark as read'
+    notification: 'Notification'
+    my_profile: 'My Profile'
+    sign_out: 'Sign Out'
+    feedbacks: 'Feedback'
+    simulation_info: "This session was simulated from %{name}'s account."
+    simulation_return_button: 'Return to the original session'
+    api: 'API'
+    investment_committees: 'Investment Committees'
+    disbursement_payments: 'Disbursement Payments'
+    peru_annoucement_title: 'We are working in a new platform for you!'
+    usa_annoucement_title: 'We are working for you!'
+    PaymentAgreement: "Payment Agreement"
+    PaymentMassDoc: "Bank Payment"
+    PayuResponse: "Electronic Payment"
+    not_result: Sorry, no results!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

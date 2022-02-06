@@ -1,0 +1,75 @@
+<div class="card">
+  <div class="card-datatable table-responsive">
+    <div class="row mb-4">
+    	
+      <% if @options[:new].nil? ||  @options[:new] == true%>
+        <div class=" offset-md-11 ">
+          <a href="<%=params[:controller]%>/new" class="btn btn-primary my-4"><%= I18n.t('general.new') %></a>
+        </div>
+      <% end %>
+    </div>
+
+    <table id="user-list" class="datatables-list table table-striped table-bordered" data-order='[[ <%= @options[:dataOrder].nil? ? 0 :  @options[:dataOrder][0] %>, "<%= @options[:dataOrder].nil? ? 'asc' :  @options[:dataOrder][1] %>" ]]' >
+
+
+
+	<thead>
+		<tr>
+		  <td><%= I18n.t('form.details')%></td>
+		</tr>
+	</thead>
+
+
+
+	<% @listRecords.each_with_index do |targetRecord, index| %>
+		<% @html[:id] = targetRecord.class.to_s + index.to_s %>
+
+			<tr>
+				<td>
+					<% if !@options[:listTitle].nil? %>
+						<h5>
+							<div class="d-flex justify-content-between">
+								<%= targetRecord.send(@options[:listTitle]) %>
+								<div id="historyModal-<%= targetRecord.id%>" History="<%= targetRecord.class.to_s + '.find(' + targetRecord.id.to_s + ')' %>">
+
+								<%= link_to(('<i class="ion ion-md-barcode "></i> &nbsp; ' + I18n.t('audits.activity_history')).html_safe, history_index_path(object: targetRecord.class.to_s, target_id:targetRecord.id ) , style: 'font-size: 10px;', remote: true, action: index, 'data-toggle'.to_sym => "modal", 'data-target'.to_sym => ".bd-history-modal-lg", class: 'historyModalLink') %>
+									
+								</div>
+							</div>
+						</h5>
+						<hr class="border-light m-0">
+
+					<% end %>
+					<%= form_for(targetRecord, remote: true, url: {action: @action}, html: @html) do |f| %>
+						<div class="row">
+							<div class="col-md-10">
+								<% @fields.each_slice(@options[:columns].nil? ? 2 : @options[:columns].to_i) do | c | %>
+									<%= fieldGroup(targetRecord,c) %>
+								<% end %>
+
+								<% if !@options[:hiddenId].nil? & @options[:hiddenId] %>
+									<input type="text" name="hiddenId" hidden value="<%= targetRecord.id %>">
+								<% end %>
+							</div>
+							<div class="col-md-2 justify-content-center align-self-center my-0 py-0" >
+
+							    <%= f.submit I18n.t('form.update'), class: 'btn btn-primary btn-block' %>
+
+						    </div>
+					    </div>
+
+					<% end %>
+
+
+				</td>
+			</tr>
+	<% end %>
+
+
+
+    </table>
+  </div>
+</div>
+
+<%= render 'history/history_modal' %>
+

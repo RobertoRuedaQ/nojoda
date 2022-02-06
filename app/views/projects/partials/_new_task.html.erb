@@ -1,0 +1,7 @@
+<h4 class="media align-items-center font-weight-bold py-3 mb-4">
+  <div class="media-body ml-3">
+  	<span class="text-muted font-weight-light"><%= @card.title %> /</span> <%= I18n.t('project.new_task') %>
+  </div>
+</h4>
+<%= build_form(@task,'create',current_user.template('ProjectTask','project_tasks',current_user), html: { class: 'form-group'}, controller: 'project_tasks', button: false,destroy: false, remote: true, history: false, header:false)%>
+</div>

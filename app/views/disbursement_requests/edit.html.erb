@@ -1,0 +1,7 @@
+
+
+<%= form_title(@disbursement_request, 'user_name') %>
+<% if @disbursement_request.pending_changes.any? %>
+  <%= render '/students/partial/general_alert_button', questionnaire: @disbursement_request.application.user_questionnaire.last %>
+<% end %>
+<%= build_form(@disbursement_request,'update',current_user.template('DisbursementRequest','disbursement_requests',current_user),html: { class: 'form-group', method: 'put'}) %>

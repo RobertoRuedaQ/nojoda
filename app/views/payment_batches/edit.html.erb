@@ -1,0 +1,35 @@
+
+
+<%= form_title(@payment_batch, 'fund_name') %> 
+<% target_template = current_user.template('PaymentBatch','payment_batches',current_user,current_company: current_company)%>
+<% target_template[:month][:disabled] = true %>
+<% target_template[:year][:disabled] = true %>
+<% target_template[:fund_id][:disabled] = true %>
+
+<%= build_form(@payment_batch,'update',target_template,html: { class: 'form-group', method: 'put'}) %>
+
+<h4 class="my-4"><%= BillingDocument.model_name.human(count:2) %></h4>
+
+<% additional_fields = {charged_value:{},applied_value:{},user_name:{}} %>
+<% table_template = current_user.template('BillingDocument','billing_documents',current_user,id: true,current_company: current_company).merge(additional_fields) %>
+<% table_template[:id][:controller] = 'students' %>
+<% table_template[:id][:action] = 'edit' %>
+<% table_template[:id][:target_id] = 'user_id' %>
+
+<% target_isas = @payment_batch.target_isas %>
+
+<% if target_isas.present? && target_isas > 0 %>	
+	<div class="progress font-weight-bold" style="height: 1rem; font-size: 0.8rem">
+	  <div class="progress-bar bg-success" role="progressbar" style="width: <%= (@batch_detail_stats['done'].to_f / target_isas * 100).round %>%" aria-valuenow="<%= (@batch_detail_stats['done'].to_f / @payment_batch.target_isas * 100).round %>" aria-valuemin="0" aria-valuemax="100"><%= @batch_detail_stats['done'] %></div>
+	  <div class="progress-bar bg-danger" role="progressbar" style="width: <%= (@batch_detail_stats['error'].to_f / target_isas * 100).round %>%" aria-valuenow="<%= (@batch_detail_stats['error'].to_f / @payment_batch.target_isas * 100).round %>" aria-valuemin="0" aria-valuemax="100"><%= @batch_detail_stats['error'] %></div>
+	  <div class="progress-bar bg-warning" role="progressbar" style="width: <%=( @batch_detail_stats['pending'].to_f / target_isas * 100).round %>%" aria-valuenow="<%= (@batch_detail_stats['pending'].to_f / @payment_batch.target_isas * 100).round %>" aria-valuemin="0" aria-valuemax="100"><%= @batch_detail_stats['pending']%></div>
+	</div>
+<% else %>
+	<div class="alert alert-danger" role="alert">
+		<strong>
+			<i class="ion ion-md-information-circle"></i>	
+				<%= I18n.t('payment_batches.isas_not_found')%>
+		</strong>
+	</div>
+<% end %>
+<%= createTable(@payment_batch.billing_document.includes(billing_document_match: [billing_document_detail: [:penalties, payment_match: :payment]]).to_a,table_template,title: false, new: false,idlink: false).html_safe %>

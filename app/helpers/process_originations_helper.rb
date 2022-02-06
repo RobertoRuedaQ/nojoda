@@ -1,0 +1,2 @@
+module ProcessOriginationsHelper
+end

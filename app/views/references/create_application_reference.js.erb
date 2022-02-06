@@ -1,0 +1,8 @@
+$('#references-main-container').append('<%= j render '/references/partial/reference_body', reference: @reference,visible: @application.active?, template_id: @section.cached_form_template.child_id, modal_id: params[:temp][:modal_id], section: @section, application: @application %>')
+
+$('[name^=reference]').not('[name="reference[user_id]"]').each(function(){$(this).val('').trigger('change')})
+$('.selectpicker').selectpicker('render');
+$('[id^=new_reference_record_]').modal('hide')
+$('[id^=sociodemographic_main_financial_support_person_]').trigger('change')
+
+toastr["success"]("<%= I18n.t('flash.record_created') %>");

@@ -1,0 +1,18 @@
+<%= form_for notification,url: url_for(controller: 'notifications', action: 'got_it', id: notification.id), method: :post, remote: true do %>
+  <div class="list-group-item list-group-item-action media d-flex align-items-center">
+    <span class="text-info"><i class="ion ion-ios-journal"></i></span>
+    <div class="media-body line-height-condenced ml-3">
+      <div class="text-dark"><%= task.title%> </div>
+      <div class="text-light small mt-1"><%= ProjectTask.human_attribute_name('created_by_id') %> <%=task.created_by_name %> (<%=lumni_date task.created_at %>)</div>
+      <div class="text-dark small mt-1">
+        <%= task.description%>
+      </div>
+
+    </div>
+    <% if !notification.got_it %>
+    <div class="text-center">
+      <%= button_tag I18n.t('notification.got_it'),type: 'submit', class: 'btn btn-sm btn-success m-1 mr-0' %><br>
+    </div>
+    <% end %>
+  </div>
+<% end %>

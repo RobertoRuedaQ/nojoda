@@ -1,0 +1,4 @@
+<% locked_validation = @payment_mass_doc.status == 'rejected' || @payment_mass_doc.payment_mass_detail.status == 'matched' %>
+
+<%= form_title(@payment_mass_doc, 'user_name') %> 
+<%= build_form(@payment_mass_doc,'update',current_user.template('PaymentMassDoc','payment_mass_docs',current_user),html: { class: 'form-group', method: 'put'},locked: locked_validation) %>

@@ -1,0 +1,43 @@
+
+
+<%= form_title(@payment_mass, 'status') %> 
+<%= build_form(@payment_mass,'update',current_user.template('PaymentMass','payment_masses',current_user),html: { class: 'form-group', method: 'put'}) %>
+
+
+<div class="my-4">
+	<% if @payment_mass.valid_file? %>
+		<div class="card">
+			<div class="card-body">
+
+          <% payment_mass_template = current_user.template('PaymentMassDetail','payment_mass_details',current_user,id: true) %>
+          <% payment_mass_template[:id][:controller] = 'payment_mass_details' %>
+          <% payment_mass_template[:id][:action] = 'edit' %>
+          <% payment_mass_template[:id][:target_id] = 'id' %>
+          <% payment_mass_template[:names_matches] = {} %>
+          <% payment_mass_template[:funds_matches] = {} %>
+
+
+          <% payment_mass_template = payment_mass_template.except(:payment_support) %>
+
+          <% payment_mass_template = payment_mass_template.except(:payment_mass_id,:payment_id,:billing_document_id) %>
+
+				<%= createTable(@payment_mass.payment_mass_detail,payment_mass_template).html_safe %>
+
+			</div>
+		</div>
+
+	<% else %>
+		<div class="card">
+			<div class="card-body">
+
+				<div class="my-5 text-center">
+					<h3><%= I18n.t('payment_mass.invalid_file') %></h3>
+
+					<div class="ion ion-md-close-circle-outline display-1 text-danger"></div>
+
+				</div>
+
+			</div>
+		</div>
+	<% end %>
+</div>

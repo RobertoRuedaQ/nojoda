@@ -1,0 +1,18 @@
+<h4 class="media align-items-center font-weight-bold py-3 mb-4">
+  <div class="media-body ml-3">
+  	<span class=" <%= 'text-muted font-weight-light' unless @options[:record_info] == false %>"><%= eval(params[:controller].singularize.camelize).model_name.human(count: 1) %>
+      <% unless @options[:record_info] == false %>
+        /</span> <%= @object.id.nil? ? @title : @object.send(@title)%>
+      <% end %>
+  	<% unless current_user.student_account %>
+  		<%= link_to('<span class="mx-4"><i class="ion ion-md-help-circle"></i></span>'.html_safe,  documentation_docs_generals_path(target_controller: params[:controller]) ,class: 'text-warning', target: '_blank') %>
+  	<% end %>
+
+    <% unless @options[:record_info] == false %>
+    	<% unless @object.id.nil? %>
+      	<div class="text-muted text-tiny mt-1"><small class="font-weight-normal"><%= @object.class.human_attribute_name('created_at') %> <%= lumni_date(@object.created_at) %></small><br><small class="font-weight-normal"><%= @object.class.human_attribute_name('updated_at') %> <%= lumni_date(@object.updated_at) %></small>
+      	</div>
+      <% end %>
+    <% end %>
+  </div>
+</h4>

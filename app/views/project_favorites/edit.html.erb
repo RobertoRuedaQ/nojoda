@@ -1,0 +1,4 @@
+
+
+<%= form_title(@project_favorite, 'project') %> 
+<%= build_form(@project_favorite,'update',current_user.template('ProjectFavorite','project_favorites',current_user),html: { class: 'form-group', method: 'put'}) %>

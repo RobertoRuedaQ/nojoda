@@ -1,0 +1,37 @@
+<%= render 'notification_cases/partial/notification_count' %>
+
+<div class="nav-tabs-top mt-4">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#pending_notifications_tab">Notificaciones Pendientes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#notification_history_tab">Historial De Notificaciones</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="pending_notifications_tab">
+		<% current_user.cached_pending_notifications.each do |notification|%>
+		  <div class="card">
+		  	<div class="card-body p-1">
+		      <%= eval("#{NotificationCase.cached_find(notification.notification_case_id).functionality}(notification)") %>
+		  	</div>
+		  </div>
+		<% end %>
+    </div>
+
+ 
+    <div class="tab-pane fade " id="notification_history_tab">
+		<% current_user.notification.limit(100).each do |notification|%>
+		  <div class="card">
+		  	<div class="card-body p-1">
+		      <%= eval("#{NotificationCase.cached_find(notification.notification_case_id).functionality}(notification)") %>
+		  	</div>
+		  </div>
+		<% end %>
+
+
+    </div>
+
+  </div>
+</div>

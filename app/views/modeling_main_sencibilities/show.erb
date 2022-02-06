@@ -1,0 +1,33 @@
+
+<%= form_title(@modeling_main_sencibility, 'name') %> 
+
+
+<% @delta_dropout_values.each do |dropout_value| %>
+
+	<h3>Deserción al <%= (dropout_value * 100).round %>%</h3>
+
+	<table class="table table-striped">
+		<tr>
+			<td></td>
+			<% @delta_default_values.each do |default| %>
+				<td> Default <%= (default * 100).round %>%</td>
+			<% end %>
+		</tr>
+
+		<% @delta_unemployment_values.each_with_index do |unemployment, index|%>
+			<tr>
+				<td>Desempleo <%= (unemployment * 100).round %>%</td>
+				<% @delta_default_values.each do |default| %>
+				<td>
+					<span><strong class="text-primary">Porcentaje:</strong> <%= (@table_graduated_percentage[[default,unemployment,dropout_value]] * 100).round(1) %>%</span><br>
+					<span><strong class="text-primary">Meses:</strong> <%= @table_term[[default,unemployment,dropout_value]].round(1) %></span><br>
+					<span><strong class="text-primary">Valor Financiado:</strong> <%= lumni_currency @table_total_disbursement[[default,unemployment,dropout_value]].round(1) %></span>
+				</td>
+				<% end %>
+			</tr>
+		<% end %>
+	</table>
+
+
+<% end %>
+

@@ -1,0 +1,28 @@
+/* line 1, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-table/src/extensions/click-edit-row/bootstrap-table-click-edit-row.css */
+#tooling {
+  float: right;
+}
+
+/* line 4, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-table/src/extensions/click-edit-row/bootstrap-table-click-edit-row.css */
+.clear {
+  display: block;
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  opacity: 0.6;
+  z-index: 100;
+  top: 50%;
+  right: 26px;
+  margin-top: -10px;
+  cursor: pointer;
+}
+
+/* line 16, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-table/src/extensions/click-edit-row/bootstrap-table-click-edit-row.css */
+.clear > i {
+  font-size: 1.5em;
+}
+
+/* line 19, /home/roberto/Documentos/lumni/platform-4.0/node_modules/bootstrap-table/src/extensions/click-edit-row/bootstrap-table-click-edit-row.css */
+.clear > i:hover {
+  color: #bfbfbf;
+}

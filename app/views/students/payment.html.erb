@@ -1,0 +1,51 @@
+<%= render 'students/partial/students_header' %>
+
+
+<div class="nav-tabs-top">
+  <%= render 'students/partial/tabs' %>
+
+  <div class="tab-content bg-light">
+
+    <div class="tab-pane fade active show" id="payment-tab" >
+      <div class="card" style="border: none">
+        <div class="card-body">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th><%= I18n.t('payment.attributes.total_payed') %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong><%= lumni_currency @payments.sum(:value) %></strong></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th><%= I18n.t('payment.attributes.id') %></th>
+                <th><%= I18n.t('payment.attributes.date') %></th>
+                <th><%= I18n.t('payment.attributes.payment_value') %></th>
+                <th><%= I18n.t('payment.attributes.resource_type') %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @payments.each do |payment|%>
+              <tr>
+                <td><%= link_to payment.id, edit_payment_path(payment.id), target: :_blank %></td>
+                <td><%= lumni_date payment.payment_date %></td>
+                <td><%= lumni_currency payment.value %></td>
+                <td><%= payment.resource_type %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

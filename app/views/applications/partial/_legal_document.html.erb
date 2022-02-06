@@ -1,0 +1,12 @@
+<% if params[:action] != 'test_taker' %>
+	<div class="p-4">
+		
+		<% @target_sections.each do |section| %>
+			<%= section.description.html_safe %>
+
+
+			<%= create_legal_document_form( section.resource_id, hidden_fields: create_hidden_values_application( @application.id),disabled: section.done?(@application, section),value: (section.done?(@application, section) ? @application.legal_match.kept.where(legal_document_id: section.resource_id).first.answer : nil) ) %>
+		<% end %>
+	</div>
+<% end %>
+

@@ -1,0 +1,26 @@
+<li class="sidenav-item">
+  <a href="#" data-toggle="collapse" data-target="#communication" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-ios-mail"></i><%= I18n.t('mains.communication')%>
+  </a>
+  <ul class="sub-menu collapse" id="communication">
+    <li class="sidenav-item">
+      <a href="<%= communication_templates_path %>" class="sidenav-link "><%= CommunicationTemplate.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= communication_cases_path %>" class="sidenav-link "><%= CommunicationCase.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= communication_headers_path %>" class="sidenav-link "><%= CommunicationHeader.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= communication_footers_path %>" class="sidenav-link "><%= CommunicationFooter.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= student_email_batches_path %>" class="sidenav-link "><%= StudentEmailBatch.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

@@ -1,0 +1,8 @@
+<% @project.project_team.ids.each do |member_id| %>
+<% member = ProjectTeam.cached_find(member_id) %>
+<div class="col-1 my-1">
+  <div class="text-success" data-toggle="popover" data-placement="top"  data-content="<%= User.cached_find(member.user_id).name%>" data-trigger="hover" >
+    <%= loadingAvatar(25,id: member.user_id)%>
+  </div>
+</div>
+<% end %>

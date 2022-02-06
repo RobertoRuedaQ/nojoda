@@ -1,0 +1,20 @@
+<% @project = @task.project_card.project %>
+$('#progress-total-container').html('<%= j createProjectProgressPie @project.id, 'total_progress' %>')
+$('#progress-main-container').html('<%= j createProjectProgressPie @project.id, 'main_progress' %>')
+
+<% @project.project_card.each do |card| %>
+	<% @targetCard = card %>
+	$('#project-card-header-<%= card.title %>').html('<%= j render 'project_tasks/partial/card_header' %>')
+<% end %>
+
+<% if @task.parent.nil? %>
+	// Create new main task
+<% else %>
+	// Create new checklist
+	$('#checklist-element-<%= params[:id] %>').html('<%= j showChecklistElemnt(params[:id]) %>')
+	$('#task-container-<%= @task.parent_id %>').html('<%=j createProjectTask(@task.parent) %>')
+<% end %>
+setSwitchBehavior()
+$('[data-toggle="popover"]').popover();
+$('.knob-progress input').knob();
+setGlobalSwitches()

@@ -1,0 +1,2 @@
+module AcademicStopsHelper
+end

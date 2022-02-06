@@ -1,0 +1,89 @@
+<% target_transaction = @mp_response.mercado_pago_transaction %>
+<% billing_document = target_transaction.billing_document %>
+<% target_company = billing_document.company %>
+<% case target_company.country.international_code %>
+<% when 'CO' %>
+	<% target_company_legal_idetification = 'nit' %>
+<% else %>
+	<% target_company_legal_idetification = 'company_legal_id'%>
+<% end %>
+
+<div class="row">
+	<div class="offset-md-3 col-md-6">
+		<div class="card">
+			<div class="card-body">
+
+	        <h3 class="text-center mb-4"><%= I18n.t('payu.response_code_transaction.'+ (@mp_response.status)) %></h3>
+
+	        <% if @mp_response.status.downcase == 'rejected' %>
+	        	<div class="display-1 lnr lnr-cross-circle text-center text-danger mb-4"></div>
+					<% elsif @mp_response.status.downcase == 'approved' %>
+	        	<div class="display-1 lnr lnr-checkmark-circle text-center text-success mb-4"></div>
+	        <% elsif @mp_response.status.downcase == 'in_process' || @mp_response.status.downcase == 'pending' %>
+	        	<div class="display-1 lnr lnr lnr-clock text-center text-warning mb-4"></div>
+	        <% else %>
+	        	<div class="display-1 lnr lnr-cross-circle text-center text-danger mb-4"></div>
+					<% end %>
+
+	        <table class="table table-striped my-4">
+	        	<tbody>
+	        		<tr>
+	        			<td><h6><%= I18n.t("billing_document.company") %></h6></td>
+	        			<td><%= target_company.name_for_gateway %></td>
+	        		</tr>
+	        		<tr>
+	        			<td><h6><%= I18n.t("billing_document.#{target_company_legal_idetification}") %></h6></td>
+	        			<td><%= target_company.company_legal_id %></td>
+	        		</tr>
+	        		<tr>
+	        			<td><h6><%= I18n.t("billing_document.transaction_date") %></h6></td>
+	        			<td><%= lumni_date target_transaction.created_at.to_date %></td>
+	        		</tr>
+	        		<tr>
+	        			<td><h6><%= I18n.t("billing_document.transaction_status") %></h6></td>
+	        			<td><%= I18n.t('payu.response_code_transaction.'+ (@mp_response.status)) %></td>
+	        		</tr>
+	        		<tr>
+	        			<td><h6><%= I18n.t('billing_document.reference_order') %></h6></td>
+	        			<td><%= target_transaction.external_id %></td>
+	        		</tr>
+	        		<tr>
+	        			<td><h6><%= I18n.t('billing_document.reference_transaction') %></h6></td>
+	        			<td><%= @mp_response.external_id %></td>
+	        		</tr>
+	        		<tr>
+	        			<td><h6><%= I18n.t('billing_document.payed_value') %></h6></td>
+	        			<td><%= lumni_currency target_transaction.value %></td>
+	        		</tr>
+	        		<tr>
+	        			<td><h6><%= I18n.t('billing_document.currency') %></h6></td>
+	        			<td><%= billing_document.currency %></td>
+	        		</tr>
+
+	        		<tr>
+	        			<td><h6><%= I18n.t('billing_document.payment_method') %></h6></td>
+                <td><%= I18n.t('payu.payment_method.'+ (@mp_response.payment_type)) %> (<%= @mp_response.payment_method %>)</td>
+	        		</tr>
+	        		<tr>
+	        			<td><h6><%= I18n.t('billing_document.description_label') %></h6></td>
+	        			<td><%= billing_document.description %></td>
+	        		</tr>
+	        		<% if target_transaction.payment_method == 'PSE' %>
+		        		<tr>
+		        			<td><h6><%= I18n.t('billing_document.ip_origin') %></h6></td>
+		        			<td><%= target_transaction.ip_address %></td>
+		        		</tr>
+	        		<% end %>
+	        		
+	        	</tbody>
+	        </table>
+
+
+	        <div class="text-center">
+	        	<%= link_to I18n.t('general.back_home'),root_path, class: 'btn btn-primary' %>
+	        </div>
+			</div>
+		</div>
+	</div>
+</div>
+

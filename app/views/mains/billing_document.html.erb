@@ -1,0 +1,24 @@
+
+<div class="nav-tabs-top mt-4">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#current_billing_document_tab">Document De cobro Activo</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#billing_document_history_tab">Historico Documentos De Cobro</a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="current_billing_document_tab">
+      <%= render '/students/partial/billing_document_card', isa: @isa %>
+    </div>
+
+ 
+    <div class="tab-pane fade " id="billing_document_history_tab">
+
+      <%= render '/isas/partial/billing_document_table', isa: @isa %>
+
+    </div>
+
+  </div>
+</div>

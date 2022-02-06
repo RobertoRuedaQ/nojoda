@@ -1,0 +1,7 @@
+
+$('#edit_income_information').remove()
+$('#income-main-container').append("<%= j render '/income_informations/partial/edit_modal', income: @income_information, application: @application, section: @section, hidden_fields: @hidden_fields %>")
+
+restore_lumni_js()
+
+$('#edit_income_information').modal('show')

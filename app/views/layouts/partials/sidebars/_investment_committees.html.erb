@@ -1,0 +1,10 @@
+<li class="sidenav-item">
+  <a href="#" data-toggle="collapse" data-target="#investment_committees" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-md-briefcase"></i><%= I18n.t('mains.investment_committees')%>
+  </a>
+  <ul class="sub-menu collapse" id="investment_committees">
+    <li class="sidenav-item">
+      <a href="<%= invest_committees_path %>" class="sidenav-link "><%= InvestCommittee.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

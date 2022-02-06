@@ -1,0 +1,4 @@
+<% startTag = '<' + '%=' %>
+<% endTag = '%' + '>' %>
+
+<%= startTag %> createTable(@<%= file_name.singularize.underscore %>,current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user,id: true)).html_safe <%= endTag %>

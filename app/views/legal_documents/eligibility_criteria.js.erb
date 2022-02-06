@@ -1,0 +1,5 @@
+$('#eligibility-criteria-funding-opportunity').html('<%= j createEligibilityCriteria @funding_opportunity.id, @legal_document.id %>')
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+setGlobalSwitches()
+setEligibilityDropdown()

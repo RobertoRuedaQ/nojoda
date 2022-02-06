@@ -1,0 +1,2 @@
+<%= build_form(FormLabel.new({resource_id: @form_list.id,resource_type: @form_list.class.to_s,language: language}),'create',current_user.template('FormLabel','form_labels',current_user),html: { class: 'form-group', method: 'post'},controller: 'form_labels',remote: true, destroy: false, header: false) %>
+

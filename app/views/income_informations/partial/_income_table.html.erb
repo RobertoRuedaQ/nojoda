@@ -1,0 +1,86 @@
+<h4><%= IncomeInformation.model_name.human(count: 1) %></h4>
+<div class="accordion" id="income-accordion">
+  <div class="card">
+    <div class="card-header px-1" id="headingOne">
+
+
+        <div class="d-flex align-items-center ml-4">
+          <div class="lnr lnr-briefcase display-4 text-success"></div>
+          <div class="ml-3 flex-grow-1">
+            <div class="text-muted small"><%= I18n.t("isa.total_income") %></div>
+            <div class="text-large"><%= lumni_currency target_user.total_income %></div>
+            <div class="text-muted medium"><%= I18n.t("isa.stored_employment_status") %>: <%= employment_status(target_user) %></div>
+          </div>
+          <!-- projected_salary -->
+          <div class="lnr lnr-briefcase display-4 text-success"></div>
+          <div class="ml-3 flex-grow-1">
+            <div class="text-muted small"><%= I18n.t("income_information.projected_income") %></div>
+            <div class="text-large"><%= lumni_currency student_projected_salary(target_user) %></div>
+          </div>
+
+          <div class="px-4">
+          	<%= button_tag I18n.t('general.details'), class: 'btn btn-outline-primary collapsed mr-3', data: {toggle: 'collapse', target: '#income_information_collapse'}, aria: {expanded: true, controls: 'income_information_collapse'} %>
+          </div>
+        </div>
+    </div>
+
+    <div id="income_information_collapse" class="collapse" aria-labelledby="headingOne" data-parent="#income-accordion">
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><%= I18n.t('income_information.attributes.id') %></th>
+              <th><%= I18n.t('income_information.attributes.company') %></th>
+              <th><%= I18n.t('income_information.attributes.position') %></th>
+              <th><%= I18n.t('income_information.attributes.income_case') %></th>
+              <th><%= I18n.t('income_information.attributes.contract_case') %></th>
+              <th><%= I18n.t('income_information.attributes.presumptive_income') %></th>
+              <th><%= I18n.t('income_information.attributes.total_income') %></th>
+              <th><%= I18n.t('income_information.attributes.currency') %></th>
+              <th><%= I18n.t('income_information.attributes.income_in_local_currency') %></th>
+              <th><%= I18n.t('income_information.attributes.exchange_rate') %></th>
+              <th><%= I18n.t('income_information.attributes.fix_income') %></th>
+              <th><%= I18n.t('income_information.attributes.variable_income') %></th>
+              <th><%= I18n.t('income_information.attributes.status') %></th>
+              <th><%= I18n.t('income_information.attributes.start_date') %></th>
+              <th><%= I18n.t('income_information.attributes.end_date') %></th>
+              <th><%= I18n.t('income_information.attributes.updated_at') %></th>
+              <th><%= I18n.t('income_information.attributes.support_file') %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% target_user.income_information.includes([:income_certificate_attachments]).each do |income|%>
+            <tr>
+              <% currency = income.currency %>
+              <% if income.income_certificate.attached? %>
+                <% file_url = url_for(income.income_certificate.first) %>
+                <% support_file_link = link_to I18n.t('income_information.see_file'), file_url, class: 'text-primary', target: '_blank' %>
+              <% else %>
+                <% support_file_link = '' %>
+              <% end %>
+              <td><%= link_to income.id, edit_income_information_path(income), target: :_blank %></td>
+              <td><%= income.company_name.blank? ? '' : income.company_name.capitalize%></td>
+              <td><%= income.position.blank? ? '' : income.position.capitalize %></td>
+              <td><%= income.income_case.blank? ? '' : I18n.t('income_information.' + income.income_case ) %></td>
+              <td><%= income.contract_case.blank? ? '' : I18n.t('income_information.' + income.contract_case) %></td>
+              <td><%= income.presumptive_income ? 'Si' : 'No' %></td>
+              <td><%= lumni_currency income.total_income, currency %></td>
+              <td><%= currency %></td>
+              <td><%= lumni_currency (income.income_in_local_currency || 0), currency %></td>
+              <td><%= income.exchange_rates %></td>
+              <td><%= lumni_currency (income.fix_income || 0), currency %></td>
+              <td><%= lumni_currency (income.variable_income || 0), currency %></td>
+              <td><%= income.operations_status.blank? ? '' : I18n.t('income_information.' + income.operations_status) %></td>
+              <td><%= lumni_date income.start_date %></td>
+              <td><%= lumni_date income.end_date %></td>
+              <td><%= lumni_date income.updated_at %></td>
+              <td><%= support_file_link %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,25 @@
+<h4 class="media align-items-center font-weight-bold py-3 mb-4">
+  <div class="media-body ml-3">
+  	<span class="text-muted font-weight-light"><%= @targetTask.title %> /</span> <%= I18n.t('project.checklist') %>
+  </div>
+</h4>
+
+
+
+<table class="table">
+  <tbody class="sortable_container" id='checklist-body-<%= @targetTask.id %>'>
+    <% @checklistCount = @targetTask.checklist.visible(current_user.id).count %>
+  	<% @targetTask.checklist.visible(current_user.id).each do |element| %>
+
+    <tr id = 'checklist-element-<%= element.id %>' data-id='ProjectTask-<%= element.id %>' class="<%= element.private ? 'bg-secondary text-white' : '' %>  <%= 'bg-success text-white font-weight-bold' if element.done %> <%= 'locked' if element.locked %> ">
+    	<%= showChecklistElemnt(element.id)%>
+    </tr>
+
+    <% end %>
+
+  </tbody>
+</table>
+
+<div >
+	<%= link_to(('<i class="ion ion-ios-add-circle mr-2"></i>' + I18n.t('general.add_checklist')).html_safe, new_checklist_project_task_path(@checklistCount > 0 ? @targetTask.parent : @targetTask.id), class: 'btn btn-sm btn-outline-primary borderless my-4', remote: true, data: { disable_with: I18n.t('form.please_wait')}) %>
+</div>

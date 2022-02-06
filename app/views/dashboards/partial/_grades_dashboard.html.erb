@@ -1,0 +1,13 @@
+<%= form_tag edit_dashboard_path(params[:id]),method: :get do %>
+<div class="row">
+	<div class="col-md-3 my-2">
+		<label class="form-label">Periodo académico</label>
+		<%= lumni_dropdown_field('grades','term',{type: 'list',list: @terms_for_grades_list,value: @terms_for_grades}) %>
+	</div>
+	<div class="col-md-3 my-2 d-flex">
+		<%= button_tag 'Buscar', class: 'btn btn-primary align-self-end' %>
+	</div>
+</div>
+<% end %>
+
+<%= createTable(@grades_data,grades_template, title: false, new: false).html_safe %>

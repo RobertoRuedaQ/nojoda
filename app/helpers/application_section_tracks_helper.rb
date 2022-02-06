@@ -1,0 +1,2 @@
+module ApplicationSectionTracksHelper
+end

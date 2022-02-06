@@ -1,0 +1,2 @@
+module StudentEmailBatchesHelper
+end

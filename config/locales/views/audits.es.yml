@@ -1,0 +1,23 @@
+es:
+  audits:
+    auditable_id: "ID auditado"
+    auditable_type: "Tipo auditado"
+    id: "ID"
+    associated_id: "ID asociado"
+    associated_type: "Tipo asociado"
+    user_id: "ID usuario"
+    user_type: "Tipo usuario"
+    username: "Nombre usuario"
+    action: "Acción"
+    audited_changes: "Lista de cambios"
+    version: "Versión"
+    comment: "Commentario"
+    remote_address: "Dirección remota"
+    request_uuid: "Identificador único"
+    created_at: "Fecha de creación"
+    user: "Autor de los cambios"
+    associated: "Modelo asociado"
+    auditable: "Auditado"
+    from: " de "
+    to: " a "
+    activity_history: 'Historia de actividad'

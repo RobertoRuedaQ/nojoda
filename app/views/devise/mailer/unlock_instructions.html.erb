@@ -1,0 +1,3 @@
+<% @templateHTML.gsub! '##unlock_account', unlock_url(@resource, unlock_token: @token).to_s  %>
+<%= @templateHTML.html_safe %>
+

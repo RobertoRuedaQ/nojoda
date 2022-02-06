@@ -1,0 +1,29 @@
+<div class="row mx-4">
+	<div class="text-center col">
+		<h2 class="text-primary my-5"><%= @user_questionnaire.questionnaire.name %></h2>
+	</div>
+</div>
+
+<div class="row mx-4">
+	<div class="offset-md-1 col-md-10 mb-5" style="margin-top: 3rem;">
+		<div class="card shadow">
+			<div class="card-body">
+				<h5 class="mb-2 mt-3 text-primary"><%= I18n.t('questionnaire.instructions') %>:</h5>
+				<%= translate_questionnaire_text(@user_questionnaire).to_s.html_safe %>
+				<% if  !@user_questionnaire.questionnaire.time_limit.nil?%>
+					<h5 class="my-5 text-primary"><%= I18n.t('questionnaire.time') %></h5>
+					<%= @user_questionnaire.questionnaire.time_limit %> <%= I18n.t('questionnaire.minutes') %>
+				<% end %>
+
+				<div class="text-center">
+					<div class="btn-group">
+						<%= link_to I18n.t('questionnaire.start'),start_test_user_questionnaire_path(@user_questionnaire), class: 'btn btn-primary my-5 mx-2' %>
+						<%= link_to I18n.t('general.cancel'), root_path, class: 'btn btn-secondary my-5 mx-2' %>
+						
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

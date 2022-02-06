@@ -1,0 +1,36 @@
+/* line 1, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/bootstrap-maxlength/bootstrap-maxlength.scss */
+.bootstrap-maxlength {
+  vertical-align: baseline;
+  text-align: center;
+  line-height: 1;
+}
+
+/* line 10, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/bootstrap-maxlength/bootstrap-maxlength.scss */
+.default-style .bootstrap-maxlength {
+  padding: 0.2em 0.3336em;
+  background: rgba(24, 28, 33, 0.1);
+  font-weight: 500;
+  font-size: 0.6864em;
+  border-bottom-right-radius: 0.1rem;
+  border-bottom-left-radius: 0.1rem;
+}
+/* line 18, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/bootstrap-maxlength/bootstrap-maxlength.scss */
+.default-style .bootstrap-maxlength.label-danger {
+  background: #d9534f;
+  color: #fff;
+}
+
+/* line 28, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/bootstrap-maxlength/bootstrap-maxlength.scss */
+.material-style .bootstrap-maxlength {
+  padding: 0.25em 0.417em;
+  background: rgba(24, 28, 33, 0.1);
+  font-weight: 500;
+  font-size: 0.858em;
+  border-bottom-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+}
+/* line 36, /Users/jaimecastilloleon/Desktop/platform-4.0/vendor/assets/libs/bootstrap-maxlength/bootstrap-maxlength.scss */
+.material-style .bootstrap-maxlength.label-danger {
+  background: #d9534f;
+  color: #fff;
+}

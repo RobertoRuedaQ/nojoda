@@ -1,0 +1,56 @@
+<% if current_company.id == 21 %>
+  <%= render "/mains/partials/_peru_annoucement" %>
+<%else %>
+<div class="row align-items-center mb-4">
+    <div class="col-md-1 text-center">
+      <div Id="mainAvatar " class="mb-2">
+        <%= loadingAvatar(70) %>
+      </div>
+      <label class="btn btn-outline-primary btn-sm" data-toggle="cropper-tooltip"  data-disable-with="<i class='fa fa spin'> signing in ...</i>">
+        <input type="file" class="sr-only" id="cropper-inputImage" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
+        <%= I18n.t('form.change') %>
+      </label>
+    </div>
+    <div class=" col-md-11">
+      <div class="media-body ml-3 ">
+        <%= form_title(current_user,'name') %>
+      </div>
+    </div>
+  </div>
+  <%= render 'forms/upload_image' %>
+
+  <div class="nav-tabs-top">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#user-edit-account"><%= I18n.t('form.account') %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#user-edit-info"><%= ContactInfo.model_name.human(count: 1) %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#location-info-tab"><%= Location.model_name.human(count: 1) %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#personal-info-tab"><%= PersonalInformation.model_name.human(count: 1) %></a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="user-edit-account">
+        <%= render 'profiles/partials/user_account' %>
+      </div>
+
+      <div class="tab-pane fade " id="user-edit-info">
+        <%= render 'profiles/partials/contact_info' %>
+      </div>
+
+      <div class="tab-pane fade " id="location-info-tab">
+        <%= render 'profiles/partials/location' %>
+      </div>
+
+      <div class="tab-pane fade " id="personal-info-tab">
+        <%= render 'profiles/partials/personal_information' %>
+      </div>
+
+    </div>
+  </div>
+<%end %>

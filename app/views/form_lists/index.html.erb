@@ -1,0 +1,6 @@
+<div class="d-flex flex-row-reverse">
+		<%= link_to I18n.t('general.new'), new_form_list_path,class: 'btn btn-primary my-3' %>
+	
+</div>
+<%= createBasicTable(form_list_index_header,form_list_index_rows( @form_list)) %>
+

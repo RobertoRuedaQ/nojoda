@@ -1,0 +1,17 @@
+
+<div class=" mr-1 p-0" data-toggle="popover" data-placement="top"  data-content="<%= @target_user.name %>" data-trigger="hover" style="width: <%= @avatarSize.present? ? @avatarSize : 100 %>; height: <%= @avatarSize.present? ? @avatarSize : 100 %>">
+	<% if @target_user.cached_attached_avatar? %>
+		<% begin %>
+		<%= image_tag(@target_user.cached_avatar(@avatarSize.present? ? @avatarSize : 100), class: "ui-w-#{@avatarSize.present? ? @avatarSize : 100} rounded-circle", height: (@avatarSize.present? ? @avatarSize : 100))%>
+		<% rescue %>
+		  <div class="i-circle text-center" style="width: <%=@avatarSize %>px;height: <%=@avatarSize %>px;position: relative;font-size: <%= (@avatarSize/2).round  %>px">
+		  	<div style="position: absolute;right: <%= (@avatarSize * 0.2).round  %>px;top: <%= (@avatarSize * 0.14).round  %>px;"><%= @target_user.initials %></div>
+		  </div>
+		<% end %>
+	<% else %>
+	  <div class="i-circle text-center" style="width: <%=@avatarSize %>px;height: <%=@avatarSize %>px;position: relative;font-size: <%= (@avatarSize/2).round  %>px">
+	  	<div style="position: absolute;right: <%= (@avatarSize * 0.2).round  %>px;top: <%= (@avatarSize * 0.14).round  %>px;"><%= @target_user.initials %></div>
+	  </div>
+	<% end %>
+</div>
+

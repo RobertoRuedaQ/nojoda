@@ -1,0 +1,79 @@
+<%= form_title(@approval, 'approval_action') %>
+<% @customList = (@approval.items.last.resource_type == 'User') ? (@approval.items.last.resource.student_account ? teams_fields : students_fields) : eval(@approval.items.last.resource_type.downcase.pluralize + '_fields') %>
+
+
+
+
+<div class="row">
+	<div class="col">
+		<div class="card">
+			<h5 class="card-header">
+				Original Value
+			</h5>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table card-table table-bordered table-striped m-0">
+					  <tbody>
+
+					  	<% @approval.items.last.params.keys.each do |key| %>
+					  		<% @listValues = @customList[key.to_sym][:list].nil? ? nil : @customList[key.to_sym][:list].keys.map{|k| @customList[key.to_sym][:list][k][:values]}.flatten%>
+					  		<% @listLabels = @customList[key.to_sym][:list].nil? ? nil : @customList[key.to_sym][:list].keys.map{|k| @customList[key.to_sym][:list][k][:labels]}.flatten%>
+					  		<%  @listTarget = @customList[key.to_sym][:list].nil? ? nil : @listLabels[@listValues.index(@approval.items.last.resource[key.to_s])]%>
+					  		<tr>
+					  		<td><strong><%= eval(@approval.items.last.resource_type).human_attribute_name(key) %></strong></td>
+					  		<td><%=  @listTarget.nil? ? @approval.items.last.resource[key.to_s] : @listTarget %></td>
+					  		</tr>
+					  		<%=  %>
+					  	<% end %>
+
+					  </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="col">
+		<div class="card">
+			<h5 class="card-header">
+				New Value
+			</h5>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table card-table table-bordered table-striped m-0">
+					  <tbody>
+
+					  	<% @approval.items.last.params.keys.each do |key| %>
+					  		<% @listValues = @customList[key.to_sym][:list].nil? ? nil : @customList[key.to_sym][:list].keys.map{|k| @customList[key.to_sym][:list][k][:values]}.flatten%>
+					  		<% @listLabels = @customList[key.to_sym][:list].nil? ? nil : @customList[key.to_sym][:list].keys.map{|k| @customList[key.to_sym][:list][k][:labels]}.flatten%>
+					  		<%  @listTarget = @customList[key.to_sym][:list].nil? ? nil : @listLabels[@listValues.index(@approval.items.last.params[key.to_s])]%>
+					  		<tr>
+					  		<td><strong><%= eval(@approval.items.last.resource_type).human_attribute_name(key) %></strong></td>
+					  		<td><%= @listTarget.nil? ? @approval.items.last.params[key.to_s] : @listTarget %></td>
+					  		</tr>
+					  		<%=  %>
+					  	<% end %>
+
+					  </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+
+
+<h4 class="media align-items-center font-weight-bold py-2 mb-2 pt-4">
+  <div class="media-body ml-3">
+  	<span class=" ">
+  		<%= I18n.t('approver.original_record') %>
+  	</span>
+  </div>
+</h4>
+
+
+<%= build_form(@approval.items.last.resource,'update',@customList ,html: { class: 'form-group', method: 'put'},locked: true)%>
+

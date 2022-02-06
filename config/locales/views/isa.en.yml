@@ -1,0 +1,158 @@
+en:
+  isa:
+    manual_activation: 'Manual Activation'
+    manual_activation_text: 'Are you sure you want to manually activate this student? To continue with the manual activation click on "Continue".'
+    manual_activation_success: 'Activated'
+    manual_activation_success_text: 'This student was succesfully manually activated.'
+    manual_activation_disable: 'Disable Manual Activation'
+    active: 'Active'
+    deactivate: 'Deactivate'
+    inactive: 'Inactive'
+    manual_deactivation: 'Disable Manual Activation'
+    manual_deactivation_text: 'Are you sure you want to deactivate the Manual Activation? To continue with the manual deactivation click on "Continue".'
+    manual_deactivation_success: 'Deactivated'
+    manual_deactivation_success_text: 'The manual activation was disabled.'
+
+    final_conciliation: 'Final Conciliation'
+    final_conciliation_text: 'Are you sure you want to deactivate the Final Conciliation? To continue with the Final Conciliation click on "Continue".'
+    final_conciliation_success: 'Final Conciliation Finalized'
+    final_conciliation_success_text: 'The Final Conciliation was disabled.'
+
+    finalized_payments: 'Finalize Payments'
+    finalized_payments_text: 'Are you sure you want to finalize payments for this student? To continue with the payment finalization click on "Continue".'
+    finalized_payments_success: 'Payments Finalized'
+    finalized_payments_success_text: 'The payments were successfuly finalized.'
+
+    out_of_the_fund: 'Out Of The Fund'
+    out_of_the_fund_text: 'Are you sure you want to take out this student from the fund? To continue click on "Continue".'
+    out_of_the_fund_success: 'Student Out Of The Fund'
+    out_of_the_fund_success_text: 'The student was succesfully took out of the fund.'
+
+    permanent_default: 'Permanent Default'
+    permanent_default_text: 'Are you sure you want to set this student into permanent default? To continue click on "Continue".'
+    permanent_default_success: 'Permanent Default'
+    permanent_default_success_text: 'The student was succesfully set as permanent default.'
+
+    termination_agreement: 'Termination Agreement'
+    termination_agreement_text: 'Are you sure you want to set this student into Termination Agreement? To continue click on "Continue".'
+    termination_agreement_success: 'Termination Agreement'
+    termination_agreement_success_text: 'The student was succesfully set as Termination Agreement.'
+
+
+
+
+    covid_agreement: 'Covid: Payment Agreement'
+    covid_agreement_text: 'Are you sure you want to set this student into Covid: Payment Agreement? To continue click on "Continue".'
+    covid_agreement_success: 'Covid: Payment Agreement'
+    covid_agreement_success_text: 'The student was succesfully set as Covid: Payment Agreement.'
+
+    covid_payment_end_month: 'Covid: Payment At The End Of Month'
+    covid_payment_end_month_text: 'Are you sure you want to set this student into Covid: Payment At The End Of Month? To continue click on "Continue".'
+    covid_payment_end_month_success: 'Covid: Payment At The End Of Month'
+    covid_payment_end_month_success_text: 'The student was succesfully set as Covid: Payment At The End Of Month.'
+
+
+    default: 'Default'
+    default_text: 'Are you sure you want to set this student into default? To continue click on "Continue".'
+    default_success: 'Default'
+    default_success_text: 'The student was succesfully set as default.'
+
+    recovered_from_default: 'Recover From Default'
+    recovered_from_default_text: 'Are you sure you recover this student from default? To continue click on "Continue".'
+    recovered_from_default_success: 'Recovered From Default'
+    recovered_from_default_success_text: 'The student was succesfully recovered from default.'
+
+    expelled: 'Expell'
+    expelled_text: 'Are you sure you expel this student from the fund? To continue click on "Continue".'
+    expelled_success: 'Expelled'
+    expelled_success_text: 'The student was succesfully expelled from the fund.'
+
+    retired: 'Retire'
+    retired_text: 'Are you sure you retire this student from the fund? To continue click on "Continue".'
+    retired_success: 'Retired'
+    retired_success_text: 'The student was succesfully retired from the fund.'
+
+    ceded: 'Cede'
+    ceded_text: 'Are you sure you cede this student? To continue click on "Continue".'
+    ceded_success: 'Ceded'
+    ceded_success_text: 'The student was succesfully ceded.'
+
+    studing: ' Studing'
+    academic_stop: 'Academic Stop'
+    drop_out: 'Drop Out'
+    graduation_process: 'Graduation Process'
+    graduated: 'Graduated'
+
+    new_academic_stop: 'New Academic Stop'
+    active_academic_stops: 'Active Academic Stops'
+    academic_dates: 'Academic Dates'
+
+    academic_status: 'Academic Status'
+
+    income_status: 'Income Status'
+    student_forbearance: 'Student Forbearance'
+    grace_period: 'Grace Period'
+    discretionary_forbearance: 'Discretionary Forbearance'
+    forcasted_income: 'Forcasted Income'
+    breach_of_contract: 'Breach Of Contract'
+    forbearance: 'Forbearance'
+    isa_income: 'ISA Income'
+
+    new_grace_period: 'New Grace Period'
+    active_grace_period: 'Active Grace Period'
+
+    new_discretionary_forbearance: 'New Discretionary Forbearance'
+    active_discretionary_forbearance: 'Active Discretionary Forbearance'
+
+    up_to_date: 'Up To Date'
+    arrears_30: 'Arrears 30'
+    arrears_60: 'Arrears 60'
+    arrears_90: 'Arrears 90'
+    arrears_120: 'Arrears 120'
+    arrears_150: 'Arrears 150'
+    arrears_180: 'Arrears 180'
+    arrears_210: 'Arrears 210'
+    arrears_240: 'Arrears 240'
+    arrears_270: 'Arrears 270'
+    arrears_390: 'Arrears 390'
+    arrears_570: 'Arrears 570'
+
+
+    just_agreement: 'Just Agreements'
+    new_just_agreement: 'New period of just agreements'
+    active_just_agreement: 'Paying Just Agreements'
+
+    no_payment: 'No Payments'
+    new_no_payment: 'New period without payments'
+    active_no_payment: 'No Payments'
+    inflation_adjustment_date: Inflation adjustment date
+
+
+    new_agreement_text: 'Funding option for an ISA Amendment' 
+    new_amendment: 'New Amendment'
+    collection_information: 'Collection Information'
+
+    cap_calculation_fail: 'Calculation failed'
+    repayment_fee: 'Repayment Fee'
+    payment_not_applied_yet: 'Payment not applied yet'
+    value_to_top: 'Total amount for cancel agreement'
+    employed: 'Employed'
+    unemployed: 'Unemployed'
+    employed_without_certificate: Employed without certificate
+    employed_without_valid_income: Employed without valid income
+    employed_with_presumptive_income: Employed with presumptive income
+    stored_employment_status: 'Empleability status'
+    no_information: 'No information'
+    total_income: 'Total Income'
+
+    remaining_months: 'Remaining Payments'
+    payed_months: 'Payments Received'
+
+    value_to_cap_with_excess: 'Value To Cap With Payment Excess'
+
+
+
+
+
+
+

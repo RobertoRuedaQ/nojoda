@@ -1,0 +1,20 @@
+<div class="col-md-6" id='debt-element-<%= debt.id%>'>
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <div class="lnr lnr-layers display-4 text-success"></div>
+        <div class="col-md-8">
+	        <div class="ml-3">
+	          <div class="text-muted small"><%= I18n.t("list.#{debt.type_of_debt}") %></div>
+	          <div class="text-large"><%= lumni_currency debt.amount %></div>
+            <div class="text-muted small"><%= debt.entity %></div>
+	        </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <%= link_to I18n.t('general.edit'), edit_student_debt_path(debt, temp: hidden_fields), class: 'btn btn-sm btn-outline-primary',data: { disable_with: I18n.t('form.please_wait')}, remote: true %>
+        	<%= link_to I18n.t('general.delete'), student_debt_path(debt), method: :delete, class: 'btn btn-sm btn-outline-danger',data: { disable_with: I18n.t('form.please_wait')}, remote: true %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

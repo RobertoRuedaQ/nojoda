@@ -1,0 +1,2 @@
+module GenerateFromFilesHelper
+end

@@ -1,0 +1,2 @@
+module UserAggregationsHelper
+end

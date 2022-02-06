@@ -1,0 +1,17 @@
+<%= form_tag edit_dashboard_path(params[:id]),method: :get do %>
+<div class="row">
+	<div class="col-md-3 my-2">
+		<label class="form-label">Pagos realizados desde:</label>
+		<%= lumni_text_field('payments','start_date',{type: 'text',class: 'lumni_date',value: @start_date}) %>
+	</div>
+	<div class="col-md-3 my-2">
+		<label class="form-label">hasta: </label>
+		<%= lumni_text_field('payments','end_date',{type: 'text',class: 'lumni_date',value: @end_date}) %>
+	</div>
+	<div class="col-md-3 my-2 d-flex">
+		<%= button_tag 'Buscar', class: 'btn btn-primary align-self-end' %>
+	</div>
+</div>
+<% end %>
+
+<%= createTable(@payments_data,payments_template, title: false, new: false, current_value: true).html_safe %>

@@ -1,0 +1,4 @@
+
+
+<%= form_title(@billing_document, 'id') %> 
+<%= build_form(@billing_document,'update',current_user.template('BillingDocument','billing_documents',current_user),html: { class: 'form-group', method: 'put'}) %>

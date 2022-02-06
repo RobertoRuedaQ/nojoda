@@ -1,0 +1,4 @@
+
+
+<%= form_title(@api_history, 'url') %> 
+<%= build_form(@api_history,'update',current_user.template('ApiHistory','api_histories',current_user),html: { class: 'form-group', method: 'put'}) %>

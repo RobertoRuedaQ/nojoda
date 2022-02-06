@@ -1,0 +1,55 @@
+<%= form_title(@payment_mass_detail, 'names_matches') %> 
+  <h4 class="text-primary">Total Aplicado A Estudiantes: <%= @payment_mass_detail.payment_generated_value  %></h4>
+  <% case @payment_mass_detail.status %>
+  <% when 'partial_match','pending_match' %>
+    <div class="text-right">
+      <div class="btn-group mb-4">
+        <%= button_to 'Buscar Registros' , search_matches_payment_mass_detail_path(@payment_mass_detail),class: 'btn btn-primary ml-3'%>
+        <% if @payment_mass_detail.payment_generated_value < @payment_mass_detail.value %>
+            <%= button_to 'Generar Pago' , create_payments_payment_mass_detail_path(@payment_mass_detail),class: 'btn btn-primary ml-3'%>
+        <% end %>
+      </div>
+    </div>
+  <% when 'matched', 'over_payed' %>
+    <% if can_unapply_payment? %>
+      <div class="text-right">
+        <div class="btn-group mb-4">
+          <%= button_to 'Desaplicar pago' , unapply_payment_payment_mass_detail_path(@payment_mass_detail), class: 'btn btn-danger ml-3', data: { confirm: '¿Seguro que desea desaplicar el pago?', commit: 'Si, desaplicar' }%>
+        </div>
+      </div>
+    <% end %>
+<% end %>
+
+<% locked_validation =  @payment_mass_detail.status == 'matched'%>
+<%= build_form(@payment_mass_detail,'update',current_user.template('PaymentMassDetail','payment_mass_details',current_user),html: { class: 'form-group', method: 'put'},locked: locked_validation,destroy: false) %>
+<div class="my-4 px-4" id="payment_mass_docs_tab">
+
+        <% bank_account_template = current_user.template('PaymentMassDoc','payment_mass_docs',current_user,id: true) %>
+        <% bank_account_template[:id][:controller] = 'payment_mass_docs' %>
+        <% bank_account_template[:id][:action] = 'edit' %>
+        <% bank_account_template[:id][:target_id] = 'id' %>
+        <% bank_account_template[:pending_value] = {} %>
+        <% bank_account_template[:user_id] = {} %>
+        <% bank_account_template[:user_id][:controller] = 'students' %>
+        <% bank_account_template[:user_id][:action] = 'edit' %>
+        <% bank_account_template[:user_id][:target_id] = 'user_id' %>
+
+        <% bank_account_template[:disbursement_request_id] = {} %>
+        <% bank_account_template[:disbursement_request_id][:controller] = 'disbursement_requests' %>
+        <% bank_account_template[:disbursement_request_id][:action] = 'edit' %>
+        <% bank_account_template[:disbursement_request_id][:target_id] = 'disbursement_request_id' %>
+
+
+
+        <% bank_account_template[:user_name] = {} %>
+        <% bank_account_template[:document_value] = {} %>
+        <% bank_account_template[:document_applied_value] = {} %>
+
+  
+
+
+        <%= createTable(@payment_mass_detail.payment_mass_doc.includes(billing_document: [isa: :user]),bank_account_template, id: 'table_docs',title: false,alternative_new_link: new_payment_mass_doc_path(payment_mass_detail_id: @payment_mass_detail.id),new: false).html_safe %>
+</div>
+
+
+

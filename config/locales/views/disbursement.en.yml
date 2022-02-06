@@ -1,0 +1,22 @@
+en:
+  disbursement:
+    request_disbursement: 'Request Disbursement'
+    view_request: 'View Request'   
+    forcasted_disbursements: 'Forcasted Disbursement' 
+    new_disbursement_payment: 'New Disbrursement Payment'
+    university_course_grades: 'Grades Report By Course'
+    payed: 'Payed'
+    partially_payed: 'Parcially Payed'
+    in_payment_process: 'Processing'
+    approved: 'Approved'
+    requested: 'Requested'
+    active: 'Active'
+    canceled: 'Canceled'
+    inactive: 'inactive'
+    number: 'Number'
+    requesting: Requesting
+    date: 'Date'
+    value: 'Value'
+    disbursement_case: Disbrursement type
+    student_payment_to_disbursement: 'Student Payment'
+    request_cancellation: 'Request Cancellation'

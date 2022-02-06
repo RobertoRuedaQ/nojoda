@@ -1,0 +1,3 @@
+$('#card-course-<%= @university_course_grade.id %>').replaceWith("<%= j render '/university_course_grades/partial/course_card', course: @university_course_grade, section: @section %>")
+$('#modal-university-grade-<%= @university_course_grade.university_grade_id %>').modal('hide')
+set_university_course_grade_button_behavior()

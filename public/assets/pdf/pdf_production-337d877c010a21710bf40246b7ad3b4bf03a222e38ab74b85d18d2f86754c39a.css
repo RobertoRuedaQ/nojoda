@@ -1,0 +1,50 @@
+/* line 2, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf_production.css.scss */
+h1, .h1 {
+  font-size: 28px;
+}
+
+/* line 6, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf_production.css.scss */
+h2, .h2 {
+  font-size: 25px;
+}
+
+/* line 10, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf_production.css.scss */
+h3, .h3 {
+  font-size: 22px;
+}
+
+/* line 14, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf_production.css.scss */
+h4, .h4 {
+  font-size: 19px;
+}
+
+/* line 18, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf_production.css.scss */
+h5, .h5 {
+  font-size: 15px;
+}
+
+/* line 22, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf_production.css.scss */
+h6, .h6 {
+  font-size: 13px;
+}
+
+/* line 26, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf_production.css.scss */
+body {
+  font-size: 12px;
+  background-color: white;
+}
+
+/* line 31, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf_production.css.scss */
+div.alwaysbreak {
+  page-break-before: always;
+}
+
+/* line 32, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf_production.css.scss */
+div.nobreak:before {
+  clear: both;
+}
+
+/* line 33, /Users/jaimecastilloleon/Desktop/platform-4.0/app/assets/stylesheets/pdf/pdf_production.css.scss */
+div.nobreak {
+  page-break-inside: avoid;
+}

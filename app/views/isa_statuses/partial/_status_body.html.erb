@@ -1,0 +1,35 @@
+<% case status_case %>
+<% when 'general_status' %>
+  <% target_icon = 'lnr lnr-earth' %>
+<% when 'academic_status' %>
+  <% target_icon = 'lnr lnr-graduation-hat' %>
+<% when 'income_status' %>
+  <% target_icon = 'lnr lnr-pie-chart' %>
+<% when 'payment_status' %>
+  <% target_icon = 'lnr lnr-chart-bars' %>
+<% when 'employment_status' %>
+  <% target_icon = 'lnr lnr-laptop' %>
+<% else %>
+  <% target_icon = 'lnr lnr-earth' %>
+<% end %>
+
+<div class="card mb-4" id="status-body-<%=status_case%>-<%= isa.id %>">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <button type="button" class="btn btn-xl btn-outline-info borderless py-0 px-2" data-toggle="modal" data-target="#<%= status_case %>_modal">
+        <span class="<%= target_icon %> display-4"></span>
+      </button>
+      <div class="ml-3 w-100">
+        <div class="text-primary small"><%= Isa.human_attribute_name("stored_#{status_case}") %></div>
+        <div class="h5 my-2">
+          <%= I18n.t("isa." + isa.send("stored_#{status_case}")) if !isa.send("stored_#{status_case}").nil? %>
+          <% if status_case == 'employment_status' %>
+            <% if isa.employment_status_collection_trigger.present? %>
+              <%= link_to 'Ver gestión', edit_collection_path(isa.employment_status_collection_trigger), class: 'text-primary small pull-right', target: '_blank' %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

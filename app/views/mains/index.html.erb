@@ -1,0 +1,51 @@
+<% if current_company.id == 21%>
+	<%= render "mains/partials/peru_annoucement" %>
+<% else %>
+	<% unless current_user.student_account %>
+	<%= create_project_list_view @responsable_projects.to_a %>
+	<%= render 'projects/partials/project_modal' %>
+	<% else %>
+	<% if current_user.with_isa? %>
+		<%= render '/mains/partials/new_student_dashboard', target_student: current_user %>
+	<% else %>
+		<%= render '/originations/partial/origination_wizard' %>
+	<% end %>
+
+	<% end %>
+
+	<% if current_user.super_user? %>
+
+	<div class="card">
+		<div class="card-body">
+			<h4>Super User Section</h4>
+
+			<div class="card">
+				<div class="card-body">
+					<h5>Simular Estudiantes</h5>
+					<div class="form-group">
+						<%= form_tag simulate_student_students_path do %>
+							<%= lumni_text_field 'temp','email',{require: true,placeholder: 'email'} %>
+							<div class="text-center my-3">
+								<%= button_tag  I18n.t('general.simulate'), class: 'btn btn-primary' %>
+							</div>
+						<% end %>
+					</div>
+					
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-body">
+					<h5>Limpiar Caché</h5>
+
+					<div class="text-center">
+						<%= link_to I18n.t('general.clear_cache'), clear_cache_mains_path ,class: 'btn btn-light btn-sm', remote: true%>	
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+	<% end %>
+<%end %>

@@ -1,0 +1,6 @@
+$('#loaderFormValue').attr('hidden',true)
+
+$('#manageFormValueLabelModal').html("<%= j build_form(@form_list_value,'update',current_user.template('FormListValue','form_list_values',current_user),html: { class: 'form-group', method: 'put'},buttonOffset: 1,header: false,remote: true, columns:1)%>")
+$('#formFieldValueModalHeader').html("<%= j @form_list_value.value%> ")
+
+restore_lumni_js()

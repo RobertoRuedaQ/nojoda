@@ -1,0 +1,13 @@
+<%= form_tag edit_dashboard_path(params[:id]),method: :get do %>
+  <div class="row">
+    <div class="col-md-3 my-2">
+      <label class="form-label">Fondos:</label>
+      <%= lumni_dropdown_field( 'employability','fund',{type: 'list',list: @fund_list,value: @funds}) %>
+    </div>
+    <div class="col-md-3 my-2 d-flex">
+      <%= button_tag 'Buscar', class: 'btn btn-primary align-self-end' %>
+    </div>
+  </div>
+<% end %>
+
+<%= createTable(@employability_data,employability_template, title: false, new: false).html_safe %>

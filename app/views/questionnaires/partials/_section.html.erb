@@ -1,0 +1,17 @@
+<div id="fullSection-<%=@targetSection.id%>" class="row" data-id="Questionnaire_<%=@targetSection.id%>"=>
+	<div class="col-md-12">
+		<div class="card shadow-sm">
+			<div id="header-section-<%= @targetSection.id %>" class="card-header d-flex justify-content-between">
+				<%= headerSectionQuestionnaire(@targetSection.id) %>
+			</div>
+			<div class="card-body bg-section collapse" id='section-body-<%=@targetSection.id %>' loaded='false'>
+				<div class="text-center">
+					<%= image_tag( asset_path("default/lumniLoad.gif"), alt: I18n.t('general.loading'), class: "spinnerimg",style: "width: 200px;") %>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+

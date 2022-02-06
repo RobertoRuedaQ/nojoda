@@ -1,0 +1,4 @@
+
+<% collection_template = current_user.template('Collection','collections',current_user,id: true).except(:support_document) %>
+
+<%= createTable(@collection,collection_template).html_safe %>

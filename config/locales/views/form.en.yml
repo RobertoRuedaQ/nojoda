@@ -1,0 +1,19 @@
+en:
+  form:
+    closed: 'Closed'
+    edit_field_info: 'Edit Field Info'
+    create_new_attribute: 'Create New Attribute'
+    current_attributes: 'Current Attributes'
+    new_input: 'New Input'
+    current_inputs: 'Current Inputs'
+    remove_attachment: 'Remove Attachment'
+    remove_attachment_confirmation: 'Are you sure you want to remove the selected attachment?'
+    attachment_removed: 'Attachment Removed'
+    attachment_removed_conformation: 'Your attachment has been removed.'
+    remove_record: 'Remove Record'
+    remove_record_confirmation: 'Are you sure you want to remove the selected record?'
+    record_removed: 'Record Removed'
+    record_removed_confirmation: 'The selected record has been removed.'
+    interview_title: 'Interview'
+    interview_text: 'We will call you in the following 24 to schedule an interview.'
+    

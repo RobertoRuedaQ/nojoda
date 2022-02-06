@@ -1,0 +1,17 @@
+es:
+  project:
+    on-hold: 'En espera'
+    in-progress: 'En proceso'
+    under-review: 'En revisión'
+    done: 'Terminado'
+    create_new_task: 'Crea nueva tarea'
+    new_task: 'Nueva tarea'
+    new_checklist: 'Nueva lista de subtareas'
+    checklist: 'Lista de subtareas'
+    select_favorite: 'Clic para convertir en favorito'
+    deselect_favorite: 'Clic para dejar de ser favorito'
+    favorites: 'Favoritos'
+    archives: 'Archivados'
+    total_progress: 'Progreso total'
+    main_progress: 'Progreso tareas principales'
+

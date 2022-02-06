@@ -1,0 +1,21 @@
+es:
+  student_email_batch:
+    attributes:
+      id: ID
+      status: Estado
+      email_case: Caso de correo
+      email_file: Archivo de correos
+      created_at: Fecha de Creación
+    actions:
+      new: Crear un Nuevo lote
+      save: Almacenar el registro del lote
+    flash:
+      create:
+        success: "El lote de correos fue creado exitosamente."
+        danger: 'Hubo un error al intentar crear el lote de correos.'
+        invalid_file: 'El archivo es invalido, por favor revise la estructura del mismo.'
+        invalid_student: "No se encontró ningún estudiante con id %{user_id}, por favor revisar el archivo y corregir el error."
+        invalid_email: "el estudiante con id %{user_id} no tiene un correo electrónico válido, por favor revisar el archivo y corregir el error."
+      update:
+        success: "El lote de correoss fue actualizado exitosamente."
+        danger: 'Hubo un error al intentar actualizar el lote de correos.'

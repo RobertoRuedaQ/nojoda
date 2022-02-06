@@ -1,0 +1,2 @@
+class ObjectOrdersController < ApplicationController
+end

@@ -1,0 +1,10 @@
+<%= render 'invest_committees/partial/tabs' %>
+<br>
+<div class="card">
+  <div class="card-body py-3">
+    <% @pending_contracts.each do |application| %>
+      <%= render '/invest_committees/partial/application_accordion',application: application %>
+    <% end %>
+  <%= render partial: 'layouts/partials/pagination', locals: {resource: @pending_contracts} %>
+  </div>
+</div>

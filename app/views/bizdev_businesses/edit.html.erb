@@ -1,0 +1,55 @@
+
+
+<%= form_title(@bizdev_business, 'name') %> 
+
+
+<div class="accordion" id="business-container">
+
+  <div class="card shadow">
+    <div class="card-header" id="bizid-<%= @bizdev_business.id %>" data-toggle="collapse" data-target="#bis-dev-<%=@bizdev_business.id %>" aria-expanded="true" aria-controls="bis-dev-<%=@bizdev_business.id %>">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="my-1 text-primary"> <%= @bizdev_business.name %></h5>
+        </div>
+        <div class="col-md-8">
+          <%= create_business_progress_bar @bizdev_business.id %>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="bis-dev-<%=@bizdev_business.id %>" class="collapse <%= 'show' if @bizdev_business.childrens.count == 0 %>" aria-labelledby="bizid-<%= @bizdev_business.id %>" data-parent="#business-<%= @bizdev_business.id %>">
+      <div class="card-body">
+        <%= create_business_body @bizdev_business.id %>
+      </div>
+    </div>
+  </div>
+
+
+
+  <% @bizdev_business.childrens.each do |business| %>
+    <%= create_business_editor business.id %> 
+  <% end %>
+
+
+
+
+</div>
+
+<div class="row my-3 collapse" id="new_business_collapsed">
+  <div class="col">
+    <%= build_form(BizdevBusiness.new({bizdev_business_id: @bizdev_business.id}),'create',current_user.template('BizdevBusiness','bizdev_businesses',current_user),html: { class: 'form-group'},remote: true,destroy:false) %>
+    
+  </div>
+</div>
+
+<div class="row my-5">
+  <div class="col text-center">
+    <%= button_tag  class: 'btn btn-primary shadow', data: {toggle: 'collapse',target: '#new_business_collapsed'},aria:{expanded: 'false', controls: 'new_business_collapsed'} do %>
+    <span class="oi oi-cloud-download"></span> Add Opportunity
+    <% end %>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,10 @@
+<li class="sidenav-item"> 
+  <a href="#" data-toggle="collapse" data-target="#feedbacks" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-ios-bug"></i><%= I18n.t('mains.feedbacks')%>
+  </a>
+  <ul class="sub-menu collapse" id="feedbacks">
+    <li class="sidenav-item">
+      <a href="<%= feedbacks_path %>" class="sidenav-link "><%= Feedback.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

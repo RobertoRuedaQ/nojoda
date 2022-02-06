@@ -1,0 +1,37 @@
+
+<div class="d-flex justify-content-between">
+  <%= form_title(@project) %> 
+  <div>
+    <%= link_to(I18n.t('general.new'), "/#{params[:controller]}/new" , class: 'btn btn-primary') %>
+  </div>
+</div>
+
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#all-projects"><%= Project.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#favorite-projects"><%= I18n.t('project.favorites') %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#archived-projects"><%= I18n.t('project.archives') %></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="all-projects">
+      <%= createTable(@project,projects_index,title: false, id: 'allProjects', new: false).html_safe %>
+    </div>
+    <div class="tab-pane fade " id="favorite-projects">
+    	<%= createTable(@favorite_projects,projects_index,title: false, id: 'favoriteProjects', new: false).html_safe %>
+    </div>
+
+    <div class="tab-pane fade " id="archived-projects">
+    	<%= createTable(@archive_projects,projects_index,title: false, id: 'archivedProjects', new: false).html_safe %>
+    </div>
+  </div>
+</div>
+
+
+

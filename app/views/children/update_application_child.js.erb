@@ -1,0 +1,3 @@
+$('#edit-child-container-<%= params[:temp][:modal_id]%>').html("")
+$('#edit_child_record_<%= params[:temp][:modal_id]%>').modal('hide')
+$('#child-element-<%= @child.id%>').replaceWith("<%= j render '/children/partial/child_body', child: @child,visible: @application.active?, template_id: @section.cached_form_template.child_id, modal_id: params[:temp][:modal_id], section: @section, application: @application %>")

@@ -1,0 +1,95 @@
+	<% funding_option = current_application.funding_option %>
+	<% funding_proposals = funding_option.visible.where(model_status: 'done') %>
+	<% options_count =  funding_proposals.size %>
+	<% if options_count == 0 %>
+		<% current_application.modeling %>
+	<% end %>
+	<% selected = funding_option.selected? %>
+
+	<% fund = current_application.funding_opportunity.fund%>
+	
+  	<div class="text-center mb-5">
+  		<h1 class="my-0 font-weight-bolder"><%= FundingOption.model_name.human(count: [options_count,1].max) %></h1>
+  	</div>
+
+  	<% if options_count > 0 %>
+		
+
+	  	<div class="row">
+			<% funding_proposals.each do |proposal| %>
+			<% disbursement_hash = lumni_disbursement_hash(proposal.disbursement.select{|d| d.status != 'canceled' && d.disbursement_case != 'academic_bonus'},['forcasted_date','student_value','disbursement_case','status']) %>
+			<% total_amount_disbursement = disbursement_hash.map{|t| t[1][:adjusted_student_value].present? ? t[1][:adjusted_student_value] : t[1][:student_value]}.inject(0){|sum,x| sum + x } %>
+	  		<div class="col-md-<%= [6,(12/options_count).to_i].max %>">
+	  			<div class="card shadow" style="min-height: 30rem">
+	  				<div class="card-body ">
+					      <div class="display-1 text-success text-center my-4">
+					      	<i class="ion ion-ios-stats text-big"></i>
+					      </div>
+					      <div class="text-center">
+					      	<h5 class="m-0"><%= I18n.t('origination.funding_amount') %></h5>
+					      </div>
+					      <div class="flex-grow-1">
+					        <div class="py-4 my-2 text-center">
+					          <span class="display-3 d-inline-block font-weight-bold align-middle"><%= lumni_currency(total_amount_disbursement) %></span>
+					        </div>
+
+					        <div class="text-center my-5"><h3><%= I18n.t('general.funding_terms') %></h3></div>
+					        <div class="pb-2 text-center">
+					          <p class="ui-company-text mb-2"><strong class="font-weight-bolder"><%= proposal.percentage_graduated %>% </strong> <%= future_income_text_for(fund) %></p>
+					          <p class="ui-company-text mb-2"><strong class="font-weight-bolder"><%= proposal.isa_term %></strong> <%= I18n.t('students.months') %></p>
+					           <p class="ui-company-text mb-2"><strong class="font-weight-bolder"><%= lumni_currency proposal.nominal_payment_allowed %></strong> <%= I18n.t('students.nominal_payment') %></p>
+					          <% proposal.cap.each do |cap| %>
+
+						          <% if cap.first == 'rate_cap' %>
+						          	<p class="ui-company-text mb-0"><strong class="font-weight-bolder"><%= cap.second %>%</strong> <%= I18n.t('students.' + cap.first) %></p>
+						          <% else %>
+						          	<p class="ui-company-text mb-0"><strong class="font-weight-bolder"><%= lumni_currency cap.second %></strong> <%= I18n.t('students.' + cap.first) %></p>
+						          <% end %>
+
+
+
+					          <% end %>
+					        </div>
+					      </div>
+
+
+						<%= render '/applicants/partial/funding_option_card', funding_option: proposal,grid_main: 12, disbursement_grid: 12 , disbursements_hash: disbursement_hash, funding_detail: false%>
+
+
+
+					      <% if selected %>
+
+					      	<% if proposal.selected? %>
+				                <div class="col text-center" style="padding: 1rem;font-size: 40px">
+	           						<i class="fas fa-check-circle text-success"></i>
+	    						</div>
+    						<% end %>
+
+
+					      <% else %>
+
+					      <div class="px-md-3  text-center">
+					      	<%= form_for ModelingMatch.new(), url: modeling_matches_path do |f| %>
+					      		<%= hidden_field 'modelingmatch','application_id', value: current_application.id %>
+					      		<%= hidden_field 'modelingmatch','resource_type', value: 'FundingOption' %>
+					      		<%= hidden_field 'modelingmatch','resource_id', value: proposal.id %>
+					      		<%= hidden_field 'modelingmatch','status', value: 'selected' %>
+					      		<%= button_tag  I18n.t('general.select_funding_proposal'), type: 'submit', class: 'btn btn-outline-primary btn-lg btn-round'%>
+					      	<% end %>
+					      </div>
+					      <% end %>
+
+	  				</div>
+	  			</div>
+	  		</div>
+			<% end %>
+	    </div>
+	<% else %>
+		<div class="card">
+			<div class="card-body">
+				<h4 class="text-center my-5"><%= I18n.t('students.no_funding_options') %></h4>
+			</div>
+		</div>
+	<% end %>
+
+

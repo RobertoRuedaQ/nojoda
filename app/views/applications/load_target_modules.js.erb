@@ -1,0 +1,7 @@
+<% @modules.each do |m| %>
+	$('#section-temp-container-<%= m.id %>').replaceWith('<%= j generate_application_sections m, @application %>')
+<% end %>
+
+restore_lumni_js()
+set_location_js()
+set_institutions_js()

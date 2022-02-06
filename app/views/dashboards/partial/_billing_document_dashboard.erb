@@ -1,0 +1,33 @@
+
+<%= form_tag edit_dashboard_path(params[:id]),method: :get do %>
+
+
+<div class="row">
+	<div class="col-md-3 my-2">
+		<label class="form-label">Fecha Desde</label>
+		<%= lumni_text_field('billing_document','start_date',{type: 'text',class: 'lumni_date',value: @start_date}) %>
+	</div>
+	<div class="col-md-3 my-2">
+		<label class="form-label">Fecha Hasta</label>
+		<%= lumni_text_field('billing_document','end_date',{type: 'text',class: 'lumni_date',value: @end_date}) %>
+	</div>
+	<div class="col-md-3 my-2">
+		<label class="form-label">Fondos</label>
+		<%= lumni_dropdown_field( 'billing_document','funds',{type: 'multiple_dropdown',list: @billing_document_fund_list,value: @funds}) %>
+	</div>
+	<div class="col-md-3 my-2 d-flex">
+		<%= button_tag 'Buscar', class: 'btn btn-primary align-self-end' %>
+	</div>
+</div>
+<% end %>
+
+
+
+<% billing_document_template = current_user.template('BillingDocument','billing_documents',current_user,id: true) %>
+<% billing_document_template[:id][:controller] = 'billing_documents' %>
+<% billing_document_template[:id][:action] = 'edit' %>
+<% billing_document_template[:id][:target_id] = 'id' %>
+<% billing_document_template[:user_name] = {} %>
+<% billing_document_template[:identification_number] = {} %>
+
+<%= createTable(@billing_documents,billing_document_template, title: false, new: false).html_safe %>

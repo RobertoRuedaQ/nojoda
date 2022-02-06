@@ -1,0 +1,40 @@
+<% users_size = @users.size %>
+<% if users_size > 0 %>
+	<div class="card">
+    <div class="card-body py-3">
+			<h4 class="mt-3"><%= Student.model_name.human(count: users_size) %></h4>
+			<table class="table table-striped mt-5">
+				<thead>
+					<tr>
+						<th><%= I18n.t('students.attributes.id') %></th>
+						<th><%= I18n.t('students.attributes.full_name') %></th>
+						<th><%= I18n.t('students.attributes.time_zone') %></th>
+						<th><%= I18n.t('students.attributes.language') %></th>
+						<th><%= I18n.t('students.attributes.status') %></th>
+						<th><%= I18n.t('students.attributes.email') %></th>
+						<th><%= I18n.t('students.attributes.identification_number') %></th>
+						<th><%= I18n.t('students.attributes.mobile_number') %></th>
+						<th><%= I18n.t('students.attributes.phone_number') %></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @users.each do |user|%>
+					<tr>
+						<td><%= link_to user.id, edit_student_path(user), target: :_blank %></td>
+						<td><%= link_to user.full_name, edit_student_path(user), target: :_blank %></td>
+						<td><%= user.time_zone.blank? ? '' : user.time_zone.capitalize%></td>
+						<td><%= user.language.blank? ? '' : user.language.capitalize %></td>
+						<td><%= user.status.blank? ? '' : I18n.t('students.status.' + user.status ) %></td>
+						<td><%= user.email.blank? ? '' : user.email %></td>
+						<td><%= user.identification_number.blank? ? '' : user.identification_number %></td>
+						<td><%= user.contact_info.nil? ? '' : user.contact_info.mobile %></td>
+						<td><%= user.contact_info.nil? ? '' : user.contact_info.phone %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+<% else %>
+   <%= render partial: 'layouts/partials/not_result' %>
+<% end %>

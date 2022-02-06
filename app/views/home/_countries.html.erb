@@ -1,0 +1,28 @@
+<div class="row justify-content-md-center my-4">
+  <div class="col-md-10">
+  		<h1><%= I18n.t('home.select_country') %></h1>
+  		<% holding_countries.in_groups_of(3, false) do |group| %>
+	    <div class="card-deck my-4">
+	      <% group.each do |country| %>
+	        <% if country.flag.attached? %>
+	          <div class="card">
+	            <%= image_tag(country.flag, class: "card-img-top") %>
+	            <div class="card-body">
+	              <h4 class="card-title"><%= country.name %></h4>
+	              <ul class="company-list">
+	                <% country.company.sort_by(&:name).each do |company| %>
+	                  <% if company.show_in_home %>
+	                    <li>
+	                      <%= link_to company.name, "https://#{company.url}", class: 'text-primary' %>
+	                    </li>
+	                  <% end %>
+	                <% end %>
+	              </ul>
+	            </div>
+	          </div>
+	        <% end %>
+	      <% end %>
+	    </div>
+	  <% end %>
+  </div>
+</div>

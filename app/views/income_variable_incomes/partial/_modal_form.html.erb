@@ -1,0 +1,5 @@
+<h4><%= company_chile? ? IncomeInformation.human_attribute_name('variable_income_chile') : IncomeInformation.human_attribute_name('variable_income') %></h4>
+
+<p class="my-4">En esta sección podrás modificar la información registrada de tu ingreso variable.</p>
+
+<%= build_form(@income_variable_income,'update_variable_income',current_user.template('IncomeVariableIncome','income_variable_incomes',current_user),html: { class: 'form-group', method: 'post'},header: false,destroy: false) %>

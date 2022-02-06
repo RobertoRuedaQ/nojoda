@@ -1,0 +1,23 @@
+<% if current_user.confirmed_at.nil? %>
+	<div class="card mb-3  " style="min-height: 12rem">
+	  <div class="card-body">
+	    <div class="text-center my-3"><h4 class="my-4 text-warning"><%= I18n.t('mains.confirm') %></h4></div>
+	    <p class="mx-5 text-center"><%= I18n.t('mains.confirm_text') %></p>
+	    <div class="text-center my-5">
+	    	<a href="/users/confirmation/new" class="btn btn-primary" target="_blank"><%= I18n.t('mains.resend_confirmation') %></a>
+	    </div>
+	  </div>
+	</div>
+<% else %>
+	<div class="card">
+		<div class="card-body" style="min-height: 12rem">
+	    <div class="text-center my-3"><h4 class="my-4 text-success"><%= I18n.t('origination.confirm_email') %></h4></div>
+	    <p class="mx-5 text-center"><%= I18n.t('origination.success_email_confirmation') %></p>
+	    <div class="row">
+	      <div class="col text-center" style="padding: 1rem;font-size: 40px">
+	        <i class="fas fa-check-circle text-success"></i>
+	      </div>
+	    </div>
+		</div>
+	</div>
+<% end %>

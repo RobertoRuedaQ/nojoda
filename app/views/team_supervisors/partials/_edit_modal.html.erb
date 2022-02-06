@@ -1,0 +1,17 @@
+
+
+<!-- Modal -->
+<div class="modal fade" id="edit_team_supervisor" tabindex="-1" role="dialog" aria-labelledby="new_team_supervisorLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+	      <%= build_form(team_supervisor,'update',current_user.template('TeamSupervisor','team_supervisors',current_user),html: { class: 'form-group', method: 'put'}, remote: :true)%>
+      </div>
+    </div>
+  </div>
+</div>

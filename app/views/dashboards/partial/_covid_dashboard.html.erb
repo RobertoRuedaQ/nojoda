@@ -1,0 +1,33 @@
+
+<%= form_tag edit_dashboard_path(params[:id]),method: :get do %>
+
+
+<div class="row">
+	<div class="col-md-3 my-2">
+		<label class="form-label">Fecha Desde</label>
+		<%= lumni_text_field('covid','start_date',{type: 'text',class: 'lumni_date',value: @start_date}) %>
+	</div>
+	<div class="col-md-3 my-2">
+		<label class="form-label">Fecha Hasta</label>
+		<%= lumni_text_field('covid','end_date',{type: 'text',class: 'lumni_date',value: @end_date}) %>
+	</div>
+	<div class="col-md-3 my-2">
+		<label class="form-label">Fondos</label>
+		<%= lumni_dropdown_field( 'covid','funds',{type: 'multiple_dropdown',list: @covid_fund_list,value: @funds}) %>
+	</div>
+	<div class="col-md-3 my-2 d-flex">
+		<%= button_tag 'Buscar', class: 'btn btn-primary align-self-end' %>
+	</div>
+</div>
+<% end %>
+
+
+
+<% covid_template = current_user.template('CovidEmergency','covid_emergencies',current_user,id: true) %>
+<% covid_template[:id][:controller] = 'covid_emergencies' %>
+<% covid_template[:id][:action] = 'edit' %>
+<% covid_template[:id][:target_id] = 'id' %>
+<% covid_template[:user_name] = {} %>
+<% covid_template[:identification_number] = {} %>
+
+<%= createTable(@covid,covid_template, title: false, new: false).html_safe %>

@@ -1,0 +1,4 @@
+
+
+<%= form_title(@payu_extra_param, 'payu_response') %> 
+<%= build_form(@payu_extra_param,'update',current_user.template('PayuExtraParam','payu_extra_params',current_user),html: { class: 'form-group', method: 'put'}) %>

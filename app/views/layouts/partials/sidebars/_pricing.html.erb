@@ -1,0 +1,18 @@
+<li class="sidenav-item"> 
+  <a href="#" data-toggle="collapse" data-target="#pricing" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-md-calculator"></i><%= I18n.t('mains.pricing')%>
+  </a>
+  <ul class="sub-menu collapse" id="pricing">
+    <li class="sidenav-item">
+      <a href="<%= pricing_tables_path %>" class="sidenav-link sidenav-toggle "><%= PricingTable.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= pricing_details_path %>" class="sidenav-link "><%= PricingDetail.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= pricing_vectors_path %>" class="sidenav-link "><%= PricingVector.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

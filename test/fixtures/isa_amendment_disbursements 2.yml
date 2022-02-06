@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  isa_amendment: one
+  disbursement: one
+  currency: MyString
+  disbursement_case: MyString
+  student_value: 1.5
+  company_value: 1.5
+  forcasted_date: 2020-08-14
+  status: MyString
+
+two:
+  isa_amendment: two
+  disbursement: two
+  currency: MyString
+  disbursement_case: MyString
+  student_value: 1.5
+  company_value: 1.5
+  forcasted_date: 2020-08-14
+  status: MyString

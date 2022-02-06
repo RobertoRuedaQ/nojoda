@@ -1,0 +1,4 @@
+
+
+<%= form_title(@covid_emergency,I18n.t('mains.new')) %>
+<%= build_form(@covid_emergency,'create',current_user.template('CovidEmergency','covid_emergencies',current_user),html: { class: 'form-group'}) %>

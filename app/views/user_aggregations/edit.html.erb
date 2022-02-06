@@ -1,0 +1,4 @@
+
+
+<%= form_title(@user_aggregation, 'user') %> 
+<%= build_form(@user_aggregation,'update',current_user.template('UserAggregation','user_aggregations',current_user),html: { class: 'form-group', method: 'put'}) %>

@@ -1,0 +1,21 @@
+es:
+  currency:
+    unit:
+      MXN: '$'
+      CLP: '$'
+      COP: '$'
+      ARS: '$'
+      PEN: 'S/'
+      USD: '$'
+      EUR: '€'
+      JPY: '¥'
+    format:
+      MXN: '%u %n'
+      CLP: '%u %n'
+      COP: '%u %n'
+      ARS: '%u %n'
+      PEN: '%u %n'
+      USD: '%u %n'
+      EUR: '%n %u'
+      JPY: '%u %n'
+

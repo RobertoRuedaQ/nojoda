@@ -1,0 +1,4 @@
+
+
+<%= form_title(@student_config, 'user') %> 
+<%= build_form(@student_config,'update',current_user.template('StudentConfig','student_configs',current_user),html: { class: 'form-group', method: 'put'}) %>

@@ -1,0 +1,171 @@
+
+<application id="<%= @application.id %>"></application>
+<student id="<%= @full_student.id %>"></student>
+<% show_boolean = true %>
+<div id="accordion<%= @target_module.id%>">
+  <% @target_sections.each_with_index do |section,index| %>
+    <%cached_form_template = section.cached_form_template%>
+    <% object = cached_form_template.object %>
+    <section id="<%= section.id %>" model= "<%= object %>"></section>
+    <% option = eval(section.options) %>
+
+    <% if params[:action] != 'test_taker' || section.visible_in_review_questionnaire %>
+
+
+
+
+      <% if @full_student.adult?(current_company.country) && object  == 'Reference' && option[:case] == 'guardian' %>
+        <!-- optional sections -->
+
+
+      <% else %>
+
+        <% @hidden_fields[:section] = section.id %>
+        <% status = section.cached_done?(@application, section) %>
+        <% show_validation = @application.current_section_number == index && params[:controller] == 'applications' %>
+        <div class="card">
+          <div class="card-header" id="heading<%=section.id %>" >
+
+
+            <div class="d-flex justify-content-between">
+              <div class="d-flex">
+                <%= button_tag(class: 'btn icon-btn btn-outline-primary mr-2 text-center',data:{toggle:"collapse",target:"#collapse#{section.id}"}, href:"#collapse#{section.id}", aria:{ expanded: "true", controls:"collapse#{section.id}"}, role:"button") do %>
+                  <div id="open-icon-<%= section.id %>" <%= 'hidden="hidden"' if show_validation %>>
+                    <i class="fas fa-plus" ></i>
+                  </div>
+                  <div id="close-icon-<%= section.id %>" <%= 'hidden="hidden"' if !show_validation %>>
+                    <i class="fas fa-minus" ></i>
+                  </div>
+                <% end %>
+
+                <% title_text = (section.alternative_label.nil? || section.alternative_label == '') ? eval(object ).model_name.human(count: 1) : section.alternative_label %>  
+
+                <h5 class="my-2 d-flex"><%= title_text %></h5> 
+              </div>
+
+
+              <div id="status-indicator-<%= section.id %>">
+                <% if status %>
+                  <div class="text-success m-1">
+                    <i class="fas fa-check"></i>
+                  </div>
+                <% else %>
+                  <div ><h5 class="my-2"><span class="ion ion-md-warning text-warning mr-2"></span><%= I18n.t('general.pending') %></h5></div>
+                <% end %>
+              </div>
+
+            </div> 
+
+            
+          </div>
+
+          <div id="collapse<%= section.id %>" class="collapse <%= 'show' if show_validation %>" aria-labelledby="heading<%=section.id %>" data-parent="#accordion">
+            <div class="card-body p-0">
+              
+              <!-- description -->
+              <% if !section.description.nil? %>
+                <div class="m-4">
+                  <%= section.description.to_s.html_safe %> 
+                </div>
+              <% end %>
+
+
+              <% target_info = eval("applicationForm#{object }(section,@full_student,@application)") %>
+              <% collection = (target_info.class.to_s.include?('::')) %>
+              <% if collection %>
+                  <%=render  "/applications/sections/#{target_info.class.to_s.split(':').first.underscore}", target_info: target_info, section: section, application: @application, hidden_fields: @hidden_fields %>
+
+              <% else %>
+              
+                <% additional_form_render = nil%>
+                <% additional_form_info = nil %>
+                <% case object %>
+                <% when 'Sociodemographic' %>
+                  <% if  !cached_form_template.child_id.nil? && cached_form_template.child.object == 'Child'%>
+                    <% additional_form_render = '/applications/sections/child'%>
+                    <% additional_form_info = {section: section, application: @application,target_info: target_info, full_student: @full_student,hidden_fields: @hidden_fields} %>
+                    <% new_child_record = Child.new(user_id: @full_student.id) %>
+                    <%= render '/applications/sections/child_modal',section: section, application: @application,target_info: target_info, full_student: @full_student,hidden_fields: @hidden_fields, new_record: new_child_record %>
+                  <%elsif  cached_form_template.child_id.present? && cached_form_template.child.object == 'Reference'%>
+                    <% additional_form_render = '/applications/sections/reference'%>
+                    <% additional_form_info = {section: section, application: @application,target_info: target_info, full_student: @full_student,hidden_fields: @hidden_fields} %>
+                    <% new_reference_record = Reference.new(user_id: @full_student.id) %>
+                    <%= render '/applications/sections/reference_modal',section: section, application: @application,target_info: target_info, full_student: @full_student,hidden_fields: @hidden_fields, new_record: new_reference_record %>
+                  <% end %>
+
+                <% when 'StudentAcademicInformation' %>
+                  <% if @application.resource_type == 'FundingOpportunity' && option[:case] == "to_be_funded" %>
+                    <% additional_form_render = '/applications/sections/funding_form' %>
+                    <% additional_form_info = {target_info: target_info} %>
+                  <% end %>
+
+                <% when 'DisbursementRequest' %>
+                  <% additional_form_render = '/applications/sections/living_expenses' %>
+                  <% additional_form_info = {target_info: target_info} %>
+                <% when 'UniversityGrade' %>
+                  <% if option.nil? || option[:grades] != false %>
+                    <% additional_form_render = '/applications/sections/university_course_grade'%>
+                    <% additional_form_info = {target_info: target_info, section: cached_form_template} %>
+                  <% end %>
+                  <% if target_info.nil? %>
+                    <div class="text-center my-3">
+                      <h4 class="my-4 text-success"><%= I18n.t('application.request_grades') %></h4>
+                    </div>
+                    <p class="mx-5 text-center"><%= I18n.t('origination.success_grades_exception') %></p>
+                    <div class="row">
+                      <div class="col text-center" style="padding: 1rem;font-size: 40px">
+                        <i class="fas fa-check-circle text-success"></i>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <%= link_to(I18n.t('general.continue'), edit_application_path(@application), class: 'btn btn-success my-3') %>
+                    </div>
+                  <%end %>
+                <% end %>
+
+
+
+                <%= render '/applications/partial/general_form', target_info: target_info, section: section, application: @application, hidden_fields: @hidden_fields, additional_form_render: additional_form_render, additional_form_info: additional_form_info %>
+
+
+                <% if target_info.present? && params[:action] == 'test_taker' && target_info.pending_changes?%>
+                  <div id="application_pending_info"></div>
+                  <div class=" mb-4 text-center">
+                    <div class="btn-group">
+                      <%= button_to I18n.t('general.approve'), approve_changes_application_path(target_info),params: {model: target_info.class.to_s, target_id: target_info.id, questionnaire: params[:id]}, class: 'btn btn-success mx-2'%>
+                      <%= button_to I18n.t('general.reject'), reject_changes_application_path(target_info),params: {model: target_info.class.to_s, target_id: target_info.id, questionnaire: params[:id]}, class: 'btn btn-danger mx-2'%>
+
+                     
+                    </div>
+                  </div>
+                <%else%>
+                  <div class=" mb-4 text-center">
+                    <div class="btn-group">
+                      
+                    </div>
+                  </div>
+                <% end %>
+
+
+                <% case object %>
+                <% when 'UniversityGrade' %>
+                  <%= render '/university_course_grades/partial/course_modal', target_info: target_info %>
+                <% end %>
+
+
+
+
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+        <% show_boolean = false if !status %>
+      <% end %>
+
+    <% end %>
+
+
+  <% end %>
+
+</div>

@@ -1,0 +1,4 @@
+
+
+<%= form_title(@docs_note,I18n.t('mains.new')) %>
+<%= build_form(@docs_note,'create',current_user.template('DocsNote','docs_notes',current_user),html: { class: 'form-group'}) %>

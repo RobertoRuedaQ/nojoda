@@ -1,0 +1,20 @@
+'<%= @options %>'
+
+$('[id=general_container-<%= @region %>][form_key=<%= @form_key %>]').each(function(){
+	$(this).html('<%= j lumni_dropdown_field @model,@field,@options,@config %>')
+})
+
+
+set_region_js('<%= @region %>','<%= @form_key %>','<%= @city %>','<%= @country %>')
+
+
+$('[id=form_group-<%= @region %>][form_key=<%= @form_key %>]').trigger('change')
+
+
+$('[id=form_group-<%= @region %>][form_key=<%= @form_key %>]').show()
+
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+
+$('.spinner').hide();
+$('[id=form_group-<%=@region%>][form_key="<%= @form_key %>"]').addClass('new-comment')

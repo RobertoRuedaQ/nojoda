@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="offset-md-3 col-md-6">
+		<div class="card">
+			<div class="card-body">
+        <div class="text-center mt-4" style="max-width: 100%;">
+          <%= image_tag 'payment/Bancolombia.png', style: "width: 30%;"%>
+        </div>
+	      <h2 class="text-center mb-4 mt-5">Sigue las instrucciones</h3>
+        <div class="text-center mb-4" style="padding-left: 10%; padding-right: 10%; font-size: 1rem;">Acércate a un <strong>Corresponsal Bancario Bancolombia</strong> o un <strong>Cajero Automático Bancolombia</strong> con los datos mostrados a continuación y realiza el pago en <strong>efectivo</strong>.</div>
+        <table class="table table-striped">
+          <tr>
+            <td> <h4 class="text-center">Datos para el pago</h4></td>
+          </tr>
+          <tr>
+            <td class="text-center" style="font-size: 1rem;">Número de convenio<div class="display-4" style="font-size: 1.5rem; font-weight: 700;"><strong><%= data_to_pay[:agreement_code] %></strong></div></td>
+          </tr>
+          <tr>
+            <td class="text-center" style="font-size: 1rem;">Referencia de pago<div class="display-4" style="font-size: 1.5rem;  font-weight: 700;"><strong><%= data_to_pay[:student_identification_number] %></strong></div></td>
+          </tr>     
+        </table> 
+        <div class="text-center mb-4 mt-2">
+          <%= link_to 'Imprimir instrucciones', nil, :onclick => 'window.print();return false;' %>
+        </div>
+        <div class="mt-4 mb-4"></div>
+        <div class="text-center mb-4 mt-4">
+          <%= link_to 'Regresar A La Página Principal', mains_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

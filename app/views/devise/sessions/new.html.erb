@@ -1,0 +1,87 @@
+<%= stylesheet_link_tag 'pages/authentication.css', media: 'all' %>
+<!--
+=================================================================
+**************************** CONTENT ****************************
+-->
+
+<div class="authentication-wrapper authentication-3">
+  <div class="authentication-inner">
+
+    <!-- Side container -->
+    <!-- Do not display the container on extra small, small and medium screens -->
+
+    <% if !current_company.login_logo.attached? %>
+      <div class="d-none d-lg-flex col-lg-8 align-items-center ui-bg-cover ui-bg-overlay-container p-5" style="background-image: url(<%= asset_path("devise/sign_in.jpg") %>);">
+    <% else %>
+      <% if current_company.id == 56 %>
+        <div class="d-none d-lg-flex col-lg-8 align-items-center ui-bg-cover p-5" style="background-image: url('<%= rails_blob_url(current_company.login_logo)%>');">
+      <% else %>
+        <div class="d-none d-lg-flex col-lg-8 align-items-center ui-bg-cover ui-bg-overlay-container p-5" style="background-image: url('<%= rails_blob_url(current_company.login_logo)%>'); ">
+      <% end %>
+    <% end %>
+
+
+
+      <div class="ui-bg-overlay bg-dark opacity-50"></div>
+      
+      <% if current_company.id != 56 %>
+        <!-- Text -->
+        <div class="w-100 text-white px-5">
+          <h2 class="display-3 font-weight-bolder mb-4"><%= I18n.t('devise.additional.brighter_future') %></h2>
+          <div class="text-large font-weight-light">
+            <p><%= I18n.t('devise.additional.brighter_future_p1') %></p>
+            
+          </div>
+        </div>
+      <%end%>
+      <!-- /.Text -->
+    </div>
+    <!-- / Side container -->
+
+    <!-- Form container -->
+    <div class="d-flex col-lg-4 align-items-center bg-white p-5">
+      <!-- Inner container -->
+      <!-- Have to add `.d-flex` to control width via `.col-*` classes -->
+      <div class="d-flex col-sm-7 col-md-5 col-lg-12 px-0 px-xl-4 mx-auto">
+        <div class="w-100">
+
+
+          <h4 class="text-center text-lighter font-weight-normal mt-1 mb-0"><%= I18n.t('devise.additional.sign_in_your_account') %></h4>
+
+          <!-- Form -->
+            <%= devise_error_messages! %>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "my-5"}) do |f| %>
+
+              <div class="form-group">
+                <%= f.label I18n.t('activerecord.attributes.user.email'), class: 'form-label'%><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+              </div>
+
+              <div class="form-group">
+                <%= f.label I18n.t('activerecord.attributes.user.password'),("<div>#{I18n.t('activerecord.attributes.user.password')}</div>" + (link_to I18n.t('devise.additional.forgot_your_password'), new_password_path(resource_name), class: 'd-block small').html_safe).html_safe, class: 'form-label d-flex justify-content-between align-items-end' %>
+                <%= f.password_field :password, autocomplete: "off" , class: 'form-control'%>
+              </div>
+
+
+              <div class="d-flex justify-content-between align-items-center m-0">
+                <%= f.check_box :remember_me, class: 'custom-control-input' %>
+                <%= f.label :remember_me,('<span class="custom-control-label">'+ I18n.t('activerecord.attributes.user.remember_me') +'</span>').html_safe, class: 'custom-control custom-checkbox m-0'%>
+                <%= f.submit t('.sign_in'),class: 'btn btn-primary' %>
+              </div>
+
+          <% end %>
+
+          <%= render "devise/shared/links" %>
+
+          <!-- / Form -->
+
+        </div>
+      </div>
+    </div>
+    <!-- / Form container -->
+
+  </div>
+</div>
+
+

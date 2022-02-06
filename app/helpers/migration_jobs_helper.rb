@@ -1,0 +1,2 @@
+module MigrationJobsHelper
+end

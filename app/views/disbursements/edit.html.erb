@@ -1,0 +1,249 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="d-flex flex-row">
+      <%= form_title(@disbursement, 'disbursement_number') %> 
+    </div>
+  </div>
+  <div class="col-md-6 text-right">
+    <h4>
+      <%= link_to @disbursement.funding_option.right_application.user.name, edit_student_path( @disbursement.funding_option.right_application.user), class: 'text-primary mx-2' %>
+      
+    </h4>
+  </div>
+
+</div>
+
+
+
+<div class="row">
+  <div class="col-md-4">
+
+    <div class="nav-tabs-top">
+      <ul class="nav nav-tabs">
+        <li class="nav-item ">
+          <a class="nav-link active" data-toggle="tab" href="#disbursement_tab"><%= Disbursement.model_name.human(count: 1) %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#applications_tab"><%= Application.model_name.human(count: 2) %></a>
+        </li>
+      </ul>
+      <div class="tab-content bg-light">
+        <div class="tab-pane fade show active" id="disbursement_tab">
+          <div class="card" style="border: none">
+            <div class="card-body p-0">
+              <%= build_form(@disbursement,'update',current_user.template('Disbursement','disbursements',current_user),html: { class: 'form-group', method: 'put'}) %>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade " id="applications_tab" >
+          <div class="card" style="border: none">
+            <div class="card-body">
+              <% target_fields = ['id','disbursement_request_value','status','disbursement_review_button', 'change_disbursement_request'] %>
+                <%= createBasicTable(application_general_application_table_header(target_fields),application_general_application_table_rows( target_fields, @disbursement.disbursement_application),id: 'application_summary_table') %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+
+
+  <div class="col-md-8 pt-4 mt-3">
+
+    <div class="card mb-2">
+      <div class="card-body py-1">
+
+        <h5 class="my-4"><span class="text-primary"><%= I18n.t('general.status') %>: </span> <%= I18n.t('disbursement.' + @disbursement.disbursement_status) %></h5>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><%= I18n.t('general.requested') %></th>
+              <th><%= I18n.t('general.approved') %></th>
+              <th><%= I18n.t('general.disbursement_process') %></th>
+              <th><%= I18n.t('general.disbursed') %></th>
+              <th><%= I18n.t('general.available') %></th>
+              <th><%= I18n.t('disbursement.student_payment_to_disbursement')%></th>
+            </tr>
+          </thead>
+          <tbody>
+            <td><%= lumni_currency @disbursement.requested, @disbursement.currency %></td>
+            <td><%= lumni_currency @disbursement.approved, @disbursement.currency %></td>
+            <td><%= lumni_currency @disbursement.disbursement_process, @disbursement.currency %></td>
+            <td><%= lumni_currency @disbursement.disbursed, @disbursement.currency %></td>
+            <td><%= lumni_currency @disbursement.available, @disbursement.currency %></td>
+            <td><%= lumni_currency @disbursement.payed_by_student, @disbursement.currency %></td>
+          </tbody>
+        </table>    
+
+
+
+
+        
+
+
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><h5><%= I18n.t('disbursement.student_payment')%></h5></div>
+      <div class="card-body">
+        <% payment_template = current_user.template('Payment','payments',current_user,id: true) %>
+        <% payment_template[:id][:controller] = 'payments' %>
+        <% payment_template[:id][:action] = 'edit' %>
+        <% payment_template[:id][:target_id] = 'id' %>
+
+
+         <table class="table table-striped">
+          <thead>
+            <tr>
+              <th><%= Payment.human_attribute_name('id') %></th>
+              <th><%= Payment.human_attribute_name('status') %></th>
+              <th><%= Payment.human_attribute_name('payment_source') %></th>
+              <th><%= Payment.human_attribute_name('payment_method') %></th>
+              <th><%= Payment.human_attribute_name('value') %></th>
+              <th><%= Payment.human_attribute_name('payment_date') %></th>
+              <th><%= Payment.human_attribute_name('disbursement_id') %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @disbursement.payment.each do |payment|%>
+            <td><%=  link_to payment.id, edit_payment_path(payment)	%></td>
+            <td><%=  payment.status %></td>
+            <td><%=  payment.payment_source %></td>
+            <td><%=  payment.payment_method %></td>
+            <td><%= lumni_currency payment.value %></td>
+            <td><%= lumni_date payment.payment_date %></td>
+            <td><%=  payment.disbursement_id %></td>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+    <% if @disbursement.disbursement_cancellation.any? %>
+
+
+    <div class="card mb-2">
+      <div class="card-body py-1">
+
+        <h5 class="my-4"><span class="text-primary"><%= DisbursementCancellation.model_name.human(count: @disbursement.disbursement_cancellation.count)%></h5>
+
+          <% cancellation_template =  current_user.template('DisbursementCancellation','disbursement_cancellations',current_user,id: true)%>
+          <% cancellation_template[:cancellation_percentage] = {field_type: 'percentage'}%>
+          <% cancellation_template[:id][:controller] = 'disbursement_cancellations' %>
+          <% cancellation_template[:id][:action] = 'edit' %>
+          <% cancellation_template[:id][:target_id] = 'id' %>
+
+        <%= createTable(@disbursement.disbursement_cancellation,cancellation_template,new: false,title: false, id: false).html_safe %>
+
+      </div>
+    </div>
+
+
+    <% end %>
+
+
+
+
+
+
+
+
+
+    <% @disbursement.disbursement_payment.each do |payment| %>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-8">
+
+
+              <div class="d-flex align-items-center">
+                <div class="lnr lnr-flag display-4 text-success"></div>
+                <div class="ml-3">
+                  <div class="text-primary h5 mb-1"><%= I18n.t('list.' + payment.status) if (!payment.status.nil? && payment.status != '')%></div>
+                  <div class="text-large"><%= lumni_currency payment.value, payment.disbursement.currency %></div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-4 text-right">
+              <%= link_to I18n.t('general.edit'), edit_disbursement_payment_path(payment), class: 'btn btn-primary btn-md' ,remote: true, data: { disable_with: I18n.t('form.please_wait')}%>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      
+    <% end %>
+
+<% if !@disbursement.approved_application.nil? ||  !@disbursement.application_from_match.nil? %>
+
+  <% target_application = @disbursement.approved_application %>
+  <% if target_application.nil? %>
+    <% target_application = @disbursement.application_from_match %>
+  <% end %>
+
+
+  <% target_user = @disbursement.funding_option.right_application.user %>
+  <% target_template = target_user.template('DisbursementPayment','disbursement_payments',target_user) %>
+  
+  <% disbursement_request = target_application.disbursement_request%>
+  <% target_template[:value][:max] = @disbursement.approved - @disbursement.disbursed + @disbursement.payed_by_student.to_f %>
+  <% target_template[:value][:min] = target_template[:value][:max] %>
+
+  <% [nil, 0].include?(disbursement_request.reimbursement_value) &&  @disbursement.disbursement_case == "tuition" ? list = institution_bank_account_list( target_user) : list = user_bank_account_list( target_user)%>
+  <% target_template[:bank_account_id] = target_template[:bank_account_id].merge({list: list}) %>
+  <% target_template[:payment_case] = target_template[:payment_case].merge({list: disbursement_payment_type_list(@disbursement)}) %>
+
+  <div class="collapse" id="new-disbursement-payment">
+    <div class="card card-body p-0">
+        <%= build_form(DisbursementPayment.new(disbursement_id: @disbursement.id, disbursement_request_id: target_application.disbursement_request.id, value: target_template[:value][:max]),'create',target_template,html: { class: 'form-group'},controller: 'disbursement_payments') %>
+    </div>
+  </div>
+
+
+
+
+
+  <% if target_template[:value][:max].to_f >= 0 %>
+    <div class="text-center mt-3">
+      <%= button_tag I18n.t('general.new'),type: 'button', data: {toggle: 'collapse', target: '#new-disbursement-payment'},aria: {expanded: 'false',controls: 'new-disbursement-payment'} , class: 'btn btn-md btn-primary'%>
+    </div>
+  <% end %>
+<% end %>
+
+    
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="edit-disbursement-payment-modal" tabindex="-1" role="dialog" aria-labelledby="edit-disbursement-paymentLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0" id="disbrusement-payment-modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

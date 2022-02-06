@@ -1,0 +1,17 @@
+<div class="card my-2">
+	<div class="card-body bg-warning my-0 p-0">
+		<div class="d-flex">
+			<div class="d-inline-flex align-self-center mx-4">
+			<%= I18n.t('isa.new_agreement_text')  %>
+			</div>
+			<div class="d-inline-flex">
+				<div class="mx-4 my-2">
+          <% if current_user.new_agreement? %>
+            <% application_agreement = current_user.new_agreement %>
+            <%= link_to I18n.t('general.more_info'), edit_application_path(application_agreement), class: 'btn btn-primary' %>
+          <%end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+es:
+  biz_dev:
+    target: 'Objetivo'
+    pitch_done: 'Presentación realizada'
+    in_negociation: 'En negociación'
+    documentation: 'Documentación'
+    contract_made: 'Contrato hecho'
+    contract_signed: 'Contrato firmado'
+    stand_by: 'En espera'
+    closed_lost: 'Cerrado perdido'
+    closed_won: 'Cerrado ganado'
+    biz_team: 'Equipo Biz'
+    closed: 'Cerrado'

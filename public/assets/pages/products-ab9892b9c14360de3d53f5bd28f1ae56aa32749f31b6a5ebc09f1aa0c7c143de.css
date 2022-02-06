@@ -1,0 +1,50 @@
+/* line 8, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/products.scss */
+.product-list-slider.noUi-target .noUi-tooltip,
+.product-list-slider .noUi-target .noUi-tooltip {
+  opacity: 0;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+/* line 13, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/products.scss */
+.product-list-slider.noUi-target.noUi-state-drag .noUi-tooltip, .product-list-slider.noUi-target:hover .noUi-tooltip,
+.product-list-slider .noUi-target.noUi-state-drag .noUi-tooltip,
+.product-list-slider .noUi-target:hover .noUi-tooltip {
+  opacity: 1;
+}
+
+/* line 20, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/products.scss */
+.product-item-table tr:first-child td {
+  border-top: 0 !important;
+}
+/* line 24, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/products.scss */
+.product-item-table tr td:first-child {
+  width: 9rem;
+}
+
+/* line 31, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/products.scss */
+.product-item-discounts-table thead tr:first-child th,
+.product-discounts-edit thead tr:first-child th {
+  border-top: 0 !important;
+}
+/* line 35, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/products.scss */
+.product-item-discounts-table td,
+.product-item-discounts-table th,
+.product-discounts-edit td,
+.product-discounts-edit th {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  vertical-align: middle;
+}
+
+/* line 43, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/products.scss */
+.product-discounts-edit td > .input-group,
+.product-discounts-edit td > .form-control,
+.product-discounts-edit td > .custom-select {
+  min-width: 7.5rem !important;
+}
+
+/* line 49, /home/roberto/Documentos/lumni/platform-4.0/vendor/assets/stylesheets/pages/products.scss */
+.product-image-move {
+  cursor: -webkit-grab;
+  cursor: grab;
+}

@@ -1,0 +1,21 @@
+<div class="row my-4">
+  <div class="col-md-12">
+    <div id="history">
+      <div class="card mb-2 <%= @options[:htmlCard] %>">
+        <div class="card-header">
+          <a class="d-flex justify-content-between text-dark" data-toggle="collapse" aria-expanded="true" href="#<%= @target_object[0].nil? ? '' : @target_object[0].auditable_type %>">
+            <%= I18n.t('audits.activity_history') %>
+            <div class="collapse-icon"></div>
+          </a>
+        </div>
+
+        <div id="<%= @target_object[0].nil? ? '' : @target_object[0].auditable_type %>" class="collapse" data-parent="#history">
+          <div class="card-body" style="font-size: 12px">
+            <%= createTable(@target_object,['version','created_at','action','audited_changes','user'],
+            new: false, title: false, actions: false, idlink: false, dataOrder:[ 0, 'desc' ]) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

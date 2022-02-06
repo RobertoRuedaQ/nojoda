@@ -1,0 +1,16 @@
+en:
+  project:
+    on_hold: 'On Hold'
+    in_progress: 'In Progress'
+    under_review: 'Under Review'
+    done: 'Done'
+    create_new_task: 'Create New Task'
+    new_task: 'New Task'
+    new_checklist: 'New Checklist'
+    checklist: 'Checklist'
+    select_favorite: 'Click To Select As Favorite'
+    deselect_favorite: 'Click To Remove From Your Favorites'
+    favorites: 'Favorites'
+    archives: 'Archives'
+    total_progress: 'Total Progress'
+    main_progress: 'Main Tasks Progress'

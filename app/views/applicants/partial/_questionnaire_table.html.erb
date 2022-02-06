@@ -1,0 +1,38 @@
+<div class="card">
+	<div class="card-body py-3">
+		<h5 class="text-primary"><%= Questionnaire.model_name.human(count: 2) %></h5>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= I18n.t('general.id') %></th>
+          <th><%= I18n.t('general.name') %></th>
+          <th><%= I18n.t('general.status') %></th>
+          <th><%= I18n.t('general.main_score') %></th>
+          <th><%= I18n.t('general.final_result') %></th>
+          <th><%= I18n.t('general.time')%></th>
+          <th><%= I18n.t('general.start_time')%></th>
+          <th><%= I18n.t('general.end_time')%></th>
+          <th><%= I18n.t('general.actions')%></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @user_questionnaires.each do |questionnaire|%>
+        <tr>
+          <td><%=  link_to questionnaire.id, start_test_user_questionnaire_path(questionnaire) %></td>
+          <td><%=  link_to questionnaire.user_questionnaire_name, display_result_user_questionnaire_path(questionnaire), params: {id: questionnaire.id}, target: '_blank' %></td>
+          <td><%=  I18n.t("list.#{questionnaire.status}") %></td>
+          <td><%=  number_with_precision(questionnaire.main_score, precision: 2) %></td>
+          <td><%=  questionnaire.final_result %></td>
+          <td><%=  questionnaire.time %></td>
+          <td><%=  questionnaire.start_time %></td>
+          <td><%=  questionnaire.end_time %></td>
+          <td><%=  render 'user_questionnaires/partial/manage_actions', questionnaire: questionnaire %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+		<%= render '/user_questionnaires/partial/questionnaire_result_modal' %>
+		<%= render '/user_questionnaires/partial/questionnaire_special_activation' %>
+	</div>
+</div>

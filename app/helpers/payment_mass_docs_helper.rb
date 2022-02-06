@@ -1,0 +1,2 @@
+module PaymentMassDocsHelper
+end

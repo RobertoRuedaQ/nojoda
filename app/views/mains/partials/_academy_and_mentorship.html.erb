@@ -1,0 +1,62 @@
+<div class="row m-5 px-4">
+  <% if current_user.complementary_activity.workshop %>
+
+    <div class="col">
+      <div class="card">
+        <div class="card-body text-center my-5">
+
+
+          <h3><%= I18n.t('complementary_activity.workshop') %></h3>
+          <p><%= I18n.t('complementary_activity.workshop_text') %></p>
+
+          <div class="margin-bottom-10 text-center">
+            <form name="academy" method="post"action="http://www.lumniacademy.net.co/academy/admin/sso.php" target="_blank" class="nomargin">
+              <input name="id" type="hidden" value="<%= current_user.identification_number %>" />
+              <input type="hidden" name="tipo_usuario" value="estudiante"/>
+              <input type="hidden" name="id_usuario" value="<%= OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('md5'), "4f6a6d832be79", "#{current_user.identification_number}") %>"/>
+              <input type="hidden" name="correo_usuario" value="<%= current_user.email %>"/>
+              <input type="hidden" name="pais" value="<%= current_user.country_external_code %>"/>
+              <button type="submit" class="btn btn-primary " ><%= I18n.t('complementary_activity.workshop_button') %></button>
+            </form>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+
+  <% if current_user.complementary_activity.mentorship %>
+
+    <div class="col">
+      <div class="card">
+        <div class="card-body text-center my-5">
+
+          <h3><%= I18n.t('complementary_activity.mentorship') %></h3>
+          <p><%= I18n.t('complementary_activity.mentorship_text') %></p>
+
+
+          <div class="margin-bottom-10 text-center">
+            <form name="mentorias" method="post"action="http://mentorias.lumni.com.co" target="_blank" class="nomargin">
+              <input name="id" type="hidden" value="<%= current_user.identification_number %>" />
+              <input type="hidden" name="tipo_usuario" value="estudiante"/>
+              <input type="hidden" name="id_usuario" value="<%= OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('md5'), "4f6a6d832be79", "#{current_user.identification_number}") %>"/>
+              <input type="hidden" name="correo_usuario" value="<%= current_user.email %>"/>
+              <input type="hidden" name="pais" value="<%= current_user.country_external_code %>"/>
+              <button type="submit" class="btn btn-primary " ><%= I18n.t('complementary_activity.mentorship_button') %></button>
+            </form>
+          </div>
+
+
+          
+        </div>
+      </div>
+    </div>
+<% end %>
+
+</div>
+
+
+
+

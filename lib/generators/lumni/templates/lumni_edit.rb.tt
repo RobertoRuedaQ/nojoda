@@ -1,0 +1,4 @@
+<% startTag = '<' + '%=' %>
+<% endTag = '%' + '>' %>
+<%= startTag %> form_title(@<%= file_name.singularize.underscore %>, '<%= attributes.first.nil? ? 'name' : attributes.first.name %>') <%= endTag %> 
+<%= startTag %> build_form(@<%= file_name.singularize.underscore %>,'update',current_user.template('<%= file_name.singularize.camelize %>','<%= file_name.pluralize.underscore %>',current_user),html: { class: 'form-group', method: 'put'}) <%= endTag %>

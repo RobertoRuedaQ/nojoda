@@ -1,0 +1,5 @@
+$('#status-body-academic_status-<%= @isa.id %>').replaceWith("<%= j render '/isa_statuses/partial/status_body', isa: @isa, status_case: 'academic_status' %>")
+$('#academic_status_modal_container').html("<%= j render '/isa_statuses/partial/academic_status_modal_body', isa: @isa %>")
+
+set_isa_status_alert()
+restore_lumni_js()

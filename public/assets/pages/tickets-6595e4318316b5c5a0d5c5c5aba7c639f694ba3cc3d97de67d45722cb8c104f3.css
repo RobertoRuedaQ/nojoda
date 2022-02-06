@@ -1,0 +1,38 @@
+/* line 6, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/tickets.scss */
+.ticket-assignee,
+.ticket-assignee-add {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+/* line 13, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/tickets.scss */
+.ticket-assignee-add {
+  display: inline-block;
+  text-align: center;
+  line-height: 2.5rem;
+}
+
+/* line 19, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/tickets.scss */
+.ticket-file,
+.ticket-file-img,
+.ticket-file-add {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+}
+
+/* line 27, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/tickets.scss */
+.ticket-file,
+.ticket-file-add {
+  display: inline-block;
+  text-align: center;
+  line-height: 4rem;
+}
+
+/* line 34, /home/lumni/Documentos/platform-4.0/vendor/assets/stylesheets/pages/tickets.scss */
+.ticket-file-img {
+  background-color: transparent;
+  background-position: center center;
+  background-size: cover;
+}

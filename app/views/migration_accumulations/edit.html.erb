@@ -1,0 +1,4 @@
+
+
+<%= form_title(@migration_accumulation, 'resource') %> 
+<%= build_form(@migration_accumulation,'update',current_user.template('MigrationAccumulation','migration_accumulations',current_user),html: { class: 'form-group', method: 'put'}) %>

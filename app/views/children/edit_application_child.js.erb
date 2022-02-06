@@ -1,0 +1,4 @@
+$('#edit-child-container-<%= params[:modal_id]%>').html("<%= j render '/applications/partial/general_form', target_info: @child, section: @section, application: @application, hidden_fields: {application_id: @application.id, section: @section.id,modal_id: params[:modal_id]}, action: 'update_application_child',remote: true, target_template: @template,target_controller: 'children' %>")
+$('#edit_child_record_<%= params[:modal_id]%>').modal('show')
+
+restore_lumni_js()

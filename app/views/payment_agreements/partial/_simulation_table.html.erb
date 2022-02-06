@@ -1,0 +1,19 @@
+<h5 class="text-primary mt-5"><%= I18n.t('billing_document.amortization_payment') %></h5>
+<table class="table table-striped" id="amortization_table">
+	<thead>
+		<tr>
+			<th><%= I18n.t('general.short_number') %></th>
+			<th><%= I18n.t('general.date') %></th>
+			<th><%= I18n.t('general.value') %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% number_payments.to_i.times.each do |period| %>
+			<tr>
+				<td><%= period + 1 %></td>
+				<td><%= lumni_short_date start_date.to_date + period.months %></td>
+				<td><%= lumni_currency amortization_payment %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

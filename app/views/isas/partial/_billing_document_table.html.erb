@@ -1,0 +1,79 @@
+
+<% if action_name != 'billing_document' %>
+	<h4><%= BillingDocument.model_name.human(count: 2) %></h4>
+<% end %>
+
+<div id="billing-accordion">
+	<% billing_documents = isa.billing_document.paginate(page: params[:page], per_page: 12) %>
+	<% billing_documents.each_with_index do |document, index|%>
+
+	  <div class="card">
+	    <div class="card-header" id="headingOne">
+
+	    	<div class="d-flex justify-content-between">
+				  <div class="d-flex align-items-center">
+				    <button type="button" class="btn btn-xl btn-outline-info borderless py-0 px-2" data-toggle="collapse" data-target="#document-body-<%= document.id %>" aria-expanded="true" aria-controls="document-body-<%= document.id %>">
+				      <span class="pe-7s-cash display-3"></span>
+				    </button>
+				    <div class="ml-2">
+				      <div class="small"><span class="text-muted mr-4"><%= document.id %></span> <%= "#{lumni_month document.month} - #{document.year}" %> <span class="ml-3 mr-1 badge badge-dot badge-<%= document.active == true ? 'success' : 'warning' %>"></span class="ml-1"><%= I18n.t('list.' + document.status) %><span></span></div>
+				      <div class="h5 my-0 d-flex flex-column">
+								<%- value =  document.charged_value_with_penalties.to_f %>
+								<%- applied_value = document.applied_value.to_f%>
+				    		<table >
+				    			<tr class="mb-2">
+				    				<td class="text-primary"><%= I18n.t('billing_document.document_value') %>:</td>
+				    				<td><div class="pl-3"><%= lumni_currency value %></div></td>
+				    			</tr>
+				    			<tr>
+				    				<td class="text-primary"><%= I18n.t('billing_document.applied_value') %>:</td>
+				    				<td><div class="pl-3"><%= lumni_currency applied_value %></div></td>
+				    			</tr>
+									<tr>
+				    				<td class="text-primary"><%= I18n.t('billing_document.outstanding_balance') %>:</td>
+				    				<td><div class="pl-3"><%= lumni_currency(value - applied_value) %></div></td>
+				    			</tr>
+				    		</table>
+				      </div>
+				    </div>
+				  </div>
+				  <div>
+
+						<div class="btn-group float-right m-2">
+	            <button type="button" class="btn icon-btn btn-outline-primary borderless dropdown-toggle" data-toggle="dropdown"><i class="fas fa-cog"></i></button>
+	            <div class="dropdown-menu dropdown-menu-right">
+								<%= button_to I18n.t('list.update_status'), update_status_billing_document_path(document), class: 'dropdown-item',data: { disable_with: I18n.t('form.please_wait')} %>
+	            	<%= button_to I18n.t('list.refresh'), refresh_billing_document_billing_document_path(document), class: 'dropdown-item',data: { disable_with: I18n.t('form.please_wait')} %>
+	            	<%= button_to I18n.t('list.activate'), activate_billing_document_billing_document_path(document), class: 'dropdown-item',data: { disable_with: I18n.t('form.please_wait')} %>
+	            	<% variable_incomes = document.income_variable_income.includes(:income_information) %>
+								<% if variable_incomes.any? %>
+									<div class="dropdown-divider"></div>
+									<li class="dropdown-header optgroup-1"><span class="text"><%= I18n.t('income_information.edit_variable_income') %></span></li>
+									<% variable_incomes.each do |income| %>
+										<%= link_to "#{income.income_information.id} - #{income.income_information.company_name}: #{lumni_currency(income.value)}", edit_income_variable_income_path(income), class: 'dropdown-item',data: { disable_with: I18n.t('form.please_wait')}, remote: true %>
+									<% end %>
+								<% end %>
+	            </div>
+	          </div>
+
+					</div>
+	    		
+	    	</div>
+	    </div>
+
+	    <div id="document-body-<%= document.id %>" class="collapse <%= 'show' if index == 0 %> " aria-labelledby="headingOne" data-parent="#billing-accordion">
+	      <div class="card-body">
+
+			<%= render '/isas/partial/billing_table_body', target_billing_document: document  %>
+
+	      </div>
+	    </div>
+	  </div>
+  <% end %>
+
+
+
+</div>
+
+<%= render 'income_variable_incomes/partial/modal_body' %>
+<%= render partial: 'layouts/partials/pagination', locals: {resource: billing_documents} %>

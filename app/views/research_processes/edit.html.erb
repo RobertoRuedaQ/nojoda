@@ -1,0 +1,7 @@
+
+
+<%= form_title(@research_process, 'process') %> 
+<%= build_form(@research_process,'update',current_user.template('ResearchProcess','research_processes',current_user),html: { class: 'form-group', method: 'put'}) %>
+
+
+<%= createTable(@research_process.research_input,current_user.template('ResearchInput','research_inputs',current_user,id: true)).html_safe %>

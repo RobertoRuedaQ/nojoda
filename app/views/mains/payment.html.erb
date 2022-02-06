@@ -1,0 +1,2 @@
+<h3 class="mx-2"><%= Payment.model_name.human(count: 2) %></h3>
+<%= createTable(@payments,@payment_template,idlink: false,title: false,dataOrder: 1,new: false).html_safe %>

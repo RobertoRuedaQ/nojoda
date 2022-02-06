@@ -1,0 +1,42 @@
+
+<div class="nav-tabs-top">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link " data-toggle="tab" href="#bizdev-tab-<%= @target_business.id %>"><%= BizdevBusiness.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#project-tab-<%= @target_business.id %>"><%= Project.model_name.human(count: 1) %></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#team-tab-<%= @target_business.id %>"><%= I18n.t('biz_dev.biz_team')%></a>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade" id="bizdev-tab-<%= @target_business.id %>">
+    <%= build_form(@target_business,'update',current_user.template('BizdevBusiness','bizdev_businesses',current_user),html: { class: 'form-group', method: 'put'},header_title: false, ) %>
+    </div>
+    <div class="tab-pane fade show active" id="project-tab-<%= @target_business.id %>">
+
+      <%= render 'projects/partials/project_body', project: @target_business.project %>
+      
+    </div>
+    <div class="tab-pane fade" id="team-tab-<%= @target_business.id %>">
+
+      <div class="card">
+        <div class="card-body">
+
+
+
+          <%= lumni_dropdown_field( 'teams',"supervisors",{type: 'multiple_dropdown', list: teamMembersList(current_company),html_class: ' bizdev-team-dropdown', id: "team_business_dropdown-#{@target_business.id}",value: @target_business.project.project_team.map{|s| s.user_id}}) %>
+          <%= lumni_text_field( 'hidden_teams','previous',{hidden: true}) %>
+          <div target="<%= @target_business.project.id %>" id="project_div"></div>
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

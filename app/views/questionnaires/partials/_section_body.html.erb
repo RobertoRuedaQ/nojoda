@@ -1,0 +1,10 @@
+<div id="question_container_<%= @targetSection.id %>" class="sortable_container">
+	<% @targetSection.cached_question.each do |question| %>
+			<%= questionsSectionQuestionnaire(question) %>
+	<% end %>
+</div>
+<div id="sections_location_<%= @targetSection.id %>" class="sortable_container">
+	<% @targetSection.cached_childs.each do |section| %>
+		<%= createQuestionnaireSection(section.id) %>
+	<% end %>
+</div>

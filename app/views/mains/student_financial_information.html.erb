@@ -1,0 +1,26 @@
+<%= createTable(@student.bank_account, student_bank_account_template, id: 'table_history_bank_account_track',title: false).html_safe %>    
+  <% if @bank_account_application.present? && @bank_account_application.status == 'active' %>
+      <%= link_to I18n.t('general.edit'),edit_application_path(@bank_account_application), class: 'btn btn-primary' %>
+  <% elsif @bank_account_application.present? && @bank_account_application.status == 'submitted' %>
+    <div class="card-body bg-info text-white text-center">
+      <%= I18n.t('application.under_review') %>
+    </div>
+  <% else %>
+    <%= button_to I18n.t('general.new_request'),create_application_bank_accounts_path, class: 'btn btn-primary' %>
+  <% end %>
+
+
+<%if mexico? %>
+  <%= build_form(@student.student_financial_information,'update',financial_template,html: { class: 'form-group', method: 'put'},controller: 'complementary_activities',remote: true, destroy: false,locked: true, history: false) %>
+
+  <% if @student_financial_information_application.present? && @student_financial_information_application.status == 'active' %>
+      <%= link_to I18n.t('general.edit'),edit_application_path(@student_financial_information_application), class: 'btn btn-primary' %>
+  <% elsif @student_financial_information_application.present? && @student_financial_information_application.status == 'submitted' %>
+    <div class="card-body bg-info text-white text-center">
+      <%= I18n.t('application.under_review') %>
+    </div>
+  <% else %>
+    <%= button_to I18n.t('general.new_request'),create_application_student_financial_informations_path, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+

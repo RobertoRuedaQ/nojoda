@@ -1,0 +1,8 @@
+$('[name=amount],[name=taxReturnBase]').each(function() {
+	$(this).val(current_value).trigger('change')
+})
+$('[name=signature]').val('<%= @signature %>')
+$('#button-webchecout-payment').attr('disabled',false)
+$('.spinner').hide()
+
+

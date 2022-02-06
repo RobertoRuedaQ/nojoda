@@ -1,0 +1,22 @@
+<li class="sidenav-item">
+  <a href="#" data-toggle="collapse" data-target="#api" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-md-git-network"></i><%= I18n.t('mains.api')%>
+  </a>
+  <ul class="sub-menu collapse" id="api">
+    <li class="sidenav-item">
+      <a href="<%= api_histories_path %>" class="sidenav-link "><%= ApiHistory.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= payu_gateways_path %>" class="sidenav-link "><%= PayuGateway.model_name.human(count: 2) %></a>  		
+    </li> 
+
+    <li class="sidenav-item">
+      <a href="<%= mercado_pago_gateways_path %>" class="sidenav-link "><%= MercadoPagoGateway.model_name.human(count: 2) %></a>  		
+    </li> 
+
+    <li class="sidenav-item">
+      <a href="<%= wompi_gateways_path %>" class="sidenav-link "><%= WompiGateway.model_name.human(count: 2) %></a>  		
+    </li> 
+  </ul>
+</li>

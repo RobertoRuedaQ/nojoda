@@ -1,0 +1,199 @@
+<h4 class="text-primary"><%= I18n.t('isa.income_status') %></h4>
+
+<div id="accordion">
+
+<!-- grace period -->
+  <div class="card mx-0 mb-4">
+    <div class="card-header d-flex flex-column p-0" id="grace_period_header">
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#grace_period_accordion" aria-expanded="true" aria-controls="grace_period_accordion">
+          <%= I18n.t('isa.grace_period') %>
+        </button>
+    </div>
+
+    <div id="grace_period_accordion" class="collapse" aria-labelledby="grace_period_header" data-parent="#accordion">
+      <div class="card-body p-0">
+
+        <h5 class="text-secondary mt-3 ml-2"><%= I18n.t('isa.new_grace_period') %></h5>
+        <% target_grace_period = isa.current_status('income_status').find_by_status('grace_period') %>
+        <% if target_grace_period.nil? %>
+	        <% target_grace_period = IsaStatus.new %>
+          <%= form_for target_grace_period do |f| %>
+            <%= f.label :start_date,class: 'form-label' %>
+            <%= f.text_field :start_date, class: 'form-control scroll-top lumni_date' %>
+            <%= f.hidden_field :isa_id, value: isa.id %>
+            <%= f.hidden_field :status, value: 'grace_period' %>
+            <%= f.hidden_field :phase, value: 'active' %>
+            <%= f.hidden_field :status_case, value: 'income_status' %>
+
+            <%= f.label :end_date,class: 'form-label' %>
+            <%= f.text_field :end_date, class: 'form-control scroll-top lumni_date' %>
+
+            <%= f.submit class:'btn btn-success lumnisubmit'%>
+          <%end %>
+	      <% else %>
+          <%= form_for target_grace_period do |f| %>
+            <%= f.label :start_date,class: 'form-label' %>
+            <%= f.text_field :start_date, class: 'form-control scroll-top lumni_date' %>
+            <%= f.hidden_field :isa_id, value: isa.id %>
+            <%= f.hidden_field :status, value: 'grace_period' %>
+            <%= f.hidden_field :phase, value: 'active' %>
+            <%= f.hidden_field :status_case, value: 'income_status' %>
+
+            <%= f.label :end_date,class: 'form-label' %>
+            <%= f.text_field :end_date, class: 'form-control scroll-top lumni_date' %>
+
+            <%= f.submit class:'btn btn-success lumnisubmit'%>
+          <%end %>	    	
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- discretionary forbearance -->
+  <div class="card mx-0 mb-4">
+    <div class="card-header d-flex flex-column p-0" id="discretionary_forbearance_header">
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#discretionary_forbearance_accordion" aria-expanded="true" aria-controls="discretionary_forbearance_accordion">
+          <%= I18n.t('isa.discretionary_forbearance') %>
+        </button>
+    </div>
+
+    <div id="discretionary_forbearance_accordion" class="collapse" aria-labelledby="discretionary_forbearance_header" data-parent="#accordion">
+      <div class="card-body p-0">
+
+        <h5 class="text-secondary mt-3 ml-2"><%= I18n.t('isa.new_discretionary_forbearance') %></h5>
+        <% target_discretionary_forbearance = isa.current_status('income_status').find_by_status('discretionary_forbearance') %>
+        <% if target_discretionary_forbearance.nil? %>
+	        <% target_discretionary_forbearance = IsaStatus.new %>
+	        <%= form_for target_discretionary_forbearance do |f| %>
+            <%= f.label :start_date,class: 'form-label' %>
+            <%= f.text_field :start_date, class: 'form-control scroll-top lumni_date' %>
+            <%= f.hidden_field :isa_id, value: isa.id %>
+            <%= f.hidden_field :status, value: 'discretionary_forbearance' %>
+            <%= f.hidden_field :status_case, value: 'income_status' %>
+            <%= f.hidden_field :phase, value: 'active' %>
+
+            <%= f.label :end_date,class: 'form-label' %>
+            <%= f.text_field :end_date, class: 'form-control scroll-top lumni_date' %>
+
+            <%= f.submit class:'btn btn-success lumnisubmit'%>
+          <%end %>
+	      <% else %>
+        	<%= form_for target_discretionary_forbearance do |f| %>
+            <%= f.label :start_date,class: 'form-label' %>
+            <%= f.text_field :start_date, class: 'form-control scroll-top lumni_date' %>
+            <%= f.hidden_field :isa_id, value: isa.id %>
+            <%= f.hidden_field :status, value: 'discretionary_forbearance' %>
+            <%= f.hidden_field :status_case, value: 'income_status' %>
+            <%= f.hidden_field :phase, value: 'active' %>
+            
+            <%= f.label :end_date,class: 'form-label' %>
+            <%= f.text_field :end_date, class: 'form-control scroll-top lumni_date' %>
+
+            <%= f.submit class:'btn btn-success lumnisubmit'%>
+          <%end %>
+	    	<% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- just agreements -->
+  <div class="card mx-0 mb-4">
+    <div class="card-header d-flex flex-column p-0" id="just_agreement_header">
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#just_agreement_accordion" aria-expanded="true" aria-controls="just_agreement_accordion">
+          <%= I18n.t('isa.just_agreement') %>
+        </button>
+    </div>
+
+    <div id="just_agreement_accordion" class="collapse" aria-labelledby="just_agreement_header" data-parent="#accordion">
+      <div class="card-body p-0">
+
+        <h5 class="text-secondary mt-3 ml-2"><%= I18n.t('isa.new_just_agreement') %></h5>
+        <% target_just_agreement = isa.current_status('income_status').find_by_status('just_agreement') %>
+        <% if target_just_agreement.nil? %>
+          <% target_just_agreement = IsaStatus.new %>
+          <%= form_for target_just_agreement do |f| %>
+            <%= f.label :start_date,class: 'form-label' %>
+            <%= f.text_field :start_date, class: 'form-control scroll-top lumni_date' %>
+            <%= f.hidden_field :isa_id, value: isa.id %>
+            <%= f.hidden_field :status, value: 'just_agreement' %>
+            <%= f.hidden_field :phase, value: 'active' %>
+            <%= f.hidden_field :status_case, value: 'income_status' %>
+
+            <%= f.label :end_date,class: 'form-label' %>
+            <%= f.text_field :end_date, class: 'form-control scroll-top lumni_date' %>
+
+            <%= f.submit class:'btn btn-success lumnisubmit'%>
+          <%end %>
+        <% else %>
+          <%= form_for target_just_agreement do |f| %>
+            <%= f.label :start_date,class: 'form-label' %>
+            <%= f.text_field :start_date, class: 'form-control scroll-top lumni_date' %>
+            <%= f.hidden_field :isa_id, value: isa.id %>
+            <%= f.hidden_field :status, value: 'just_agreement' %>
+            <%= f.hidden_field :phase, value: 'active' %>
+            <%= f.hidden_field :status_case, value: 'income_status' %>
+
+            <%= f.label :end_date,class: 'form-label' %>
+            <%= f.text_field :end_date, class: 'form-control scroll-top lumni_date' %>
+
+            <%= f.submit class:'btn btn-success lumnisubmit'%>
+          <%end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+<!-- No Payment -->
+  <div class="card mx-0 mb-4">
+    <div class="card-header d-flex flex-column p-0" id="no_payment_header">
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#no_payment_accordion" aria-expanded="true" aria-controls="no_payment_accordion">
+          <%= I18n.t('isa.no_payment') %>
+        </button>
+    </div>
+
+    <div id="no_payment_accordion" class="collapse" aria-labelledby="no_payment_header" data-parent="#accordion">
+      <div class="card-body p-0">
+
+        <h5 class="text-secondary mt-3 ml-2"><%= I18n.t('isa.new_no_payment') %></h5>
+        <% target_no_payment = isa.current_status('income_status').find_by_status('no_payment') %>
+        <% if target_no_payment.nil? %>
+          <% target_no_payment = IsaStatus.new %>
+          <%= form_for target_no_payment do |f| %>
+            <%= f.label :start_date,class: 'form-label' %>
+            <%= f.text_field :start_date, class: 'form-control scroll-top lumni_date' %>
+            <%= f.hidden_field :isa_id, value: isa.id %>
+            <%= f.hidden_field :status, value: 'no_payment' %>
+            <%= f.hidden_field :phase, value: 'active' %>
+            <%= f.hidden_field :status_case, value: 'income_status' %>
+
+            <%= f.label :end_date,class: 'form-label' %>
+            <%= f.text_field :end_date, class: 'form-control scroll-top lumni_date' %>
+
+            <%= f.submit class:'btn btn-success lumnisubmit'%>
+          <%end %>
+          
+        <% else %>
+          <%= form_for target_no_payment do |f| %>
+            <%= f.label :start_date,class: 'form-label' %>
+            <%= f.text_field :start_date, class: 'form-control scroll-top lumni_date' %>
+            <%= f.hidden_field :isa_id, value: isa.id %>
+            <%= f.hidden_field :status, value: 'no_payment' %>
+            <%= f.hidden_field :phase, value: 'active' %>
+            <%= f.hidden_field :status_case, value: 'income_status' %>
+
+            <%= f.label :end_date,class: 'form-label' %>
+            <%= f.text_field :end_date, class: 'form-control scroll-top lumni_date' %>
+
+            <%= f.submit class:'btn btn-success lumnisubmit'%>
+          <%end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>

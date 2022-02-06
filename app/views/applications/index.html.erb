@@ -1,0 +1,50 @@
+<% if current_user.student? %>
+	<%= createTable(@application,applications_index, actions: false)%>
+<% elsif current_user.staff? %>
+	<div class="card mb-3">
+    <div class="card-body py-3">
+			<%= render partial: 'applications/partial/filter'%>
+		</div>
+	</div>
+	<div class="card">
+    <div class="card-body py-3">
+			<h4 class="mt-4"><%= Application.model_name.human(count: @application.size) %></h4>
+			<%= render partial: 'layouts/partials/per_page' %>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th><%= I18n.t('application.attributes.id') %></th>
+						<th><%= I18n.t('application.attributes.request_type') %></th>
+						<th><%= I18n.t('application.attributes.user_name') %></th>
+						<th><%= I18n.t('application.attributes.user_identification_number') %></th>
+						<th><%= I18n.t('application.attributes.funding_opportunity') %></th>
+						<th><%= I18n.t('application.attributes.institution') %></th>
+						<th><%= I18n.t('application.attributes.disbursement_type') %></th>
+						<th><%= I18n.t('application.attributes.disbursement_request_type') %></th>
+						<th><%= I18n.t('application.attributes.supervisor') %></th>
+						<th><%= sort_link(@application_ransack, :created_at, I18n.t('application.attributes.created_at'), default_order: :asc) %></th>
+						<th><%= sort_link(@application_ransack, :updated_at, I18n.t('application.attributes.updated_at'), default_order: :asc) %></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @application.each do |appl|%>
+					<tr>
+						<td><%= link_to appl.id, get_start_user_questionnaire_path(appl.active_questionnaire_id), target: :_blank %></td>
+						<td><%= I18n.t("application.#{appl.application_case}")%></td>
+						<td><%= appl.user_name.to_s.titleize %></td>
+						<td><%= appl.user_identification_number %></td>
+						<td><%= appl.funding_opportunity_name.to_s.titleize %></td>
+						<td><%= appl.institution_name.to_s.titleize %></td>
+						<td><%= translate_disbursement_case(appl) %></td>
+						<td><%= translate_disbursement_request_case(appl) %></td>
+						<td><%= appl.supervisors_in_charge.to_s.titleize %></td>
+						<td><%= lumni_date appl.created_at %></td>
+						<td><%= lumni_date appl.updated_at %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<%= render partial: 'layouts/partials/pagination', locals: {resource: @application} %>
+		</div>
+	</div>
+<% end %>

@@ -1,0 +1,9 @@
+es:
+  student_route:
+    create_account: 'Después de Crear Cuenta'
+    confirm_email: 'Después de Confirmar Correo'
+    apply: 'Después de Postular'
+    contract_activation: 'Después de Activar el Primer Contrato'
+    receive_disbursement: 'Después de Recibir el Primer Desembolsos'
+    start_payments: 'Cuando Inicia el Periodo de Repago'
+    end_payments: 'Al Finalizar los Pagos'

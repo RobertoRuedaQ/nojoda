@@ -1,0 +1,4 @@
+$('#historyModalBody-<%= params[:form_key] %>').html("<%= j render 'history/history_body', justTest: true %>")
+cleanDataTables()
+createDataTables();
+$('.spinner').hide();

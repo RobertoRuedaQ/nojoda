@@ -1,0 +1,23 @@
+en:
+  audits:
+    auditable_id: "Auditable Id"
+    auditable_type: "Auditable Type"
+    id: "ID"
+    associated_id: "Associated Id"
+    associated_type: "Associated Type"
+    user_id: "User Id"
+    user_type: "User Type"
+    username: "Username"
+    action: "Action"
+    audited_changes: "List of Changes"
+    version: "version"
+    comment: "Comment"
+    remote_address: "Remote Address"
+    request_uuid: "Unique Identifier"
+    created_at: "Created At"
+    user: "Changes Author"
+    associated: "Associated"
+    auditable: "Auditable"
+    from: " from "
+    to: " to "
+    activity_history: 'Activity History'

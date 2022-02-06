@@ -1,0 +1,3 @@
+<% config = params[:config]%>
+<% config[:object] = @target_record %>	
+$('#file_field_container-<%= "#{params[:target_model].downcase}_#{params[:target_field]}_#{params[:object_id]}" %>').html("<%= j render '/forms/file_field/general_field',target_model: params[:target_model].downcase, target_field: params[:target_field], options: params[:options], config: config %>'")

@@ -1,0 +1,3098 @@
+/* line 6, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
+.text-twitter {
+  color: #1DA1F2 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.text-twitter:hover, a.text-twitter:focus {
+  color: #0c85d0 !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-twitter {
+  background-color: #1DA1F2 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-twitter:hover, a.bg-twitter:focus {
+  background-color: #1c99e6 !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-twitter-dark {
+  background-color: #1a91da !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-twitter-dark:hover, a.bg-twitter-dark:focus {
+  background-color: #198acf !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-twitter-darker {
+  background-color: #1989ce !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-twitter-darker:hover, a.bg-twitter-darker:focus {
+  background-color: #1882c4 !important;
+}
+
+/* line 166, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-twitter {
+  border-color: transparent;
+  background: #1DA1F2;
+  color: #fff;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-twitter:hover {
+  border-color: transparent;
+  background: #1c99e6;
+  color: #fff;
+}
+/* line 178, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-twitter:focus, .btn-twitter.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.4);
+          box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.4);
+}
+/* line 183, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-twitter.disabled, .btn-twitter:disabled {
+  border-color: transparent !important;
+  background: #1DA1F2 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #fff !important;
+}
+
+/* line 192, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-twitter .badge {
+  background: #fff;
+  color: #1DA1F2;
+}
+
+/* line 197, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-twitter:active,
+.btn-twitter.active,
+.show > .btn-twitter.dropdown-toggle {
+  border-color: transparent;
+  background: #198cd3;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 211, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-group .btn-twitter,
+.input-group-prepend .btn-twitter,
+.input-group-append .btn-twitter {
+  border-right: 1px solid #198cd3;
+  border-left: 1px solid #198cd3;
+}
+
+/* line 302, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-twitter {
+  border-color: #1DA1F2;
+  background: transparent;
+  color: #1DA1F2;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-outline-twitter:hover {
+  border-color: transparent;
+  background: #1DA1F2;
+  color: #fff;
+}
+/* line 312, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-twitter:hover .badge {
+  background: #fff;
+  color: #1DA1F2;
+}
+/* line 318, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-twitter:focus, .btn-outline-twitter.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.4);
+          box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.4);
+}
+/* line 323, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-twitter.disabled, .btn-outline-twitter:disabled {
+  border-color: #1DA1F2 !important;
+  background: transparent !important;
+  color: #1DA1F2 !important;
+}
+
+/* line 331, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-twitter .badge {
+  background: #1DA1F2;
+  color: #fff;
+}
+
+/* line 336, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-twitter:active,
+.btn-outline-twitter.active,
+.show > .btn-outline-twitter.dropdown-toggle {
+  border-color: transparent;
+  background: #1c99e6;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/* line 349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-twitter:active .badge,
+.btn-outline-twitter.active .badge,
+.show > .btn-outline-twitter.dropdown-toggle .badge {
+  background: #fff;
+  color: #1DA1F2;
+}
+
+/* line 6, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
+.text-google {
+  color: #D1523F !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.text-google:hover, a.text-google:focus {
+  color: #b23c2b !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-google {
+  background-color: #D1523F !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-google:hover, a.bg-google:focus {
+  background-color: #c74e3c !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-google-dark {
+  background-color: #bc4a39 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-google-dark:hover, a.bg-google-dark:focus {
+  background-color: #b34636 !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-google-darker {
+  background-color: #b24636 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-google-darker:hover, a.bg-google-darker:focus {
+  background-color: #a94333 !important;
+}
+
+/* line 166, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-google {
+  border-color: transparent;
+  background: #D1523F;
+  color: #fff;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-google:hover {
+  border-color: transparent;
+  background: #c74e3c;
+  color: #fff;
+}
+/* line 178, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-google:focus, .btn-google.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(209, 82, 63, 0.4);
+          box-shadow: 0 0 0 2px rgba(209, 82, 63, 0.4);
+}
+/* line 183, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-google.disabled, .btn-google:disabled {
+  border-color: transparent !important;
+  background: #D1523F !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #fff !important;
+}
+
+/* line 192, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-google .badge {
+  background: #fff;
+  color: #D1523F;
+}
+
+/* line 197, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-google:active,
+.btn-google.active,
+.show > .btn-google.dropdown-toggle {
+  border-color: transparent;
+  background: #b64737;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 211, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-group .btn-google,
+.input-group-prepend .btn-google,
+.input-group-append .btn-google {
+  border-right: 1px solid #b64737;
+  border-left: 1px solid #b64737;
+}
+
+/* line 302, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-google {
+  border-color: #D1523F;
+  background: transparent;
+  color: #D1523F;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-outline-google:hover {
+  border-color: transparent;
+  background: #D1523F;
+  color: #fff;
+}
+/* line 312, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-google:hover .badge {
+  background: #fff;
+  color: #D1523F;
+}
+/* line 318, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-google:focus, .btn-outline-google.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(209, 82, 63, 0.4);
+          box-shadow: 0 0 0 2px rgba(209, 82, 63, 0.4);
+}
+/* line 323, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-google.disabled, .btn-outline-google:disabled {
+  border-color: #D1523F !important;
+  background: transparent !important;
+  color: #D1523F !important;
+}
+
+/* line 331, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-google .badge {
+  background: #D1523F;
+  color: #fff;
+}
+
+/* line 336, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-google:active,
+.btn-outline-google.active,
+.show > .btn-outline-google.dropdown-toggle {
+  border-color: transparent;
+  background: #c74e3c;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/* line 349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-google:active .badge,
+.btn-outline-google.active .badge,
+.show > .btn-outline-google.dropdown-toggle .badge {
+  background: #fff;
+  color: #D1523F;
+}
+
+/* line 6, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
+.text-facebook {
+  color: #3B5998 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.text-facebook:hover, a.text-facebook:focus {
+  color: #2d4373 !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-facebook {
+  background-color: #3B5998 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-facebook:hover, a.bg-facebook:focus {
+  background-color: #385590 !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-facebook-dark {
+  background-color: #355089 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-facebook-dark:hover, a.bg-facebook-dark:focus {
+  background-color: #324c82 !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-facebook-darker {
+  background-color: #324c81 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-facebook-darker:hover, a.bg-facebook-darker:focus {
+  background-color: #30487b !important;
+}
+
+/* line 166, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-facebook {
+  border-color: transparent;
+  background: #3B5998;
+  color: #fff;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-facebook:hover {
+  border-color: transparent;
+  background: #385590;
+  color: #fff;
+}
+/* line 178, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-facebook:focus, .btn-facebook.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(59, 89, 152, 0.4);
+          box-shadow: 0 0 0 2px rgba(59, 89, 152, 0.4);
+}
+/* line 183, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-facebook.disabled, .btn-facebook:disabled {
+  border-color: transparent !important;
+  background: #3B5998 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #fff !important;
+}
+
+/* line 192, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-facebook .badge {
+  background: #fff;
+  color: #3B5998;
+}
+
+/* line 197, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-facebook:active,
+.btn-facebook.active,
+.show > .btn-facebook.dropdown-toggle {
+  border-color: transparent;
+  background: #334d84;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 211, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-group .btn-facebook,
+.input-group-prepend .btn-facebook,
+.input-group-append .btn-facebook {
+  border-right: 1px solid #334d84;
+  border-left: 1px solid #334d84;
+}
+
+/* line 302, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-facebook {
+  border-color: #3B5998;
+  background: transparent;
+  color: #3B5998;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-outline-facebook:hover {
+  border-color: transparent;
+  background: #3B5998;
+  color: #fff;
+}
+/* line 312, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-facebook:hover .badge {
+  background: #fff;
+  color: #3B5998;
+}
+/* line 318, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-facebook:focus, .btn-outline-facebook.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(59, 89, 152, 0.4);
+          box-shadow: 0 0 0 2px rgba(59, 89, 152, 0.4);
+}
+/* line 323, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-facebook.disabled, .btn-outline-facebook:disabled {
+  border-color: #3B5998 !important;
+  background: transparent !important;
+  color: #3B5998 !important;
+}
+
+/* line 331, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-facebook .badge {
+  background: #3B5998;
+  color: #fff;
+}
+
+/* line 336, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-facebook:active,
+.btn-outline-facebook.active,
+.show > .btn-outline-facebook.dropdown-toggle {
+  border-color: transparent;
+  background: #385590;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/* line 349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-facebook:active .badge,
+.btn-outline-facebook.active .badge,
+.show > .btn-outline-facebook.dropdown-toggle .badge {
+  background: #fff;
+  color: #3B5998;
+}
+
+/* line 6, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
+.text-pinterest {
+  color: #bd121c !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.text-pinterest:hover, a.text-pinterest:focus {
+  color: #8e0e15 !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-pinterest {
+  background-color: #bd121c !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-pinterest:hover, a.bg-pinterest:focus {
+  background-color: #b4111b !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-pinterest-dark {
+  background-color: #aa1019 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-pinterest-dark:hover, a.bg-pinterest-dark:focus {
+  background-color: #a20f18 !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-pinterest-darker {
+  background-color: #a10f18 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-pinterest-darker:hover, a.bg-pinterest-darker:focus {
+  background-color: #990e17 !important;
+}
+
+/* line 166, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-pinterest {
+  border-color: transparent;
+  background: #bd121c;
+  color: #fff;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-pinterest:hover {
+  border-color: transparent;
+  background: #b4111b;
+  color: #fff;
+}
+/* line 178, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-pinterest:focus, .btn-pinterest.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(189, 18, 28, 0.4);
+          box-shadow: 0 0 0 2px rgba(189, 18, 28, 0.4);
+}
+/* line 183, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-pinterest.disabled, .btn-pinterest:disabled {
+  border-color: transparent !important;
+  background: #bd121c !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #fff !important;
+}
+
+/* line 192, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-pinterest .badge {
+  background: #fff;
+  color: #bd121c;
+}
+
+/* line 197, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-pinterest:active,
+.btn-pinterest.active,
+.show > .btn-pinterest.dropdown-toggle {
+  border-color: transparent;
+  background: #a41018;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 211, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-group .btn-pinterest,
+.input-group-prepend .btn-pinterest,
+.input-group-append .btn-pinterest {
+  border-right: 1px solid #a41018;
+  border-left: 1px solid #a41018;
+}
+
+/* line 302, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-pinterest {
+  border-color: #bd121c;
+  background: transparent;
+  color: #bd121c;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-outline-pinterest:hover {
+  border-color: transparent;
+  background: #bd121c;
+  color: #fff;
+}
+/* line 312, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-pinterest:hover .badge {
+  background: #fff;
+  color: #bd121c;
+}
+/* line 318, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-pinterest:focus, .btn-outline-pinterest.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(189, 18, 28, 0.4);
+          box-shadow: 0 0 0 2px rgba(189, 18, 28, 0.4);
+}
+/* line 323, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-pinterest.disabled, .btn-outline-pinterest:disabled {
+  border-color: #bd121c !important;
+  background: transparent !important;
+  color: #bd121c !important;
+}
+
+/* line 331, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-pinterest .badge {
+  background: #bd121c;
+  color: #fff;
+}
+
+/* line 336, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-pinterest:active,
+.btn-outline-pinterest.active,
+.show > .btn-outline-pinterest.dropdown-toggle {
+  border-color: transparent;
+  background: #b4111b;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/* line 349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-pinterest:active .badge,
+.btn-outline-pinterest.active .badge,
+.show > .btn-outline-pinterest.dropdown-toggle .badge {
+  background: #fff;
+  color: #bd121c;
+}
+
+/* line 6, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
+.text-instagram {
+  color: #000 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.text-instagram:hover, a.text-instagram:focus {
+  color: black !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-instagram {
+  background-color: #000 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-instagram:hover, a.bg-instagram:focus {
+  background-color: black !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-instagram-dark {
+  background-color: black !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-instagram-dark:hover, a.bg-instagram-dark:focus {
+  background-color: black !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-instagram-darker {
+  background-color: black !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-instagram-darker:hover, a.bg-instagram-darker:focus {
+  background-color: black !important;
+}
+
+/* line 166, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-instagram {
+  border-color: transparent;
+  background: #000;
+  color: #fff;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-instagram:hover {
+  border-color: transparent;
+  background: black;
+  color: #fff;
+}
+/* line 178, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-instagram:focus, .btn-instagram.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+}
+/* line 183, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-instagram.disabled, .btn-instagram:disabled {
+  border-color: transparent !important;
+  background: #000 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #fff !important;
+}
+
+/* line 192, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-instagram .badge {
+  background: #fff;
+  color: #000;
+}
+
+/* line 197, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-instagram:active,
+.btn-instagram.active,
+.show > .btn-instagram.dropdown-toggle {
+  border-color: transparent;
+  background: black;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 211, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-group .btn-instagram,
+.input-group-prepend .btn-instagram,
+.input-group-append .btn-instagram {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+/* line 302, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-instagram {
+  border-color: #000;
+  background: transparent;
+  color: #000;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-outline-instagram:hover {
+  border-color: transparent;
+  background: #000;
+  color: #fff;
+}
+/* line 312, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-instagram:hover .badge {
+  background: #fff;
+  color: #000;
+}
+/* line 318, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-instagram:focus, .btn-outline-instagram.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+}
+/* line 323, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-instagram.disabled, .btn-outline-instagram:disabled {
+  border-color: #000 !important;
+  background: transparent !important;
+  color: #000 !important;
+}
+
+/* line 331, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-instagram .badge {
+  background: #000;
+  color: #fff;
+}
+
+/* line 336, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-instagram:active,
+.btn-outline-instagram.active,
+.show > .btn-outline-instagram.dropdown-toggle {
+  border-color: transparent;
+  background: black;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/* line 349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-instagram:active .badge,
+.btn-outline-instagram.active .badge,
+.show > .btn-outline-instagram.dropdown-toggle .badge {
+  background: #fff;
+  color: #000;
+}
+
+/* line 6, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
+.text-windows {
+  color: #26AAE1 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.text-windows:hover, a.text-windows:focus {
+  color: #1a8bba !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-windows {
+  background-color: #26AAE1 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-windows:hover, a.bg-windows:focus {
+  background-color: #24a2d6 !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-windows-dark {
+  background-color: #2299cb !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-windows-dark:hover, a.bg-windows-dark:focus {
+  background-color: #2091c1 !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-windows-darker {
+  background-color: #2091bf !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-windows-darker:hover, a.bg-windows-darker:focus {
+  background-color: #1e8ab5 !important;
+}
+
+/* line 166, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-windows {
+  border-color: transparent;
+  background: #26AAE1;
+  color: #fff;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-windows:hover {
+  border-color: transparent;
+  background: #24a2d6;
+  color: #fff;
+}
+/* line 178, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-windows:focus, .btn-windows.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(38, 170, 225, 0.4);
+          box-shadow: 0 0 0 2px rgba(38, 170, 225, 0.4);
+}
+/* line 183, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-windows.disabled, .btn-windows:disabled {
+  border-color: transparent !important;
+  background: #26AAE1 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #fff !important;
+}
+
+/* line 192, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-windows .badge {
+  background: #fff;
+  color: #26AAE1;
+}
+
+/* line 197, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-windows:active,
+.btn-windows.active,
+.show > .btn-windows.dropdown-toggle {
+  border-color: transparent;
+  background: #2194c4;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 211, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-group .btn-windows,
+.input-group-prepend .btn-windows,
+.input-group-append .btn-windows {
+  border-right: 1px solid #2194c4;
+  border-left: 1px solid #2194c4;
+}
+
+/* line 302, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-windows {
+  border-color: #26AAE1;
+  background: transparent;
+  color: #26AAE1;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-outline-windows:hover {
+  border-color: transparent;
+  background: #26AAE1;
+  color: #fff;
+}
+/* line 312, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-windows:hover .badge {
+  background: #fff;
+  color: #26AAE1;
+}
+/* line 318, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-windows:focus, .btn-outline-windows.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(38, 170, 225, 0.4);
+          box-shadow: 0 0 0 2px rgba(38, 170, 225, 0.4);
+}
+/* line 323, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-windows.disabled, .btn-outline-windows:disabled {
+  border-color: #26AAE1 !important;
+  background: transparent !important;
+  color: #26AAE1 !important;
+}
+
+/* line 331, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-windows .badge {
+  background: #26AAE1;
+  color: #fff;
+}
+
+/* line 336, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-windows:active,
+.btn-outline-windows.active,
+.show > .btn-outline-windows.dropdown-toggle {
+  border-color: transparent;
+  background: #24a2d6;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/* line 349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-windows:active .badge,
+.btn-outline-windows.active .badge,
+.show > .btn-outline-windows.dropdown-toggle .badge {
+  background: #fff;
+  color: #26AAE1;
+}
+
+/* line 6, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
+.text-macos {
+  color: #343434 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.text-macos:hover, a.text-macos:focus {
+  color: #1b1b1b !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-macos {
+  background-color: #343434 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-macos:hover, a.bg-macos:focus {
+  background-color: #313131 !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-macos-dark {
+  background-color: #2f2f2f !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-macos-dark:hover, a.bg-macos-dark:focus {
+  background-color: #2d2d2d !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-macos-darker {
+  background-color: #2c2c2c !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-macos-darker:hover, a.bg-macos-darker:focus {
+  background-color: #2a2a2a !important;
+}
+
+/* line 166, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-macos {
+  border-color: transparent;
+  background: #343434;
+  color: #fff;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-macos:hover {
+  border-color: transparent;
+  background: #313131;
+  color: #fff;
+}
+/* line 178, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-macos:focus, .btn-macos.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(52, 52, 52, 0.4);
+          box-shadow: 0 0 0 2px rgba(52, 52, 52, 0.4);
+}
+/* line 183, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-macos.disabled, .btn-macos:disabled {
+  border-color: transparent !important;
+  background: #343434 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #fff !important;
+}
+
+/* line 192, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-macos .badge {
+  background: #fff;
+  color: #343434;
+}
+
+/* line 197, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-macos:active,
+.btn-macos.active,
+.show > .btn-macos.dropdown-toggle {
+  border-color: transparent;
+  background: #2d2d2d;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 211, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-group .btn-macos,
+.input-group-prepend .btn-macos,
+.input-group-append .btn-macos {
+  border-right: 1px solid #2d2d2d;
+  border-left: 1px solid #2d2d2d;
+}
+
+/* line 302, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-macos {
+  border-color: #343434;
+  background: transparent;
+  color: #343434;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-outline-macos:hover {
+  border-color: transparent;
+  background: #343434;
+  color: #fff;
+}
+/* line 312, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-macos:hover .badge {
+  background: #fff;
+  color: #343434;
+}
+/* line 318, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-macos:focus, .btn-outline-macos.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(52, 52, 52, 0.4);
+          box-shadow: 0 0 0 2px rgba(52, 52, 52, 0.4);
+}
+/* line 323, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-macos.disabled, .btn-outline-macos:disabled {
+  border-color: #343434 !important;
+  background: transparent !important;
+  color: #343434 !important;
+}
+
+/* line 331, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-macos .badge {
+  background: #343434;
+  color: #fff;
+}
+
+/* line 336, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-macos:active,
+.btn-outline-macos.active,
+.show > .btn-outline-macos.dropdown-toggle {
+  border-color: transparent;
+  background: #313131;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/* line 349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-macos:active .badge,
+.btn-outline-macos.active .badge,
+.show > .btn-outline-macos.dropdown-toggle .badge {
+  background: #fff;
+  color: #343434;
+}
+
+/* line 6, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_text-emphasis.scss */
+.text-linux {
+  color: #800080 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.text-linux:hover, a.text-linux:focus {
+  color: #4d004d !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-linux {
+  background-color: #800080 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-linux:hover, a.bg-linux:focus {
+  background-color: #7a007a !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-linux-dark {
+  background-color: #730073 !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-linux-dark:hover, a.bg-linux-dark:focus {
+  background-color: #6d006d !important;
+}
+
+/* line 145, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.bg-linux-darker {
+  background-color: #6d006d !important;
+}
+
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+a.bg-linux-darker:hover, a.bg-linux-darker:focus {
+  background-color: #680068 !important;
+}
+
+/* line 166, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-linux {
+  border-color: transparent;
+  background: #800080;
+  color: #fff;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-linux:hover {
+  border-color: transparent;
+  background: #7a007a;
+  color: #fff;
+}
+/* line 178, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-linux:focus, .btn-linux.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(128, 0, 128, 0.4);
+          box-shadow: 0 0 0 2px rgba(128, 0, 128, 0.4);
+}
+/* line 183, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-linux.disabled, .btn-linux:disabled {
+  border-color: transparent !important;
+  background: #800080 !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #fff !important;
+}
+
+/* line 192, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-linux .badge {
+  background: #fff;
+  color: #800080;
+}
+
+/* line 197, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-linux:active,
+.btn-linux.active,
+.show > .btn-linux.dropdown-toggle {
+  border-color: transparent;
+  background: #6f006f;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 211, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-group .btn-linux,
+.input-group-prepend .btn-linux,
+.input-group-append .btn-linux {
+  border-right: 1px solid #6f006f;
+  border-left: 1px solid #6f006f;
+}
+
+/* line 302, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-linux {
+  border-color: #800080;
+  background: transparent;
+  color: #800080;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-outline-linux:hover {
+  border-color: transparent;
+  background: #800080;
+  color: #fff;
+}
+/* line 312, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-linux:hover .badge {
+  background: #fff;
+  color: #800080;
+}
+/* line 318, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-linux:focus, .btn-outline-linux.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(128, 0, 128, 0.4);
+          box-shadow: 0 0 0 2px rgba(128, 0, 128, 0.4);
+}
+/* line 323, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-linux.disabled, .btn-outline-linux:disabled {
+  border-color: #800080 !important;
+  background: transparent !important;
+  color: #800080 !important;
+}
+
+/* line 331, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-linux .badge {
+  background: #800080;
+  color: #fff;
+}
+
+/* line 336, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-linux:active,
+.btn-outline-linux.active,
+.show > .btn-outline-linux.dropdown-toggle {
+  border-color: transparent;
+  background: #7a007a;
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/* line 349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-linux:active .badge,
+.btn-outline-linux.active .badge,
+.show > .btn-outline-linux.dropdown-toggle .badge {
+  background: #fff;
+  color: #800080;
+}
+
+/* line 166, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-white {
+  border-color: transparent;
+  background: #fff;
+  color: #4E5155;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-white:hover {
+  border-color: transparent;
+  background: #f2f2f2;
+  color: #4E5155;
+}
+/* line 178, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-white:focus, .btn-white.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+          box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+/* line 183, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-white.disabled, .btn-white:disabled {
+  border-color: transparent !important;
+  background: #fff !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #4E5155 !important;
+}
+
+/* line 192, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-white .badge {
+  background: #4E5155;
+  color: #fff;
+}
+
+/* line 197, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-white:active,
+.btn-white.active,
+.show > .btn-white.dropdown-toggle {
+  border-color: transparent;
+  background: #dedede;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 211, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-group .btn-white,
+.input-group-prepend .btn-white,
+.input-group-append .btn-white {
+  border-right: 1px solid #dedede;
+  border-left: 1px solid #dedede;
+}
+
+/* line 302, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-white {
+  border-color: #fff;
+  background: transparent;
+  color: #fff;
+}
+/* line 13, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.btn-outline-white:hover {
+  border-color: transparent;
+  background: #fff;
+  color: #4E5155;
+}
+/* line 312, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-white:hover .badge {
+  background: #4E5155;
+  color: #fff;
+}
+/* line 318, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-white:focus, .btn-outline-white.focus {
+  -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+          box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+/* line 323, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-white.disabled, .btn-outline-white:disabled {
+  border-color: #fff !important;
+  background: transparent !important;
+  color: #fff !important;
+}
+
+/* line 331, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-white .badge {
+  background: #fff;
+  color: #fff;
+}
+
+/* line 336, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-white:active,
+.btn-outline-white.active,
+.show > .btn-outline-white.dropdown-toggle {
+  border-color: transparent;
+  background: #f2f2f2;
+  color: #4E5155;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+/* line 349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.btn-outline-white:active .badge,
+.btn-outline-white.active .badge,
+.show > .btn-outline-white.dropdown-toggle .badge {
+  background: #4E5155;
+  color: #fff;
+}
+
+/* line 740, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-black .custom-control-label::before,
+.custom-control.custom-control-black .custom-control-input:active ~ .custom-control-label::before {
+  background-color: #000;
+}
+/* line 747, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-black .custom-control-input:focus ~ .custom-control-label::before, .custom-control.custom-control-black .custom-control-input:active ~ .custom-control-label::before {
+  border-color: #000;
+}
+/* line 752, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-black .custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+}
+/* line 757, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-black.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-control.custom-control-black.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #000;
+  background-color: #000;
+}
+/* line 763, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-black.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.5 7.5'%3E%3Cpolyline points='0.75 4.35 4.18 6.75 8.75 0.75' style='fill:none;stroke:%23fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px'/%3E%3C/svg%3E");
+}
+/* line 767, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-black.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='4.5' style='fill:%23fff'/%3E%3Cpath d='M5,1A4,4,0,1,1,1,5,4,4,0,0,1,5,1M5,0a5,5,0,1,0,5,5A5,5,0,0,0,5,0Z' style='fill:%23fff'/%3E%3C/svg%3E");
+}
+
+/* line 740, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-white .custom-control-label::before,
+.custom-control.custom-control-white .custom-control-input:active ~ .custom-control-label::before {
+  background-color: #fff;
+}
+/* line 747, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-white .custom-control-input:focus ~ .custom-control-label::before, .custom-control.custom-control-white .custom-control-input:active ~ .custom-control-label::before {
+  border-color: #fff;
+}
+/* line 752, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-white .custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+          box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+/* line 757, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-white.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-control.custom-control-white.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #fff;
+  background-color: #fff;
+}
+/* line 763, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-white.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.5 7.5'%3E%3Cpolyline points='0.75 4.35 4.18 6.75 8.75 0.75' style='fill:none;stroke:%23666666;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px'/%3E%3C/svg%3E");
+}
+/* line 767, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-white.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='4.5' style='fill:%23666666'/%3E%3Cpath d='M5,1A4,4,0,1,1,1,5,4,4,0,0,1,5,1M5,0a5,5,0,1,0,5,5A5,5,0,0,0,5,0Z' style='fill:%23666666'/%3E%3C/svg%3E");
+}
+
+/* line 740, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-silver .custom-control-label::before,
+.custom-control.custom-control-silver .custom-control-input:active ~ .custom-control-label::before {
+  background-color: #eee;
+}
+/* line 747, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-silver .custom-control-input:focus ~ .custom-control-label::before, .custom-control.custom-control-silver .custom-control-input:active ~ .custom-control-label::before {
+  border-color: #eee;
+}
+/* line 752, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-silver .custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: 0 0 0 2px rgba(238, 238, 238, 0.4);
+          box-shadow: 0 0 0 2px rgba(238, 238, 238, 0.4);
+}
+/* line 757, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-silver.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-control.custom-control-silver.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #eee;
+  background-color: #eee;
+}
+/* line 763, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-silver.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.5 7.5'%3E%3Cpolyline points='0.75 4.35 4.18 6.75 8.75 0.75' style='fill:none;stroke:%235f5f5f;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px'/%3E%3C/svg%3E");
+}
+/* line 767, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-silver.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='4.5' style='fill:%235f5f5f'/%3E%3Cpath d='M5,1A4,4,0,1,1,1,5,4,4,0,0,1,5,1M5,0a5,5,0,1,0,5,5A5,5,0,0,0,5,0Z' style='fill:%235f5f5f'/%3E%3C/svg%3E");
+}
+
+/* line 740, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gray .custom-control-label::before,
+.custom-control.custom-control-gray .custom-control-input:active ~ .custom-control-label::before {
+  background-color: #777;
+}
+/* line 747, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gray .custom-control-input:focus ~ .custom-control-label::before, .custom-control.custom-control-gray .custom-control-input:active ~ .custom-control-label::before {
+  border-color: #777;
+}
+/* line 752, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gray .custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: 0 0 0 2px rgba(119, 119, 119, 0.4);
+          box-shadow: 0 0 0 2px rgba(119, 119, 119, 0.4);
+}
+/* line 757, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gray.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-control.custom-control-gray.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #777;
+  background-color: #777;
+}
+/* line 763, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gray.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.5 7.5'%3E%3Cpolyline points='0.75 4.35 4.18 6.75 8.75 0.75' style='fill:none;stroke:%23fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px'/%3E%3C/svg%3E");
+}
+/* line 767, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gray.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='4.5' style='fill:%23fff'/%3E%3Cpath d='M5,1A4,4,0,1,1,1,5,4,4,0,0,1,5,1M5,0a5,5,0,1,0,5,5A5,5,0,0,0,5,0Z' style='fill:%23fff'/%3E%3C/svg%3E");
+}
+
+/* line 740, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gold .custom-control-label::before,
+.custom-control.custom-control-gold .custom-control-input:active ~ .custom-control-label::before {
+  background-color: #ffeb3b;
+}
+/* line 747, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gold .custom-control-input:focus ~ .custom-control-label::before, .custom-control.custom-control-gold .custom-control-input:active ~ .custom-control-label::before {
+  border-color: #ffeb3b;
+}
+/* line 752, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gold .custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: 0 0 0 2px rgba(255, 235, 59, 0.4);
+          box-shadow: 0 0 0 2px rgba(255, 235, 59, 0.4);
+}
+/* line 757, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gold.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-control.custom-control-gold.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #ffeb3b;
+  background-color: #ffeb3b;
+}
+/* line 763, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gold.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.5 7.5'%3E%3Cpolyline points='0.75 4.35 4.18 6.75 8.75 0.75' style='fill:none;stroke:%23665e18;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px'/%3E%3C/svg%3E");
+}
+/* line 767, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-gold.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='4.5' style='fill:%23665e18'/%3E%3Cpath d='M5,1A4,4,0,1,1,1,5,4,4,0,0,1,5,1M5,0a5,5,0,1,0,5,5A5,5,0,0,0,5,0Z' style='fill:%23665e18'/%3E%3C/svg%3E");
+}
+
+/* line 740, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-pink .custom-control-label::before,
+.custom-control.custom-control-pink .custom-control-input:active ~ .custom-control-label::before {
+  background-color: #e91e63;
+}
+/* line 747, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-pink .custom-control-input:focus ~ .custom-control-label::before, .custom-control.custom-control-pink .custom-control-input:active ~ .custom-control-label::before {
+  border-color: #e91e63;
+}
+/* line 752, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-pink .custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.4);
+          box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.4);
+}
+/* line 757, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-pink.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-control.custom-control-pink.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #e91e63;
+  background-color: #e91e63;
+}
+/* line 763, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-pink.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.5 7.5'%3E%3Cpolyline points='0.75 4.35 4.18 6.75 8.75 0.75' style='fill:none;stroke:%23fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px'/%3E%3C/svg%3E");
+}
+/* line 767, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-pink.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='4.5' style='fill:%23fff'/%3E%3Cpath d='M5,1A4,4,0,1,1,1,5,4,4,0,0,1,5,1M5,0a5,5,0,1,0,5,5A5,5,0,0,0,5,0Z' style='fill:%23fff'/%3E%3C/svg%3E");
+}
+
+/* line 740, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-red .custom-control-label::before,
+.custom-control.custom-control-red .custom-control-input:active ~ .custom-control-label::before {
+  background-color: #f44336;
+}
+/* line 747, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-red .custom-control-input:focus ~ .custom-control-label::before, .custom-control.custom-control-red .custom-control-input:active ~ .custom-control-label::before {
+  border-color: #f44336;
+}
+/* line 752, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-red .custom-control-input:focus ~ .custom-control-label::before {
+  -webkit-box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.4);
+          box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.4);
+}
+/* line 757, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-red.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before, .custom-control.custom-control-red.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #f44336;
+  background-color: #f44336;
+}
+/* line 763, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-red.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9.5 7.5'%3E%3Cpolyline points='0.75 4.35 4.18 6.75 8.75 0.75' style='fill:none;stroke:%23fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px'/%3E%3C/svg%3E");
+}
+/* line 767, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.custom-control.custom-control-red.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='5' cy='5' r='4.5' style='fill:%23fff'/%3E%3Cpath d='M5,1A4,4,0,1,1,1,5,4,4,0,0,1,5,1M5,0a5,5,0,1,0,5,5A5,5,0,0,0,5,0Z' style='fill:%23fff'/%3E%3C/svg%3E");
+}
+
+/* line 1304, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-secondary {
+  background-color: #8897AA !important;
+  color: #ebeef1;
+}
+/* line 1308, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-secondary .navbar-brand {
+  color: #fff;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-secondary .navbar-brand:hover, .navbar.bg-secondary .navbar-brand:focus {
+  color: #fff;
+}
+/* line 1317, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-secondary .navbar-nav .nav-link {
+  color: #ebeef1;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-secondary .navbar-nav .nav-link:hover, .navbar.bg-secondary .navbar-nav .nav-link:focus {
+  color: #fff;
+}
+/* line 1324, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-secondary .navbar-nav .nav-link.disabled {
+  color: #c3cbd5 !important;
+}
+/* line 1329, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-secondary .navbar-nav .show > .nav-link,
+.navbar.bg-secondary .navbar-nav .active > .nav-link,
+.navbar.bg-secondary .navbar-nav .nav-link.show,
+.navbar.bg-secondary .navbar-nav .nav-link.active {
+  color: #fff;
+}
+/* line 1337, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-secondary .navbar-toggler {
+  color: #ebeef1;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+/* line 1342, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-secondary .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* line 1346, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-secondary .navbar-text {
+  color: #ebeef1;
+}
+/* line 1349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-secondary .navbar-text a {
+  color: #fff;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-secondary .navbar-text a:hover, .navbar.bg-secondary .navbar-text a:focus {
+  color: #fff;
+}
+/* line 1358, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-secondary hr {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* line 1304, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-success {
+  background-color: #02BC77 !important;
+  color: #cbf1e3;
+}
+/* line 1308, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-success .navbar-brand {
+  color: #fff;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-success .navbar-brand:hover, .navbar.bg-success .navbar-brand:focus {
+  color: #fff;
+}
+/* line 1317, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-success .navbar-nav .nav-link {
+  color: #cbf1e3;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-success .navbar-nav .nav-link:hover, .navbar.bg-success .navbar-nav .nav-link:focus {
+  color: #fff;
+}
+/* line 1324, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-success .navbar-nav .nav-link.disabled {
+  color: #7bdcb8 !important;
+}
+/* line 1329, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-success .navbar-nav .show > .nav-link,
+.navbar.bg-success .navbar-nav .active > .nav-link,
+.navbar.bg-success .navbar-nav .nav-link.show,
+.navbar.bg-success .navbar-nav .nav-link.active {
+  color: #fff;
+}
+/* line 1337, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-success .navbar-toggler {
+  color: #cbf1e3;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+/* line 1342, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-success .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* line 1346, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-success .navbar-text {
+  color: #cbf1e3;
+}
+/* line 1349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-success .navbar-text a {
+  color: #fff;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-success .navbar-text a:hover, .navbar.bg-success .navbar-text a:focus {
+  color: #fff;
+}
+/* line 1358, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-success hr {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* line 1304, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-info {
+  background-color: #28c3d7 !important;
+  color: #dcf5f8;
+}
+/* line 1308, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-info .navbar-brand {
+  color: #fff;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-info .navbar-brand:hover, .navbar.bg-info .navbar-brand:focus {
+  color: #fff;
+}
+/* line 1317, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-info .navbar-nav .nav-link {
+  color: #dcf5f8;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-info .navbar-nav .nav-link:hover, .navbar.bg-info .navbar-nav .nav-link:focus {
+  color: #fff;
+}
+/* line 1324, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-info .navbar-nav .nav-link.disabled {
+  color: #94e1eb !important;
+}
+/* line 1329, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-info .navbar-nav .show > .nav-link,
+.navbar.bg-info .navbar-nav .active > .nav-link,
+.navbar.bg-info .navbar-nav .nav-link.show,
+.navbar.bg-info .navbar-nav .nav-link.active {
+  color: #fff;
+}
+/* line 1337, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-info .navbar-toggler {
+  color: #dcf5f8;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+/* line 1342, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-info .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* line 1346, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-info .navbar-text {
+  color: #dcf5f8;
+}
+/* line 1349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-info .navbar-text a {
+  color: #fff;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-info .navbar-text a:hover, .navbar.bg-info .navbar-text a:focus {
+  color: #fff;
+}
+/* line 1358, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-info hr {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* line 1304, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-warning {
+  background-color: #FFD950 !important;
+  color: #998230;
+}
+/* line 1308, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-warning .navbar-brand {
+  color: #665720;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-warning .navbar-brand:hover, .navbar.bg-warning .navbar-brand:focus {
+  color: #665720;
+}
+/* line 1317, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-warning .navbar-nav .nav-link {
+  color: #998230;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-warning .navbar-nav .nav-link:hover, .navbar.bg-warning .navbar-nav .nav-link:focus {
+  color: #665720;
+}
+/* line 1324, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-warning .navbar-nav .nav-link.disabled {
+  color: #c2a53d !important;
+}
+/* line 1329, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-warning .navbar-nav .show > .nav-link,
+.navbar.bg-warning .navbar-nav .active > .nav-link,
+.navbar.bg-warning .navbar-nav .nav-link.show,
+.navbar.bg-warning .navbar-nav .nav-link.active {
+  color: #665720;
+}
+/* line 1337, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-warning .navbar-toggler {
+  color: #998230;
+  border-color: rgba(102, 87, 32, 0.0832854902);
+}
+/* line 1342, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-warning .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(24, 28, 33, 0.4)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* line 1346, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-warning .navbar-text {
+  color: #998230;
+}
+/* line 1349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-warning .navbar-text a {
+  color: #665720;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-warning .navbar-text a:hover, .navbar.bg-warning .navbar-text a:focus {
+  color: #665720;
+}
+/* line 1358, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-warning hr {
+  border-color: rgba(102, 87, 32, 0.0832854902);
+}
+
+/* line 1304, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-danger {
+  background-color: #d9534f !important;
+  color: #f7dbda;
+}
+/* line 1308, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-danger .navbar-brand {
+  color: #fff;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-danger .navbar-brand:hover, .navbar.bg-danger .navbar-brand:focus {
+  color: #fff;
+}
+/* line 1317, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-danger .navbar-nav .nav-link {
+  color: #f7dbda;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-danger .navbar-nav .nav-link:hover, .navbar.bg-danger .navbar-nav .nav-link:focus {
+  color: #fff;
+}
+/* line 1324, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-danger .navbar-nav .nav-link.disabled {
+  color: #eba5a2 !important;
+}
+/* line 1329, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-danger .navbar-nav .show > .nav-link,
+.navbar.bg-danger .navbar-nav .active > .nav-link,
+.navbar.bg-danger .navbar-nav .nav-link.show,
+.navbar.bg-danger .navbar-nav .nav-link.active {
+  color: #fff;
+}
+/* line 1337, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-danger .navbar-toggler {
+  color: #f7dbda;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+/* line 1342, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-danger .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* line 1346, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-danger .navbar-text {
+  color: #f7dbda;
+}
+/* line 1349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-danger .navbar-text a {
+  color: #fff;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-danger .navbar-text a:hover, .navbar.bg-danger .navbar-text a:focus {
+  color: #fff;
+}
+/* line 1358, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-danger hr {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* line 1304, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-dark {
+  background-color: #2f3337 !important;
+  color: #9d9fa1;
+}
+/* line 1308, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-dark .navbar-brand {
+  color: #fff;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-dark .navbar-brand:hover, .navbar.bg-dark .navbar-brand:focus {
+  color: #fff;
+}
+/* line 1317, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-dark .navbar-nav .nav-link {
+  color: #9d9fa1;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-dark .navbar-nav .nav-link:hover, .navbar.bg-dark .navbar-nav .nav-link:focus {
+  color: #fff;
+}
+/* line 1324, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-dark .navbar-nav .nav-link.disabled {
+  color: #717477 !important;
+}
+/* line 1329, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-dark .navbar-nav .show > .nav-link,
+.navbar.bg-dark .navbar-nav .active > .nav-link,
+.navbar.bg-dark .navbar-nav .nav-link.show,
+.navbar.bg-dark .navbar-nav .nav-link.active {
+  color: #fff;
+}
+/* line 1337, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-dark .navbar-toggler {
+  color: #9d9fa1;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+/* line 1342, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* line 1346, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-dark .navbar-text {
+  color: #9d9fa1;
+}
+/* line 1349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-dark .navbar-text a {
+  color: #fff;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-dark .navbar-text a:hover, .navbar.bg-dark .navbar-text a:focus {
+  color: #fff;
+}
+/* line 1358, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-dark hr {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* line 1304, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-white {
+  background-color: #fff !important;
+  color: #a3a4a6;
+}
+/* line 1308, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-white .navbar-brand {
+  color: #4E5155;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-white .navbar-brand:hover, .navbar.bg-white .navbar-brand:focus {
+  color: #4E5155;
+}
+/* line 1317, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-white .navbar-nav .nav-link {
+  color: #a3a4a6;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-white .navbar-nav .nav-link:hover, .navbar.bg-white .navbar-nav .nav-link:focus {
+  color: #4E5155;
+}
+/* line 1324, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-white .navbar-nav .nav-link.disabled {
+  color: #c8c8ca !important;
+}
+/* line 1329, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-white .navbar-nav .show > .nav-link,
+.navbar.bg-white .navbar-nav .active > .nav-link,
+.navbar.bg-white .navbar-nav .nav-link.show,
+.navbar.bg-white .navbar-nav .nav-link.active {
+  color: #4E5155;
+}
+/* line 1337, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-white .navbar-toggler {
+  color: #a3a4a6;
+  border-color: rgba(78, 81, 85, 0.075);
+}
+/* line 1342, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-white .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(24, 28, 33, 0.4)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* line 1346, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-white .navbar-text {
+  color: #a3a4a6;
+}
+/* line 1349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-white .navbar-text a {
+  color: #4E5155;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-white .navbar-text a:hover, .navbar.bg-white .navbar-text a:focus {
+  color: #4E5155;
+}
+/* line 1358, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-white hr {
+  border-color: rgba(78, 81, 85, 0.075);
+}
+
+/* line 1304, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-light {
+  background-color: #f1f1f2 !important;
+  color: #a3a4a6;
+}
+/* line 1308, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-light .navbar-brand {
+  color: #4E5155;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-light .navbar-brand:hover, .navbar.bg-light .navbar-brand:focus {
+  color: #4E5155;
+}
+/* line 1317, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-light .navbar-nav .nav-link {
+  color: #a3a4a6;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-light .navbar-nav .nav-link:hover, .navbar.bg-light .navbar-nav .nav-link:focus {
+  color: #4E5155;
+}
+/* line 1324, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-light .navbar-nav .nav-link.disabled {
+  color: #c2c3c4 !important;
+}
+/* line 1329, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-light .navbar-nav .show > .nav-link,
+.navbar.bg-light .navbar-nav .active > .nav-link,
+.navbar.bg-light .navbar-nav .nav-link.show,
+.navbar.bg-light .navbar-nav .nav-link.active {
+  color: #4E5155;
+}
+/* line 1337, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-light .navbar-toggler {
+  color: #a3a4a6;
+  border-color: rgba(78, 81, 85, 0.0777227451);
+}
+/* line 1342, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(24, 28, 33, 0.4)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* line 1346, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-light .navbar-text {
+  color: #a3a4a6;
+}
+/* line 1349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-light .navbar-text a {
+  color: #4E5155;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-light .navbar-text a:hover, .navbar.bg-light .navbar-text a:focus {
+  color: #4E5155;
+}
+/* line 1358, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-light hr {
+  border-color: rgba(78, 81, 85, 0.0777227451);
+}
+
+/* line 1304, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-lighter {
+  background-color: #f8f8f8 !important;
+  color: #a3a4a6;
+}
+/* line 1308, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-lighter .navbar-brand {
+  color: #4E5155;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-lighter .navbar-brand:hover, .navbar.bg-lighter .navbar-brand:focus {
+  color: #4E5155;
+}
+/* line 1317, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-lighter .navbar-nav .nav-link {
+  color: #a3a4a6;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-lighter .navbar-nav .nav-link:hover, .navbar.bg-lighter .navbar-nav .nav-link:focus {
+  color: #4E5155;
+}
+/* line 1324, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-lighter .navbar-nav .nav-link.disabled {
+  color: #c5c6c7 !important;
+}
+/* line 1329, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-lighter .navbar-nav .show > .nav-link,
+.navbar.bg-lighter .navbar-nav .active > .nav-link,
+.navbar.bg-lighter .navbar-nav .nav-link.show,
+.navbar.bg-lighter .navbar-nav .nav-link.active {
+  color: #4E5155;
+}
+/* line 1337, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-lighter .navbar-toggler {
+  color: #a3a4a6;
+  border-color: rgba(78, 81, 85, 0.076372549);
+}
+/* line 1342, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-lighter .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(24, 28, 33, 0.4)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+/* line 1346, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-lighter .navbar-text {
+  color: #a3a4a6;
+}
+/* line 1349, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-lighter .navbar-text a {
+  color: #4E5155;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.navbar.bg-lighter .navbar-text a:hover, .navbar.bg-lighter .navbar-text a:focus {
+  color: #4E5155;
+}
+/* line 1358, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.navbar.bg-lighter hr {
+  border-color: rgba(78, 81, 85, 0.076372549);
+}
+
+/* line 1377, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary {
+  background-color: #8897AA !important;
+  color: #ebeef1;
+}
+/* line 1381, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-link,
+.sidenav.bg-secondary .sidenav-horizontal-prev,
+.sidenav.bg-secondary .sidenav-horizontal-next {
+  color: #ebeef1;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.sidenav.bg-secondary .sidenav-link:hover, .sidenav.bg-secondary .sidenav-link:focus,
+.sidenav.bg-secondary .sidenav-horizontal-prev:hover,
+.sidenav.bg-secondary .sidenav-horizontal-prev:focus,
+.sidenav.bg-secondary .sidenav-horizontal-next:hover,
+.sidenav.bg-secondary .sidenav-horizontal-next:focus {
+  color: #fff;
+}
+/* line 1390, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-link.active,
+.sidenav.bg-secondary .sidenav-horizontal-prev.active,
+.sidenav.bg-secondary .sidenav-horizontal-next.active {
+  color: #fff;
+}
+/* line 1395, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-item.disabled .sidenav-link,
+.sidenav.bg-secondary .sidenav-horizontal-prev.disabled,
+.sidenav.bg-secondary .sidenav-horizontal-next.disabled {
+  color: #c3cbd5 !important;
+}
+/* line 1401, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-item.open:not(.sidenav-item-closing) > .sidenav-toggle,
+.sidenav.bg-secondary .sidenav-item.active > .sidenav-link {
+  color: #fff;
+}
+/* line 1406, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #818fa2;
+}
+/* line 1410, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary.sidenav-horizontal .sidenav-menu > .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #7b889a;
+}
+/* line 1414, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary.sidenav-horizontal .sidenav-inner > .sidenav-item:not(.sidenav-item-closing) > .sidenav-menu, .sidenav.bg-secondary.sidenav-horizontal .sidenav-inner > .sidenav-item.open > .sidenav-toggle {
+  background: #818fa2;
+}
+/* line 1419, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-menu,
+.sidenav.bg-secondary .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-toggle {
+  background: transparent;
+  color: #ebeef1;
+}
+/* line 1425, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-text {
+  color: #fff;
+}
+/* line 1429, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-header {
+  color: #d2d8df;
+}
+/* line 1433, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary hr,
+.sidenav.bg-secondary .sidenav-divider,
+.sidenav.bg-secondary .sidenav-inner > .sidenav-item.open > .sidenav-menu::before {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+/* line 1439, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-inner > .sidenav-header::before,
+.sidenav.bg-secondary .sidenav-block::before {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+/* line 1444, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before {
+  background-color: #94a0b0;
+}
+/* line 1448, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  background-color: #fff;
+}
+/* line 1452, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before,
+.sidenav.bg-secondary .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  -webkit-box-shadow: 0 0 0 2px #818fa2;
+          box-shadow: 0 0 0 2px #818fa2;
+}
+/* line 1457, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-secondary .ps__thumb-y,
+.sidenav.bg-secondary .ps__rail-y.ps--clicking > .ps__thumb-y {
+  background: rgba(255, 255, 255, 0.633225098) !important;
+}
+
+/* line 1377, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success {
+  background-color: #02BC77 !important;
+  color: #cbf1e3;
+}
+/* line 1381, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-link,
+.sidenav.bg-success .sidenav-horizontal-prev,
+.sidenav.bg-success .sidenav-horizontal-next {
+  color: #cbf1e3;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.sidenav.bg-success .sidenav-link:hover, .sidenav.bg-success .sidenav-link:focus,
+.sidenav.bg-success .sidenav-horizontal-prev:hover,
+.sidenav.bg-success .sidenav-horizontal-prev:focus,
+.sidenav.bg-success .sidenav-horizontal-next:hover,
+.sidenav.bg-success .sidenav-horizontal-next:focus {
+  color: #fff;
+}
+/* line 1390, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-link.active,
+.sidenav.bg-success .sidenav-horizontal-prev.active,
+.sidenav.bg-success .sidenav-horizontal-next.active {
+  color: #fff;
+}
+/* line 1395, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-item.disabled .sidenav-link,
+.sidenav.bg-success .sidenav-horizontal-prev.disabled,
+.sidenav.bg-success .sidenav-horizontal-next.disabled {
+  color: #7bdcb8 !important;
+}
+/* line 1401, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-item.open:not(.sidenav-item-closing) > .sidenav-toggle,
+.sidenav.bg-success .sidenav-item.active > .sidenav-link {
+  color: #fff;
+}
+/* line 1406, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #02b371;
+}
+/* line 1410, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success.sidenav-horizontal .sidenav-menu > .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #02aa6b;
+}
+/* line 1414, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success.sidenav-horizontal .sidenav-inner > .sidenav-item:not(.sidenav-item-closing) > .sidenav-menu, .sidenav.bg-success.sidenav-horizontal .sidenav-inner > .sidenav-item.open > .sidenav-toggle {
+  background: #02b371;
+}
+/* line 1419, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-menu,
+.sidenav.bg-success .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-toggle {
+  background: transparent;
+  color: #cbf1e3;
+}
+/* line 1425, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-text {
+  color: #fff;
+}
+/* line 1429, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-header {
+  color: #99e4c8;
+}
+/* line 1433, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success hr,
+.sidenav.bg-success .sidenav-divider,
+.sidenav.bg-success .sidenav-inner > .sidenav-item.open > .sidenav-menu::before {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+/* line 1439, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-inner > .sidenav-header::before,
+.sidenav.bg-success .sidenav-block::before {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+/* line 1444, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before {
+  background-color: #28be86;
+}
+/* line 1448, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  background-color: #fff;
+}
+/* line 1452, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before,
+.sidenav.bg-success .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  -webkit-box-shadow: 0 0 0 2px #02b371;
+          box-shadow: 0 0 0 2px #02b371;
+}
+/* line 1457, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-success .ps__thumb-y,
+.sidenav.bg-success .ps__rail-y.ps--clicking > .ps__thumb-y {
+  background: rgba(255, 255, 255, 0.5953254902) !important;
+}
+
+/* line 1377, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info {
+  background-color: #28c3d7 !important;
+  color: #dcf5f8;
+}
+/* line 1381, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-link,
+.sidenav.bg-info .sidenav-horizontal-prev,
+.sidenav.bg-info .sidenav-horizontal-next {
+  color: #dcf5f8;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.sidenav.bg-info .sidenav-link:hover, .sidenav.bg-info .sidenav-link:focus,
+.sidenav.bg-info .sidenav-horizontal-prev:hover,
+.sidenav.bg-info .sidenav-horizontal-prev:focus,
+.sidenav.bg-info .sidenav-horizontal-next:hover,
+.sidenav.bg-info .sidenav-horizontal-next:focus {
+  color: #fff;
+}
+/* line 1390, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-link.active,
+.sidenav.bg-info .sidenav-horizontal-prev.active,
+.sidenav.bg-info .sidenav-horizontal-next.active {
+  color: #fff;
+}
+/* line 1395, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-item.disabled .sidenav-link,
+.sidenav.bg-info .sidenav-horizontal-prev.disabled,
+.sidenav.bg-info .sidenav-horizontal-next.disabled {
+  color: #94e1eb !important;
+}
+/* line 1401, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-item.open:not(.sidenav-item-closing) > .sidenav-toggle,
+.sidenav.bg-info .sidenav-item.active > .sidenav-link {
+  color: #fff;
+}
+/* line 1406, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #26b9cc;
+}
+/* line 1410, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info.sidenav-horizontal .sidenav-menu > .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #24b0c2;
+}
+/* line 1414, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info.sidenav-horizontal .sidenav-inner > .sidenav-item:not(.sidenav-item-closing) > .sidenav-menu, .sidenav.bg-info.sidenav-horizontal .sidenav-inner > .sidenav-item.open > .sidenav-toggle {
+  background: #26b9cc;
+}
+/* line 1419, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-menu,
+.sidenav.bg-info .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-toggle {
+  background: transparent;
+  color: #dcf5f8;
+}
+/* line 1425, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-text {
+  color: #fff;
+}
+/* line 1429, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-header {
+  color: #afe9f0;
+}
+/* line 1433, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info hr,
+.sidenav.bg-info .sidenav-divider,
+.sidenav.bg-info .sidenav-inner > .sidenav-item.open > .sidenav-menu::before {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+/* line 1439, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-inner > .sidenav-header::before,
+.sidenav.bg-info .sidenav-block::before {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+/* line 1444, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before {
+  background-color: #47c4d4;
+}
+/* line 1448, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  background-color: #fff;
+}
+/* line 1452, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before,
+.sidenav.bg-info .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  -webkit-box-shadow: 0 0 0 2px #26b9cc;
+          box-shadow: 0 0 0 2px #26b9cc;
+}
+/* line 1457, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-info .ps__thumb-y,
+.sidenav.bg-info .ps__rail-y.ps--clicking > .ps__thumb-y {
+  background: rgba(255, 255, 255, 0.6367607843) !important;
+}
+
+/* line 1377, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning {
+  background-color: #FFD950 !important;
+  color: #998230;
+}
+/* line 1381, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-link,
+.sidenav.bg-warning .sidenav-horizontal-prev,
+.sidenav.bg-warning .sidenav-horizontal-next {
+  color: #998230;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.sidenav.bg-warning .sidenav-link:hover, .sidenav.bg-warning .sidenav-link:focus,
+.sidenav.bg-warning .sidenav-horizontal-prev:hover,
+.sidenav.bg-warning .sidenav-horizontal-prev:focus,
+.sidenav.bg-warning .sidenav-horizontal-next:hover,
+.sidenav.bg-warning .sidenav-horizontal-next:focus {
+  color: #665720;
+}
+/* line 1390, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-link.active,
+.sidenav.bg-warning .sidenav-horizontal-prev.active,
+.sidenav.bg-warning .sidenav-horizontal-next.active {
+  color: #665720;
+}
+/* line 1395, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-item.disabled .sidenav-link,
+.sidenav.bg-warning .sidenav-horizontal-prev.disabled,
+.sidenav.bg-warning .sidenav-horizontal-next.disabled {
+  color: #c2a53d !important;
+}
+/* line 1401, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-item.open:not(.sidenav-item-closing) > .sidenav-toggle,
+.sidenav.bg-warning .sidenav-item.active > .sidenav-link {
+  color: #665720;
+}
+/* line 1406, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #f9d44e;
+}
+/* line 1410, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning.sidenav-horizontal .sidenav-menu > .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #f3cf4c;
+}
+/* line 1414, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning.sidenav-horizontal .sidenav-inner > .sidenav-item:not(.sidenav-item-closing) > .sidenav-menu, .sidenav.bg-warning.sidenav-horizontal .sidenav-inner > .sidenav-item.open > .sidenav-toggle {
+  background: #f9d44e;
+}
+/* line 1419, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-menu,
+.sidenav.bg-warning .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-toggle {
+  background: transparent;
+  color: #998230;
+}
+/* line 1425, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-text {
+  color: #665720;
+}
+/* line 1429, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-header {
+  color: #b39838;
+}
+/* line 1433, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning hr,
+.sidenav.bg-warning .sidenav-divider,
+.sidenav.bg-warning .sidenav-inner > .sidenav-item.open > .sidenav-menu::before {
+  border-color: rgba(102, 87, 32, 0.0832854902) !important;
+}
+/* line 1439, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-inner > .sidenav-header::before,
+.sidenav.bg-warning .sidenav-block::before {
+  background-color: rgba(102, 87, 32, 0.0832854902);
+}
+/* line 1444, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before {
+  background-color: #edca4a;
+}
+/* line 1448, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  background-color: #665720;
+}
+/* line 1452, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before,
+.sidenav.bg-warning .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  -webkit-box-shadow: 0 0 0 2px #f9d44e;
+          box-shadow: 0 0 0 2px #f9d44e;
+}
+/* line 1457, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-warning .ps__thumb-y,
+.sidenav.bg-warning .ps__rail-y.ps--clicking > .ps__thumb-y {
+  background: rgba(102, 87, 32, 0.2662839216) !important;
+}
+
+/* line 1377, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger {
+  background-color: #d9534f !important;
+  color: #f7dbda;
+}
+/* line 1381, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-link,
+.sidenav.bg-danger .sidenav-horizontal-prev,
+.sidenav.bg-danger .sidenav-horizontal-next {
+  color: #f7dbda;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.sidenav.bg-danger .sidenav-link:hover, .sidenav.bg-danger .sidenav-link:focus,
+.sidenav.bg-danger .sidenav-horizontal-prev:hover,
+.sidenav.bg-danger .sidenav-horizontal-prev:focus,
+.sidenav.bg-danger .sidenav-horizontal-next:hover,
+.sidenav.bg-danger .sidenav-horizontal-next:focus {
+  color: #fff;
+}
+/* line 1390, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-link.active,
+.sidenav.bg-danger .sidenav-horizontal-prev.active,
+.sidenav.bg-danger .sidenav-horizontal-next.active {
+  color: #fff;
+}
+/* line 1395, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-item.disabled .sidenav-link,
+.sidenav.bg-danger .sidenav-horizontal-prev.disabled,
+.sidenav.bg-danger .sidenav-horizontal-next.disabled {
+  color: #eba5a2 !important;
+}
+/* line 1401, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-item.open:not(.sidenav-item-closing) > .sidenav-toggle,
+.sidenav.bg-danger .sidenav-item.active > .sidenav-link {
+  color: #fff;
+}
+/* line 1406, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #ce4f4b;
+}
+/* line 1410, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger.sidenav-horizontal .sidenav-menu > .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #c44b47;
+}
+/* line 1414, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger.sidenav-horizontal .sidenav-inner > .sidenav-item:not(.sidenav-item-closing) > .sidenav-menu, .sidenav.bg-danger.sidenav-horizontal .sidenav-inner > .sidenav-item.open > .sidenav-toggle {
+  background: #ce4f4b;
+}
+/* line 1419, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-menu,
+.sidenav.bg-danger .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-toggle {
+  background: transparent;
+  color: #f7dbda;
+}
+/* line 1425, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-text {
+  color: #fff;
+}
+/* line 1429, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-header {
+  color: #f0b9b7;
+}
+/* line 1433, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger hr,
+.sidenav.bg-danger .sidenav-divider,
+.sidenav.bg-danger .sidenav-inner > .sidenav-item.open > .sidenav-menu::before {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+/* line 1439, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-inner > .sidenav-header::before,
+.sidenav.bg-danger .sidenav-block::before {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+/* line 1444, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before {
+  background-color: #d56966;
+}
+/* line 1448, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  background-color: #fff;
+}
+/* line 1452, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before,
+.sidenav.bg-danger .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  -webkit-box-shadow: 0 0 0 2px #ce4f4b;
+          box-shadow: 0 0 0 2px #ce4f4b;
+}
+/* line 1457, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-danger .ps__thumb-y,
+.sidenav.bg-danger .ps__rail-y.ps--clicking > .ps__thumb-y {
+  background: rgba(255, 255, 255, 0.5923294118) !important;
+}
+
+/* line 1377, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark {
+  background-color: #2f3337 !important;
+  color: #9d9fa1;
+}
+/* line 1381, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-link,
+.sidenav.bg-dark .sidenav-horizontal-prev,
+.sidenav.bg-dark .sidenav-horizontal-next {
+  color: #9d9fa1;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.sidenav.bg-dark .sidenav-link:hover, .sidenav.bg-dark .sidenav-link:focus,
+.sidenav.bg-dark .sidenav-horizontal-prev:hover,
+.sidenav.bg-dark .sidenav-horizontal-prev:focus,
+.sidenav.bg-dark .sidenav-horizontal-next:hover,
+.sidenav.bg-dark .sidenav-horizontal-next:focus {
+  color: #fff;
+}
+/* line 1390, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-link.active,
+.sidenav.bg-dark .sidenav-horizontal-prev.active,
+.sidenav.bg-dark .sidenav-horizontal-next.active {
+  color: #fff;
+}
+/* line 1395, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-item.disabled .sidenav-link,
+.sidenav.bg-dark .sidenav-horizontal-prev.disabled,
+.sidenav.bg-dark .sidenav-horizontal-next.disabled {
+  color: #717477 !important;
+}
+/* line 1401, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-item.open:not(.sidenav-item-closing) > .sidenav-toggle,
+.sidenav.bg-dark .sidenav-item.active > .sidenav-link {
+  color: #fff;
+}
+/* line 1406, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #393d41;
+}
+/* line 1410, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark.sidenav-horizontal .sidenav-menu > .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #43474b;
+}
+/* line 1414, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark.sidenav-horizontal .sidenav-inner > .sidenav-item:not(.sidenav-item-closing) > .sidenav-menu, .sidenav.bg-dark.sidenav-horizontal .sidenav-inner > .sidenav-item.open > .sidenav-toggle {
+  background: #393d41;
+}
+/* line 1419, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-menu,
+.sidenav.bg-dark .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-toggle {
+  background: transparent;
+  color: #9d9fa1;
+}
+/* line 1425, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-text {
+  color: #fff;
+}
+/* line 1429, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-header {
+  color: #828487;
+}
+/* line 1433, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark hr,
+.sidenav.bg-dark .sidenav-divider,
+.sidenav.bg-dark .sidenav-inner > .sidenav-item.open > .sidenav-menu::before {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+/* line 1439, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-inner > .sidenav-header::before,
+.sidenav.bg-dark .sidenav-block::before {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+/* line 1444, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before {
+  background-color: #45494c;
+}
+/* line 1448, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  background-color: #fff;
+}
+/* line 1452, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before,
+.sidenav.bg-dark .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  -webkit-box-shadow: 0 0 0 2px #393d41;
+          box-shadow: 0 0 0 2px #393d41;
+}
+/* line 1457, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-dark .ps__thumb-y,
+.sidenav.bg-dark .ps__rail-y.ps--clicking > .ps__thumb-y {
+  background: rgba(255, 255, 255, 0.4788392157) !important;
+}
+
+/* line 1377, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white {
+  background-color: #fff !important;
+  color: #a3a4a6;
+}
+/* line 1381, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-link,
+.sidenav.bg-white .sidenav-horizontal-prev,
+.sidenav.bg-white .sidenav-horizontal-next {
+  color: #a3a4a6;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.sidenav.bg-white .sidenav-link:hover, .sidenav.bg-white .sidenav-link:focus,
+.sidenav.bg-white .sidenav-horizontal-prev:hover,
+.sidenav.bg-white .sidenav-horizontal-prev:focus,
+.sidenav.bg-white .sidenav-horizontal-next:hover,
+.sidenav.bg-white .sidenav-horizontal-next:focus {
+  color: #4E5155;
+}
+/* line 1390, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-link.active,
+.sidenav.bg-white .sidenav-horizontal-prev.active,
+.sidenav.bg-white .sidenav-horizontal-next.active {
+  color: #4E5155;
+}
+/* line 1395, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-item.disabled .sidenav-link,
+.sidenav.bg-white .sidenav-horizontal-prev.disabled,
+.sidenav.bg-white .sidenav-horizontal-next.disabled {
+  color: #c8c8ca !important;
+}
+/* line 1401, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-item.open:not(.sidenav-item-closing) > .sidenav-toggle,
+.sidenav.bg-white .sidenav-item.active > .sidenav-link {
+  color: #4E5155;
+}
+/* line 1406, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #fff;
+}
+/* line 1410, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white.sidenav-horizontal .sidenav-menu > .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #f9f9f9;
+}
+/* line 1414, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white.sidenav-horizontal .sidenav-inner > .sidenav-item:not(.sidenav-item-closing) > .sidenav-menu, .sidenav.bg-white.sidenav-horizontal .sidenav-inner > .sidenav-item.open > .sidenav-toggle {
+  background: #fff;
+}
+/* line 1419, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-menu,
+.sidenav.bg-white .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-toggle {
+  background: transparent;
+  color: #a3a4a6;
+}
+/* line 1425, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-text {
+  color: #4E5155;
+}
+/* line 1429, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-header {
+  color: #babbbc;
+}
+/* line 1433, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white hr,
+.sidenav.bg-white .sidenav-divider,
+.sidenav.bg-white .sidenav-inner > .sidenav-item.open > .sidenav-menu::before {
+  border-color: rgba(78, 81, 85, 0.075) !important;
+}
+/* line 1439, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-inner > .sidenav-header::before,
+.sidenav.bg-white .sidenav-block::before {
+  background-color: rgba(78, 81, 85, 0.075);
+}
+/* line 1444, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before {
+  background-color: #f2f2f2;
+}
+/* line 1448, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  background-color: #4E5155;
+}
+/* line 1452, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before,
+.sidenav.bg-white .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  -webkit-box-shadow: 0 0 0 2px #fff;
+          box-shadow: 0 0 0 2px #fff;
+}
+/* line 1457, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-white .ps__thumb-y,
+.sidenav.bg-white .ps__rail-y.ps--clicking > .ps__thumb-y {
+  background: rgba(78, 81, 85, 0.2) !important;
+}
+
+/* line 1377, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light {
+  background-color: #f1f1f2 !important;
+  color: #a3a4a6;
+}
+/* line 1381, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-link,
+.sidenav.bg-light .sidenav-horizontal-prev,
+.sidenav.bg-light .sidenav-horizontal-next {
+  color: #a3a4a6;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.sidenav.bg-light .sidenav-link:hover, .sidenav.bg-light .sidenav-link:focus,
+.sidenav.bg-light .sidenav-horizontal-prev:hover,
+.sidenav.bg-light .sidenav-horizontal-prev:focus,
+.sidenav.bg-light .sidenav-horizontal-next:hover,
+.sidenav.bg-light .sidenav-horizontal-next:focus {
+  color: #4E5155;
+}
+/* line 1390, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-link.active,
+.sidenav.bg-light .sidenav-horizontal-prev.active,
+.sidenav.bg-light .sidenav-horizontal-next.active {
+  color: #4E5155;
+}
+/* line 1395, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-item.disabled .sidenav-link,
+.sidenav.bg-light .sidenav-horizontal-prev.disabled,
+.sidenav.bg-light .sidenav-horizontal-next.disabled {
+  color: #c2c3c4 !important;
+}
+/* line 1401, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-item.open:not(.sidenav-item-closing) > .sidenav-toggle,
+.sidenav.bg-light .sidenav-item.active > .sidenav-link {
+  color: #4E5155;
+}
+/* line 1406, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #ebebec;
+}
+/* line 1410, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light.sidenav-horizontal .sidenav-menu > .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #e5e5e6;
+}
+/* line 1414, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light.sidenav-horizontal .sidenav-inner > .sidenav-item:not(.sidenav-item-closing) > .sidenav-menu, .sidenav.bg-light.sidenav-horizontal .sidenav-inner > .sidenav-item.open > .sidenav-toggle {
+  background: #ebebec;
+}
+/* line 1419, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-menu,
+.sidenav.bg-light .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-toggle {
+  background: transparent;
+  color: #a3a4a6;
+}
+/* line 1425, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-text {
+  color: #4E5155;
+}
+/* line 1429, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-header {
+  color: #b7b7b9;
+}
+/* line 1433, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light hr,
+.sidenav.bg-light .sidenav-divider,
+.sidenav.bg-light .sidenav-inner > .sidenav-item.open > .sidenav-menu::before {
+  border-color: rgba(78, 81, 85, 0.0777227451) !important;
+}
+/* line 1439, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-inner > .sidenav-header::before,
+.sidenav.bg-light .sidenav-block::before {
+  background-color: rgba(78, 81, 85, 0.0777227451);
+}
+/* line 1444, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before {
+  background-color: #dfdfe0;
+}
+/* line 1448, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  background-color: #4E5155;
+}
+/* line 1452, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before,
+.sidenav.bg-light .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  -webkit-box-shadow: 0 0 0 2px #ebebec;
+          box-shadow: 0 0 0 2px #ebebec;
+}
+/* line 1457, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-light .ps__thumb-y,
+.sidenav.bg-light .ps__rail-y.ps--clicking > .ps__thumb-y {
+  background: rgba(78, 81, 85, 0.2217819608) !important;
+}
+
+/* line 1377, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter {
+  background-color: #f8f8f8 !important;
+  color: #a3a4a6;
+}
+/* line 1381, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-link,
+.sidenav.bg-lighter .sidenav-horizontal-prev,
+.sidenav.bg-lighter .sidenav-horizontal-next {
+  color: #a3a4a6;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.sidenav.bg-lighter .sidenav-link:hover, .sidenav.bg-lighter .sidenav-link:focus,
+.sidenav.bg-lighter .sidenav-horizontal-prev:hover,
+.sidenav.bg-lighter .sidenav-horizontal-prev:focus,
+.sidenav.bg-lighter .sidenav-horizontal-next:hover,
+.sidenav.bg-lighter .sidenav-horizontal-next:focus {
+  color: #4E5155;
+}
+/* line 1390, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-link.active,
+.sidenav.bg-lighter .sidenav-horizontal-prev.active,
+.sidenav.bg-lighter .sidenav-horizontal-next.active {
+  color: #4E5155;
+}
+/* line 1395, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-item.disabled .sidenav-link,
+.sidenav.bg-lighter .sidenav-horizontal-prev.disabled,
+.sidenav.bg-lighter .sidenav-horizontal-next.disabled {
+  color: #c5c6c7 !important;
+}
+/* line 1401, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-item.open:not(.sidenav-item-closing) > .sidenav-toggle,
+.sidenav.bg-lighter .sidenav-item.active > .sidenav-link {
+  color: #4E5155;
+}
+/* line 1406, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #f2f2f2;
+}
+/* line 1410, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter.sidenav-horizontal .sidenav-menu > .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
+  background-color: #ececec;
+}
+/* line 1414, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter.sidenav-horizontal .sidenav-inner > .sidenav-item:not(.sidenav-item-closing) > .sidenav-menu, .sidenav.bg-lighter.sidenav-horizontal .sidenav-inner > .sidenav-item.open > .sidenav-toggle {
+  background: #f2f2f2;
+}
+/* line 1419, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-menu,
+.sidenav.bg-lighter .sidenav-inner > .sidenav-item.sidenav-item-closing .sidenav-item.open .sidenav-toggle {
+  background: transparent;
+  color: #a3a4a6;
+}
+/* line 1425, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-text {
+  color: #4E5155;
+}
+/* line 1429, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-header {
+  color: #b8b9bb;
+}
+/* line 1433, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter hr,
+.sidenav.bg-lighter .sidenav-divider,
+.sidenav.bg-lighter .sidenav-inner > .sidenav-item.open > .sidenav-menu::before {
+  border-color: rgba(78, 81, 85, 0.076372549) !important;
+}
+/* line 1439, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-inner > .sidenav-header::before,
+.sidenav.bg-lighter .sidenav-block::before {
+  background-color: rgba(78, 81, 85, 0.076372549);
+}
+/* line 1444, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before {
+  background-color: #e5e6e6;
+}
+/* line 1448, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  background-color: #4E5155;
+}
+/* line 1452, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .sidenav-inner > .sidenav-item.open .sidenav-item.open > .sidenav-toggle::before,
+.sidenav.bg-lighter .sidenav-inner > .sidenav-item.open .sidenav-item.active > .sidenav-link::before {
+  -webkit-box-shadow: 0 0 0 2px #f2f2f2;
+          box-shadow: 0 0 0 2px #f2f2f2;
+}
+/* line 1457, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.sidenav.bg-lighter .ps__thumb-y,
+.sidenav.bg-lighter .ps__rail-y.ps--clicking > .ps__thumb-y {
+  background: rgba(78, 81, 85, 0.2109803922) !important;
+}
+
+/* line 1470, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-secondary {
+  background-color: #8897AA !important;
+  color: #ebeef1;
+}
+/* line 1474, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-secondary .footer-link {
+  color: #ebeef1;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.footer.bg-secondary .footer-link:hover, .footer.bg-secondary .footer-link:focus {
+  color: #fff;
+}
+/* line 1481, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-secondary .footer-link.disabled {
+  color: #c3cbd5 !important;
+}
+/* line 1486, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-secondary .footer-text {
+  color: #fff;
+}
+/* line 1490, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-secondary .show > .footer-link,
+.footer.bg-secondary .active > .footer-link,
+.footer.bg-secondary .footer-link.show,
+.footer.bg-secondary .footer-link.active {
+  color: #fff;
+}
+/* line 1497, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-secondary hr {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* line 1470, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-success {
+  background-color: #02BC77 !important;
+  color: #cbf1e3;
+}
+/* line 1474, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-success .footer-link {
+  color: #cbf1e3;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.footer.bg-success .footer-link:hover, .footer.bg-success .footer-link:focus {
+  color: #fff;
+}
+/* line 1481, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-success .footer-link.disabled {
+  color: #7bdcb8 !important;
+}
+/* line 1486, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-success .footer-text {
+  color: #fff;
+}
+/* line 1490, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-success .show > .footer-link,
+.footer.bg-success .active > .footer-link,
+.footer.bg-success .footer-link.show,
+.footer.bg-success .footer-link.active {
+  color: #fff;
+}
+/* line 1497, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-success hr {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* line 1470, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-info {
+  background-color: #28c3d7 !important;
+  color: #dcf5f8;
+}
+/* line 1474, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-info .footer-link {
+  color: #dcf5f8;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.footer.bg-info .footer-link:hover, .footer.bg-info .footer-link:focus {
+  color: #fff;
+}
+/* line 1481, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-info .footer-link.disabled {
+  color: #94e1eb !important;
+}
+/* line 1486, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-info .footer-text {
+  color: #fff;
+}
+/* line 1490, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-info .show > .footer-link,
+.footer.bg-info .active > .footer-link,
+.footer.bg-info .footer-link.show,
+.footer.bg-info .footer-link.active {
+  color: #fff;
+}
+/* line 1497, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-info hr {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* line 1470, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-warning {
+  background-color: #FFD950 !important;
+  color: #998230;
+}
+/* line 1474, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-warning .footer-link {
+  color: #998230;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.footer.bg-warning .footer-link:hover, .footer.bg-warning .footer-link:focus {
+  color: #665720;
+}
+/* line 1481, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-warning .footer-link.disabled {
+  color: #c2a53d !important;
+}
+/* line 1486, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-warning .footer-text {
+  color: #665720;
+}
+/* line 1490, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-warning .show > .footer-link,
+.footer.bg-warning .active > .footer-link,
+.footer.bg-warning .footer-link.show,
+.footer.bg-warning .footer-link.active {
+  color: #665720;
+}
+/* line 1497, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-warning hr {
+  border-color: rgba(102, 87, 32, 0.0832854902);
+}
+
+/* line 1470, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-danger {
+  background-color: #d9534f !important;
+  color: #f7dbda;
+}
+/* line 1474, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-danger .footer-link {
+  color: #f7dbda;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.footer.bg-danger .footer-link:hover, .footer.bg-danger .footer-link:focus {
+  color: #fff;
+}
+/* line 1481, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-danger .footer-link.disabled {
+  color: #eba5a2 !important;
+}
+/* line 1486, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-danger .footer-text {
+  color: #fff;
+}
+/* line 1490, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-danger .show > .footer-link,
+.footer.bg-danger .active > .footer-link,
+.footer.bg-danger .footer-link.show,
+.footer.bg-danger .footer-link.active {
+  color: #fff;
+}
+/* line 1497, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-danger hr {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* line 1470, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-dark {
+  background-color: #2f3337 !important;
+  color: #9d9fa1;
+}
+/* line 1474, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-dark .footer-link {
+  color: #9d9fa1;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.footer.bg-dark .footer-link:hover, .footer.bg-dark .footer-link:focus {
+  color: #fff;
+}
+/* line 1481, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-dark .footer-link.disabled {
+  color: #717477 !important;
+}
+/* line 1486, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-dark .footer-text {
+  color: #fff;
+}
+/* line 1490, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-dark .show > .footer-link,
+.footer.bg-dark .active > .footer-link,
+.footer.bg-dark .footer-link.show,
+.footer.bg-dark .footer-link.active {
+  color: #fff;
+}
+/* line 1497, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-dark hr {
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* line 1470, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-white {
+  background-color: #fff !important;
+  color: #a3a4a6;
+}
+/* line 1474, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-white .footer-link {
+  color: #a3a4a6;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.footer.bg-white .footer-link:hover, .footer.bg-white .footer-link:focus {
+  color: #4E5155;
+}
+/* line 1481, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-white .footer-link.disabled {
+  color: #c8c8ca !important;
+}
+/* line 1486, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-white .footer-text {
+  color: #4E5155;
+}
+/* line 1490, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-white .show > .footer-link,
+.footer.bg-white .active > .footer-link,
+.footer.bg-white .footer-link.show,
+.footer.bg-white .footer-link.active {
+  color: #4E5155;
+}
+/* line 1497, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-white hr {
+  border-color: rgba(78, 81, 85, 0.075);
+}
+
+/* line 1470, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-light {
+  background-color: #f1f1f2 !important;
+  color: #a3a4a6;
+}
+/* line 1474, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-light .footer-link {
+  color: #a3a4a6;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.footer.bg-light .footer-link:hover, .footer.bg-light .footer-link:focus {
+  color: #4E5155;
+}
+/* line 1481, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-light .footer-link.disabled {
+  color: #c2c3c4 !important;
+}
+/* line 1486, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-light .footer-text {
+  color: #4E5155;
+}
+/* line 1490, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-light .show > .footer-link,
+.footer.bg-light .active > .footer-link,
+.footer.bg-light .footer-link.show,
+.footer.bg-light .footer-link.active {
+  color: #4E5155;
+}
+/* line 1497, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-light hr {
+  border-color: rgba(78, 81, 85, 0.0777227451);
+}
+
+/* line 1470, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-lighter {
+  background-color: #f8f8f8 !important;
+  color: #a3a4a6;
+}
+/* line 1474, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-lighter .footer-link {
+  color: #a3a4a6;
+}
+/* line 17, /home/yan/Documents/Lumni/code/platform-4.0/node_modules/bootstrap/scss/mixins/_hover.scss */
+.footer.bg-lighter .footer-link:hover, .footer.bg-lighter .footer-link:focus {
+  color: #4E5155;
+}
+/* line 1481, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-lighter .footer-link.disabled {
+  color: #c5c6c7 !important;
+}
+/* line 1486, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-lighter .footer-text {
+  color: #4E5155;
+}
+/* line 1490, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-lighter .show > .footer-link,
+.footer.bg-lighter .active > .footer-link,
+.footer.bg-lighter .footer-link.show,
+.footer.bg-lighter .footer-link.active {
+  color: #4E5155;
+}
+/* line 1497, /home/yan/Documents/Lumni/code/platform-4.0/vendor/assets/stylesheets/_appwork/_mixins.scss */
+.footer.bg-lighter hr {
+  border-color: rgba(78, 81, 85, 0.076372549);
+}

@@ -1,0 +1,55 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'edit' %>" data-toggle="tab" href="<%= edit_student_path(@student)%>">
+      <%= I18n.t('general.summary') %>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'management' %>" data-toggle="tab" href="<%= management_student_path(@student)%>"><%= Collection.model_name.human(count: 1) %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'project' %>" data-toggle="tab" href="<%= project_student_path(@student)%>"><%= Project.model_name.human(count: 1) %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'communications' %>" data-toggle="tab" href="<%= communications_student_path(@student)%>"><%= I18n.t('students.communications') %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'workshops' %>" data-toggle="tab" href="<%= workshops_student_path(@student)%>"><%= I18n.t('complementary_activity.workshop_and_mentorship') %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'support_team' %>" data-toggle="tab" href="<%= support_team_student_path(@student)%>"><%= I18n.t('students.support_team') %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'academic_info' %>" data-toggle="tab" href="<%= academic_info_student_path(@student)%>"><%= I18n.t('students.academic_information') %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'payment' %>" data-toggle="tab" href="<%= payment_student_path(@student)%>"><%= Payment.model_name.human(count: 2) %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'social_service' %>" data-toggle="tab" href="<%= social_service_student_path(@student)%>"><%= I18n.t('students.social_work') %></a>
+  </li>
+  <%if @student.new_agreement? %>
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'contract_amendment' %> border border-danger" data-toggle="tab" href="<%= contract_amendment_student_path(@student)%>"><%= I18n.t('students.new_agreement') %></a>
+  </li>
+  <%end %>
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'conciliation' %>" data-toggle="tab" href="<%= conciliation_student_path(@student)%>"><%= I18n.t('students.conciliation') %></a>
+  </li>
+  
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'application' %>" data-toggle="tab" href="<%= edit_applicant_path(@student)%>"><%= I18n.t('students.application') %></a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'legal_documents' %>" data-toggle="tab" href="<%= legal_documents_student_path(@student)%>"><%= I18n.t('students.legal_documents') %></a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link direct_link <%= 'active' if action_name == 'financial_information' %>" data-toggle="tab" href="<%= financial_information_student_path(@student)%>"><%= I18n.t('students.financial_information') %></a>
+  </li>
+</ul>
+
+
+
+

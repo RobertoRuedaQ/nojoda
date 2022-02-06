@@ -1,0 +1,64 @@
+
+<div class="card">
+  <div class="card-body p-0">
+    <% case application.status %>
+    <% when 'active' %>
+
+
+      <div class="text-center my-3"><h4 class="my-4 text-primary"><%= I18n.t("application.request_#{application.resource_type.underscore}") %></h4></div>
+      <p class="mx-5 text-center"><%= I18n.t("application.request_#{application.resource_type.underscore}_text") %></p>
+
+
+
+      <div class="text-center my-5">
+        <% case application.resource_type %>
+        <% when 'FundingOpportunity' %>
+          <%= link_to I18n.t('application.submit_your_application'),submit_application_application_path(application), class: 'btn btn-primary' %>
+        <% when 'Disbursement' %>
+          <%= link_to I18n.t("application.request_#{application.resource_type.underscore}"),start_test_user_questionnaire_path(application.pending_user_questionnaire_by_section section), class: 'btn btn-primary' %>
+        <% when 'IncomeInformation' %>
+          <%= link_to I18n.t("application.request_#{application.resource_type.underscore}"),start_test_user_questionnaire_path(application.pending_user_questionnaire_by_section section), class: 'btn btn-primary' %>
+        <% when 'Payment' %>
+          <%= link_to I18n.t("application.request_#{application.resource_type.underscore}"),start_test_user_questionnaire_path(application.pending_user_questionnaire_by_section section), class: 'btn btn-primary' %>
+        <% when 'CancellationRequest' %>
+          <%= link_to I18n.t("application.request_#{application.resource_type.underscore}"),start_test_user_questionnaire_path(application.pending_user_questionnaire_by_section section), class: 'btn btn-primary' %>
+        <% when 'CondonationInformation' %>
+          <%= link_to I18n.t("application.request_#{application.resource_type.underscore}"),start_test_user_questionnaire_path(application.pending_user_questionnaire_by_section section), class: 'btn btn-primary' %>
+        <% else %>
+          <%= link_to I18n.t("application.request_general_info"),start_test_user_questionnaire_path(application.pending_user_questionnaire_by_section section), class: 'btn btn-primary' %>
+        <% end %>
+
+
+        
+      </div>
+    <% when 'submitted' %>
+      <div class="text-center my-3">
+        <h4 class="my-4 text-success"><%= I18n.t("application.request_#{application.resource_type.underscore}") %></h4>
+      </div>
+      <p class="mx-5 text-center"><%= I18n.t("application.request_#{application.resource_type.underscore}_submitted") %></p>
+      <div class="row">
+        <div class="col text-center" style="padding: 1rem;font-size: 40px">
+          <i class="fas fa-check-circle text-success"></i>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= link_to(I18n.t('general.back_home'), root_path, class: 'btn btn-success my-3') %>
+      </div>
+    <% when 'approved' %>
+      <div class="text-center my-3">
+        <h4 class="my-4 text-success"><%= I18n.t("application.request_#{application.resource_type.underscore}") %></h4>
+      </div>
+      <p class="mx-5 text-center"><%= I18n.t('origination.success_apply') %></p>
+      <div class="row">
+        <div class="col text-center" style="padding: 1rem;font-size: 40px">
+          <i class="fas fa-check-circle text-success"></i>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= link_to(I18n.t('general.back_home'), root_path, class: 'btn btn-success my-3') %>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>

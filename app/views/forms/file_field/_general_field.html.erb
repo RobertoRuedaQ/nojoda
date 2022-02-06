@@ -1,0 +1,10 @@
+<% if config[:object].nil? || config[:object].id.nil?%>
+	<% target_id = options[:form_key] %>
+<% else %>
+	<% target_id = config[:object].id %>
+<% end %>
+<%= file_field(target_model, target_field,direct_upload: true, class: 'form-control',accept: options[:accept],multiple: (options[:type] == 'multiple_file'),required: options[:required],oninput: "removeErrorMessage(this,'text')",oninvalid: "setErrroMessage(this,'#{options[:error_text]}','file')",disabled: options[:disabled],id: "#{target_model}_#{target_field}_#{target_id}") %>
+<% if options[:accept].present? %>
+	<small class="text-danger"><%= I18n.t('form.accept_formats', formats: options[:accept])%></small>
+<% end %>
+

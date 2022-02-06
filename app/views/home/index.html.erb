@@ -1,0 +1,134 @@
+<!-- Header -->
+<% if is_lumni_portal? %>
+  <%= render partial: 'countries' %>
+<% else %>
+  <%if current_company.present? && current_company.id == 21 %>
+    <%= render "mains/partials/peru_annoucement" %>
+    <% elsif current_company.id == 2 || current_company.id == 7 %>
+	<%= render "mains/partials/usa_annoucement" %>
+  <%else %>
+    <% if !current_company.main_logo.attached? %>
+      <div class="jumbotron ui-hero ui-mh-100vh ui-bg-cover" style="background-image: url(<%= asset_path("landing/landing.jpg")%>) ">
+    <% else %>
+      <div class="jumbotron ui-hero ui-mh-100vh ui-bg-cover" style="background-image: url('<%= rails_blob_url(current_company.main_logo) %>'); <%= "height: calc(1.4 * 100vw);" if current_company.id == 56 %>">
+    <% end %>
+
+      <div class="container-fluid pr-lg-5 pl-xl-5">
+        <div class="row no-gutters justify-content-center w-100 pt-3">
+|
+          <div class="col-lg-7 col-xl-6 text-lg-left text-center my-5 mr-xl-5">
+            <h1 class="display-3 font-secondary font-weight-semibold mb-4">
+              <%= current_company.main_title.empty? ? '' : I18n.t(current_company.main_title) %>
+            </h1>
+            <p class="lead  pb-3 font-weight-semibold">
+              <%= current_company.slogan.empty? ? '' : I18n.t(current_company.slogan) %>
+            </p>
+             <% if current_company.id != 56 %>
+              <form action="<%= new_user_registration_path %>">
+                <button type="submit" class="landing-btn btn btn-lg btn-round btn-primary mt-2">
+                <%= I18n.t('home.apply_now') %>
+                </button>
+              </form>
+            <% end %>
+          </div>
+          <div class="offset-lg-5"></div>
+
+        </div>
+      </div>
+    </div>
+  <%end %>
+<% end %>  
+
+
+
+
+
+
+  <div class="bg-white">
+
+    <!-- Block -->
+    <div class="landing-block pb-5">
+      <div class="container px-3">
+
+        <div class="col-md-10 col-lg-8 col-xl-7 text-center p-0 mx-auto">
+          <div class="display-1 text-primary mb-4">
+            <i class="lnr lnr-graduation-hat"></i>
+          </div>
+          <h1 class="display-4 font-secondary font-weight-semibold mb-5">
+            <%= I18n.t('home.how_it_works') %>
+          </h1>
+          <div class="text-muted">
+            <%= I18n.t('home.how_it_works_p1') %> <br><br>
+            <%= I18n.t('home.how_it_works_p2') %> <br><br>
+            
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- / Block -->
+
+
+</div>
+
+  <!-- Block -->
+  <div id="features" class="landing-block">
+    <div class="container px-3">
+
+      <div class="col-md-10 col-lg-8 col-xl-7 text-center p-0 mx-auto">
+        <div class="text-lighter text-tiny font-weight-bold mb-3"><%= I18n.t('home.features') %></div>
+        <h1 class="display-4 font-secondary font-weight-semibold mb-4">
+          <%= I18n.t('home.isa') %>
+        </h1>
+        <div class="lead text-muted mb-5">
+          <%= I18n.t('home.isa_p1') %>
+        </div>
+      </div>
+
+      <hr class="landing-separator border-light mx-auto">
+
+      <div class="row text-center">
+        <div class="col-md-6 mt-5">
+          <div class="display-4 text-primary mx-auto mb-4">
+            <span class="lnr lnr-star"></span>
+          </div>
+          <h4><%= I18n.t('home.not_a_loan') %></h4>
+          <div class="text-muted ">
+            <%= I18n.t('home.not_a_loan_p1') %> 
+          </div>
+        </div>
+        <div class="col-md-6 mt-5">
+          <div class="display-4 text-primary mx-auto mb-4">
+            <span class="lnr lnr-mustache"></span>
+          </div>
+          <h4><%= I18n.t('home.no_collateral') %></h4>
+          <div class="text-muted ">
+            <%= I18n.t('home.no_collateral_p1') %>
+          </div>
+        </div>
+        <div class="col-md-6 mt-5">
+          <div class="display-4 text-primary mx-auto mb-4">
+            <span class="lnr lnr-spell-check"></span>
+          </div>
+          <h4><%= I18n.t('home.lumni_service') %></h4>
+          <div class="text-muted ">
+            <%= I18n.t('home.lumni_service_p1') %>
+          </div>
+        </div>
+        <div class="col-md-6 mt-5">
+          <div class="display-4 text-primary mx-auto mb-4">
+            <span class="lnr lnr-thumbs-up"></span>
+          </div>
+          <h4><%= I18n.t('home.pay_graduated') %></h4>
+          <div class="text-muted ">
+            <%= I18n.t('home.pay_graduated_p1') %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- / Block -->
+

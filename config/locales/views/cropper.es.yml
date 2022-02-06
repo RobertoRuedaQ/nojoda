@@ -1,0 +1,17 @@
+es:
+  cropper:
+    zoom_in: 'Ampliar'
+    zoom_out: 'Reducir'
+    move_right: 'Mover derecha'
+    move_left: 'Mover izquierda'
+    move_up: 'Mover arriba'
+    move_down: 'Mover abajo'
+    rotate_left: 'Rotar izquierda'
+    rotate_right: 'Rotar derecha'
+    invert_horizontal: 'invertir horizontal'
+    invert_vertical: 'invertir vertical'
+    reset: 'Restaurar'
+    upload_image: 'Subir imagen'
+    crop: 'Continuar'
+    preview: 'Previsualiza tu imagen'
+    

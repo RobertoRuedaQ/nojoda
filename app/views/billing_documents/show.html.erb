@@ -1,0 +1,14 @@
+<% @billing_document.reload %>
+<div class="row">
+	<div class="<%= @billing_document.pending_value <= 0 ? 'offset-md-2' : '' %> col-md-8">
+		<%= render '/billing_documents/partial/invoice', billing_document: @billing_document %>
+	</div>
+	
+	<% if @billing_document.pending_value > 0 %>
+		<div class="col-md-4" id="billing_document_payment_container">
+			<%= render '/billing_documents/partial/variable_income' %>
+			<%= render '/billing_documents/partial/payment_options',billing_document: @billing_document, gateway: @gateway %>
+		</div>
+	<% end %>
+
+</div>

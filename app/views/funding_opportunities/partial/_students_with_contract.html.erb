@@ -1,0 +1,5 @@
+<h4 class="m-4"><%= I18n.t('funding_opportunity.students_with_contracts') %></h4>
+
+<% target_hash = current_user.template('Applicant','applicants',current_user,id: true) %>
+<% target_hash[:application_funding_opportunity] = {} %>
+<%= createTable(@students_with_contract,target_hash,new: false, title: false,custom_controller: 'applicants').html_safe %>

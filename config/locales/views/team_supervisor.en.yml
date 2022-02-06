@@ -1,0 +1,13 @@
+en:
+  team_supervisor:
+    actions:
+      remove: Remove
+      asign: Create new
+      edit: Edit
+    confirm_dialog:
+      question: ¿Are you sure?
+      commit: 'Yes, I am'
+    flash:
+      success: 'Team supervisor has been removed.'
+      danger: 'An error has ocurred.'
+      not_found: 'Record to remove not found.'

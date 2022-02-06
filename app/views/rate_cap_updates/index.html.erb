@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-body py-3">
+    <div class="d-flex justify-content-between align-items-center">
+      <h4 class="mt-4 mb-5"> <%= RateCapUpdate.model_name.human(count: 2) %></h4>
+      <div>
+        <%= link_to  I18n.t('rate_cap_update.actions.new'), new_rate_cap_update_path(responsible_id: current_user.id), class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= I18n.t('rate_cap_update.attributes.id') %></th>
+          <th><%= I18n.t('rate_cap_update.attributes.rate_cap_value') %></th>
+          <th><%= I18n.t('rate_cap_update.attributes.responsible_id') %></th>
+          <th><%= I18n.t('rate_cap_update.attributes.country') %></th>
+          <th><%= I18n.t('rate_cap_update.attributes.created_at') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @rate_cap_updates.each do |rate_cap|%>
+        <tr>
+          <td><%= rate_cap.id %></td>
+          <td><%= rate_cap.rate_cap_value.to_s.titleize %></td>
+          <td><%= rate_cap.responsible.full_name.titleize %></td>
+          <td><%= rate_cap.country.titleize %> </td>
+          <td><%= lumni_date rate_cap.created_at %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

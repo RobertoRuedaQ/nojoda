@@ -1,0 +1,5 @@
+	<button type="button" class="btn icon-btn btn-xs btn-primary mr-1 handle">
+		<span class="ion ion-md-move"></span>
+	</button>
+	<%= @targetAnswer.answer %> (Score: <%=@targetAnswer.score %>)
+		<small><%= link_to 'Edit',edit_answer_answer_path(@targetAnswer),method: 'post', remote: true, data: { disable_with: I18n.t('form.please_wait')}%></small>  - <small><%= content_tag :a, I18n.t('general.destroy'),class: 'text-danger destroy',  data: { title: I18n.t('general.delete_title'), text: I18n.t('general.delete_body'),confirbuttontext: I18n.t('general.destroy'),destroyed: I18n.t('general.destroyed'),destroyconfirmation: I18n.t('general.destroy_confirmation'),cancelbuttontext: I18n.t('general.cancel'),url: url_for(controller: 'answers', action:'destroy',id: @targetAnswer.id) }%></small>

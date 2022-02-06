@@ -1,0 +1,6 @@
+<%= render partial: 'layouts/partials/per_page' %>
+<div class="d-flex align-items-center flex-column">
+  <%= render '/projects/partials/cards', card: @card, tasks: @tasks, show_see_more: false %>
+  <%= render 'projects/partials/project_modal' %>
+  <%= render partial: 'layouts/partials/pagination', locals: {resource: @tasks} %>
+</div>

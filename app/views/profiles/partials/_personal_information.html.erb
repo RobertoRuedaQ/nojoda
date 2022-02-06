@@ -1,0 +1,13 @@
+
+<%= build_form(current_user.personal_information,'update',current_user.template('PersonalInformation','personal_informations',current_user),html: { class: 'form-group'}, header_title: false,htmlCard: 'border-off', remote: true, controller: 'personal_informations',destroy: false,history: false,locked: true)%>
+<div style="margin: 1em;">
+  <% if @personal_information_application.present? && @personal_information_application.status == 'active' %>
+    <%= link_to I18n.t('general.edit'),edit_application_path(@personal_information_application), class: 'btn btn-primary' %>
+  <% elsif @personal_information_application.present? && @personal_information_application.status == 'submitted' %>
+    <div class="card-body bg-info text-white text-center">
+    <%= I18n.t('application.under_review') %>
+    </div>
+  <% else %>
+    <%= button_to I18n.t('general.new_request'),create_application_personal_informations_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>

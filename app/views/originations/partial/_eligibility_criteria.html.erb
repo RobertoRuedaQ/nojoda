@@ -1,0 +1,8 @@
+<div class="card">
+  <div class="card-body">
+    <div class="text-center my-3"><h4 class="my-4 text-success"><%= I18n.t('origination.eligibility_criteria_description') %></h4></div>
+      <div id="eligibility-criteria-funding-opportunity">
+        <%= createEligibilityCriteria(current_application.nil? ? nil : current_application.funding_opportunity_id,nil,disabled: current_step > 2)  %>
+      </div>
+  </div>
+</div>

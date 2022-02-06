@@ -1,0 +1,8 @@
+$('#children-main-container').append('<%= j render '/children/partial/child_body', child: @child,visible: @application.active?, template_id: @section.cached_form_template.child_id, modal_id: params[:temp][:modal_id], section: @section, application: @application %>')
+
+$('[name^=child]').not('[name="child[user_id]"]').each(function(){$(this).val('').trigger('change')})
+$('.selectpicker').selectpicker('render');
+$('[id^=new_child_record_]').modal('hide')
+$('[id^=sociodemographic_children_number_]').trigger('change')
+
+toastr["success"]("<%= I18n.t('flash.record_created') %>");

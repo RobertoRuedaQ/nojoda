@@ -1,0 +1,192 @@
+<% if defined?(funding_detail).nil? %>
+  <% funding_detail = true %>
+<% end %>
+
+<% if defined?(show_disbursement_anyway).nil? %>
+  <% show_disbursement_anyway = false %>
+<% end %>
+
+<% if defined?(disbuserment_text).nil? %>
+  <% disbuserment_text = false %>
+<% end %>
+
+<% if defined?(show).nil? %>
+  <% show = false %>
+<% end %>
+
+<% if defined?(funding_option_application_case).nil? %>
+  <% funding_option_application_case = false %>
+<% end %>
+
+<% if funding_detail %>
+  <% if disbuserment_text %>
+    <% if disbursements_hash.size == 1 %>
+      <h4><%= Disbursement.model_name.human(count: 1) %></h4>
+    <%else %>
+      <h4><%= Disbursement.model_name.human(count: 2) %></h4>
+    <%end %>
+  <% else %>
+    <h4><%= I18n.t('application.funding_request') %></h4>
+  <% end %>
+<% end %>
+<% accordion_key = SecureRandom.hex %>
+
+
+<div class="accordion" id="disbursement_acordion_main_<%=accordion_key%>">
+  <% tuition_disbursements =  disbursements_hash.values.map{|h| h[:disbursement_case] == 'tuition' ? h : nil}.compact%>
+  <% if tuition_disbursements.count > 0 %>
+    <% total_tuition = tuition_disbursements.map{|t| t[:adjusted_student_value].present? ? t[:adjusted_student_value] : t[:student_value]}.inject(0){|sum,x| sum + x } %>
+
+    <% if (tuition_disbursements[0].present? && disbursements_hash[0][:show_tuition_table]) || show_disbursement_anyway %>
+
+      <% if local_variables.include?(:immediately_previous_disbursement) && immediately_previous_disbursement.present? %>
+        <%previous_disbursement_hash = lumni_disbursement_hash([immediately_previous_disbursement],  ['student_value','disbursement_case','status', 'available']) %>
+        <%previous_disbursements = previous_disbursement_hash.values.map{|h| h[:disbursement_case] == 'tuition' ? h : nil}.compact%>
+        <% total_available = previous_disbursements.map{|t| t[:available].present? ? t[:available] : 0}.last %>
+        <div class="card">
+          <div class="card-header py-0 px-2" id="accordion-tuition">
+
+            <div class="d-flex align-items-center">
+              <div class="lnr lnr-apartment display-4 text-success"></div>
+              <div class="ml-3 flex-grow-1">
+                <div class="text-muted small"><%= previous_disbursements.count %> <%= I18n.t('application.previous_tuition') %> </div>
+                <div class="text-large"><%= lumni_currency total_available %></div>
+              </div>
+
+              <div class="px-4">
+                <button class="btn btn-ms btn-outline-primary my-4" type="button" data-toggle="collapse" data-target="#disbursement_tuition_<%=accordion_key%>" aria-expanded="true" aria-controls="disbursement_tuition_<%=accordion_key%>">
+                  <%= I18n.t('application.disbursement_details') %>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="ml-3 flex-grow-1 align-items-center", style='padding: 10px;'>
+            <div id="disbursement_tuition_<%=accordion_key%>" class="collapse <%= 'show' if show %>" aria-labelledby="accordion-tuition" data-parent="#disbursement_acordion_main_<%=accordion_key%>">
+              <div class="card-body p-0">
+                <%= render '/applications/sections/disbursement_table', disbursement_hash: previous_disbursements, funding_option_application_case: funding_option_application_case, disbursement_case: 'tuition', funding_option: previous_disbursements.last[:funding_option_id] %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+
+      <div class="card">
+        <div class="card-header py-0 px-2" id="accordion-tuition">
+
+          <div class="d-flex align-items-center">
+            <div class="lnr lnr-apartment display-4 text-success"></div>
+            <div class="ml-3 flex-grow-1">
+              <div class="text-muted small"><%= tuition_disbursements.count %> <%= I18n.t('application.tuition') %></div>
+              <div class="text-large"><%= lumni_currency total_tuition %></div>
+            </div>
+
+            <div class="px-4">
+              <button class="btn btn-ms btn-outline-primary my-4" type="button" data-toggle="collapse" data-target="#disbursement_tuition_<%=accordion_key%>" aria-expanded="true" aria-controls="disbursement_tuition_<%=accordion_key%>">
+                <%= I18n.t('application.disbursement_details') %>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="ml-3 flex-grow-1 align-items-center", style='padding: 10px;'>
+          <div id="disbursement_tuition_<%=accordion_key%>" class="collapse <%= 'show' if show %>" aria-labelledby="accordion-tuition" data-parent="#disbursement_acordion_main_<%=accordion_key%>">
+            <div class="card-body p-0">
+              <%= render '/applications/sections/disbursement_table', disbursement_hash: tuition_disbursements, funding_option_application_case: funding_option_application_case, disbursement_case: 'tuition', funding_option: tuition_disbursements.last[:funding_option_id] %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+
+  <% end %>
+
+
+  <% living_expenses_disbursement =  disbursements_hash.values.map{|h| h[:disbursement_case] == 'living_expenses' ? h : nil}.compact%>
+  <% if living_expenses_disbursement.count > 0 %>
+    <% total_living_expenses = living_expenses_disbursement.map{|t| t[:adjusted_student_value].present? ? t[:adjusted_student_value] : t[:student_value]}.inject(0){|sum,x| sum + x } %>
+
+
+
+    <% if (living_expenses_disbursement[0].present? && disbursements_hash[0][:show_living_expenses_table]) || show_disbursement_anyway %>
+    
+    <div class="card">
+      <div class="card-header py-0 px-2" id="accordion-living-expenses">
+
+
+        <div class="d-flex align-items-center">
+          <div class="lnr lnr-store display-4 text-success"></div>
+          <div class="ml-3 flex-grow-1">
+            <div class="text-muted small"><%= living_expenses_disbursement.count %> <%= I18n.t('application.living_expenses') %></div>
+            <div class="text-large"><%= lumni_currency total_living_expenses %></div>
+          </div>
+
+          <div class="px-4">
+            <button class="btn btn-ms btn-outline-primary my-4" type="button" data-toggle="collapse" data-target="#accordion_living_expenses_<%= accordion_key %>" aria-expanded="true" aria-controls="disbursement_tuition_<%=accordion_key%>">
+              <%= I18n.t('application.disbursement_details') %>
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="ml-3 flex-grow-1 align-items-center", style='padding: 10px;'>
+        <%if current_user.student? && funding_opportunity_without_active_living_expenses_request?(current_user) && living_expenses_disbursement.first[:disbursement_timing_mismatch] == false %>
+        <p><%= I18n.t('application.no_request_needed')%></p>
+        <%end%>
+        <div id="accordion_living_expenses_<%= accordion_key %>" class="collapse <%= 'show' if show %>" aria-labelledby="accordion-living-expenses" data-parent="#disbursement_acordion_main_<%=accordion_key%>">
+          <div class="card-body p-0">
+
+            <%= render '/applications/sections/disbursement_table', disbursement_hash: living_expenses_disbursement, disbursement_case: 'living_expenses', funding_option: living_expenses_disbursement.last[:funding_option_id] %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+
+
+
+<!-- #### -->
+  <% other_disbursements =  disbursements_hash.values.reject{|h| h[:disbursement_case] == 'living_expenses' || h[:disbursement_case] == 'tuition'}.compact%>
+
+
+  <% if other_disbursements.count > 0 %>
+    <% total_academic_bonus = other_disbursements.map{|t| t[:adjusted_student_value].present? ? t[:adjusted_student_value] : t[:student_value]}.inject(0){|sum,x| sum + x } %>
+
+
+
+
+    <div class="card">
+      <div class="card-header py-0 px-2" id="accordion-living-expenses">
+
+
+        <div class="d-flex align-items-center">
+          <div class="lnr lnr-store display-4 text-success"></div>
+          <div class="ml-3 flex-grow-1">
+            <div class="text-muted small"><%= other_disbursements.count %> <%= I18n.t('application.other_disbursements') %></div>
+            <div class="text-large"><%= lumni_currency total_academic_bonus %></div>
+          </div>
+
+          <div class="px-4">
+            <button class="btn btn-ms btn-outline-primary my-4" type="button" data-toggle="collapse" data-target="#accordion_academic_bonus_<%= accordion_key %>" aria-expanded="true" aria-controls="disbursement_tuition_<%=accordion_key%>">
+              <%= I18n.t('application.disbursement_details') %>
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <div id="accordion_academic_bonus_<%= accordion_key %>" class="collapse <%= 'show' if show %>" aria-labelledby="accordion-living-expenses" data-parent="#disbursement_acordion_main_<%=accordion_key%>">
+        <div class="card-body p-0">
+          <%= render '/applications/sections/disbursement_table', disbursement_hash: other_disbursements, disbursement_case: 'academic_bonus', funding_option: other_disbursements.last[:funding_option_id] %>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
+
+
+
+</div>
+

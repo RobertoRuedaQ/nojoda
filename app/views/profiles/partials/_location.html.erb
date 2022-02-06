@@ -1,0 +1,12 @@
+<%= build_form(current_user.location,'update',current_user.template('Location','locations',current_user),html: { class: 'form-group'}, header_title: false,htmlCard: 'border-off', remote: true, controller: 'locations',destroy: false,history: false,locked: true)%>
+<div style="margin: 1em;">
+  <% if @location_application.present? && @location_application.status == 'active' %>
+    <%= link_to I18n.t('general.edit'),edit_application_path(@location_application), class: 'btn btn-primary' %>
+  <% elsif @location_application.present? && @location_application.status == 'submitted' %>
+    <div class="card-body bg-info text-white text-center">
+    <%= I18n.t('application.under_review') %>
+    </div>
+  <% else %>
+    <%= button_to I18n.t('general.new_request'),create_application_locations_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>

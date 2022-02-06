@@ -1,0 +1,4 @@
+
+
+<%= form_title(@docs_note, 'docs_general') %> 
+<%= build_form(@docs_note,'update',current_user.template('DocsNote','docs_notes',current_user),html: { class: 'form-group', method: 'put'}) %>

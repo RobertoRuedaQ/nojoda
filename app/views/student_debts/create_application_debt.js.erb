@@ -1,0 +1,8 @@
+$('#debt-container').append("<%= j render '/student_debts/params/debt_body', debt: @student_debt, hidden_fields: @hidden_fields %>")
+
+clear_form('studentdebt',['user_id'])
+
+$('#new_debt_modal').modal('hide')
+
+toastr["success"]("<%= I18n.t('flash.record_created') %>");
+

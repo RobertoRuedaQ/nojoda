@@ -1,0 +1,5 @@
+<% if target_application.has_funding_options?  %>
+  <% target_application.funding_option.includes([:funding_option_disbursement, :disbursement, :application, :payed_disbursements, :funding_option_config]).each do |funding_option| %>
+    <%= render '/applicants/partial/funding_option_card', funding_option: funding_option %>
+  <% end %>
+<% end %>

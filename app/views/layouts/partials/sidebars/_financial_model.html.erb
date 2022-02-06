@@ -1,0 +1,30 @@
+<li class="sidenav-item">
+  <a href="#" data-toggle="collapse" data-target="#financial_model" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-ios-stats"></i><%= I18n.t('mains.financial_model')%>
+  </a>
+  <ul class="sub-menu collapse" id="financial_model">
+    <li class="sidenav-item">
+      <a href="<%= modelings_path %>" class="sidenav-link "><%= Modeling.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= research_variables_path %>" class="sidenav-link "><%= ResearchVariable.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= research_filters_path %>" class="sidenav-link "><%= ResearchFilter.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= research_inputs_path %>" class="sidenav-link "><%= ResearchInput.model_name.human(count: 2) %></a>  		
+    </li>  
+
+    <li class="sidenav-item">
+      <a href="<%= research_model_infos_path %>" class="sidenav-link "><%= ResearchModelInfo.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= rate_cap_updates_path %>" class="sidenav-link "><%= RateCapUpdate.model_name.human(count: 2) %></a>  		
+    </li>  
+  </ul>
+</li>

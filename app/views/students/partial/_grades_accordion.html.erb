@@ -1,0 +1,28 @@
+<div class="accordion" id="grades_acordion_main">
+  <div class="card">
+    <div class="card-header py-0 px-2" id="accordion-grades">
+
+      <div class="d-flex align-items-center">
+        <div class="lnr lnr-pointer-right display-4 text-success"></div>
+        <div class="ml-3 flex-grow-1">
+          <div class="text-muted small"><%= @university_grades.size %> </div>
+          <div class="text-large"><%= I18n.t('students.grades') %></div>
+        </div>
+
+        <div class="px-4">
+          <button class="btn btn-ms btn-outline-primary my-4" type="button" data-toggle="collapse" data-target="#grades_reference" aria-expanded="true" aria-controls="grades_reference">
+            <%= I18n.t('application.disbursement_details') %>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="grades_reference" class="collapse" aria-labelledby="accordion-reference" data-parent="#grades_acordion_main">
+      <div class="card-body p-0">
+        <div style="padding: 15px;">
+          <%= render 'students/partial/grades_per_term' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

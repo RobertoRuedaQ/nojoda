@@ -1,0 +1,8 @@
+
+$('#edit_team_supervisor').remove()
+$('#support-team-tab').append("<%= j render '/team_supervisors/partials/edit_modal', team_supervisor: @team_supervisor %>")
+
+
+restore_lumni_js()
+
+$('#edit_team_supervisor').modal('show')

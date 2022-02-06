@@ -1,0 +1,16 @@
+.row
+  .image
+    = image_tag('pages/500-image.svg')
+  .text
+    .text-container
+      .title
+        = t('general.errors.internal_error.title')
+      .subtitle
+        = t('general.errors.internal_error.subtitle')
+      .description
+        = t('general.errors.internal_error.description')
+      .button
+        %a{href: '/'}
+          = t('general.errors.go_back')
+  
+  

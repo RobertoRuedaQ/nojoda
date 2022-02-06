@@ -1,0 +1,19 @@
+<%= render 'applicants/partial/applicant_personal_information' %>
+
+
+<div class="nav-tabs-top">
+  <%= render 'applicants/partial/tabs' %>
+
+  <div class="tab-content bg-light">
+
+    <div class="tab-pane fade show active" id="user-comunications-tab" >
+      <div class="card" style="border: none">
+        <div class="card-body">
+          <%= create_mail_theme @applicant.id %>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,16 @@
+en:
+  academic:
+    school: 'School'
+    university: 'University'
+    funded_major: 'Funded Major'
+    edit_academic_information: 'Edit Your Academic Information'
+    edit_academic_information_text: 'In this section you will be able to update your graduation date and upload your Diploma.'
+    edit_courses: 'Edit Information Register of Subjects'
+    edit_courses_text: 'In this section you will be able to register the subjects that you are going to take in your academic period.'
+    edit_diploma_delivery: 'Edit Diploma Delivery Information'
+    edit_diploma_delivery_text: 'In this section you can report the information of the graduation process, Completion Date of Subjects, Graduation Date, Full Diploma Date and upload your degree certificate.'
+    edit_partial_scores: 'Edit Information Report Interim Notes'
+    edit_partial_scores_text: 'In this section you will be able to report the progress of your Academic period, the notes that you bring to date.'
+    edit_final_scores: 'Edit Information Report Definitive Notes'
+    edit_final_scores_text: 'In this section you will be able to report the final grades of your academic period.'
+    

@@ -1,0 +1,15 @@
+es:
+  rate_cap_update:
+    attributes:
+      id: Id
+      rate_cap_value: 'Valor tasa'
+      responsible_id: 'Responsable del cambio'
+      country: 'País'
+      created_at: 'Fecha de creación'
+    actions:
+      new: 'Nuevo'
+      save: 'Generar cambio de tasa'
+    flash:
+      create:
+        success: "La asignación de la tasa se realizó exitosamente."
+        danger: 'Hubo un error al intentar asignar la nueva tasa'

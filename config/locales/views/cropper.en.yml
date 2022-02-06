@@ -1,0 +1,18 @@
+en:
+  cropper:
+    zoom_in: 'Zoom In'
+    zoom_out: 'Zoom Out'
+    move_right: 'Move Right'
+    move_left: 'Move Left'
+    move_up: 'Move Up'
+    move_down: 'Move Down'
+    rotate_left: 'Rotate Left'
+    rotate_right: 'Rotate Right'
+    invert_horizontal: 'Invert Horizontal'
+    invert_vertical: 'Invert Vertical'
+    reset: 'Reset'
+    upload_image: 'Upload Image'
+    crop: 'Continue'
+    preview: 'Preview your image'
+
+

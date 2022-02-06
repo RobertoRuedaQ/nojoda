@@ -1,0 +1,12 @@
+
+image: ruby:2.6.3
+clone:
+  depth: full
+pipelines:
+  default:
+    - step:
+        script:
+          - git checkout origin/development
+          - git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/lumnistaging.git HEAD:master
+          - git checkout origin/master
+          - git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/lumniproduction.git HEAD:master

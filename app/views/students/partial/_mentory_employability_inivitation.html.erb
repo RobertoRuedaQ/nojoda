@@ -1,0 +1,17 @@
+<div class="card my-2">
+	<div class="card-body bg-warning my-0 p-0">
+		<div class="d-flex">
+			<div class="d-inline-flex align-self-center mx-4">
+			<%= I18n.t('isa.mentory_employability_inivation')  %>
+			</div>
+			<div class="d-inline-flex">
+				<div class="mx-4 my-2">
+          <% if current_user.mentory_employability_invitation? %>
+            <% application_invitation = current_user.mentory_employability_invitation %>
+            <%= link_to I18n.t('general.more_info'), edit_application_path(application_invitation), class: 'btn btn-primary' %>
+          <%end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

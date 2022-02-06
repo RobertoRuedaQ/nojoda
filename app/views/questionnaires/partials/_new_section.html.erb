@@ -1,0 +1,9 @@
+<% target_template = FormTemplate.where(object: 'Questionnaire',child_foreign_key: 'subsection').first.cached_template_hash(current_user,current_company) %>
+
+<h4 class="media align-items-center font-weight-bold py-3 mb-4">
+  <div class="media-body ml-3">
+  	<span class="text-muted font-weight-light"><%= @questionnaire.name %> /</span> <%= I18n.t('questionnaire.new_section') %>
+  </div>
+</h4>
+<%= build_form(Questionnaire.new({parent_id: @questionnaire.id,position: @questionnaire.childs.count + 1}),'create',target_template, html: { class: 'form-group'}, controller: 'questionnaires', button: false,destroy: false, remote: true, history: false, header:false)%>
+</div>

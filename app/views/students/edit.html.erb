@@ -1,0 +1,20 @@
+<%= render 'students/partial/students_header' %>
+
+
+<div class="nav-tabs-top">
+  <%= render 'students/partial/tabs' %>
+
+  <div class="tab-content bg-light">
+    <div class="tab-pane fade show active p-0" id="summary-tab">
+      
+      <% @student.active_isa.to_a.each do |isa| %>
+        <%= render '/students/partial/action_required_notifications', isa: isa %>
+        <%= render '/applicants/partial/funding_option_card', funding_option: isa.funding_option,grid_main: 12, disbuserment_text: true,isa_check: true, disbursement_grid: 9 , disbursements_hash: lumni_disbursement_hash(isa.funding_option.disbursement.includes([:student_academic_information]).to_a,['id','forcasted_date','payment_dates','student_value','disbursement_case','status','requested','approved','disbursement_process','disbursed','available','canceled','stored_general_status','activate'])%>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,2 @@
+module CreditHistoryChecksHelper
+end

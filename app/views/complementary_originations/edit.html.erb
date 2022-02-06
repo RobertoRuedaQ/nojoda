@@ -1,0 +1,4 @@
+
+
+<%= form_title(@complementary_origination, 'funding_opportunity') %> 
+<%= build_form(@complementary_origination,'update',current_user.template('ComplementaryOrigination','complementary_originations',current_user),html: { class: 'form-group', method: 'put'}) %>

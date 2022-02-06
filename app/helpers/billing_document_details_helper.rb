@@ -1,0 +1,2 @@
+module BillingDocumentDetailsHelper
+end

@@ -1,0 +1,4 @@
+$('#OriginationEditionModal').html("<%= j build_form(@origination_section,'update',@target_template,html: { class: 'form-group', method: 'patch'},destroy: false,dismiss: '#OriginationEditionModal',remote: true, buttonOffset: 1, header_title: false) %>")
+$('#originationModal').modal('show')
+
+restore_lumni_js()

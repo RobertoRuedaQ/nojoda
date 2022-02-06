@@ -1,0 +1,2 @@
+module BffQuestionsHelper
+end

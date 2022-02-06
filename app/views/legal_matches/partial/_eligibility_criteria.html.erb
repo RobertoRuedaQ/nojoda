@@ -1,0 +1,49 @@
+
+<%= form_for @legal_match do |f|%>
+	<div class="form-group ">
+		<label class="form-label"><%=FundingOpportunity.model_name.human(count:1) %></label>
+		<%= lumni_dropdown_field 'funding_opportunity','id', list: funding_opportunity_criteria(current_company.id,current_user),type: 'legal_language' ,value: (@funding_opportunity.nil? ? nil : @funding_opportunity.id),disabled: @options[:disabled]%>
+	</div>
+	<% if !@legal_document.id.nil? %>
+
+
+
+
+
+		<div style="<%= "display: none" if @funding_opportunity.closed_type? && !@funding_opportunity.verified?(current_user.id) %>" id="elegibility_container_<%= @funding_opportunity.id %>">
+			<div class="form-group" >
+				<%= lumni_boolean_field 'legalmatch','answer',{boolean_text: @legal_document.validation, required: true}%><span><small class="text-danger">*</small></span>
+
+				<%= hidden_field 'legalmatch','user_id', value: current_user.id %>
+				<%= hidden_field 'legalmatch','validation_method', value: @legal_document.validation_method%>
+				<%= hidden_field 'legalmatch','validation', value: @legal_document.validation %>
+				<%= hidden_field 'legalmatch','body', value: adjust_legal_language( current_user, @legal_document.body)  %>
+				<%= hidden_field 'legalmatch','legal_document_id', value: @legal_document.id %>
+			</div>
+			<div class="text-center">
+				<%= button_tag I18n.t('general.save'), class: 'btn btn-primary', type: 'submit', data: { disable_with: I18n.t('form.please_wait')}%>
+			</div>
+		</div>
+
+	<%end%>
+
+
+<% end %>
+
+<% if !@funding_opportunity.nil? && @funding_opportunity.closed_type? && !@funding_opportunity.verified?(current_user.id)%>
+	<div id='verification_box_<%= @funding_opportunity.id %>'>
+		<%= form_tag verify_token_funding_tokens_path, remote: true do %>
+			<div class="form-group">
+				<label class="form-label">Verificación de token</label>
+				<p><%= I18n.t('application.token_description_text') %></p>
+				<%= lumni_text_field 'funding_token','token',{id: @funding_opportunity.id, required: true} %>
+				<%= hidden_field 'funding_token','user_id',value: current_user.id %>
+				<%= hidden_field 'temp', 'funding_opportunity_id', value: @funding_opportunity.id %>
+				<div class="text-center my-3">
+					<%= button_tag 'Verificar Token', class: 'btn btn-primary', data: { disable_with: I18n.t('form.please_wait')} %>
+				</div>
+			</div>
+		<% end %>
+		
+	</div>
+<% end %>

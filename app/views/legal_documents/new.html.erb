@@ -1,0 +1,5 @@
+
+<%= form_title(@legal_document,I18n.t('mains.new')) %>
+
+<%= build_form(@legal_document,'create',current_user.template('LegalDocument','legal_documents',current_user),html: { class: 'form-group'})%>
+

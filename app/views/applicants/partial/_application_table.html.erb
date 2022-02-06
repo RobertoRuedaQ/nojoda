@@ -1,0 +1,8 @@
+<div class="card">
+	<div class="card-header">
+		<h5 class="text-primary"><%= I18n.t('application.application_history')%></h5>
+	</div>
+	<div class="card-body">
+		<%= createBasicTable(@application_headers,@application_rows,id: 'application_summary_table') %>
+	</div>
+</div>

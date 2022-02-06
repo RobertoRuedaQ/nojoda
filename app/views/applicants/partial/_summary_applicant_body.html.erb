@@ -1,0 +1,19 @@
+<div class="row">
+
+  <!-- Progress Bar -->
+  <%= render '/applicants/partial/progress_bar', target_application: target_application %>
+  <!-- Show Funding Options -->
+  <%= render '/applicants/partial/show_funding_options', target_application: target_application %>
+  <!-- Interview List -->
+  <%= render '/applicants/partial/interviews', target_application: target_application %>
+  <!-- Questionnaire List -->
+    <div class="col-md-12 my-2">
+    <%= render '/applicants/partial/questionnaire_table' %>
+    </div>
+  <!-- Legal Document Match -->
+  <%= render '/applicants/partial/legal_document_match', target_application: target_application, target_user: target_user %>
+
+  <!-- Funding Options -->
+  <%= render '/applicants/partial/funding_options_view', target_application: target_application%>
+
+</div>

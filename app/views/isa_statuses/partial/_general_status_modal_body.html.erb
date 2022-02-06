@@ -1,0 +1,43 @@
+<!-- Manual Activation -->
+<h4 class="text-primary"><%= Isa.human_attribute_name(:stored_general_status) %></h4>
+
+<% if isa.stored_general_status != 'manual_activation' %>
+  <div class="mt-4" >
+    <h5 class="text-muted"><%= I18n.t('isa.manual_activation') %></h5>
+    <div class="text-center d-flex flex-column">
+        <%= button_tag I18n.t('isa.manual_activation'),  class: 'btn btn-primary lumni-isa-status-alert',data: {
+        title: I18n.t('isa.manual_activation'),text: I18n.t('isa.manual_activation_text'), confirbuttontext: I18n.t('general.continue'), cancelbuttontext: I18n.t('general.cancel'),successheader: I18n.t('isa.manual_activation_success'),successconfirmation: I18n.t('isa.manual_activation_success_text'),path: set_isa_status_isa_path(isa),params: "status_case=general_status&status=manual_activation&start_date=#{Time.now.to_date}" }%>
+    </div>
+  </div>
+<% end %>
+
+
+<% if isa.stored_general_status == 'manual_activation' %>
+  <div class="mt-4" >
+    <h5 class="text-muted"><%= I18n.t('isa.manual_activation') %></h5>
+    <div class="text-center d-flex flex-column">
+      <%= button_tag I18n.t('isa.manual_activation_disable'),  class: 'btn btn-warning lumni-isa-status-alert',data: {title: I18n.t('isa.manual_deactivation'),text: I18n.t('isa.manual_deactivation_text'), confirbuttontext: I18n.t('general.continue'), cancelbuttontext: I18n.t('general.cancel'),successheader: I18n.t('isa.manual_deactivation_success'),successconfirmation: I18n.t('isa.manual_deactivation_success_text'),path: disable_status_isa_path(isa),params: "status_case=general_status&status=manual_activation&start_date=#{Time.now.to_date}" }%>
+    </div>
+  </div>
+<% end %>
+
+
+<% status_list = isa_status_general_status_actions isa %>
+
+
+<% status_list.each do | target_status| %>
+
+  <% if isa.stored_general_status != target_status %>
+    <div class="mt-4" >
+      <h5 class="text-muted"><%= I18n.t('isa.' + target_status) %></h5>
+      <div class="text-center d-flex flex-column">
+
+        <%= button_tag I18n.t('isa.' + target_status),  class: 'btn btn-primary lumni-isa-status-alert',data: {
+          title: I18n.t('isa.' + target_status),text: I18n.t("isa.#{target_status}_text"), confirbuttontext: I18n.t('general.continue'), cancelbuttontext: I18n.t('general.cancel'),successheader: I18n.t("isa.#{target_status}_success"),successconfirmation: I18n.t("isa.#{target_status}_success_text"),path: set_isa_status_isa_path(isa),params: "status_case=general_status&status=#{target_status}&start_date=#{Time.now.to_date}" }%>
+
+      </div>
+      
+    </div>
+  <% end %>
+<% end %>
+

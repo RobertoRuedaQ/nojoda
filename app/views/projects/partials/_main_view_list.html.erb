@@ -1,0 +1,22 @@
+    <div  id='projectListContainer'>
+      <div class="offset-md-8 col-md-4 mb-2">
+        <%= lumni_text_field 'project','search',{class: 'search',placeholder: I18n.t('general.search')} %>
+      </div>
+
+      <div class="table-responsive-xl">
+        <table class="table">
+          <thead>
+            <td></td>
+            <% columns_at_project_list.each_with_index do |column,index| %>
+              <td><strong class="sort" data-sort="<%= column %>"><%= ProjectTask.human_attribute_name(column) %></strong></td>
+            <% end %>
+          </thead>
+          <tbody class="list project-list-sortable " id="project-list-tbody">
+            <% target_tasks.each do |task| %>
+                <%= render 'project_tasks/partial/list_task_element', task: task %>
+            <% end %>
+
+          </tbody>
+        </table>
+      </div>
+    </div>

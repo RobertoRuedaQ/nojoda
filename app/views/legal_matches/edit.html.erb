@@ -1,0 +1,2 @@
+<%= form_title(@legal_match, 'name') %>
+<%= build_form(@legal_match,'update',current_user.template('LegalMatch','legal_matches',current_user),html: { class: 'form-group', method: 'put'},destroy: false)%>

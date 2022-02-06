@@ -1,0 +1,117 @@
+<% if defined?(billing_document).nil? && !@billing_document.nil? %>
+  <% billing_document = @billing_document %>
+<% end %>
+
+
+
+    <div class="card">
+      <div class="card-body p-5">
+        <div class="row">
+          <div class="col-sm-6 pb-4">
+            <div class="media align-items-center mb-4">
+              <div class="ui-w-40">
+                <div class="w-100 position-relative" style="padding-bottom: 54%">
+                  <img src="<%= asset_path("lumni_logo.png") %>" alt="" height="20"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-1"><%= billing_document.company.location.address1 %></div>
+            <div class="mb-1"><%= billing_document.company.location.address2 %></div>
+            <div><%= billing_document.company.contact_info.phone %></div>
+
+          </div>
+
+          <div class="col-sm-6 text-right pb-4">
+
+            <h6 class="text-big text-large font-weight-bold mb-3"><%= BillingDocument.model_name.human(count: 1) %> #<%= billing_document.id %></h6>
+            <div class="mb-1"><%= BillingDocument.human_attribute_name(:created_at) %>: <strong class="font-weight-semibold"><%= lumni_date billing_document.created_at.to_date %></strong></div>
+            <div><%= BillingDocument.human_attribute_name(:due_to_date) %>: <strong class="font-weight-semibold"><%= lumni_date billing_document.due_to_date %></strong></div>
+
+          </div>
+        </div>
+
+        <hr class="mb-4">
+
+        <div class="row">
+          <div class="col-sm-6 mb-4">
+
+            <div class="font-weight-bold mb-2"><%= I18n.t('billing_document.invoice_to') %>:</div>
+            <div><%= billing_document.user.name %></div>
+            <div><%= billing_document.user.location.address1 %></div>
+            <div><%= billing_document.user.location.address2 %></div>
+            <div><%= billing_document.user.location.country.label if !billing_document.user.location.country.nil?%></div>
+            <div><%= billing_document.user.contact_info.mobile %></div>
+            <div><%= billing_document.user.email %></div>
+
+          </div>
+          <div class="col-sm-6 mb-4">
+
+            <div class="font-weight-bold mb-2"><%= I18n.t('billing_document.payment_details') %>:</div>
+            <table>
+              <tbody>
+                <tr>
+                  <td class="pr-3"><%= I18n.t('billing_document.total_due') %>:</td>
+                  <% target_currency =  billing_document.currency%>
+                  <td><strong><%= lumni_currency billing_document.charged_value_with_penalties, target_currency %></strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="table-responsive mb-4">
+          <table class="table m-0">
+            <thead>
+              <tr>
+                <th class="py-3">
+                  <%= I18n.t('billing_document.payment_detail') %>
+                </th>
+                <th class="py-3">
+                  <%= I18n.t('billing_document.payment_equivalency') %>
+                </th>
+                <th class="py-3">
+                  <%= I18n.t('billing_document.value') %>
+                </th>
+                <th class="py-3">
+                  <%= I18n.t('billing_document.penalty') %>
+                </th>
+                <th class="py-3">
+                  <%= I18n.t('billing_document.line_total') %>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% billing_document.billing_document_detail.each do |detail| %>
+
+                <tr>
+                  <td class="py-3">
+                    <div class="font-weight-semibold"><%= I18n.t('list.' + detail.detail_case) if !detail.detail_case.nil? %></div>
+                    <div class="text-muted"><%= "#{I18n.t('general.period')}: #{lumni_month detail.month} - #{detail.year}"  %></div>
+                  </td>
+                  <td class="py-3">
+                    <strong><%= detail.payment_equivalency %></strong>
+                  </td>
+                  <td class="py-3">
+                    <strong><%= lumni_currency detail.value, target_currency %></strong>
+                  </td>
+                  <td class="py-3">
+                    <strong><%= lumni_currency detail.penalty(billing_document.reference_date), target_currency %></strong>
+                  </td>
+                  <td class="py-3">
+                    <strong><%= lumni_currency(detail.value + detail.penalty(billing_document.reference_date), target_currency) %></strong>
+                  </td>
+                </tr>
+
+              <% end %>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-muted">
+          <strong><%= I18n.t('billing_document.note') %>:</strong> <%= I18n.t('billing_document.footer_invoice_text') %>
+        </div>
+
+      </div>
+    </div>

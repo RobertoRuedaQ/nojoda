@@ -1,0 +1,10 @@
+<li class="sidenav-item"> 
+  <a href="#" data-toggle="collapse" data-target="#questionnaires" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-md-clipboard"></i><%= I18n.t('mains.questionnaires')%>
+  </a>
+  <ul class="sidenav-menu" id="questionnaires">
+    <li class="sidenav-item">
+      <a href="<%= questionnaires_path %>" class="sidenav-link "><%= Questionnaire.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

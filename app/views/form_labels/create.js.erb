@@ -1,0 +1,12 @@
+if(<%= @form_label.resource_type  == 'FormListValue' %>){
+
+	<% createBodyTableFormLabel(@form_label.resource_id) %>
+	$('#form-list-traduction-table').html('<%= j  createBasicTable(@header,@table_body) %>')
+	$('#formlistvalue_value_').val('')
+
+	setFormListValuesLinks()
+	$('#formFieldValueLabelModal').modal('hide')
+
+}else{
+	$('#form-translation-name-<%= @form_label.language %>').html('<%= j render "form_lists/partial/update_list_name.html.erb" , language: @form_label.language %>')	
+}

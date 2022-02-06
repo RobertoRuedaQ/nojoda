@@ -1,0 +1,30 @@
+<%= form_title(@student_email_batch, I18n.t('mains.new')) %>
+<div class="card  mb-3">
+    <h5 class="card-header ">
+      <div class="d-flex justify-content-between">
+          <%= StudentEmailBatch.model_name.human(count: 1) %>
+      </div>
+    </h5>
+  <div class="card-body">
+    <%= form_for @student_email_batch do |f| %>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label I18n.t('student_email_batch.attributes.email_case') %>
+          <%= f.select(:email_case, options_for_select([['No continúa en el proceso Black Rock', 'no_continuity_postulation_black_rock'],['Continúa en el proceso Black Rock', 'continuity_postulation_black_rock'], ['Invitación al proceso Black Rock', 'emergency_black_rock'], ['Invitación a mentorias & empleabilidad Bancolombia', 'mentory_and_empleability'],  ['Notificación no continua mentorias & empleabilidad Bancolombia', 'mentory_and_empleability_rejection'], ['aceptación a mentorias', 'mentory_acceptance'],['aceptación al programa de empleabilidad', 'empleability_acceptance'], ['aceptación a mentorias y empleabilidad', 'mentory__and_empleability_acceptance']])) %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label I18n.t('student_email_batch.attributes.email_file') %>
+          <%= f.file_field :email_list, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+      
+      <div class="form-group">
+        <%= f.submit I18n.t('student_email_batch.actions.save'), class: 'btn btn-success lumnisubmit pull-right' %>
+      </div>
+    <%end%>
+  </div>
+</div>

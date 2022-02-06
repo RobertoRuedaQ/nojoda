@@ -1,0 +1,22 @@
+<h4 class="media align-items-center font-weight-bold py-3 mb-4">
+  <div class="media-body ml-3">
+  	<span class="text-muted font-weight-light">
+
+	<% begin %>
+		<%= eval(@general_docs.controller.singularize.camelize).model_name.human(count:1) %>
+	<% rescue %>
+		<%= properName(@general_docs.controller.singularize.humanize) %>
+	<% end %>
+  	/</span> <%= I18n.t('documentation.documentation')%>
+
+
+  	<% unless @general_docs.id.nil? %>
+    	<div class="text-muted text-tiny mt-1"><small class="font-weight-normal"><%= @general_docs.class.human_attribute_name('created_at') %> <%= lumni_date(@general_docs.created_at) %></small><br><small class="font-weight-normal"><%= @general_docs.class.human_attribute_name('updated_at') %> <%= lumni_date(@general_docs.updated_at) %></small>
+    	</div>
+    <% end %>
+  </div>
+</h4>
+
+<div class="m-0 p-0">
+  <%=@general_docs.description.to_s.html_safe %>
+</div>

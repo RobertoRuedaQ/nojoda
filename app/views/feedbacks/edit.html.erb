@@ -1,0 +1,6 @@
+
+
+<%= form_title(@feedback, 'controller') %> 
+<%= build_form(@feedback,'update',current_user.template('Feedback','feedbacks',current_user),html: { class: 'form-group', method: 'put'},locked: @feedback.autor_id != current_user.id) %>
+
+<%= render '/feedbacks/partial/priorization_tab', feedback: @feedback %>

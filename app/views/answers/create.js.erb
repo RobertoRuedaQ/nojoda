@@ -1,0 +1,5 @@
+toastr["success"]("<%= I18n.t('flash.record_created') %>");
+$('#questionnaire_modal').modal('hide');
+$('#answers_section_<%= @answer.question.id %>').append('<%= j createAnswerQuestionnaire(@answer.id) %>')
+setDeleteAlert()
+setAllSortable()

@@ -1,0 +1,22 @@
+<li class="sidenav-item">
+  <a href="#" data-toggle="collapse" data-target="#notification" class="sidenav-link sidenav-toggle" >
+    <i class="sidenav-icon ion ion-md-notifications"></i><%= I18n.t('mains.notification')%>
+  </a>
+  <ul class="sidenav-menu" id="notification">
+    <li class="sidenav-item">
+      <a href="<%= notifications_path %>" class="sidenav-link "><%= Notification.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= notification_cases_path %>" class="sidenav-link "><%= NotificationCase.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= communication_headers_path %>" class="sidenav-link "><%= CommunicationHeader.model_name.human(count: 2) %></a>  		
+    </li>
+
+    <li class="sidenav-item">
+      <a href="<%= communication_footers_path %>" class="sidenav-link "><%= CommunicationFooter.model_name.human(count: 2) %></a>  		
+    </li>
+  </ul>
+</li>

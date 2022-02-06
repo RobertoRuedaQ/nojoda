@@ -1,0 +1,1005 @@
+@-webkit-keyframes plyr-progress {
+  to {
+    background-position: 15px 0;
+  }
+}
+@keyframes plyr-progress {
+  to {
+    background-position: 15px 0;
+  }
+}
+/* line 20, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr {
+  position: relative;
+  max-width: 100%;
+  min-width: 200px;
+  font-family: Avenir, "Avenir Next", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  direction: ltr;
+}
+/* line 30, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr,
+.plyr *,
+.plyr *::after,
+.plyr *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/* line 40, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr a,
+.plyr button,
+.plyr input,
+.plyr label {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+/* line 49, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr:focus {
+  outline: 0;
+}
+/* line 54, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr video,
+.plyr audio {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: inherit;
+}
+/* line 64, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"] {
+  display: block;
+  height: 17.5px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+/* line 78, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  -webkit-user-select: none;
+          user-select: none;
+}
+/* line 81, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -5px;
+  position: relative;
+  height: 14px;
+  width: 14px;
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 100%;
+  -webkit-transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
+  transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
+  transition: background .2s ease, border .2s ease, transform .2s ease;
+  transition: background .2s ease, border .2s ease, transform .2s ease, -webkit-transform .2s ease;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/* line 88, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]::-moz-range-track {
+  height: 4px;
+  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  -moz-user-select: none;
+       user-select: none;
+}
+/* line 91, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]::-moz-range-thumb {
+  position: relative;
+  height: 14px;
+  width: 14px;
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 100%;
+  -webkit-transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
+  transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
+  transition: background .2s ease, border .2s ease, transform .2s ease;
+  transition: background .2s ease, border .2s ease, transform .2s ease, -webkit-transform .2s ease;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+/* line 96, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]::-ms-track {
+  height: 4px;
+  background: transparent;
+  border: 0;
+  color: transparent;
+}
+/* line 102, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]::-ms-fill-upper {
+  height: 4px;
+  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  -ms-user-select: none;
+      user-select: none;
+}
+/* line 105, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]::-ms-fill-lower {
+  height: 4px;
+  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  -ms-user-select: none;
+      user-select: none;
+  background: #3498db;
+}
+/* line 109, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]::-ms-thumb {
+  position: relative;
+  height: 14px;
+  width: 14px;
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 100%;
+  -webkit-transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
+  transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
+  transition: background .2s ease, border .2s ease, transform .2s ease;
+  transition: background .2s ease, border .2s ease, transform .2s ease, -webkit-transform .2s ease;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  margin-top: 0;
+}
+/* line 114, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]::-ms-tooltip {
+  display: none;
+}
+/* line 119, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]:focus {
+  outline: 0;
+}
+/* line 122, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+/* line 125, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"].tab-focus:focus {
+  outline-offset: 3px;
+}
+/* line 131, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]:active::-webkit-slider-thumb {
+  background: #3498db;
+  border-color: #fff;
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+/* line 134, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]:active::-moz-range-thumb {
+  background: #3498db;
+  border-color: #fff;
+  transform: scale(1.25);
+}
+/* line 137, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr input[type="range"]:active::-ms-thumb {
+  background: #3498db;
+  border-color: #fff;
+  transform: scale(1.25);
+}
+
+/* line 145, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--video input[type="range"].tab-focus:focus {
+  outline: 1px dotted rgba(255, 255, 255, 0.5);
+}
+
+/* line 150, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--audio input[type="range"].tab-focus:focus {
+  outline: 1px dotted rgba(86, 93, 100, 0.5);
+}
+
+/* line 155, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  position: absolute !important;
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+}
+
+/* line 176, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__video-wrapper {
+  position: relative;
+  background: #000;
+  border-radius: inherit;
+}
+
+/* line 183, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__video-embed {
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 0;
+}
+/* line 192, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__video-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/* line 203, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__video-embed > div {
+  position: relative;
+  padding-bottom: 200%;
+  -webkit-transform: translateY(-35.95%);
+          transform: translateY(-35.95%);
+}
+
+/* line 210, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr .plyr__video-embed iframe {
+  pointer-events: none;
+}
+
+/* line 217, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr video::-webkit-media-text-track-container {
+  display: none;
+}
+
+/* line 220, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__captions {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+/* line 234, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__captions span {
+  border-radius: 2px;
+  padding: 3px 10px;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  line-height: 150%;
+}
+/* line 241, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__captions span:empty {
+  display: none;
+}
+@media (min-width: 768px) {
+  /* line 220, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+  .plyr__captions {
+    font-size: 24px;
+  }
+}
+
+/* line 249, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--captions-active .plyr__captions {
+  display: block;
+}
+
+/* line 252, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--hide-controls .plyr__captions {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+}
+
+@media (min-width: 1024px) {
+  /* line 257, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+  .plyr--fullscreen-active .plyr__captions {
+    font-size: 32px;
+  }
+}
+/* line 265, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr ::-webkit-media-controls {
+  display: none;
+}
+
+/* line 270, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1;
+  text-align: center;
+  pointer-events: none;
+}
+/* line 277, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls > * {
+  pointer-events: all;
+}
+/* line 282, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls > button,
+.plyr__controls .plyr__progress,
+.plyr__controls .plyr__time {
+  margin-left: 5px;
+}
+/* line 287, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls > button:first-child,
+.plyr__controls .plyr__progress:first-child,
+.plyr__controls .plyr__time:first-child {
+  margin-left: 0;
+}
+/* line 291, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls .plyr__volume {
+  margin-left: 5px;
+}
+/* line 294, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls [data-plyr="pause"] {
+  margin-left: 0;
+}
+/* line 299, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls button {
+  position: relative;
+  display: inline-block;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  overflow: visible;
+  vertical-align: middle;
+  padding: 7px;
+  border: 0;
+  background: transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+  color: inherit;
+}
+/* line 313, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls button svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: currentColor;
+}
+/* line 321, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls button:focus {
+  outline: 0;
+}
+/* line 327, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls .icon--exit-fullscreen,
+.plyr__controls .icon--muted,
+.plyr__controls .icon--captions-on {
+  display: none;
+}
+@media (min-width: 480px) {
+  /* line 334, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+  .plyr__controls > button,
+  .plyr__controls .plyr__progress,
+  .plyr__controls .plyr__time {
+    margin-left: 10px;
+  }
+}
+
+/* line 342, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--hide-controls .plyr__controls {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* line 348, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--video .plyr__controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 50px 10px 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  color: #fff;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+/* line 365, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--video .plyr__controls button.tab-focus:focus, .plyr--video .plyr__controls button:hover {
+  background: #3498db;
+  color: #fff;
+}
+
+/* line 374, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--audio .plyr__controls {
+  padding: 10px;
+  border-radius: inherit;
+  background: transparent;
+  border: none;
+  color: #565D64;
+}
+/* line 383, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover {
+  background: #3498db;
+  color: #fff;
+}
+
+/* line 392, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__play-large {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 10px;
+  background: #3498db;
+  border: 4px solid currentColor;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+/* line 407, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__play-large svg {
+  position: relative;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: currentColor;
+}
+/* line 416, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__play-large:focus {
+  outline: 1px dotted rgba(255, 255, 255, 0.5);
+}
+
+/* line 420, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr .plyr__play-large {
+  display: inline-block;
+}
+
+/* line 423, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--audio .plyr__play-large {
+  display: none;
+}
+
+/* line 426, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--playing .plyr__play-large {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* line 432, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls [data-plyr="pause"],
+.plyr--playing .plyr__controls [data-plyr="play"] {
+  display: none;
+}
+
+/* line 436, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--playing .plyr__controls [data-plyr="pause"] {
+  display: inline-block;
+}
+
+/* line 441, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--fullscreen-active .icon--exit-fullscreen,
+.plyr--muted .plyr__controls .icon--muted,
+.plyr--captions-active .plyr__controls .icon--captions-on {
+  display: block;
+}
+/* line 446, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--fullscreen-active .icon--exit-fullscreen + svg,
+.plyr--muted .plyr__controls .icon--muted + svg,
+.plyr--captions-active .plyr__controls .icon--captions-on + svg {
+  display: none;
+}
+
+/* line 452, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr [data-plyr="captions"],
+.plyr [data-plyr="fullscreen"] {
+  display: none;
+}
+
+/* line 456, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--captions-enabled [data-plyr="captions"],
+.plyr--fullscreen-enabled [data-plyr="fullscreen"] {
+  display: inline-block;
+}
+
+/* line 463, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__tooltip {
+  position: absolute;
+  z-index: 2;
+  bottom: 100%;
+  margin-bottom: 10px;
+  padding: 5px 7.5px;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.3;
+  -webkit-transform: translate(-50%, 10px) scale(0.8);
+          transform: translate(-50%, 10px) scale(0.8);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  -webkit-transition: opacity 0.2s 0.1s ease, -webkit-transform 0.2s 0.1s ease;
+  transition: opacity 0.2s 0.1s ease, -webkit-transform 0.2s 0.1s ease;
+  transition: transform 0.2s 0.1s ease, opacity 0.2s 0.1s ease;
+  transition: transform 0.2s 0.1s ease, opacity 0.2s 0.1s ease, -webkit-transform 0.2s 0.1s ease;
+}
+/* line 483, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__tooltip::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: -4px;
+  border-right: 4px solid transparent;
+  border-top: 4px solid rgba(0, 0, 0, 0.7);
+  border-left: 4px solid transparent;
+  z-index: 2;
+}
+
+/* line 500, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr button:hover .plyr__tooltip,
+.plyr button.tab-focus:focus .plyr__tooltip,
+.plyr__tooltip--visible {
+  opacity: 1;
+  -webkit-transform: translate(-50%, 0) scale(1);
+          transform: translate(-50%, 0) scale(1);
+}
+
+/* line 506, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr button:hover .plyr__tooltip {
+  z-index: 3;
+}
+
+/* line 511, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls button:first-child .plyr__tooltip {
+  left: 0;
+  -webkit-transform: translate(0, 10px) scale(0.8);
+          transform: translate(0, 10px) scale(0.8);
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+/* line 516, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls button:first-child .plyr__tooltip::before {
+  left: 16px;
+}
+
+/* line 522, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls button:last-child .plyr__tooltip {
+  right: 0;
+  -webkit-transform: translate(0, 10px) scale(0.8);
+          transform: translate(0, 10px) scale(0.8);
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+}
+/* line 527, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls button:last-child .plyr__tooltip::before {
+  left: auto;
+  right: 16px;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+/* line 536, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__controls button:first-child:hover .plyr__tooltip, .plyr__controls button:first-child.tab-focus:focus .plyr__tooltip,
+.plyr__controls button:first-child .plyr__tooltip--visible,
+.plyr__controls button:last-child:hover .plyr__tooltip,
+.plyr__controls button:last-child.tab-focus:focus .plyr__tooltip,
+.plyr__controls button:last-child .plyr__tooltip--visible {
+  -webkit-transform: translate(0, 0) scale(1);
+          transform: translate(0, 0) scale(1);
+}
+
+/* line 546, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress {
+  display: none;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+/* line 551, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress input[type="range"] {
+  position: relative;
+  z-index: 2;
+}
+/* line 555, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress input[type="range"]::-webkit-slider-runnable-track {
+  background: transparent;
+}
+/* line 558, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress input[type="range"]::-moz-range-track {
+  background: transparent;
+}
+/* line 561, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress input[type="range"]::-ms-fill-upper {
+  background: transparent;
+}
+/* line 567, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress .plyr__tooltip {
+  left: 0;
+}
+
+/* line 571, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr .plyr__progress {
+  display: inline-block;
+}
+
+/* line 575, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--buffer,
+.plyr__progress--played,
+.plyr__volume--display {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  margin: -2px 0 0;
+  padding: 0;
+  vertical-align: top;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border-radius: 100px;
+}
+/* line 590, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--buffer::-webkit-progress-bar,
+.plyr__progress--played::-webkit-progress-bar,
+.plyr__volume--display::-webkit-progress-bar {
+  background: transparent;
+}
+/* line 593, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--buffer::-webkit-progress-value,
+.plyr__progress--played::-webkit-progress-value,
+.plyr__volume--display::-webkit-progress-value {
+  background: currentColor;
+  border-radius: 100px;
+  min-width: 4px;
+}
+/* line 598, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--buffer::-moz-progress-bar,
+.plyr__progress--played::-moz-progress-bar,
+.plyr__volume--display::-moz-progress-bar {
+  background: currentColor;
+  border-radius: 100px;
+  min-width: 4px;
+}
+/* line 603, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--buffer::-ms-fill,
+.plyr__progress--played::-ms-fill,
+.plyr__volume--display::-ms-fill {
+  border-radius: 100px;
+}
+
+/* line 607, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--played,
+.plyr__volume--display {
+  z-index: 1;
+  color: #3498db;
+  background: transparent;
+  -webkit-transition: none;
+  transition: none;
+}
+/* line 614, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--played::-webkit-progress-value,
+.plyr__volume--display::-webkit-progress-value {
+  min-width: 4px;
+  max-width: 99%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-transition: none;
+  transition: none;
+}
+/* line 621, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--played::-moz-progress-bar,
+.plyr__volume--display::-moz-progress-bar {
+  min-width: 4px;
+  max-width: 99%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -webkit-transition: none;
+  transition: none;
+}
+/* line 628, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--played::-ms-fill,
+.plyr__volume--display::-ms-fill {
+  display: none;
+}
+
+/* line 633, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--buffer::-webkit-progress-value {
+  -webkit-transition: width 0.2s ease;
+  transition: width 0.2s ease;
+}
+/* line 636, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--buffer::-moz-progress-bar {
+  -webkit-transition: width 0.2s ease;
+  transition: width 0.2s ease;
+}
+/* line 639, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__progress--buffer::-ms-fill {
+  -webkit-transition: width 0.2s ease;
+  transition: width 0.2s ease;
+}
+
+/* line 643, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--video .plyr__progress--buffer,
+.plyr--video .plyr__volume--display {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* line 647, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--video .plyr__progress--buffer {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* line 650, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--audio .plyr__progress--buffer,
+.plyr--audio .plyr__volume--display {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* line 654, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--audio .plyr__progress--buffer {
+  color: rgba(0, 0, 0, 0.1);
+}
+
+/* line 659, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--loading .plyr__progress--buffer {
+  -webkit-animation: plyr-progress 1s linear infinite;
+          animation: plyr-progress 1s linear infinite;
+  background-size: 15px 15px;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent);
+  color: transparent;
+}
+
+/* line 675, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--video.plyr--loading .plyr__progress--buffer {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* line 678, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--audio.plyr--loading .plyr__progress--buffer {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* line 684, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__time {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+/* line 690, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__time + .plyr__time {
+  display: none;
+}
+@media (min-width: 768px) {
+  /* line 690, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+  .plyr__time + .plyr__time {
+    display: inline-block;
+  }
+}
+/* line 698, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__time + .plyr__time::before {
+  content: "\2044";
+  margin-right: 10px;
+}
+
+/* line 706, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr__volume {
+  display: none;
+}
+
+/* line 709, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr .plyr__volume {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+}
+/* line 713, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr .plyr__volume input[type="range"] {
+  position: relative;
+  z-index: 2;
+}
+@media (min-width: 480px) {
+  /* line 709, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+  .plyr .plyr__volume {
+    display: block;
+    max-width: 60px;
+  }
+}
+@media (min-width: 768px) {
+  /* line 709, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+  .plyr .plyr__volume {
+    max-width: 100px;
+  }
+}
+
+/* line 729, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--is-ios .plyr__volume,
+.plyr--is-ios [data-plyr="mute"] {
+  display: none !important;
+}
+
+/* line 736, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--fullscreen-active {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  border-radius: 0 !important;
+}
+/* line 742, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--fullscreen-active video {
+  height: 100%;
+}
+/* line 745, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--fullscreen-active .plyr__video-wrapper {
+  height: 100%;
+  width: 100%;
+}
+/* line 749, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--fullscreen-active .plyr__video-embed {
+  overflow: visible;
+}
+/* line 755, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--fullscreen-active.plyr--vimeo .plyr__video-wrapper {
+  height: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/* line 763, /home/lumni/Documentos/platform-4.0/node_modules/plyr/src/scss/plyr.scss */
+.plyr--fullscreen-fallback.plyr--fullscreen-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000000;
+}
+
+/* line 16, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+.plyr--audio .plyr__controls {
+  padding: 0;
+}
+
+/* line 21, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+[dir=rtl] .plyr {
+  direction: rtl;
+}
+/* line 25, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+[dir=rtl] .plyr__play-large {
+  -webkit-transform: translate(-50%, -50%) scaleX(-1);
+          transform: translate(-50%, -50%) scaleX(-1);
+}
+/* line 29, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+[dir=rtl] .plyr__controls > button svg {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+/* line 33, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+[dir=rtl] .plyr__controls > button,
+[dir=rtl] .plyr__controls .plyr__progress,
+[dir=rtl] .plyr__controls .plyr__time {
+  margin-right: 5px;
+  margin-left: 0;
+}
+/* line 39, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+[dir=rtl] .plyr__controls > button:first-child,
+[dir=rtl] .plyr__controls .plyr__progress:first-child,
+[dir=rtl] .plyr__controls .plyr__time:first-child {
+  margin-right: 0;
+}
+/* line 44, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+[dir=rtl] .plyr__controls .plyr__volume {
+  margin-right: 5px;
+  margin-left: 0;
+}
+/* line 49, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+[dir=rtl] .plyr__controls [data-plyr="pause"] {
+  margin-right: 0;
+}
+@media (min-width: 480px) {
+  /* line 54, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+  [dir=rtl] .plyr__controls > button,
+  [dir=rtl] .plyr__controls .plyr__progress,
+  [dir=rtl] .plyr__controls .plyr__time {
+    margin-right: 10px;
+    margin-left: 0;
+  }
+}
+/* line 64, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+[dir=rtl] .plyr__progress--played::-webkit-progress-value,
+[dir=rtl] .plyr__volume--display::-webkit-progress-value {
+  border-radius: 100px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* line 70, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+[dir=rtl] .plyr__progress--played::-moz-progress-bar,
+[dir=rtl] .plyr__volume--display::-moz-progress-bar {
+  border-radius: 100px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/* line 77, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+[dir=rtl] .plyr__time + .plyr__time {
+  display: none;
+}
+@media (min-width: 768px) {
+  /* line 77, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+  [dir=rtl] .plyr__time + .plyr__time {
+    display: inline-block;
+  }
+}
+/* line 84, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+[dir=rtl] .plyr__time + .plyr__time::before {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* line 94, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+.default-style .plyr {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+/* line 98, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+.default-style .plyr--audio .plyr__progress--buffer {
+  color: rgba(24, 28, 33, 0.1);
+}
+/* line 101, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+.default-style .plyr--audio.plyr--loading .plyr__progress--buffer {
+  background-color: rgba(24, 28, 33, 0.1);
+}
+/* line 105, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+.default-style .plyr__tooltip {
+  font-size: 0.6rem;
+  line-height: 1.2;
+}
+
+/* line 114, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+.material-style .plyr {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+/* line 118, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+.material-style .plyr--audio .plyr__progress--buffer {
+  color: rgba(24, 28, 33, 0.1);
+}
+/* line 121, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+.material-style .plyr--audio.plyr--loading .plyr__progress--buffer {
+  background-color: rgba(24, 28, 33, 0.1);
+}
+/* line 125, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/plyr/plyr.scss */
+.material-style .plyr__tooltip {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}

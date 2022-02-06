@@ -1,0 +1,4 @@
+
+
+<%= form_title(@check_mode, 'check_field') %> 
+<%= build_form(@check_mode,'update',current_user.template('CheckMode','check_modes',current_user),html: { class: 'form-group', method: 'put'}) %>

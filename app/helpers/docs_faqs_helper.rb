@@ -1,0 +1,2 @@
+module DocsFaqsHelper
+end

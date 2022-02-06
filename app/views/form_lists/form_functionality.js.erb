@@ -1,0 +1,14 @@
+$('#list-selected-option').html("<%= j render 'form_lists/partial/form_functionality' %>")
+
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+
+
+$('#list_type_functionality_').on('change',function(){
+	createFormListFunctionalityTable($(this).val())
+})
+
+
+
+
+

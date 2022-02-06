@@ -1,0 +1,8 @@
+if($('#section-body-<%= @questionnaire.id%>').attr('loaded') =='false'){
+	$('#section-body-<%= @questionnaire.id%>').html('<%= j createSectionBodyQuestionnaire(@questionnaire.id) %>')
+	$('#section-body-<%= @questionnaire.id%>').attr('loaded','true')
+	validate_numeric_fields();
+	setDeleteAlert();
+	setAllSortable();
+	setArrowCollapse()
+}

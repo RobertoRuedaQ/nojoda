@@ -1,0 +1,131 @@
+<%= @pending_info %>
+<% if !@user_questionnaire.application_id.nil? %>
+  <% application = @user_questionnaire.application %>
+<% else %>
+  <% application = @user_questionnaire.resource.active_application %>
+<% end %>
+<% modules = application.resource.modules_and_sections.where(origination_sections: {visible_in_review_questionnaire: true}) %>
+<% @full_student = application.user %>
+<% current_module_number = application.current_module_number %>
+<%questionnaire_category = @user_questionnaire.questionnaire.category %>
+<% show_application_info = (questionnaire_category == 'review') %>
+
+
+<% notes_validation = ['interview','review'].include?(questionnaire_category) %>
+<!-- Header -->
+<div class="border-right-0 border-left-0 ui-bordered container-m--x mb-2">
+  <div class="row no-gutters row-bordered row-border-light">
+    <div class="col-md-9">
+      <div class="media-body container-p-x py-2">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div><strong class="text-primary text-large"><%= @user_questionnaire.percentage_progress  %> %</strong> completed</div>
+          <div class="text-muted small"><%= I18n.t('questionnaire.survey_status',answered_questions_number: @user_questionnaire.questions_anwered.count, total_questions_number: @user_questionnaire.all_questions.count) %></div>
+        </div>
+        <div class="progress" style="height: 4px;">
+          <div class="progress-bar" style="width: <%= @user_questionnaire.percentage_progress  %>%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <% if !@user_questionnaire.end_time.nil?  %>
+        <div class="container-p-x py-4">
+          <div class="text-muted small"><%= I18n.t('questionnaire.remaining_time') %></div>
+          <strong class="text-success text-big"><div id="test-timer" deadline="<%= @user_questionnaire.end_time %>"></div></strong>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <!-- Application section to review -->
+  <% if show_application_info %>
+    <div class="col-md-8 my-2">
+      <div class="accordion" id="review-accordion">
+        <div class="card">
+          <div class="card-header" id="application-info-review">
+            <h2 class="mb-0 d-flex flex-column">
+              <button class="btn btn-primary  collapsed" type="button" data-toggle="collapse" data-target="#application-info-accordion-review" aria-expanded="false" aria-controls="application-info-accordion-review">
+                <%= Application.model_name.human(count: 2) %>
+              </button>
+            </h2>
+          </div>
+          <div id="application-info-accordion-review" class="collapse" aria-labelledby="application-info-review" data-parent="#review-accordion">
+            <div class="card-body p-0">
+              <div class="px-2">
+                <% modules.each_with_index do |m,index| %>
+                  <div class="card">
+                    <div class="card-body p-0">
+                      <% if index < current_module_number %>
+                        <%= generate_application_sections m, application %>
+                      <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="<%= show_application_info ? 'col-md-4' : 'offset-md-3 col-md-6' %> p-1">
+
+    <%= form_tag save_answers_user_questionnaire_answer_path(@user_questionnaire) do%>
+    	<% @order_array.each do |question_id| %>
+        <% question = Question.cached_find(question_id) %>
+
+
+          <!-- Show regular questions sections -->
+    				<div class="card my-1">
+    					<div class="card-body py-1">
+
+
+    						<h5 class="mb-3 mt-1"><%= question.question %></h5>
+
+                  <% if question.illustration.attached? %>
+                    <div class="text-center my-3">
+                      <%= image_tag(question.illustration.variant(resize: 'x200').processed.image) %>
+                    </div>
+                  <% end %>
+               
+    						<% question.answer.each do |answer|%>
+    							<div class="form-check">
+                    <%= radio_button("answer", question.id,answer.id, value: answer.id,checked:  @user_questionnaire.answered?(answer),class: 'form-check-input my-1',required: true, id: "answer_#{answer.id}") %>
+                    <%= label_tag "answer_#{answer.id}", answer.answer, class: 'form-check-label my-1' %>
+    							</div>
+    						<% end %>
+
+                <% if notes_validation %>
+
+                  <% @previous_notes = @user_questionnaire.selected_answer(question).present?  ? @user_questionnaire.selected_answer(question).notes  : nil %>
+                  <h5 class="mb-3 mt-1"><%= I18n.t('general.notes') %></h5>
+                  <%= lumni_textarea_field('notes',question.id.to_s,{required: true,value: @previous_notes}) %>
+                <% end %>
+    					</div>
+    				</div>
+
+    	<%end%>
+
+
+      <% if notes_validation %>
+        <% unless questionnaire_category == 'interview' %>
+        <div id="review-finalize-review-button" class="row my-4">
+          <div class="col">
+            <%= lumni_boolean_field 'review','score',{} %>
+            <%= label_tag "review_score", I18n.t('general.finalize_review'), class: 'form-check-label' %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+
+    	<div class="text-center">
+        <%= button_tag I18n.t('general.save_and_continue'), type: 'submit', class: 'btn btn-primary my-5',data: { disable_with: I18n.t('form.please_wait')} %>
+    	</div>
+    <%end%>
+  </div>
+</div>

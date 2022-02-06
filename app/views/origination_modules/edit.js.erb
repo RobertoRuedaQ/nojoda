@@ -1,0 +1,6 @@
+$('#OriginationEditionModal').html("<%= j build_form(@origination_module,'update',current_user.template('OriginationModule','origination_modules',current_user),html: { class: 'form-group', method: 'patch'},destroy: false,dismiss: '#OriginationEditionModal',remote: true, buttonOffset: 1, header_title: false) %>")
+$('#originationModal').modal('show')
+$(".selectpicker").selectpicker( 'destroy', true ).addClass('selectpicker')
+$(".selectpicker").selectpicker();
+
+lumni_jodit()

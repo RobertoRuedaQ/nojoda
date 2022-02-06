@@ -1,0 +1,82 @@
+en:
+  application:
+    migrated: Migrated
+    request_general_info: 'Submit the information'
+    form: 'INFORMATION'
+    legal_document: 'LEGAL DOCUMENTS'
+    questionnaire: 'TESTS'
+    submit_application: 'SUBMIT APPLICATION'
+    submit_your_application: 'Submit Your Application Information'
+    submit_application_test: 'Click the button below to submit your application. Once you submit your application, you may not be able to modify your information. Please check your information accuracy before submit.'
+    submit_academic_info: 'Submit Academic Information'
+    add_new_academic: 'Add New Academic Record'
+    school_explanation: 'You need to add at least one academic record for your school history to move forward.'
+    university_explanation: 'You need to add at least one academic record for your university history to be funded to move forward.'
+    academic_institution_name: 'Institution Name'
+    level: 'Level'
+    major: 'Major'
+    status: 'Status'
+    submit_information: 'Submit Information'
+    do_you_have_children: 'Do You Have Children?'
+    school_continue: 'If you already finalized creating records for this section, continue by clicking the next button.'
+    university_continue: 'If you already finalized creating records for this section, continue by clicking the next button.'
+    funding_request: 'Funding Request'
+    add_new_child: 'Add new child information'
+    add_new_debt: 'Create Debt Record'
+    last_change_by: 'Changed by'
+    last_change_at: 'Changed at'
+    children_information: 'Children Information'
+    review_application: 'Review Application'
+    application_history: 'Application History'
+    disbursement_details: 'Details'
+    tuition: 'Tuition'
+    living_expenses: 'Living Expenses'
+    add_new_income_information: 'Add New Income Record'
+    request_disbursement: 'Request Disbursement'
+    request_disbursement_text: 'Click the button below to request the disbursement.'
+    request_disbursement_submitted: 'We are reviewing your disbursement request.'
+    under_review: 'Under Review'
+    request_funding_opportunity: 'Submit your application'
+    request_funding_opportunity_text: 'Click the button below to submit your application.'
+    request_funding_opportunity_submitted: 'You had successfully submited your information.'
+    request_income_information: 'Send your new income information'
+    request_income_information_text: 'Click the button below to submit your information.'
+    request_income_information_submitted: 'You had successfully submited your information.'
+    token_description_text: "This funding opportunity's target is preselected students. If you received a token, write it in the following verification field."
+    changes_request: 'Changes Request'
+    request_payment: 'Request payment'
+    request_payment_text: 'Click the button below to request the payment validation.'
+    request_payment_submitted: 'We are reviewing your payment request.'
+    academic_bonus: 'Academic Bonus'
+    request_grades: 'Request Grades'
+    request_cancellation_request: 'Send your new cancellation information'
+    request_cancellation_request_text: 'Click the button below to submit your information.'
+    request_cancellation_request_submitted: 'You had successfully submited your information.'
+    request_conciliation_information: 'Send your new conciliation information'
+    request_conciliation_information_text: 'Click the button below to submit your information.'
+    request_conciliation_information_submitted: 'You had successfully submited your information.'
+    origination: Origination
+    disbursement_request: Disbursement Request
+    courses: Courses
+    partial_scores: Partial Scores
+    final_scores: Final Scores
+    cancellation_request: Cancellation Request
+    add_disbursement_modeling: Add disbursement modeling
+    diploma_delivery: Diploma Delivery
+    funded_major: Funded major
+    covid: Covid
+    manual_payment: Manual payment
+    income_information: Income information
+    conciliation: Conciliation
+    withdrawn_application: Withdrawn Application
+    evaluate: 'Evaluate'
+    request_student_financial_information: 'Send the request of changes for your financial information'
+    request_student_financial_information_text: 'Click in the button to send the request.'
+    request_personal_information: 'Send the request of changes for your personal information'
+    request_personal_information_text: 'Click in the button to send the request.'
+    request_location: 'Send the request of changes for your location'
+    request_location_text: 'Click in the button to send the request.'
+    request_contact_info: 'Send the request of changes for your contact information'
+    request_contact_info_text: 'Click in the button to send the request.'
+    request_student: 'Send the request of changes for your information'
+    request_student_text: 'Click in the button to send the request.'

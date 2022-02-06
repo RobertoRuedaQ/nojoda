@@ -1,0 +1,210 @@
+<div class="nav-tabs-top mb-4">
+  <ul class="nav nav-tabs">
+    <% target_student.active_isa.each_with_index do |isa| %>
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#navs-top-home">
+          <div class="d-flex align-items-center mx-2">
+            <div class="lnr lnr-license display-4 text-success"></div>
+            <div class="ml-3">
+              <div class="text-muted "><%= Isa.model_name.human(count: 1) %></div>
+              <div class="text-large"><%= isa.fund.name %></div>
+              <div class="small text-secondry"><%= isa.funding_opportunity.name %></div>
+            </div>
+          </div>
+        </a>
+      </li>
+    <% end %>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#navs-funded-major">
+        <div class="d-flex align-items-center mx-2">
+          <div class="lnr lnr-graduation-hat display-4 text-success"></div>
+          <div class="ml-3">
+            <div class="text-muted "><%= I18n.t('academic.funded_major') %></div>
+            <div class="text-large"><%=properName target_student.funded_academic_information.institution.name %></div>
+            <div class="small text-secondry"><%= properName target_student.funded_academic_information.major.name %></div>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#income-information-tab">
+        <div class="d-flex align-items-center mx-2">
+          <div class="lnr lnr-laptop display-4 text-success"></div>
+          <div class="ml-3">
+            <div class="text-muted "><%= I18n.t('income_information.total_income') %></div>
+            <div class="text-large"><%= lumni_currency target_student.total_income %></div>
+            <div class="small text-secondry"><%= lumni_short_date target_student.income_information.pluck(:start_date).compact.min %></div>
+          </div>
+        </div>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#social-work-tab">
+        <div class="d-flex align-items-center mx-2">
+          <div class="lnr  lnr-hand display-4 text-success"></div>
+          <div class="ml-3">
+            <div class="text-muted "><%= I18n.t('students.social_work') %></div>
+            <div class="text-large"><%= target_student.social_work.size %></div>
+            <div class="small text-secondry"><%= I18n.t('students.experiences') %></div>
+          </div>
+        </div>
+      </a>
+    </li>
+
+    <% if target_student.has_complementary_activities? %>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#complementary-activities-tab">
+          <div class="d-flex align-items-center mx-2">
+            <div class="lnr lnr-pencil display-4 text-success"></div>
+            <div class="ml-3">
+              <div class="text-muted "><%= I18n.t('complementary_activity.workshop_and_mentorship') %></div>
+              <div class="text-large">.</div>
+              <div class="small text-secondry">.</div>
+            </div>
+          </div>
+        </a>
+      </li>
+    <% end %>
+
+  </ul>
+
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="navs-top-home">
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-md-12 mb-2">
+            <% target_student.active_isa.each_with_index do |isa| %>
+
+              <%= render '/applicants/partial/funding_option_card', funding_option: isa.funding_option,grid_main: 12, disbursement_grid: 6 , disbursements_hash: lumni_disbursement_hash(isa.funding_option.disbursement,['forcasted_date','student_value','disbursement_case','request','status']),disbuserment_text: true,general_card: false,billing_document_card: true, isa: isa%>
+            <% end %>
+          </div>
+
+          
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="navs-funded-major">
+
+        <div class="card-body">
+          <div class="row">
+            <% academic_origination = target_student.funding_opportunities.first.academi_origination %>
+            <% submitted_applications = target_student.funded_academic_information.academic_request.joins(:application).where(applications: { status: 'submitted'}).pluck(:request_case) %>
+            <% ['courses','partial_scores','final_scores','diploma_delivery'].each do |academic_case| %>
+              <% if !academic_origination.send(academic_case).nil? %>
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5><%= I18n.t("academic.edit_#{academic_case}") %></h5>
+                      <p><%= I18n.t("academic.edit_#{academic_case}_text") %></p>
+                      <div class="text-center my-4">
+
+                        <% if !submitted_applications.include?(academic_case) %>
+                          <%= button_to I18n.t('general.edit'),start_origination_academic_request_path(target_student.funded_academic_information,params: {request_case: academic_case}), class: 'btn btn-primary'%>
+                        <% else %>
+                          <div class="card">
+                            <div class="card-body bg-info text-white text-center">
+                              <%= I18n.t('application.under_review') %>
+                            </div>
+                          </div>
+                        <% end %>
+
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+      </div>
+    </div>
+
+
+
+    <div class="tab-pane fade" id="complementary-activities-tab">
+      <%= render '/mains/partials/academy_and_mentorship' %>
+
+    </div>
+
+
+    <div class="tab-pane fade" id="income-information-tab">
+      <div class="card-body">
+
+
+
+
+
+
+
+        <div class="mt-2">
+          <% target_fields = []%>
+
+            <table class="table table-striped mx-2 mt-4">
+              <thead>
+                <% income_information_student_header_table.each do |field| %>
+                  <th><%= field %></th>
+                <% end %>
+              </thead>
+              <tbody>
+                <% income_information_student_rows_table( target_student.income_information).each do |row| %>
+                  <tr>
+                    <% row.each do |field| %>
+                      <td><%= field %></td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          
+        </div>
+
+        <% if target_student.income_under_review.count > 0 %>
+          <% target_student.income_under_review.each do | income | %>
+            <div class="card m-0">
+              <div class="card-body m-0 py-4 bg-info text-white">
+                <h5 class="my-2"><%= I18n.t('income_information.reviewing_income_creation') %></h5>
+              </div>
+            </div>
+          <% end %>
+        <% elsif target_student.income_active_application.count > 0 %>
+          <% target_student.income_active_application.each do |income| %>
+            <div class="card">
+              <div class="card-body m-0 py-4 bg-info text-white">
+                <div class="d-flex justify-content-between">
+                  <h5 class="my-2"><%= I18n.t('income_information.continue_income_creation') %></h5>
+                  <div class="py-2">
+                    <%= link_to I18n.t('general.continue'), edit_application_path(income.application), class: 'btn btn-white text-info' %>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+        <% else %>
+          <div class="text-center py-4">
+            <%= button_to I18n.t('income_information.new_income'), create_application_income_informations_path, class: 'btn btn-primary', data: { disable_with: I18n.t('form.please_wait')} %>
+          </div>
+        <% end %>
+
+
+
+      </div>
+    </div>
+
+
+    <div class="tab-pane fade" id="social-work-tab">
+      <%= render "students/partial/social_work", student: target_student %>
+      <div class="text-center py-4">
+        <%= link_to I18n.t('income_information.new_income'), new_social_work_path(user_id: target_student.id), class: 'btn btn-primary', data: { disable_with: I18n.t('form.please_wait')} %>
+      </div>
+    </div>
+  </div>
+</div>

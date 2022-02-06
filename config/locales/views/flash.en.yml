@@ -1,0 +1,15 @@
+en:
+  flash:
+    record_updated: 'We just updated your record!'
+    record_created: 'We just created your record!'
+    record_failed: 'We could not complete your request'
+    record_discarded: 'We just destroyed the selected record'
+    record_unauthorized: 'You are not authorized to access this area.'
+    record_approval_request: 'You request for approval was saved.'
+    record_approved: 'Record Approved'
+    record_rejected: 'Record Rejected'
+    record_canceled: 'Record Canceled'
+    record_reasigned: 'Record Reasigned'
+    email_sent: 'Email Sent'
+    diploma_requested: 'The mail was sent and the follow-up case was created successfully'
+    no_available_for_disbursement: 'You have a delinquent balance, contact your student manager'      

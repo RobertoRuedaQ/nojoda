@@ -1,0 +1,151 @@
+
+
+<!-- `.messages-wrapper` fills all available space of container -->
+<div class="messages-wrapper">
+
+  <!-- Messages sidebox -->
+  <div class="messages-sidebox messages-scroll">
+
+    <div class="py-3 px-4">
+      <div class="media align-items-center">
+        <div class="media-body">
+          <button type="button" class="btn btn-primary btn-block">Compose</button>
+        </div>
+        <a href="javascript:void(0)" class="messages-sidebox-toggler d-lg-none d-block text-muted text-large font-weight-light pl-4">&times;</a>
+      </div>
+    </div>
+    <hr class="border-light mx-4 mt-0 mb-4">
+
+    <!-- Mail boxes -->
+    <a href="javascript:void(0)" class="d-flex justify-content-between align-items-center text-dark font-weight-bold py-2 px-4">
+      <div>
+        <i class="ion ion-ios-filing"></i> &nbsp; Inbox
+      </div>
+      <div class="badge badge-primary"><%= @target_user.communication_user.size %></div>
+    </a>
+    <!-- / Mail boxes -->
+
+    <hr class="border-light m-4">
+
+    <!-- Labels -->
+    <h6 class="text-tiny font-weight-bold px-4">LABELS</h6>
+    <a href="javascript:void(0)" class="d-block text-muted py-1 px-4">
+      <span class="badge badge-dot badge-success"></span> &nbsp; Notification
+    </a>
+    <a href="javascript:void(0)" class="d-block text-muted py-1 px-4">
+      <span class="badge badge-dot badge-danger"></span> &nbsp; Legal Documents
+    </a>
+    <a href="javascript:void(0)" class="d-block text-muted py-1 px-4">
+      <span class="badge badge-dot badge-info"></span> &nbsp; Statements
+    </a>
+    <a href="javascript:void(0)" class="d-block text-muted py-1 px-4">
+      <span class="badge badge-dot badge-warning"></span> &nbsp; Other
+    </a>
+    <!-- / Labels -->
+
+  </div>
+  <!-- / Messages sidebox -->
+
+  <!-- Messages content wrapper -->
+  <div class="d-flex flex-column w-100">
+
+    <!-- Header -->
+    <div class="flex-grow-0">
+
+      <h4 class="media align-items-center font-weight-bold container-p-x py-3 py-lg-4 m-0">
+        <a href="javascript:void(0)" class="messages-sidebox-toggler d-lg-none d-block align-self-center text-muted px-3 mr-3"><i class="ion ion-md-more"></i></a>
+        <div class="media-body">
+          <i class="ion ion-ios-filing"></i> &nbsp; Inbox
+        </div>
+        <input type="text" class="form-control form-control-sm" placeholder="Search..." style="max-width: 10rem;">
+      </h4>
+      <hr class="border-light m-0">
+
+      <!-- Controls -->
+      <div class="media flex-wrap align-items-center py-1 px-1 px-lg-4">
+
+        <div class="text-muted mr-3 ml-auto">1-25 of 91</div>
+
+        <div class="d-flex flex-wrap">
+          <button type="button" class="btn btn-default borderless md-btn-flat icon-btn text-muted"><i class="ion ion-ios-arrow-back"></i></button>
+          <button type="button" class="btn btn-default borderless md-btn-flat icon-btn text-muted"><i class="ion ion-ios-arrow-forward"></i></button>
+        </div>
+      </div>
+      <hr class="border-light m-0">
+      <!-- / Controls -->
+
+    </div>
+    <!-- / Header -->
+
+    <ul class="list-group messages-list">
+      <% @target_user.communication_user.each do |message| %>
+
+      <li class="list-group-item container-p-x">
+        <%= link_to(message.from_field, load_message_communication_user_path(message) , remote: true, method: :post, class: 'message-sender flex-shrink-1 d-block text-dark', data: { toggle: 'modal', target: '.modal-message-id'}) %>
+        <%= link_to(message.subject, load_message_communication_user_path(message) , remote: true, method: :post, class: 'message-subject flex-shrink-1 d-block text-dark font-weight-bold', data: { toggle: 'modal', target: '.modal-message-id'}) %>
+        <div class="message-date text-muted"><%= message.created_at %></div>
+      </li id="message-body-<%=message.id %>">
+        <div class="m-2">
+
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade modal-message-id" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="message-modal-user">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" id="message-modal-container" style="min-height: 30rem">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-0">
+        <div id="message-modal-header"></div>
+        <div id="message-modal-body"></div>
+        <div class="text-center" style="margin-top: 10rem" id="message-loader">
+          <%= putLoader 200  %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+          
+          
+        </div>
+      <li>
+        
+      </li>
+      <% end %>
+
+    </ul>
+
+
+
+
+  </div>
+</div><!-- / .messages-wrapper -->

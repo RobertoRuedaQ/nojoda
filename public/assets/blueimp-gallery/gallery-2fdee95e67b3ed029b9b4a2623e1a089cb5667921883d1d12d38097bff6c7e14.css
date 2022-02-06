@@ -1,0 +1,366 @@
+/*
+ * blueimp Gallery CSS
+ * https://github.com/blueimp/Gallery
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * https://opensource.org/licenses/MIT
+ */
+/* line 13, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery,
+.blueimp-gallery > .slides > .slide > .slide-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Prevent artifacts in Mozilla Firefox: */
+  -moz-backface-visibility: hidden;
+}
+
+/* line 23, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .slides > .slide > .slide-content {
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 1;
+}
+
+/* line 31, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery {
+  position: fixed;
+  z-index: 999999;
+  overflow: hidden;
+  background: #000;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  display: none;
+  direction: ltr;
+  -ms-touch-action: none;
+  touch-action: none;
+}
+
+/* line 43, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery-carousel {
+  position: relative;
+  z-index: auto;
+  margin: 1em auto;
+  /* Set the carousel width/height ratio to 16/9: */
+  padding-bottom: 56.25%;
+  -webkit-box-shadow: 0 0 10px #000;
+          box-shadow: 0 0 10px #000;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+/* line 53, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery-display {
+  display: block;
+  opacity: 1;
+}
+
+/* line 57, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .slides {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 62, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery-carousel > .slides {
+  position: absolute;
+}
+
+/* line 65, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .slides > .slide {
+  position: relative;
+  float: left;
+  height: 100%;
+  text-align: center;
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* line 76, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery,
+.blueimp-gallery > .slides > .slide > .slide-content {
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+/* line 84, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .slides > .slide-loading {
+  background: url(../img/loading.gif) center no-repeat;
+  background-size: 64px 64px;
+}
+
+/* line 88, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .slides > .slide-loading > .slide-content {
+  opacity: 0;
+}
+
+/* line 91, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .slides > .slide-error {
+  background: url(../img/error.png) center no-repeat;
+}
+
+/* line 94, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .slides > .slide-error > .slide-content {
+  display: none;
+}
+
+/* line 97, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .prev,
+.blueimp-gallery > .next {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  margin-top: -23px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 30px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 2px #000;
+  text-align: center;
+  background: #222;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  border: 3px solid #fff;
+  border-radius: 23px;
+  opacity: 0.5;
+  cursor: pointer;
+  display: none;
+}
+
+/* line 126, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .next {
+  left: auto;
+  right: 15px;
+}
+
+/* line 130, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .close,
+.blueimp-gallery > .title {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  margin: 0 40px 0 0;
+  font-size: 20px;
+  line-height: 30px;
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+  opacity: 0.8;
+  display: none;
+}
+
+/* line 143, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .close {
+  padding: 15px;
+  right: 15px;
+  left: auto;
+  margin: -15px;
+  font-size: 30px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 152, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .play-pause {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 15px;
+  height: 15px;
+  background: url(../img/play-pause.png) 0 0 no-repeat;
+  cursor: pointer;
+  opacity: 0.5;
+  display: none;
+}
+
+/* line 163, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery-playing > .play-pause {
+  background-position: -15px 0;
+}
+
+/* line 166, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .prev:hover,
+.blueimp-gallery > .next:hover,
+.blueimp-gallery > .close:hover,
+.blueimp-gallery > .title:hover,
+.blueimp-gallery > .play-pause:hover {
+  color: #fff;
+  opacity: 1;
+}
+
+/* line 174, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery-controls > .prev,
+.blueimp-gallery-controls > .next,
+.blueimp-gallery-controls > .close,
+.blueimp-gallery-controls > .title,
+.blueimp-gallery-controls > .play-pause {
+  display: block;
+  /* Fix z-index issues (controls behind slide element) on Android: */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* line 187, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery-single > .prev,
+.blueimp-gallery-left > .prev,
+.blueimp-gallery-single > .next,
+.blueimp-gallery-right > .next,
+.blueimp-gallery-single > .play-pause {
+  display: none;
+}
+
+/* line 194, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+.blueimp-gallery > .slides > .slide > .slide-content,
+.blueimp-gallery > .prev,
+.blueimp-gallery > .next,
+.blueimp-gallery > .close,
+.blueimp-gallery > .play-pause {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Replace PNGs with SVGs for capable browsers (excluding IE<9) */
+/* line 207, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+body:last-child .blueimp-gallery > .slides > .slide-error {
+  background-image: url(../img/error.svg);
+}
+
+/* line 210, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+body:last-child .blueimp-gallery > .play-pause {
+  width: 20px;
+  height: 20px;
+  background-size: 40px 20px;
+  background-image: url(../img/play-pause.svg);
+}
+
+/* line 216, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+body:last-child .blueimp-gallery-playing > .play-pause {
+  background-position: -20px 0;
+}
+
+/* IE7 fixes */
+/* line 221, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+* + html .blueimp-gallery > .slides > .slide {
+  min-height: 300px;
+}
+
+/* line 224, /home/lumni/Documentos/platform-4.0/node_modules/blueimp-gallery/css/blueimp-gallery.css */
+* + html .blueimp-gallery > .slides > .slide > .slide-content {
+  position: relative;
+}
+
+/* line 3, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+.blueimp-gallery > .slides > .slide-loading {
+  background-image: url("/assets/blueimp-gallery/img/loading-b84750cc5a395288fcfd0cf42e3a60d6135e2f14db83fce05e97e5abacc2f9b4.gif");
+}
+
+/* line 6, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+.blueimp-gallery > .slides > .slide-error {
+  background-image: url("/assets/blueimp-gallery/img/error-7540018cca03e8f9a43fb68cd615e2cf2a64fab14d508cb22cc93fbd3d3fc72c.png");
+}
+
+/* line 9, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+.blueimp-gallery > .play-pause {
+  background-image: url("/assets/blueimp-gallery/img/play-pause-5acbc445d4bd233196a77540cb8d5a7e5ce0c9229e38d35036e1d6ba965696b9.png");
+}
+
+/* line 12, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+body:last-child .blueimp-gallery > .slides > .slide-error {
+  background-image: url("/assets/blueimp-gallery/img/error-c7ac542fa225a3c758f1b5b8ee3ac5b003f176af15bd5403b18bc007228a8187.svg");
+}
+
+/* line 15, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+body:last-child .blueimp-gallery > .play-pause {
+  background-image: url("/assets/blueimp-gallery/img/play-pause-ca089ba052f6a61fdbb05659bf6fac3b67e69504b45d8a8410da6af467772533.svg");
+}
+
+/* line 23, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+.blueimp-gallery a.close, .blueimp-gallery a.close:hover, .blueimp-gallery a.close:focus,
+.blueimp-gallery a.prev,
+.blueimp-gallery a.prev:hover,
+.blueimp-gallery a.prev:focus,
+.blueimp-gallery a.next,
+.blueimp-gallery a.next:hover,
+.blueimp-gallery a.next:focus {
+  color: #fff;
+}
+/* line 30, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+.blueimp-gallery .prev,
+.blueimp-gallery .next {
+  border-color: transparent;
+}
+
+/* line 36, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+.blueimp-gallery-carousel {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 41, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+[dir=rtl] .blueimp-gallery {
+  direction: rtl;
+}
+/* line 44, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+[dir=rtl] .blueimp-gallery > .slides > .slide {
+  float: right;
+}
+/* line 47, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+[dir=rtl] .blueimp-gallery > .prev,
+[dir=rtl] .blueimp-gallery > .next {
+  left: auto;
+  right: 15px;
+}
+/* line 52, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+[dir=rtl] .blueimp-gallery > .next {
+  right: auto;
+  left: 15px;
+}
+/* line 56, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+[dir=rtl] .blueimp-gallery > .play-pause {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+/* line 59, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+[dir=rtl] .blueimp-gallery > .close,
+[dir=rtl] .blueimp-gallery > .title {
+  left: auto;
+  right: 15px;
+  margin-right: 0;
+  margin-left: 40px;
+}
+/* line 66, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+[dir=rtl] .blueimp-gallery > .close {
+  left: 15px;
+  right: auto;
+  margin: -15px;
+}
+/* line 71, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+[dir=rtl] .blueimp-gallery > .play-pause {
+  right: auto;
+  left: 15px;
+}
+
+/* line 80, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+.default-style .blueimp-gallery:not(.blueimp-gallery-carousel) {
+  z-index: 1090;
+}
+
+/* line 88, /home/lumni/Documentos/platform-4.0/vendor/assets/libs/blueimp-gallery/gallery.scss.erb */
+.material-style .blueimp-gallery:not(.blueimp-gallery-carousel) {
+  z-index: 1090;
+}
